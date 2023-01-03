@@ -4,19 +4,19 @@ theme: material
 
 nav:
   - Introductory:
-    - Overview: Predictive Analytics/ASA-SRM/1. Overview.md
-    - ASA-P: Predictive Analytics/ASA-SRM/1. Overview.md
-    - ASA-FM: Predictive Analytics/ASA-SRM/1. Overview.md
-    - ASA-IFM: Predictive Analytics/ASA-SRM/1. Overview.md
+    - Overview: Placeholder.md
+    - ASA-P: Placeholder.md
+    - ASA-FM: Placeholder.md
+    - ASA-IFM: Placeholder.md
   - Actuarial Mathematics:
-    - Overview: Actuarial Mathematics/Overview.md
-    - ASA-FAMS: Predictive Analytics/ASA-SRM/1. Overview.md
-    - ASA-FAML: Predictive Analytics/ASA-SRM/1. Overview.md
-    - ASA-ALTAM: Predictive Analytics/ASA-SRM/1. Overview.md
+    - Overview: Placeholder.md
+    - ASA-FAMS: Placeholder.md
+    - ASA-FAML: Placeholder.md
+    - ASA-ALTAM: Placeholder.md
   - Predictive Analytics:
     - Overview: Predictive Analytics/Overview.md
-    - ASA-SRM: Predictive Analytics/ASA-SRM/1. Overview.md
-    - ASA-PA: Predictive Analytics/ASA-SRM/1. Overview.md
+    - ASA-SRM: Placeholder.md
+    - ASA-PA: Placeholder.md
 
 
 markdown_extensions:
