@@ -1,0 +1,40 @@
+site_name: Jerram's Actuarial Exam Notes
+site_url: https://example.com/
+theme: material
+
+nav:
+  - Introductory:
+    - Overview: Predictive Analytics/ASA-SRM/1. Overview.md
+    - ASA-P: Predictive Analytics/ASA-SRM/1. Overview.md
+    - ASA-FM: Predictive Analytics/ASA-SRM/1. Overview.md
+    - ASA-IFM: Predictive Analytics/ASA-SRM/1. Overview.md
+  - Actuarial Mathematics:
+    - Overview: Actuarial Mathematics/Overview.md
+    - ASA-FAMS: Predictive Analytics/ASA-SRM/1. Overview.md
+    - ASA-FAML: Predictive Analytics/ASA-SRM/1. Overview.md
+    - ASA-ALTAM: Predictive Analytics/ASA-SRM/1. Overview.md
+  - Predictive Analytics:
+    - Overview: Predictive Analytics/Overview.md
+    - ASA-SRM: Predictive Analytics/ASA-SRM/1. Overview.md
+    - ASA-PA: Predictive Analytics/ASA-SRM/1. Overview.md
+
+
+markdown_extensions:
+  - attr_list
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
