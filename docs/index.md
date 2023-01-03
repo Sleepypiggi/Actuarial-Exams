@@ -1,3 +1,3 @@
-# **Jerram's Actuarial Exam Notes**
+# **Actuarial Exam Notes**
 
 Test

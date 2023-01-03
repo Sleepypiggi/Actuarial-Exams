@@ -1,4 +1,4 @@
-site_name: Jerram's Actuarial Exam Notes
+site_name: Actuarial Exam Notes
 site_url: https://example.com/
 theme: material
 
@@ -14,10 +14,9 @@ nav:
     - ASA-FAML: Placeholder.md
     - ASA-ALTAM: Placeholder.md
   - Predictive Analytics:
-    - Overview: Predictive Analytics/Overview.md
+    - Overview: 3. Predictive Analytics/Overview.md
     - ASA-SRM: Placeholder.md
     - ASA-PA: Placeholder.md
-
 
 markdown_extensions:
   - attr_list
