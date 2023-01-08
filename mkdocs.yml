@@ -14,8 +14,10 @@ nav:
     - ASA-FAML: Placeholder.md
     - ASA-ALTAM: Placeholder.md
   - Predictive Analytics:
-    - Overview: 3. Predictive Analytics/Overview.md
-    - ASA-SRM: Placeholder.md
+    - Overview: 3. Predictive Analytics/Exam Overview.md
+    - ASA-SRM:
+      - Introduction: 3. Predictive Analytics/ASA-SRM/1. Introduction.md
+      - Simple Linear Regression: 3. Predictive Analytics/ASA-SRM/2. Simple Linear Regression.md
     - ASA-PA: Placeholder.md
 
 markdown_extensions:
