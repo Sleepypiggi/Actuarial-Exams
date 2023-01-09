@@ -2,27 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://example.com/</loc>
-         <lastmod>2023-01-03</lastmod>
+         <lastmod>2023-01-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/Placeholder/</loc>
-         <lastmod>2023-01-03</lastmod>
+         <lastmod>2023-01-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/2.%20Actuarial%20Mathematics/Overview/</loc>
-         <lastmod>2023-01-03</lastmod>
+         <lastmod>2023-01-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/3.%20Predictive%20Analytics/Overview/</loc>
-         <lastmod>2023-01-03</lastmod>
+         <loc>https://example.com/3.%20Predictive%20Analytics/Exam%20Overview/</loc>
+         <lastmod>2023-01-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/3.%20Predictive%20Analytics/ASA-SRM/1.%20Simple%20Linear%20Regression/</loc>
-         <lastmod>2023-01-03</lastmod>
+         <loc>https://example.com/3.%20Predictive%20Analytics/ASA-SRM/1.%20Introduction/</loc>
+         <lastmod>2023-01-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://example.com/3.%20Predictive%20Analytics/ASA-SRM/2.%20Simple%20Linear%20Regression/</loc>
+         <lastmod>2023-01-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

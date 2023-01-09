@@ -1,5 +1,7 @@
 # **Overview of Predictive Analytics**
 
+Predictive Analytics is the usage of **statistical models** to analyze historical or current data to make **predictions** about the future or unknown events.
+
 Due to the growing relevance of **Predictive Analytics**, the SOA has added a significant amount of material on the topic into the credentialling process:
 
 1. Exam Statistics for Risk Modelling (SRM)
@@ -8,9 +10,9 @@ Due to the growing relevance of **Predictive Analytics**, the SOA has added a si
 
 > Exam ATPA was added midway through 2022 to replace Exam IFM. Credit for IFM also counts towards credit for ATPA, thus this set of notes will NOT be covering ATPA.
 
-All of them share the same theme of working with models:
+All of them share the same theme of working with statistical models:
 
-1. Constructing predictive models
+1. Constructing statistical models
 2. Intepreting their outputs
 3. Evaluating their performance
 
