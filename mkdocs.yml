@@ -10,8 +10,11 @@ nav:
     - ASA-IFM: Placeholder.md
   - Actuarial Mathematics:
     - Overview: Placeholder.md
-    - ASA-FAMS: Placeholder.md
-    - ASA-FAML: Placeholder.md
+    - ASA-FAMS:
+      - Review of Probability Theory: 3. Predictive Analytics/ASA-SRM/1. Review of Statistical Theory.md
+    - ASA-FAML:
+      - Review of Interest Theory: 3. Predictive Analytics/ASA-SRM/1. Review of Statistical Theory.md
+      - Survival Models: 2. Actuarial Mathematics\ASA-FAML\1. Survival Models.md
     - ASA-ALTAM: Placeholder.md
   - Predictive Analytics:
     - Overview: 3. Predictive Analytics/Exam Overview.md
