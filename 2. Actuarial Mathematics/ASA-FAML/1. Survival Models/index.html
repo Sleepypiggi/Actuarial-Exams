@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://example.com/3.%20Predictive%20Analytics/ASA-SRM/2.%20Simple%20Linear%20Regression/">
+        <link rel="canonical" href="https://example.com/2.%20Actuarial%20Mathematics/ASA-FAML/1.%20Survival%20Models/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
       
-        <title>Simple Linear Regression - Actuarial Exam Notes</title>
+        <title>Survival Models - Actuarial Exam Notes</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#regression-fundamentals" class="md-skip">
+        <a href="#survival-models" class="md-skip">
           Skip to content
         </a>
       
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Simple Linear Regression
+              Survival Models
             
           </span>
         </div>
@@ -273,12 +273,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -341,7 +343,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.%20Review%20of%20Statistical%20Theory/" class="md-nav__link">
+      <a href="../../../3.%20Predictive%20Analytics/ASA-SRM/1.%20Review%20of%20Statistical%20Theory/" class="md-nav__link">
         Review of Probability Theory
       </a>
     </li>
@@ -360,12 +362,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" checked>
       
       
       
@@ -388,7 +392,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.%20Review%20of%20Statistical%20Theory/" class="md-nav__link">
+      <a href="../../../3.%20Predictive%20Analytics/ASA-SRM/1.%20Review%20of%20Statistical%20Theory/" class="md-nav__link">
         Review of Interest Theory
       </a>
     </li>
@@ -400,11 +404,114 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../2.%20Actuarial%20Mathematics/ASA-FAML/1.%20Survival%20Models/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Survival Models
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Survival Models
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#newborn-lifetime" class="md-nav__link">
+    Newborn Lifetime
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#continuous-lifetime" class="md-nav__link">
+    Continuous Lifetime
+  </a>
+  
+    <nav class="md-nav" aria-label="Continuous Lifetime">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deferred-death" class="md-nav__link">
+    Deferred Death
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#force-of-mortality" class="md-nav__link">
+    Force of Mortality
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#probability-density-function" class="md-nav__link">
+    Probability Density Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cdf-and-survival-function" class="md-nav__link">
+    CDF and Survival Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expectation-and-variance" class="md-nav__link">
+    Expectation and Variance
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discrete-lifetime" class="md-nav__link">
+    Discrete Lifetime
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#life-tables" class="md-nav__link">
+    Life Tables
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -443,14 +550,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       
       
@@ -473,7 +578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Exam%20Overview/" class="md-nav__link">
+      <a href="../../../3.%20Predictive%20Analytics/Exam%20Overview/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -485,14 +590,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
       
       
       
@@ -515,7 +618,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.%20Review%20of%20Statistical%20Theory/" class="md-nav__link">
+      <a href="../../../3.%20Predictive%20Analytics/ASA-SRM/1.%20Review%20of%20Statistical%20Theory/" class="md-nav__link">
         Review of Statistical Theory
       </a>
     </li>
@@ -527,66 +630,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Simple Linear Regression
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../3.%20Predictive%20Analytics/ASA-SRM/2.%20Simple%20Linear%20Regression/" class="md-nav__link">
         Simple Linear Regression
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#population-regression-model" class="md-nav__link">
-    Population Regression Model
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sample-regression-model" class="md-nav__link">
-    Sample Regression Model
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#simple-linear-regression" class="md-nav__link">
-    Simple Linear Regression
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -646,22 +694,70 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#population-regression-model" class="md-nav__link">
-    Population Regression Model
+  <a href="#newborn-lifetime" class="md-nav__link">
+    Newborn Lifetime
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#sample-regression-model" class="md-nav__link">
-    Sample Regression Model
+  <a href="#continuous-lifetime" class="md-nav__link">
+    Continuous Lifetime
+  </a>
+  
+    <nav class="md-nav" aria-label="Continuous Lifetime">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deferred-death" class="md-nav__link">
+    Deferred Death
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#force-of-mortality" class="md-nav__link">
+    Force of Mortality
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#probability-density-function" class="md-nav__link">
+    Probability Density Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cdf-and-survival-function" class="md-nav__link">
+    CDF and Survival Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expectation-and-variance" class="md-nav__link">
+    Expectation and Variance
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discrete-lifetime" class="md-nav__link">
+    Discrete Lifetime
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#simple-linear-regression" class="md-nav__link">
-    Simple Linear Regression
+  <a href="#life-tables" class="md-nav__link">
+    Life Tables
   </a>
   
 </li>
@@ -681,75 +777,155 @@
                   
 
 
-<h1 id="regression-fundamentals"><strong>Regression Fundamentals</strong></h1>
-<h2 id="population-regression-model"><strong>Population Regression Model</strong></h2>
-<p>Regression is a statistical model that relates a <strong>Dependent Variable</strong> to one or more <strong>Independent Variables</strong>. The dependent variable is <em>regressed on to</em> the independent variable.</p>
-<p>They are fundamentally a function of the independent variables and several <strong>Regression Parameters</strong>, <span class="arithmatex">\(\beta\)</span>. The functional form of the regression is based on the relationship between the variables.</p>
+<h1 id="survival-models"><strong>Survival Models</strong></h1>
+<p>Survival Models are probability distributions that measure the <strong>time to failure</strong> of an entity, or phrased another way, the <strong>future lifetime</strong> of an entity. In an Actuarial context, it measures the <strong>time to death</strong> of a person.</p>
+<p>Since survival models measure <em>time</em>, they are denoted by the <strong>continuous random variable</strong> <span class="arithmatex">\(T_i\)</span>, where the subscript represents the <strong>age</strong> of the person being studied.</p>
+<h2 id="newborn-lifetime"><strong>Newborn Lifetime</strong></h2>
+<p>The base survival model measures the future lifetime of a person <strong>aged 0</strong> (newborn), denoted by <span class="arithmatex">\(T_0\)</span>.</p>
+<p>The <strong>CDF</strong> thus represents the probability that the <strong>newborn dies before age <span class="arithmatex">\(t\)</span></strong>:</p>
 <div class="arithmatex">\[
-y = f(X, \beta)
+F_0(t) = P(T_0 \le t)
 \]</div>
-<p>Different regression models assume <strong>different relationships</strong> between the Independent and Dependent variable. The goal is to use the model that <strong>best captures the relationship</strong> between the variables.</p>
-<p><center></p>
-<table>
-<thead>
-<tr>
-<th align="center">Independent Variable(s)</th>
-<th align="center">Dependent Variables</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">Variable used to make predictions</td>
-<td align="center">Variable being predicted</td>
-</tr>
-<tr>
-<td align="center"><em>Free</em> to change the value</td>
-<td align="center"><em>Depends</em> on the value of indepenent variable</td>
-</tr>
-<tr>
-<td align="center">Deterministic</td>
-<td align="center">Random Variable</td>
-</tr>
-<tr>
-<td align="center">Denoted as <span class="arithmatex">\(X\)</span></td>
-<td align="center">Denoted as <span class="arithmatex">\(Y\)</span></td>
-</tr>
-</tbody>
-</table>
-<p></center></p>
-<p>To be precise, for every set of independent variables, the dependent variable has a <strong>Conditional Distribution</strong> dependent on the given independent variables.</p>
-<p>For instance, the the dependent variable could take any possible value (non-conditional distribution), but <em>given</em> these set of independent variables, the possible values can be <strong>narrowed down to a certain range</strong> (conditional distribution).</p>
+<p>The <strong>complement of the CDF</strong> is the probability that the <strong>newborn survives past a certain age <span class="arithmatex">\(t\)</span></strong>. From a different perspective, it can also be seen as the <strong>newborn dying after age <span class="arithmatex">\(t\)</span></strong>. This is known as the <strong>Survival Function</strong>.</p>
 <div class="arithmatex">\[
-\displaylines{
-Y \sim Distribution \\
-Y|X \sim Conditional~Distribution}
+S_0(t) = P(T_0 \ge t) = 1 - P(T_0 \le t) = 1 - F_0(t)
 \]</div>
-<p>The regression model calculates the <strong>Expected Value</strong> of the conditional distribution, <span class="arithmatex">\(E(Y|X)\)</span>, for every possible <span class="arithmatex">\(X\)</span>. It is also commonly denoted as just <span class="arithmatex">\(y\)</span>.</p>
-<!-- Obtained from Colorado Uni -->
-<p><img alt="Dependent Expectation" class="center" src="../Assets/2.%20Regression%20Introduction.md/Regression%20Expectation.png" /></p>
-<p>The "accuracy" of the regression can be gauged by comparing the actual value to the model's predicted value. The <strong>difference</strong> between an observed value and the corresponding regression value is known as the <strong>Error</strong> of the model. It represents <strong>all other factors</strong> affecting the dependent variable that were not captured in the regression.</p>
-<p>Note that the <strong>sign of the errors</strong> are significant - positive implies the actual value lies above the regression model while negative implies it lies below.</p>
+<h2 id="continuous-lifetime"><strong>Continuous Lifetime</strong></h2>
+<p>Similarly, we can <strong>generalize</strong> the above for a person aged <span class="arithmatex">\(x\)</span>, denoted by <span class="arithmatex">\(T_x\)</span>. However, the intepretation of the functions have a <em>slightly different</em> meaning.</p>
+<p>The CDF instead represents the probability that the person <strong>dies within a certain number of years <span class="arithmatex">\(t\)</span></strong>. Given how often this expression is used, it can be simplified to the notation <span class="arithmatex">\(q\)</span>.</p>
 <div class="arithmatex">\[
-\varepsilon_i = y_i - f(X, \beta)
+F_x(t) = P(T_x \le t) = {}_{t}q_{x}
 \]</div>
-<!-- Obtained from Cloudera -->
-<p><img alt="Regression Errors" class="center" src="../Assets/2.%20Regression%20Introduction.md/Regression%20Errors.png" /></p>
-<h2 id="sample-regression-model"><strong>Sample Regression Model</strong></h2>
-<p>Everything discussed up till this point was regarding the <strong>Population Regression Model</strong>. In practice, a <strong>Sample Regression Model</strong> is created from the data that seeks to estimate the population's.</p>
-<p>Fit the model</p>
-<p>In practice sample model, estimates, residuals sum squared residuals</p>
-<p>In practice, the prediction of the Sample Model is an <strong>estimate</strong> of the expected value of the conditional distribution. The difference between an observed value and the <em>sample model's</em> is known as the <strong>Residual</strong>. It is an <strong>estimate</strong> of the model error.</p>
+<p>It can also be written <strong>in terms of the newborn distribution</strong>, whereby the newborn dies by age <span class="arithmatex">\(x+t\)</span>, <em>given</em> that it survives till age <span class="arithmatex">\(x\)</span>:</p>
 <div class="arithmatex">\[
-\hat{\varepsilon} = y_i - \hat{y}
+P(T_0 \le x + t | T_0 &gt; x) = \frac{P(x &lt; T_0 &lt; x +t)}{P(T_0 &gt; x)} = \frac{P(T_0 &lt; x +t)-P(T_0 &lt; x)}{P(T_0 &gt; x)} = \frac{F_0(x+t) - F_0(x)}{S_0(x)}
 \]</div>
-<p>There are several methods to determine the parameters, but the most common is the <strong>Least Squares Method</strong>, where the parameters are chosen such that they <strong>Minimize the Sum of the Squared Errors</strong>. The errors are <strong>squared to remove the sign</strong> of the errors.</p>
-<p>The model thus <strong>best fits</strong> the observations, such that the distance between the regression model and ALL observations are minimized.</p>
-<h2 id="simple-linear-regression"><strong>Simple Linear Regression</strong></h2>
-<p><strong>Simple Linear Regression</strong> (SLR) assumes a <strong>Linear Relationship</strong> between a pair of <strong>Numeric</strong> independent and dependent variable.</p>
+<!-- Self Made -->
+<p><img alt="CDF Illustration" src="../Assets/1.%20Survival%20Models.md/CDF%20Illustration.png" /></p>
+<p>Conversely, the survival function is the probability that the person <strong>survives another certain number of years <span class="arithmatex">\(t\)</span></strong> or <strong>dies after a certain number of years <span class="arithmatex">\(t\)</span></strong>. It can be simplified to the notation <span class="arithmatex">\(p\)</span>.</p>
 <div class="arithmatex">\[
-y = \beta_0 + \beta_1 x
+S_x(t) = P(T_x \ge t) = {}_{t}p_{x}
 \]</div>
-<p>fit the regression</p>
+<p>It can also be written in terms of the newborn distribution, whereby the newborn survives till age <span class="arithmatex">\(x+t\)</span>, <em>given</em> that it survives till age <span class="arithmatex">\(x\)</span>.</p>
+<div class="arithmatex">\[
+P(T_x \ge t) = P(T_0 ge x + t | T_0 &gt; x) = \frac{P(T_0 &gt; x + t)}{P(T_0 &gt; x)} = \frac{S_0(x+t)}{S_0(x)}
+\]</div>
+<blockquote>
+<p>Note that since the surviving till age <span class="arithmatex">\(x\)</span> is a <strong>subset</strong> of surviving till age <span class="arithmatex">\(x+t\)</span>, the conditional probability simply uses <span class="arithmatex">\(x+t\)</span> in the numerator.</p>
+</blockquote>
+<!-- Self Made -->
+<p><img alt="Survival Function Illustration" src="../Assets/1.%20Survival%20Models.md/Survival%20Function%20Illustration.png" /></p>
+<p>Recall that the two are complements of one another - the person will inevitably die.</p>
+<div class="arithmatex">\[
+\begin{aligned}
+F_x(t) + S_x(t) &amp;= 1 \\
+{}_{t}q_{x} + {}_{t}p_{x} &amp;= 1
+\end{aligned}
+\]</div>
+<h3 id="deferred-death"><strong>Deferred Death</strong></h3>
+<p>The death of the person can also be "<strong>deferred</strong>", whereby the person <strong>survives <span class="arithmatex">\(s\)</span> years then dies within the following <span class="arithmatex">\(t\)</span> years</strong>. Following this definition:</p>
+<div class="arithmatex">\[
+{}_{s|t}q_{x} = {}_{s}p_{x} * {}_{t}q_{x+s}
+\]</div>
+<p>From another perspective, it calculates the probability of the person dying within a <strong>specified range</strong> of time in the future:</p>
+<div class="arithmatex">\[
+{}_{s|t}q_{x} = {}_{s+t}q_{x} - {}_{s}q_{x}
+\]</div>
+<!-- Self Made -->
+<p><img alt="Deferred Death" src="../Assets/1.%20Survival%20Models.md/Deferred%20Death.png" /></p>
+<h3 id="force-of-mortality"><strong>Force of Mortality</strong></h3>
+<p>Loosely speaking, the rate of mortality (different from mortality rate) is the <strong>probability of death during a period per unit time</strong>.</p>
+<div class="arithmatex">\[
+Rate~Of~Mortality = \frac{P(T_x \le h)}{h} = \frac{{}_{h}q_{x}}{h}
+\]</div>
+<p>If the period of time is <strong>gets smaller and smaller</strong>, then the result is the instantaneous change in probability, known as the <strong>Force of Mortality</strong>.</p>
+<div class="arithmatex">\[
+\mu_x = \lim_{h \to 0} \frac{{}_{h}q_{x}}{h}
+\]</div>
+<p>For <strong>very small periods of time</strong>, the force of mortality can be used to <em>approximate</em> the change in probability of death:</p>
+<div class="arithmatex">\[
+{}_{h}q_{x} = {}_{0}q_{x} + h * \mu_x = h * \mu_x
+\]</div>
+<h3 id="probability-density-function"><strong>Probability Density Function</strong></h3>
+<p>The PDF of <span class="arithmatex">\(T_x\)</span> is the differential of the CDF:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+f_x(t)
+&amp;= \frac{d}{dt} F_x(t) \\
+&amp;= \frac{d}{dt} P(T_x \le t) \\
+&amp;= \lim_{h \to 0} \frac{P(T_x \le t+h) - P(T_x \le t)}{h} \\
+&amp;= \lim_{h \to 0} \frac{P(x + t &lt; T_0 &lt; x + t +h)}{h * P(T_0 &gt; t)}
+\end{aligned}
+\]</div>
+<p>The denominator of the limit can be adjusted to make it into a smoother conditional probability:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+f_x(t)
+&amp;= \lim_{h \to 0} \frac{P(x + t &lt; T_0 &lt; x + t +h)}{h * P(T_0 &gt; t)} \\
+&amp;= \frac{P(T_0 &gt; t)}{P(T_0 &gt; x + t)} \lim_{h \to 0} \frac{P(x + t &lt; T_0 &lt; x + t +h)}{h * P(T_0 &gt; x + t)} \\
+&amp;= \frac{P(T_0 &gt; t)}{P(T_0 &gt; x + t)} \lim_{h \to 0} \frac{P(x + t &lt; T_0 &lt; x + t +h | T_0 &gt; x + t)}{h} \\
+&amp;= {}_{t}p_{x} * \mu_{x+t}
+\end{aligned}
+\]</div>
+<h3 id="cdf-and-survival-function"><strong>CDF and Survival Function</strong></h3>
+<p>The <strong>CDF</strong> can also be expressed as a function of the force of mortality, making use of the PDF derived above:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+F_x(t) &amp;= \int_{0}^{t} f_x(t) \\
+F_x(t) &amp;= \int_{0}^{t} {}_{t}p_{x} * \mu_{x+t} \\
+{}_{t}q_{x} &amp;= \int_{0}^{t} {}_{t}p_{x} * \mu_{x+t}
+\end{aligned}
+\]</div>
+<p>Similarly for the <strong>Survival Function</strong>,</p>
+<div class="arithmatex">\[
+\begin{aligned}
+f_x(t) &amp;= {}_{t}p_{x} * \mu_{x + t} \\
+\mu_{x + t} &amp;= \frac{f_x(t)}{S_x(t)}
+\end{aligned}
+\]</div>
+<p>Consider another expression for the PDF:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+f_x(t) &amp;= \frac{d}{dt} F_x(t) \\
+f_x(t) &amp;= \frac{d}{dt} (1 - S_x(t)) \\
+f_x(t) &amp;= -S'_x(t)
+\end{aligned}
+\]</div>
+<p>Combining both the above,</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\mu_{x + t} &amp;= \frac{-S'_x(t)}{S_x(t)} \\
+\mu_{x + t} &amp;= - \frac{d}{dt} (\ln S_x(t)) \\
+\ln S_x(t) &amp;= - \int_{0}^{t} \mu_{x + t} \\
+S_x(t) &amp;= e ^ {- \int_{0}^{t} \mu_{x + t}} \\
+{}_{t}p_{x} &amp;= e ^ {- \int_{0}^{t} \mu_{x + t}}
+\end{aligned}
+\]</div>
+<h3 id="expectation-and-variance"><strong>Expectation and Variance</strong></h3>
+<p>The Expectation of the Future Lifetime is known as the <strong>Life Expectancy</strong> of the individual.</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\mathring{e}_x
+&amp;= E(T_x) \\
+&amp;= \int_{0}^{t} t * {}_{t}p_{x} * \mu_{x+t} \\
+&amp;= \int_{0}^{t} t * -S'_x(t) \\
+&amp;= [-t * {}_{t}p_{x}]^{\infty}_0 + \int_{0}^{t} {}_{t}p_{x} \\
+&amp;= \int_{0}^{t} {}_{t}p_{x}
+\end{aligned}
+\]</div>
+<blockquote>
+<p>Note that <span class="arithmatex">\([-t * {}_{t}p_{x}]^{\infty}_0\)</span> is always 0 as the probability of living forever is 0.</p>
+</blockquote>
+<p>Unfortunately, there is <strong>no simplification</strong> to be made for the Variance of the future lifetime:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+Var(T_x)
+&amp;= E(T^2_x) - [E(T_x)]^2 \\
+&amp;= \int_{0}^{t} t^2 * {}_{t}p_{x} * \mu_{x+t} - [\mathring{e}_x]^2
+\end{aligned}
+\]</div>
+<h2 id="discrete-lifetime"><strong>Discrete Lifetime</strong></h2>
+<h2 id="life-tables"><strong>Life Tables</strong></h2>
 
 
 
@@ -770,7 +946,7 @@ y = \beta_0 + \beta_1 x
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../1.%20Review%20of%20Statistical%20Theory/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Review of Statistical Theory" rel="prev">
+        <a href="../../../3.%20Predictive%20Analytics/ASA-SRM/1.%20Review%20of%20Statistical%20Theory/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Review of Interest Theory" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -779,20 +955,20 @@ y = \beta_0 + \beta_1 x
               <span class="md-footer__direction">
                 Previous
               </span>
-              Review of Statistical Theory
+              Review of Interest Theory
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../../Placeholder/" class="md-footer__link md-footer__link--next" aria-label="Next: ASA-PA" rel="next">
+        <a href="../../../Placeholder/" class="md-footer__link md-footer__link--next" aria-label="Next: ASA-ALTAM" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              ASA-PA
+              ASA-ALTAM
             </div>
           </div>
           <div class="md-footer__button md-icon">
