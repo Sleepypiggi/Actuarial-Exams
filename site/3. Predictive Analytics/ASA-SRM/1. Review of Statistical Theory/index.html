@@ -581,6 +581,19 @@
     Hypothesis Testing
   </a>
   
+    <nav class="md-nav" aria-label="Hypothesis Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-statistic" class="md-nav__link">
+    Test Statistic
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -605,7 +618,21 @@
   
   
     <li class="md-nav__item">
-      <a href="../2.%20Simple%20Linear%20Regression/" class="md-nav__link">
+      <a href="../2.%20Regression%20Overview/" class="md-nav__link">
+        Regression Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.%20Simple%20Linear%20Regression/" class="md-nav__link">
         Simple Linear Regression
       </a>
     </li>
@@ -699,6 +726,19 @@
     Hypothesis Testing
   </a>
   
+    <nav class="md-nav" aria-label="Hypothesis Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-statistic" class="md-nav__link">
+    Test Statistic
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -724,7 +764,7 @@
 
 
 <h1 id="review-of-statistical-theory"><strong>Review of Statistical Theory</strong></h1>
-<p>This is meant to be a quick review of the key content of <strong>VEE: Mathematical Statistics</strong> that will be used for this exam.</p>
+<p>This is meant to be a quick review of the basic statistical concepts of <strong>VEE: Mathematical Statistics</strong> and other undergrad statitics courses that will be relevant for this exam.</p>
 <h2 id="overview-of-statistics"><strong>Overview of Statistics</strong></h2>
 <p>Statistics is a discipline revolving around data.</p>
 <p>A <strong>Population</strong> refers to the <em>theoretical</em> set of <strong>all possible</strong> data of the event of interest. The goal of statistics is to determine certain attributes that <strong>summarizes or describes</strong> the population, known as <strong>Parameters</strong>.</p>
@@ -733,6 +773,9 @@
 <p>We distinguish between the two (when they have the same notation) through the <strong>Hat accent</strong> (^) - Population Parameters are their written without the hat (<span class="arithmatex">\(x\)</span>) while their corresponding sample statistics are written with the hat (<span class="arithmatex">\(\hat{x}\)</span>).</p>
 <h2 id="common-sample-statistics"><strong>Common Sample Statistics</strong></h2>
 <p>The <strong>Mean</strong> is the average of the population.</p>
+<!-- Central Tendency -->
+
+<p><center></p>
 <table>
 <thead>
 <tr>
@@ -747,7 +790,9 @@
 </tr>
 </tbody>
 </table>
+<p></center></p>
 <p>The <strong>Variance</strong> measures the spread of values about the mean. However, the units of Variance are unintuitive, thus we consider the <strong>Standard Deviation</strong> for more practical purposes, which is the <strong>square root of the variance</strong>.</p>
+<p><center></p>
 <table>
 <thead>
 <tr>
@@ -762,6 +807,7 @@
 </tr>
 </tbody>
 </table>
+<p></center></p>
 <!--Bessel's correction-->
 
 <p><strong>Covariance</strong> is a measure of the <strong>linear relationship</strong> between two variables:</p>
@@ -769,6 +815,7 @@
 <li><strong>Positive Covariance</strong> - Variables move in the <strong>same direction</strong></li>
 <li><strong>Negative Covariance</strong> - Variables move in <strong>opposite directions</strong></li>
 </ul>
+<p><center></p>
 <table>
 <thead>
 <tr>
@@ -778,12 +825,14 @@
 </thead>
 <tbody>
 <tr>
-<td align="center"><span class="arithmatex">\(\sigma_{x, y}\)</span></td>
+<td align="center"><span class="arithmatex">\(\sigma_{x, y} = \mu_{xy} - \mu_x \mu_y\)</span></td>
 <td align="center"><span class="arithmatex">\(\hat{\sigma}_{x, y} = \frac{1}{n-1} \sum\limits_{i=i}^n (x_i - \bar{x}) * (y_i - \bar{y})\)</span></td>
 </tr>
 </tbody>
 </table>
+<p></center></p>
 <p>However, there are two issues with Covariance - the units are unintuitive (similar to variance) and there is no benchmark as to what constitutes a strong/weak relationship. Thus, the <strong>Correlation</strong> is an adjusted measure of the relationship <strong>between -1 and 1</strong>.</p>
+<p><center></p>
 <table>
 <thead>
 <tr>
@@ -794,38 +843,57 @@
 <tbody>
 <tr>
 <td align="center"><span class="arithmatex">\(\rho = \frac{\sigma_{x,y}}{\sigma_x * \sigma_y}\)</span></td>
-<td align="center"><span class="arithmatex">\(r = \frac{s_{x,y}}{s_x * s_y}\)</span></td>
+<td align="center"><span class="arithmatex">\(r = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sum(x_i - \bar{x} \sum(y_i - \bar{y})}\)</span></td>
 </tr>
 </tbody>
 </table>
+<p></center></p>
+<p>Properties of Estimators
+Biased
+Consistent
+Efficient
+Degrees of freedom</p>
 <h2 id="sampling-distribution"><strong>Sampling Distribution</strong></h2>
 <p>Whenever a sample is drawn from a population and a statistic is calculated, it is known as a <strong>Point Estimate</strong>.</p>
-<p>If another sample were to be drawn, it would most likely result in a <strong>different point estimate</strong> as the underlying sample is likely to be different. If this process were to be repeated a large number times, the <strong>probability distribution</strong> of the resulting point estimates is known as the <strong>Sampling Distribution</strong> of the statistic. The standard deviation of this sampling distribution is known as the <strong>Standard Error</strong>.</p>
-<p>There is no rule surrounding the sampling distribution - it depends on the distribution of the population, statistic, sampling method etc.</p>
-<p>A special case is the <strong>Sample Mean</strong>. If the population is normally distributed, then it is normally distributed as well. However, regardless of the population distribution, it is approximately normally distributed through the <strong>Central Limit Theorem</strong> or <strong>Law of Large Numbers</strong>.</p>
+<p>If another sample were to be drawn, it would most likely result in a <strong>different point estimate</strong> as the underlying sample is likely to be different. If this process were to be repeated a large number times, the <strong>probability distribution</strong> of the resulting point estimates is known as the <strong>Sampling Distribution</strong> of the statistic.</p>
+<p>There is <strong>no rule</strong> surrounding the sampling distribution - it depends on the distribution of the population, statistic being measured, sampling method etc.</p>
+<p>The standard deviation of this sampling distribution is known as the <strong>Standard Error</strong> of the statistic:</p>
 <div class="arithmatex">\[
-\bar{x} \sim N(\mu, \frac{\sigma^2}{n})
+\sigma_{\theta} = \sqrt {\sigma^2_{\theta}}
 \]</div>
-<p>Following that, the standard error is given by the following:</p>
+<p>A special case is the <strong>Sample Mean</strong>. If the population is normally distributed, then it is normally distributed as well. Regardless of the population distribution, it is also approximately normally distributed through the <strong>Central Limit Theorem</strong> or <strong>Law of Large Numbers</strong>.</p>
 <div class="arithmatex">\[
-\sigma_{\bar{x}} = \frac{\sigma}{\sqrt{n}}
+\bar{x} \sim N\left(\mu, \frac{\sigma^2}{n}\right)
 \]</div>
-<p>However, the population standard deviation is most likely unknown. Thus, we can calculate an <strong>estimate of the standard error</strong> by using the sample standard deviation instead:</p>
+<p>Following that, we can compute the standard error:</p>
 <div class="arithmatex">\[
-\hat{\sigma_{\bar{x}}} = \frac{s}{\sqrt{n}}
+\sigma_{\bar{x}} = \sqrt \frac{\sigma^2_{\bar{x}}}{n} = \frac{\sigma}{\sqrt{n}}
 \]</div>
+<p>However, the population variance is usually unknown. Thus, it can be approximated using the Sample Variance, which is an unbiased estimator for it. The result is known as an <strong>Estimate for the Standard Error</strong>:</p>
+<div class="arithmatex">\[
+\hat{\sigma}_{\bar{x}} = \sqrt \frac{s^2}{n} = \frac{s}{\sqrt{n}}
+\]</div>
+<blockquote>
+<p>Note that only the sample variance is an unbiased estimator for the population variance. Although it may look like it, the sample SD is NOT an unbiased estimator for the population SD.</p>
+</blockquote>
 <h2 id="confidence-interval"><strong>Confidence Interval</strong></h2>
 <p>Given that there is only one true value for the population parameter and a whole distribution of estimators, it is unlikely that a point estimate will be equal to the population parameter. Thus, instead of a point estimate, a range of estimates is used, known as a <strong>Confidence Interval</strong>.</p>
-<p>The interval is made a chosen <strong>Confidence Level</strong> which represents the <strong>proportion of confidence intervals that will contain the true value</strong>. In other words, if a large number of confidence intervals constructed in the same manner were to be made, {confidence level}% of them would contain the true value.</p>
+<p>The interval is made a chosen <strong>Confidence Level</strong> which represents the <strong>proportion of confidence intervals that will contain the true value</strong>. In other words, if a large number of confidence intervals constructed in the same manner were to be made, <span class="arithmatex">\((1-\alpha)%\)</span> of them would contain the true value.</p>
 <div class="arithmatex">\[
-CI = \hat{\theta}~\pm~Margin~of~Error
+P(- \text{Margin of Error} &lt; \theta &lt; \text{Margin of Error}) = 1 - \alpha
 \]</div>
-<p>The <strong>Margin of Error</strong> represents the range of values on <em>both sides</em> of the point estimate that the true value could lie. The width of the confidence interval is thus the sum of the two margins.</p>
+<p>The <strong>Margin of Error</strong> represents the range of values on <em>either side</em> of the point estimate that the true value could lie. For instance, for a 95% confidence interval, the confidence lies within the 0.025 and 0.975 percentile of the sampling distribution.</p>
+<p>The margin of error can be calculated by finding the <strong>corresponding values</strong> of the sampling distribution at these percentiles.</p>
+<p>Consider the 95% confidence interval for the <strong>Sample Mean</strong>, which is normally distributed. For convenience, it is usually normalized such that it will become a <strong>Standard Normal Distribution</strong>:</p>
 <div class="arithmatex">\[
-Margin~of~Error = Critical Value * SE(\hat{\theta})
+\begin{aligned}
+P(-1.96 &lt; \frac{\bar{x} - \mu}{\frac{\sigma}{\sqrt n}} &lt; 1.96) &amp;= 0.95 \\
+P(\bar{x} - 1.96 \frac{\sigma}{\sqrt n} &lt; \mu &lt; \bar{x} + 1.96 \frac{\sigma}{\sqrt n}) &amp;= 0.95 \\
+\end{aligned}
 \]</div>
-<!-- To change -->
-
+<div class="arithmatex">\[
+\therefore \text{Margin of Error} = \bar{x} + Z_{\frac{\alpha}{2}} * \frac{\sigma}{\sqrt n}
+\]</div>
 <!-- Obtained from Analyst Prep -->
 <p><img alt="95% Confidence Interval" src="../Assets/1.%20Review%20of%20Statistical%20Theory.md/Confidence%20Interval.png" /></p>
 <h2 id="hypothesis-testing"><strong>Hypothesis Testing</strong></h2>
@@ -867,9 +935,62 @@ Margin~of~Error = Critical Value * SE(\hat{\theta})
 </tbody>
 </table>
 <p></center></p>
+<h3 id="test-statistic"><strong>Test Statistic</strong></h3>
+<p>Let the random variable <span class="arithmatex">\(T\)</span> denote the test statistics. There are many different kinds of test statistics depending on the distribution and what is being investigated.</p>
+<p>The most simple test statistic involve the <strong>Sample Mean</strong>, which is normally distributed:</p>
+<div class="arithmatex">\[
+T = \frac{\bar{x} - \mu}{\frac{\sigma}{\sqrt{n}}}
+\]</div>
+<p>If the <strong>population variance is known</strong>, then the test statistic has a <strong>Standard Normal Distribution</strong> and thus the test-statistic is known as a <strong>Z-Statistic</strong>.</p>
+<div class="arithmatex">\[
+\begin{aligned}
+T
+&amp;= \frac{\bar{x} - \mu}{\sigma} * \sqrt n \\
+&amp;= Z * \sqrt n \\
+\therefore T &amp;\sim N(0,1)
+\end{aligned}
+\]</div>
+<p>If the population variance is unknown, then it will be approximated by the <strong>Sample Variance</strong>. Through algebraic manipulation, the test statistic can still be expressed in the form of a Z variable, but with an additional term:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+T
+&amp;= \frac{\bar{x} - \mu}{\frac{s}{\sqrt{n}}} \\
+&amp;= \frac{\bar{x} - \mu}{s} * \sqrt n \\
+&amp;= \frac{\bar{x} - \mu}{\sigma} * \frac{\sigma}{s} * \sqrt n \\
+&amp;= Z\sqrt n \div \sqrt \frac{s^2}{\sigma^2} \\
+&amp;= Z\sqrt n \div \sqrt \frac{(n-1)s^2}{(n-1)\sigma^2} \\
+&amp;= Z\sqrt n \div \sqrt {\frac{(n-1)s^2}{\sigma^2} * \frac{1}{n-1}} \\
+\end{aligned}
+\]</div>
+<p>The additional term can be shown to have a <strong>Chi-Squared Distribution</strong> of <span class="arithmatex">\(n-1\)</span> degrees of freedom, which by definition is the <strong>sum</strong> of <span class="arithmatex">\(n-1\)</span> independent standard normal variables:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\chi^2_n
+&amp; \sim Z^2 \\
+&amp; \sim \sum \left(\frac {\bar{x} - \mu}{\sigma}\right)^2 \\
+&amp; \sim \sum \left(\frac {(x_i - \bar{x}) + (\bar{x} - \mu)}{\sigma}\right)^2 \\
+&amp; \sim \sum \left(\frac{x_i - \bar{x}}{\sigma}\right)^2 + \sum \left(\frac{\bar{x} - \mu}{\sigma}\right)^2 \\
+&amp; \sim \frac{1}{\sigma^2} \sum (x_i - \bar{x})^2 + \sum Z^2 + 0 \\
+&amp; \sim \frac{(n-1)}{\sigma^2} \frac{\sum (x_i - \bar{x})^2}{n-1} + \chi^2_1 \\
+&amp; \sim \frac{(n-1)s^2}{\sigma^2} + \chi^2_1 \\
+\end{aligned}
+\]</div>
+<div class="arithmatex">\[\therefore \frac{(n-1)s^2}{\sigma^2} \sim \chi^2_{n-1}\]</div>
+<p>Thus, the test statistic is the <strong>ratio</strong> of a Standard Normal Variable to a Chi Squared Variable (divided by its degrees of freedom). By definition, this test statistic has a <strong>t-distribution</strong> with the same degrees of freedom and is known as the <strong>t-statistic</strong>:</p>
+<div class="arithmatex">\[
+\begin{align*}
+T
+&amp;= \frac{Z}{\sqrt \frac{\chi^2_{n-1}}{n-1}} * \sqrt n \\
+&amp;= t_{n-1} * \sqrt{n} \\
+\end{align*}
+\]</div>
+<div class="arithmatex">\[\therefore T \sim t_{n-1}\]</div>
+<p>Despite the slightly convoluted proof, the t-distribution is simply a <strong>standard normal distribution with heavier tails</strong>. This means that extreme values are slightly more likely, which is meant to account for the <strong>increase in variability</strong> due to the use of the sample variance rather than the population variance.</p>
+<!-- Obtained from Medium -->
+<p><img alt="t-distribution" class="center" src="../Assets/1.%20Review%20of%20Statistical%20Theory.md/t-distribution.png" /></p>
 <h2 id="maximum-likelihood-estimation"><strong>Maximum Likelihood Estimation</strong></h2>
 <p>If the population distribution is known, there is an <strong>alternative method of estimating</strong> the parameters apart from calculating the corresponding sample statistics.</p>
-<p>We model a set of observations as a random sample from an unknown joint probability distribution which is expressed in terms of a set of parameters. 
+<p>We model a set of observations as a random sample from an unknown joint probability distribution which is expressed in terms of a set of parameters.
 The goal of maximum likelihood estimation is to determine the parameters for which the observed data have the highest joint probability.</p>
 <p>The goal of maximum likelihood estimation is to find the values of the model parameters that maximize the likelihood function over the parameter space</p>
 
@@ -908,13 +1029,13 @@ The goal of maximum likelihood estimation is to determine the parameters for whi
       
       
         
-        <a href="../2.%20Simple%20Linear%20Regression/" class="md-footer__link md-footer__link--next" aria-label="Next: Simple Linear Regression" rel="next">
+        <a href="../2.%20Regression%20Overview/" class="md-footer__link md-footer__link--next" aria-label="Next: Regression Overview" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Simple Linear Regression
+              Regression Overview
             </div>
           </div>
           <div class="md-footer__button md-icon">
