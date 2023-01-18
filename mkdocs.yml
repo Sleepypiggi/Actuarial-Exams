@@ -3,6 +3,9 @@ site_url: https://example.com/
 theme: material
 
 nav:
+  - Foundational:
+    - Review of Linear Algebra: 0. Foundational/1. Review of Linear Algebra.md
+    - Review of Calculus: 0. Foundational/2. Review of Calculus.md
   - Introductory:
     - Overview: Placeholder.md
     - ASA-P: Placeholder.md
@@ -10,10 +13,8 @@ nav:
     - ASA-IFM: Placeholder.md
   - Actuarial Mathematics:
     - Overview: Placeholder.md
-    - ASA-FAMS:
-      - Review of Probability Theory: 3. Predictive Analytics/ASA-SRM/1. Review of Statistical Theory.md
+    - ASA-FAMS: Placeholder.md
     - ASA-FAML:
-      - Review of Interest Theory: 3. Predictive Analytics/ASA-SRM/1. Review of Statistical Theory.md
       - Survival Models: 2. Actuarial Mathematics\ASA-FAML\1. Survival Models.md
     - ASA-ALTAM: Placeholder.md
   - Predictive Analytics:
@@ -22,6 +23,7 @@ nav:
       - Review of Statistical Theory: 3. Predictive Analytics/ASA-SRM/1. Review of Statistical Theory.md
       - Regression Overview: 3. Predictive Analytics/ASA-SRM/2. Regression Overview.md
       - Simple Linear Regression: 3. Predictive Analytics/ASA-SRM/3. Simple Linear Regression.md
+      - Multiple Linear Regression: 3. Predictive Analytics/ASA-SRM/4. Multiple Linear Regression.md
     - ASA-PA: Placeholder.md
 
 markdown_extensions:
