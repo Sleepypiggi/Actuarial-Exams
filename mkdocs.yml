@@ -6,6 +6,7 @@ nav:
   - Foundational:
     - Review of Linear Algebra: 0. Foundational/1. Review of Linear Algebra.md
     - Review of Calculus: 0. Foundational/2. Review of Calculus.md
+    - Review of Statistical Theory: 0. Foundational/3. Review of Statistical Theory.md
   - Introductory:
     - Overview: Placeholder.md
     - ASA-P: Placeholder.md
@@ -20,10 +21,11 @@ nav:
   - Predictive Analytics:
     - Overview: 3. Predictive Analytics/Exam Overview.md
     - ASA-SRM:
-      - Review of Statistical Theory: 3. Predictive Analytics/ASA-SRM/1. Review of Statistical Theory.md
-      - Regression Overview: 3. Predictive Analytics/ASA-SRM/2. Regression Overview.md
-      - Simple Linear Regression: 3. Predictive Analytics/ASA-SRM/3. Simple Linear Regression.md
-      - Multiple Linear Regression: 3. Predictive Analytics/ASA-SRM/4. Multiple Linear Regression.md
+      - Regression Overview: 3. Predictive Analytics/ASA-SRM/1. Regression Overview.md
+      - Simple Linear Regression: 3. Predictive Analytics/ASA-SRM/2. Simple Linear Regression.md
+      - Multiple Linear Regression: 3. Predictive Analytics/ASA-SRM/3. Multiple Linear Regression.md
+      - Gauss Markov Theorem: 3. Predictive Analytics/ASA-SRM/4. Gauss Markov Theorem.md
+      - Statistical Learning: 3. Predictive Analytics/ASA-SRM/5. Statistical Learning.md
     - ASA-PA: Placeholder.md
 
 markdown_extensions:
