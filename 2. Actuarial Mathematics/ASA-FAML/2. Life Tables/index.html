@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://example.com/3.%20Predictive%20Analytics/ASA-SRM/7.%20Time%20Series%20Models/">
+        <link rel="canonical" href="https://example.com/2.%20Actuarial%20Mathematics/ASA-FAML/2.%20Life%20Tables/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
       
-        <title>7. Time Series Models - Actuarial Exam Notes</title>
+        <title>Life Tables - Actuarial Exam Notes</title>
       
     
     
@@ -65,6 +65,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#life-tables" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -94,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              7. Time Series Models
+              Life Tables
             
           </span>
         </div>
@@ -344,12 +349,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -398,12 +405,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" checked>
       
       
       
@@ -426,7 +435,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../2.%20Actuarial%20Mathematics/ASA-FAML/1.%20Survival%20Models/" class="md-nav__link">
+      <a href="../1.%20Survival%20Models/" class="md-nav__link">
         Survival Models
       </a>
     </li>
@@ -438,11 +447,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../2.%20Actuarial%20Mathematics/ASA-FAML/2.%20Life%20Tables/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Life Tables
       </a>
+      
     </li>
   
 
@@ -509,7 +528,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Exam%20Overview/" class="md-nav__link">
+      <a href="../../../3.%20Predictive%20Analytics/Exam%20Overview/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -549,7 +568,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.%20Regression%20Overview/" class="md-nav__link">
+      <a href="../../../3.%20Predictive%20Analytics/ASA-SRM/1.%20Regression%20Overview/" class="md-nav__link">
         Regression Overview
       </a>
     </li>
@@ -563,7 +582,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2.%20Simple%20Linear%20Regression/" class="md-nav__link">
+      <a href="../../../3.%20Predictive%20Analytics/ASA-SRM/2.%20Simple%20Linear%20Regression/" class="md-nav__link">
         Simple Linear Regression
       </a>
     </li>
@@ -577,7 +596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../3.%20Multiple%20Linear%20Regression/" class="md-nav__link">
+      <a href="../../../3.%20Predictive%20Analytics/ASA-SRM/3.%20Multiple%20Linear%20Regression/" class="md-nav__link">
         Multiple Linear Regression
       </a>
     </li>
@@ -591,7 +610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.%20Gauss%20Markov%20Theorem/" class="md-nav__link">
+      <a href="../../../3.%20Predictive%20Analytics/ASA-SRM/4.%20Gauss%20Markov%20Theorem/" class="md-nav__link">
         Gauss Markov Theorem
       </a>
     </li>
@@ -605,7 +624,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../5.%20Statistical%20Learning/" class="md-nav__link">
+      <a href="../../../3.%20Predictive%20Analytics/ASA-SRM/5.%20Statistical%20Learning/" class="md-nav__link">
         Statistical Learning
       </a>
     </li>
@@ -657,6 +676,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -671,9 +692,49 @@
                   
 
 
-  <h1>7. Time Series Models</h1>
-
-
+<h1 id="life-tables"><strong>Life Tables</strong></h1>
+<p>The Discrete Survival Model above can be expressed in tabular form as well, known as a <strong>Life Table</strong>. Instead of providing the probabilities directly, it provides the <strong>expected number of people alive at a given age</strong> <span class="arithmatex">\(l_x\)</span>. From these values, the probability rates can be calculated.</p>
+<p>The lowest age of the life table is known as the <strong>Starting Age</strong>, denoted by <span class="arithmatex">\(\alpha\)</span>. Conversely, the highest age is known as the <strong>Terminal Age</strong>, denoted by <span class="arithmatex">\(\omega\)</span>.</p>
+<p>The number of people alive at the starting age is known as the <strong>Radix</strong> of the life table, which is usually a large round number; <span class="arithmatex">\(l_{\alpha} = 100,000\)</span>. All members of the poulation are expected to gradually die by the terminal age; <span class="arithmatex">\(l_{\omega} = 0\)</span>.</p>
+<div class="arithmatex">\[
+l_x &gt; l_{x+t}
+\]</div>
+<!-- Self Made -->
+<p><img alt="Life Table" center="center" class="" src="Assets/1.%20Survival%20Models.md/Life%20Table.png" /></p>
+<p>An additional column for <span class="arithmatex">\(d_x\)</span> can also be calculated, which represents the <strong>expected number of people who die within a year</strong>; from age <span class="arithmatex">\(x\)</span> to age <span class="arithmatex">\(x+1\)</span>. Note that because the life table is decreasing, it is written from the perspective of <span class="arithmatex">\(x\)</span>, not <span class="arithmatex">\(x+1\)</span>.</p>
+<div class="arithmatex">\[
+d_x = l_x - l_{x+1}
+\]</div>
+<p>If the life table is incomplete, <span class="arithmatex">\(d_x\)</span> can be used to fill up the remaining information:</p>
+<div class="arithmatex">\[
+l_x - l_{x+n} = d_x + d_{x+1} + ... d_{x+n-1}
+\]</div>
+<!-- Self Made -->
+<p><img alt="Life Table dx" center="center" class="" src="../Assets/1.%20Survival%20Models.md/Life%20Table%20dx.png" /></p>
+<p>The probability of death/survival <strong>over a period</strong> can be calculated as the <strong>proportion of people who died/survived</strong> in that period:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+{}_{t}p_{x} &amp;= \frac{l_{x+t}}{l_x} \\
+{}_{t}q_{x} &amp;= \frac{l_x - l_{x+t}}{l_x} \\
+{}_{s|t}q_{x} &amp;= \frac{l_{x+s} - l_{x+s+t}}{l_{x}} \\
+\end{aligned}
+\]</div>
+<p>If considering only the probabilities for a <strong>single period</strong>, then <span class="arithmatex">\(d_x\)</span> can be used as well:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+p_{x} &amp;= \frac{l_x - d_x}{l_x} \\
+q_{x} &amp;= \frac{d_x}{l_x} \\
+\end{aligned}
+\]</div>
+<!-- Self Made -->
+<p><img alt="Life table qx px" center="center" class="" src="../Assets/1.%20Survival%20Models.md/Life%20Table%20qx%20px.png" /></p>
+<p>If the life table only includes the yearly probabilities, then the probability over a specific period can be calculated via first principles using a probability tree:</p>
+<div class="arithmatex">\[
+{}_{t}q_{x} = q_x + p_x * q_{x+1} + p_x * p_{x+1} * q_{x+2} + ... p_{x} * p _{x+1} * ... p_{x+n-2} * q_{x+n-1}
+\]</div>
+<!-- Self Made -->
+<p><img alt="Probability Tree" src="../Assets/1.%20Survival%20Models.md/Probability%20Tree.png" /></p>
+<!--force of mortality-->
 
 
 
@@ -689,6 +750,42 @@
       </main>
       
         <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../1.%20Survival%20Models/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Survival Models" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Survival Models
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../../Placeholder/" class="md-footer__link md-footer__link--next" aria-label="Next: ASA-ALTAM" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              ASA-ALTAM
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
