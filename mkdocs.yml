@@ -18,6 +18,10 @@ nav:
     - ASA-FAML:
       - Survival Models: 2. Actuarial Mathematics\ASA-FAML\1. Survival Models.md
       - Life Tables: 2. Actuarial Mathematics\ASA-FAML\2. Life Tables.md
+      - Life Insurance Functions: 2. Actuarial Mathematics\ASA-FAML\3. Life Insurance Functions.md
+      - Life Annuity Functions: 2. Actuarial Mathematics\ASA-FAML\4. Life Annuity Functions.md
+      - Premium Calculations: 2. Actuarial Mathematics\ASA-FAML\5. Premium Calculations.md
+      - Reserve Calculations: 2. Actuarial Mathematics\ASA-FAML\6. Reserve Calculations.md
     - ASA-ALTAM: Placeholder.md
   - Predictive Analytics:
     - Overview: 3. Predictive Analytics/Exam Overview.md
@@ -42,9 +46,9 @@ markdown_extensions:
       generic: true
 
 extra_css:
-  - stylesheets/extra.css
+  - config/extra.css
 
 extra_javascript:
-  - javascripts/mathjax.js
+  - config/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js

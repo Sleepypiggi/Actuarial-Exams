@@ -524,6 +524,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#actuarial-notation" class="md-nav__link">
+    Actuarial Notation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#discrete-lifetime" class="md-nav__link">
     Discrete Lifetime
   </a>
@@ -543,17 +550,24 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#life-tables" class="md-nav__link">
-    Life Tables
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.%20Life%20Tables/" class="md-nav__link">
+        Life Tables
+      </a>
     </li>
   
 
@@ -833,6 +847,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#actuarial-notation" class="md-nav__link">
+    Actuarial Notation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#discrete-lifetime" class="md-nav__link">
     Discrete Lifetime
   </a>
@@ -849,13 +870,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#life-tables" class="md-nav__link">
-    Life Tables
-  </a>
   
 </li>
       
@@ -878,72 +892,112 @@
 <p>Survival Models are probability distributions that measure the <strong>time to failure</strong> of an entity, or phrased another way, the <strong>future lifetime</strong> of an entity. In an Actuarial context, it measures the <strong>time to death</strong> of a person.</p>
 <p>Since survival models measure <em>time</em>, they are denoted by the <strong>continuous random variable</strong> <span class="arithmatex">\(T_i\)</span>, where the subscript represents the <strong>age</strong> of the person being studied.</p>
 <h2 id="newborn-lifetime"><strong>Newborn Lifetime</strong></h2>
-<p>The base survival model measures the future lifetime of a person <strong>aged 0</strong> (newborn), denoted by <span class="arithmatex">\(T_0\)</span>.</p>
-<p>The <strong>CDF</strong> thus represents the probability that the <strong>newborn dies before age <span class="arithmatex">\(t\)</span></strong>:</p>
+<p>The base survival model measures the future lifetime of a newborn (<strong>aged 0</strong>), denoted by <span class="arithmatex">\(T_0\)</span>.</p>
+<p>The <strong>CDF</strong> thus represents the probability that the newborn <strong>dies before age <span class="arithmatex">\(t\)</span></strong>:</p>
 <div class="arithmatex">\[
-F_0(t) = P(T_0 \le t)
+    F_0(t) = P(T_0 \le t)
 \]</div>
-<p>The <strong>complement of the CDF</strong> is the probability that the <strong>newborn survives past a certain age <span class="arithmatex">\(t\)</span></strong>. From a different perspective, it can also be seen as the <strong>newborn dying after age <span class="arithmatex">\(t\)</span></strong>. This is known as the <strong>Survival Function</strong>.</p>
+<p>The <strong>Survival Function</strong> is the <strong>complement of the CDF</strong> and is the probability that the newborn <strong>survives till a certain age <span class="arithmatex">\(t\)</span></strong>. From a different perspective, it can also be seen as the probability of the newborn <strong>dying AFTER age <span class="arithmatex">\(t\)</span></strong>:</p>
 <div class="arithmatex">\[
-S_0(t) = P(T_0 \ge t) = 1 - P(T_0 \le t) = 1 - F_0(t)
+\begin{aligned}
+    S_0(t)
+    &amp;= P(T_0 \ge t) \\
+    &amp;= 1 - P(T_0 \le t) \\
+    &amp;= 1 - F_0(t)
+\end{aligned}
+\]</div>
+<p>Note that all humans will <strong>inevitably die</strong>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \lim_{t \to \infty} S_0 (t) &amp;= 0 \\
+    \lim_{t \to \infty} F_0 (t) &amp;= 1
+\end{aligned}
 \]</div>
 <h2 id="continuous-lifetime"><strong>Continuous Lifetime</strong></h2>
-<p>The above can be <strong>generalized</strong> for a person aged <span class="arithmatex">\(x\)</span>, denoted by <span class="arithmatex">\(T_x\)</span>. However, the intepretation of the functions have a <em>slightly different</em> meaning.</p>
-<p>The CDF instead represents the probability that the person <strong>dies within a certain number of years <span class="arithmatex">\(t\)</span></strong>. Given how often this expression is used, it can be simplified to the notation <span class="arithmatex">\(q\)</span>.</p>
+<p>The above can be <strong>generalized</strong> for a person aged <span class="arithmatex">\(x\)</span>, denoted by <span class="arithmatex">\(T_x\)</span>. However, the intepretation of the two functions changes slightly.</p>
+<p>The CDF instead represents the probability that the person <strong>dies within <span class="arithmatex">\(t\)</span> years</strong> from age <span class="arithmatex">\(x\)</span>:</p>
 <div class="arithmatex">\[
-F_x(t) = P(T_x \le t) = {}_{t}q_{x}
+F_x(t) = P(T_x \le t)
 \]</div>
-<blockquote>
-<p>For convenience, <span class="arithmatex">\({}_{1}q_{x}\)</span> is often written as just <span class="arithmatex">\(q_{x}\)</span>. In other words, <span class="arithmatex">\(t\)</span> is often omitted if it is 1.</p>
-</blockquote>
-<p>It can also be written <strong>in terms of the newborn distribution</strong>, whereby the newborn dies by age <span class="arithmatex">\(x+t\)</span>, <em>given</em> that it survives till age <span class="arithmatex">\(x\)</span>:</p>
+<p>It can also be written <strong>in terms of the newborn lifetime</strong>. The key is to understand that the newborn is <strong>assumed to survive till age <span class="arithmatex">\(x\)</span></strong> and then die within the next <span class="arithmatex">\(t\)</span> years:</p>
 <div class="arithmatex">\[
-P(T_0 \le x + t | T_0 &gt; x) = \frac{P(x &lt; T_0 &lt; x +t)}{P(T_0 &gt; x)} = \frac{P(T_0 &lt; x +t)-P(T_0 &lt; x)}{P(T_0 &gt; x)} = \frac{F_0(x+t) - F_0(x)}{S_0(x)}
+\begin{aligned}
+    P(T_x \le t)
+    &amp;= P(T_0 \le x + t | T_0 &gt; x) \\
+    &amp;= \frac{P(x &lt; T_0 &lt; x +t)}{P(T_0 &gt; x)} \\
+    &amp;= \frac{P(T_0 &lt; x +t)-P(T_0 &lt; x)}{P(T_0 &gt; x)} \\
+    &amp;= \frac{F_0(x+t) - F_0(x)}{S_0(x)}
+\end{aligned}
 \]</div>
 <!-- Self Made -->
 <p><img alt="CDF Illustration" class="center" src="../Assets/1.%20Survival%20Models.md/CDF%20Illustration.png" /></p>
-<p>Conversely, the survival function is the probability that the person <strong>survives another certain number of years <span class="arithmatex">\(t\)</span></strong> or <strong>dies after a certain number of years <span class="arithmatex">\(t\)</span></strong>. It can be simplified to the notation <span class="arithmatex">\(p\)</span>.</p>
+<p>Conversely, the survival function is the probability that the person <strong>survives another <span class="arithmatex">\(t\)</span> years</strong> or <strong>dies AFTER <span class="arithmatex">\(t\)</span> years</strong>:</p>
 <div class="arithmatex">\[
-S_x(t) = P(T_x \ge t) = {}_{t}p_{x}
+    S_x(t) = P(T_x \ge t)
+\]</div>
+<p>It can also be written <strong>in terms of the newborn lifetime</strong> following the same logic as above. The newborn is <strong>assumed to survive till age <span class="arithmatex">\(x\)</span></strong> and then survive another <span class="arithmatex">\(t\)</span> years:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    P(T_x \ge t)
+    &amp;= P(T_0 \ge x + t | T_0 &gt; x) \\
+    &amp;= \frac{P(T_0 &gt; x + t)}{P(T_0 &gt; x)} \\
+    &amp;= \frac{S_0(x+t)}{S_0(x)}
+\end{aligned}
 \]</div>
 <blockquote>
-<p>Similarly, <span class="arithmatex">\({}_{1}p_{x}\)</span> is often written as just <span class="arithmatex">\(p_{x}\)</span>.</p>
-</blockquote>
-<p>It can also be written in terms of the newborn distribution, whereby the newborn survives till age <span class="arithmatex">\(x+t\)</span>, <em>given</em> that it survives till age <span class="arithmatex">\(x\)</span>.</p>
-<div class="arithmatex">\[
-P(T_x \ge t) = P(T_0 ge x + t | T_0 &gt; x) = \frac{P(T_0 &gt; x + t)}{P(T_0 &gt; x)} = \frac{S_0(x+t)}{S_0(x)}
-\]</div>
-<blockquote>
-<p>Note that since the surviving till age <span class="arithmatex">\(x\)</span> is a <strong>subset</strong> of surviving till age <span class="arithmatex">\(x+t\)</span>, the conditional probability simply uses <span class="arithmatex">\(x+t\)</span> in the numerator.</p>
+<p>Note that since the surviving till age <span class="arithmatex">\(x\)</span> is a <strong>subset</strong> of surviving till age <span class="arithmatex">\(x+t\)</span>, the numerator can be simplified to just surviving till <span class="arithmatex">\(x+t\)</span>.</p>
 </blockquote>
 <!-- Self Made -->
 <p><img alt="Survival Function Illustration" class="center" src="../Assets/1.%20Survival%20Models.md/Survival%20Function%20Illustration.png" /></p>
-<p>Recall that the two are complements of one another - the person will inevitably die.</p>
+<p>Note the survival function can thus be re-written as the following:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-F_x(t) + S_x(t) &amp;= 1 \\
-{}_{t}q_{x} + {}_{t}p_{x} &amp;= 1
+    S_x(t) &amp;= \frac{S_0(x+t)}{S_0(x)} \\
+    S_0(x+t) &amp;= S_0(x)S_x(t) \\
 \end{aligned}
 \]</div>
-<h3 id="deferred-death"><strong>Deferred Death</strong></h3>
-<p>The death of the person can also be "<strong>deferred</strong>", whereby the person <strong>survives <span class="arithmatex">\(s\)</span> years then dies within the following <span class="arithmatex">\(t\)</span> years</strong>. Following this definition:</p>
+<p>The probability of the survival of a newborn till age <span class="arithmatex">\(x+t\)</span> is the product of:</p>
+<ol>
+<li>The probability of survival of a newborn till age <span class="arithmatex">\(x\)</span></li>
+<li>Given that the newborn survived till age <span class="arithmatex">\(x\)</span>, that they will survive another <span class="arithmatex">\(t\)</span> years</li>
+</ol>
+<p>This can be <strong>generalized</strong> for people of any age to obtain:</p>
 <div class="arithmatex">\[
-{}_{s|t}q_{x} = {}_{s}p_{x} * {}_{t}q_{x+s}
+    S_x(t+u) = S_x(t) S_{x+t}(u)
+\]</div>
+<h3 id="deferred-death"><strong>Deferred Death</strong></h3>
+<p>The probability of "deferred" death can also be calculated, whereby the person surives another <span class="arithmatex">\(t\)</span> years and then <strong>dies within the following <span class="arithmatex">\(u\)</span> years</strong>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    P(t &lt; T_x &lt; t+u)
+    &amp;= P(T_x &lt; t+u) - P(T_x &lt; t) \\
+    &amp;= F_x(t+u) - F_x(t) \\
+    &amp;= 1 - S_x(t+u) - (1 - S_x(t)) \\
+    &amp;= 1 - S_x(t)S_{x+t}(u) - 1 + S_x(t) \\
+    &amp;= S_x(t) - S_x(t)S_{x+t}(u) \\
+    &amp;= S_x(t)(1-S_{x+t}(u)) \\
+    &amp;= S_x(t)F_{x+t}(u)
+\end{aligned}
 \]</div>
 <blockquote>
-<p>It is important to remember to update the starting age of the second term to the "new age" after the first term.</p>
+<p>It is important to remember to "update" the starting age of the second term to the "new age".</p>
 </blockquote>
-<p>From another perspective, it calculates the probability of the person dying within a <strong>specified range</strong> of time in the future:</p>
-<div class="arithmatex">\[
-{}_{s|t}q_{x} = {}_{s+t}q_{x} - {}_{s}q_{x}
-\]</div>
 <!-- Self Made -->
 <p><img alt="Deferred Death" class="center" src="../Assets/1.%20Survival%20Models.md/Deferred%20Death%20Illustration.png" /></p>
 <h3 id="force-of-mortality"><strong>Force of Mortality</strong></h3>
-<p>The force of mortality is the <strong>instantanous rate of death</strong> at a specific age.</p>
-<p>Similar to gradient, it is defined as the limit of probability of death in a given a period over the period itself, as the <strong>period tends to 0</strong>:</p>
+<p>The <strong>Force of Mortality</strong> is the probability of dying <em>instantly</em>; in an <strong>infinitely small unit of time</strong> (normalized by unit time):</p>
 <div class="arithmatex">\[
-\mu_x = \lim_{h \to 0} \frac{{}_{h}q_{x}}{h}
+\begin{aligned}
+    \mu_x
+    &amp;= \lim_{h \to 0} \frac{P(T_x &lt; h)}{h} \\
+    &amp;= \lim_{h \to 0} \frac{1 - S_x(h)}{h} \\
+    &amp;= \lim_{h \to 0} \frac{1 - (\frac{S_0(x+h)}{S_0(x)})}{h} \\
+    &amp;= \lim_{h \to 0} \frac{S_0(x) - S_0(x+h)}{S_0(x)h} \\
+    &amp;= \frac{1}{S_0(x)} \lim_{h \to 0} \frac{S_0(x) - S_0(x+h)}{h} \\
+    &amp;= - \frac{1}{S_0(x)} \lim_{h \to 0} \frac{S_0(x+h) - S_0(x)}{h} \\
+    &amp;= - \frac{1}{S_0(x)} S'_0(x) \\
+    &amp;= - \frac{S'_0(x)}{S_0(x)}
+\end{aligned}
 \]</div>
 <p>For <strong>very small periods of time</strong>, the force of mortality can be used to <em>approximate</em> the change in probability of death:</p>
 <div class="arithmatex">\[
@@ -1027,6 +1081,19 @@ Var(T_x)
 &amp;= \int_{0}^{t} t^2 * {}_{t}p_{x} * \mu_{x+t} - [\mathring{e}_x]^2
 \end{aligned}
 \]</div>
+<h2 id="actuarial-notation"><strong>Actuarial Notation</strong></h2>
+<p>Given how often this expression is used, it can be simplified to the notation <span class="arithmatex">\(q\)</span>.</p>
+<blockquote>
+<p>For convenience, <span class="arithmatex">\({}_{1}q_{x}\)</span> is often written as just <span class="arithmatex">\(q_{x}\)</span>. In other words, <span class="arithmatex">\(t\)</span> is often omitted if it is 1.</p>
+</blockquote>
+<p>= {}<em x="x">{t}q</em></p>
+<p>It can be simplified to the notation <span class="arithmatex">\(p\)</span>.</p>
+<blockquote>
+<p>Similarly, <span class="arithmatex">\({}_{1}p_{x}\)</span> is often written as just <span class="arithmatex">\(p_{x}\)</span>.</p>
+</blockquote>
+<div class="arithmatex">\[
+{}_{s|t}q_{x} = {}_{s}p_{x} * {}_{t}q_{x+s}
+\]</div>
 <h2 id="discrete-lifetime"><strong>Discrete Lifetime</strong></h2>
 <p>If the lifetime of the person is discrete instead, then it is known as the <strong>Curtate Future Lifetime</strong> of the person. It is denoted by <span class="arithmatex">\(K_x\)</span>.</p>
 <p>The intepretation is slightly different - <span class="arithmatex">\(P(K_x = k)\)</span> represents the probability of the dying between <strong>age k (inclusive) and k+1 (Exclusive)</strong>.</p>
@@ -1061,49 +1128,6 @@ Var(K_x)
 &amp;= \sum_{k=0}^{\infty} (k^2 {}_{k}p_{x} * q_{x+k}) - (e_x)^2
 \end{aligned}
 \]</div>
-<h2 id="life-tables"><strong>Life Tables</strong></h2>
-<p>The Discrete Survival Model above can be expressed in tabular form as well, known as a <strong>Life Table</strong>. Instead of providing the probabilities directly, it provides the <strong>expected number of people alive at a given age</strong> <span class="arithmatex">\(l_x\)</span>. From these values, the probability rates can be calculated.</p>
-<p>The lowest age of the life table is known as the <strong>Starting Age</strong>, denoted by <span class="arithmatex">\(\alpha\)</span>. Conversely, the highest age is known as the <strong>Terminal Age</strong>, denoted by <span class="arithmatex">\(\omega\)</span>.</p>
-<p>The number of people alive at the starting age is known as the <strong>Radix</strong> of the life table, which is usually a large round number; <span class="arithmatex">\(l_{\alpha} = 100,000\)</span>. All members of the poulation are expected to gradually die by the terminal age; <span class="arithmatex">\(l_{\omega} = 0\)</span>.</p>
-<div class="arithmatex">\[
-l_x &gt; l_{x+t}
-\]</div>
-<!-- Self Made -->
-<p><img alt="Life Table" center="center" class="" src="Assets/1.%20Survival%20Models.md/Life%20Table.png" /></p>
-<p>An additional column for <span class="arithmatex">\(d_x\)</span> can also be calculated, which represents the <strong>expected number of people who die within a year</strong>; from age <span class="arithmatex">\(x\)</span> to age <span class="arithmatex">\(x+1\)</span>. Note that because the life table is decreasing, it is written from the perspective of <span class="arithmatex">\(x\)</span>, not <span class="arithmatex">\(x+1\)</span>.</p>
-<div class="arithmatex">\[
-d_x = l_x - l_{x+1}
-\]</div>
-<p>If the life table is incomplete, <span class="arithmatex">\(d_x\)</span> can be used to fill up the remaining information:</p>
-<div class="arithmatex">\[
-l_x - l_{x+n} = d_x + d_{x+1} + ... d_{x+n-1}
-\]</div>
-<!-- Self Made -->
-<p><img alt="Life Table dx" center="center" class="" src="../Assets/1.%20Survival%20Models.md/Life%20Table%20dx.png" /></p>
-<p>The probability of death/survival <strong>over a period</strong> can be calculated as the <strong>proportion of people who died/survived</strong> in that period:</p>
-<div class="arithmatex">\[
-\begin{aligned}
-{}_{t}p_{x} &amp;= \frac{l_{x+t}}{l_x} \\
-{}_{t}q_{x} &amp;= \frac{l_x - l_{x+t}}{l_x} \\
-{}_{s|t}q_{x} &amp;= \frac{l_{x+s} - l_{x+s+t}}{l_{x}} \\
-\end{aligned}
-\]</div>
-<p>If considering only the probabilities for a <strong>single period</strong>, then <span class="arithmatex">\(d_x\)</span> can be used as well:</p>
-<div class="arithmatex">\[
-\begin{aligned}
-p_{x} &amp;= \frac{l_x - d_x}{l_x} \\
-q_{x} &amp;= \frac{d_x}{l_x} \\
-\end{aligned}
-\]</div>
-<!-- Self Made -->
-<p><img alt="Life table qx px" center="center" class="" src="../Assets/1.%20Survival%20Models.md/Life%20Table%20qx%20px.png" /></p>
-<p>If the life table only includes the yearly probabilities, then the probability over a specific period can be calculated via first principles using a probability tree:</p>
-<div class="arithmatex">\[
-{}_{t}q_{x} = q_x + p_x * q_{x+1} + p_x * p_{x+1} * q_{x+2} + ... p_{x} * p _{x+1} * ... p_{x+n-2} * q_{x+n-1}
-\]</div>
-<!-- Self Made -->
-<p><img alt="Probability Tree" src="../Assets/1.%20Survival%20Models.md/Probability%20Tree.png" /></p>
-<!--force of mortality-->
 
 
 
@@ -1140,13 +1164,13 @@ q_{x} &amp;= \frac{d_x}{l_x} \\
       
       
         
-        <a href="../../../Placeholder/" class="md-footer__link md-footer__link--next" aria-label="Next: ASA-ALTAM" rel="next">
+        <a href="../2.%20Life%20Tables/" class="md-footer__link md-footer__link--next" aria-label="Next: Life Tables" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              ASA-ALTAM
+              Life Tables
             </div>
           </div>
           <div class="md-footer__button md-icon">
