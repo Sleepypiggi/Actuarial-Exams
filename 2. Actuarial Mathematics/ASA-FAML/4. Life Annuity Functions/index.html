@@ -486,9 +486,74 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Life Annuity Functions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Life Annuity Functions
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#payable-discretely" class="md-nav__link">
+    Payable Discretely
+  </a>
+  
+    <nav class="md-nav" aria-label="Payable Discretely">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#whole-life-annuity" class="md-nav__link">
+    Whole Life Annuity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temporary-life-annuity" class="md-nav__link">
+    Temporary Life Annuity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deferred-annuities" class="md-nav__link">
+    Deferred Annuities
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#payable-continuously" class="md-nav__link">
+    Payable Continuously
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -735,6 +800,55 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#payable-discretely" class="md-nav__link">
+    Payable Discretely
+  </a>
+  
+    <nav class="md-nav" aria-label="Payable Discretely">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#whole-life-annuity" class="md-nav__link">
+    Whole Life Annuity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temporary-life-annuity" class="md-nav__link">
+    Temporary Life Annuity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deferred-annuities" class="md-nav__link">
+    Deferred Annuities
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#payable-continuously" class="md-nav__link">
+    Payable Continuously
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -749,6 +863,51 @@
 
 
 <h1 id="life-annuity-functions"><strong>Life Annuity Functions</strong></h1>
+<p>Life Annuity contracts promise to pay out a <strong>stream of benefits</strong> in the future for <em>as long</em> the policyholder remains alive.</p>
+<p>Similar to before, life annuity benefits can be paid discretely or continuously and can be valued through their EPV.</p>
+<h2 id="payable-discretely"><strong>Payable Discretely</strong></h2>
+<p>If the contract pays out benefits discretely, then <span class="arithmatex">\(K_x\)</span> is used as the survival model.</p>
+<p>Since an annuity pays a stream of benefits as opposed to a lumpsum, the PV of a life annuity is the <strong>sum of the PVs of all the payments</strong> made <em>up till</em> that point.</p>
+<p>Recall that there are two main types of payment structures:</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="center">Period Start</th>
+<th align="center">Period End</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Paid in Advance</td>
+<td align="center">Paid in Arrears</td>
+</tr>
+<tr>
+<td align="center">Annuity Due</td>
+<td align="center">Annuity Immediate</td>
+</tr>
+<tr>
+<td align="center"><span class="arithmatex">\(\begin{aligned} PV &amp;= 0 + v + v^2 + ... + v^{K_x} \\ &amp;= a_{\enclose{actuarial}{K_x}} \end{aligned}\)</span></td>
+<td align="center"><span class="arithmatex">\(\begin{aligned} PV &amp;= 1 + v + v^2 + ... + v^{K_x+1} \\ &amp;= \ddot{a}_{\enclose{actuarial}{K_x}} \end{aligned}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<!-- Self Made -->
+<!-- Insert Cashflow illustration using actuarial notation -->
+
+<p>Thus, the EPV of the contract is the <strong>sum product</strong> of the <strong>PV of the benefit</strong> in each period and the <strong>probability of death</strong> in that period:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \text{EPV} &amp;= \sum a_{\enclose{actuarial}{K_x}} \cdot {}_{K_x}p_{x} {}_{}q_{x + K_x} \\
+    \\
+    \ddot{\text{EPV}} &amp;= \sum \ddot{a}_{\enclose{actuarial}{K_x}} \cdot {}_{K_x}p_{x} {}_{}q_{x + K_x}
+\end{aligned}
+\]</div>
+<h3 id="whole-life-annuity"><strong>Whole Life Annuity</strong></h3>
+<h3 id="temporary-life-annuity"><strong>Temporary Life Annuity</strong></h3>
+<h3 id="deferred-annuities"><strong>Deferred Annuities</strong></h3>
+<h2 id="payable-continuously"><strong>Payable Continuously</strong></h2>
 
 
 

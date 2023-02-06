@@ -554,9 +554,29 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#intuitions" class="md-nav__link">
-    Intuitions
+  <a href="#key-intuitions" class="md-nav__link">
+    Key Intuitions
   </a>
+  
+    <nav class="md-nav" aria-label="Key Intuitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comparing-the-same-policy" class="md-nav__link">
+    Comparing the same policy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparing-different-policies" class="md-nav__link">
+    Comparing different policies
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -594,16 +614,29 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discrete-continuous-approximations" class="md-nav__link">
+    Discrete Continuous Approximations
+  </a>
+  
+    <nav class="md-nav" aria-label="Discrete Continuous Approximations">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
-  <a href="#claims-acceleration" class="md-nav__link">
-    Claims Acceleration
+  <a href="#uniform-death-distribution" class="md-nav__link">
+    Uniform Death Distribution
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#uniform-death-distribution" class="md-nav__link">
-    Uniform Death Distribution
+  <a href="#claims-acceleration" class="md-nav__link">
+    Claims Acceleration
   </a>
   
 </li>
@@ -940,9 +973,29 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#intuitions" class="md-nav__link">
-    Intuitions
+  <a href="#key-intuitions" class="md-nav__link">
+    Key Intuitions
   </a>
+  
+    <nav class="md-nav" aria-label="Key Intuitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comparing-the-same-policy" class="md-nav__link">
+    Comparing the same policy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparing-different-policies" class="md-nav__link">
+    Comparing different policies
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -980,16 +1033,29 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discrete-continuous-approximations" class="md-nav__link">
+    Discrete Continuous Approximations
+  </a>
+  
+    <nav class="md-nav" aria-label="Discrete Continuous Approximations">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
-  <a href="#claims-acceleration" class="md-nav__link">
-    Claims Acceleration
+  <a href="#uniform-death-distribution" class="md-nav__link">
+    Uniform Death Distribution
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#uniform-death-distribution" class="md-nav__link">
-    Uniform Death Distribution
+  <a href="#claims-acceleration" class="md-nav__link">
+    Claims Acceleration
   </a>
   
 </li>
@@ -1107,7 +1173,7 @@
 <p>Similarly, the simplified second moment and thus <strong>Variance</strong> can be calculated using the <span class="arithmatex">\(v' = v^2\)</span> substitution:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    E({\text{TA}}^2) 
+    E({\text{TA}}^2)
     &amp;= \sum^{n-1}_{K_x = 0} (v^2)^{K_x + 1} \cdot {}_{K_x}p_{x} {}_{}q_{x + K_x} \\
     &amp;= \sum^\infty_{K_x = 0} (v')^{K_x + 1} \cdot {}_{K_x}p_{x} {}_{}q_{x + K_x} \\
     \\
@@ -1226,7 +1292,7 @@
 <p>Similar to the survival model, given how often these values are calculated, they are abbreviated using the <strong>International Actuarial Notation</strong> as well.</p>
 <p><span class="arithmatex">\({}^{k}A\)</span> represents the <strong>k-th moment</strong> of a contract where a benefit of 1 is paid discretely when the <strong>status fails</strong> (Life Insurance). <span class="arithmatex">\(k\)</span> is the multiplier on the interest rate for that moment.</p>
 <blockquote>
-<p>As before, if <span class="arithmatex">\(k=1\)</span>, it is omitted; EG. <span class="arithmatex">\({}^{1}A = A\)</span>. </p>
+<p>As before, if <span class="arithmatex">\(k=1\)</span>, it is omitted; EG. <span class="arithmatex">\({}^{1}A = A\)</span>.</p>
 <p>This notation will mainly be used for the first and second moments for the EPV and variance respectively.</p>
 </blockquote>
 <p>The subscript <span class="arithmatex">\(x\)</span> is the age of the policyholder, known as the <strong>Life Status</strong>. The life status fails when the policyholder dies. The additional subscript <span class="arithmatex">\(\enclose{actuarial}{n}\)</span> represents the <strong>duration of the policy</strong>, known as the <strong>Duration Status</strong>. It fails if the policyholder <em>survives</em> past the policyterm.</p>
@@ -1296,43 +1362,124 @@
 <blockquote>
 <p>EA is omitted as it is simply the combination of a TA and PE.</p>
 </blockquote>
-<p>These identities are most useful in a spreadsheet setting where the calculations can be easily repeated to fill up an entire life table.</p>
-<h3 id="intuitions"><strong>Intuitions</strong></h3>
-<p>WL at the end of the life table is
-Term same 1
-PE 0</p>
-<p>Death products increase over time
-Survival products decrease
-EA tends to term</p>
-<p>Term becomes WL when policy period exceeds end</p>
-<p>Two policies of the same type
-Higher probability of occuring is higher</p>
-<p>EA:
-For policies which are guaranteed to pay, it depends on the tendency to pay out earlier &gt; Paid out earlier, discounted less, higher EPV
-    5 year EA 30
-    5 year EA 60</p>
-<p>Comparing values
-Depends on age</p>
-<p>Young Age (Probability death low)
-TA is the lowest, as least likely to pay out
-WL is the next lowest, unlikely to pay out as well but at least WILL pay out
-PE is the next lowest because the probability of survival is high
-EA is the highest because PE + TA &gt; PE</p>
-<p>Old age (Probability death high)
-PE is the lowest because least likely to pay ouf
-Term is next because likely to pay out</p>
-<p>EA and WL depends
-Both share the same probability
-depends on the additional &gt; If the death probability is high enough, then the PE component of the EA becomes worhtless, the PV of the indefinite coverage is higher
-EA is the next highest because combination</p>
+<p>These identities are only useful in situations where a <strong>starting point</strong> for the EPVs are provided. If they are not provided, the <strong>final year</strong> of the policy can be used as a starting point:</p>
+<ul>
+<li>Since the policyholder will <strong>inevitably die</strong>, the benefit of 1 for WL and TA will <strong>always be paid out</strong>. Thus, their EPV is always <span class="arithmatex">\(v\)</span>.</li>
+<li>From another perspective, the benefit of 1 for a PE will <strong>never be paid out</strong>. Thus, their EPV is always <span class="arithmatex">\(0\)</span>.</li>
+</ul>
+<div class="arithmatex">\[
+\begin{aligned}
+    E(\text{WL}_{\omega-1}) &amp;= v \\
+    E(\text{TA}_{\omega-1}) &amp;= v \\
+    E(\text{PE}_{\omega-1}) &amp;= 0 \\
+    \therefore E(\text{EA}_{\omega-1}) &amp;= v
+\end{aligned}
+\]</div>
+<blockquote>
+<p>While not very useful in a written setting, they are particularly useful in a <strong>spreadsheets</strong> where the calculations can be easily recursed.</p>
+</blockquote>
+<h3 id="key-intuitions"><strong>Key Intuitions</strong></h3>
+<p>When performing EPV calculations, some intuitions (sense checks) can be used to determine if they are in the right direction.</p>
+<h4 id="comparing-the-same-policy"><strong>Comparing the same policy</strong></h4>
+<p>When comparing the EPV of the two policies of the <strong>same type but at different ages</strong>, the EPV of the policy with the higher probability of making a claim is higher:</p>
+<ul>
+<li>For death policies, the EPV of a policy issued at an <strong>older age is higher</strong> due to the higher probability of death</li>
+<li>For survival policies, the EPV of a policy issued at a <strong>younger age is higher</strong> due to the higher probability of survival</li>
+</ul>
+<!-- To check again on EPV of EA -->
+
+<p>When comparing two policies of the <strong>same type but different interest rates</strong>, the EPV of the policy with the lower the interest rate, the lower the EPV of the policy. This is because the PV of the benefits at every time point is smaller than before.</p>
+<h4 id="comparing-different-policies"><strong>Comparing different policies</strong></h4>
+<p>At an arbitrarily young age, the probability of death is low. Thus, the EPVs in ascending order:</p>
+<ol>
+<li>TA - Unlikely to die during policy term; high chance of receiving nothing</li>
+<li>WL - Unlikely to die in the short term; high chance of receiving benefit in the future (heavily discounted)</li>
+<li>PE - Likely to survive till the end of the policy term; high chance of receiving benefit</li>
+<li>EA - Combination of PE and TA</li>
+</ol>
+<!-- Term approaches WL, EA Approaches TA -->
+
+<p>At an arbitrarily old age, the probabilty of death is high. Thus, the EPVs in ascending order:</p>
+<ol>
+<li>PE - Likely to die during the policy term; high chance of receiving nothing</li>
+<li>TA - Likely to die during the policy term; high chance of receiving benefit soon</li>
+<li>EA - PE component is small; marginally higher than term</li>
+<li>WL - DTA component is high; significantly higher than term</li>
+</ol>
+<!-- To check the above -->
+
 <h2 id="payable-continuously"><strong>Payable Continuously</strong></h2>
+<p>In practice, benefits are usually paid out <strong>shortly after</strong> verification of the insured event. This means that the benefit of the contract can be paid <strong>any time</strong> throughout the year (Continuous).</p>
+<p><span class="arithmatex">\(T_x\)</span> is used as the survival model to reflect the continuous nature of the benefits.</p>
+<p>Given a benefit of $1, the PV of the benefit is <span class="arithmatex">\(v^{T_x}\)</span>.</p>
+<p>Thus, the EPV of the contract is the <strong>definite integral</strong> of the product of the PV and PDF, which is essentially the sum product of the PV of the benefits and probability of death for every infinitely small unit of time.</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \text{EPV} = \int^\infty_0 v^{T_x} {}_{T_x}p_{x} \mu_{x+T_x}
+\end{aligned}
+\]</div>
 <h3 id="continuous-whole-life"><strong>Continuous Whole Life</strong></h3>
 <h3 id="continuous-term"><strong>Continuous Term</strong></h3>
 <h3 id="continuous-endowment"><strong>Continuous Endowment</strong></h3>
 <p>No such thing as continuous PE</p>
+<h2 id="discrete-continuous-approximations"><strong>Discrete Continuous Approximations</strong></h2>
+<p>Continuous coint</p>
+<p>Contracts that have benefits payable continuously have a higher EPV than those payable discretely as the cashflows happen sooner; discounted lesser.</p>
+<div class="arithmatex">\[
+    \bar{A} &gt; A
+\]</div>
+<p>However, an adjustment can be made to the EPV of the discrete contract to account for this under-discounting such that the EPV of the two types of contracts are <strong>approximately equal</strong> (under several assumptions).</p>
+<h3 id="uniform-death-distribution"><strong>Uniform Death Distribution</strong></h3>
+<p>It can be assumed that <span class="arithmatex">\(T_x\)</span> is <strong>uniformly distributed</strong> within a year, with each year having a different constant. This is known as the <strong>Uniform Death Distribution</strong> (UDD):</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    f_{x+k}(1)
+    &amp;= {}_{t}p_{x+k} \mu_{x+k+t} \\
+    &amp;\approx {}_{}q_{x+k} \\
+    &amp;\approx c
+\end{aligned}
+\]</div>
+<p>A WL contract can be thought of as a series of year deferred TAs with one year of coverage:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \bar{A}_x
+    &amp;= {}_{0|}\bar{A}^1_{x:\enclose{actuarial}{1}} + {}_{1|}\bar{A}^1_{x:\enclose{actuarial}{1}} + {}_{1|}\bar{A}^1_{x:\enclose{actuarial}{2}} + ... \\
+    &amp;= \bar{A}^1_{x:\enclose{actuarial}{1}} + v^1 {}_{1}p_{x} \bar{A}^1_{x+1:\enclose{actuarial}{1}} + v^2 {}_{2}p_{x} \bar{A}^1_{x+2:\enclose{actuarial}{2}} + ... \\
+    &amp;= \sum^k_{k=0} v^k {}_{k}p_{x} \bar{A}^1_{x+k:\enclose{actuarial}{1}}
+\end{aligned}
+\]</div>
+<p>Under UDD, each deferred TA can be simplified to the following:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \bar{A}^1_{x+k:\enclose{actuarial}{1}}
+    &amp;= \int^1_0 v^t {}_{t}p_{x+k} \mu_{x+k+t} \\
+    &amp;= \int^1_0 v^t q_{x+k} \\
+    &amp;= q_{x+k} \int^1_0 e^{-\delta t} \\
+    &amp;= q_{x+k} \left[\frac{e^{-\delta t}}{-\delta t}\right]^1_0 \\
+    &amp;= q_{x+k} \frac{1-e^{-\delta}}{-\delta} \\
+    &amp;= q_{x+k} \frac{iv}{\delta}
+\end{aligned}
+\]</div>
+<p>Thus, the EPV of a continuous contract can be shown to be a function of a discrete one:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \bar{A}_x
+    &amp;= \sum^k_{k=0} v^k {}_{k}p_{x} \bar{A}^1_{x+k:\enclose{actuarial}{1}} \\
+    &amp;= \sum^k_{k=0} v^k q_{x+k} \frac{iv}{\delta} \\
+    &amp;= q_{x} \frac{iv}{\delta} + v^{1} {}_{1}p_{x} q_{x+1} \frac{iv}{\delta} + v^{2} {}_{2}p_{x} q_{x+2} \frac{iv}{\delta} ... \\
+    &amp;= \frac{i}{\delta} (vq_{x} + v^{2} {}_{1}p_{x}q_{x+1} + v^{3} {}_{2}p_{x}q_{x+2} + ...) \\
+    &amp;= \frac{i}{\delta} A_x
+\end{aligned}
+\]</div>
+<blockquote>
+<p>Depsite the proof using a WL contract, it applies for all continuous contracts as well.</p>
+<p>Note that for EAs, only the TA needs to be approximated to continuous form. Recall that there are no continuous PEs.</p>
+</blockquote>
 <h3 id="claims-acceleration"><strong>Claims Acceleration</strong></h3>
-<p>Approximate continuous claims by assuming they occur in the middle of the period
-x + k and x + k + 1 at x+k+1/2</p>
+<p>Following the UDD assumption, death is <strong>equally likely to occur in any segment</strong> of the year. Thus, on average, the death occurs at roughly <span class="arithmatex">\(x+k+\frac{1}{2}\)</span>.</p>
+<p>For a continuous contract under this assumption, the benefits are paid out on average in the middle of the year and are thus discounted using multiples of <span class="arithmatex">\(v^{\frac{1}{2}}\)</span> instead.</p>
+<!-- Self Made -->
+
 <div class="arithmatex">\[
 \begin{aligned}
     \bar{A}_x
@@ -1341,25 +1488,10 @@ x + k and x + k + 1 at x+k+1/2</p>
     &amp;\approx (1+i)^{\frac{1}{2}} A_x
 \end{aligned}
 \]</div>
-<h3 id="uniform-death-distribution"><strong>Uniform Death Distribution</strong></h3>
-<p>Can think of Whole life as a series of terms</p>
-<p>Uniform distribution each year</p>
-<div class="arithmatex">\[
-\begin{aligned}
-    \int^1_0 v^t {}_{t}p_{x+k} \mu_{x+k+t}
-    &amp;\approx \int^1_0 v^t {}_{}q_{x+k}
-    &amp;\approx {}_{}q_{x+k} \int^1_0 e^{\deltat}
-\end{aligned}
-\]</div>
-<div class="arithmatex">\[
-\begin{aligned}
-    \bar{A}_x
-    &amp;= {}_{0|}\bar{A}^1_{x+1:\enclose{actuarial}{1}} + {}_{1|}\bar{A}^1_{x+1:\enclose{actuarial}{1}} + {}_{2|}\bar{A}^1_{x+1:\enclose{actuarial}{1}} + \dots \\
-    &amp;= q_x \frac{iv}{\delta} + vp_xq_{x+1} \frac{iv}{\delta} + v^2 {}_{2}p_{x} q_{x+2} \frac{iv}{\delta} + \dots \\
-    &amp;= \frac{i}{\delta} (q_x + v^1 p_x {}_{}q_{x+1} + v^2 {}_{2}p_{x} {}_{}q_{x+2} + \dots) \\
-    &amp;= \frac{i}{\delta} A_x \\
-\end{aligned}
-\]</div>
+<blockquote>
+<p>Similar to before, the proof applies to all continuous contracts.</p>
+</blockquote>
+<p>This method is known as the <strong>Claims Acceleration Approach</strong> as the benefits payable in the middle of the year are simply discrete benefits that are accelerated, accounting for the "over-discounting".</p>
 
 
 
