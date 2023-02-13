@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#life-insurance-functions" class="md-skip">
+        <a href="#life-assurance-functions" class="md-skip">
           Skip to content
         </a>
       
@@ -548,8 +548,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#deferred-whole-life" class="md-nav__link">
-    Deferred Whole Life
+  <a href="#deferred-whole-life-assurance" class="md-nav__link">
+    Deferred Whole Life Assurance
   </a>
   
 </li>
@@ -987,8 +987,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#deferred-whole-life" class="md-nav__link">
-    Deferred Whole Life
+  <a href="#deferred-whole-life-assurance" class="md-nav__link">
+    Deferred Whole Life Assurance
   </a>
   
 </li>
@@ -1120,35 +1120,21 @@
                   
 
 
-<h1 id="life-insurance-functions"><strong>Life Insurance Functions</strong></h1>
-<p>Life Insurance contracts promise to pay out a benefit <em>if</em> the insured event (Death) occurs in the <em>future</em>.</p>
-<p>The value of a life insurance contract must reflect these two aspects:</p>
+<h1 id="life-assurance-functions"><strong>Life Assurance Functions</strong></h1>
+<p>Life Assurances are contracts that promise to pay out a benefit <em>if</em> the insured event occurs in the <em>future</em>.</p>
+<p>The value of a life assurance must reflect these two aspects:</p>
 <ol>
 <li>Uncertainty of cashflows - <strong>Expected Value</strong>, based on Survival Models</li>
 <li>Time value of money - <strong>Present Value</strong>, based on Interest Theory</li>
 </ol>
-<p>Thus, the value of a life insurance contract is the <strong>Expected Present Value</strong> (EPV) of the promised cashflows.</p>
-<p>There are two categories of insurance contracts, based on <em>when</em> the benefits are paid out:</p>
-<p><center></p>
-<table>
-<thead>
-<tr>
-<th align="center">Discrete</th>
-<th align="center">Continuous</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">Paid at the <strong>end of the period</strong> that the insured died</td>
-<td align="center">Paid out at <strong>immediately</strong> upon the death of the insured</td>
-</tr>
-</tbody>
-</table>
-<p></center></p>
+<p>Thus, the value of a life assurance is the <strong>Expected Present Value</strong> (EPV) of the promised cashflows.</p>
 <h2 id="payable-discretely"><strong>Payable Discretely</strong></h2>
-<p>If the contract pays out benefits discretely, then <span class="arithmatex">\(K_x\)</span> is used as the survival model.</p>
-<p>Given a benefit of $1, the PV of the benefit is <span class="arithmatex">\(v^{K_x + 1}\)</span>.</p>
-<p>Thus, the EPV of the contract is the <strong>sum product</strong> of the <strong>PV of the benefit</strong> in each period and the <strong>probability of death</strong> in that period:</p>
+<p>The simplest form of life assurance pays the benefits at the <strong>end of the year</strong> that the insured event occurs. For simplicity, the benefit of the contract is assumed to be 1.</p>
+<blockquote>
+<p>While not common in practice, it provides a simple framework to understand the core concepts.</p>
+</blockquote>
+<p>For an assurance payable discretely, <span class="arithmatex">\(K_x\)</span> is used as the survival model. Thus, the present value of the benefit payable in each period is <span class="arithmatex">\(v^{K_x + 1}\)</span>.</p>
+<p>The EPV of the contract is the <strong>sum product</strong> of the <strong>PV of the benefit</strong> in each period and the <strong>probability of death</strong> in that period:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     EPV
@@ -1156,33 +1142,27 @@
     &amp;= \sum v^{K_x + 1} \cdot {}_{K_x|}q_{x}
 \end{aligned}
 \]</div>
-<!-- If the SA is not 1 then the random variable is different and hence the variance -->
-
 <h3 id="actuarial-notation"><strong>Actuarial Notation</strong></h3>
 <p>Similar to the survival model, given how often these values are calculated, they are abbreviated using the <strong>International Actuarial Notation</strong> as well.</p>
-<p><span class="arithmatex">\({}^{k}A\)</span> represents the <strong>k-th moment</strong> of the <strong>present value</strong> a contract where a benefit of 1 is paid discretely when the <strong>status fails</strong> (Life Insurance). <span class="arithmatex">\(k\)</span> is the multiplier on the interest rate for that moment.</p>
-<blockquote>
-<p>As before, if <span class="arithmatex">\(k=1\)</span>, it is omitted; EG. <span class="arithmatex">\({}^{1}A = A\)</span>.</p>
-<p>This notation will mainly be used for the first and second moments for the EPV and variance respectively.</p>
-</blockquote>
-<p>The subscript <span class="arithmatex">\(x\)</span> is the age of the policyholder, known as the <strong>Life Status</strong>. The life status fails when the policyholder dies. The additional subscript <span class="arithmatex">\(\enclose{actuarial}{n}\)</span> represents the <strong>duration of the assurance</strong>, known as the <strong>Duration Status</strong>. It fails if the policyholder <em>survives</em> past the policyterm.</p>
-<p>A 1 above the status indicates that the assurance pays <strong>only</strong> pays if that particular status <strong>fails first</strong>. If no "1" is included, then the assurance pays whichever status fails first.</p>
+<p><span class="arithmatex">\(A\)</span> represents the <strong>first moment</strong> (expectation) of the <strong>present value</strong> of a contract where a benefit of 1 is payable discretely when the <em>status fails</em>.</p>
+<p>The subscript <span class="arithmatex">\(x\)</span> is the age of the policyholder, known as the <strong>Life Status</strong>. It fails when the policyholder <em>dies</em>.</p>
+<p>An additional subscript <span class="arithmatex">\(:\enclose{actuarial}{n}\)</span> is the duration that the assurance remains valid, known as the <strong>Duration Status</strong>. It fails if the policyholder <em>survives</em> past the policyterm.</p>
+<p>A <span class="arithmatex">\(1\)</span> above the status indicates that the assurance pays <strong>only</strong> pays if that <strong>particular status fails first</strong>. If nothing is indicated, then the assurance pays whichever status fails first.</p>
 <blockquote>
 <p>If a particular status is omitted, then the assurance is not dependent on that status. For instance, omitting the duration status means that the contract is only dependent on the age of the policyholder.</p>
 </blockquote>
+<p>An assurance that <strong>begins <span class="arithmatex">\(n\)</span> years later</strong> is known as a <strong>Deferred Assurance</strong>, which is denoted by <span class="arithmatex">\({}_{n|}A\)</span>, following the same notation as deferred probabilities.</p>
 <p>Thus, putting everything together, the EPV of each assurance can be denoted as follows:</p>
 <ul>
 <li><strong>Whole Life Assurance</strong> - Payable whenever policyholder dies; <span class="arithmatex">\(A_x\)</span></li>
 <li><strong>Term Assurance</strong> - Payable only if policyholder dies during assurance period; <span class="arithmatex">\(A^{1}_{x:\enclose{actuarial}{n}}\)</span></li>
 <li><strong>Pure Endowment</strong> - Payable only if policyholder survives past assurance period; <span class="arithmatex">\(A^{\&gt;\&gt;\&gt;\&gt; 1}_{x:\enclose{actuarial}{n}}\)</span></li>
 <li><strong>Endowment Assurance</strong> - Payable whichever of the above two occur first; <span class="arithmatex">\(A_{x:\enclose{actuarial}{n}}\)</span></li>
+<li><strong>Deferred Whole Life Assurance</strong> - Payable only if policyholder dies after <span class="arithmatex">\(n\)</span> years; <span class="arithmatex">\({}_{n|}A_x\)</span></li>
 </ul>
-<blockquote>
 <p>Pure Endowments can also be expressed as <span class="arithmatex">\({}_{n}E_x\)</span> for easier typesetting.</p>
-</blockquote>
-<p>Any assurance deferred by <span class="arithmatex">\(n\)</span> years is denoted by <span class="arithmatex">\({}_{n|}A\)</span>, following the same notation as deferred probabilities.</p>
 <h3 id="whole-life-assurance"><strong>Whole Life Assurance</strong></h3>
-<p><strong>Whole Life</strong> Assurance covers the insured <strong>indefinitely</strong> and thus <em>will</em> pay out whenever the insured <strong>dies</strong>.</p>
+<p><strong>Whole Life Assurances</strong> cover the insured <strong>indefinitely</strong> and thus <em>will</em> pay out <em>whenever</em> the insured dies.</p>
 <p>Let WL be the random variable denoting the PV of the death benefit:</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1192,37 +1172,42 @@
 \]</div>
 <blockquote>
 <p>Technically speaking, the upper limit of <span class="arithmatex">\(K_x\)</span> should <span class="arithmatex">\(\omega-x\)</span> as it represents the <strong>maximum attainable age</strong> in the discrete survival model.</p>
-<p>However, since the <span class="arithmatex">\({}_{k}p_{x} = 0\)</span> for all <span class="arithmatex">\(k \ge \omega-x\)</span>, it <strong>does not matter</strong> what the upper limit is as long as it is larger than <span class="arithmatex">\(\omega-x\)</span>. Thus, in order to be concise, <span class="arithmatex">\(\infty\)</span> is often used instead.</p>
+<p>However, since the <span class="arithmatex">\({}_{k}p_{x} = 0\)</span> for all <span class="arithmatex">\(k \ge \omega-x\)</span>, it <strong>does not matter</strong> what the upper limit is as long as it is larger than <span class="arithmatex">\(\omega-x\)</span>. Thus, <span class="arithmatex">\(\infty\)</span> is used for conciseness instead.</p>
 </blockquote>
 <!-- Self Made -->
 <p><img alt="WL Discrete" class="center" src="../Assets/3.%20Life%20Insurance%20Functions.md/WL%20Discrete.png" /></p>
-<p>Thus, the EPV is the <strong>Expectation/First Moment</strong> of the WL random variable:</p>
+<p>The EPV is the <strong>Expectation/First Moment</strong> of the WL random variable:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     E(\text{WL}) &amp;= \sum^\infty_{K_x = 0} v^{K_x + 1} \cdot {}_{K_x|}q_{x} \\
     A_{x} &amp;= \sum^\infty_{K_x = 0} v^{K_x + 1} \cdot {}_{K_x|}q_{x}
 \end{aligned}
 \]</div>
-<p>The <strong>Second Moment</strong> can be similarly caclulated:</p>
+<p>Another commonly used metric is the <strong>Variance</strong> of the contract. In order to get it, the <strong>Second Moment</strong> must first be determined:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     E({\text{WL}}^2)
-    &amp;= \sum^\infty_{K_x = 0} (v^{K_x + 1})^2 \cdot {}_{K_x|}q_{x} \\
-    &amp;= \sum^\infty_{K_x = 0} \left(v^{K_x + 1}\right)^2 \cdot {}_{K_x|}q_{x}
+    &amp;= \sum^\infty_{K_x = 0} \left(v^{K_x + 1}\right)^2 \cdot {}_{K_x|}q_{x} \\
+    &amp;= \sum^\infty_{K_x = 0} \left((v^2)^{K_x + 1}\right) \cdot {}_{K_x|}q_{x}
 \end{aligned}
 \]</div>
-<p>This can be simplified to a formula <em>similar</em> to the first moment by substituting <span class="arithmatex">\(v' = v^2\)</span>, which can be further <strong>generalized to the k-th moment</strong> of the random variable by substituting <span class="arithmatex">\(v' = v^k\)</span> instead.</p>
-<p>The simplified second moment and thus <strong>Variance</strong> be calculated:</p>
+<p>Notice that the expression can be simplified to a form that looks <strong>almost identical to the first moment</strong> - with the only difference being that is uses <span class="arithmatex">\(v^2\)</span> instead of <span class="arithmatex">\(v\)</span>.</p>
+<p>Thus, the second moment is simply the first moment <strong>evaluated at a higher interest rate</strong> <span class="arithmatex">\(i^*=(1+i)^2-1\)</span>, such that <span class="arithmatex">\(v^* = v^2\)</span>.</p>
+<p>Generally, the <strong>k-th moment</strong> is denoted as <span class="arithmatex">\({}^{k}A_x\)</span>, where the <span class="arithmatex">\(k\)</span> is the <strong>multiplier on the interest rate</strong> used to evaluate the moment, <span class="arithmatex">\(i^*=(1+i)^k-1\)</span>.</p>
+<p>The <strong>Second Moment</strong> and hence <strong>Variance</strong> can be shown as:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     E({\text{WL}}^2) &amp;= \sum^\infty_{K_x = 0} (v^2)^{K_x + 1} \cdot {}_{K_x|}q_{x} \\
-    {}^{2} A_{x} &amp;= \sum^\infty_{K_x = 0} (v')^{K_x + 1} \cdot {}_{K_x|}q_{x} \\
+    {}^{2} A_{x} &amp;= \sum^\infty_{K_x = 0} (v^*)^{K_x + 1} \cdot {}_{K_x|}q_{x} \\
     \\
     \therefore Var(\text{WL}) &amp;= {}^{2} A_{x} - (A_{x})^2
 \end{aligned}
 \]</div>
 <h3 id="term-assurance"><strong>Term Assurance</strong></h3>
-<p><strong>Term Assurance</strong> covers the insured for a <strong>specified period <span class="arithmatex">\(n\)</span></strong> and only pays out <em>if</em> the insured dies within that period. Nothing is paid out if the insured survives beyond that.</p>
+<p><strong>Term Assurance</strong> covers the insured for a <strong>specified period <span class="arithmatex">\(n\)</span></strong> and only pays out <em>if</em> the insured dies within that period. <strong>NOTHING</strong> is paid out if the insured <em>survives beyond</em> that.</p>
+<blockquote>
+<p>A WL Assurance can be thought of as a special Term Assurance with infinite coverage.</p>
+</blockquote>
 <p>Let TA be the random variable denoting the PV of the death benefit:</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1230,55 +1215,57 @@
     \begin{cases}
         v^{K_x + 1} ,&amp; K_x = 0, 1, \dots, n-1 \\
         0 ,&amp; K_x \ge n
-    \end{cases}
+    \end{cases} \\
+    &amp;= {}_{\{K_x \le n-1\}} v^{K_x+1}
 \end{aligned}
 \]</div>
+<p><span class="arithmatex">\(\{K_x \le n-1\}\)</span> is known as an <strong>Indicator Function</strong>, which is a binary variable that takes <strong>1 if the condition is true and 0 if the condition if false</strong>. It provides a concise way to express a piecewise function in a single expression.</p>
 <!-- Self Made -->
 <p><img alt="TA Discrete" src="../Assets/3.%20Life%20Insurance%20Functions.md/TA%20Discrete.png" /></p>
-<p>Thus, the EPV is the <strong>expectation</strong> of the TA random variable:</p>
+<p>The EPV is the <strong>expectation</strong> of the TA random variable:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     E(\text{TA}) &amp;= \sum^{n-1}_{K_x = 0} v^{K_x + 1} \cdot {}_{K_x|}q_{x} + 0 \cdot {}_{n}p_{x} \\
     A^1_{x:\enclose{actuarial}{n}} &amp;= \sum^{n-1}_{K_x = 0} v^{K_x + 1} \cdot {}_{K_x|}q_{x}
 \end{aligned}
 \]</div>
-<p>Similarly, the simplified second moment and thus <strong>Variance</strong> can be calculated using the <span class="arithmatex">\(v' = v^2\)</span> substitution:</p>
+<p>Similar as before, the second moment and thus <strong>Variance</strong> can be calculated as the following:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     E({\text{TA}}^2) &amp;= \sum^{n-1}_{K_x = 0} (v^2)^{K_x + 1} \cdot {}_{K_x|}q_{x} + 0^2 \cdot {}_{n}p_{x} \\
-    {}^{2} A^1_{x:\enclose{actuarial}{n}} &amp;= \sum^\infty_{K_x = 0} (v')^{K_x + 1} \cdot {}_{K_x|}q_{x} \\
+    {}^{2} A^1_{x:\enclose{actuarial}{n}} &amp;= \sum^\infty_{K_x = 0} (v^*)^{K_x + 1} \cdot {}_{K_x|}q_{x} \\
     \\
     \therefore Var(\text{TA}) &amp;= {}^{2} A^1_{x:\enclose{actuarial}{n}} - (A^1_{x:\enclose{actuarial}{n}})^2
 \end{aligned}
 \]</div>
 <h3 id="pure-endowment"><strong>Pure Endowment</strong></h3>
-<p><strong>Pure Endowments</strong> are a special kind of insurance that instead only pays out <em>if</em> the insured <strong>survives past a certain period</strong>. Nothing is paid out if the insured dies before that.</p>
+<p><strong>Pure Endowments</strong> are a special kind of contract that instead only pays out <em>if</em> the insured <strong>survives</strong> past a specified period <span class="arithmatex">\(n\)</span>. <strong>NOTHING</strong> is paid out if the insured <em>dies before</em> that.</p>
 <p>Let PE be the random variable denoting the PV of the survival benefit:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     \text{PE} &amp;=
     \begin{cases}
-        0 ,&amp; K_x &lt; n \\
+        0 ,&amp; K_x = 0, 1, 2 \dots, n \\
         v^n ,&amp; K_x \ge n
     \end{cases}
 \end{aligned}
 \]</div>
 <!-- Self Made -->
 <p><img alt="PE Discrete" class="center" src="../Assets/3.%20Life%20Insurance%20Functions.md/PE%20Discrete.png" /></p>
-<p>The probability of surviving past the period is given by a <em>single probability</em> <span class="arithmatex">\({}_{n}p_{x}\)</span>. Thus, the EPV is the <strong>expectation</strong> of the PE random variable:</p>
+<p>The EPV is the <strong>expectation</strong> of the PE random variable. However, note that the probability of surviving past the period is given by a <em>single probability</em> <span class="arithmatex">\({}_{n}p_{x}\)</span>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     E(\text{PE}) &amp;= 0 \cdot {}_{n}q_{x} + v^n {}_{n}p_{x} \\
     {}_{n}E_x &amp;= v^n {}_{n}p_{x}
 \end{aligned}
 \]</div>
-<p>Similarly, the simplified second moment and thus <strong>Variance</strong> can be calculated using the <span class="arithmatex">\(v' = v^2\)</span> substitution:</p>
+<p>Similar as before, the second moment and thus <strong>Variance</strong> can be calculated:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     E({\text{PE}}^2) &amp;= 0^2 \cdot {}_{n}q_{x} + (v^2)^n {}_{n}p_{x} \\
-    {}^{2}_{n}E_x &amp;= (v')^n {}_{n}p_{x} \\
+    {}^{2}_{n}E_x &amp;= (v^*)^n {}_{n}p_{x} \\
     \\
-    \therefore Var(\text{PE}) &amp;= {}^{2}_{n}E_x - \left({}_{n}E_x\right)^2
+    \therefore Var(\text{PE}) &amp;= {}^{2}_{n}E_x - ({}_{n}E_x)^2
 \end{aligned}
 \]</div>
 <h3 id="endowment-assurance"><strong>Endowment Assurance</strong></h3>
@@ -1286,13 +1273,12 @@
 <ul>
 <li><strong>Term Assurance</strong> - Pays out if the insured dies within the period</li>
 <li><strong>Pure Endowment</strong> - Pays out if the insured survives past the period</li>
+<li>Thus, endowment assurances WILL pay out no matter what</li>
 </ul>
-<p>Similar to whole life assurances, endowment assurances <em>will</em> make a payout.</p>
 <p>Let EA be the random variable denoting the PV of the benefits:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     \text{EA}
-    &amp;= \text{TA} + \text{PE} \\
     &amp;=
     \begin{cases}
         v^{K_x + 1} ,&amp; K_x = 0, 1, \dots, n-1 \\
@@ -1303,15 +1289,14 @@
 \]</div>
 <!-- Self Made -->
 <p><img alt="EA Discrete" class="center" src="../Assets/3.%20Life%20Insurance%20Functions.md/EA%20Discrete.png" /></p>
-<p>Thus, the EPV is the <strong>expectation</strong> of the EA random variable:</p>
+<p>The EPV is the <strong>expectation</strong> of the EA random variable:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    E(\text{EA}) &amp;= E(\text{TA}) + E(\text{PE}) \\
-    A_{x:\enclose{actuarial}{n}} &amp;= \sum^{n-1}_{K_x = 0} v^{K_x + 1} \cdot {}_{K_x|}q_{x} + v^n {}_{n}p_{x}
+    E(\text{EA}) &amp;= \sum^{n-1}_{K_x = 0} v^{K_x + 1} \cdot {}_{K_x|}q_{x} + v^n {}_{n}p_{x} \\
+    A_{x:\enclose{actuarial}{n}} &amp;= A^1_{x:\enclose{actuarial}{n}} + {}_{n}E_{x}
 \end{aligned}
 \]</div>
-<p>Note that the in the <em>final year</em> of the contract, the individual will receive <span class="arithmatex">\(v^n\)</span> if they die (from the TA) or receive the same <span class="arithmatex">\(v^n\)</span> if they survive (from the PE).</p>
-<p>Thus, a simplification can be made to the EPV:</p>
+<p>Note that the in the <em>final year</em> of the contract, the assurance <strong>will pay <span class="arithmatex">\(v^n\)</span> regardless</strong> of the outcome - TA pays if they die while PE pays if they survive. Thus, a simplification can be made to the EPV:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     A_{x:\enclose{actuarial}{n}}
@@ -1323,10 +1308,59 @@
 \]</div>
 <!-- Self Made -->
 <p><img alt="EA Discrete Simplified" class="center" src="../Assets/3.%20Life%20Insurance%20Functions.md/EA%20Discrete%20Simplified.png" /></p>
+<p>Similar as before, the second moment and thus <strong>Variance</strong> can be calculated:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    E(\text{EA}^2) &amp;= \sum^{n-1}_{K_x = 0} (v^2)^{K_x + 1} \cdot {}_{K_x|}q_{x} + (v^2)^n {}_{n}p_{x} \\
+    {}^{2} A_{x:\enclose{actuarial}{n}} &amp;= \sum^{n-1}_{K_x = 0} (v^*)^{K_x + 1} \cdot {}_{K_x|}q_{x} + (v^*)^n {}_{n}p_{x} \\
+    \\
+    \therefore Var(\text{EA})
+    &amp;= {}^{2} A_{x:\enclose{actuarial}{n}} - \left(A_{x:\enclose{actuarial}{n}}\right)^2 \\
+    &amp;= \left({}^{2} A^1_{x:\enclose{actuarial}{n}} + {}^{2}_{n}E_x \right) - \left(A^1_{x:\enclose{actuarial}{n}} - ({}_{n}E_x) \right)^2 \\
+    &amp;= \left({}^{2} A^1_{x:\enclose{actuarial}{n}} + {}^{2}_{n}E_x \right) - \left[(A^1_{x:\enclose{actuarial}{n}})^2 + 2(A^1_{x:\enclose{actuarial}{n}} \cdot {}_{n}E_x) + ({}_{n}E_x)^2 \right]
+\end{aligned}
+\]</div>
+<p>The same outcome can be reached using a slightly different approach:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    Var(EA)
+    &amp;= Var(\text{TA} + \text{PE}) \\
+    &amp;= Var(\text{TA}) + Var(\text{PE}) + 2 Cov(\text{TA}, \text{PE}) \\
+    &amp;= Var(\text{TA}) + Var(\text{PE}) + 2 [E(\text{TA} \cdot \text{PE}) - E(\text{TA}) \cdot E(\text{PE})]
+\end{aligned}
+\]</div>
+<p>Consider the distribution of TA and PE:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    TA \cdot PE
+    &amp;=
+    \begin{cases}
+        v^{K_x + 1} \cdot 0, K_x \lt n \\
+        0 \cdot v^n, K_x \ge n
+    \end{cases} \\
+    &amp;=
+    \begin{cases}
+        0, K_x \lt n \\
+        0, K_x \ge n
+    \end{cases} \\
+    \\ \therefore E(\text{TA} \cdot \text{PE})
+    &amp;= 0 \cdot {}_{n}q_x + 0 \cdot {}_{n}p_x \\
+    &amp;= 0
+\end{aligned}  
+\]</div>
+<p>This results in the same variance as before:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    Var(EA)
+    &amp;= Var(\text{TA}) + Var(\text{PE}) + 2 [E(\text{TA} \cdot \text{PE}) - E(\text{TA}) \cdot E(\text{PE})] \\
+    &amp;= {}^{2} A^1_{x:\enclose{actuarial}{n}} - (A^1_{x:\enclose{actuarial}{n}})^2 + {}^{2}_{n}E_x - ({}_{n}E_x)^2 - 2(A^1_{x:\enclose{actuarial}{n}} \cdot {}_{n}E_x) \\
+    &amp;= \left({}^{2} A^1_{x:\enclose{actuarial}{n}} + {}^{2}_{n}E_x \right) - \left[(A^1_{x:\enclose{actuarial}{n}})^2 + 2(A^1_{x:\enclose{actuarial}{n}} \cdot {}_{n}E_x) + ({}_{n}E_x)^2 \right] \\
+\end{aligned}
+\]</div>
+<p>While this process might seem redundant, it provides an easy to understand example of how the variance of a combination of assurances is derived by considering the covariance.</p>
 <h3 id="deferred-assurances"><strong>Deferred Assurances</strong></h3>
-<p>Deferred Assurances are variations of the above contracts where the <strong>coverage is deferred by <span class="arithmatex">\(n\)</span> years</strong>.</p>
-<h4 id="deferred-whole-life"><strong>Deferred Whole Life</strong></h4>
-<p>While any contract can be deferred, the most useful is the <strong>Deferred Whole Life Assurance</strong>.</p>
+<p>Deferred Assurances are variations of any of the above assurances, where the assurance <strong>starts <span class="arithmatex">\(n\)</span> years later rather</strong> than immediately. While any assurance can be deferred, the two most common are the <strong>Deferred Whole Life</strong> and <strong>Deferred Term Assurances</strong>.</p>
+<h4 id="deferred-whole-life-assurance"><strong>Deferred Whole Life Assurance</strong></h4>
 <p>Let DWL be the random variable denoting the PV of the benefits of a deferred whole life assurance:</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1335,24 +1369,25 @@
     \begin{cases}
         0,&amp; K_x = 0, 1, 2, \dots, n-1 \\
         v^{K_x + 1} ,&amp; K_x \ge n
-    \end{cases}
+    \end{cases} \\
+    &amp;= {}_{\{K_x \ge n\}} v^{K_x + 1}
 \end{aligned}
 \]</div>
 <!-- Self Made -->
-<p><img alt="DWL Discrete" class="center" src="../Assets/3.%20Life%20Insurance%20Functions.md/DWL%20Discrete.png" /></p>
-<p>Thus, the EPV is the <strong>expectation</strong> of the DWL random variable:</p>
+<p><img alt="DWL Discrete" src="../Assets/3.%20Life%20Insurance%20Functions.md/DWL%20Discrete.png" /></p>
+<p>The EPV is the <strong>expectation</strong> of the EA random variable:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     E(\text{DWL}) &amp;= 0 \cdot {}_{n}p_{x} + \sum^{\infty}_{K_x = n} v^{K_x + 1} \cdot {}_{K_x|}q_{x} \\
-    {}_{n|} A_{x} &amp;= \sum^{\infty}_{K_x = 0} v^{K_x + 1} \cdot {}_{K_x|}q_{x} - \sum^{n-1}_{K_x = 0} v^{K_x + 1} \cdot {}_{K_x|}q_{x} \\
-    {}_{n|} A_{x} &amp;= A_x - A^1_{x:\enclose{actuarial}{n}}
+    {}_{n|} A_{x}
+    &amp;= \sum^{\infty}_{K_x = 0} v^{K_x + 1} \cdot {}_{K_x|}q_{x} - \sum^{n-1}_{K_x = 0} v^{K_x + 1} \cdot {}_{K_x|}q_{x} \\
+    &amp;= A_x - A^1_{x:\enclose{actuarial}{n}}
 \end{aligned}
 \]</div>
-<p>Intuitively, a DWL can be thought of as an WL that is <strong>issued <span class="arithmatex">\(n\)</span> years later</strong>. Thus, the EPV of this WL assurance can be brought forward time by <strong>adjusting for both interest and survival</strong>:</p>
+<p>Since a DWL is simply a WL assurance issued <span class="arithmatex">\(n\)</span> years later, the EPV of the DWL is equivalent to the EPV of a WL issued at age <span class="arithmatex">\(x+n\)</span> (after adjusting for interest <strong>AND</strong> survival):</p>
 <div class="arithmatex">\[
 \begin{aligned}
     {}_{n|} A_{x}
-    &amp;= \sum^{\infty}_{K_x = 0} v^{K_x + 1} \cdot {}_{K_x|}q_{x} - \sum^{n-1}_{K_x = 0} v^{K_x + 1} \cdot {}_{K_x|}q_{x} \\
     &amp;= \sum^{\infty}_{K_x = n} v^{K_x + 1} \cdot {}_{K_x|}q_{x} \\
     &amp;= v^n {}_{n} p_{x} \sum^{\infty}_{K_x = n} v^{K_x - n + 1} \cdot {}_{K_x-n|}q_{x+n} \\
     &amp;= v^n {}_{n} p_{x} \sum^{\infty}_{K_x = 0} v^{K_x + 1} \cdot {}_{K_x|}q_{x+n} \\
@@ -1360,7 +1395,8 @@
 \end{aligned}
 \]</div>
 <blockquote>
-<p>PEs can be use as a <strong>discount factor</strong> for functions that takes mortality into consideration. If provided by the life table, this reduces the need for computation.</p>
+<p>PEs can be use as a <strong>discount factor</strong> for functions that <strong>takes mortality into consideration</strong>. If provided by the life table, this reduces the need for computation.</p>
+<p>When going "back" in time, it must reflect that the policyholder will eventually survive till the current age, which is why the probability of surviving the period must be multiplied.</p>
 </blockquote>
 <p>This allows a TA to be expressed as the <strong>difference of two WL assurances issued at different times</strong>:</p>
 <div class="arithmatex">\[
@@ -1370,15 +1406,22 @@
     A^1_{x:\enclose{actuarial}{n}} &amp;= A_{x} - {}_{n}E_{x} * A_{x+n} \\
 \end{aligned}
 \]</div>
-<!-- To insert image -->
-
-<h4 id="deferred-term-assurance"><strong>Deferred Term Assurance</strong></h4>
-<p>Another commonly used one is the <strong>Deferred Term Assurance</strong>.</p>
-<p>Let <strong>DTA</strong> be the random variable denoting the PV of the benefits of a deferred term assurance:</p>
-<p>Similarly, it can be simply thought of as an TA that is <strong>issued <span class="arithmatex">\(n\)</span> years later</strong>. Thus, the EPV of this TA assurance can be brought forward time by <strong>adjusting for both interest and survival</strong>:</p>
+<!-- Self Made -->
+<p><img alt="DWL Difference" src="../Assets/3.%20Life%20Insurance%20Functions.md/DWL%20Difference.png" /></p>
 <div class="arithmatex">\[
-    E(\text{DTA}) = v^n {}_{n}p_{x} * E(\text{TA}_{x+n})
+\begin{aligned}
+    Var (DWL)
+    &amp;= {}^{2}_{n|}A_x - ({}_{n|}A_x)^2 \\
+    &amp;= \left({}^{2}A_x - {}^{2}A^1_{x:\enclose{actuarial}{n}}\right) - \left(A_x - A^1_{x:\enclose{actuarial}{n}}\right)^2 \\
+    &amp;= \left({}^{2}A_x - {}^{2}A^1_{x:\enclose{actuarial}{n}}\right) + \left[(A_x)^2 - 2(A_x)(A^1_{x:\enclose{actuarial}{n}}) + (A^1_{x:\enclose{actuarial}{n}})^2 \right]
+\end{aligned}
 \]</div>
+<h4 id="deferred-term-assurance"><strong>Deferred Term Assurance</strong></h4>
+<p>Let <strong>DTA</strong> be the random variable denoting the PV of the benefits of a deferred term assurance.</p>
+<p>Note that most of the properties of the DWL apply to DTA as well:</p>
+<ol>
+<li>Difference of two terms - <span class="arithmatex">\({}_{n|} A^1_{x:\enclose{actuarial}{n}} = A^1_{x:\enclose{actuarial}{n+k}} - A^1_{x:\enclose{actuarial}{n}}\)</span></li>
+</ol>
 <p>A WL assurance can be thought of as the <strong>infinite sum</strong> of a series of deferred term assurances, each deferred one year more than the previous :</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1407,7 +1450,7 @@
 \end{aligned}
 \]</div>
 <div class="arithmatex">\[
-\therefore A_x = v{}_{}q_{x} + v{}_{}p_{x}A_{x+1}
+    \therefore A_x = v{}_{}q_{x} + v{}_{}p_{x}A_{x+1}
 \]</div>
 <!-- Self Made -->
 <p><img alt="WL Recursion" src="../Assets/3.%20Life%20Insurance%20Functions.md/WL%20Recursion.png" /></p>
@@ -1567,6 +1610,9 @@ to be the same</p>
 \end{aligned}
 \]</div>
 <p>The method applies a higher discount rate to the discrete contract, to account for the "under-discounting" of the discrete method. While it is not is not perfect, it is more reflective of actual experience than the discrete method.</p>
+<p>NOTE THAT WHEN CALCULATING THE SECOND MOMENT USING UDD, EVEN THE I/DELTA TERM MUST REFLECT THE NEW INTEREST RATE
+Clamims Acceleration second moment also
+Variance UDD be careful</p>
 
 
 

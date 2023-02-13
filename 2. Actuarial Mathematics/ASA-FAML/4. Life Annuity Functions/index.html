@@ -598,6 +598,19 @@
     Payable Continuously
   </a>
   
+    <nav class="md-nav" aria-label="Payable Continuously">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#woolhouse-approximation" class="md-nav__link">
+    Woolhouse Approximation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -943,6 +956,19 @@
     Payable Continuously
   </a>
   
+    <nav class="md-nav" aria-label="Payable Continuously">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#woolhouse-approximation" class="md-nav__link">
+    Woolhouse Approximation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1071,9 +1097,8 @@
    \text{WL}_{\text{Due}} &amp;=\ddot{a}_{\enclose{actuarial}{K_x+1}}
 \end{aligned}
 \]</div>
-<!-- Change Diagram -->
 <!-- Self Made -->
-<p><img alt="WLA Immediate" src="../Assets/4.%20Life%20Annuity%20Functions.md/WLA%20Immediate.png" /></p>
+<p><img alt="WL Due" src="../Assets/4.%20Life%20Annuity%20Functions.md/WL%20Due.png" /></p>
 <p>Thus, the EPV is the <strong>Expectation</strong> of the WLA random variable:</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1093,7 +1118,7 @@
     &amp;= \sum^{\infty}_{j=1} v^j \cdot {}_{j}p_{x}
 \end{aligned}
 \]</div>
-<p>The second moment and variance will be covered in a later section.</p>
+<p>The second moment and variance for all life annuities will be covered in a later section.</p>
 <h3 id="temporary-life-annuity"><strong>Temporary Life Annuity</strong></h3>
 <p><strong>Temporary Life Annuities</strong> covers the insured for a <strong>specified period <span class="arithmatex">\(n\)</span></strong> and thus pays out for as long as the insured <strong>survives</strong> during that period <em>only</em>.</p>
 <p>Let <strong>TA</strong> be the random variable denoting the PV of the survival benefit:</p>
@@ -1108,6 +1133,8 @@
     &amp;= \ddot{a}_{\enclose{actuarial}{min(K_x + 1, n)}}
 \end{aligned}
 \]</div>
+<!-- Self Made -->
+<p><img alt="TA Due" src="../Assets/4.%20Life%20Annuity%20Functions.md/TA%20Due.png" /></p>
 <p>Thus, the EPV is the expectation of the TA random variable, which can be simplified using the same approach as before:</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1116,7 +1143,6 @@
 \end{aligned}
 \]</div>
 <p>Note the change in limits for the simplified approach - an annuity is the combination of pure endowments for <strong>as long as the annuity lasts</strong>.</p>
-<p>The second moment and variance will be covered in a later section.</p>
 <h3 id="deferred-life-annuities"><strong>Deferred Life Annuities</strong></h3>
 <p>Deferred Annuities are variations of the above contracts where the <strong>coverage is deferred by <span class="arithmatex">\(n\)</span> years</strong>. While any contract can be deferred, the most useful is the <strong>Deferred Whole Life Annuity</strong>.</p>
 <p>Let <strong>DWL</strong> be the random variable denoting the PV of the survival benefit:</p>
@@ -1162,7 +1188,7 @@
 \end{aligned}
 \]</div>
 <h3 id="guaranteed-life-annuities"><strong>Guaranteed Life Annuities</strong></h3>
-<p><strong>Guaranteed Life Annuities</strong> covers are whole life annuities with the <strong>benefits in the first <span class="arithmatex">\(n\)</span> years being guaranteed</strong> - they will be paid out even if the insured dies during this period. Thereafter, benefits will resume to being paid only if the insured remains alive.</p>
+<p><strong>Guaranteed Life Annuities</strong> are whole life annuities with the <strong>benefits in the first <span class="arithmatex">\(n\)</span> years being guaranteed</strong> - they will be paid out even if the insured dies during this period.</p>
 <p>Let <strong>GA</strong> be the random variable denoting the PV of the survival benefit:</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1175,11 +1201,14 @@
     &amp;= \ddot{a}_{\enclose{actuarial}{max(K_x+1,n)}}
 \end{aligned}
 \]</div>
+<!-- Self Made -->
+<p><img alt="GA Due" src="../Assets/4.%20Life%20Annuity%20Functions.md/GA%20Due.png" /></p>
 <p>Thus, the EPV is the expectation of the TA random variable:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     E(\text{GA}_{\text{Due}})
-    &amp;=
+    &amp;= hi \\
+    \ddot{a}_{\overline{x:\enclose{actuarial}{n}}} &amp;= \ddot{a}_{\enclose{actuarial}{n}} + {}_{n} \ddot{a}_{x}
 \end{aligned}
 \]</div>
 <h3 id="assurances-and-annuities"><strong>Assurances and Annuities</strong></h3>
@@ -1242,27 +1271,7 @@
 
 <h3 id="intuitions"><strong>Intuitions</strong></h3>
 <h2 id="payable-continuously"><strong>Payable Continuously</strong></h2>
-<div class="arithmatex">\[
-\begin{aligned}
-    \text{My working:} \\
-    \ddot{a}_{\enclose{actuarial}{K_x+1}} &amp;= \frac{1-v^{K_x + 1}}{d} \\
-    \ddot{a}_{\enclose{actuarial}{K_x+1}} \cdot d &amp;= 1-v^{K_x + 1} \\
-    v^{K_x + 1} &amp;= 1 - d \ddot{a}_{\enclose{actuarial}{K_x+1}} \\
-    \\
-    \text{Let } i = i^*,&amp; \text{where } i^* = (1+i)^2-1,\\
-    \\
-    (v^{K_x + 1})^2 &amp;=  1 - \frac{i^*}{1+i^*} \ddot{a}_{\enclose{actuarial}{K_x+1}i^*} \\
-    (v^{K_x + 1})^2 &amp;=  1 - \frac{(i^2 + 2i)}{(1+i)^2} \ddot{a}_{\enclose{actuarial}{K_x+1}i^*} \\
-    (v^{K_x + 1})^2 &amp;=  1 - \left(\frac{(i^2)}{(1+i)^2} + \frac{2i}{(1+i)^2}\right) \ddot{a}_{\enclose{actuarial}{K_x+1}i^*} \\
-    (v^{K_x + 1})^2 &amp;= 1 - \left(\left(\frac{i}{(1+i)}\right)^2 + \frac{1}{1+i} \cdot \frac{2i}{1+i}\right) \ddot{a}_{\enclose{actuarial}{K_x+1}i^*} \\
-    (v^{K_x + 1})^2 &amp;= 1 -(d^2 + 2vd)\ddot{a}_{\enclose{actuarial}{K_x+1}i^*} \\
-    (v^{K_x + 1})^2 &amp;= 1 - (d^2 + 2(1-d)d) \ddot{a}_{\enclose{actuarial}{K_x+1}i^*} \\
-    (v^{K_x + 1})^2 &amp;= 1 - (d^2 + 2d -2d^2)\ddot{a}_{\enclose{actuarial}{K_x+1}i^*} \\
-    (v^{K_x + 1})^2 &amp;= 1 - (2d - d^2) \ddot{a}_{\enclose{actuarial}{K_x+1}i^*} \\
-    E((v^{K_x + 1})^2) &amp;= E(1 - (2d - d^2) \ddot{a}_{\enclose{actuarial}{K_x+1}i^*}) \\
-    {}^{2}A_x &amp;= 1 - (2d - d^2) {}^{2}\ddot{a}_x
-\end{aligned}
-\]</div>
+<h3 id="woolhouse-approximation">Woolhouse Approximation</h3>
 
 
 

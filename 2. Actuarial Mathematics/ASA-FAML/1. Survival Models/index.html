@@ -484,15 +484,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#probability-tree-tbc" class="md-nav__link">
-    Probability Tree (TBC)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#deferred-death" class="md-nav__link">
-    Deferred Death
+  <a href="#probability-tree-perspective" class="md-nav__link">
+    Probability Tree Perspective
   </a>
   
 </li>
@@ -931,15 +924,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#probability-tree-tbc" class="md-nav__link">
-    Probability Tree (TBC)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#deferred-death" class="md-nav__link">
-    Deferred Death
+  <a href="#probability-tree-perspective" class="md-nav__link">
+    Probability Tree Perspective
   </a>
   
 </li>
@@ -1155,7 +1141,6 @@
 <li>The probability of survival of a newborn till age <span class="arithmatex">\(x\)</span></li>
 <li>Given that the newborn survived till age <span class="arithmatex">\(x\)</span>, that they will survive another <span class="arithmatex">\(t\)</span> years</li>
 </ol>
-<h3 id="probability-tree-tbc"><strong>Probability Tree (TBC)</strong></h3>
 <p>This can be <strong>generalized</strong> for people of any age to obtain:</p>
 <div class="arithmatex">\[
     S_x(t+u) = S_x(t) S_{x+t}(u)
@@ -1163,33 +1148,7 @@
 <blockquote>
 <p>It is important to remember to "update" the starting age of the second term to the "new age".</p>
 </blockquote>
-<pre class="mermaid"><code>flowchart LR
-    A([x]) ---&gt; B([x+t, Survive t years]) ---&gt; C([x+t+u, Survive t+u years])
-    A([x]) ---&gt; E([Die within t years])
-    B([x+t, Survive t years]) ---&gt; F([Death within t+u years])</code></pre>
-<div class="arithmatex">\[
-\begin{aligned}
-    \text{Death within t years}
-    &amp;= F_x(t) \\
-    \\
-    \text{Survive t years}
-    &amp;= S_x(t) \\
-    \\
-    \text{Death within (t+u) years}
-    &amp;= F_x(t+u) \\
-    &amp;= S_x(t) F_{x+t}(u) \\
-    \\
-    \text{Survive (t+u) years}
-    &amp;= S_x(t+u) \\
-    &amp;= S_x(t) S_{x+t}(u) \\
-    \\
-    \therefore
-    \text{Survive t years} &amp;= \text{Death within (t+u) years} + \text{Survive (t+u) years} \\
-    S_x(t) &amp;= S_x(t) F_{x+t}(u) + S_x(t) S_{x+t}(u)
-\end{aligned}
-\]</div>
-<h3 id="deferred-death"><strong>Deferred Death</strong></h3>
-<p>The probability of "deferred" death can also be calculated, whereby the person surives another <span class="arithmatex">\(t\)</span> years and then <strong>dies within the following <span class="arithmatex">\(u\)</span> years</strong>:</p>
+<p>The <em>opposite</em> of the above is when an individual surives another <span class="arithmatex">\(t\)</span> years and then <strong>dies within the following <span class="arithmatex">\(u\)</span> years</strong>. This is known as the probability of <strong>Deferred Death</strong>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     P(t &lt; T_x &lt; t+u)
@@ -1202,11 +1161,26 @@
     &amp;= S_x(t)F_{x+t}(u)
 \end{aligned}
 \]</div>
-<blockquote>
-<p>Note that this is consistent with the probability tree approach earlier.</p>
-</blockquote>
 <!-- Self Made -->
 <p><img alt="Deferred Death" class="center" src="../Assets/1.%20Survival%20Models.md/Deferred%20Death%20Illustration.png" /></p>
+<h3 id="probability-tree-perspective"><strong>Probability Tree Perspective</strong></h3>
+<p>Since the probabilites of death and survival are conditional on the age of the individual, they can be better expressed in the form of a probability tree:</p>
+<!-- Self Made -->
+<p><img alt="Probability Tree" src="../Assets/1.%20Survival%20Models.md/Probability%20Tree.png" /></p>
+<p>Thus, it can be shown through <em>recursion</em> that the probability of surviving <span class="arithmatex">\(t\)</span> years is equal to the <strong>sum of the probabilities of deferred deaths</strong> for every year after:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    S_x(1)
+    &amp;= S_x(1)F_{x+1}(1) + S_x(1)S_{x+1}(1) \\
+    &amp;= S_x(1)F_{x+1}(1) + S_x(1) [S_{x+1}(1)F_{x+2}(1) + S_{x+1}(1)S_{x+2}(1)] \\
+    &amp;= S_x(1)F_{x+1}(1) + S_x(1) S_{x+1}(1)F_{x+2}(1) + S_x(1) S_{x+1}(1)S_{x+2}(1) \\
+    &amp;= S_x(1)F_{x+1}(1) + S_x(2)F_{x+2}(1) + S_x(2)S_{x+2}(1) \\
+    &amp;= S_x(1)F_{x+1}(1) + S_x(2)F_{x+2}(1) + \dots \\
+    \\
+    \therefore S_x(t) &amp;= \sum S_x(t)F{x+t}(1)
+\end{aligned}
+\]</div>
+<p>Recall that the probability of surviving till a certain age is simply the probability that the individual will die sometime <em>after</em> that age. The above expression solidifies this, where the RHS is the <strong>probability of dying in every possible age after</strong>.</p>
 <h3 id="force-of-mortality"><strong>Force of Mortality</strong></h3>
 <p>The <strong>Force of Mortality</strong> is the probability of dying <em>instantly</em>; in an <strong>infinitely small unit of time</strong> (normalized by unit time):</p>
 <div class="arithmatex">\[
@@ -1265,13 +1239,12 @@
     S_x(t) &amp;= e ^ {- \int_{0}^{t} \mu_{x + t}} \\
 \end{aligned}
 \]</div>
-<p>Thus, if <span class="arithmatex">\(mu_x\)</span> is known for all ages (x), then the survival probabilites for any age can be calculated from it. In other words, the <strong>distribution of <span class="arithmatex">\(T_x\)</span> can be determined from the force of mortality</strong>.</p>
+<p>Thus, if <span class="arithmatex">\(\mu_x\)</span> is known for all ages (x), then the survival probabilites for any age can be calculated from it. In other words, the <strong>distribution of <span class="arithmatex">\(T_x\)</span> can be determined from the force of mortality</strong>.</p>
 <h3 id="continuous-expectation"><strong>Continuous Expectation</strong></h3>
-<p><strong>Life Expectancy</strong> measures the number of years a person is <em>expected</em> to live. It most commonly used with respect to newborns. It is calculated as the <strong>Expectation</strong> of the distribution of future lifetime:</p>
+<p><strong>Life Expectancy</strong> measures the number of years a person is <em>expected</em> to live. It is calculated as the <strong>Expectation</strong> of the distribution of future lifetime:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    \mathring{e}_x
-    &amp;= E(T_x) \\
+    E(T_x)
     &amp;= \int_{0}^{t} t f_x(t) \\
     &amp;= - \int_{0}^{t} t S_x(t)
 \end{aligned}
@@ -1279,7 +1252,7 @@
 <p>Let <span class="arithmatex">\(u=t\)</span> and <span class="arithmatex">\(dv=S'_x(t)\)</span>. Through integration by parts,</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    \mathring{e}_x
+    E(T_x)
     &amp;= -\left(uv - \int_{0}^{\infty} v du\right) \\
     &amp;= -\left(\Bigl[tS_x(t)\Bigr]_0^\infty - \int_0^\infty S_x(t)\right) \\
     &amp;= \int_0^\infty S_x(t)
@@ -1340,6 +1313,10 @@ $$
     &amp;= {}_{t}p_{x} * {}_{u}q_{x+t}
 \end{aligned}
 \]</div>
+<blockquote>
+<p>These notations are <em>typically</em> used when <span class="arithmatex">\(t\)</span> is an integer, but not necessarily so, as will be seen in the next section.</p>
+</blockquote>
+<p>The expectation of the survival distribution is also commonly denoted as <span class="arithmatex">\(\mathring{e}_x\)</span>.</p>
 <h2 id="discrete-lifetime"><strong>Discrete Lifetime</strong></h2>
 <p>If only the <strong>integer components</strong> of the future lifetime are considered, then it becomes a discrete distribution known as the <strong>Curtate Future Lifetime</strong> of the person.</p>
 <p>It is denoted by the random variable <span class="arithmatex">\(K_x\)</span>, which is a truncated version of <span class="arithmatex">\(T_x\)</span>. Formally, it is known as a <strong>Floor Function</strong>:</p>
