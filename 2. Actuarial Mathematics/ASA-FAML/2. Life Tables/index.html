@@ -10,8 +10,14 @@
       
         <link rel="canonical" href="https://example.com/2.%20Actuarial%20Mathematics/ASA-FAML/2.%20Life%20Tables/">
       
+      
+        <link rel="prev" href="../1.%20Survival%20Models/">
+      
+      
+        <link rel="next" href="../3.%20Life%20Insurance%20Functions/">
+      
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.3">
     
     
       
@@ -19,11 +25,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.975780f9.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6b71719e.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
-        
       
       
 
@@ -56,7 +61,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="None" data-md-color-accent="None">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
   
     
     
@@ -188,12 +193,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_1">
+        <label class="md-nav__link" for="__nav_1" tabindex="0" aria-expanded="false">
           Foundational
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -264,12 +270,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_2">
+        <label class="md-nav__link" for="__nav_2" tabindex="0" aria-expanded="false">
           Introductory
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -356,12 +363,13 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
-      
-        <label class="md-nav__link" for="__nav_3">
+        <label class="md-nav__link" for="__nav_3" tabindex="0" aria-expanded="true">
           Actuarial Mathematics
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -412,12 +420,13 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" checked>
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" checked>
       
       
       
-      
-        <label class="md-nav__link" for="__nav_3_3">
+        <label class="md-nav__link" for="__nav_3_3" tabindex="0" aria-expanded="true">
           ASA-FAML
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -626,12 +635,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_4">
+        <label class="md-nav__link" for="__nav_4" tabindex="0" aria-expanded="false">
           Predictive Analytics
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -666,12 +676,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_4_2">
+        <label class="md-nav__link" for="__nav_4_2" tabindex="0" aria-expanded="false">
           ASA-SRM
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -862,6 +873,7 @@
                   
 
 
+
 <h1 id="life-tables"><strong>Life Tables</strong></h1>
 <p>Life Tables existed long before the survival models in the previous section. The mortality functions were presented in tabular form, where the probabilities and expectations were then calculated from.</p>
 <p>Both the survival model and life table are equivalent ways of obtaining the same results.</p>
@@ -903,7 +915,7 @@
 <p>Thus, several <strong>assumptions</strong> about the life table that allows non-discrete values to be <strong>interpolated</strong> from the discrete ones, known as <strong>Fractional Age Assumptions</strong>.</p>
 <h3 id="uniform-distribution-of-deaths"><strong>Uniform Distribution of Deaths</strong></h3>
 <p>The <strong>Uniform Distribution of Deaths</strong> (UDD) is an assumption that allows for <strong>Linear Interpolation</strong> between discrete ages.</p>
-<p>As its name suggests, it assumes that there is a uniform distribution of deaths within each year of age, such that the survival function decreases uniformly, resulting in a <strong>linear survival function</strong> between ages.</p>
+<p>As its name suggests, it assumes that there is a uniform distribution of deaths between ages - people die at a constant rate. From another perspective, the survival function decreases at a constant rate, resulting in a <strong>linear survival function</strong> between ages.</p>
 <p>Let the fractional age be <span class="arithmatex">\(s\)</span>. Thus, the probability using fractional ages is simply the <strong>weighted average</strong> of the discrete points:</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -919,8 +931,33 @@
     \therefore {}_{s}q_{x} &amp;= s \cdot q_x
 \end{aligned}
 \]</div>
+<blockquote>
+<p>Note that <span class="arithmatex">\({}_{0}p_{x}=1\)</span> as it is the probability of surviving in that moment; which should be guaranteed.</p>
+</blockquote>
 <!-- Self Made -->
 <p><img alt="UDD" class="center" src="../Assets/2.%20Life%20Tables.md/UDD.png" /></p>
+<p>Based on this, the PDF and Force of Mortality can also be determined:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    F_x(s) &amp;= s \cdot q_x \\
+    \\
+    f_x(s)
+    &amp;= \frac{d}{ds} (s \cdot q_x) \\
+    &amp;= q_x \\
+    \\
+    \mu_{x+t}
+\end{aligned}
+\]</div>
+<div class="arithmatex">\[
+\begin{aligned}
+    \bar{A}_x
+    &amp;= \int _0 ^\infty e ^{-\delta t} \cdot {} _t p _x \cdot \mu _{x+t} dt \\
+    &amp;= \sum _{k=0}^\infty \int _k ^{k+1} e ^{-\delta t} \cdot {} _t p _x \cdot \mu _{x+t} dt \\
+    &amp;= \sum _{k=0}^\infty e^{-\delta\cdot (k+1)} \cdot {} _k p _x \cdot \int _0 ^{1} e ^{-\delta \cdot (1-s)} \cdot \underbrace{{} _s p _{x+k} \cdot \mu _{x+k+s}} _{f _{x+k}(s)} ds \\ 
+    &amp; \approx \sum _{k=0}^\infty e^{-\delta\cdot (k+1)} \cdot {} _k p x \cdot q{x+k} \cdot \int _0 ^{1} e ^{-\delta \cdot (1-s)}ds &amp; (\text{using UDD, } f {x+k}(s) = q{x+k}) \\
+    &amp;= A_x \cdot \frac{e^{-\delta} - 1}{\delta}.
+\end{aligned}
+\]</div>
 <h3 id="constant-force-of-mortality"><strong>Constant Force of Mortality</strong></h3>
 <p>The <strong>Constant Force of Mortality</strong> is an assumption that allows for Exponential Interpolation between discrete ages.</p>
 <h2 id="select-ultimate-mortality"><strong>Select &amp; Ultimate Mortality</strong></h2>
@@ -953,42 +990,6 @@
       
         <footer class="md-footer">
   
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../1.%20Survival%20Models/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Survival Models" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Survival Models
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../3.%20Life%20Insurance%20Functions/" class="md-footer__link md-footer__link--next" aria-label="Next: Life Insurance Functions" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Life Insurance Functions
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
-  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -1010,10 +1011,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.ba449ae6.min.js"></script>
       
         <script src="../../../config/mathjax.js"></script>
       
@@ -1021,7 +1022,6 @@
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-    
     
   </body>
 </html>
