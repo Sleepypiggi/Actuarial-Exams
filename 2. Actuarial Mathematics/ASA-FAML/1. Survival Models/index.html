@@ -1402,6 +1402,11 @@
 <li><strong>Continuous Expectation</strong> - Area under survival function</li>
 <li><strong>Discrete Expectation</strong> - Right <strong>Riemann Sum</strong> of the area under the survival function</li>
 </ul>
+<blockquote>
+<p>A Right Riemann Sum is when the curve passes through the <strong>top right</strong> of the rectangles use to approximate it.</p>
+</blockquote>
+<!-- Obtained from Story of Mathematics -->
+<p><img alt="Riemann Sum" class="center" src="../Assets/1.%20Survival%20Models.md/Right%20Riemann%20Sum.png" /></p>
 <p>Recall from Calculus that the area under a curve can be estimated through the <strong>Trapezium Rule</strong>, which states that the area is <em>approximately equal</em> to the sum of the area of discrete trapeziums formed under the curve.</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1411,17 +1416,24 @@
     &amp; \approx \frac{h}{2}[f(a) + f(a+h)] + \frac{h}{2}[f(a+h) + f(a+2h)] + \dots + \frac{h}{2}[f(b-h) + f(b)] \\
     &amp; \approx \frac{h}{2} f(a) + h[f(a+h) + f(a+2h) + \dots + f(b-h)] + \frac{h}{2} f(b) \\
     &amp; \approx h[f(a+h) + f(a+2h) + \dots + f(b-h)] + \frac{h}{2} [f(a)+f(b)] \\
-    &amp; \approx h[f(a+h) + f(a+2h) + \dots + f(b)] + \frac{h}{2} [f(a)-f(b)] \\
-    &amp; \approx h[f(a) + f(a+2h) + \dots + f(b-h)] - \frac{h}{2} [f(a)-f(b)]
+    &amp; \approx h[f(a) + f(a+h) + \dots + f(b)] - \frac{h}{2} [f(a)+f(b)] \\
+    &amp; \approx h[f(a) + f(a+h) + \dots + f(b-h)] - \frac{h}{2} [f(a)-f(b)] \\
+    &amp; \approx h[f(a+h) + f(a+2h) + \dots + f(b)] + \frac{h}{2} [f(a)-f(b)]
 \end{aligned}
 \]</div>
 <blockquote>
 <p>The proof relies on the fact that other than <span class="arithmatex">\(f(a)\)</span> and <span class="arithmatex">\(f(b)\)</span>, all other terms are repeated twice.</p>
-<p>Note that last and second last step are opposites of each other - the second last one excluded <span class="arithmatex">\(f(a)\)</span> from the main summation, which is why it is added back and subtracts <span class="arithmatex">\(f(b)\)</span>, while the last one excludes <span class="arithmatex">\(f(b)\)</span> instead.</p>
 </blockquote>
+<p>Note that the last four lines of the proof are all variations of the same thing:</p>
+<ol>
+<li>Both <span class="arithmatex">\(f(a)\)</span> and <span class="arithmatex">\(f(b)\)</span> excluded from main expression</li>
+<li>Both <span class="arithmatex">\(f(a)\)</span> and <span class="arithmatex">\(f(b)\)</span> included in main expression</li>
+<li>Only <span class="arithmatex">\(f(a)\)</span> included in main expression; Main expression is a <strong>Left Riemman Sum</strong></li>
+<li>Only <span class="arithmatex">\(f(b)\)</span> included in main expression; Main expression is a <strong>Right Riemman Sum</strong></li>
+</ol>
 <!-- Trapezium Rule -->
 <p><img alt="Trapezium Rule" class="center" src="../Assets/1.%20Survival%20Models.md/Trapezium%20Rule.png" /></p>
-<p>Thus, the trapezium rule can be applied to the survival function, assuming <span class="arithmatex">\(h=1\)</span>:</p>
+<p>Since the discrete expectation is a right riemann sum, the last expression of the trapezoidal rule should be used. This allows the continuous expectation to be expressed using the discrete expectation, assuming <span class="arithmatex">\(h=1\)</span>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     \mathring{e}_x
@@ -1432,10 +1444,7 @@
     &amp; \approx e_x + \frac{1}{2}
 \end{aligned}
 \]</div>
-<p>An alternative way to view the above is that the area of the trapezoid is the sum of the riemann rectangles and a triangle:</p>
-<blockquote>
-<p>Since the survival function is decreasing, the curve passes through the top right of the rectangles, thus the sum of the rectangles are properly known as the <strong>Right Riemann Sum</strong>.</p>
-</blockquote>
+<p>An alternative way to view the above is that the area of the trapezoid is the <strong>sum of the riemann rectangles and a triangle</strong>.</p>
 <h3 id="euler-maclaurin-formula"><strong>Euler Maclaurin Formula</strong></h3>
 <p>Note that the Trapezoidal Rule is <em>not perfect</em> - there is an <strong>inherent error</strong> in trying to approximate a curve using a line.</p>
 <div class="arithmatex">\[
@@ -1450,12 +1459,12 @@
 <p><img alt="Trapezoidal Error" class="center" src="../Assets/1.%20Survival%20Models.md/Trapezoidal%20Error.png" /></p>
 <p>The error term is calculated by taking the difference between the integral and the trapezium, and is generalized using the taylor series. The final result is known as the <strong>Euler Maclaurin Formula</strong>:</p>
 <div class="arithmatex">\[
-    \text{Error} = \frac{h^2}{12} [f'(a)-f'(b)]
+    \sum \text{Error} = \frac{h^2}{12} [f'(a)-f'(b)]
 \]</div>
 <blockquote>
-<p>Given that a taylor series was used, the error can be expressed as the sum of many different terms, but higher powers are ignored.</p>
+<p>Given that a taylor series was used, the error can be expressed as the sum of many different terms, but <strong>higher powers are ignored</strong>.</p>
 </blockquote>
-<p>Thus, the trapezoidal approximation can be made more precise:</p>
+<p>Thus, the trapezoidal approximation for the expectation can be made more precise:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     \mathring{e}_x
@@ -1497,6 +1506,17 @@
     \mu_{x+t} = A + Bc^{x+t}
 \]</div>
 <p><span class="arithmatex">\(A\)</span> represents the <strong>age independent mortality</strong> - dying from reasons unrelated to age, such as from accidents or natural catastrophes.</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    S_x(t)
+    &amp;= - \int^{t}_{0} A + Bc^{x+t} \\
+    &amp;= \int^{t}_{0} -A - Bc^{x+t} \\
+    &amp;= \left[-At - \frac{B}{\ln c} c^{x+t} \right]^{t}_{0} \\
+    &amp;= \left[-At - \frac{B}{\ln c} c^{x+t} \right] - \left[-\frac{B}{\ln c} c^{x} \right] \\
+    &amp;= -At - \frac{B}{\ln c} c^{x+t} + \frac{B}{\ln c} c^{x} \\
+    &amp;= -At - \frac{B}{\ln c} c^x [c^t - 1]
+\end{aligned}
+\]</div>
 
 
 

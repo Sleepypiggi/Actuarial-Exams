@@ -602,6 +602,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#uniform-distribution-of-deaths" class="md-nav__link">
+    Uniform Distribution of Deaths
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#woolhouse-approximation" class="md-nav__link">
     Woolhouse Approximation
   </a>
@@ -987,6 +994,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#uniform-distribution-of-deaths" class="md-nav__link">
+    Uniform Distribution of Deaths
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#woolhouse-approximation" class="md-nav__link">
     Woolhouse Approximation
   </a>
@@ -1325,7 +1339,92 @@
 
 <h3 id="intuitions"><strong>Intuitions</strong></h3>
 <h2 id="payable-continuously"><strong>Payable Continuously</strong></h2>
-<h3 id="woolhouse-approximation">Woolhouse Approximation</h3>
+<h3 id="uniform-distribution-of-deaths"><strong>Uniform Distribution of Deaths</strong></h3>
+<p>Using the relationship between Assurances and Annuities, a continuous WL annuity can also be expressed in the form of a continuous assurance:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \ddot{a}^{(m)}_x &amp;= \frac{1 - A^{(m)}_x}{d^{(m)}}
+\end{aligned}
+\]</div>
+<p>Assuming UDD, the continuous assurance and hence the overarching continuous annuity can be simplified:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \ddot{a}^{(m)}_x
+    &amp;= \frac{1 - A^{(m)}_x}{d^{(m)}} \\
+    &amp;= \frac{1 - \frac{i}{i^{(m)}}A_x}{d^{(m)}} \\
+    &amp;= \frac{\frac{i^{(m)}-iA_x}{i^{(m)}}}{d^{(m)}} \\
+    &amp;= \frac{i^{(m)}-iA_x}{i^{(m)}d^{(m)}} \\
+    &amp;= \frac{i^{(m)}-i(1-d\ddot{a}_x)}{i^{(m)}d^{(m)}} \\
+    &amp;= \frac{i^{(m)}-i+id\ddot{a}_x}{i^{(m)}d^{(m)}} \\
+    &amp;= \frac{id}{i^{(m)}d^{(m)}} \ddot{a}_x - \frac{i-i^{(m)}}{i^{(m)}d^{(m)}} \\
+    &amp;= \alpha(m)\ddot{a}_x - \beta(m)
+\end{aligned}
+\]</div>
+<p>A similar simplification can be made for temporary annuities:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \ddot{a}^{(m)}_{x:\enclose{actuarial}{n}}
+    &amp;= \ddot{a}^{(m)}_{x} - {}_{n}E_x \ddot{a}^{(m)}_{x+n} \\
+    &amp;= \alpha(m)\ddot{a}_x - \beta(m) - {}_{n}E_x [\alpha(m)\ddot{a}_{x:\enclose{actuarial}{n}} - \beta(m)] \\
+    &amp;= \alpha(m)\ddot{a}_x - \beta(m) - {}_{n}E_x \alpha(m)\ddot{a}_{x:\enclose{actuarial}{n}} - {}_{n}E_x \beta(m) \\
+    &amp;= \alpha(m) [\ddot{a}_x - {}_{n}E_x \ddot{a}_{x:\enclose{actuarial}{n}}] - \beta(m) [1-{}_{n}E_x] \\
+    &amp;= \alpha(m) \ddot{a}_{x:\enclose{actuarial}{n}} - \beta(m) [1-{}_{n}E_x]
+\end{aligned}
+\]</div>
+<h3 id="woolhouse-approximation"><strong>Woolhouse Approximation</strong></h3>
+<p>Since a continuous annuity can be expressed as a sum of <strong>discrete pure endowments</strong>, the trapezoidal rule and euler-macluarin correction can be used to approximate its EPV.</p>
+<!-- Left Riemann Sum -->
+
+<div class="arithmatex">\[
+\begin{aligned}
+    \bar{a}_x
+    &amp;= \int^{\infty}_0 v^t {}_{t}p_x \\
+    &amp; \approx h[f(a) + f(a+h) + \dots + f(b-h)] - \frac{h}{2} [f(a)-f(b)] + \frac{h^2}{12} [f'(a)-f'(b)]
+\end{aligned}
+\]</div>
+<p>The first derivatives can be found below:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    f'(n)
+    &amp;= \frac{d}{dt} (e^{-\delta n} {}_{n}p_x) \\
+    &amp;= {}_{n}p_x \delta e^{-\delta n} - e^{-\delta n} {}_{n}p_x \mu_{x+n} \\
+    &amp;= e^{-\delta n} {}_{n}p_x (\delta + \mu_{x+n}) \\
+    &amp;= {}_{n}E_x (\delta + \mu_{x+n}) \\
+    \\
+    \therefore f'(0) &amp;= -(\delta + \mu_{x}) \\
+    \therefore f'(\infty) &amp;= 0
+\end{aligned}
+\]</div>
+<p>Assuming <span class="arithmatex">\(h=1\)</span>,</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \bar{a}_x
+    &amp; \approx (1) [{}_{0}E_x + {}_{1}E_x + \dots + {}_{\infty-1}E_x] - \frac{1}{2} [{}_{0}E_x-{}_{\infty-1}E_x] + \frac{1}{12} [-(\delta + \mu_{x}) - 0] \\
+    &amp; \approx [1 + {}_{n}E_1 + \dots] - \frac{1}{2} [1-0] - \frac{1}{12} (\delta + \mu_{x}) \\
+    &amp; \approx \ddot{a}_x - \frac{1}{2} - \frac{1}{12} (\delta + \mu_{x})
+\end{aligned}
+\]</div>
+<p>Assuming <span class="arithmatex">\(h=\frac{1}{m}\)</span> instead,</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \bar{a}_x
+    &amp; \approx \left(\frac{1}{m} \right) [{}_{0}E_x + {}_{\frac{1}{m}}E_x + \dots + {}_{\infty-\frac{1}{m}}E_x] - \frac{1}{2m} [{}_{0}E_x-{}_{\infty-\frac{1}{m}}E_x] + \frac{1}{12m^2} [-(\delta + \mu_{x}) - 0] \\
+    &amp; \approx \left(\frac{1}{m} \right) [1 + {}_{\frac{1}{m}}E_x + \dots] - \frac{1}{2m} [1-0] - \frac{1}{12m^2} (\delta + \mu_{x}) \\
+    &amp; \approx \ddot{a}^{(m)}_x - \frac{1}{2m} - \frac{1}{12m^2} (\delta + \mu_{x})
+\end{aligned}
+\]</div>
+<p>Combining both together,</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \bar{a}_x &amp;= \bar{a}_x \\
+    \ddot{a}_x - \frac{1}{2} - \frac{1}{12} (\delta + \mu_{x}) &amp; \approx \ddot{a}^{(m)}_x - \frac{1}{2m} - \frac{1}{12m^2} (\delta + \mu_{x}) \\
+    \ddot{a}^{(m)}_x
+    &amp; \approx \ddot{a}_x - \frac{1}{2} - \frac{1}{12} (\delta + \mu_{x}) + \frac{1}{2m} + \frac{1}{12m^2} (\delta + \mu_{x}) \\
+    &amp; \approx \ddot{a}_x - (\frac{1}{2}-\frac{1}{2m}) - (\frac{1}{12} - \frac{1}{12m^2})(\delta + \mu_{x}) \\
+    &amp; \approx \ddot{a}_x - \frac{m-1}{2m} - \frac{m^2-1}{12m^2}(\delta + \mu_{x})
+\end{aligned}
+\]</div>
+<p>This is known as the <strong>Woolhouse Approximation</strong>. If the error term is omitted, then it is known as the <strong>2-term Woolhouse Approximation</strong> else it is known as the <strong>3-term Woolhouse Approximation</strong>.</p>
 <h2 id="variable-benefits"><strong>Variable Benefits</strong></h2>
 <h3 id="geometrically-increasing"><strong>Geometrically Increasing</strong></h3>
 <h3 id="arithmetically-increasing"><strong>Arithmetically Increasing</strong></h3>
