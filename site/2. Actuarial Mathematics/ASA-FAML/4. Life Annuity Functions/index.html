@@ -1,0 +1,1518 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://example.com/2.%20Actuarial%20Mathematics/ASA-FAML/4.%20Life%20Annuity%20Functions/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>Life Annuity Functions - Actuarial Exam Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.975780f9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../config/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="None" data-md-color-accent="None">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#life-annuity-functions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Actuarial Exam Notes" class="md-header__button md-logo" aria-label="Actuarial Exam Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Actuarial Exam Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Life Annuity Functions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Actuarial Exam Notes" class="md-nav__button md-logo" aria-label="Actuarial Exam Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Actuarial Exam Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          Foundational
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Foundational" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Foundational
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../0.%20Foundational/1.%20Review%20of%20Linear%20Algebra/" class="md-nav__link">
+        Review of Linear Algebra
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../0.%20Foundational/2.%20Review%20of%20Calculus/" class="md-nav__link">
+        Review of Calculus
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../0.%20Foundational/3.%20Review%20of%20Statistical%20Theory/" class="md-nav__link">
+        Review of Statistical Theory
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Introductory
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Introductory" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Introductory
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Placeholder/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Placeholder/" class="md-nav__link">
+        ASA-P
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Placeholder/" class="md-nav__link">
+        ASA-FM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Placeholder/" class="md-nav__link">
+        ASA-IFM
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Actuarial Mathematics
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Actuarial Mathematics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Actuarial Mathematics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Placeholder/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Placeholder/" class="md-nav__link">
+        ASA-FAMS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3">
+          ASA-FAML
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="ASA-FAML" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          ASA-FAML
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.%20Survival%20Models/" class="md-nav__link">
+        Survival Models
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.%20Life%20Tables/" class="md-nav__link">
+        Life Tables
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.%20Life%20Insurance%20Functions/" class="md-nav__link">
+        Life Insurance Functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Life Annuity Functions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Life Annuity Functions
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#review-annuities-certain" class="md-nav__link">
+    Review: Annuities Certain
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#payable-discretely" class="md-nav__link">
+    Payable Discretely
+  </a>
+  
+    <nav class="md-nav" aria-label="Payable Discretely">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#actuarial-notation" class="md-nav__link">
+    Actuarial Notation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whole-life-annuity" class="md-nav__link">
+    Whole Life Annuity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temporary-life-annuity" class="md-nav__link">
+    Temporary Life Annuity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deferred-life-annuities" class="md-nav__link">
+    Deferred Life Annuities
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#guaranteed-life-annuities" class="md-nav__link">
+    Guaranteed Life Annuities
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assurances-and-annuities" class="md-nav__link">
+    Assurances and Annuities
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recursive-relationships" class="md-nav__link">
+    Recursive Relationships
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#immediate-and-due" class="md-nav__link">
+    Immediate and Due
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intuitions" class="md-nav__link">
+    Intuitions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#payable-continuously" class="md-nav__link">
+    Payable Continuously
+  </a>
+  
+    <nav class="md-nav" aria-label="Payable Continuously">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uniform-distribution-of-deaths" class="md-nav__link">
+    Uniform Distribution of Deaths
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#woolhouse-approximation" class="md-nav__link">
+    Woolhouse Approximation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variable-benefits" class="md-nav__link">
+    Variable Benefits
+  </a>
+  
+    <nav class="md-nav" aria-label="Variable Benefits">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#geometrically-increasing" class="md-nav__link">
+    Geometrically Increasing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arithmetically-increasing" class="md-nav__link">
+    Arithmetically Increasing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.%20Premium%20Calculations/" class="md-nav__link">
+        Premium Calculations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2. Actuarial Mathematics/ASA-FAML/6. Reserve Calculations.md" class="md-nav__link">
+        Reserve Calculations
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Placeholder/" class="md-nav__link">
+        ASA-ALTAM
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Predictive Analytics
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Predictive Analytics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Predictive Analytics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3.%20Predictive%20Analytics/Exam%20Overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2">
+          ASA-SRM
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="ASA-SRM" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          ASA-SRM
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3.%20Predictive%20Analytics/ASA-SRM/1.%20Regression%20Overview/" class="md-nav__link">
+        Regression Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3.%20Predictive%20Analytics/ASA-SRM/2.%20Simple%20Linear%20Regression/" class="md-nav__link">
+        Simple Linear Regression
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3.%20Predictive%20Analytics/ASA-SRM/3.%20Multiple%20Linear%20Regression/" class="md-nav__link">
+        Multiple Linear Regression
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3.%20Predictive%20Analytics/ASA-SRM/4.%20Gauss%20Markov%20Theorem/" class="md-nav__link">
+        Gauss Markov Theorem
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3.%20Predictive%20Analytics/ASA-SRM/5.%20Statistical%20Learning/" class="md-nav__link">
+        Statistical Learning
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Placeholder/" class="md-nav__link">
+        ASA-PA
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#review-annuities-certain" class="md-nav__link">
+    Review: Annuities Certain
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#payable-discretely" class="md-nav__link">
+    Payable Discretely
+  </a>
+  
+    <nav class="md-nav" aria-label="Payable Discretely">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#actuarial-notation" class="md-nav__link">
+    Actuarial Notation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whole-life-annuity" class="md-nav__link">
+    Whole Life Annuity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temporary-life-annuity" class="md-nav__link">
+    Temporary Life Annuity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deferred-life-annuities" class="md-nav__link">
+    Deferred Life Annuities
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#guaranteed-life-annuities" class="md-nav__link">
+    Guaranteed Life Annuities
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assurances-and-annuities" class="md-nav__link">
+    Assurances and Annuities
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recursive-relationships" class="md-nav__link">
+    Recursive Relationships
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#immediate-and-due" class="md-nav__link">
+    Immediate and Due
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intuitions" class="md-nav__link">
+    Intuitions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#payable-continuously" class="md-nav__link">
+    Payable Continuously
+  </a>
+  
+    <nav class="md-nav" aria-label="Payable Continuously">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uniform-distribution-of-deaths" class="md-nav__link">
+    Uniform Distribution of Deaths
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#woolhouse-approximation" class="md-nav__link">
+    Woolhouse Approximation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variable-benefits" class="md-nav__link">
+    Variable Benefits
+  </a>
+  
+    <nav class="md-nav" aria-label="Variable Benefits">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#geometrically-increasing" class="md-nav__link">
+    Geometrically Increasing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arithmetically-increasing" class="md-nav__link">
+    Arithmetically Increasing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="life-annuity-functions"><strong>Life Annuity Functions</strong></h1>
+<p>Life Annuity contracts promise to pay out a <strong>stream of benefits</strong> in the future for <em>as long</em> the policyholder remains alive. Similar to life insurance, the benefits can be paid discretely or continuously and can be valued through their EPV.</p>
+<p>Note that these are different from the annuities covered in Exam FM. The payments for those annuities are made <strong>regardless</strong> of the life of the policyholder, known as <strong>Annuity Certain</strong>. They serve as the foundation to understanding Life Annuities.</p>
+<h2 id="review-annuities-certain"><strong>Review: Annuities Certain</strong></h2>
+<p>There are two types of payment structures:</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="center">Period Start</th>
+<th align="center">Period End</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Paid in Advance</td>
+<td align="center">Paid in Arrears</td>
+</tr>
+<tr>
+<td align="center">Annuity Due</td>
+<td align="center">Annuity Immediate</td>
+</tr>
+<tr>
+<td align="center"><span class="arithmatex">\(\ddot{a}_{\enclose{actuarial}{n}}\)</span></td>
+<td align="center"><span class="arithmatex">\(a_{\enclose{actuarial}{n}}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<!-- Self Made -->
+<p><img alt="Annuity Certain" class="center" src="../Assets/4.%20Life%20Annuity%20Functions.md/Annuity%20Certain.png" /></p>
+<p>The overall PV of the annuity is the sum of the PV of the stream of payments:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    a_{\enclose{actuarial}{n}} &amp;= v + v^2 + v^3 + \dots + v^n \\
+    &amp;= \frac{v-v^{n+1}}{1-v} \\
+    &amp;= \sum^n_{k=1} v^k \\
+    &amp;= \frac{v(1-v^n)}{1-v} \\
+    &amp;= \frac{1-v^n}{i} \\
+    \\
+    \ddot{a}_{\enclose{actuarial}{n}}
+    &amp;= 1 + v + v^2 + \dots + v^n \\
+    &amp;= \sum^{n-1}_{k=0} v^k \\
+    &amp;= \frac{1- v^{n}}{1-v} \\
+    &amp;= \frac{1- v^{n}}{d}
+\end{aligned}
+\]</div>
+<p>Notice that the payments simply differ by one period and hence one discounting factor:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \ddot{a}_{\enclose{actuarial}{n}}
+    &amp;= 1 + v + v^2 + v^3 + \dots + v^n \\
+    &amp;= (1+i) (v + v^2 + v^3 + \dots + v^n) \\
+    &amp;= (1+i) \sum^{n}_{k=1} v^k \\
+    &amp;= (1+i) a_{\enclose{actuarial}{n}}
+\end{aligned}
+\]</div>
+<p>From another perspective, only the payments at <span class="arithmatex">\(t=0\)</span> and <span class="arithmatex">\(t=n\)</span> are different:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \ddot{a}_{\enclose{actuarial}{n}}
+    &amp;= \sum^{n-1}_0 v^k \\
+    &amp;= v^0 + \sum^{n-1}_{k=1} v^k \\
+    &amp;= 1 + a_{\enclose{actuarial}{n-1}}
+\end{aligned}
+\]</div>
+<!-- Self Made -->
+<p><img alt="Annuity Certain Relationship" class="center" src="../Assets/4.%20Life%20Annuity%20Functions.md/Annuity%20Certain%20Relationship.png" /></p>
+<h2 id="payable-discretely"><strong>Payable Discretely</strong></h2>
+<p>If the contract pays out benefits discretely, then <span class="arithmatex">\(K_x\)</span> is used as the survival model.</p>
+<p>Since a life annuity pays out a stream of benefits, the PV of the contract at every time period can be slightly confusing. It is important to remember the following:</p>
+<ol>
+<li>The PV is calculated with respect to time 0</li>
+<li>The PV is the <em>sum of the PV</em> of all the payments the individual is expected to live</li>
+</ol>
+<div class="arithmatex">\[
+\begin{aligned}
+    PV
+    &amp;=
+    \begin{cases}
+        a_{\enclose{actuarial}{K_x}}, &amp; \text{Life Annuity Immediate} \\
+        \ddot{a}_{\enclose{actuarial}{K_x + 1}}, &amp; \text{Life Annuity Due}
+    \end{cases}
+\end{aligned}
+\]</div>
+<!-- Self Made -->
+<p><img alt="Life Annuity PV Immediate" class="center" src="../Assets/4.%20Life%20Annuity%20Functions.md/Life%20Annuity%20PV.png" /></p>
+<p>Thus, the EPV of the contract is the <strong>sum product</strong> of the <strong>PV of the benefit</strong> in each period and the <strong>probability of death</strong> in that period:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    EPV
+    &amp;=
+    \begin{cases}
+        \text{Life Annuity Immediate} &amp;=\ \sum a_{\enclose{actuarial}{K_x}} \cdot {}_{K_x|}q_{x} \\
+        \text{Life Annuity Due} &amp;= \sum \ddot{a}_{\enclose{actuarial}{K_x+1}} \cdot {}_{K_x|}q_{x}
+    \end{cases}
+\end{aligned}
+\]</div>
+<p>For the remainder of the section, to be concise, only the formulas for <strong>Annuity Due</strong> will be given. The corresponding formulas for Annuity Immediates can be easily calculated from it.</p>
+<h3 id="actuarial-notation"><strong>Actuarial Notation</strong></h3>
+<p>Most of the notation for Life Insurance applies to Life Annuities as well.</p>
+<p>The key difference is that <span class="arithmatex">\({}^{k}a\)</span> is used to represent the <strong>k-th moment</strong> of the <strong>present value</strong> of a contract where a benefit of 1 is paid discretely for as long as the status <strong>does NOT fail</strong>.</p>
+<p><span class="arithmatex">\(A\)</span> stands for Assurance while <span class="arithmatex">\(a\)</span> stands for Annuity.</p>
+<h3 id="whole-life-annuity"><strong>Whole Life Annuity</strong></h3>
+<p><strong>Whole Life Annuities</strong> covers the insured <strong>indefinitely</strong> and thus <em>will</em> pay out for as long as the insured <strong>survives</strong>.</p>
+<p>Let <strong>WL</strong> be the random variable denoting the PV of the survival benefit:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+   \text{WL}_{\text{Due}} &amp;=\ddot{a}_{\enclose{actuarial}{K_x+1}}
+\end{aligned}
+\]</div>
+<!-- Self Made -->
+<p><img alt="WL Due" src="../Assets/4.%20Life%20Annuity%20Functions.md/WL%20Due.png" /></p>
+<p>Thus, the EPV is the <strong>Expectation</strong> of the WLA random variable:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    E(\text{WLA}_{\text{Due}}) &amp;= \sum^{\infty}_{K_x = 0} \ddot{a}_{\enclose{actuarial}{K_x+1}} \cdot {}_{K_x|}q_{x} \\
+    \ddot{a}_{x} &amp;= \sum^{\infty}_{K_x = 0} \ddot{a}_{\enclose{actuarial}{K_x+1}} \cdot {}_{K_x|}q_{x}
+\end{aligned}
+\]</div>
+<p>The EPV can be furthered simplified, allowing a life annuity to be viewed as the <strong>sum of a series of pure endowments</strong>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \ddot{a}_{x}
+    &amp;= \sum^{\infty}_{K_x = 1} a_{\enclose{actuarial}{K_x}} \cdot {}_{K_x|}q_{x} \\
+    &amp;=\sum^{\infty}_{K_x = 1} \left(\sum^n_{j=1} v^j \right)  \cdot {}_{K_x|}q_{x} \\
+    &amp;= v^1 \cdot {}_{1|}q_{x} + (v^1 + v^2) \cdot {}_{2|}q_{x} + (v^1 + v^2 + v^3) \cdot {}_{3|}q_{x} + \dots \\
+    &amp;= v ({}_{1|}q_{x} + {}_{2|}q_{x} + \dots) + v^2 ({}_{2|}q_{x} + {}_{3|}q_{x} + \dots) + v^3 ({}_{3|}q_{x} + {}_{4|}q_{x} + \dots) + \dots \\
+    &amp;= \sum^{\infty}_{j=1} v^j \cdot \left(\sum^{\infty}_{K_x = j} {}_{K_x|}q_{x} \right) \\
+    &amp;= \sum^{\infty}_{j=1} v^j \cdot {}_{j}p_{x}
+\end{aligned}
+\]</div>
+<p>The second moment and variance for all life annuities will be covered in a later section.</p>
+<h3 id="temporary-life-annuity"><strong>Temporary Life Annuity</strong></h3>
+<p><strong>Temporary Life Annuities</strong> covers the insured for a <strong>specified period <span class="arithmatex">\(n\)</span></strong> and thus pays out for as long as the insured <strong>survives</strong> during that period <em>only</em>.</p>
+<p>Let <strong>TA</strong> be the random variable denoting the PV of the survival benefit:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+   \text{TA}_\text{Due}
+    &amp;=
+    \begin{cases}
+            \ddot{a}_{\enclose{actuarial}{K_x+1}},&amp; K_x = 0, 1, 2, \dots, n-1 \\
+            \ddot{a}_{\enclose{actuarial}{n}},&amp; K_x \ge n \\
+    \end{cases} \\
+    &amp;= \ddot{a}_{\enclose{actuarial}{min(K_x + 1, n)}}
+\end{aligned}
+\]</div>
+<!-- Self Made -->
+<p><img alt="TA Due" src="../Assets/4.%20Life%20Annuity%20Functions.md/TA%20Due.png" /></p>
+<p>Thus, the EPV is the expectation of the TA random variable, which can be simplified using the same approach as before:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    E(\text{TA}_\text{Due}) &amp;= \sum^{n-1}_{K_x = 0} a_{\enclose{actuarial}{K_x}} \cdot {}_{K_x|}q_x + a_{\enclose{actuarial}{n}} \cdot {}_{n}p_x \\
+    \ddot{a}_{x:\enclose{actuarial}{n}} &amp;= \sum^{n}_{j=1} v^j \cdot {}_{j}p_{x}
+\end{aligned}
+\]</div>
+<p>Note the change in limits for the simplified approach - an annuity is the combination of pure endowments for <strong>as long as the annuity lasts</strong>.</p>
+<h3 id="deferred-life-annuities"><strong>Deferred Life Annuities</strong></h3>
+<p>Deferred Annuities are variations of the above contracts where the <strong>coverage is deferred by <span class="arithmatex">\(n\)</span> years</strong>. While any contract can be deferred, the most useful is the <strong>Deferred Whole Life Annuity</strong>.</p>
+<p>Let <strong>DWL</strong> be the random variable denoting the PV of the survival benefit:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \text{DWL}_{\text{Due}}
+    &amp;=
+    \begin{cases}
+        0, &amp; K_x = 0, 1, 2, \dots, n-1 \\
+        v^n a_{\enclose{actuarial}{K_x-n}}, &amp; K_x \ge n
+    \end{cases}
+\end{aligned}
+\]</div>
+<p>Thus, the EPV is the <strong>expectation</strong> of the DWL random variable:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    E(\text{DWL}_{\text{Due}}) &amp;= \sum^{\infty}_{K_x = n} a_{\enclose{actuarial}{K_x-n}} \cdot {}_{K_x|}q_{x} \\
+    {}_{n|}a_{x} &amp;= \sum^{\infty}_{K_x = 0} a_{\enclose{actuarial}{K_x}} \cdot {}_{K_x|}q_{x} - \sum^{n-1}_{K_x = 0} a_{\enclose{actuarial}{K_x}} \cdot {}_{K_x|}q_{x} \\
+    {}_{n|}a_{x} &amp;= \ddot{a}_x - \ddot{a}_{x:\enclose{actuarial}{n}}
+\end{aligned}
+\]</div>
+<p>Similar to before, the EPV can be shown to be a sum of pure endowments:</p>
+<div class="arithmatex">\[
+    {}_{n|}a_{x} = \sum^{\infty}_{j=1} v^j \cdot {}_{j}p_{x}
+\]</div>
+<p>Since a DWL is effectively a WL that is issued <span class="arithmatex">\(n\)</span> years later, the EPV of a DWL is the EPV of the WL, adjusted for both interest and survival:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    {}_{n|}a_{x}
+    &amp;= \sum^{\infty}_{K_x = 0} a_{\enclose{actuarial}{K_x}} \cdot {}_{K_x|}q_{x} - \sum^{n-1}_{K_x = 0} a_{\enclose{actuarial}{K_x}} \cdot {}_{K_x|}q_{x} \\
+    &amp;= \sum^{\infty}_{K_x = n} a_{\enclose{actuarial}{K_x}} \cdot {}_{K_x|}q_{x} \\
+    &amp;= v^n {}_{n}p_{x} \sum^{\infty}_{K_x = n} a_{\enclose{actuarial}{K_x-n}} \cdot {}_{K_x-n|}q_{x+n} \\
+    &amp;= v^n {}_{n}p_{x} \sum^{\infty}_{K_x = 0} a_{\enclose{actuarial}{K_x}} \cdot {}_{K_x|}q_{x+n} \\
+    &amp;= {}_{n}E_{x} \cdot \ddot{a}_{x+n}
+\end{aligned}
+\]</div>
+<p>This allows a TA to be expressed as the <strong>difference of two WL annuities issued at different times</strong>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    {}_{n|}a_{x} &amp;= {}_{n}E_{x} \cdot \ddot{a}_{x+n} \\
+    \ddot{a}_x - \ddot{a}_{x:\enclose{actuarial}{n}} &amp;= {}_{n}E_{x} \cdot \ddot{a}_{x+n} \\
+    \ddot{a}_{x:\enclose{actuarial}{n}} &amp;= \ddot{a}_x - {}_{n}E_{x} \cdot \ddot{a}_{x+n}
+\end{aligned}
+\]</div>
+<h3 id="guaranteed-life-annuities"><strong>Guaranteed Life Annuities</strong></h3>
+<p><strong>Guaranteed Life Annuities</strong> are whole life annuities with the <strong>benefits in the first <span class="arithmatex">\(n\)</span> years being guaranteed</strong> - they will be paid out even if the insured dies during this period.</p>
+<p>Let <strong>GA</strong> be the random variable denoting the PV of the survival benefit:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \text{GA}_{\text{Due}}
+    &amp;=
+    \begin{cases}
+        \ddot{a}_{\enclose{actuarial}{n}},&amp; K_x = 0, 1, 2, \dots, n-1 \\
+        \ddot{a}_{\enclose{actuarial}{K_x+1}},&amp; K_x \ge n
+    \end{cases} \\
+    &amp;= \ddot{a}_{\enclose{actuarial}{max(K_x+1,n)}}
+\end{aligned}
+\]</div>
+<!-- Self Made -->
+<p><img alt="GA Due" src="../Assets/4.%20Life%20Annuity%20Functions.md/GA%20Due.png" /></p>
+<p>Thus, the EPV is the expectation of the TA random variable:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    E(\text{GA}_{\text{Due}})
+    &amp;= hi \\
+    \ddot{a}_{\overline{x:\enclose{actuarial}{n}}} &amp;= \ddot{a}_{\enclose{actuarial}{n}} + {}_{n} \ddot{a}_{x}
+\end{aligned}
+\]</div>
+<h3 id="assurances-and-annuities"><strong>Assurances and Annuities</strong></h3>
+<p>Consider the random variable for the PV Whole Life Assurance and Annuity Due. Notice that both RVs are <strong>related</strong> through the certain annuity formula:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \text{WL} &amp;= v^{K_x + 1} \\
+    \text{WLA} &amp;= \ddot{a}_{\enclose{actuarial}{K_x+1}} = \frac{1-v^{K_x + 1}}{d}
+\end{aligned}
+\]</div>
+<blockquote>
+<p>This is why Annuity Due, rather Annuity Immediates, are provided in the SULT.</p>
+</blockquote>
+<p>Thus, given the EPV of a life annuity, the <strong>EPV</strong> of a life assurance can be determined, vice-versa:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \text{WLA} &amp;= \frac{1-\text{WL}}{d} \\
+    E(\text{WLA}) &amp;= \frac{1-E(\text{WL})}{d} \\
+    \ddot{a}_x &amp;= \frac{1-A_x}{d} \\
+    d \ddot{a}_x &amp;= 1 - A_x \\
+    A_x &amp;= 1 - d \ddot{a}_x
+\end{aligned}
+\]</div>
+<p>The same logic can be applied for the <strong>Variance</strong> as well:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \text{WLA} &amp;= \frac{1-\text{WL}}{d} \\
+    Var(\text{WLA}) &amp;= Var \left( \frac{1-\text{WL}}{d} \right) \\
+    Var(\text{WLA}) &amp;= \frac{1}{d^2} var(\text{WL}) \\
+    Var(\text{WLA}) &amp;= \frac{1}{d^2} \left({}_{}^2 A_x - (A_x)^2 \right)
+\end{aligned}
+\]</div>
+<!-- Second moment-->
+
+<p>The same relationship can be shown for a temporary annuity and an <em>Endowment Assurance</em>, NOT a term assurance:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    A_{x:\enclose{actuarial}{n}} &amp;= 1 - d \ddot{a}_{x:\enclose{actuarial}{n}} \\
+    Var(\text{TA}) &amp;= \frac{1}{d^2} \left({}_{}^2 A_{x:\enclose{actuarial}{n}} - (A_{x:\enclose{actuarial}{n}})^2 \right)
+\end{aligned}
+\]</div>
+<h3 id="recursive-relationships"><strong>Recursive Relationships</strong></h3>
+<div class="arithmatex">\[
+    \ddot{a}_{x} = q_x(1) + p_x(1+v\ddot{a}_{x+1})
+\]</div>
+<div class="arithmatex">\[
+    \ddot{a}_{x:\enclose{actuarial}{n}} = q_x(1) + p_x(1+v\ddot{a}_{x+1:\enclose{actuarial}{n-1}})
+\]</div>
+<h3 id="immediate-and-due"><strong>Immediate and Due</strong></h3>
+<p>The same values can be calculated for Annuity Immediates by relating them to Annuity Dues:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \ddot{a}_{\enclose{actuarial}{n}} &amp;= 1 + a_{\enclose{actuarial}{n-1}}
+    WL_Due &amp;= 1 + WL_Immediate
+    E(WL_Due) &amp;= 1 + E(WL_Immediate)
+    Var(WL_Due) &amp;= Var(WL_Immediate)
+\end{aligned}
+\]</div>
+<!-- Immediate = Due + 1 -->
+
+<h3 id="intuitions"><strong>Intuitions</strong></h3>
+<h2 id="payable-continuously"><strong>Payable Continuously</strong></h2>
+<h3 id="uniform-distribution-of-deaths"><strong>Uniform Distribution of Deaths</strong></h3>
+<p>Using the relationship between Assurances and Annuities, a continuous WL annuity can also be expressed in the form of a continuous assurance:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \ddot{a}^{(m)}_x &amp;= \frac{1 - A^{(m)}_x}{d^{(m)}}
+\end{aligned}
+\]</div>
+<p>Assuming UDD, the continuous assurance and hence the overarching continuous annuity can be simplified:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \ddot{a}^{(m)}_x
+    &amp;= \frac{1 - A^{(m)}_x}{d^{(m)}} \\
+    &amp;= \frac{1 - \frac{i}{i^{(m)}}A_x}{d^{(m)}} \\
+    &amp;= \frac{\frac{i^{(m)}-iA_x}{i^{(m)}}}{d^{(m)}} \\
+    &amp;= \frac{i^{(m)}-iA_x}{i^{(m)}d^{(m)}} \\
+    &amp;= \frac{i^{(m)}-i(1-d\ddot{a}_x)}{i^{(m)}d^{(m)}} \\
+    &amp;= \frac{i^{(m)}-i+id\ddot{a}_x}{i^{(m)}d^{(m)}} \\
+    &amp;= \frac{id}{i^{(m)}d^{(m)}} \ddot{a}_x - \frac{i-i^{(m)}}{i^{(m)}d^{(m)}} \\
+    &amp;= \alpha(m)\ddot{a}_x - \beta(m)
+\end{aligned}
+\]</div>
+<p>A similar simplification can be made for temporary annuities:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \ddot{a}^{(m)}_{x:\enclose{actuarial}{n}}
+    &amp;= \ddot{a}^{(m)}_{x} - {}_{n}E_x \ddot{a}^{(m)}_{x+n} \\
+    &amp;= \alpha(m)\ddot{a}_x - \beta(m) - {}_{n}E_x [\alpha(m)\ddot{a}_{x:\enclose{actuarial}{n}} - \beta(m)] \\
+    &amp;= \alpha(m)\ddot{a}_x - \beta(m) - {}_{n}E_x \alpha(m)\ddot{a}_{x:\enclose{actuarial}{n}} - {}_{n}E_x \beta(m) \\
+    &amp;= \alpha(m) [\ddot{a}_x - {}_{n}E_x \ddot{a}_{x:\enclose{actuarial}{n}}] - \beta(m) [1-{}_{n}E_x] \\
+    &amp;= \alpha(m) \ddot{a}_{x:\enclose{actuarial}{n}} - \beta(m) [1-{}_{n}E_x]
+\end{aligned}
+\]</div>
+<h3 id="woolhouse-approximation"><strong>Woolhouse Approximation</strong></h3>
+<p>Since a continuous annuity can be expressed as a sum of <strong>discrete pure endowments</strong>, the trapezoidal rule and euler-macluarin correction can be used to approximate its EPV.</p>
+<!-- Left Riemann Sum -->
+
+<div class="arithmatex">\[
+\begin{aligned}
+    \bar{a}_x
+    &amp;= \int^{\infty}_0 v^t {}_{t}p_x \\
+    &amp; \approx h[f(a) + f(a+h) + \dots + f(b-h)] - \frac{h}{2} [f(a)-f(b)] + \frac{h^2}{12} [f'(a)-f'(b)]
+\end{aligned}
+\]</div>
+<p>The first derivatives can be found below:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    f'(n)
+    &amp;= \frac{d}{dt} (e^{-\delta n} {}_{n}p_x) \\
+    &amp;= {}_{n}p_x \delta e^{-\delta n} - e^{-\delta n} {}_{n}p_x \mu_{x+n} \\
+    &amp;= e^{-\delta n} {}_{n}p_x (\delta + \mu_{x+n}) \\
+    &amp;= {}_{n}E_x (\delta + \mu_{x+n}) \\
+    \\
+    \therefore f'(0) &amp;= -(\delta + \mu_{x}) \\
+    \therefore f'(\infty) &amp;= 0
+\end{aligned}
+\]</div>
+<p>Assuming <span class="arithmatex">\(h=1\)</span>,</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \bar{a}_x
+    &amp; \approx (1) [{}_{0}E_x + {}_{1}E_x + \dots + {}_{\infty-1}E_x] - \frac{1}{2} [{}_{0}E_x-{}_{\infty-1}E_x] + \frac{1}{12} [-(\delta + \mu_{x}) - 0] \\
+    &amp; \approx [1 + {}_{n}E_1 + \dots] - \frac{1}{2} [1-0] - \frac{1}{12} (\delta + \mu_{x}) \\
+    &amp; \approx \ddot{a}_x - \frac{1}{2} - \frac{1}{12} (\delta + \mu_{x})
+\end{aligned}
+\]</div>
+<p>Assuming <span class="arithmatex">\(h=\frac{1}{m}\)</span> instead,</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \bar{a}_x
+    &amp; \approx \left(\frac{1}{m} \right) [{}_{0}E_x + {}_{\frac{1}{m}}E_x + \dots + {}_{\infty-\frac{1}{m}}E_x] - \frac{1}{2m} [{}_{0}E_x-{}_{\infty-\frac{1}{m}}E_x] + \frac{1}{12m^2} [-(\delta + \mu_{x}) - 0] \\
+    &amp; \approx \left(\frac{1}{m} \right) [1 + {}_{\frac{1}{m}}E_x + \dots] - \frac{1}{2m} [1-0] - \frac{1}{12m^2} (\delta + \mu_{x}) \\
+    &amp; \approx \ddot{a}^{(m)}_x - \frac{1}{2m} - \frac{1}{12m^2} (\delta + \mu_{x})
+\end{aligned}
+\]</div>
+<p>Combining both together,</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \bar{a}_x &amp;= \bar{a}_x \\
+    \ddot{a}_x - \frac{1}{2} - \frac{1}{12} (\delta + \mu_{x}) &amp; \approx \ddot{a}^{(m)}_x - \frac{1}{2m} - \frac{1}{12m^2} (\delta + \mu_{x}) \\
+    \ddot{a}^{(m)}_x
+    &amp; \approx \ddot{a}_x - \frac{1}{2} - \frac{1}{12} (\delta + \mu_{x}) + \frac{1}{2m} + \frac{1}{12m^2} (\delta + \mu_{x}) \\
+    &amp; \approx \ddot{a}_x - (\frac{1}{2}-\frac{1}{2m}) - (\frac{1}{12} - \frac{1}{12m^2})(\delta + \mu_{x}) \\
+    &amp; \approx \ddot{a}_x - \frac{m-1}{2m} - \frac{m^2-1}{12m^2}(\delta + \mu_{x})
+\end{aligned}
+\]</div>
+<p>This is known as the <strong>Woolhouse Approximation</strong>. If the error term is omitted, then it is known as the <strong>2-term Woolhouse Approximation</strong> else it is known as the <strong>3-term Woolhouse Approximation</strong>.</p>
+<h2 id="variable-benefits"><strong>Variable Benefits</strong></h2>
+<h3 id="geometrically-increasing"><strong>Geometrically Increasing</strong></h3>
+<h3 id="arithmetically-increasing"><strong>Arithmetically Increasing</strong></h3>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../3.%20Life%20Insurance%20Functions/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Life Insurance Functions" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Life Insurance Functions
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../5.%20Premium%20Calculations/" class="md-footer__link md-footer__link--next" aria-label="Next: Premium Calculations" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Premium Calculations
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      
+        <script src="../../../config/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+    
+  </body>
+</html>

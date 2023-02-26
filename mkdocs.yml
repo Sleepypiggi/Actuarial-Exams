@@ -18,11 +18,13 @@ nav:
     - ASA-FAML:
       - Survival Models: 2. Actuarial Mathematics\ASA-FAML\1. Survival Models.md
       - Life Tables: 2. Actuarial Mathematics\ASA-FAML\2. Life Tables.md
-      - Life Insurance Functions: 2. Actuarial Mathematics\ASA-FAML\3. Life Insurance Functions.md
-      - Life Annuity Functions: 2. Actuarial Mathematics\ASA-FAML\4. Life Annuity Functions.md
-      - Premium Calculations: 2. Actuarial Mathematics\ASA-FAML\5. Premium Calculations.md
-      - Reserve Calculations: 2. Actuarial Mathematics\ASA-FAML\6. Reserve Calculations.md
-    - ASA-ALTAM: Placeholder.md
+      - Life Assurances: 2. Actuarial Mathematics\ASA-FAML\3. Life Assurances.md
+      - Life Annuities: 2. Actuarial Mathematics\ASA-FAML\4. Life Annuities.md
+      - Premiums: 2. Actuarial Mathematics\ASA-FAML\5. Premiums.md
+      - Reserves: 2. Actuarial Mathematics\ASA-FAML\6. Reserves.md
+    - ASA-ALTAM:
+      - Profit Testing: 2. Actuarial Mathematics\ASA-ALTAM\Profit Testing.md
+      - Special: 2. Actuarial Mathematics\ASA-ALTAM\Special Products.md
   - Predictive Analytics:
     - Overview: 3. Predictive Analytics/Exam Overview.md
     - ASA-SRM:
