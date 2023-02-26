@@ -647,8 +647,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../3.%20Life%20Insurance%20Functions/" class="md-nav__link">
-        Life Insurance Functions
+      <a href="../3.%20Life%20Assurances/" class="md-nav__link">
+        Life Assurances
       </a>
     </li>
   
@@ -661,8 +661,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.%20Life%20Annuity%20Functions/" class="md-nav__link">
-        Life Annuity Functions
+      <a href="../4.%20Life%20Annuities/" class="md-nav__link">
+        Life Annuities
       </a>
     </li>
   
@@ -675,8 +675,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../5.%20Premium%20Calculations/" class="md-nav__link">
-        Premium Calculations
+      <a href="../5.%20Premiums/" class="md-nav__link">
+        Premiums
       </a>
     </li>
   
@@ -689,8 +689,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../2. Actuarial Mathematics/ASA-FAML/6. Reserve Calculations.md" class="md-nav__link">
-        Reserve Calculations
+      <a href="../6.%20Reserves/" class="md-nav__link">
+        Reserves
       </a>
     </li>
   
@@ -709,10 +709,57 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4">
+          ASA-ALTAM
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="ASA-ALTAM" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          ASA-ALTAM
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../../Placeholder/" class="md-nav__link">
-        ASA-ALTAM
+      <a href="../../ASA-ALTAM/Profit%20Testing/" class="md-nav__link">
+        Profit Testing
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ASA-ALTAM/Special%20Products/" class="md-nav__link">
+        Special
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1286,29 +1333,47 @@
 <div class="arithmatex">\[
 \begin{aligned}
     E(T_x) &amp;= \int_{0}^{\infty} t f_x(t) \\
-    e_{x} &amp;= - \int_{0}^{\infty} t S_x(t)
+    e_{x} &amp;= \int_{0}^{\infty} t S_x(t)\mu_{x+t}
 \end{aligned}
 \]</div>
-<p>Let <span class="arithmatex">\(u=t\)</span> and <span class="arithmatex">\(dv=S'_x(t)\)</span>. Through integration by parts,</p>
+<p>Through integration by parts,</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    e_{x}
-    &amp;= -\left(uv - \int_{0}^{\infty} v du\right) \\
-    &amp;= -\left(\Bigl[tS_x(t)\Bigr]_0^\infty - \int_0^\infty S_x(t)\right) \\
-    &amp;= \int_0^\infty S_x(t)
+    \mathring{e}_{x}
+    &amp;= \left(\Bigl[-tS_x(t)\Bigr]_0^\infty + \int_0^\infty S_x(t)\right) \\
+    &amp;= \int_0^\infty {}_{t}p_x
 \end{aligned}
 \]</div>
 <blockquote>
 <p>Note that <span class="arithmatex">\([-t * S_x(t)]^{\infty}_0\)</span> is 0 as the probability of living forever is 0.</p>
 </blockquote>
+<p>If the future lifetime variable is artificially limited to <span class="arithmatex">\(n\)</span> years, then the expectation of the future lifetime is known as the <strong>Term Expectation of Life</strong>. It is similar denoted as <span class="arithmatex">\(\mathring{e}_{x:\enclose{actuarial}{n}}\)</span>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    E(min(T_x, n)) &amp;= \int^{n}_0 {}_{t}p_x \\
+    \mathring{e}_{x:\enclose{actuarial}{n}} &amp;= \int^{n}_0 {}_{t}p_x
+\end{aligned}
+\]</div>
+<p>Thus, the complete expectation can be <strong>decomposed</strong> into two components:</p>
+<ol>
+<li><strong>Term Expectation</strong> at the <em>current age</em> representing the "early" years</li>
+<li><strong>Complete Expectation</strong> at a <em>future age</em> represenging the "later" years</li>
+</ol>
+<div class="arithmatex">\[
+    \mathring{e}_x = \mathring{e}_{x:n} + \mathring{e}_{x+n}
+\]</div>
+<p>However, the above makes an implicit assumption that the individual <strong>will survive</strong> the first n years. Thus, the second term needs to account for the probability of surviving another n years:</p>
+<div class="arithmatex">\[
+    \mathring{e}_x = \mathring{e}_{x:n} + {}_{n}p_x \cdot \mathring{e}_{x+n}
+\]</div>
 <h3 id="continuous-variance"><strong>Continuous Variance</strong></h3>
-<p>The second moment can be calculated in a similar fashion:</p>
+<p>The second moment can be calculated in a similar fashion through integration by parts:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     E(T^2_x)
     &amp;= \int_{0}^{\infty} t^2 f_x(t) \\
     &amp;= -\left(\Bigl[t^2 S_x(t)\Bigr]_0^\infty - \int_{0}^{\infty} 2tS_x(t) \right) \\
-    &amp;= \int_{0}^{\infty} 2tS_x(t)
+    &amp;= 2 \int_{0}^{\infty} t \cdot {}_{t}p_x
 \end{aligned}
 \]</div>
 <p>Thus, the <strong>Variance</strong> of the future lifetime about the Expectation is the following:</p>
@@ -1316,7 +1381,7 @@
 \begin{aligned}
     Var(T_x)
     &amp;= E(T^2_x) - [E(T_x)]^2 \\
-    &amp;= \int_{0}^{\infty} 2tS_x(t) - \left(\int_0^\infty S_x(t) \right)^2
+    &amp;= 2 \int_{0}^{\infty} t \cdot {}_{t}p_x - \left(\int_0^\infty {}_{t}p_x \right)^2
 \end{aligned}
 \]</div>
 <h2 id="discrete-lifetime"><strong>Discrete Lifetime</strong></h2>
@@ -1362,16 +1427,22 @@
     &amp;= \sum_{k=1}^{\infty} {}_{k}p_{x}
 \end{aligned}
 \]</div>
-<p>If the expectation for one period is known, the expectation for all other periods can be calculated recurively:</p>
+<p>The expectation can also <strong>recursively</strong> calculated:</p>
+<ul>
+<li>If the individual dies within the year with probability <span class="arithmatex">\(q_x\)</span>, then the future lifetime is 0</li>
+<li>If the individual survives the year with probability <span class="arithmatex">\(p_x\)</span>, then the future lifetime is 1 (for surviving the current year) AND the expected lifetime past that</li>
+</ul>
 <div class="arithmatex">\[
-  \begin{aligned}
-    e_{x+1}
-    &amp;= \sum _{k=1}^{\infty} {}_{k}p_{x+1} \\
-    &amp;= \sum _{k=1}^{\infty} \frac{{}_{k+1}p_{x}}{{}_{1}p_{x}} \\
-    &amp;= \frac{1}{p_x}\cdot \left(\sum _{k=1}^{\infty} {}_{k}p_{x} - {}_{1}p_{x} \right)\\
-    &amp;= \frac{1}{p_x}(e_x - {}_{1}p_{x}) \\
-    &amp;= \frac{e_x}{p_x} - 1
-  \end{aligned}
+\begin{aligned}
+    e_x
+    &amp;=
+    \begin{cases}
+        0,&amp; q_x \\
+        1+e_{x+1},&amp; p_x
+    \end{cases} \\
+    \\
+    \therefore e_x &amp;= p_x (1+e_{x+1})
+\end{aligned}
 \]</div>
 <h3 id="discrete-variance"><strong>Discrete Variance</strong></h3>
 <p>The second moment can be calculated in a similar fashion:</p>
