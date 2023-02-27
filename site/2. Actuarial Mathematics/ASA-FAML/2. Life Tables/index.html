@@ -538,8 +538,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../3.%20Life%20Insurance%20Functions/" class="md-nav__link">
-        Life Insurance Functions
+      <a href="../3.%20Life%20Assurances/" class="md-nav__link">
+        Life Assurances
       </a>
     </li>
   
@@ -552,8 +552,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.%20Life%20Annuity%20Functions/" class="md-nav__link">
-        Life Annuity Functions
+      <a href="../4.%20Life%20Annuities/" class="md-nav__link">
+        Life Annuities
       </a>
     </li>
   
@@ -566,8 +566,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../5.%20Premium%20Calculations/" class="md-nav__link">
-        Premium Calculations
+      <a href="../5.%20Premiums/" class="md-nav__link">
+        Premiums
       </a>
     </li>
   
@@ -580,8 +580,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../2. Actuarial Mathematics/ASA-FAML/6. Reserve Calculations.md" class="md-nav__link">
-        Reserve Calculations
+      <a href="../6.%20Reserves/" class="md-nav__link">
+        Reserves
       </a>
     </li>
   
@@ -600,10 +600,57 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4">
+          ASA-ALTAM
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="ASA-ALTAM" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          ASA-ALTAM
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../../Placeholder/" class="md-nav__link">
-        ASA-ALTAM
+      <a href="../../ASA-ALTAM/Profit%20Testing/" class="md-nav__link">
+        Profit Testing
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ASA-ALTAM/Special%20Products/" class="md-nav__link">
+        Special
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -903,7 +950,10 @@
 <p>Thus, several <strong>assumptions</strong> about the life table that allows non-discrete values to be <strong>interpolated</strong> from the discrete ones, known as <strong>Fractional Age Assumptions</strong>.</p>
 <h3 id="uniform-distribution-of-deaths"><strong>Uniform Distribution of Deaths</strong></h3>
 <p>The <strong>Uniform Distribution of Deaths</strong> (UDD) is an assumption that allows for <strong>Linear Interpolation</strong> between discrete ages.</p>
-<p>As its name suggests, it assumes that there is a uniform distribution of deaths between ages - people die at a constant rate throughout the year. From another perspective, the survival function decreases at a constant rate, resulting in a <strong>linear survival function</strong> between ages.</p>
+<p>It assumes that there is a <strong>uniform distribution</strong> of deaths between ages such that the probability of death <strong>linearly increases in each month</strong>. From another perspective, the survival function linearly decreases within the year.</p>
+<blockquote>
+<p>The UDD assumption is less appropriate for older individuals as the probability of death begins to increase exponentially, even from month to month.</p>
+</blockquote>
 <p>Let the fractional age be <span class="arithmatex">\(s\)</span>. Thus, the probability using fractional ages is simply the <strong>weighted average</strong> of the discrete points:</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -946,7 +996,6 @@
     &amp;= A_x \cdot \frac{e^{-\delta} - 1}{\delta}.
 \end{aligned}
 \]</div>
-<p>If it is asssumed that the lifetime variable is <strong>uniformly distributed within the year</strong> (which is a fair assumption because the chance of dying in December is not much larger than dying in January), then it can be shown that:</p>
 <h3 id="constant-force-of-mortality"><strong>Constant Force of Mortality</strong></h3>
 <p>The <strong>Constant Force of Mortality</strong> is an assumption that allows for Exponential Interpolation between discrete ages.</p>
 <!-- Self Made -->
@@ -967,6 +1016,7 @@
 \]</div>
 <!-- Obtained from CA -->
 <p><img alt="Select Ult Tables" src="../Assets/2.%20Life%20Tables.md/Select%20Ult%20Tables.png" /></p>
+<p>if given table, high chance the rate is not 5%</p>
 
 
 
@@ -1003,13 +1053,13 @@
       
       
         
-        <a href="../3.%20Life%20Insurance%20Functions/" class="md-footer__link md-footer__link--next" aria-label="Next: Life Insurance Functions" rel="next">
+        <a href="../3.%20Life%20Assurances/" class="md-footer__link md-footer__link--next" aria-label="Next: Life Assurances" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Life Insurance Functions
+              Life Assurances
             </div>
           </div>
           <div class="md-footer__button md-icon">
