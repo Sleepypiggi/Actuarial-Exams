@@ -1704,6 +1704,17 @@
 <p>to ask ykl</p>
 </blockquote>
 <h3 id="arithmetically-increasing"><strong>Arithmetically Increasing</strong></h3>
+<p>Review: Increasing Annuities Certain Due</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    (I\ddot{a})_{\enclose{actuarial}{n}}
+    &amp;= \sum^{n-1}_{k=0} v^k \cdot \frac{1-v^{n-k}}{d} \\
+    &amp;= \sum^{n-1}_{k=0} \frac{v^k - v^n}{d} \\
+    &amp;= \frac{1}{d} \left(\sum^{n-1}_{k=0} v^k - \sum^{n-1}_{k=0} v^n \right) \\
+    &amp;= \frac{1}{d} (\ddot{a}_{\enclose{actuarial}{n}} - nv^n) \\
+    &amp;= \frac{\ddot{a}_{\enclose{actuarial}{n}} - nv^n}{d}
+\end{aligned}
+\]</div>
 <div class="arithmatex">\[
 \begin{aligned}
     \text{EPV Arith WL}_\text{Due}

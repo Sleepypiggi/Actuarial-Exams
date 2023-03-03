@@ -544,6 +544,26 @@
     Deferred Assurances
   </a>
   
+    <nav class="md-nav" aria-label="Deferred Assurances">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deferred-wl" class="md-nav__link">
+    Deferred WL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deferred-ta" class="md-nav__link">
+    Deferred TA
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -599,6 +619,13 @@
   
     <nav class="md-nav" aria-label="Payable Continuously">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#continuous-case" class="md-nav__link">
+    Continuous Case
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#uniform-distribution-of-deaths" class="md-nav__link">
@@ -1044,6 +1071,26 @@
     Deferred Assurances
   </a>
   
+    <nav class="md-nav" aria-label="Deferred Assurances">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deferred-wl" class="md-nav__link">
+    Deferred WL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deferred-ta" class="md-nav__link">
+    Deferred TA
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1099,6 +1146,13 @@
   
     <nav class="md-nav" aria-label="Payable Continuously">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#continuous-case" class="md-nav__link">
+    Continuous Case
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#uniform-distribution-of-deaths" class="md-nav__link">
@@ -1446,6 +1500,7 @@
 <p>While this process might seem redundant, it provides an easy to understand example of how the variance of a combination of assurances is derived by considering the covariance.</p>
 <h3 id="deferred-assurances"><strong>Deferred Assurances</strong></h3>
 <p>Deferred Assurances are variations of any of the above assurances, where the assurance <strong>starts <span class="arithmatex">\(n\)</span> years later rather</strong> than immediately. While any assurance can be deferred, the most common is the <strong>Deferred Whole Life</strong>.</p>
+<h4 id="deferred-wl"><strong>Deferred WL</strong></h4>
 <p>Let DWL be the random variable denoting the PV of the benefits of a deferred whole life assurance:</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1460,7 +1515,7 @@
 \]</div>
 <!-- Self Made -->
 <p><img alt="DWL Discrete" src="../Assets/3.%20Life%20Assurances.md/DWL%20Discrete.png" /></p>
-<p>The EPV is the <strong>expectation</strong> of the EA random variable:</p>
+<p>The EPV is the <strong>expectation</strong> of the DWL random variable:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     E(\text{DWL}) &amp;= 0 \cdot {}_{n}p_{x} + \sum^{\infty}_{K_x = n} v^{K_x + 1} \cdot {}_{K_x|}q_{x} \\
@@ -1469,7 +1524,7 @@
     &amp;= A_x - A^1_{x:\enclose{actuarial}{n}}
 \end{aligned}
 \]</div>
-<p>Since a DWL is simply a WL assurance issued <span class="arithmatex">\(n\)</span> years later, the EPV of the DWL is equivalent to the EPV of a WL issued at age <span class="arithmatex">\(x+n\)</span> (after adjusting for interest <strong>AND</strong> survival):</p>
+<p>Alternatively, since a DWL is simply a WL assurance issued <span class="arithmatex">\(n\)</span> years later, the EPV of the DWL is equivalent to the EPV of a WL issued at age <span class="arithmatex">\(x+n\)</span> (after adjusting for interest <strong>AND</strong> survival):</p>
 <div class="arithmatex">\[
 \begin{aligned}
     {}_{n|} A_{x}
@@ -1491,8 +1546,10 @@
     A^1_{x:\enclose{actuarial}{n}} &amp;= A_{x} - {}_{n}E_{x} * A_{x+n} \\
 \end{aligned}
 \]</div>
+<p>This result is extremely useful as it allows the EPV of ALL assurances to be <strong>calculated through a WL assurance</strong>, which is the preferred approach for solving such questions as it is often provided in the SULT.</p>
 <!-- Self Made -->
 <p><img alt="DWL Difference" src="../Assets/3.%20Life%20Assurances.md/DWL%20Difference.png" /></p>
+<p>Varian</p>
 <div class="arithmatex">\[
 \begin{aligned}
     Var (DWL)
@@ -1501,6 +1558,7 @@
     &amp;= \left({}^{2}A_x - {}^{2}A^1_{x:\enclose{actuarial}{n}}\right) + \left[(A_x)^2 - 2(A_x)(A^1_{x:\enclose{actuarial}{n}}) + (A^1_{x:\enclose{actuarial}{n}})^2 \right]
 \end{aligned}
 \]</div>
+<h4 id="deferred-ta"><strong>Deferred TA</strong></h4>
 <p>Another less commonly used deferred assurance is the <strong>Deferred Term Assurance</strong>. Although not commonly used for calculations, it can be used as a building block to decompose a regular assurance.</p>
 <p>An <span class="arithmatex">\(n\)</span> year term assurance can be thought of as the <strong>sum of <span class="arithmatex">\(n\)</span> deferred TAs</strong>, each with a one year term:</p>
 <div class="arithmatex">\[
@@ -1510,8 +1568,9 @@
 \end{aligned}
 \]</div>
 <blockquote>
-<p>Since WLs are just term assurances with infinite coverage, it can be extended to WLs as well.</p>
+<p>Since WLs are just term assurances with infinite coverage, it can be extended to WLs as well if needed.</p>
 </blockquote>
+<p>This result will come in handy in later sections.</p>
 <h3 id="recursions"><strong>Recursions</strong></h3>
 <p>The EPV of each contract can also be expressed through <strong>backwards recursion</strong>, where it is calculated as a function of itself.</p>
 <p>Consider the <strong>WL</strong> random variable:</p>
@@ -1671,26 +1730,74 @@
 <p>This process is the opposite of the previous one - it involves solving for <span class="arithmatex">\(T_x\)</span>, converting it to <span class="arithmatex">\(K_x\)</span> and then subsituting it back into the RV, which results in the associated percentile.</p>
 <h2 id="payable-continuously"><strong>Payable Continuously</strong></h2>
 <p>In practice, life assurances pay benefits <strong>as soon as the insured event occurs</strong>, thus is akin to paying out <strong>continuously</strong> throughout the year.</p>
-<p>However, paying out continuously is actually a <strong>special case</strong> of a contract that pays out <strong>multiple times a year</strong>, where the number of payments tends to infinity. Thus, despite the section being called payable <em>continuously</em>, it will instead be covering the case of <strong>paying out <span class="arithmatex">\(m\)</span> times a year</strong>.</p>
-<p>RV, use fractional age</p>
-<p>Show Mthly case
-Show continuous case</p>
-<p>actuarial notation (m)
-No need to show individual policies, say similar to discrete case - NO SUCH THING AS CONTINUOUS PURE ENDOWMENTS</p>
-<p>Intuition: Live full years then die within a subperiod within the year</p>
+<p>Notice that paying out continuously is actually a <strong>special case</strong> of a contract that pays out <strong><span class="arithmatex">\(m\)</span> times a year</strong>, where <span class="arithmatex">\(m\)</span> tends to infinity.</p>
+<ul>
+<li><span class="arithmatex">\(m=4\)</span>; Quarterly Payments</li>
+<li><span class="arithmatex">\(m=12\)</span>; Monthly Payments</li>
+<li><span class="arithmatex">\(m=\infty\)</span>; Continuous Payments</li>
+</ul>
+<p>Thus, despite the header stating "payable continously", this section will instead cover <strong>paying out <span class="arithmatex">\(m\)</span> times a year</strong>, which can be used to derive the continuous case.</p>
+<blockquote>
+<p>Note that questions with Assurances that pay out <span class="arithmatex">\(m\)</span> times a year are rare - if anything, the continuous case will be directly tested instead.</p>
+<p>However, the <span class="arithmatex">\(m\)</span> times a year case is still covered because the ideas can be extended to Annuities, where such questions are common.</p>
+</blockquote>
+<p>The survival model used must now reflect the <strong>probability of death at fractional ages</strong>. Intuitively, it can be thought of as the probability <em>living till a discrete age</em> and then dying within a sub-period within that year:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    K_x + \frac{j+1}{m}, \&gt;\&gt; j = 0, 1, 2, ..., m-1
+\end{aligned}
+\]</div>
+<p>Thus, the corresponding random variable representing the PV of the benefits:</p>
+<div class="arithmatex">\[
+    \text{PV} = v^{K_x + \frac{j+1}{m}}
+\]</div>
 <!-- Self Made -->
 <p><img alt="Continuous RV" class="center" src="../Assets/3.%20Life%20Assurances.md/Continuous%20RV.png" /></p>
+<p>The EPV of an assurance payable <span class="arithmatex">\(m\)</span> times a year can be denoted with the <strong><span class="arithmatex">\((m)\)</span> superscript</strong> with the same notations as before:</p>
+<div class="arithmatex">\[
+    A^{(m)}_{x} = \sum^{\infty}_{K_x=0} v^{K_x} {}_{K_x}p_x  \cdot \sum^{m-1}_{j=0} v^{\frac{j+1}{m}} {}_{\frac{j}{m}}p_{x+K_x} \cdot {}_{\frac{1}{m}} q_{x+K_x+\frac{j}{m}} \\
+\]</div>
+<blockquote>
+<p>Notice that this is simply the discrete discrete case with a slightly different survival model.</p>
+</blockquote>
+<p>The same logic can be applied to all other assurances, <strong>EXCEPT for PEs</strong>. This is because they pay out at a <strong>fixed time</strong>, thus there is NO such thing as a payable <span class="arithmatex">\(m\)</span> times PE.</p>
+<p>Unfortunately, most life tables do not naturally provide probabilities for death at fractional ages, thus the EPVs must be approximated from the discrete case, which will be covered below.</p>
+<h3 id="continuous-case"><strong>Continuous Case</strong></h3>
+<p>As <span class="arithmatex">\(m \to \infty\)</span>, then the survival model becomes <span class="arithmatex">\(T_x\)</span> and hence random variable is:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \text{PV}
+    &amp;= v^{T_x} \\
+    &amp;= e^{-\delta \cdot T_x}
+\end{aligned}
+\]</div>
+<p>The EPV of an assurance payable continously is denoted with the <strong><span class="arithmatex">\(\bar{}\)</span> accent</strong> with the same notations as before:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \bar{A}_x
+    &amp;= \int^{\infty}_{0} v^{T_x} \cdot f_x(t) \\
+    &amp;= \int^{\infty}_{0} e^{-\delta \cdot T_x}  \cdot {}_{t}p_{x} \mu_{x+t}
+\end{aligned}
+\]</div>
+<p>Recall that the second term represents the probability of living to a certain age <span class="arithmatex">\(x+t\)</span> and then dying in an infinitely small time after that (definition of force of interest).</p>
+<p>Thus, although the EPV looks very different, it is still fundamentally a <strong>Triple Product Summation</strong> of the same components:</p>
+<ol>
+<li>Amount of Benefit, 1</li>
+<li>Discounting of the Benefit, <span class="arithmatex">\(e^{-\delta \cdot T_x}\)</span></li>
+<li>Probability of paying the Benefit, <span class="arithmatex">\({}_{t}p_{x} \mu_{x+t}\)</span></li>
+</ol>
+<p>Unlike the payable <span class="arithmatex">\(m\)</span> times case, the EPVs can be calculated directly if the survival distribution is provided. However, since they are special cases of the payable <span class="arithmatex">\(m\)</span> times case, it can also be calculated through approximation from the discrete case.</p>
 <h3 id="uniform-distribution-of-deaths"><strong>Uniform Distribution of Deaths</strong></h3>
-<p>Recall that the UDD assumption can be used to approximate survival probabilities of fractional ages from discrete probabilities. Using this approach, the Continuous EPVs can be approximated from the Discrete ones.</p>
+<p>Recall that the UDD assumption can be used to approximate survival probabilities of <strong>fractional ages</strong> from discrete probabilities. Using this approach, the Continuous EPVs can be approximated from the Discrete ones.</p>
 <p>Assuming UDD between integer ages,</p>
 <div class="arithmatex">\[
-    {}_{\frac{j}{m}}p_{x+K_x} \cdot {}_{\frac{1}{m}} q_{x+K_x+\frac{1}{m}} \approx \frac{1}{m} \cdot q_{x+K_x}
+    {}_{\frac{j}{m}}p_{x+K_x} \cdot {}_{\frac{1}{m}} q_{x+K_x+\frac{j}{m}} \approx \frac{1}{m} \cdot q_{x+K_x}
 \]</div>
 <p>Thus, the EPV of a continuous contract can be expressed as a function of the discrete case:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     A^{(m)}_{x}
-    &amp;= \sum^{\infty}_{K_x=0} v^{K_x} {}_{K_x}p_x  \cdot \sum^{m-1}_{j=0} v^{\frac{j+1}{m}} {}_{\frac{j}{m}}p_{x+K_x} \cdot {}_{\frac{1}{m}} q_{x+K_x+\frac{1}{m}} \\
+    &amp;= \sum^{\infty}_{K_x=0} v^{K_x} {}_{K_x}p_x  \cdot \sum^{m-1}_{j=0} v^{\frac{j+1}{m}} {}_{\frac{j}{m}}p_{x+K_x} \cdot {}_{\frac{1}{m}} q_{x+K_x+\frac{j}{m}} \\
     &amp; \approx \sum^{\infty}_{K_x=0} v^{K_x} {}_{K_x}p_x  \cdot \sum^{m-1}_{j=0} v^{\frac{j+1}{m}} \frac{1}{m} \cdot q_{x+K_x} \\
     &amp; \approx \sum^{\infty}_{K_x=0} v^{K_x+1} {}_{K_x}p_x q_{x+K_x} \cdot \frac{1}{m} \sum^{m-1}_{j=0} v^{\frac{j+1}{m}-1}   \\
     &amp; \approx A_x \cdot \frac{v^{-1}}{m} \sum^{m-1}_{j=0} v^{\frac{j+1}{m}} \\
@@ -1701,10 +1808,9 @@ No need to show individual policies, say similar to discrete case - NO SUCH THIN
     &amp; \approx \frac{i}{i^{(m)}} \cdot A_x
 \end{aligned}
 \]</div>
-<p>As the frequency of payment tends to infinity,</p>
+<p>As  <span class="arithmatex">\(m \to \infty\)</span>,</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    m &amp;\to \infty, \\
     i^{(m)} &amp;\to \delta, \\
     A^{(m)}_{x} &amp;\to \bar{A}_x, \\
     \therefore  \bar{A}_x &amp;= \frac{i}{\delta} A_x
@@ -1866,13 +1972,13 @@ No need to show individual policies, say similar to discrete case - NO SUCH THIN
 <p>The second case is more interesting as it refers to an assurance where the benefits <strong>changes continuosly</strong> throughout the period.</p>
 <p>It is assumed that the benefit <strong>changes at a constant rate</strong> throughout the period, such that the <strong>total change is equal to 1</strong>.</p>
 <div class="arithmatex">\[
-    (\bar{I}\bar{A}) = \int^{\infty}_0 t v^t \cdot {}_{t}p_x \cdot \mu_{x+t}
+    (\bar{I}\bar{A})_{x} = \int^{\infty}_0 t v^t \cdot {}_{t}p_x \cdot \mu_{x+t}
 \]</div>
 <p>This can be more easily approximated from the "discrete" case:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    (\bar{I}\bar{A}) &amp;= (I\bar{A}) - \frac{1}{2} \cdot 1 \cdot 1 \cdot \bar{A}_x \\
-    (\bar{I}\bar{A}) &amp;= (I\bar{A}) - \frac{1}{2} \bar{A}_x
+    (\bar{I}\bar{A})_{x} &amp;= (I\bar{A})_{x} - \frac{1}{2} \cdot 1 \cdot 1 \cdot \bar{A}_x \\
+    (\bar{I}\bar{A})_{x} &amp;= (I\bar{A})_{x} - \frac{1}{2} \bar{A}_x
 \end{aligned}
 \]</div>
 <!-- Self Made -->
