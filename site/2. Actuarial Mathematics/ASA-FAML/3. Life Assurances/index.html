@@ -1664,7 +1664,7 @@
 </ul>
 <p>Assuming that the difference in expected cashflows are <em>negligible</em>, then an older policyholder would have an <strong>higher EPV</strong> due to the <strong>lower discounting</strong>:</p>
 <div class="arithmatex">\[
-    A_{x+k:\enclose{actuarial}{n}} \gt A_{x:\enclose{actuarial}{n}} 
+    A_{x+k:\enclose{actuarial}{n}} \gt A_{x:\enclose{actuarial}{n}}
 \]</div>
 <p>Naturally, all else equal, assurances with a <strong>lower interest rate are discounted less</strong> and thus have a <strong>higher EPV</strong>.</p>
 <h4 id="different-assurances"><strong>Different Assurances</strong></h4>
@@ -1760,8 +1760,7 @@
 <blockquote>
 <p>Notice that this is simply the discrete discrete case with a slightly different survival model.</p>
 </blockquote>
-<p>The same logic can be applied to all other assurances, <strong>EXCEPT for PEs</strong>. This is because they pay out at a <strong>fixed time</strong>, thus there is NO such thing as a payable <span class="arithmatex">\(m\)</span> times PE.</p>
-<p>Unfortunately, most life tables do not naturally provide probabilities for death at fractional ages, thus the EPVs must be approximated from the discrete case, which will be covered below.</p>
+<p>Unfortunately, most life tables do not naturally provide probabilities for death at fractional ages, thus the EPVs must be <strong>approximated from the discrete case</strong>, which will be covered later.</p>
 <h3 id="continuous-case"><strong>Continuous Case</strong></h3>
 <p>As <span class="arithmatex">\(m \to \infty\)</span>, then the survival model becomes <span class="arithmatex">\(T_x\)</span> and hence random variable is:</p>
 <div class="arithmatex">\[
@@ -1786,7 +1785,8 @@
 <li>Discounting of the Benefit, <span class="arithmatex">\(e^{-\delta \cdot T_x}\)</span></li>
 <li>Probability of paying the Benefit, <span class="arithmatex">\({}_{t}p_{x} \mu_{x+t}\)</span></li>
 </ol>
-<p>Unlike the payable <span class="arithmatex">\(m\)</span> times case, the EPVs can be calculated directly if the survival distribution is provided. However, since they are special cases of the payable <span class="arithmatex">\(m\)</span> times case, it can also be calculated through approximation from the discrete case.</p>
+<p>Unlike the payable <span class="arithmatex">\(m\)</span> times case, the EPVs <em>can be calculated directly</em> if the survival distribution is provided. However, since they are special cases of the payable <span class="arithmatex">\(m\)</span> times case, it can also be calculated through approximation from the discrete case.</p>
+<p>The same logic can be applied to all other assurances, <strong>EXCEPT for PEs</strong>. This is because they pay out at a <strong>fixed time</strong>, thus there is <strong>NO such thing</strong> as a payable <span class="arithmatex">\(m\)</span> times PE or a continuously payable PE..</p>
 <h3 id="uniform-distribution-of-deaths"><strong>Uniform Distribution of Deaths</strong></h3>
 <p>Recall that the UDD assumption can be used to approximate survival probabilities of <strong>fractional ages</strong> from discrete probabilities. Using this approach, the Continuous EPVs can be approximated from the Discrete ones.</p>
 <p>Assuming UDD between integer ages,</p>
@@ -1808,7 +1808,7 @@
     &amp; \approx \frac{i}{i^{(m)}} \cdot A_x
 \end{aligned}
 \]</div>
-<p>As  <span class="arithmatex">\(m \to \infty\)</span>,</p>
+<p>As <span class="arithmatex">\(m \to \infty\)</span>,</p>
 <div class="arithmatex">\[
 \begin{aligned}
     i^{(m)} &amp;\to \delta, \\
@@ -1826,8 +1826,6 @@
     &amp;= \frac{m+1}{2m}
 \end{aligned}
 \]</div>
-<!-- Self Made -->
-
 <p>Thus, the EPV of a continuous contract can be expressed as a function of the discrete case:</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1840,7 +1838,7 @@
     &amp; \approx (1+i)^{\frac{m-1}{2m}} A_x
 \end{aligned}
 \]</div>
-<p>As the frequency of payment tends to infinity,</p>
+<p>As <span class="arithmatex">\(m \to \infty\)</span>,</p>
 <div class="arithmatex">\[
 \begin{aligned}
     m &amp;\to \infty, \\
@@ -1998,9 +1996,7 @@
 <div class="arithmatex">\[
     (IA)_{x} = vq_x + vp_x[(IA)_{x+1} + A_{x+1}]
 \]</div>
-<blockquote>
-<p>The same can be shown for Variable Term Assurances, but remember that the remaining duration of the policy must decrease as well.</p>
-</blockquote>
+<p>The same can be shown for Variable Term Assurances, but remember that the <strong>remaining duration of the policy must decrease</strong> as well.</p>
 <h3 id="variance-and-second-moment"><strong>Variance and Second Moment</strong></h3>
 <p>Consider the second moment of both types of variable assurances:</p>
 <div class="arithmatex">\[

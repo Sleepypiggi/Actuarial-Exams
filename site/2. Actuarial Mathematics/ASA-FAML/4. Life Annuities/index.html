@@ -656,16 +656,36 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#geometrically-increasing" class="md-nav__link">
-    Geometrically Increasing
+  <a href="#geometric-annuities" class="md-nav__link">
+    Geometric Annuities
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#arithmetically-increasing" class="md-nav__link">
-    Arithmetically Increasing
+  <a href="#arithmetic-annuities" class="md-nav__link">
+    Arithmetic Annuities
   </a>
+  
+    <nav class="md-nav" aria-label="Arithmetic Annuities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arithmetic-term" class="md-nav__link">
+    Arithmetic Term
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continuous-term" class="md-nav__link">
+    Continuous Term
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1129,16 +1149,36 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#geometrically-increasing" class="md-nav__link">
-    Geometrically Increasing
+  <a href="#geometric-annuities" class="md-nav__link">
+    Geometric Annuities
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#arithmetically-increasing" class="md-nav__link">
-    Arithmetically Increasing
+  <a href="#arithmetic-annuities" class="md-nav__link">
+    Arithmetic Annuities
   </a>
+  
+    <nav class="md-nav" aria-label="Arithmetic Annuities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arithmetic-term" class="md-nav__link">
+    Arithmetic Term
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continuous-term" class="md-nav__link">
+    Continuous Term
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1322,7 +1362,7 @@
 <p>Thus, the EPV is the expectation of the TA random variable, which can be simplified using the same approach as before:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    E(\text{TA}_\text{Due}) &amp;= \sum^{n-1}_{K_x = 0} a_{\enclose{actuarial}{K_x}} \cdot {}_{K_x|}q_x + a_{\enclose{actuarial}{n}} \cdot {}_{n}p_x \\
+    E(\text{TA}_\text{Due}) &amp;= \sum^{n-1}_{K_x = 0} \ddot{a}_{\enclose{actuarial}{K_x}} \cdot {}_{K_x|}q_x + \ddot{a}_{\enclose{actuarial}{n}} \cdot {}_{n}p_x \\
     \ddot{a}_{x:\enclose{actuarial}{n}} &amp;= \sum^{n}_{j=1} v^j \cdot {}_{j}p_{x}
 \end{aligned}
 \]</div>
@@ -1336,7 +1376,7 @@
     &amp;=
     \begin{cases}
         0, &amp; K_x = 0, 1, 2, \dots, n-1 \\
-        v^n a_{\enclose{actuarial}{K_x-n}}, &amp; K_x \ge n
+        v^n \cdot \ddot{a}_{\enclose{actuarial}{K_x-n}}, &amp; K_x \ge n
     \end{cases}
 \end{aligned}
 \]</div>
@@ -1600,6 +1640,8 @@
 <p>The latter refers to calculating the <strong>percentile of the random variable</strong>, which is the smallest value of the RV that results in the specified probability.</p>
 <p>This process is the opposite of the previous one - it involves solving for <span class="arithmatex">\(T_x\)</span>, converting it to <span class="arithmatex">\(K_x\)</span> and then subsituting it back into the RV, which results in the associated percentile.</p>
 <h2 id="payable-continuously"><strong>Payable Continuously</strong></h2>
+<p>Similar to assurances, annuities can also be payable <span class="arithmatex">\(m\)</span> times a year or payable continuously.</p>
+<p>In fact, most of the key ideas carry over from the assurances, thus this section will only focus on the approximations from discrete annuities.</p>
 <h3 id="uniform-distribution-of-deaths"><strong>Uniform Distribution of Deaths</strong></h3>
 <p>Using the relationship between Assurances and Annuities, a continuous WL annuity can also be expressed in the form of a continuous assurance:</p>
 <div class="arithmatex">\[
@@ -1621,7 +1663,7 @@
     &amp;= \alpha(m)\ddot{a}_x - \beta(m)
 \end{aligned}
 \]</div>
-<p>A similar simplification can be made for temporary annuities:</p>
+<p>An adjustment can be made for temporary annuities:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     \ddot{a}^{(m)}_{x:\enclose{actuarial}{n}}
@@ -1634,8 +1676,9 @@
 \]</div>
 <h3 id="woolhouse-approximation"><strong>Woolhouse Approximation</strong></h3>
 <p>Since a continuous annuity can be expressed as a sum of <strong>discrete pure endowments</strong>, the trapezoidal rule and euler-macluarin correction can be used to approximate its EPV.</p>
-<!-- Left Riemann Sum -->
-
+<p>The key difference from before is understanding that the EPV of an annuity due is a <strong>LEFT riemann sum</strong> as there is a payment at time 0.</p>
+<!-- Obtained from Story of Mathematics -->
+<p><img alt="Riemann Sum" class="center" src="../Assets/1.%20Survival%20Models.md/Right%20Riemann%20Sum.png" /></p>
 <div class="arithmatex">\[
 \begin{aligned}
     \bar{a}_x
@@ -1690,7 +1733,7 @@
 <p>Unfortunately, the drawback is that it requires knowledge about the force of mortality, which is not commonly provided in life tables. Thus, although less accurate, the <strong>2 term approach can be easily used</strong> in any situation.</p>
 <h2 id="variable-benefits"><strong>Variable Benefits</strong></h2>
 <p>Similar to assurances, there are also annuities with variable benefits which <strong>start at 1</strong> but increase geometrically or arithmetically each period.</p>
-<h3 id="geometrically-increasing"><strong>Geometrically Increasing</strong></h3>
+<h3 id="geometric-annuities"><strong>Geometric Annuities</strong></h3>
 <p>The benefit of the policy <strong>starts at 1</strong> in the first year and <strong>changes by <span class="arithmatex">\((1+b)\)</span></strong> each period. Thus, the EPV can be shown to be:</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1700,14 +1743,12 @@
     &amp;= \ddot{a}_x|_{i = \frac{1+i}{1+c}-1}
 \end{aligned}
 \]</div>
-<blockquote>
-<p>to ask ykl</p>
-</blockquote>
-<h3 id="arithmetically-increasing"><strong>Arithmetically Increasing</strong></h3>
-<p>Review: Increasing Annuities Certain Due</p>
+<h3 id="arithmetic-annuities"><strong>Arithmetic Annuities</strong></h3>
+<p>The benefit of the policy <strong>starts at 1</strong> in the first year and <strong>increases by <span class="arithmatex">\(1\)</span></strong> each period. Thus, the PV of the benefits at each period can be expressed as an <strong>Arithmetically Increasing Annuity Certain</strong>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     (I\ddot{a})_{\enclose{actuarial}{n}}
+    &amp;= \sum^{n-1}_{k=0} v^k \cdot \ddot{a}_{\enclose{actuarial}{n-k}} \\
     &amp;= \sum^{n-1}_{k=0} v^k \cdot \frac{1-v^{n-k}}{d} \\
     &amp;= \sum^{n-1}_{k=0} \frac{v^k - v^n}{d} \\
     &amp;= \frac{1}{d} \left(\sum^{n-1}_{k=0} v^k - \sum^{n-1}_{k=0} v^n \right) \\
@@ -1715,34 +1756,66 @@
     &amp;= \frac{\ddot{a}_{\enclose{actuarial}{n}} - nv^n}{d}
 \end{aligned}
 \]</div>
+<!-- Self Made -->
+<p><img alt="Increasing Annuity Certain" class="center" src="../Assets/4.%20Life%20Annuities.md/Increasing%20Annuity%20Certain.png" /></p>
+<p>Thus, the EPV of an arithmetically increasing WL annuity Due can be calculated as:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    \text{EPV Arith WL}_\text{Due}
-    &amp;= \sum^{\infty}_{k=0} (k+1) v^k {}_{k}p_x \\
-    (I\ddot{a})_x
-    &amp;= v^0 {}_{0}p_x + \sum^{\infty}_{k=1} (k+1) v^k {}_{k}p_x \\
-    &amp;= 1 + \sum^{\infty}_{k=0} (k+2) v^{k+1} {}_{k+1}p_x
+    \text{EPV Arith WL}_\text{Due} &amp;= \sum^{\infty}_{k=0} (I\ddot{a})_{\enclose{actuarial}{k+1}} \cdot {}_{k|}q_x \\
+    (I\ddot{a})_x &amp;= \sum^{\infty}_{k=0} (k+1) v^k {}_{k}p_x \\
 \end{aligned}
 \]</div>
+<!-- Self Made -->
+<p><img alt="Increasing Annuity Certain Due" src="../Assets/4.%20Life%20Annuities.md/Increasing%20Annuity%20Certain.png" /></p>
+<p>Alternatively, it can be calculated from an assurance instead:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    \text{EPV Arith TA}_\text{Due}
+    \text{Arith WL}_\text{Due} &amp;= (I\ddot{a})_{\enclose{actuarial}{k+1}} = \frac{\ddot{a}_{\enclose{actuarial}{k+1}} - (k+1)v^{k+1}}{d} \\
+    E(\text{Arith WL}_\text{Due}) &amp;= \frac{E(\ddot{a}_{\enclose{actuarial}{k+1}}) - E((k+1)v^{k+1})}{d} \\
+    (I\ddot{a})_x &amp;= \frac{\ddot{a}_x - (IA)_x}{d}
+\end{aligned}
+\]</div>
+<p>The main difference between an increasing annuity due and immediate is that the immediate case now <strong>lags</strong> the due by 1 <strong>every period</strong>. Thus, this can be accounted for using a level annuity due:</p>
+<div class="arithmatex">\[
+    (Ia)_x = (I\ddot{a})_x - \ddot{a}_x
+\]</div>
+<!-- Self Made -->
+<p><img alt="Increasing Due Immediate" class="center" src="../Assets/4.%20Life%20Annuities.md/Increasing%20Due%20Immediate.png" /></p>
+<h4 id="arithmetic-term"><strong>Arithmetic Term</strong></h4>
+<p>Similar to increasing assurances, the EPV of a TA must now account for the <strong>difference in starting values</strong> when taking the difference of two WLs:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \text{EPV Arith TA}_\text{Due} &amp;= \sum^{n-1}_{k=0} (I\ddot{a})_{\enclose{actuarial}{n}} \cdot {}_{k|}q_x \\
+    (I\ddot{a})_{x:\enclose{actuarial}{n}}
     &amp;= \sum^{n-1}_{k=0} (k+1) v^k {}_{k}p_x \\
     &amp;= (I\ddot{a})_x - {}_{n}E_x[(I\ddot{a})_{x+n}+n\ddot{a}_{x+n}]
 \end{aligned}
 \]</div>
 <!-- Self Made -->
 <p><img alt="Arithmetic Term Annuity" class="center" src="../Assets/4.%20Life%20Annuities.md/Arithmetic%20Temporary%20Annuity.png" /></p>
+<h4 id="continuous-term"><strong>Continuous Term</strong></h4>
+<p>For an arithmetic annuity that increases by 1 discretely but is payable continuously, then the Woolhouse approximation can be used to determine the EPV:</p>
+<div class="arithmatex">\[
+    (I\bar{a})_x = (I\ddot{a}) - \frac{1}{2} - \frac{1}{12} (\delta + \mu_x)
+\]</div>
+<p>For one that increases continuously AND is payable continuously, then the same approximation from the assurance case can be used:</p>
+<div class="arithmatex">\[
+    (\bar{I}\bar{A}) = (I\bar{a}) - \frac{1}{2} \bar{a}_x
+\]</div>
 <h3 id="variable-recursions"><strong>Variable Recursions</strong></h3>
+<p>Following variable assurances, the recursion for variable annuities are extremely similar to the level counterparts, with the key difference being to account for the <strong>difference in starting values</strong>.</p>
+<p>For Geometric Annuities, TBC.</p>
 <div class="arithmatex">\[
 \begin{aligned}
     \text{EPV Geom Annuity}_\text{Due}
     &amp;= 1 + vp_x \left(a_{x+1}|_{i = \frac{1+i}{1+c}-1}\right)
 \end{aligned}
 \]</div>
+<p>For Arithmetic Annuities, an EPV representing an <strong>additional benefit of 1 each period</strong> must be added that the expression starts from 2 and increases by 1 each period.</p>
 <div class="arithmatex">\[
     (I\ddot{a})_x = 1 + vp_x[(I\ddot{a})_{x+1} + \ddot{a}_{x+1}]
 \]</div>
+<p>The same can be shown for Variable Term Annuities, but remember that the <strong>remaining duration of the policy must decrease</strong> as well.</p>
 
 
 
