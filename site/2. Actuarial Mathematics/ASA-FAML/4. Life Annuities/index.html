@@ -642,6 +642,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#term-approximations" class="md-nav__link">
+    Term Approximations
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1135,6 +1142,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#term-approximations" class="md-nav__link">
+    Term Approximations
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1342,6 +1356,7 @@
     &amp;= \sum^{\infty}_{j=0} v^j \cdot {}_{j}p_{x}
 \end{aligned}
 \]</div>
+<p>Note that the above formula can be used to easily prove the relationships between different kinds of annuities, but is NOT a proper definition of an annuity - it hence cannot be adjusted to compute the variance.</p>
 <p>The second moment and variance for all life annuities will be covered in a later section.</p>
 <h3 id="temporary-annuity"><strong>Temporary Annuity</strong></h3>
 <p><strong>Temporary Life Annuities</strong> covers the insured for a <strong>specified period <span class="arithmatex">\(n\)</span></strong> and thus pays out for as long as the insured <strong>survives</strong> during that period <em>only</em>.</p>
@@ -1363,10 +1378,11 @@
 <div class="arithmatex">\[
 \begin{aligned}
     E(\text{TA}_\text{Due}) &amp;= \sum^{n-1}_{K_x = 0} \ddot{a}_{\enclose{actuarial}{K_x}} \cdot {}_{K_x|}q_x + \ddot{a}_{\enclose{actuarial}{n}} \cdot {}_{n}p_x \\
-    \ddot{a}_{x:\enclose{actuarial}{n}} &amp;= \sum^{n}_{j=1} v^j \cdot {}_{j}p_{x}
+    \ddot{a}_{x:\enclose{actuarial}{n}} &amp;= \sum^{n-1}_{j=0} v^j \cdot {}_{j}p_{x}
 \end{aligned}
 \]</div>
 <p>Note the change in limits for the simplified approach - an annuity is the combination of pure endowments for <strong>as long as the annuity lasts</strong>.</p>
+<p>This gives rise to a very simple sense check - the EPV of an <span class="arithmatex">\(n\)</span> year temporary annuity should NOT be larger than <span class="arithmatex">\(n\)</span> as there are <span class="arithmatex">\(n\)</span> payments of 1 which are discounted.</p>
 <h3 id="deferred-annuities"><strong>Deferred Annuities</strong></h3>
 <p>Deferred Annuities are variations of the above contracts where the <strong>coverage is deferred by <span class="arithmatex">\(n\)</span> years</strong>. While any contract can be deferred, the most useful is the <strong>Deferred Whole Life Annuity</strong>.</p>
 <p>Let <strong>DWL</strong> be the random variable denoting the PV of the survival benefit:</p>
@@ -1376,7 +1392,7 @@
     &amp;=
     \begin{cases}
         0, &amp; K_x = 0, 1, 2, \dots, n-1 \\
-        v^n \cdot \ddot{a}_{\enclose{actuarial}{K_x-n}}, &amp; K_x \ge n
+        v^n \cdot \ddot{a}_{\enclose{actuarial}{K_x+1-n}}, &amp; K_x \ge n
     \end{cases}
 \end{aligned}
 \]</div>
@@ -1384,6 +1400,13 @@
 <div class="arithmatex">\[
 \begin{aligned}
     \text{DWL}_{\text{Due}}
+    &amp;= v^n \cdot \ddot{a}_{\enclose{actuarial}{K_x+1-n}} \\
+    &amp;= v^n \cdot \frac{1-v^{K_x+1-n}}{d} \\
+    &amp;= \frac{v^{n}-v^{K_x+1}}{d} \\
+    &amp;= \frac{(1-v^{K_x+1}) - (1-v^{n})}{d} \\
+    &amp;= \ddot{a}_{\enclose{actuarial}{K_x+1}} -\ddot{a}_{\enclose{actuarial}{n}} \\
+    \\
+    \therefore \text{DWL}_{\text{Due}}
     &amp;=
     \begin{cases}
         0, &amp; K_x = 0, 1, 2, \dots, n-1 \\
@@ -1398,23 +1421,29 @@
 \begin{aligned}
     E(\text{DWL}_{\text{Due}}) &amp;= \sum^{\infty}_{K_x = n} (\ddot{a}_{\enclose{actuarial}{K_x+1}} - \ddot{a}_{\enclose{actuarial}{n}}) \cdot {}_{K_x|}q_{x} \\
     {}_{n|}\ddot{a}_{x}
-    &amp;= \sum^{\infty}_{K_x = n} \ddot{a}_{\enclose{actuarial}{K_x+1}} \cdot {}_{K_x|}q_{x}
-        - \sum^{\infty}_{K_x = n} \ddot{a}_{\enclose{actuarial}{n}} \cdot {}_{K_x|}q_{x} \\
+    &amp;= \sum^{\infty}_{K_x = 0} (\ddot{a}_{\enclose{actuarial}{K_x+1}} - \ddot{a}_{\enclose{actuarial}{n}}) \cdot {}_{K_x|}q_{x}
+        - \sum^{n-1}_{K_x = 0} (\ddot{a}_{\enclose{actuarial}{K_x+1}} - \ddot{a}_{\enclose{actuarial}{n}}) \cdot {}_{K_x|}q_{x} \\
+    &amp;= \sum^{\infty}_{K_x = 0} \ddot{a}_{\enclose{actuarial}{K_x+1}} \cdot {}_{K_x|}q_{x}
+        - \sum^{\infty}_{K_x = 0} \ddot{a}_{\enclose{actuarial}{n}} \cdot {}_{K_x|}q_{x}
+        - \sum^{n-1}_{K_x = 0} \ddot{a}_{\enclose{actuarial}{K_x+1}} \cdot {}_{K_x|}q_{x}
+        + \sum^{n-1}_{K_x = 0} \ddot{a}_{\enclose{actuarial}{n}} \cdot {}_{K_x|}q_{x} \\
+    &amp;= \sum^{\infty}_{K_x = 0} \ddot{a}_{\enclose{actuarial}{K_x+1}} \cdot {}_{K_x|}q_{x}
+        - \sum^{n-1}_{K_x = 0} \ddot{a}_{\enclose{actuarial}{K_x+1}} \cdot {}_{K_x|}q_{x} \\
     &amp;= \ddot{a}_x - \ddot{a}_{x:\enclose{actuarial}{n}}
 \end{aligned}
 \]</div>
 <p>Similar to before, the EPV can be shown to be a sum of pure endowments:</p>
 <div class="arithmatex">\[
-    {}_{n|}\ddot{a}_{x} = \sum^{\infty}_{j=1} v^j \cdot {}_{j}p_{x}
+    {}_{n|}\ddot{a}_{x} = \sum^{\infty}_{j=n} v^j \cdot {}_{j}p_{x}
 \]</div>
 <p>Since a DWL is effectively a WL that is issued <span class="arithmatex">\(n\)</span> years later, the EPV of a DWL is the EPV of the WL, adjusted for both interest and survival:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     {}_{n|}a_{x}
-    &amp;= \sum^{\infty}_{K_x = 0} a_{\enclose{actuarial}{K_x}} \cdot {}_{K_x|}q_{x} - \sum^{n-1}_{K_x = 0} a_{\enclose{actuarial}{K_x}} \cdot {}_{K_x|}q_{x} \\
-    &amp;= \sum^{\infty}_{K_x = n} a_{\enclose{actuarial}{K_x}} \cdot {}_{K_x|}q_{x} \\
-    &amp;= v^n {}_{n}p_{x} \sum^{\infty}_{K_x = n} a_{\enclose{actuarial}{K_x-n}} \cdot {}_{K_x-n|}q_{x+n} \\
-    &amp;= v^n {}_{n}p_{x} \sum^{\infty}_{K_x = 0} a_{\enclose{actuarial}{K_x}} \cdot {}_{K_x|}q_{x+n} \\
+    &amp;= \sum^{\infty}_{j=n} v^j \cdot {}_{j}p_{x} \\
+    &amp;= \sum^{\infty}_{j=0} v^{j+n} \cdot {}_{j+n}p_{x} \\
+    &amp;= \sum^{\infty}_{j=0} v^{j} v^{n} \cdot {}_{n}p_{x} {}_{j}p_{x+n} \\
+    &amp;= v^{n} \cdot {}_{n}p_{x} \sum^{\infty}_{j=0} v^{j} \cdot {}_{j}p_{x+n} \\
     &amp;= {}_{n}E_{x} \cdot \ddot{a}_{x+n}
 \end{aligned}
 \]</div>
@@ -1506,6 +1535,7 @@
     A_x &amp;= 1 - d \ddot{a}_x
 \end{aligned}
 \]</div>
+<p>However, the second moment is slightly different as it must reflect the new interest rate used.</p>
 <p>The same logic can be applied for the <strong>Variance</strong> as well:</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1515,15 +1545,16 @@
     Var(\text{WLA}_{Due}) &amp;= \frac{1}{d^2} \left({}_{}^2 A_x - (A_x)^2 \right)
 \end{aligned}
 \]</div>
-<!-- Second moment-->
-
-<p>The same relationship can be shown for a temporary annuity and an <em>Endowment Assurance</em>, NOT a term assurance:</p>
+<p>The same relationship can be shown for a temporary annuity and an <strong>Endowment Assurance, NOT a term assurance</strong>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     A_{x:\enclose{actuarial}{n}} &amp;= 1 - d \ddot{a}_{x:\enclose{actuarial}{n}} \\
     Var(\text{TA}_{Due}) &amp;= \frac{1}{d^2} \left({}_{}^2 A_{x:\enclose{actuarial}{n}} - (A_{x:\enclose{actuarial}{n}})^2 \right)
 \end{aligned}
 \]</div>
+<blockquote>
+<p>It is a very common mistake to confuse the two as both are denoted by TA. However, the relationship makes sense if the actuarial notation is followed - both share the same status.</p>
+</blockquote>
 <h3 id="immediate-and-due"><strong>Immediate and Due</strong></h3>
 <p>Recall that for Certain Annuities, the only difference between Due and Immediate ones are the payments at the start and end times. This relationship can be extended for Life Annuities as well.</p>
 <p>For WL annuities, since the <strong>end point is infinity</strong>, the difference in the end points can be ignored. Thus, the only difference is the first payment of 1, which can be easily accounted for:</p>
@@ -1731,6 +1762,26 @@
 <p>This process is known as the <strong>Woolhouse Approximation</strong>. If the error term is omitted, then it is known as the <strong>2-term Woolhouse Approximation</strong> else it is known as the <strong>3-term Woolhouse Approximation</strong>.</p>
 <p>The 3-term woolhouse approximation is <em>extremely accurate</em> due to its mathematical roots. It so much more accurate than UDD such that when calculating a continuous <em>assurance</em>, it is advisable to calculate the corresponding annuity using the 3 term approximation first and then convert it, for the best results.</p>
 <p>Unfortunately, the drawback is that it requires knowledge about the force of mortality, which is not commonly provided in life tables. Thus, although less accurate, the <strong>2 term approach can be easily used</strong> in any situation.</p>
+<h3 id="term-approximations"><strong>Term Approximations</strong></h3>
+<p>Unlike assurances, the approximations for annuities have multiple components. Thus, the approximations for term annuities are slightly different from the ones used for WL.</p>
+<p>However, there is <strong>NO need to remember a seperate expression</strong> for it, it can be calculated by converting the WL to a TA:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    a^{(m)}_{x:\enclose{actuarial}{n}}
+    &amp;= a^{(m)}_{x} - {}_{n}E_{x} a^{(m)}_{x+n} \\
+    &amp;= \alpha(m) \ddot{a}_{x} - \beta(m) - {}_{n}E_{x} (\alpha(m) \ddot{a}_{x+n} - \beta(m)) \\
+    &amp;= \alpha(m) \ddot{a}_{x} - \beta(m) - {}_{n}E_{x} \alpha(m) \ddot{a}_{x+n} + {}_{n}E_{x} \beta(m) \\
+    &amp;= \alpha(m) (\ddot{a}_{x} - {}_{n}E_{x} \ddot{a}_{x+n}) - \beta(m) (1-{}_{n}E_{x}) \\
+    &amp;= \alpha(m) (\ddot{a}_{x+n}) - \beta(m) (1-{}_{n}E_{x})
+\end{aligned}
+\]</div>
+<p>A similar approach can be taken for the woolhouse approximation, resulting in the following:</p>
+<div class="arithmatex">\[
+    a^{(m)}_{x:\enclose{actuarial}{n}} = \ddot{a}_{x+n} - \frac{m-1}{2m} (1-{}_{n}E_{x})
+\]</div>
+<blockquote>
+<p>For simplicity, the three term approach is not shown.</p>
+</blockquote>
 <h2 id="variable-benefits"><strong>Variable Benefits</strong></h2>
 <p>Similar to assurances, there are also annuities with variable benefits which <strong>start at 1</strong> but increase geometrically or arithmetically each period.</p>
 <h3 id="geometric-annuities"><strong>Geometric Annuities</strong></h3>
@@ -1777,7 +1828,14 @@
 \]</div>
 <p>The main difference between an increasing annuity due and immediate is that the immediate case now <strong>lags</strong> the due by 1 <strong>every period</strong>. Thus, this can be accounted for using a level annuity due:</p>
 <div class="arithmatex">\[
-    (Ia)_x = (I\ddot{a})_x - \ddot{a}_x
+\begin{aligned}
+    (I\ddot{a})_x
+    &amp;= \sum^{\infty}_{k=0} (k+1) v^k {}_{k}p_{x} \\
+    &amp;= v^{0} {}_{0}p_{x} + 2v^{1} {}_{1}p_{x} + 3v^{2} {}_{2}p_{x} + \dots \\
+    &amp;= (v^{1} {}_{1}p_{x} + 2v^{2} {}_{2}p_{x} + \dots) + (v^{0} {}_{0}p_{x} + v^{1} {}_{1}p_{x} + v^{2} {}_{2}p_{x} + \dots) \\
+    &amp;= (Ia)_x + \ddot{a}_x \\
+    (Ia)_x &amp;= (I\ddot{a})_x - \ddot{a}_x
+\end{aligned}
 \]</div>
 <!-- Self Made -->
 <p><img alt="Increasing Due Immediate" class="center" src="../Assets/4.%20Life%20Annuities.md/Increasing%20Due%20Immediate.png" /></p>

@@ -641,6 +641,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#common-pitfalls" class="md-nav__link">
+    Common Pitfalls
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1168,6 +1175,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#common-pitfalls" class="md-nav__link">
+    Common Pitfalls
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1276,12 +1290,10 @@
     &amp;= \sum B \cdot v^{K_x + 1} \cdot {}_{K_x|}q_{x}
 \end{aligned}
 \]</div>
+<p>For simplicity, all of the proofs in this section will use <span class="arithmatex">\(B=1\)</span>. This also has the benefit of allowing the EPVs to be <em>easily scaled</em> for any level of <span class="arithmatex">\(B\)</span>.</p>
 <h3 id="actuarial-notation"><strong>Actuarial Notation</strong></h3>
 <p>Similar to the survival model, given how often these values are calculated, they are abbreviated using the <strong>International Actuarial Notation</strong> as well.</p>
 <p><span class="arithmatex">\(A\)</span> represents the <strong>first moment</strong> (expectation) of the <strong>present value</strong> of a contract where a <strong>benefit of 1</strong> is payable discretely when the <em>status fails</em>.</p>
-<blockquote>
-<p>A benefit of 1 is used so that it can be easily scaled to any benefit amount through multiplication.</p>
-</blockquote>
 <p>The subscript <span class="arithmatex">\(x\)</span> is the age of the policyholder, known as the <strong>Life Status</strong>. It fails when the policyholder <em>dies</em>.</p>
 <p>An additional subscript <span class="arithmatex">\(:\enclose{actuarial}{n}\)</span> is the duration that the assurance remains valid, known as the <strong>Duration Status</strong>. It fails if the policyholder <em>survives</em> past the policyterm.</p>
 <p>A <span class="arithmatex">\(1\)</span> above the status indicates that the assurance pays <strong>only</strong> pays if that <strong>particular status fails first</strong>. If nothing is indicated, then the assurance pays whichever status fails first.</p>
@@ -1343,6 +1355,7 @@
     \therefore Var(\text{WL}) &amp;= {}^{2} A_{x} - (A_{x})^2
 \end{aligned}
 \]</div>
+<p>Note that the <strong>actual benefit must also be squared</strong> - this is likely to result in a relatively <strong>large value</strong> for the second moment and variance.</p>
 <h3 id="term-assurance"><strong>Term Assurance</strong></h3>
 <p><strong>Term Assurance</strong> covers the insured for a <strong>specified period <span class="arithmatex">\(n\)</span></strong> and only pays out <em>if</em> the insured dies within that period. <strong>NOTHING</strong> is paid out if the insured <em>survives beyond</em> that.</p>
 <blockquote>
@@ -1452,7 +1465,9 @@
 <div class="arithmatex">\[
 \begin{aligned}
     E(\text{EA}^2) &amp;= \sum^{n-1}_{K_x = 0} (v^2)^{K_x + 1} \cdot {}_{K_x|}q_{x} + (v^2)^n {}_{n}p_{x} \\
-    {}^{2} A_{x:\enclose{actuarial}{n}} &amp;= \sum^{n-1}_{K_x = 0} (v^*)^{K_x + 1} \cdot {}_{K_x|}q_{x} + (v^*)^n {}_{n}p_{x} \\
+    {}^{2} A_{x:\enclose{actuarial}{n}}
+    &amp;= \sum^{n-1}_{K_x = 0} (v^*)^{K_x + 1} \cdot {}_{K_x|}q_{x} + (v^*)^n {}_{n}p_{x} \\
+    &amp;= {}^{2} A^1_{x:\enclose{actuarial}{n}} + {}^{2}_{n}E_x \\
     \\
     \therefore Var(\text{EA})
     &amp;= {}^{2} A_{x:\enclose{actuarial}{n}} - \left(A_{x:\enclose{actuarial}{n}}\right)^2 \\
@@ -1524,12 +1539,14 @@
     &amp;= A_x - A^1_{x:\enclose{actuarial}{n}}
 \end{aligned}
 \]</div>
-<p>Alternatively, since a DWL is simply a WL assurance issued <span class="arithmatex">\(n\)</span> years later, the EPV of the DWL is equivalent to the EPV of a WL issued at age <span class="arithmatex">\(x+n\)</span> (after adjusting for interest <strong>AND</strong> survival):</p>
+<p>Alternatively, since a DWL is simply a WL assurance issued <span class="arithmatex">\(n\)</span> years later, the EPV of the DWL is equivalent to the EPV of a WL issued at age <span class="arithmatex">\(x+n\)</span> after <strong>adjusting for interest and survival</strong>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     {}_{n|} A_{x}
     &amp;= \sum^{\infty}_{K_x = n} v^{K_x + 1} \cdot {}_{K_x|}q_{x} \\
-    &amp;= v^n {}_{n} p_{x} \sum^{\infty}_{K_x = n} v^{K_x - n + 1} \cdot {}_{K_x-n|}q_{x+n} \\
+    &amp;= \sum^{\infty}_{K_x = n} v^{K_x + 1} \cdot {}_{K_x}p_{x} \cdot q_{x+K_x} \\
+    &amp;= \sum^{\infty}_{K_x = 0} v^{K_x + 1 + n} \cdot {}_{K_x+n}p_{x} \cdot q_{x+K_x+n} \\
+    &amp;= \sum^{\infty}_{K_x = 0} v^{K_x + 1} v^{n} \cdot {}_{n}p_{x} {}_{K_x}p_{x+n} \cdot q_{x+K_x+n} \\
     &amp;= v^n {}_{n} p_{x} \sum^{\infty}_{K_x = 0} v^{K_x + 1} \cdot {}_{K_x|}q_{x+n} \\
     &amp;= {}_{n}E_{x} \cdot A_{x+n} \\
 \end{aligned}
@@ -1546,10 +1563,26 @@
     A^1_{x:\enclose{actuarial}{n}} &amp;= A_{x} - {}_{n}E_{x} * A_{x+n} \\
 \end{aligned}
 \]</div>
-<p>This result is extremely useful as it allows the EPV of ALL assurances to be <strong>calculated through a WL assurance</strong>, which is the preferred approach for solving such questions as it is often provided in the SULT.</p>
+<p>This result is <strong>extremely important</strong> as this is the main method of calculating the EPV of a TA as the values for the WL can be easily found in the SULT.</p>
+<p>If the interest is not 0.05 or if mortality does NOT follow the SULT, then the EPV of a TA must be calculated manually. However, there is usually a catch that allows the EPV to be easily calculated manually:</p>
+<ul>
+<li><strong>Different Interest</strong>: Term of the contract is short (EG. 3 Years)</li>
+<li><strong>Different Mortality</strong>: Mortality can be simplified (EG. Becomes a constant)</li>
+</ul>
+<blockquote>
+<p>It is rare to have problems that have both different interest and mortality. In such cases, it is likely that an <em>adjusted</em> mortality table is provided.</p>
+</blockquote>
 <!-- Self Made -->
-<p><img alt="DWL Difference" src="../Assets/3.%20Life%20Assurances.md/DWL%20Difference.png" /></p>
-<p>Varian</p>
+<p><img alt="DWL Difference" class="center" src="../Assets/3.%20Life%20Assurances.md/DWL%20Difference.png" /></p>
+<p>The second moment of a TA is still an expectation, thus the above method applies to it as well:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    {}^{2} A^1_{x:\enclose{actuarial}{n}}
+    &amp;= {}^{2} A_{x} - {}^{2}_{n} E_{x} \cdot {}^{2} A_{x+n}
+\end{aligned}
+\]</div>
+<p>The key intuition is understanding that the <strong>discounting factor should be squared</strong> as well, which is why <span class="arithmatex">\({}^{2}_{n} E_{x}\)</span> is used instead.</p>
+<p>Finally, the variance of a DWL can be easily calculated by applying previous results:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     Var (DWL)
@@ -1559,18 +1592,26 @@
 \end{aligned}
 \]</div>
 <h4 id="deferred-ta"><strong>Deferred TA</strong></h4>
-<p>Another less commonly used deferred assurance is the <strong>Deferred Term Assurance</strong>. Although not commonly used for calculations, it can be used as a building block to decompose a regular assurance.</p>
-<p>An <span class="arithmatex">\(n\)</span> year term assurance can be thought of as the <strong>sum of <span class="arithmatex">\(n\)</span> deferred TAs</strong>, each with a one year term:</p>
+<p>Another less commonly used deferred assurance is the <strong>Deferred Term Assurance</strong>. As both a <strong>deferred and term</strong> assurance, both results apply to it:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    A^1_{x:\enclose{actuarial}{n}} &amp;= \sum^{n-1}_{i=0} {}_{i|}A_{x:\enclose{actuarial}{1}} \\
-    A_{x} &amp;= \sum^{\infty}_{i=0} {}_{i|}A_{x}
+    {}_{k|}A^1_{x:\enclose{actuarial}{n}}
+    &amp;= {}_{k}E_{x} \cdot A^1_{x+k:\enclose{actuarial}{n}} \\
+    &amp;= {}_{k}E_{x} \cdot (A_{x+k} - {}_{n}E_{x} \cdot A_{x+k+n})
+\end{aligned}
+\]</div>
+<p>Although rarely used, this result can be tricky due to the different PEs used to discount - one is for the deferred assurance while the other is for the term.</p>
+<p>Alternatively, it can be used as a building block to decompose a regular assurance. An <span class="arithmatex">\(n\)</span> year term assurance can be thought of as the <strong>sum of <span class="arithmatex">\(n\)</span> deferred TAs</strong>, each with a one year term:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    A^1_{x:\enclose{actuarial}{n}} &amp;= \sum^{n-1}_{k=0} {}_{k|}A^1_{x:\enclose{actuarial}{1}} \\
+    A_{x} &amp;= \sum^{\infty}_{k=0} {}_{k|}A_{x}
 \end{aligned}
 \]</div>
 <blockquote>
 <p>Since WLs are just term assurances with infinite coverage, it can be extended to WLs as well if needed.</p>
-</blockquote>
 <p>This result will come in handy in later sections.</p>
+</blockquote>
 <h3 id="recursions"><strong>Recursions</strong></h3>
 <p>The EPV of each contract can also be expressed through <strong>backwards recursion</strong>, where it is calculated as a function of itself.</p>
 <p>Consider the <strong>WL</strong> random variable:</p>
@@ -1848,20 +1889,24 @@
 \end{aligned}
 \]</div>
 <p>This is known as the <strong>Claims Acceleration Approach</strong> as the claims are paid out earlier on in the year as compared to the end.</p>
-<p>Recall that there are no continuous PEs - thus, be very careful when approximating an EA as only the TA portion needs to be approximated!</p>
+<h3 id="common-pitfalls"><strong>Common Pitfalls</strong></h3>
+<p>Recall that there are no continuous PEs - thus, be very careful when approximating an EA as <strong>ONLY the TA portion needs to be approximated</strong>!</p>
 <div class="arithmatex">\[
 \begin{aligned}
     \bar{A}_{x:\enclose{actuarial}{n}} &amp; \ne \frac{i}{\delta} A_{x:\enclose{actuarial}{n}} \\
     \bar{A}_{x:\enclose{actuarial}{n}} &amp; = \frac{i}{\delta} A^{1}_{x:\enclose{actuarial}{n}} + {}_{n}E_x
 \end{aligned}
 \]</div>
-<p>Similarly, if approximating the second moment for variance, note that the updated interest rate must be used in the approximation term as well:</p>
+<p>Similarly, if approximating the second moment for variance, note that the <strong>NEW interest rate must be used</strong> in the approximation term as well:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     {}^{2} \bar{A}_x &amp;= \frac{i^*}{\delta^*} \cdot {}^{2} A_x
 \end{aligned}
 \]</div>
+<blockquote>
 <p>Although the above two points were illustrated with UDD, they apply to the claims acceleration approach as well.</p>
+</blockquote>
+<p>Lastly, the two approaches should produce <strong>similar results</strong> which differ by a few decimal places. However, these differences are enlarged when dealing with large benefits as these decimal places will be brought forward, resulting in <em>seemingly</em> large differences - do not be alarmed!</p>
 <h2 id="variable-benefits"><strong>Variable Benefits</strong></h2>
 <p>Previously, the benefit of the assurances were assumed to be <strong>fixed at 1</strong> for simplicity. In practice, it is common to have assurances where the benefits <strong>change over time</strong>.</p>
 <h3 id="geometric-assurance"><strong>Geometric Assurance</strong></h3>
