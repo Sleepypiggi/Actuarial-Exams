@@ -975,15 +975,15 @@
 </blockquote>
 <h2 id="equivalence-principle-approach"><strong>Equivalence Principle Approach</strong></h2>
 <p>To determine the breakeven point of the insurer, the expected amount of loss must first be defined.</p>
-<p>Thus, let <span class="arithmatex">\(L\)</span> be the random variable denoting the loss of the policy:</p>
+<p>Thus, let <span class="arithmatex">\(L_x\)</span> be the random variable denoting the loss of the policy:</p>
 <ul>
-<li>If <span class="arithmatex">\(L\)</span> is positive, then the policy is losing money</li>
-<li>If <span class="arithmatex">\(L\)</span> is negative, then the policy is making money</li>
+<li>If <span class="arithmatex">\(L_x\)</span> is positive, then the policy is losing money</li>
+<li>If <span class="arithmatex">\(L_x\)</span> is negative, then the policy is making money</li>
 <li>The intepretation is reversed since <span class="arithmatex">\(L\)</span> represents an outflow rather than an inflow!</li>
 </ul>
 <div class="arithmatex">\[
 \begin{aligned}
-    L
+    L_x
     &amp;= \text{PV Outflow} - \text{PV Inflows} \\
     &amp;= \text{Benefits} + \text{Expenses} - \text{Premiums}
 \end{aligned}
@@ -991,7 +991,7 @@
 <p>The goal is to solve for the premiums such that there is <strong>no expected loss</strong>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    E(L) &amp;= 0 \\
+    E(L_x) &amp;= 0 \\
     \text{EPV Outflow} &amp;= \text{EPV Inflow} \\
     \text{EPV Benefits} + \text{EPV Expenses} &amp;= \text{EPV Premiums}
 \end{aligned}
@@ -1018,18 +1018,18 @@
 <p>The expectation and variance of an individual policy can be shown to be:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    L
+    L_x
     &amp;= B \cdot \text{WL} - P \cdot \text{WL_Due} \\
     &amp;= B \cdot \text{WL} - P \cdot \frac{1- \text{WL}}{d} \\
     &amp;= B \cdot \text{WL} - P \left(\frac{1}{d}-\frac{\text{WL}}{d} \right) \\
     &amp;= B \cdot \text{WL} - P \left[\left(\frac{1}{d}\right) + P\left(\frac{\text{WL}}{d}\right) \right] \\
     &amp;= \text{WL} \left(B + \frac{P}{d} \right) - \frac{P}{d} \\
     \\
-    \therefore E(L)
+    \therefore E(L_x)
     &amp;= E \left[\text{WL} \left(B + \frac{P}{d} \right) - \frac{P}{d} \right] \\
     &amp;= A_x \left(B + \frac{P}{d} \right) - \frac{P}{d} \\
     \\
-    \therefore Var(L)
+    \therefore Var(L_x)
     &amp;= Var\left[\text{WL} \left(B + \frac{P}{d} \right) - \frac{P}{d} \right] \\
     &amp;= Var \left[\text{WL} \left(B + \frac{P}{d} \right) \right] \\
     &amp;= \left(B + \frac{P}{d} \right)^2 \cdot Var(\text{WL}) \\
@@ -1103,13 +1103,13 @@
 <li><strong>During Policy</strong> - Unknown number of recurring payments; model using <strong>Annuity Functions</strong></li>
 <li><strong>Policy Termination</strong> - Single payment at unknown time; model using <strong>Assurance Functions</strong></li>
 </ol>
-<p>Expenses on policy inception are typically known as <strong>Initial Expenses</strong> while expenses during the policy are known as <strong>Renewal Expenses</strong>.</p>
+<p>Expenses on policy inception are typically known as <strong>Acquisition Expenses</strong> while expenses during the policy are known as <strong>Renewal Expenses</strong>.</p>
 <blockquote>
 <p>Initial expenses are usually higher as it is costly to set up a policy.</p>
 </blockquote>
 <p>Expenses may also increase over time by a factor of <span class="arithmatex">\((1+r)\)</span> each year, known as <strong>Expense Inflation</strong>. If this occurs, then the expenses are modelled using <strong>Geometric Annuities and Assurances</strong> instead.</p>
 <h3 id="expense-annuities"><strong>Expense Annuities</strong></h3>
-<p>Since renewal expenses only occur from year 1 onwards, they are calculated using annuity <em>immediates</em> rather than due, despite being paid in advance.</p>
+<p>Since renewal expenses only occur from <strong>year 1 onwards</strong>, they are calculated using annuity <em>immediates</em> rather than due, despite being paid in advance.</p>
 <!-- Self Made Diagram -->
 
 <blockquote>

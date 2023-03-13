@@ -946,11 +946,11 @@
 <!--force of mortality-->
 
 <h2 id="fractional-age-assumptions"><strong>Fractional Age Assumptions</strong></h2>
-<p>One limitation of the life table is that it is computed at discrete ages while many problems require computations for non-discrete ages.</p>
+<p>One limitation of the life table is that it is computed at discrete ages while many problems require probabilities for non-discrete ages.</p>
 <p>Thus, several <strong>assumptions</strong> about the life table that allows non-discrete values to be <strong>interpolated</strong> from the discrete ones, known as <strong>Fractional Age Assumptions</strong>.</p>
 <h3 id="uniform-distribution-of-deaths"><strong>Uniform Distribution of Deaths</strong></h3>
 <p>The <strong>Uniform Distribution of Deaths</strong> (UDD) is an assumption that allows for <strong>Linear Interpolation</strong> between discrete ages.</p>
-<p>It assumes that there is a <strong>uniform distribution</strong> of deaths between ages such that the probability of death <strong>linearly increases in each month</strong>. From another perspective, the survival function linearly decreases within the year.</p>
+<p>It assumes that there is a <strong>uniform distribution</strong> of deaths between ages such that the probability of survival <strong>decreases linearly</strong> over the year.</p>
 <blockquote>
 <p>The UDD assumption is less appropriate for older individuals as the probability of death begins to increase exponentially, even from month to month.</p>
 </blockquote>
@@ -984,20 +984,38 @@
     &amp;= q_x \\
     \\
     \mu_{x+t}
-\end{aligned}
-\]</div>
-<div class="arithmatex">\[
-\begin{aligned}
-    \bar{A}_x
-    &amp;= \int _0 ^\infty e ^{-\delta t} \cdot {} _t p _x \cdot \mu _{x+t} dt \\
-    &amp;= \sum _{k=0}^\infty \int _k ^{k+1} e ^{-\delta t} \cdot {} _t p _x \cdot \mu _{x+t} dt \\
-    &amp;= \sum _{k=0}^\infty e^{-\delta\cdot (k+1)} \cdot {} _k p _x \cdot \int _0 ^{1} e ^{-\delta \cdot (1-s)} \cdot \underbrace{{} _s p _{x+k} \cdot \mu _{x+k+s}} _{f _{x+k}(s)} ds \\ 
-    &amp; \approx \sum _{k=0}^\infty e^{-\delta\cdot (k+1)} \cdot {} _k p x \cdot q{x+k} \cdot \int _0 ^{1} e ^{-\delta \cdot (1-s)}ds &amp; (\text{using UDD, } f {x+k}(s) = q{x+k}) \\
-    &amp;= A_x \cdot \frac{e^{-\delta} - 1}{\delta}.
+    &amp;= \frac{f_x(s)}{S_x(s)} \\
+    &amp;= \frac{q_x}{1-sq_x}
 \end{aligned}
 \]</div>
 <h3 id="constant-force-of-mortality"><strong>Constant Force of Mortality</strong></h3>
-<p>The <strong>Constant Force of Mortality</strong> is an assumption that allows for Exponential Interpolation between discrete ages.</p>
+<p>The <strong>Constant Force of Mortality</strong> is an assumption that allows for <strong>Exponential Interpolation</strong> between discrete ages.</p>
+<p>It assumes that there is a <strong>constant force of mortality</strong> between ages, such that the survival probability <strong>decreases exponentially</strong> over the year.</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    {}_{1}p_{x}
+    &amp;= e^{-\int^{x+1}_{x} \mu_c} \\
+    &amp;= e^{-[t\mu_c]^{x+1}_{x}} \\
+    &amp;= e^{-[(x+1)\mu_c - (x)\mu_c ]} \\
+    &amp;= e^{-[\mu_c (x+1-x)]} \\
+    &amp;= e^{-\mu_c} \\
+    \mu_c &amp;= - \ln p_{x} \\
+    \\
+    \therefore
+    {}_{s}p_{x}
+    &amp;= e^{-\int^{x+s}_{x} \mu_c} \\
+    &amp;= e^{-s\mu_c} \\
+    &amp;= e^{s\ln p_{x}} \\
+    &amp;= e^{\ln (p_{x})^{s}} \\
+    &amp;= (p_{x})^{s} \\
+    \\
+    \therefore
+    {}_{s}q_{x}
+    &amp;= 1 - {}_{s}p_{x} \\
+    &amp;= 1 - (p_{x})^{s} \\
+    &amp;= 1 - [(1-q_{x})]^{s}
+\end{aligned}
+\]</div>
 <!-- Self Made -->
 <p><img alt="Constant Force of Mortality" class="center" src="../Assets/2.%20Life%20Tables.md/Constant%20Force.png" /></p>
 <h2 id="select-ultimate-mortality"><strong>Select &amp; Ultimate Mortality</strong></h2>
@@ -1014,6 +1032,11 @@
     \end{cases}
 \end{aligned}
 \]</div>
+<p>Note that the definition of <span class="arithmatex">\(x\)</span> is dependent on the questions:</p>
+<ul>
+<li><span class="arithmatex">\(x\)</span> is the <strong>select age</strong> - <span class="arithmatex">\([x], [x]+1, [x]+2, ...\)</span></li>
+<li><span class="arithmatex">\(x\)</span> is the <strong>ultimate age</strong> - <span class="arithmatex">\([x], [x-1], [x-2], ...\)</span></li>
+</ul>
 <!-- Obtained from CA -->
 <p><img alt="Select Ult Tables" src="../Assets/2.%20Life%20Tables.md/Select%20Ult%20Tables.png" /></p>
 <p>if given table, high chance the rate is not 5%</p>

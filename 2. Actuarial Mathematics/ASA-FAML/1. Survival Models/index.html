@@ -1246,7 +1246,7 @@
 <p>The <strong>Force of Mortality</strong> is the probability of dying <em>instantly</em>; in an <strong>infinitely small unit of time</strong> (normalized by unit time):</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    \mu_x
+    \mu_{0+x}
     &amp;= \lim_{h \to 0} \frac{P(T_x &lt; h)}{h} \\
     &amp;= \lim_{h \to 0} \frac{1 - S_x(h)}{h} \\
     &amp;= \lim_{h \to 0} \frac{1 - (\frac{S_0(x+h)}{S_0(x)})}{h} \\
@@ -1268,7 +1268,7 @@
 \]</div>
 <p>The force of mortality can be rewritten as the following:</p>
 <div class="arithmatex">\[
-    \mu_x = \frac{f_0(x)}{S_0(x)}
+    \mu_{0+x} = \frac{f_0(x)}{S_0(x)}
 \]</div>
 <p>Thus, the force of mortality can also be intepreted as the <strong>CONDITIONAL probability distribution</strong> of death for a person aged <span class="arithmatex">\(x\)</span>, <em>assuming</em> that the person survives till age <span class="arithmatex">\(x\)</span>.</p>
 <blockquote>
@@ -1278,7 +1278,7 @@
 <p>More generally, the force of mortality can be rewritten as:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    \mu_x &amp;= \frac{f_0(x)}{S_0(x)} \\
+    \mu_{0+x} &amp;= \frac{f_0(x)}{S_0(x)} \\
     \mu_{x+t} &amp;= \frac{f_x(t)}{S_x(t)} \\
     f_x(t) &amp;= S_x(t)\mu_{x+t} \\
     F_x(t) &amp;= \int_0^t S_x(t)\mu_{x+t}
