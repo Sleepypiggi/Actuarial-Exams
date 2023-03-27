@@ -536,6 +536,19 @@
     Assurances and Annuities
   </a>
   
+    <nav class="md-nav" aria-label="Assurances and Annuities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variance" class="md-nav__link">
+    Variance
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1086,6 +1099,19 @@
     Assurances and Annuities
   </a>
   
+    <nav class="md-nav" aria-label="Assurances and Annuities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variance" class="md-nav__link">
+    Variance
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1502,6 +1528,14 @@
     A_x &amp;= 1 - d \ddot{a}_x
 \end{aligned}
 \]</div>
+<p>The same relationship can be shown for a temporary annuity and an <strong>Endowment Assurance, NOT a term assurance</strong>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    A_{x:\enclose{actuarial}{n}} &amp;= 1 - d \ddot{a}_{x:\enclose{actuarial}{n}} \\
+\end{aligned}
+\]</div>
+<p>It is a very common mistake to confuse the two as both are denoted by TA. However, it is the endowment assurance that shares the same random variable as the temporary annuity. It also makes sense when comparing the actuarial notation - both share the same subscript.</p>
+<h4 id="variance"><strong>Variance</strong></h4>
 <p>However, the second moment is slightly different as it must reflect the new interest rate used.</p>
 <p>The same logic can be applied for the <strong>Variance</strong> as well:</p>
 <div class="arithmatex">\[
@@ -1512,16 +1546,12 @@
     Var(\text{WLA}_{Due}) &amp;= \frac{1}{d^2} \left({}_{}^2 A_x - (A_x)^2 \right)
 \end{aligned}
 \]</div>
-<p>The same relationship can be shown for a temporary annuity and an <strong>Endowment Assurance, NOT a term assurance</strong>:</p>
-<div class="arithmatex">\[
-\begin{aligned}
-    A_{x:\enclose{actuarial}{n}} &amp;= 1 - d \ddot{a}_{x:\enclose{actuarial}{n}} \\
-    Var(\text{TA}_{Due}) &amp;= \frac{1}{d^2} \left({}_{}^2 A_{x:\enclose{actuarial}{n}} - (A_{x:\enclose{actuarial}{n}})^2 \right)
-\end{aligned}
-\]</div>
-<blockquote>
-<p>It is a very common mistake to confuse the two as both are denoted by TA. However, the relationship makes sense if the actuarial notation is followed - both share the same status.</p>
-</blockquote>
+<pre><code>Var(\text{TA}_{Due}) &amp;= \frac{1}{d^2} \left({}_{}^2 A_{x:\enclose{actuarial}{n}} - (A_{x:\enclose{actuarial}{n}})^2 \right)
+</code></pre>
+<p>WLDue and WL Immediate same variance but DWLDue and DWL immediate different variance because it is dependent on survival
+GA = Certain + Deferred
+Var (GA) = Var (Deferred)</p>
+<p>Problem is Var(Deferred)</p>
 <h3 id="immediate-and-due"><strong>Immediate and Due</strong></h3>
 <p>Recall that for Certain Annuities, the only difference between Due and Immediate ones are the payments at the start and end times. This relationship can be extended for Life Annuities as well.</p>
 <p>For WL annuities, since the <strong>end point is infinity</strong>, the difference in the end points can be ignored. Thus, the only difference is the first payment of 1, which can be easily accounted for:</p>

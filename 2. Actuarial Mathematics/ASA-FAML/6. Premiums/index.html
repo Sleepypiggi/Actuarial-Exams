@@ -524,16 +524,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#net-premiums" class="md-nav__link">
-    Net Premiums
+  <a href="#gross-premiums" class="md-nav__link">
+    Gross Premiums
   </a>
   
-    <nav class="md-nav" aria-label="Net Premiums">
+    <nav class="md-nav" aria-label="Gross Premiums">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#expense-annuities" class="md-nav__link">
-    Expense Annuities
+  <a href="#expense-calculations" class="md-nav__link">
+    Expense Calculations
   </a>
   
 </li>
@@ -943,16 +943,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#net-premiums" class="md-nav__link">
-    Net Premiums
+  <a href="#gross-premiums" class="md-nav__link">
+    Gross Premiums
   </a>
   
-    <nav class="md-nav" aria-label="Net Premiums">
+    <nav class="md-nav" aria-label="Gross Premiums">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#expense-annuities" class="md-nav__link">
-    Expense Annuities
+  <a href="#expense-calculations" class="md-nav__link">
+    Expense Calculations
   </a>
   
 </li>
@@ -986,7 +986,7 @@
 
 <h1 id="premiums"><strong>Premiums</strong></h1>
 <p>Unlike other products, the cost of a Life Assurance or Annuity are not known when it is issued, as it is <strong>impossible to precisely predict</strong> when an individual will die or how long they will live for.</p>
-<p>Premiums are the amount that the insurance company charges for a Life Assurance or Annuity. They aim to charge a sufficiently high premium such that they <strong>expect</strong> to (<em>at least</em>) <strong>break even</strong> on the sale of the policy.</p>
+<p>Premiums are the amount that the insurance company charges for a Life Assurance or Annuity. They aim to charge a sufficiently high premium such that they expect to at least <strong>break even</strong> on the sale of the policy on an <strong>EPV basis</strong>.</p>
 <p>Premiums are always <strong>paid in advance</strong>, but the frequency of payment depends on the type of premium:</p>
 <p><center></p>
 <table>
@@ -1017,11 +1017,9 @@
 <p>There are two types of premiums that can be calculated:</p>
 <ul>
 <li><strong>Net Premiums, <span class="arithmatex">\(P\)</span></strong> - <em>Excluding</em> expenses; based on benefits only</li>
-<li><strong>Gross Premiums, <span class="arithmatex">\(G\)</span></strong> - <em>Including</em> expenses; based on BOTH benefits and expenses</li>
+<li><strong>Gross Premiums, <span class="arithmatex">\(G\)</span></strong> - <em>Including</em> expenses; based on BOTH benefits, expenses and other cashflows</li>
 </ul>
-<blockquote>
-<p>Other cashflows such as a fixed profit margin can also be considered.</p>
-</blockquote>
+<p>The key thing to notice is that the components of net premiums are fixed while gross premiums differ from insurer to insurer. Thus, this section will <strong>only show formulas for net premiums</strong>.</p>
 <h2 id="equivalence-principle-approach"><strong>Equivalence Principle Approach</strong></h2>
 <p>To determine the breakeven point of the insurer, the expected amount of loss must first be defined.</p>
 <p>Thus, let <span class="arithmatex">\(L_x\)</span> be the random variable denoting the loss of the policy:</p>
@@ -1048,7 +1046,7 @@
 <li><strong>Net Premium</strong>: <span class="arithmatex">\(L^{B}_{x}\)</span>, where <span class="arithmatex">\(B\)</span> represents the <strong>B</strong>enefits only</li>
 <li><strong>Gross Premium</strong>: <span class="arithmatex">\(L^{B+E}_{x}\)</span>, where <span class="arithmatex">\(B+E\)</span> represents <strong>B</strong>enefits and <strong>E</strong>xpenses</li>
 </ul>
-<p>This section will focus on <strong>Net Premiums</strong>, unless stated otherwise. This is because the components for net premiums are <strong>always the same</strong>, making it easier to illustrate. Gross premiums depend on what additional cashflows are being considered.</p>
+<p>For Net Premiums only,</p>
 <div class="arithmatex">\[
 \begin{aligned}
     E \left(L^{B}_{x} \right) &amp;= 0 \\
@@ -1059,7 +1057,7 @@
 \]</div>
 <h2 id="portfolio-percentile-approach"><strong>Portfolio Percentile Approach</strong></h2>
 <p>If there are a large number of policies within the insurer's portfolio, then the insurer can consider the <strong>breakeven on a portfolio of policies</strong> rather than a single policy.</p>
-<p>Let <span class="arithmatex">\(Y\)</span> be the random variable denoting the <strong>aggregate loss</strong> on a portfolio of <span class="arithmatex">\(n\)</span> policies.</p>
+<p>Let <span class="arithmatex">\(Y\)</span> be the random variable denoting the <strong>aggregate loss</strong> on a portfolio of <span class="arithmatex">\(n\)</span> iid policies:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     Y &amp; \sim iid \\
@@ -1081,7 +1079,7 @@
     P\left(Z \le \frac{- E(L)}{\sqrt{Var (L)}}\right) &amp;= \alpha
 \end{aligned}
 \]</div>
-<p>Thus, only the expectation and variance of an <strong>individual policy</strong> is required:</p>
+<p>Thus, only the expectation and variance of an <strong>individual policy</strong> is required. For net premiums only,</p>
 <div class="arithmatex">\[
 \begin{aligned}
     L_x
@@ -1113,8 +1111,47 @@
 \]</div>
 <!-- Why? -->
 
-<h2 id="net-premiums"><strong>Net Premiums</strong></h2>
-<p>There are two types of expenses in a typical insurance policy:</p>
+<h2 id="gross-premiums"><strong>Gross Premiums</strong></h2>
+<p>What makes gross premiums so much trickier than net premiums is that there are many <strong>different types of expenses</strong>, where every question can ask for a unique combination of them.</p>
+<p>Expenses can be differentiated in terms of when they are charged:</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>Acquisition Expenses</strong></th>
+<th align="center"><strong>Renewal Expenses</strong></th>
+<th align="center"><strong>Termination Expense</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">At policy <strong>inception</strong></td>
+<td align="center">During policy <strong>lifetime</strong></td>
+<td align="center">At policy <strong>termination</strong></td>
+</tr>
+<tr>
+<td align="center">Single payment at <strong>time 0</strong></td>
+<td align="center">Recurring payments from <strong>time 1</strong> onwards</td>
+<td align="center">Single payment at unknown time</td>
+</tr>
+<tr>
+<td align="center">No transformation needed</td>
+<td align="center">Corresponding <strong>Annuity</strong> Functions</td>
+<td align="center">Corresponding <strong>Assurance</strong> Function</td>
+</tr>
+<tr>
+<td align="center">EG. Commissions expenses</td>
+<td align="center">EG. Administrative Expenses</td>
+<td align="center">EG. Claims expenses</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>Renewal Expenses can also <strong>inflate</strong> over time, where they increase by a factpr of <span class="arithmatex">\((1+r)\)</span> each year. In this case, they are modelled using a <strong>geometrically increasing annuity</strong> instead.</p>
+<blockquote>
+<p><strong>IMPORTANT</strong>: Acquisition expenses are usually higher than renewal ones as it is costly to set up a policy.</p>
+</blockquote>
+<p>They can also be differentiated in terms of how much they charge:</p>
 <p><center></p>
 <table>
 <thead>
@@ -1125,8 +1162,12 @@
 </thead>
 <tbody>
 <tr>
-<td align="center">For all policies</td>
-<td align="center">For a specific policy</td>
+<td align="center">Shared among all policies</td>
+<td align="center">Borne by a specific policy</td>
+</tr>
+<tr>
+<td align="center">Fixed amount</td>
+<td align="center">Percentage of policy premium or benefit</td>
 </tr>
 <tr>
 <td align="center">Spread out among all policies</td>
@@ -1134,66 +1175,48 @@
 </tr>
 <tr>
 <td align="center">EG. Office Rental</td>
-<td align="center">EG. Sales Commission</td>
+<td align="center">EG. Sales Commission or Underwriting Expenses</td>
 </tr>
 </tbody>
 </table>
 <p></center></p>
-<p>They are typically determined in one of three ways:</p>
-<ul>
-<li><strong>Percentage of premiums</strong> - EG. Sales Commission</li>
-<li><strong>Percentage of benefits</strong> - EG. Underwriting Expenses</li>
-<li><strong>Fixed amount</strong> - EG. Overhead Expenses</li>
-</ul>
-<p>Certain expenses are only charged at certain time points:</p>
-<ol>
-<li><strong>Policy Inception</strong> - Single payment at known time; directly use amount</li>
-<li><strong>During Policy</strong> - Unknown number of recurring payments; model using <strong>Annuity Functions</strong></li>
-<li><strong>Policy Termination</strong> - Single payment at unknown time; model using the corresponding <strong>Assurance Functions</strong></li>
-</ol>
-<p>Expenses on policy inception are typically known as <strong>Acquisition Expenses</strong> while expenses during the policy are known as <strong>Renewal Expenses</strong>.</p>
-<blockquote>
-<p>Acquisition expenses are usually higher than renewal ones as it is costly to set up a policy.</p>
-</blockquote>
-<p>Expenses may also increase over time by a factor of <span class="arithmatex">\((1+r)\)</span> each year, known as <strong>Expense Inflation</strong>. If this occurs, then the expenses are modelled using <strong>Geometric Annuities and Assurances</strong> instead.</p>
-<h3 id="expense-annuities"><strong>Expense Annuities</strong></h3>
-<p>Since renewal expenses only occur from <strong>year 1 onwards</strong>, they are calculated using annuity <em>immediates</em> rather than due, despite being paid in advance.</p>
-<!-- Self Made Diagram -->
-
-<blockquote>
-<p>Recall that beginning of Y1 is the same as end of Y0.</p>
-</blockquote>
-<p>This can be worked around by <strong>combining</strong> the initial expense with the renewal expenses, creating a payment at the start of Y0 such that an annuity due can be used.</p>
-<p>Consider the following example:</p>
-<ul>
-<li>Acquisition Expense - <span class="arithmatex">\(0.5G + 0.02B + 10\)</span></li>
-<li>Renewal Expenses - <span class="arithmatex">\(0.1G + 0.01B + 4\)</span></li>
-</ul>
-<p>Express the initial expense as a function of the renewal expenses:</p>
+<p>Note that gross premiums can also include other cashflows, such as a pre-determined <strong>profit margin</strong>. Since these are rare and highly dependent on the situation, they will not be covered in this section.</p>
+<h3 id="expense-calculations"><strong>Expense Calculations</strong></h3>
+<p>Consider a policy that only has <strong>acquisition and renewal expenses</strong>, denoted by A and R respectively:</p>
+<!-- Self Made -->
+<p><img alt="Expense Cashflows" class="center" src="../Assets/6.%20Premiums.md/Expense%20Cashflows.png" /></p>
+<p>The PV of the expenses can be easily calculated by using an annuity immediate:</p>
+<div class="arithmatex">\[
+    \text{EPV Expenses} = A + R \cdot a_x
+\]</div>
+<p>While this is not challenging per se, it is slightly inconvenient as there is a need to use an annuity immediate while premiums use annuity dues - this would make it harder to simplify or more computationally intensive.</p>
+<p>This can be worked around by <strong>splitting the acquisition expense</strong>, such that one part of it forms the first payment for the renewal expenses, allowing an annuity due to be used instead:</p>
+<!-- Self Made -->
+<p><img alt="Acquisition Expense Splitting" src="../Assets/6.%20Premiums.md/Acquisition%20Expense%20Splitting.png" /></p>
 <div class="arithmatex">\[
 \begin{aligned}
-    0.5G + 0.02B + 10 = (0.1G + 0.01B + 4) + (0.4G + 0.01B + 6) \\
+    \text{EPV Expenses}
+    &amp;= A + R \cdot a_x \\
+    &amp;= A - R + R + R \cdot a_x \\
+    &amp;= A - R + R \cdot \ddot{a}_x \\
+    &amp;= A + R \cdot (\ddot{a}_x - 1)
 \end{aligned}
 \]</div>
-<p>Thus, the EPV of expenses can be expressed using a life annuity due:</p>
-<div class="arithmatex">\[
-    \text{EPV Expense} = (0.1G + 0.01B + 4)\ddot{a}_x + (0.4G + 0.01B + 6)
-\]</div>
-<p>This can be generalized and further simplified to the following:</p>
-<div class="arithmatex">\[
-    \text{EPV Expense} = \text{Acquisition Expense} + \text{Renewal Expense} \cdot (\ddot{a}_x-1)
-\]</div>
-<blockquote>
-<p>This does not hold true if Expense Inflation occurs as the second payment of the geometric annuity would be higher than the first payment of the renewal expense.</p>
-</blockquote>
+<p>However, note that the simplification does NOT hold true if expense inflation is taken into account - the level annuity immediate CANNOT simply be replaced with the geometric annuity.</p>
+<p>This is because the expenses only start to inflate from the third payment onwards:</p>
+<!-- Self Made -->
+<p><img alt="Expense Inflation" class="center" src="../Assets/6.%20Premiums.md/Expense%20Inflation.png" /></p>
 <h3 id="new-business-strain"><strong>New Business Strain</strong></h3>
-<p>If only expenses are considered for premium calculations (ignoring benefits), then the resulting premium is known as the <strong>Expense Premium</strong>.</p>
-<p>It can also be calculated as the <strong>difference</strong> between Gross and Net Premiums:</p>
+<p>If only expenses are considered for premium calculations (ignoring benefits), then the resulting premium is known as the <strong>Expense Premium</strong>, <span class="arithmatex">\(E\)</span>.</p>
+<p>If the gross premiums are calculated using only benefits and expenses (no profit), then the expense premium is the difference between the gross and net premium:</p>
 <div class="arithmatex">\[
-    \text{Expense Premium} = \text{Gross Premium} - \text{Net Premium}
+\begin{aligned}
+    G &amp;= P + E \\
+    E &amp;= G - P
+\end{aligned}
 \]</div>
-<p>The expense premium is <strong>always smaller than the initial expenses</strong>. The insurer <strong>does not collect enough premiums</strong> to set-up the policy, thus has to fork out their own capital to cover the initial cost. This results in an initial financial loss known as the <strong>New Business Strain</strong>.</p>
-<p>However, the expense premium is always higher than the renewal expenses, reflecting that the insurer <strong>recovers the loss over time</strong>.</p>
+<p>The expense premium is <strong>always smaller than the acquisition expenses</strong>. The insurer <strong>does not collect enough premiums</strong> to set-up the policy, thus makes an initial loss on the policy, known as the <strong>New Business Strain</strong>.</p>
+<p>However, the expense premium is <strong>always higher than the renewal expenses</strong>, reflecting that the insurer <strong>recovers the loss over time</strong>.</p>
 
 
 

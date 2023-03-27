@@ -1780,7 +1780,7 @@
 <li>Probability of paying the Benefit, <span class="arithmatex">\({}_{t}p_{x} \mu_{x+t}\)</span></li>
 </ol>
 <p>Unlike the payable <span class="arithmatex">\(m\)</span> times case, the EPVs <em>can be calculated directly</em> if the survival distribution is provided. However, since they are special cases of the payable <span class="arithmatex">\(m\)</span> times case, it can also be calculated through approximation from the discrete case.</p>
-<p>The same logic can be applied to all other assurances, <strong>EXCEPT for PEs</strong>. This is because they pay out at a <strong>fixed time</strong>, thus there is <strong>NO such thing</strong> as a payable <span class="arithmatex">\(m\)</span> times PE or a continuously payable PE..</p>
+<p>The same logic can be applied to all other assurances, <strong>EXCEPT for PEs</strong>. This is because they pay out at a <strong>fixed time</strong>, thus there is <strong>NO such thing</strong> as a payable <span class="arithmatex">\(m\)</span> times PE or a continuously payable PE.</p>
 <h3 id="uniform-distribution-of-deaths"><strong>Uniform Distribution of Deaths</strong></h3>
 <p>Recall that the UDD assumption can be used to approximate survival probabilities of <strong>fractional ages</strong> from discrete probabilities. Using this approach, the Continuous EPVs can be approximated from the Discrete ones.</p>
 <p>Assuming UDD between integer ages,</p>
@@ -1844,6 +1844,8 @@
 <p>This is known as the <strong>Claims Acceleration Approach</strong> as the claims are paid out earlier on in the year as compared to the end.</p>
 <h3 id="common-pitfalls"><strong>Common Pitfalls</strong></h3>
 <p>Recall that there are no continuous PEs - thus, be very careful when approximating an EA as <strong>ONLY the TA portion needs to be approximated</strong>!</p>
+<p>This means that we <strong>cannot directly apply</strong> an approximation to the EA values provided in the SULT - they must be broken down into the TA and EA components first.</p>
+<p>If calculating manually, it is always advised to calculate the TA and EA components seperately before combining into an EA to prevent falling into the trap of directly approximating the EA.</p>
 <div class="arithmatex">\[
 \begin{aligned}
     \bar{A}_{x:\enclose{actuarial}{n}} &amp; \ne \frac{i}{\delta} A_{x:\enclose{actuarial}{n}} \\
