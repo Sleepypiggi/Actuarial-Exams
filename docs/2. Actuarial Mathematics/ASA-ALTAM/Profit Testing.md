@@ -1,0 +1,249 @@
+# **Profit Testing**
+
+## **Overview**
+
+In most other industries, the cost of the product is known beforehand, thus it is possible to determine its profitability beforehand.
+
+Unfortunately, due to the **contingent nature** of life assurances and annuities, it is impossible to determine profitability beforehand.
+
+Recall that insurers make certain assumptions about the policyholder and thus price the product accordingly. If the policyholder follows these assumptions *exactly*, then the resulting profit is known as the **Expected Profit**. In reality, the policyholder will deviate from the assumptions to varying extents, resulting in the **Actual Profit**.
+
+From an accounting perspective, what the insurer recognises as "profit" is the **excess** of actual profit over expected profit, also known as the **Gain** of the policy:
+
+$$
+    \text{Gain} = \text{Actual Profit} - \text{Expected Profit}
+$$
+
+## **Expected Profit**
+
+### **Cashflow Projections**
+
+We first consider the cashflows that the insurer expects every *policy year*:
+
+* At the start of the policy year, they **collect premiums and pay expenses**
+* They invest the excess amount to **earn interest** at the end of the policy year
+* They expect some policyholders to die and hence **payout claims and any claims expenses** at the end of the policy year
+
+Thus, the combination of these cashflows are known as the **expected net cashflows** for that policy year, calculated at the **end of the policy year**:
+
+$$
+    \text{Expected NCF} = (P - e)(1+i) - q_x \cdot (B+E)
+$$
+
+> If the insurer pays more expenses than premiums, then they have to **borrow money**, which means that they **pay interest** at the end of the policy year instead. In either case, the expression remains unchanged.
+>
+> Similarly, for an annuity, they expect some policyholder to **remain alive** instead, thus the payout should be multiplied by the survival probability instead.
+
+Since the insurer holds reserves that cannot be touched, it can be thought of as an **account balance**:
+
+* The reserve held at the beginning of the policy year is the **opening balance**
+* Since the reserve is invested, it **earns interest** at the end of the policy year
+* They **receive the NCF** at the end of the policy year
+* They set up a new reserve at the end of the policy year (**closing balance**) for the expected remaining policyholders
+
+Since the closing balance is known, any **excess over the closing balance** is the expected profit over that policy year:
+
+$$
+\begin{aligned}
+    \text{Expected Profit}
+    &= {}_{t-1}V \cdot (1+i) + \text{Expected NCF} - p_x \cdot {}_{t}V \\
+    &= ({}_{t-1}V + P - e)(1+i) - q_x \cdot (B+E) - p_x \cdot {}_{t}V
+\end{aligned}
+$$
+
+> Note that the **earned interest earned** may be different from the interest used to compute premiums or reserves.
+
+This is equivalent to saying that the profit in each policy year is the combination of the NCFs AND the **change in reserves** for that policy year:
+
+$$
+\begin{aligned}
+    \text{Expected Profit}
+    &= \text{Expected NCF} + {}_{t-1}V \cdot (1+i) - p_x \cdot {}_{t}V \\
+    &= \text{Expected NCF} + \text{Expected change in reserve}
+\end{aligned}
+$$
+
+Note that there are two special cases:
+
+* **Beginning** of policy - Starting reserve is 0
+* **End** of policy - Ending reserve is 0
+
+<!-- Obtained from Coaching Actuaries -->
+![Profit Special Case](Assets/Profit%20Testing.md/Profit%20Special%20Case.png){.center}
+
+### **Profit Vector & Signature**
+
+If the expected profit is calculated **every policy year** and collected together, then the resulting vector is known as the **Profit Vector**.
+
+$$
+\begin{aligned}
+    \text{PR}
+    &=
+    \begin{pmatrix}
+        \text{PR}_1 \\
+        \text{PR}_2 \\
+        \vdots \\
+        \text{PR}_t
+    \end{pmatrix}
+\end{aligned}
+$$
+
+<!-- Self Made -->
+![Profit Vector](Assets/Profit%20Testing.md/Profit%20Vector.png){.center}
+
+> Most questions will only require computing the profit vector for a short period of time given its itensity.
+
+However, the expected profit for each policy year makes the implicit assumption that the **policyholder survives till the BEGINNING of that policy year**. Thus, every element of the profit vector is calculated based off varying assumptions.
+
+This is not very useful and thus can be corrected by adjusting the profit vector with the probability of survival till the *beginning* each policy year. The resulting vector is the **unconditional profit**, known as the **Profit Signature**.
+
+$$
+\begin{aligned}
+    \Pi
+    &=
+    \begin{pmatrix}
+        {}_{0}p_x \\
+        {}_{1}p_x \\
+        \vdots \\
+        {}_{t-1}p_x
+    \end{pmatrix}
+    *
+    \begin{pmatrix}
+        \text{PR}_1 \\
+        \text{PR}_2 \\
+        \vdots \\
+        \text{PR}_t
+    \end{pmatrix}
+\end{aligned}
+$$
+
+> Recall that ${}_{0}p_x = 1$.
+
+<!-- Self Made -->
+![Profit Signature](Assets/Profit%20Testing.md/Profit%20Signature.png){.center}
+
+### **Profit Measures**
+
+Using the profit signature, insurers can gauge the profitability of the products using a variety of metrics.
+
+#### **Net Present Value**
+
+**Net Present Value** (NPV) follows its finance definition and is the **excess of PV Inflows over Outflows**. In this context, it is the **sum of the present values** of all elements within the profit signature:
+
+$$
+\begin{aligned}
+    \text{NPV}
+    &= \left(v^1 \quad v^2 \quad \dots \quad v^t \right) \cdot \begin{pmatrix} \text{PR}_1 \\ \text{PR}_2 \\ \vdots \\ \text{PR}_t \end{pmatrix} \\
+    &= v^1 \cdot \text{PR}_1 + v^2 \cdot \text{PR}_2 + \dots + v^t \cdot \text{PR}_t
+\end{aligned}
+$$
+
+> Note that there may be some **cashflows at time 0** that also must be accounted for in the NPV, usually known as **Pre-Contract Expenses**.
+
+The interest rate used to discount the cashflows is known as the **Discount Rate**, and is usually different from the earned interest rate or the one used in pricing/reserving.
+
+#### **Internal Rate of Return**
+
+The **Internal Rate of Return** (IRR) is the **Discount Rate** that will result in an **NPV of 0**:
+
+$$
+    \text{NPV}_\text{IRR} = 0
+$$
+
+The IRR cannot be calculated through an equation and must be solved using numerical methods. However, it can also be calculated using the **cashflow function** in most financial calculators.
+
+#### **Discounted Payback Period**
+
+The **Discounted Payback Period** (DPP) is the **earliest time** in the contract which the **NPV becomes positive**:
+
+$$
+    \text{DPP} = min [t: NPV(t) > 0]
+$$
+
+It is best calculated by incrementally calculating the NPV at various policy years, stopping when the NPV becomes positive.
+
+#### **Profit Margin**
+
+The **Profit Margin** ($\pi$) is the **ratio** of the NPV to the EPV of premiums:
+
+$$
+    \pi = \frac{\text{NPV}}{\text{EPV Premiums}}
+$$
+
+Note that the EPV of premiums are discounted using the **same interest as the NPV**.
+
+#### **Premiums**
+
+#### **Reserves**
+
+## **Gains by Source**
+
+As alluded to earlier, actual profits are simply profits that are **based on what actually happens** rather than what was assumed. From this and the expected profit, the gain from the policy is determined.
+
+The difference in actual versus expected (AvE) assumptions typically comes in three aspects - Expenses, Interest & Mortality. Thus, the gain can also be *decomposed* into these three aspects to **precisely pinpoint** which assumptions need tweaking.
+
+$$
+    \text{Total Gain}
+    &= \text{Actual Profit} - \text{Expected Profit} \\
+    &= \text{Expense Gain} + \text{Interest Gain} + \text{Mortality Gain}
+$$
+
+For this section, Expected and Actual variables are differentiated using "$'$".
+
+### **Expense Gain**
+
+Since expense is a cash *outflow*, gain is recognised when the **expected outflow is larger** than the actual outflow.
+
+$$
+\begin{aligned}
+    \text{Expense Gain}
+    &= \text{Assumed Expense Profit} - \text{Actual Expense Profit} \\
+    &= e(1+i) - q_x \cdot E - (e'(1+i) - q_x \cdot E') \\
+    &= (e-e')(1+i) - q_x (E-E')
+\end{aligned}
+$$
+
+Note that since only the gain due to expenses are desired, **only the expense assumptions** go through the AvE process. The rest of the assumptions follow what was expected.
+
+### **Interest Gain**
+
+On the flipside, since interest is a cash *inflow*, gain is recognised when the **expected inflow is smaller** than the actual outflow.
+
+$$
+\begin{aligned}
+    \text{Interest Gain}
+    &= \text{Actual Interest Profit} - \text{Expected Interest Profit} \\
+    &= ({}_{t-1}V + P - e') \cdot i' - ({}_{t-1}V + P - e') \cdot i \\
+    &= (i' - i)({}_{t-1}V + P - e')
+\end{aligned}
+$$
+
+Similarly, since only the gain due to interest is desired, **only the interest assumptions** go through the AvE process. However, since the expense gain was **already calculated**, the actual expense is directly used.
+
+Thus, the **order of calculation** is important as it determines whether the actual or expected values are used - if the gain has already been calculated, then in all subsequent calculations, only the **actual assumptions** should be used.
+
+> TBC the reason for this
+
+### **Mortality Gain**
+
+Similarly, mortality is a cash *outflow*, gain is recognised when the **expected outflow is larger** than the actual outflow.
+
+$$
+\begin{aligned}
+    \text{Mortality Gain}
+    &= \text{Assumed Mortality Profit} - \text{Actual Mortality Profit} \\
+    &= q_x \cdot (B+E') + (1-q_x) \cdot {}_{t}V - [q'_x \cdot (B+E') + (1-q'_x) \cdot {}_{t}V] \\
+    &= q_x \cdot (B+E') + {}_{t}V - q_x \cdot {}_{t}V - [q'_x \cdot (B+E') + {}_{t}V - q'_x \cdot {}_{t}V] \\
+    &= q_x \cdot (B+E') + {}_{t}V - q_x \cdot {}_{t}V - q'_x \cdot (B+E') - {}_{t}V + q'_x \cdot {}_{t}V \\
+    &= (q_x - q'_x)(B+E') - (q_x - q'_x){}_{t}V \\
+    &= (q_x - q'_x)(B+E'-{}_{t}V)
+\end{aligned}
+$$
+
+> The second term is also known as the **Net Amount at Risk**, which represents the *additional* amount that the insurer has to pay in the event of a claim.
+
+In practice, the question may provide the actual **number of policyholders** (NOP) instead of the probabilities. Thus, we need to solve for the actual probabilities using:
+
+$$
+    q'_x = \frac{\text{NOP}_\text{Beginning} - \text{NOP}_\text{Ending}}{\text{NOP}_\text{Beginning}}
+$$
