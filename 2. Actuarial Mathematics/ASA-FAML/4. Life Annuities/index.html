@@ -482,6 +482,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#review-annuities-certain" class="md-nav__link">
     Review: Annuities Certain
   </a>
@@ -583,6 +590,13 @@
           <li class="md-nav__item">
   <a href="#different-annuities" class="md-nav__link">
     Different Annuities
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#immediate-vs-due" class="md-nav__link">
+    Immediate VS Due
   </a>
   
 </li>
@@ -756,7 +770,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ASA-ALTAM/Special%20Products/" class="md-nav__link">
+      <a href="../../../2. Actuarial Mathematics/ASA-ALTAM/Special Products.md" class="md-nav__link">
         Special
       </a>
     </li>
@@ -1045,6 +1059,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#review-annuities-certain" class="md-nav__link">
     Review: Annuities Certain
   </a>
@@ -1150,6 +1171,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#immediate-vs-due" class="md-nav__link">
+    Immediate VS Due
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1217,6 +1245,7 @@
 
 
 <h1 id="life-annuities"><strong>Life Annuities</strong></h1>
+<h2 id="overview"><strong>Overview</strong></h2>
 <p>Life Annuity contracts promise to pay out a <strong>stream of benefits</strong> in the future for <em>as long</em> the policyholder remains alive. Similar to life insurance, the benefits can be paid discretely or continuously and can be valued through their EPV.</p>
 <p>Note that these are different from the annuities covered in Exam FM. The payments for those annuities are made <strong>regardless</strong> of the life of the policyholder, known as <strong>Annuity Certain</strong>. They serve as the foundation to understanding Life Annuities.</p>
 <h2 id="review-annuities-certain"><strong>Review: Annuities Certain</strong></h2>
@@ -1640,6 +1669,38 @@ Var (GA) = Var (Deferred)</p>
 <div class="arithmatex">\[
     \ddot{a}_{x:\enclose{actuarial}{n}} &lt; \ddot{a}_x &lt; \ddot{a}_{\bar{x:\enclose{actuarial}{n}}}
 \]</div>
+<h4 id="immediate-vs-due"><strong>Immediate VS Due</strong></h4>
+<p>Consider two temporary life annuity with a term of <span class="arithmatex">\(n\)</span> years:</p>
+<ul>
+<li>Annuity Immediate issued at age <span class="arithmatex">\(x\)</span></li>
+<li>Annuity Due issued at age <span class="arithmatex">\(x+1\)</span></li>
+<li>Both have the <strong>same cashflows</strong>:</li>
+</ul>
+<!-- Self Made -->
+<p><img alt="Immediate VS Due Intuition" class="center" src="../Assets/4.%20Life%20Annuities.md/Immediate%20VS%20Due%20Intuition.png" /></p>
+<p>However, both of them are valued at different times:</p>
+<ul>
+<li>Annuity Immediate valued at age <span class="arithmatex">\(x\)</span></li>
+<li>Annuity Due valued at age <span class="arithmatex">\(x+1\)</span></li>
+<li>Thus, the <strong>PV of the cashflows are NOT the same</strong>:</li>
+</ul>
+<!-- Self Made -->
+<p><img alt="Immediate VS Due Intuition PV" class="center" src="../Assets/4.%20Life%20Annuities.md/Immediate%20VS%20Due%20Intuition%20PV.png" /></p>
+<p>Thus, although they have the same cashflows, the <strong>annuity due has a larger EPV</strong>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    a_{x:\enclose{actuarial}{n}} &amp;= \sum^n_{j=1} v^j {}_{j}p_{x} \\
+    \\
+    \ddot{a}_{x+1:\enclose{actuarial}{n}}
+    &amp;= \sum^{n-1}_{j=0} v^j {}_{j}p_{x+1} \\
+    &amp;= \frac{1}{vp_{x}} \sum^{n-1}_{j=0} v^{j+1} {}_{j}p_{x+1} p_{x} \\
+    &amp;= \frac{1}{vp_{x}} \sum^{n-1}_{j=0} v^{j+1} {}_{j+1}p_{x} \\
+    &amp;= \frac{1}{vp_{x}} \sum^{n}_{j=1} v^{j} {}_{j}p_{x} \\
+    &amp;= \underbrace{\frac{1}{vp_{x}}}_{&gt;1} \cdot  a_{x:\enclose{actuarial}{n}} \\
+    \\
+    \therefore \ddot{a}_{x+1:\enclose{actuarial}{n}} &amp;&gt; a_{x:\enclose{actuarial}{n}}
+\end{aligned}
+\]</div>
 <h3 id="probabilities-and-percentiles"><strong>Probabilities and Percentiles</strong></h3>
 <p>Similar to assurances, apart from just calculating the Expectation and Variance, the <strong>probabilities</strong> and hence <strong>percentiles</strong> of the contract benefits can be calculated as well.</p>
 <div class="arithmatex">\[
@@ -1668,8 +1729,13 @@ Var (GA) = Var (Deferred)</p>
 <p>The latter refers to calculating the <strong>percentile of the random variable</strong>, which is the smallest value of the RV that results in the specified probability.</p>
 <p>This process is the opposite of the previous one - it involves solving for <span class="arithmatex">\(T_x\)</span>, converting it to <span class="arithmatex">\(K_x\)</span> and then subsituting it back into the RV, which results in the associated percentile.</p>
 <h2 id="payable-continuously"><strong>Payable Continuously</strong></h2>
-<p>Similar to assurances, annuities can also be payable <span class="arithmatex">\(m\)</span> times a year or payable continuously.</p>
-<p>In fact, most of the key ideas carry over from the assurances, thus this section will only focus on the approximations from discrete annuities.</p>
+<p>Similar to assurances, annuities can also be payable <span class="arithmatex">\(m\)</span> times a year or payable continuously. Most of the key ideas carry over from the assurances, thus this section will mainly focus on the approximations from discrete annuities.</p>
+<p>However, something unique to annuities is that the <strong>conversion between due and immediates</strong> is slightly different because of the differences in cashflows:</p>
+<div class="arithmatex">\[
+    a^{(m)}_x = \ddot{a}^{(m)}_x - \frac{1}{m}
+\]</div>
+<!-- Self Made -->
+<p><img alt="Continous RV" class="center" src="../Assets/4.%20Life%20Annuities.md/Continuous%20RV.png" /></p>
 <h3 id="uniform-distribution-of-deaths"><strong>Uniform Distribution of Deaths</strong></h3>
 <p>Using the relationship between Assurances and Annuities, a continuous WL annuity can also be expressed in the form of a continuous assurance:</p>
 <div class="arithmatex">\[

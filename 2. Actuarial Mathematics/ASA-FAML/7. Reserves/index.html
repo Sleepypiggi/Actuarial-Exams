@@ -524,6 +524,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#retrospective-approach" class="md-nav__link">
     Retrospective Approach
   </a>
@@ -586,29 +593,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#full-preliminary-term-reserves" class="md-nav__link">
-    Full Preliminary Term Reserves
+  <a href="#modified-net-premium-reserves" class="md-nav__link">
+    Modified Net Premium Reserves
   </a>
   
-    <nav class="md-nav" aria-label="Full Preliminary Term Reserves">
+    <nav class="md-nav" aria-label="Modified Net Premium Reserves">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#negative-expense-reserve" class="md-nav__link">
-    Negative Expense Reserve
+  <a href="#expense-reserves" class="md-nav__link">
+    Expense Reserves
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#modified-approach" class="md-nav__link">
-    Modified Approach
+  <a href="#full-preliminary-term" class="md-nav__link">
+    Full Preliminary Term
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interim-reserves" class="md-nav__link">
+    Interim Reserves
+  </a>
   
 </li>
       
@@ -688,7 +702,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ASA-ALTAM/Special%20Products/" class="md-nav__link">
+      <a href="../../../2. Actuarial Mathematics/ASA-ALTAM/Special Products.md" class="md-nav__link">
         Special
       </a>
     </li>
@@ -977,6 +991,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#retrospective-approach" class="md-nav__link">
     Retrospective Approach
   </a>
@@ -1039,29 +1060,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#full-preliminary-term-reserves" class="md-nav__link">
-    Full Preliminary Term Reserves
+  <a href="#modified-net-premium-reserves" class="md-nav__link">
+    Modified Net Premium Reserves
   </a>
   
-    <nav class="md-nav" aria-label="Full Preliminary Term Reserves">
+    <nav class="md-nav" aria-label="Modified Net Premium Reserves">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#negative-expense-reserve" class="md-nav__link">
-    Negative Expense Reserve
+  <a href="#expense-reserves" class="md-nav__link">
+    Expense Reserves
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#modified-approach" class="md-nav__link">
-    Modified Approach
+  <a href="#full-preliminary-term" class="md-nav__link">
+    Full Preliminary Term
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interim-reserves" class="md-nav__link">
+    Interim Reserves
+  </a>
   
 </li>
       
@@ -1081,6 +1109,7 @@
 
 
 <h1 id="reserves"><strong>Reserves</strong></h1>
+<h2 id="overview"><strong>Overview</strong></h2>
 <p>Most life insurance contracts charge <strong>level premiums</strong> - charging the same amount throughout the lifetime of the policy.</p>
 <p>When the policyholder is young, the probability of death is small, thus the premiums collected are <strong>larger</strong> than the expected outflow in the year, leading to a <strong>surplus</strong>.</p>
 <p>When the policyholder is older, the probability of death is high, thus the premiums collected are <strong>smaller</strong> than the expected outflow in the year, leading to a <strong>deficit</strong>.</p>
@@ -1102,12 +1131,23 @@
 <li><strong>Gross Premium Reserves</strong> - Gross Premiums, Benefits and Expenses</li>
 </ul>
 <p>While this looks similar to premium calculation, note that the Gross <em>Reserves</em> do NOT include any other cashflows (EG. Profit Margin). This is intuitive, as reserves should only be to meet <strong>essential cashflows</strong>.</p>
-<p>Let <span class="arithmatex">\({}_{t}V\)</span> represent the Reserve in policy year <span class="arithmatex">\(t\)</span>:</p>
+<p>Reserves are calculated at the <strong>beginning of the policy year</strong>:</p>
+<ul>
+<li><strong>AFTER any year end cashflows</strong> from the previous period (Claims &amp; Claim Expenses)</li>
+<li><strong>BEFORE any beginning of year cashflows</strong> from the current period (Premiums &amp; Renewal Expenses)</li>
+</ul>
+<p>This means that the reserves are the additional amount needed to cover claims from the current year onwards, <em>including</em> the current year.</p>
+<!-- Self Made -->
+<p><img alt="Reserve Timing" class="center" src="../Assets/7.%20Reserves.md/Reserve%20Timing.png" /></p>
+<blockquote>
+<p>Recall that the beginning of the policy year is also the end of the previous policy year - avoid confusion by drawing out the timelines.</p>
+</blockquote>
+<p>Let <span class="arithmatex">\({}_{t-1}V\)</span> represent the reserve at the beginning of policy year <span class="arithmatex">\(t\)</span>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    {}_{t}V
-    &amp;= E(L_{x+t}) \\
-    &amp;= \text{PV Benefits}_{x+t} - \text{PV Premiums}_{x+t}
+    {}_{t-1}V
+    &amp;= E(L_{x+(t-1)}) \\
+    &amp;= \text{PV Benefits}_{x+(t-1)} - \text{PV Premiums}_{x+(t-1)}
 \end{aligned}
 \]</div>
 <p>Similar to premiums, we will only define formulas for the <strong>Net Premium Reserves</strong>. They can be simplified into an expression involving only the following, which allows it to be easily calculated in situations where limited information is provided:</p>
@@ -1120,45 +1160,45 @@
 <h3 id="case-1-annuities-only"><strong>Case 1: Annuities Only</strong></h3>
 <div class="arithmatex">\[
 \begin{aligned}
-    {}_{t}V
-    &amp;= A_{x+t} - P \ddot{a}_{x+t} \\
-    &amp;= A_{x+t} - \frac{A_x}{\ddot{a}_x} \cdot \ddot{a}_{x+t} \\
-    &amp;= (1-\delta\ddot{a}_{x+t}) - \frac{1-\delta\ddot{a}_{x}}{\ddot{a}_{x}} \cdot \ddot{a}_{x+t} \\
-    &amp;= 1-\delta\ddot{a}_{x+t} - \left (\frac{1}{\ddot{a}_x}-\delta \right) \cdot \ddot{a}_{x+t} \\
-    &amp;= 1-\delta\ddot{a}_{x+t} - \frac{\ddot{a}_{x+t}}{\ddot{a}_x} + \delta\ddot{a}_{x+t} \\
-    &amp;= 1 - \frac{\ddot{a}_{x+t}}{\ddot{a}_x}
+    {}_{t-1}V
+    &amp;= A_{x+(t-1)} - P \ddot{a}_{x+(t-1)} \\
+    &amp;= A_{x+(t-1)} - \frac{A_x}{\ddot{a}_x} \cdot \ddot{a}_{x+(t-1)} \\
+    &amp;= (1-\delta\ddot{a}_{x+(t-1)}) - \frac{1-\delta\ddot{a}_{x}}{\ddot{a}_{x}} \cdot \ddot{a}_{x+(t-1)} \\
+    &amp;= 1-\delta\ddot{a}_{x+(t-1)} - \left (\frac{1}{\ddot{a}_x}-\delta \right) \cdot \ddot{a}_{x+(t-1)} \\
+    &amp;= 1-\delta\ddot{a}_{x+(t-1)} - \frac{\ddot{a}_{x+(t-1)}}{\ddot{a}_x} + \delta\ddot{a}_{x+(t-1)} \\
+    &amp;= 1 - \frac{\ddot{a}_{x+(t-1)}}{\ddot{a}_x}
 \end{aligned}
 \]</div>
 <h3 id="case-2-assurances-only"><strong>Case 2: Assurances Only</strong></h3>
 <div class="arithmatex">\[
 \begin{aligned}
-    {}_{t}V
-    &amp;= A_{x+t} - P \ddot{a}_{x+t} \\
-    &amp;= A_{x+t} - \frac{A_x}{\ddot{a}_x} \cdot \ddot{a}_{x+t} \\
-    &amp;= A_{x+t} - \frac{A_x}{\frac{1-A_x}{d}} \cdot \frac{1-A_{x+t}}{d} \\
-    &amp;= A_{x+t} - \frac{A_x}{1-A_x} \cdot (1-A_{x+t}) \\
-    &amp;= \frac{A_{x+t} \cdot (1-A_{x}) - A_x(1-A_{x+t})}{1-A_x} \\
-    &amp;= \frac{A_{x+t} - A_{x}A_{x+t} - A_x + A_x A_{x+t}}{1-A_x} \\
-    &amp;= \frac{A_{x+t} - A_{x}}{1 - A_{x}}
+    {}_{t-1}V
+    &amp;= A_{x+(t-1)} - P \ddot{a}_{x+(t-1)} \\
+    &amp;= A_{x+(t-1)} - \frac{A_x}{\ddot{a}_x} \cdot \ddot{a}_{x+(t-1)} \\
+    &amp;= A_{x+(t-1)} - \frac{A_x}{\frac{1-A_x}{d}} \cdot \frac{1-A_{x+(t-1)}}{d} \\
+    &amp;= A_{x+(t-1)} - \frac{A_x}{1-A_x} \cdot (1-A_{x+(t-1)}) \\
+    &amp;= \frac{A_{x+(t-1)} \cdot (1-A_{x}) - A_x(1-A_{x+(t-1)})}{1-A_x} \\
+    &amp;= \frac{A_{x+(t-1)} - A_{x}A_{x+(t-1)} - A_x + A_x A_{x+(t-1)}}{1-A_x} \\
+    &amp;= \frac{A_{x+(t-1)} - A_{x}}{1 - A_{x}}
 \end{aligned}
 \]</div>
 <h3 id="case-3-annuities-premiums"><strong>Case 3: Annuities &amp; Premiums</strong></h3>
 <div class="arithmatex">\[
 \begin{aligned}
     {}_{t}V
-    &amp;= A_{x+t} - P_x \cdot \ddot{a}_{x+t} \\
-    &amp;= \ddot{a}_{x+t} \cdot \left(\frac{A_{x+t}}{\ddot{a}_{x+t}} - P_{x} \right) \\
-    &amp;= \ddot{a}_{x+t} \cdot (P_{x+t} - P_{x})
+    &amp;= A_{x+(t-1)} - P_x \cdot \ddot{a}_{x+(t-1)} \\
+    &amp;= \ddot{a}_{x+(t-1)} \cdot \left(\frac{A_{x+(t-1)}}{\ddot{a}_{x+(t-1)}} - P_{x} \right) \\
+    &amp;= \ddot{a}_{x+(t-1)} \cdot \left(P_{x+(t-1)} - P_{x} \right)
 \end{aligned}
 \]</div>
 <h3 id="case-4-assurances-premiums"><strong>Case 4: Assurances &amp; Premiums</strong></h3>
 <div class="arithmatex">\[
 \begin{aligned}
     {}_{t}V
-    &amp;= A_{x+t} - P_x \cdot \ddot{a}_{x+t} \\
-    &amp;= A_{x+t} (1 - P_x \cdot \frac{\ddot{a}_{x+t}}{A_{x+t}}) \\
-    &amp;= A_{x+t} (1 - P_x \cdot \frac{1}{\frac{A_{x+t}}{\ddot{a}_{x+t}}}) \\
-    &amp;= A_{x+t} (1 - \frac{P_x}{P_{x+t}})
+    &amp;= A_{x+(t-1)} - P_x \cdot \ddot{a}_{x+(t-1)} \\
+    &amp;= A_{x+(t-1)} \left(1 - P_x \cdot \frac{\ddot{a}_{x+(t-1)}}{A_{x+(t-1)}} \right) \\
+    &amp;= A_{x+(t-1)} \left(1 - P_x \cdot \frac{1}{\frac{A_{x+(t-1)}}{\ddot{a}_{x+(t-1)}}} \right) \\
+    &amp;= A_{x+(t-1)} \left(1 - \frac{P_x}{P_{x+(t-1)}} \right)
 \end{aligned}
 \]</div>
 <h3 id="reserves-premiums"><strong>Reserves &amp; Premiums</strong></h3>
@@ -1235,32 +1275,67 @@
 <div class="arithmatex">\[
     {}_{t}V^{\text{Gross}} = (E-G) + q_{x+t} \cdot v + p_{x+t} \cdot v \cdot {}_{t+1}V
 \]</div>
-<h2 id="full-preliminary-term-reserves"><strong>Full Preliminary Term Reserves</strong></h2>
-<p>The method and basis for calculating the reserve is based on the prevailing regulation at that time and region.</p>
-<p>Regardless of region, reserves are typically calculated in a <strong>conservative</strong> manner such that the insurer has enough reserves for situations that are worse than their estimates - <strong>higher</strong> than what is expected.</p>
-<p>However, insurers do not want to be <strong>too conservative</strong> such that they <strong>hold too much reserves</strong>. This is because reserves can typically only be invested in safe assets, which typically yield lower returns relative to what they would usually invest in. Thus, if too much reserves are held, the insurer incurs an <strong>opportunity cost in investment income</strong>.</p>
-<p>In the US, reserves are calculated using <strong>Net Premiums</strong> due to its simplicity. However, this comes at the cost of accuracy, as net premium reserves tend to be <strong>too conservative</strong>:</p>
+<h2 id="modified-net-premium-reserves"><strong>Modified Net Premium Reserves</strong></h2>
+<p>The method and basis for calculating the reserve is based on the prevailing regulation at that time and region. In the US, reserves are calculated using <strong>net premiums</strong> due to its simplicity at the cost of some accuracy loss.</p>
+<p>However, net premium reserves tend to be <strong>higher than gross premium reserves</strong>. This is due to the negative expense reserves, as the excess expense premiums help to offset the future benefits as well. Since net premiums reserves do not recognize expenses, they do not have this benefit!</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    {}_{t}v^{\text{Gross}} &amp;= {}_{t}v^{\text{Net}} + {}_{t}v^{\text{Expense}} \\
-    {}_{t}v^{\text{Net}} &amp;= {}_{t}v^{\text{Gross}} - \underbrace{{}_{t}v^{\text{Expense}}}_{\text{-ve}} \\
+    {}_{t}v^{\text{Net}} &amp;= {}_{t}v^{\text{Gross}} + \underbrace{{}_{t}v^{\text{Expense}}}_{\text{-ve}} \\
     {}_{t}v^{\text{Net}} &amp;\gt {}_{t}v^{\text{Gross}}
 \end{aligned}
 \]</div>
-<p>In order to overcome this difference, the net premium approach is modified to better reflect actual experience while still retaining the benefits of using net premiums, known as the <strong>Full Preliminary Term Reserves</strong>.</p>
-<h3 id="negative-expense-reserve"><strong>Negative Expense Reserve</strong></h3>
-<p>Based on the equivalence principle approach, <strong>on average</strong>, premiums are expected to cover all benefits and expenses.</p>
-<p>However, <strong>acquisition expenses</strong> in the first year are often much higher than the renewal expenses, resulting in a positive loss in the first year.</p>
-<p>Thus, in all subsequent years, there is a negative loss to gradually recover the positive loss made in the first year. This results in a <strong>negative reserve</strong> at the end of the first year because the loss in all future years are negative.</p>
-<p>A negative reserve implies that expected inflows are larger than outflows, thus the insurer can <strong>treat the policy as an asset</strong> and thus hold less capital overall to cover other liabilities.</p>
-<p>To be conservative, regulators do not allow insurers to recognize a negative reserve. Thus, any negative reserves will be <strong>floored at 0</strong>.</p>
-<h3 id="modified-approach"><strong>Modified Approach</strong></h3>
-<p>Assume that the policy has <strong>non-level premiums</strong>:</p>
+<p>This means that insurers are holding <strong>too much reserves</strong> under this valuation basis. This is problematic because reserves can only be invested in low risk assets, which typically have lower returns relative to what the capital would have usually be invested in. This incurs an <strong>opportunity cost in investment income</strong>.</p>
+<p>To account for this, US regulators allow for insurers to use a <strong>modified net premium reserve</strong> instead that <strong>implicitly</strong> accounts for expenses while retaining the simplicity of a net premium approach.</p>
+<h3 id="expense-reserves"><strong>Expense Reserves</strong></h3>
+<p>Following expense premiums, the difference between the gross and net premium reserves represent the additional amount needed to cover the expenses, known as the <strong>Expense Reserves</strong>.</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    {}_{t}V^{\text{Expense}}
+    &amp;= {}_{t}V^{\text{Gross}} - {}_{t}V^{\text{Net}} \\
+    &amp;= \text{EPV(Benefits)} + \text{EPV(Expenses)} - \text{EPV(Gross Premium)} - \text{EPV(Benfits)} + \text{EPV(Net Premiums)} \\
+    &amp;= \text{EPV(Expenses)} - (\text{EPV(Gross Premium)} - \text{EPV(Net Premiums)}) \\
+    &amp;= \text{EPV(Expenses)} - \text{EPV(Expense Premium)}
+\end{aligned}
+\]</div>
+<p>The expense reserve is <strong>0 at time 0</strong>. However, the expense reserve is typically <strong>negative</strong> for all other years.</p>
+<p>This is because the expense premiums are typically <strong>smaller than the acquisition expenses</strong>, resulting in a positive loss in the first year, known as the <strong>New Business Strain</strong>.</p>
+<p>On the other hand, expense premiums are typically <strong>higher than the renewal expenses</strong>, resulting in a negative loss in all subsequent years, recovering the initial loss over time. This is known as the <strong>Deferred Acquisition Cost</strong> as the recovery of the acquisition expenses are deferred to all future years.</p>
+<p>At time 1, all future expense premiums will be larger than the corresponding renewal expenses, resulting in a <strong>negative expense reserve</strong> from that time onwards:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \text{Expense Premium} &amp;\gt \text{Renewal Expense} \\
+    \text{EPV(Expense Premium)} &amp;\gt \text{EPV(Renewal Expense)} \\
+    {}_{t}V^{\text{Expense}} &lt; 0
+\end{aligned}
+\]</div>
+<h3 id="full-preliminary-term"><strong>Full Preliminary Term</strong></h3>
+<p>Most methods of calculating modified reserves involve using a <strong>modified premium</strong> to calculate the reserves. In general, these modified premiums are <strong>non-level</strong>, consisting of two (or more) components:</p>
 <ul>
-<li>Acquisition Premium, <span class="arithmatex">\(\alpha\)</span></li>
-<li>Renewal Premium, <span class="arithmatex">\(\beta\)</span></li>
+<li><strong>First Year Premiums</strong>, <span class="arithmatex">\(\alpha\)</span></li>
+<li><strong>Subsequent Premiums</strong>, <span class="arithmatex">\(\beta\)</span></li>
+<li>Where <span class="arithmatex">\(\beta \gt P \gt \alpha\)</span></li>
 </ul>
-<p>The goal is to calculate a <span class="arithmatex">\(\beta\)</span> such that the reserve at <em>time 1</em> is 0, <strong>replicating the result</strong> under gross premium:</p>
+<p>Since <span class="arithmatex">\(\beta \gt P\)</span>, the insurer recognises more premiums for the same amount benefit, resulting in a <strong>smaller reserve</strong>. This allows the insurer to use their capital more productively.</p>
+<div class="arithmatex">\[
+    {}_{t}v^{\text{Modified}} &lt; {}_{t}v^{\text{Net}}
+\]</div>
+<blockquote>
+<p>The real reason is due to acquisition expenses, but im not sure how to explain</p>
+</blockquote>
+<p>There are many methods of calculating modified reserves, but for the purposes of this exam, we will only be considering the <strong>Full Preliminary Term</strong> method.</p>
+<p>The policy can be thought of as being split into two components:</p>
+<ul>
+<li><strong>One year TA</strong> with <strong>single premiums</strong> of <span class="arithmatex">\(\alpha\)</span></li>
+<li>The original policy issued <strong>one year later with one less year of coverage</strong> with <strong>recurring premiums</strong> of <span class="arithmatex">\(\beta\)</span></li>
+</ul>
+<p>For the one year TA, following the equivalence principle approach,</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    {}_{0}V^{\text{FPT}} &amp;= 0 \\
+    \alpha &amp;= A^{1}_{x:\enclose{actuarial}{n}}
+\end{aligned}
+\]</div>
+<p>For the original policy issued one year later with one year less of coverage, following the equivalence principle approach,</p>
 <div class="arithmatex">\[
 \begin{aligned}
     {}_{1}V^{\text{FPT}} &amp;= 0 \\
@@ -1269,31 +1344,25 @@
 \end{aligned}
 \]</div>
 <blockquote>
-<p>Note that for a TA, the duration of the policy would have to decrease by 1 year as well.</p>
+<p>Note that for TA/EA, the "one year less of coverage" must be properly accounted for.</p>
 </blockquote>
-<p>Following the equivalence principle, the reserve at time 0 must still be 0, thus <span class="arithmatex">\(\alpha\)</span> is calculated as the <strong>Single Premium</strong> equal to the expected loss at inception:</p>
-<div class="arithmatex">\[
-\begin{aligned}
-    {}_{0}V^{\text{FPT}} &amp;= 0 \\
-    \alpha &amp;= A_{x}
-\end{aligned}
-\]</div>
 <p>Thus, the modified reserves at all later times follows the same formula as before, simply using <span class="arithmatex">\(\beta\)</span> instead:</p>
 <div class="arithmatex">\[
-    {}_{t}V^{\text{FPT}} = A_{x+t} - \beta \ddot{x+t}
+\begin{aligned}
+    {}_{t}V^{\text{FPT}}
+    &amp;=
+    \begin{cases}
+        0, &amp; t = 0 \\
+        0, &amp; t = 1 \\
+        A_{x+t} - \beta \ddot{a}_{x+t}, &amp; t &gt; 1
+    \end{cases}
+\end{aligned}
 \]</div>
-<p>Note that <span class="arithmatex">\(\beta\)</span> can also be thought of as the net premium for a policy that is:</p>
-<ol>
-<li>Issued one year later; <span class="arithmatex">\(x+1\)</span></li>
-<li>One less year passed; <span class="arithmatex">\(t-1, n-1\)</span></li>
-</ol>
-<p>$$
-    \therefore {}<em t-1="t-1">{t}V^{\text{FPT}} = {}</em>V^{\text{Net}}_{\text{One year later, one less year}}
-$$
-Jerram, [20/3/2023 4:53 pm]
-nEGATIVE Expense reserve is known as Dac</p>
-<p>Jerram, [20/3/2023 4:54 pm]
-Recover it in the future</p>
+<p>Thus, the FPT reserves are equivalent to the net premium reserve for a policy that is actually issued one year later with one less year of coverage:</p>
+<div class="arithmatex">\[
+    \therefore {}_{t}V^{\text{FPT}} = {}_{t-1}V^{\text{Net}}_{\text{One year later, one less year}}
+\]</div>
+<h2 id="interim-reserves"><strong>Interim Reserves</strong></h2>
 
 
 
