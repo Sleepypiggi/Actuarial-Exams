@@ -63,6 +63,8 @@ $$
 \end{aligned}
 $$
 
+> The expected profit is also known as the **Emerging Profit** from each year.
+
 Note that there are two special cases:
 
 * **Beginning** of policy - Starting reserve is 0
@@ -92,6 +94,8 @@ $$
 ![Profit Vector](Assets/Profit%20Testing.md/Profit%20Vector.png){.center}
 
 > Most questions will only require computing the profit vector for a short period of time given its itensity.
+>
+> If required to compute the profit vector for a long duration, the question will usually specify to ignore the change in reserves, which greatly simplifies the required calculations.
 
 However, the expected profit for each policy year makes the implicit assumption that the **policyholder survives till the BEGINNING of that policy year**. Thus, every element of the profit vector is calculated based off varying assumptions.
 
@@ -172,9 +176,35 @@ $$
 
 Note that the EPV of premiums are discounted using the **same interest as the NPV**.
 
-#### **Premiums**
+#### **Pricing**
 
-#### **Reserves**
+A more realistic way to price would be to consider the actual cashflows and thus pricing the policy such that the **desired profitability is achieved**. This is done by leaving the premium as a *variable* within the profit expressions and solving for it.
+
+Alternatively, the *current* premium and profitability of the policy may be provided. In this scenario, it may be easier to consider the **change in premium** and the corresponding change in profitability instead of calculating it directly.
+
+#### **Reserving**
+
+Insurers may want to set reserves such that they **avoid negative profits** throughout the lifetime of the policy. This is done by setting reserves such that the **profits are floored at 0**.
+
+The reserves are calculated **recursively** starting from the **last policy year**:
+
+* Recall that in the last policy year, the **ending reserve is 0**
+* Set the **profit to 0** & solve for the starting reserve
+* If the starting reserve is negative, **floor it at 0**
+* Use the calculated amount above as the new ending reserve for the previous year & repeat the process until all reserves are calculated
+
+> This process is also known as **Zeroization** and the resulting reserves are known as **Zeroized Reserves**.
+
+Alternatively, the question may provide the **current profit** for each year, with the profit in some years being negative. The goal is then to calculate the reserves such that the negative profits are floored to 0.
+
+The key is to understand that if the profit for all future years are positive, then the starting reserve for that year **will always be floored at 0**. Thus, using this, the reserves are recursively calculated:
+
+* Start from the **latest policy year** with negative profits
+* *Stop* once there are **no more negative profits**
+
+There is *no need* to calculate the reserve for **earlier years** once all negative profits have been set to 0 because following the initial logic, the reserve for these earlier years **will be 0** given that all future profits are non-negative!
+
+> This intuition can also be applied to the first case, saving a great deal of time if the profit vector is known.
 
 ## **Gains by Source**
 
@@ -183,9 +213,11 @@ As alluded to earlier, actual profits are simply profits that are **based on wha
 The difference in actual versus expected (AvE) assumptions typically comes in three aspects - Expenses, Interest & Mortality. Thus, the gain can also be *decomposed* into these three aspects to **precisely pinpoint** which assumptions need tweaking.
 
 $$
+\begin{aligned}
     \text{Total Gain}
     &= \text{Actual Profit} - \text{Expected Profit} \\
     &= \text{Expense Gain} + \text{Interest Gain} + \text{Mortality Gain}
+\end{aligned}
 $$
 
 For this section, Expected and Actual variables are differentiated using "$'$".
