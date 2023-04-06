@@ -538,6 +538,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#complete-data" class="md-nav__link">
     Complete Data
   </a>
@@ -559,13 +566,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#confidence-intervals" class="md-nav__link">
-    Confidence Intervals
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -578,6 +578,20 @@
   
     <nav class="md-nav" aria-label="Incomplete Data">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#censoring" class="md-nav__link">
+    Censoring
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#truncation" class="md-nav__link">
+    Truncation
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#kaplan-meier-estimation" class="md-nav__link">
@@ -593,12 +607,18 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#tail-correction" class="md-nav__link">
-    Tail Correction
-  </a>
+      </ul>
+    </nav>
   
 </li>
+      
+        <li class="md-nav__item">
+  <a href="#variance" class="md-nav__link">
+    Variance
+  </a>
+  
+    <nav class="md-nav" aria-label="Variance">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#greenwood-approximation" class="md-nav__link">
@@ -970,6 +990,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#complete-data" class="md-nav__link">
     Complete Data
   </a>
@@ -991,13 +1018,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#confidence-intervals" class="md-nav__link">
-    Confidence Intervals
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1010,6 +1030,20 @@
   
     <nav class="md-nav" aria-label="Incomplete Data">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#censoring" class="md-nav__link">
+    Censoring
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#truncation" class="md-nav__link">
+    Truncation
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#kaplan-meier-estimation" class="md-nav__link">
@@ -1025,12 +1059,18 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#tail-correction" class="md-nav__link">
-    Tail Correction
-  </a>
+      </ul>
+    </nav>
   
 </li>
+      
+        <li class="md-nav__item">
+  <a href="#variance" class="md-nav__link">
+    Variance
+  </a>
+  
+    <nav class="md-nav" aria-label="Variance">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#greenwood-approximation" class="md-nav__link">
@@ -1067,16 +1107,107 @@
 
 
 <h1 id="model-estimation"><strong>Model Estimation</strong></h1>
+<h2 id="overview"><strong>Overview</strong></h2>
+<p>Previously, mortality rates were obtained through some parametric distribution. However, this requires us to make an assumption about the population, which may not always hold true.</p>
+<p>Thus, a better method would be to <strong>study the underlying population directly</strong> to estimate the mortality rates.</p>
 <h2 id="complete-data"><strong>Complete Data</strong></h2>
+<p>Consider a study where a group of individuals of the <strong>same age</strong> are observed till they die. The <strong>number of years</strong> taken for each individual to <em>die</em> are recorded as <strong>observations</strong> in the study.</p>
+<p>Each study has a total of <span class="arithmatex">\(n\)</span> individuals starting at age <span class="arithmatex">\(x\)</span>, thus the observations are denoted as <span class="arithmatex">\(t_1, t_2, ..., t_n\)</span>.</p>
 <h3 id="individual-data"><strong>Individual Data</strong></h3>
+<p>If each indvidual has an observation tagged to them (similar to what was described earlier), then <strong>Individual Data</strong> is provided.</p>
+<p><strong>Equal probability</strong> is assigned to each observation, thus the probability of an individual aged <span class="arithmatex">\(x\)</span> surviving <span class="arithmatex">\(k\)</span> years is simply the <strong>ratio</strong> of the number of observations larger than <span class="arithmatex">\(k\)</span> to the total number of observations:</p>
+<div class="arithmatex">\[
+    \hat{S}_x(t) = \frac{\text{# of observations larger than k}}{n}
+\]</div>
 <h3 id="grouped-data"><strong>Grouped Data</strong></h3>
-<h3 id="confidence-intervals"><strong>Confidence Intervals</strong></h3>
-<p>Non Linear Confidence Interval</p>
+<p>If the population of the study is large, then the data is usually <strong>Grouped</strong> into ranges for convenience. The <strong>number of observations</strong> within each range is also provided.</p>
+<p>Ranges are concisely expressed using the bracket notation - () denotes that the bound is exlcusive while [] denotes that it is inclusive. For instance, (15, 20] denoted that the time to death is strictly larger than 15 but less than or equal to 20; <span class="arithmatex">\(15 \lt 5 \le 20\)</span>.</p>
+<!-- Obtained from Coaching Actuaries -->
+<p><img alt="Grouped Data" class="center" src="../Assets/8.%20Model%20Estimation.md/Grouped%20Data.png" /></p>
+<p>If <span class="arithmatex">\(k\)</span> is the <strong>boundary of any of the ranges</strong>, then the probability of surviving <span class="arithmatex">\(k\)</span> years is calculated the <strong>same way as the individual data</strong> - it is the ratio of the number of observations to the total number:</p>
+<div class="arithmatex">\[
+    \hat{S}_x(t) = \frac{\text{# of observations larger than k}}{n}
+\]</div>
+<p>However, if <span class="arithmatex">\(k\)</span> is within the range, by assuming that values within the range are <strong>uniformly distributed</strong>, then the probability can be <strong>linearly interpolated</strong> from the probabilities at the boundary:</p>
+<p>Consider the range <span class="arithmatex">\((a,b]\)</span>:</p>
+<div class="arithmatex">\[
+    \hat{S}_x(t) = \frac{k-a}{b-a} \cdot \hat{S}_x(a) + \frac{b-k}{b-a} \cdot \hat{S}_x(b)
+\]</div>
+<!-- Obtained from Coaching Actuaries -->
+<p><img alt="Grouped Interpolation" class="center" src="../Assets/8.%20Model%20Estimation.md/Grouped%20Interpolation.png" /></p>
+<p>The interpolation follows the same intuition as the fractional age assumption, where the uniform assumption results in a linear graph of probabilities:</p>
+<!-- Obtained from Coaching Actuaries -->
+<p><img alt="Graphical Interpolation" class="center" src="../Assets/8.%20Model%20Estimation.md/Graphical%20Interpolation.png" /></p>
 <h2 id="incomplete-data"><strong>Incomplete Data</strong></h2>
-<p>Truncation and Censoring</p>
+<p>In practice, due to various constraints, it is impossible to observe an <em>entire</em> group of individuals till they die. Thus, for some observations, the recorded time to death is <strong>not the exact time to death</strong>, known as <strong>Incomplete Data</strong>.</p>
+<h3 id="censoring"><strong>Censoring</strong></h3>
+<p>Censoring refers to when the value of the observation is only <strong>partially known</strong>.</p>
+<p>For instance, if the study stops prematurely, the time to deaths for the individuals alive will be recorded at the time the study ends. However, in reality, they die at some future time, resulting in a <strong>larger time to death than what was recorded</strong>.</p>
+<ul>
+<li><strong>Right Censored</strong> - Actual value is larger than the recorded value</li>
+<li><strong>Left Censored</strong> - Actual value is smaller than the recorded value</li>
+<li>Naturally, since time to death is an increasing function, the only Right Censored data is relevant in an actuarial context</li>
+</ul>
+<p>Generally speaking, there are two types for censored data:</p>
+<ul>
+<li><strong>Type 1 Censoring</strong> - Study is stopped at a pre-determined time</li>
+<li><strong>Type 2 Censoring</strong> - Study is stopped a certain number of deaths</li>
+<li>The remaining individuals still in the study at the point of stopping are right censored</li>
+</ul>
+<blockquote>
+<p>Interval censoring is grouped data, random censoring</p>
+</blockquote>
+<h3 id="truncation"><strong>Truncation</strong></h3>
+<p>Truncation refers to when the sample <strong>does not contain certain observations</strong> outside of some range.</p>
+<blockquote>
+<p>This is not to be confused with its mathematical definition of rounding.</p>
+</blockquote>
+<p>For instance, consider a study that wishes to study the mortality for people aged 50. However, only people aged 52 are able to be found. Naturally, then the times to death <em>from age 50</em> for these individuals will always be <strong>at least 2</strong>; it will <strong>never be smaller than 2</strong>.</p>
+<ul>
+<li><strong>Right Truncated</strong> - No observations with values larger than cutoff</li>
+<li><strong>Left Truncated</strong> - No observations with values smaller than cutoff</li>
+<li>Naturally, since time to death is an increasing function, the only <strong>Left Truncated</strong> data is relevant in an actuarial context</li>
+</ul>
+<p>Truncation and Censoring are often confused with one another as both result in observations within a given range. Truncation is when observations outside the range are <strong>not recorded at all</strong> while <strong>Censoring still records the observations</strong>, with the caveat that it is a floor/ceiling.</p>
 <h3 id="kaplan-meier-estimation"><strong>Kaplan Meier Estimation</strong></h3>
+<p>Consider a study of 5 individuals:</p>
+<ul>
+<li>One individual dies at <span class="arithmatex">\(t=0.8\)</span> and <span class="arithmatex">\(t=1.4\)</span></li>
+<li>5 more individuals join the study at <span class="arithmatex">\(t=1\)</span>; Left Truncated at <span class="arithmatex">\(t=1\)</span></li>
+<li>3 individual leave the study at <span class="arithmatex">\(t=0.5\)</span>; Right Censored at <span class="arithmatex">\(t=0.5\)</span></li>
+</ul>
+<!-- Obtained from Coaching Actuaries -->
+<p><img alt="Kaplan Meier Timeline" class="center" src="../Assets/8.%20Model%20Estimation.md/Kaplan%20Meier%20Timeline.png" /></p>
+<p>The information is more often concisely portrayed in a table format:</p>
+<ul>
+<li><span class="arithmatex">\(t\)</span> represents the <strong>time</strong> of death</li>
+<li><span class="arithmatex">\(d\)</span> represents the number of <strong>deaths</strong></li>
+<li><span class="arithmatex">\(r\)</span> represents the <strong>risk set</strong> RIGHT BEFORE the time of death; simply known as the <strong>sample size</strong></li>
+</ul>
+<!-- Obtained from Coaching Actuaries -->
+<p><img alt="Kaplan Meier Table" class="center" src="../Assets/8.%20Model%20Estimation.md/Kaplain%20Meier%20Table.png" /></p>
+<p>This is problematic as the <strong>sample size changes</strong> throughout the study. However, the <strong>Kaplan Meier</strong> method accounts for this by calculating the survival probability as the <strong>product</strong> of the survival probabilities probabilities for <strong>all previous intervals between deaths</strong>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    P(t &gt; 1.4)
+    &amp;= P(t &gt; 0.8) * P(t &gt; 1.4 | x &gt; 0.8) \\
+    &amp;= \frac{1}{2} * \frac{5}{6} \\
+    &amp;= \frac{5}{12}
+\end{aligned}
+\]</div>
+<p>This results in a <strong>constant probability between deaths</strong>. Thus, the focus is on the <strong>times of death</strong>; the entries and exits from the study are only used to change the sample size.</p>
+<!-- Obtained from Coaching Actuaries -->
+<p><img alt="Kaplan Meier Cumulative" class="center" src="../Assets/8.%20Model%20Estimation.md/Kaplan%20Meier%20Cumulative.png" /></p>
+<!-- Tail Correction -->
+
 <h3 id="nelson-aelen-estimation"><strong>Nelson Aelen Estimation</strong></h3>
-<h3 id="tail-correction"><strong>Tail Correction</strong></h3>
+<p>Recall that survival = e ^ int mu
+Integral of mu is known as the Cumulative FOM
+Nelson Aelen estimates that</p>
+<p>Do not confuse</p>
+<h2 id="variance"><strong>Variance</strong></h2>
+<p>Estimation depend on sample
+Sampling variance</p>
 <h3 id="greenwood-approximation"><strong>Greenwood Approximation</strong></h3>
 <h2 id="alive-dead-model"><strong>Alive Dead Model</strong></h2>
 

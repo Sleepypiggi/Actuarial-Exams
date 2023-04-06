@@ -650,15 +650,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#premiums" class="md-nav__link">
-    Premiums
+  <a href="#pricing" class="md-nav__link">
+    Pricing
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#reserves" class="md-nav__link">
-    Reserves
+  <a href="#reserving" class="md-nav__link">
+    Reserving
   </a>
   
 </li>
@@ -1076,15 +1076,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#premiums" class="md-nav__link">
-    Premiums
+  <a href="#pricing" class="md-nav__link">
+    Pricing
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#reserves" class="md-nav__link">
-    Reserves
+  <a href="#reserving" class="md-nav__link">
+    Reserving
   </a>
   
 </li>
@@ -1199,6 +1199,9 @@
     &amp;= \text{Expected NCF} + \text{Expected change in reserve}
 \end{aligned}
 \]</div>
+<blockquote>
+<p>The expected profit is also known as the <strong>Emerging Profit</strong> from each year.</p>
+</blockquote>
 <p>Note that there are two special cases:</p>
 <ul>
 <li><strong>Beginning</strong> of policy - Starting reserve is 0</li>
@@ -1224,6 +1227,7 @@
 <p><img alt="Profit Vector" class="center" src="../Assets/Profit%20Testing.md/Profit%20Vector.png" /></p>
 <blockquote>
 <p>Most questions will only require computing the profit vector for a short period of time given its itensity.</p>
+<p>If required to compute the profit vector for a long duration, the question will usually specify to ignore the change in reserves, which greatly simplifies the required calculations.</p>
 </blockquote>
 <p>However, the expected profit for each policy year makes the implicit assumption that the <strong>policyholder survives till the BEGINNING of that policy year</strong>. Thus, every element of the profit vector is calculated based off varying assumptions.</p>
 <p>This is not very useful and thus can be corrected by adjusting the profit vector with the probability of survival till the <em>beginning</em> each policy year. The resulting vector is the <strong>unconditional profit</strong>, known as the <strong>Profit Signature</strong>.</p>
@@ -1284,15 +1288,40 @@
     \pi = \frac{\text{NPV}}{\text{EPV Premiums}}
 \]</div>
 <p>Note that the EPV of premiums are discounted using the <strong>same interest as the NPV</strong>.</p>
-<h4 id="premiums"><strong>Premiums</strong></h4>
-<h4 id="reserves"><strong>Reserves</strong></h4>
+<h4 id="pricing"><strong>Pricing</strong></h4>
+<p>A more realistic way to price would be to consider the actual cashflows and thus pricing the policy such that the <strong>desired profitability is achieved</strong>. This is done by leaving the premium as a <em>variable</em> within the profit expressions and solving for it.</p>
+<p>Alternatively, the <em>current</em> premium and profitability of the policy may be provided. In this scenario, it may be easier to consider the <strong>change in premium</strong> and the corresponding change in profitability instead of calculating it directly.</p>
+<h4 id="reserving"><strong>Reserving</strong></h4>
+<p>Insurers may want to set reserves such that they <strong>avoid negative profits</strong> throughout the lifetime of the policy. This is done by setting reserves such that the <strong>profits are floored at 0</strong>.</p>
+<p>The reserves are calculated <strong>recursively</strong> starting from the <strong>last policy year</strong>:</p>
+<ul>
+<li>Recall that in the last policy year, the <strong>ending reserve is 0</strong></li>
+<li>Set the <strong>profit to 0</strong> &amp; solve for the starting reserve</li>
+<li>If the starting reserve is negative, <strong>floor it at 0</strong></li>
+<li>Use the calculated amount above as the new ending reserve for the previous year &amp; repeat the process until all reserves are calculated</li>
+</ul>
+<blockquote>
+<p>This process is also known as <strong>Zeroization</strong> and the resulting reserves are known as <strong>Zeroized Reserves</strong>.</p>
+</blockquote>
+<p>Alternatively, the question may provide the <strong>current profit</strong> for each year, with the profit in some years being negative. The goal is then to calculate the reserves such that the negative profits are floored to 0.</p>
+<p>The key is to understand that if the profit for all future years are positive, then the starting reserve for that year <strong>will always be floored at 0</strong>. Thus, using this, the reserves are recursively calculated:</p>
+<ul>
+<li>Start from the <strong>latest policy year</strong> with negative profits</li>
+<li><em>Stop</em> once there are <strong>no more negative profits</strong></li>
+</ul>
+<p>There is <em>no need</em> to calculate the reserve for <strong>earlier years</strong> once all negative profits have been set to 0 because following the initial logic, the reserve for these earlier years <strong>will be 0</strong> given that all future profits are non-negative!</p>
+<blockquote>
+<p>This intuition can also be applied to the first case, saving a great deal of time if the profit vector is known.</p>
+</blockquote>
 <h2 id="gains-by-source"><strong>Gains by Source</strong></h2>
 <p>As alluded to earlier, actual profits are simply profits that are <strong>based on what actually happens</strong> rather than what was assumed. From this and the expected profit, the gain from the policy is determined.</p>
 <p>The difference in actual versus expected (AvE) assumptions typically comes in three aspects - Expenses, Interest &amp; Mortality. Thus, the gain can also be <em>decomposed</em> into these three aspects to <strong>precisely pinpoint</strong> which assumptions need tweaking.</p>
 <div class="arithmatex">\[
+\begin{aligned}
     \text{Total Gain}
     &amp;= \text{Actual Profit} - \text{Expected Profit} \\
     &amp;= \text{Expense Gain} + \text{Interest Gain} + \text{Mortality Gain}
+\end{aligned}
 \]</div>
 <p>For this section, Expected and Actual variables are differentiated using "<span class="arithmatex">\('\)</span>".</p>
 <h3 id="expense-gain"><strong>Expense Gain</strong></h3>
