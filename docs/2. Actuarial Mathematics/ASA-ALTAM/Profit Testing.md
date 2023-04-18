@@ -1,5 +1,6 @@
 # **Profit Testing**
 
+
 ## **Overview**
 
 In most other industries, the cost of the product is known beforehand, thus it is possible to determine its profitability beforehand.
@@ -24,15 +25,29 @@ We first consider the cashflows that the insurer expects every *policy year*:
 * They invest the excess amount to **earn interest** at the end of the policy year
 * They expect some policyholders to die and hence **payout claims and any claims expenses** at the end of the policy year
 
-Thus, the combination of these cashflows are known as the **expected net cashflows** for that policy year, calculated at the **end of the policy year**:
+!!! note "Alternative Perspective"
+
+    If the insurer pays more expenses than premiums, then they have to **borrow money**, which means that they **pay interest** at the end of the policy year instead.
+
+The combination of these cashflows are known as the **expected net cashflows** for that policy year, calculated at the **end of the policy year**:
 
 $$
     \text{Expected NCF} = (P - e)(1+i) - q_x \cdot (B+E)
 $$
 
-> If the insurer pays more expenses than premiums, then they have to **borrow money**, which means that they **pay interest** at the end of the policy year instead. In either case, the expression remains unchanged.
->
-> Similarly, for an annuity, they expect some policyholder to **remain alive** instead, thus the payout should be multiplied by the survival probability instead.
+!!! Note "Survival Benefits"
+
+    For Annuities where there is instead a survival benefit, the insurer expects some policyholders to **remain alive** and hence pay them the **survival benefits and any survival expenses**, thus the payout should be **multiplied by the survival probability instead**:
+
+    $$
+        \text{Expected NCF Annuity } = (P - e)(1+i) - p_x \cdot (B^s+E^s)
+    $$
+
+    For Endowments in particular, the survival benefit only occurs in the final year. Thus, in the **final year**, both the **death and survival benefits** must be accounted for:
+
+    $$
+        \text{Expected NCF Final Year EA} = (P - e)(1+i) - q_x \cdot (B+E) - p_x \cdot (B^s+E^s)
+    $$
 
 Since the insurer holds reserves that cannot be touched, it can be thought of as an **account balance**:
 
@@ -51,9 +66,11 @@ $$
 \end{aligned}
 $$
 
-> Note that the **earned interest earned** may be different from the interest used to compute premiums or reserves.
+!!! Warning "Different Interest Rates"
 
-This is equivalent to saying that the profit in each policy year is the combination of the NCFs AND the **change in reserves** for that policy year:
+    The interest earned on the reserves **may be different** from the interest used to compute the premiums and/or reserves. Be sure to read the question properly.
+
+This is equivalent to saying that the expected profit in each policy year is the combination of the NCFs AND the **change in reserves** for that policy year:
 
 $$
 \begin{aligned}
@@ -63,9 +80,7 @@ $$
 \end{aligned}
 $$
 
-> The expected profit is also known as the **Emerging Profit** from each year.
-
-Note that there are two special cases:
+There are two special cases for the reserves:
 
 * **Beginning** of policy - Starting reserve is 0
 * **End** of policy - Ending reserve is 0
@@ -76,6 +91,8 @@ Note that there are two special cases:
 ### **Profit Vector & Signature**
 
 If the expected profit is calculated **every policy year** and collected together, then the resulting vector is known as the **Profit Vector**.
+
+For a typical contract, the profits are usually negative in the first (few) years and are small in magnitude across all years. This can be used to **sense check** the profit vector calculations.
 
 $$
 \begin{aligned}
@@ -93,9 +110,11 @@ $$
 <!-- Self Made -->
 ![Profit Vector](Assets/Profit%20Testing.md/Profit%20Vector.png){.center}
 
-> Most questions will only require computing the profit vector for a short period of time given its itensity.
->
-> If required to compute the profit vector for a long duration, the question will usually specify to ignore the change in reserves, which greatly simplifies the required calculations.
+!!! Note "Calculation Questions"
+
+    Most questions will *only* require computing the profit vector for a short period of time given the intensity needed to calculate the reserves at various points in time.
+
+    If required to compute the profit vector for a long duration, the question will usually specify to **ignore the change** in reserves or simply **provide them**, which greatly simplifies the required calculations.
 
 However, the expected profit for each policy year makes the implicit assumption that the **policyholder survives till the BEGINNING of that policy year**. Thus, every element of the profit vector is calculated based off varying assumptions.
 
@@ -130,6 +149,8 @@ $$
 
 Using the profit signature, insurers can gauge the profitability of the products using a variety of metrics.
 
+Apart from calculation, it is important to know how to explain how a change in any of the parameters affect these metrics.
+
 #### **Net Present Value**
 
 **Net Present Value** (NPV) follows its finance definition and is the **excess of PV Inflows over Outflows**. In this context, it is the **sum of the present values** of all elements within the profit signature:
@@ -137,12 +158,14 @@ Using the profit signature, insurers can gauge the profitability of the products
 $$
 \begin{aligned}
     \text{NPV}
-    &= \left(v^1 \quad v^2 \quad \dots \quad v^t \right) \cdot \begin{pmatrix} \text{PR}_1 \\ \text{PR}_2 \\ \vdots \\ \text{PR}_t \end{pmatrix} \\
-    &= v^1 \cdot \text{PR}_1 + v^2 \cdot \text{PR}_2 + \dots + v^t \cdot \text{PR}_t
+    &= \left(v^1 \quad v^2 \quad \dots \quad v^t \right) \cdot \begin{pmatrix} \Pi_1 \\ \Pi_2 \\ \vdots \\ \Pi_t \end{pmatrix} \\
+    &= v^1 \cdot \Pi_1 + v^2 \cdot \Pi_2 + \dots + v^t \cdot \Pi_t
 \end{aligned}
 $$
 
-> Note that there may be some **cashflows at time 0** that also must be accounted for in the NPV, usually known as **Pre-Contract Expenses**.
+!!! Warning "Net *Expected* Present Value"
+
+    Note that the NPV is calculated based off the profit signature, NOT the profit vector. Thus, it is more appropriately called the **Net Expected Present Value**, as survival probabilities are taken into account as well.
 
 The interest rate used to discount the cashflows is known as the **Discount Rate**, and is usually different from the earned interest rate or the one used in pricing/reserving.
 
@@ -192,8 +215,7 @@ The reserves are calculated **recursively** starting from the **last policy year
 * Set the **profit to 0** & solve for the starting reserve
 * If the starting reserve is negative, **floor it at 0**
 * Use the calculated amount above as the new ending reserve for the previous year & repeat the process until all reserves are calculated
-
-> This process is also known as **Zeroization** and the resulting reserves are known as **Zeroized Reserves**.
+* Since this process sets negative reserves to 0, it is known as **Zeroization**
 
 Alternatively, the question may provide the **current profit** for each year, with the profit in some years being negative. The goal is then to calculate the reserves such that the negative profits are floored to 0.
 
@@ -204,7 +226,15 @@ The key is to understand that if the profit for all future years are positive, t
 
 There is *no need* to calculate the reserve for **earlier years** once all negative profits have been set to 0 because following the initial logic, the reserve for these earlier years **will be 0** given that all future profits are non-negative!
 
-> This intuition can also be applied to the first case, saving a great deal of time if the profit vector is known.
+After Zeroization, **recalculate the profit** for all years:
+
+* For years with negative profits where zeroization occurred, the **profit is 0**
+* For years with positive profits but were **NOT just before** negative profit years, the **profit is unchanged**
+* For years with positive profits but **were JUST before** negative profit years, the **profit is changed**
+
+The profits have changed because there is now a new starting reserve for the following year with negative profits due to the zeroization. This affects the amount of reserve that has to be set up at the end of the current year, resulting in a new profit.
+
+If this new profit turns out to be **negative as well**, then repeat the process once more.
 
 ## **Gains by Source**
 
@@ -279,3 +309,19 @@ In practice, the question may provide the actual **number of policyholders** (NO
 $$
     q'_x = \frac{\text{NOP}_\text{Beginning} - \text{NOP}_\text{Ending}}{\text{NOP}_\text{Beginning}}
 $$
+
+For annuities, the expression is slightly different (TBC)
+
+$$
+\begin{aligned}
+    \text{Mortality Gain}
+    &= \text{Assumed Mortality Profit} - \text{Actual Mortality Profit} \\
+    &= p_x \cdot (B+E') + p_x \cdot {}_{t}V - [p'_x \cdot (B+E') + p'_x \cdot {}_{t}V] \\
+    &= p_x \cdot (B + E' + {}_{t}V) - p'_x (B + E' + {}_{t}V) \\
+    &= (p_x - p'_x)(B + E' + {}_{t}V)
+\end{aligned}
+$$
+
+### **Per Policy Gain**
+
+All the above calculations are known as the **Per Policy** gains - if the actual number of policies are given, then each gain needs to be multiplied by the NOP to determine the total gain made by the insurer.
