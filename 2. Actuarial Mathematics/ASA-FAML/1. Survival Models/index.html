@@ -288,22 +288,36 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../Overview%20of%20Insurance/" class="md-nav__link">
+        Overview of Insurance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_1">
+        <label class="md-nav__link" for="__nav_2_2">
           ASA-FAMS
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="ASA-FAMS" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_1">
+        <label class="md-nav__title" for="__nav_2_2">
           <span class="md-nav__icon md-icon"></span>
           ASA-FAMS
         </label>
@@ -383,18 +397,18 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" checked>
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_2">
+        <label class="md-nav__link" for="__nav_2_3">
           ASA-FAML
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="ASA-FAML" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_2">
+        <label class="md-nav__title" for="__nav_2_3">
           <span class="md-nav__icon md-icon"></span>
           ASA-FAML
         </label>
@@ -719,18 +733,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_3">
+        <label class="md-nav__link" for="__nav_2_4">
           ASA-ALTAM
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="ASA-ALTAM" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_3">
+        <label class="md-nav__title" for="__nav_2_4">
           <span class="md-nav__icon md-icon"></span>
           ASA-ALTAM
         </label>
@@ -1216,11 +1230,11 @@
                   
 
 
-<h1 id="survival-models"><strong>Survival Models</strong></h1>
-<h2 id="overview"><strong>Overview</strong></h2>
+<h1 id="survival-models"><strong>Survival Models</strong><a class="headerlink" href="#survival-models" title="Permanent link">&para;</a></h1>
+<h2 id="overview"><strong>Overview</strong><a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>Survival Models are probability distributions that measure the <strong>time to failure</strong> of an entity, or phrased another way, the <strong>future lifetime</strong> of an entity. In an Actuarial context, it measures the <strong>time to death</strong> of a person.</p>
-<p>Since survival models measure <em>time</em>, they are denoted by the <strong>continuous random variable</strong> <span class="arithmatex">\(T_i\)</span>, where the subscript represents the <strong>age</strong> of the person being studied.</p>
-<h2 id="newborn-lifetime"><strong>Newborn Lifetime</strong></h2>
+<p>Since survival models measure <em>time</em>, they are denoted by the <strong>continuous random variable</strong> <span class="arithmatex">\(T_x\)</span>, where the subscript <span class="arithmatex">\(x\)</span> represents the <strong>age</strong> of the person.</p>
+<h2 id="newborn-lifetime"><strong>Newborn Lifetime</strong><a class="headerlink" href="#newborn-lifetime" title="Permanent link">&para;</a></h2>
 <p>The base survival model measures the future lifetime of a newborn (<strong>aged 0</strong>), denoted by the random variable <span class="arithmatex">\(T_0\)</span>.</p>
 <p>The <strong>CDF</strong> thus represents the probability that the newborn <strong>dies before age <span class="arithmatex">\(t\)</span></strong>:</p>
 <div class="arithmatex">\[
@@ -1235,19 +1249,18 @@
     &amp;= 1 - F_0(t)
 \end{aligned}
 \]</div>
-<p>Note that all humans will <strong>inevitably die</strong>:</p>
+<p>Death is inevitable, which means that the probability of living forever must be 0:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     \lim_{t \to \infty} S_0 (t) = 0 \iff \lim_{t \to \infty} F_0 (t) = 1
 \end{aligned}
 \]</div>
-<h2 id="continuous-lifetime"><strong>Continuous Lifetime</strong></h2>
+<h2 id="continuous-lifetime"><strong>Continuous Lifetime</strong><a class="headerlink" href="#continuous-lifetime" title="Permanent link">&para;</a></h2>
 <p>The above can be <strong>generalized</strong> for a person aged <span class="arithmatex">\(x\)</span>, denoted by <span class="arithmatex">\(T_x\)</span>. However, the intepretation of the two functions changes slightly.</p>
 <p>The CDF instead represents the probability that the person <strong>dies within <span class="arithmatex">\(t\)</span> years</strong> from age <span class="arithmatex">\(x\)</span>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    F_x(t) &amp;= P(T_x \le t) \\
-    T_x &amp;= 1, 2, \dots
+    F_x(t) &amp;= P(T_x \le t)
 \end{aligned}
 \]</div>
 <p>It can also be written <strong>in terms of the newborn lifetime</strong>. The key is to understand that the newborn is <strong>assumed to survive till age <span class="arithmatex">\(x\)</span></strong> and then die within the next <span class="arithmatex">\(t\)</span> years:</p>
@@ -1275,12 +1288,13 @@
     &amp;= \frac{S_0(x+t)}{S_0(x)}
 \end{aligned}
 \]</div>
-<blockquote>
-<p>Note that since the surviving till age <span class="arithmatex">\(x\)</span> is a <strong>subset</strong> of surviving till age <span class="arithmatex">\(x+t\)</span>, the numerator can be simplified to just surviving till <span class="arithmatex">\(x+t\)</span>.</p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since the surviving till age <span class="arithmatex">\(x\)</span> is a <strong>subset</strong> of surviving till age <span class="arithmatex">\(x+t\)</span>, the numerator can be simplified to just the probability of surviving till age <span class="arithmatex">\(x+t\)</span>.</p>
+</div>
 <!-- Self Made -->
 <p><img alt="Survival Function Illustration" class="center" src="../Assets/1.%20Survival%20Models.md/Survival%20Function%20Illustration.png" /></p>
-<p>Note the survival function can thus be re-written as the following:</p>
+<p>The survival function can thus be re-written as the following:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     S_x(t) &amp;= \frac{S_0(x+t)}{S_0(x)} \\
@@ -1296,10 +1310,11 @@
 <div class="arithmatex">\[
     S_x(t+u) = S_x(t) S_{x+t}(u)
 \]</div>
-<blockquote>
-<p>It is important to remember to "update" the starting age of the second term to the "new age".</p>
-</blockquote>
-<p>The <em>opposite</em> of the above is when an individual surives another <span class="arithmatex">\(t\)</span> years and then <strong>dies within the following <span class="arithmatex">\(u\)</span> years</strong>. This is known as the probability of <strong>Deferred Death</strong>:</p>
+<div class="admonition warning">
+<p class="admonition-title">Remember to update the age!</p>
+<p>It is a common mistake to forget to use the "new" age of the person in the second expression.</p>
+</div>
+<p>The <em>opposite</em> of the above is when the person surives another <span class="arithmatex">\(t\)</span> years and then <strong>dies within the following <span class="arithmatex">\(u\)</span> years</strong>. This is known as the probability of <strong>Deferred Death</strong>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     P(t &lt; T_x &lt; t+u)
@@ -1314,8 +1329,8 @@
 \]</div>
 <!-- Self Made -->
 <p><img alt="Deferred Death" class="center" src="../Assets/1.%20Survival%20Models.md/Deferred%20Death%20Illustration.png" /></p>
-<h3 id="probability-tree-perspective"><strong>Probability Tree Perspective</strong></h3>
-<p>Since the probabilites of death and survival are conditional on the age of the individual, they can be better expressed in the form of a probability tree:</p>
+<h3 id="probability-tree-perspective"><strong>Probability Tree Perspective</strong><a class="headerlink" href="#probability-tree-perspective" title="Permanent link">&para;</a></h3>
+<p>Since the probabilites of death and survival are conditional on the age of the person, they can be better expressed in the form of a probability tree:</p>
 <!-- Self Made -->
 <p><img alt="Probability Tree" src="../Assets/1.%20Survival%20Models.md/Probability%20Tree.png" /></p>
 <p>Thus, it can be shown through <em>recursion</em> that the probability of surviving <span class="arithmatex">\(t\)</span> years is equal to the <strong>sum of the probabilities of deferred deaths</strong> for every year after:</p>
@@ -1331,8 +1346,8 @@
     \therefore S_x(t) &amp;= \sum S_x(t)F{x+t}(1)
 \end{aligned}
 \]</div>
-<p>Recall that the probability of surviving till a certain age is simply the probability that the individual will die sometime <em>after</em> that age. The above expression solidifies this, where the RHS is the <strong>probability of dying in every possible age after</strong>.</p>
-<h3 id="force-of-mortality"><strong>Force of Mortality</strong></h3>
+<p>Recall that the probability of surviving till a certain age is simply the probability that the person will die sometime <em>after</em> that age. The above expression solidifies this, where the probability of survival is equivalent to the <strong>probability of dying in ever possible age after</strong>.</p>
+<h3 id="force-of-mortality"><strong>Force of Mortality</strong><a class="headerlink" href="#force-of-mortality" title="Permanent link">&para;</a></h3>
 <p>The <strong>Force of Mortality</strong> is the probability of dying <em>instantly</em>; in an <strong>infinitely small unit of time</strong> (normalized by unit time):</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1360,11 +1375,9 @@
 <div class="arithmatex">\[
     \mu_{0+x} = \frac{f_0(x)}{S_0(x)}
 \]</div>
-<p>Thus, the force of mortality can also be intepreted as the <strong>CONDITIONAL probability distribution</strong> of death for a person aged <span class="arithmatex">\(x\)</span>, <em>assuming</em> that the person survives till age <span class="arithmatex">\(x\)</span>.</p>
-<blockquote>
-<p><span class="arithmatex">\(f_0(x)\)</span> is UNCONDITIONAL distribution of the future lifetime as it does not assume the individual lives to any age.</p>
-</blockquote>
-<h4 id="alternative-death-function"><strong>Alternative Death Function</strong></h4>
+<p>Thus, the force of mortality can also be intepreted as the <strong>CONDITIONAL distribution</strong> of future lifetime for a person aged <span class="arithmatex">\(x\)</span>, as it is conditional on the person surviving till age <span class="arithmatex">\(x\)</span>.</p>
+<p>Following that, <span class="arithmatex">\(f_0(x)\)</span> is the <strong>UNCONDITIONAL distribution</strong> of the future lifetime as it does not assume the person lives to any age.</p>
+<h4 id="alternative-death-function"><strong>Alternative Death Function</strong><a class="headerlink" href="#alternative-death-function" title="Permanent link">&para;</a></h4>
 <p>More generally, the force of mortality can be rewritten as:</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1374,16 +1387,16 @@
     F_x(t) &amp;= \int_0^t S_x(t)\mu_{x+t}
 \end{aligned}
 \]</div>
-<p>The probability of death in an interval is the SUM of the product of the probability of surviving till a given age and then dying in an infinitely small time afterwards. The sum of all the infinitely small time periods is equal to the given time interval.</p>
+<p>The probability of death in a given interval is the <strong>sum of the various probabilities</strong> of surviving till each age and then dying instantly afterwards, which can be computed via integration.</p>
 <p>Following this definition, for <strong>extremely small time intervals</strong>, the force of mortality can be used to <em>approximate</em> the probability of death in that interval:</p>
 <div class="arithmatex">\[
     P(T_x &lt; h) \approx h * \mu_{x}
 \]</div>
-<h4 id="alternative-survival-function"><strong>Alternative Survival Function</strong></h4>
+<h4 id="alternative-survival-function"><strong>Alternative Survival Function</strong><a class="headerlink" href="#alternative-survival-function" title="Permanent link">&para;</a></h4>
 <p>More generally, the force of mortality can be rewritten as:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    \mu_{x} &amp;= - \frac{S'_0(x)}{S_0(x)} \\
+    \mu_{0+x} &amp;= - \frac{S'_0(x)}{S_0(x)} \\
     \mu_{x + t} &amp;= \frac{-S'_x(t)}{S_x(t)} \\
     \mu_{x + t} &amp;= - \frac{d}{dt} (\ln S_x(t)) \\
     \ln S_x(t) &amp;= - \int_{0}^{t} \mu_{x + t} \\
@@ -1394,7 +1407,7 @@
 <p>Note that most expressions give <span class="arithmatex">\(\mu_x\)</span>, but it is <span class="arithmatex">\(\mu_{x+t}\)</span> that is usually of interest - simply adjust the parameters accordingly.</p>
 </blockquote>
 <p>Thus, if <span class="arithmatex">\(\mu_x\)</span> is known for all ages, then the survival probabilites for any age can be calculated from it. In other words, the <strong>distribution of <span class="arithmatex">\(T_x\)</span> can be determined from the force of mortality</strong>.</p>
-<h3 id="actuarial-notation"><strong>Actuarial Notation</strong></h3>
+<h3 id="actuarial-notation"><strong>Actuarial Notation</strong><a class="headerlink" href="#actuarial-notation" title="Permanent link">&para;</a></h3>
 <p>Given how often these expressions are used, they are often abbreviated using the <strong>International Actuarial Notation</strong>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1403,10 +1416,11 @@
     {}_{t}q_{x} + {}_{t}p_{x} &amp;= 1
 \end{aligned}
 \]</div>
-<blockquote>
-<p>If <span class="arithmatex">\(t=1\)</span>, it is omitted; EG. <span class="arithmatex">\({}_{1}q_{x} = q_{x}\)</span>.</p>
-</blockquote>
-<p>Deferred Deaths are expressed using the pipe symbol:</p>
+<div class="admonition note">
+<p class="admonition-title">Convention for Notation</p>
+<p>If <span class="arithmatex">\(t=1\)</span>, it is usually omitted - EG. <span class="arithmatex">\({}_{1}q_{x} = q_{x}\)</span>.</p>
+</div>
+<p>Deferred Deaths are expressed using the <strong>pipe symbol</strong> isntead:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     {}_{t|u}q_{x}
@@ -1414,12 +1428,9 @@
     &amp;= {}_{t}p_{x} * {}_{u}q_{x+t}
 \end{aligned}
 \]</div>
-<blockquote>
-<p>These notations are <em>typically</em> used when <span class="arithmatex">\(t\)</span> is an integer, but not necessarily so, as will be seen in the next section.</p>
-</blockquote>
-<h3 id="continuous-expectation"><strong>Continuous Expectation</strong></h3>
-<p>The <strong>Expectation</strong> of the distribution of future lifetime is the <strong>Life Expectancy</strong> of the individual. It is commonly calculated for newborns as a measure of the general health of the population.</p>
-<p>In an insurance context, it is known as the <strong>Complete Expectation of Life</strong> and is denoted by <span class="arithmatex">\(\mathring{e}_{x}\)</span>:</p>
+<h3 id="continuous-expectation"><strong>Continuous Expectation</strong><a class="headerlink" href="#continuous-expectation" title="Permanent link">&para;</a></h3>
+<p>The <strong>Expectation</strong> of the distribution of future lifetime is the <strong>Life Expectancy</strong> of the person. It is commonly calculated for newborns as a measure of the general health of the population.</p>
+<p>In an actuarial context, it is known as the <strong>Complete Expectation of Life</strong>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     E(T_x) &amp;= \int_{0}^{\infty} t f_x(t) \\
@@ -1434,29 +1445,30 @@
     &amp;= \int_0^\infty {}_{t}p_x
 \end{aligned}
 \]</div>
-<blockquote>
-<p>Note that <span class="arithmatex">\([-t * S_x(t)]^{\infty}_0\)</span> is 0 as the probability of living forever is 0.</p>
-</blockquote>
-<p>If the future lifetime variable is artificially limited to <span class="arithmatex">\(n\)</span> years, then the expectation of the future lifetime is known as the <strong>Term Expectation of Life</strong>. It is similar denoted as <span class="arithmatex">\(\mathring{e}_{x:\enclose{actuarial}{n}}\)</span>:</p>
+<div class="admonition note">
+<p class="admonition-title">Inevitable Death</p>
+<p>Recall that death is inevitable - thus, the probability of living forever (<span class="arithmatex">\([-t * S_x(t)]^{\infty}_0\)</span>) must be 0.</p>
+</div>
+<p>If the future lifetime variable is artificially <strong>limited to <span class="arithmatex">\(n\)</span> years</strong>, then the expectation of the future lifetime is known as the <strong>Term Expectation of Life</strong>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    E(min(T_x, n)) &amp;= \int^{n}_0 {}_{t}p_x \\
+    E \left(min(T_x, n) \right) &amp;= \int^{n}_0 {}_{t}p_x \\
     \mathring{e}_{x:\enclose{actuarial}{n}} &amp;= \int^{n}_0 {}_{t}p_x
 \end{aligned}
 \]</div>
-<p>Thus, the complete expectation can be <strong>decomposed</strong> into two components:</p>
+<p>This allows the <em>complete</em> expectation can be <strong>decomposed</strong> into two components:</p>
 <ol>
 <li><strong>Term Expectation</strong> at the <em>current age</em> representing the "early" years</li>
 <li><strong>Complete Expectation</strong> at a <em>future age</em> represenging the "later" years</li>
 </ol>
 <div class="arithmatex">\[
-    \mathring{e}_x = \mathring{e}_{x:n} + \mathring{e}_{x+n}
+    \mathring{e}_x = \mathring{e}_{x:\enclose{actuarial}{n}} + \mathring{e}_{x+n}
 \]</div>
-<p>However, the above makes an implicit assumption that the individual <strong>will survive</strong> the first n years. Thus, the second term needs to account for the probability of surviving another n years:</p>
+<p>However, the above makes an implicit assumption that the person <strong>will survive</strong> the first n years. Thus, the second term needs to <strong>account for the probability of surviving</strong> those n years:</p>
 <div class="arithmatex">\[
     \mathring{e}_x = \mathring{e}_{x:n} + {}_{n}p_x \cdot \mathring{e}_{x+n}
 \]</div>
-<h3 id="continuous-variance"><strong>Continuous Variance</strong></h3>
+<h3 id="continuous-variance"><strong>Continuous Variance</strong><a class="headerlink" href="#continuous-variance" title="Permanent link">&para;</a></h3>
 <p>The second moment can be calculated in a similar fashion through integration by parts:</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1474,19 +1486,16 @@
     &amp;= 2 \int_{0}^{\infty} t \cdot {}_{t}p_x - \left(\int_0^\infty {}_{t}p_x \right)^2
 \end{aligned}
 \]</div>
-<h2 id="discrete-lifetime"><strong>Discrete Lifetime</strong></h2>
+<h2 id="discrete-lifetime"><strong>Discrete Lifetime</strong><a class="headerlink" href="#discrete-lifetime" title="Permanent link">&para;</a></h2>
 <p>If only the <strong>integer components</strong> of the future lifetime are considered, then it becomes a discrete distribution known as the <strong>Curtate Future Lifetime</strong> of the person.</p>
-<p>It is denoted by the random variable <span class="arithmatex">\(K_x\)</span>, which is a truncated version of <span class="arithmatex">\(T_x\)</span>. Formally, it is known as a <strong>Floor Function</strong>:</p>
+<p>It is denoted by the random variable <span class="arithmatex">\(K_x\)</span>, which is a <strong>truncated version</strong> of <span class="arithmatex">\(T_x\)</span>. Formally, it is known as a <strong>Floor Function</strong>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    K_x &amp;= \lfloor T_x \rfloor \\
-    K_x &amp;= 0, 1, \dots
+    K_x &amp;= \lfloor T_x \rfloor
 \end{aligned}
 \]</div>
-<p>It measures the number of <strong>full years</strong> that the individual is expected to live for. If <span class="arithmatex">\(K_x = k\)</span>, then it means the individual will another <span class="arithmatex">\(k\)</span> full years but not live past <span class="arithmatex">\(k+1\)</span> years full years. In other words, they will die between <strong><span class="arithmatex">\(k\)</span> (inclusive) and <span class="arithmatex">\(k+1\)</span> (Exclusive) years</strong>.</p>
-<blockquote>
-<p>Note that the distribution <strong>starts from 0</strong>. If <span class="arithmatex">\(K_x = 0\)</span>, then they will not live another full year; they will die within the current year.</p>
-</blockquote>
+<p>It measures the number of <strong>full years</strong> that the person is expected to live for. If <span class="arithmatex">\(K_x = k\)</span>, then it means the person will another <span class="arithmatex">\(k\)</span> full years but not live past <span class="arithmatex">\(k+1\)</span> years full years. In other words, they will die between <strong><span class="arithmatex">\(k\)</span> (inclusive) and <span class="arithmatex">\(k+1\)</span> (Exclusive) years</strong>.</p>
+<p>The distribution <strong>starts from 0</strong>, where <span class="arithmatex">\(K_x = 0\)</span> represents a newborn that will die within their birth year. Similarly, the probability that a person will die within <span class="arithmatex">\(k\)</span> years is given by <span class="arithmatex">\(K_x = k-1\)</span>, denoting that they will live <span class="arithmatex">\(k-1\)</span> full years and die before reaching the kth year mark.</p>
 <div class="arithmatex">\[
 \begin{aligned}
     P(K_x = k)
@@ -1504,12 +1513,12 @@
 \]</div>
 <!-- Self Made -->
 <p><img alt="Curtate Death Illustration" class="center" src="../Assets/1.%20Survival%20Models.md/Curtate%20Death%20Illustration.png" /></p>
-<h3 id="discrete-expectation"><strong>Discrete Expectation</strong></h3>
-<p>Similarly, the Expected Curtate Lifetime is the expectation of <span class="arithmatex">\(K_x\)</span>:</p>
+<h3 id="discrete-expectation"><strong>Discrete Expectation</strong><a class="headerlink" href="#discrete-expectation" title="Permanent link">&para;</a></h3>
+<p>Similarly, the <strong>Expectation of Curtate Lifetime</strong> is the expectation of <span class="arithmatex">\(K_x\)</span>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     e_x
-    &amp;=(K_x) \\
+    &amp;= E(K_x) \\
     &amp;= \sum_{k=0}^{\infty} k ({}_{k}p_{x} - {}_{k+1}p_{x}) \\
     &amp;= 1 ({}_{1}p_{x} - {}_{2}p_{x}) + 2 ({}_{2}p_{x} - {}_{3}p_{x}) + 3 ({}_{3}p_{x} - {}_{4}p_{x}) + ... \\
     &amp;= {}_{1}p_{x} - {}_{2}p_{x} + 2{}_{2}p_{x} - 2{}_{3}p_{x} + 3 {}_{3}p_{x} - 3 {}_{4}p_{x} \\
@@ -1519,8 +1528,8 @@
 \]</div>
 <p>The expectation can also <strong>recursively</strong> calculated:</p>
 <ul>
-<li>If the individual dies within the year with probability <span class="arithmatex">\(q_x\)</span>, then the future lifetime is 0</li>
-<li>If the individual survives the year with probability <span class="arithmatex">\(p_x\)</span>, then the future lifetime is 1 (for surviving the current year) AND the expected lifetime past that</li>
+<li>If the person dies within the year with probability <span class="arithmatex">\(q_x\)</span>, then the future lifetime is 0</li>
+<li>If the person survives the year with probability <span class="arithmatex">\(p_x\)</span>, then the future lifetime is 1 (for surviving the current year) AND the expected lifetime past that</li>
 </ul>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1534,7 +1543,7 @@
     \therefore e_x &amp;= p_x (1+e_{x+1})
 \end{aligned}
 \]</div>
-<h3 id="discrete-variance"><strong>Discrete Variance</strong></h3>
+<h3 id="discrete-variance"><strong>Discrete Variance</strong><a class="headerlink" href="#discrete-variance" title="Permanent link">&para;</a></h3>
 <p>The second moment can be calculated in a similar fashion:</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1557,15 +1566,12 @@
     &amp;= 2 \sum_{k=1}^{\infty} k{}_{k}p_{x} - e_x - (e_x)^2
 \end{aligned}
 \]</div>
-<h3 id="trapezoidal-rule"><strong>Trapezoidal Rule</strong></h3>
+<h3 id="trapezoidal-rule"><strong>Trapezoidal Rule</strong><a class="headerlink" href="#trapezoidal-rule" title="Permanent link">&para;</a></h3>
 <p>Note that the two expectations are similar to one another:</p>
 <ul>
 <li><strong>Continuous Expectation</strong> - Area under survival function</li>
 <li><strong>Discrete Expectation</strong> - Right <strong>Riemann Sum</strong> of the area under the survival function</li>
 </ul>
-<blockquote>
-<p>A Right Riemann Sum is when the curve passes through the <strong>top right</strong> of the rectangles use to approximate it.</p>
-</blockquote>
 <!-- Obtained from Story of Mathematics -->
 <p><img alt="Riemann Sum" class="center" src="../Assets/1.%20Survival%20Models.md/Right%20Riemann%20Sum.png" /></p>
 <p>Recall from Calculus that the area under a curve can be estimated through the <strong>Trapezium Rule</strong>, which states that the area is <em>approximately equal</em> to the sum of the area of discrete trapeziums formed under the curve.</p>
@@ -1582,13 +1588,10 @@
     &amp; \approx h[f(a+h) + f(a+2h) + \dots + f(b)] + \frac{h}{2} [f(a)-f(b)]
 \end{aligned}
 \]</div>
-<blockquote>
-<p>The proof relies on the fact that other than <span class="arithmatex">\(f(a)\)</span> and <span class="arithmatex">\(f(b)\)</span>, all other terms are repeated twice.</p>
-</blockquote>
-<p>Note that the last four lines of the proof are all variations of the same thing:</p>
+<p>The proof relies on the fact that <em>other</em> than <span class="arithmatex">\(f(a)\)</span> and <span class="arithmatex">\(f(b)\)</span>, <strong>all other terms are repeated twice</strong>. The last four lines are just different variations that showcase this property:</p>
 <ol>
 <li>Both <span class="arithmatex">\(f(a)\)</span> and <span class="arithmatex">\(f(b)\)</span> excluded from main expression</li>
-<li>Both <span class="arithmatex">\(f(a)\)</span> and <span class="arithmatex">\(f(b)\)</span> included in main expression</li>
+<li>Both <span class="arithmatex">\(f(a)\)</span> and <span class="arithmatex">\(f(b)\)</span> included in main expression but subtracted</li>
 <li>Only <span class="arithmatex">\(f(a)\)</span> included in main expression; Main expression is a <strong>Left Riemman Sum</strong></li>
 <li>Only <span class="arithmatex">\(f(b)\)</span> included in main expression; Main expression is a <strong>Right Riemman Sum</strong></li>
 </ol>
@@ -1606,16 +1609,14 @@
 \end{aligned}
 \]</div>
 <p>An alternative way to view the above is that the area of the trapezoid is the <strong>sum of the riemann rectangles and a triangle</strong>.</p>
-<h3 id="euler-maclaurin-formula"><strong>Euler Maclaurin Formula</strong></h3>
+<h3 id="euler-maclaurin-formula"><strong>Euler Maclaurin Formula</strong><a class="headerlink" href="#euler-maclaurin-formula" title="Permanent link">&para;</a></h3>
 <p>Note that the Trapezoidal Rule is <em>not perfect</em> - there is an <strong>inherent error</strong> in trying to approximate a curve using a line.</p>
 <div class="arithmatex">\[
 \begin{aligned}
     \int^b_a f(x) &amp; \approx \sum (\text{Area of Trapezium} + \text{Error})\\
 \end{aligned}
 \]</div>
-<blockquote>
-<p>The error can be positive or negative, depending on the shape of the curve in that interval.</p>
-</blockquote>
+<p>The error can be positive or negative, depending on the shape of the curve in that interval:</p>
 <!-- Obtained from Wikipedia -->
 <p><img alt="Trapezoidal Error" class="center" src="../Assets/1.%20Survival%20Models.md/Trapezoidal%20Error.png" /></p>
 <p>The error term is calculated by taking the difference between the integral and the trapezium, and is generalized using the taylor series. The final result is known as the <strong>Euler Maclaurin Formula</strong>:</p>
@@ -1633,11 +1634,11 @@
     &amp; \approx e_x + \frac{1}{2} + \frac{1}{12} [S'(0)]
 \end{aligned}
 \]</div>
-<p>Note that the above two concepts are usually covered in the Life Annuities section in a more complicated scenario, known as the <strong>Woolhouse Approximation</strong>. Although the above will rarely be used in this manner, it provides a simple example to understand the key concepts behind it.</p>
-<h2 id="parametric-survival-models"><strong>Parametric Survival Models</strong></h2>
+<p>The above will rarely be used in this manner - it is more than sufficient to know the relationship between the two expectations of life. However, it sets as a strong foundation to understand the <strong>Woolhouse Approximation</strong> in the life annuities section.</p>
+<h2 id="parametric-survival-models"><strong>Parametric Survival Models</strong><a class="headerlink" href="#parametric-survival-models" title="Permanent link">&para;</a></h2>
 <p>Given the importance of <span class="arithmatex">\(\mu_x\)</span>, several mathematical functions have been made to describe the force of mortality, known as a <strong>Parametric Survival Model</strong>.</p>
-<h3 id="de-moivres-model"><strong>De Moivre's Model</strong></h3>
-<h3 id="gompertz-model"><strong>Gompertz Model</strong></h3>
+<h3 id="de-moivres-model"><strong>De Moivre's Model</strong><a class="headerlink" href="#de-moivres-model" title="Permanent link">&para;</a></h3>
+<h3 id="gompertz-model"><strong>Gompertz Model</strong><a class="headerlink" href="#gompertz-model" title="Permanent link">&para;</a></h3>
 <p>The most commonly used model is <strong>Gompertz Model</strong>, which suggests that mortality <strong>increases exponentially with age</strong>.</p>
 <p>The is highly intuitive, as older people have a higher probability of death due to health issues related to age.</p>
 <!-- Obtained from Biodemography -->
@@ -1661,7 +1662,7 @@
 <div class="arithmatex">\[
     \mu_{x+t} = Bc^{x+t}
 \]</div>
-<h3 id="makeham-gompertz-model"><strong>Makeham Gompertz Model</strong></h3>
+<h3 id="makeham-gompertz-model"><strong>Makeham Gompertz Model</strong><a class="headerlink" href="#makeham-gompertz-model" title="Permanent link">&para;</a></h3>
 <p>Makeham added a <strong>constant</strong> <span class="arithmatex">\(A\)</span> into the Gompertz model, resulting in the <strong>Makeham Gompertz Model</strong>:</p>
 <div class="arithmatex">\[
     \mu_{x+t} = A + Bc^{x+t}

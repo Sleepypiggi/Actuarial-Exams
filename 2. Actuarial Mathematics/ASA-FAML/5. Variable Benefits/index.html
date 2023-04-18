@@ -288,22 +288,36 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../Overview%20of%20Insurance/" class="md-nav__link">
+        Overview of Insurance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_1">
+        <label class="md-nav__link" for="__nav_2_2">
           ASA-FAMS
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="ASA-FAMS" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_1">
+        <label class="md-nav__title" for="__nav_2_2">
           <span class="md-nav__icon md-icon"></span>
           ASA-FAMS
         </label>
@@ -383,18 +397,18 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" checked>
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_2">
+        <label class="md-nav__link" for="__nav_2_3">
           ASA-FAML
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="ASA-FAML" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_2">
+        <label class="md-nav__title" for="__nav_2_3">
           <span class="md-nav__icon md-icon"></span>
           ASA-FAML
         </label>
@@ -612,6 +626,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#in-force-recursions" class="md-nav__link">
+    In Force Recursions
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -691,18 +712,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_3">
+        <label class="md-nav__link" for="__nav_2_4">
           ASA-ALTAM
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="ASA-ALTAM" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_3">
+        <label class="md-nav__title" for="__nav_2_4">
           <span class="md-nav__icon md-icon"></span>
           ASA-ALTAM
         </label>
@@ -1133,6 +1154,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#in-force-recursions" class="md-nav__link">
+    In Force Recursions
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1160,10 +1188,10 @@
                   
 
 
-<h1 id="variable-benefits"><strong>Variable Benefits</strong></h1>
-<h2 id="overview"><strong>Overview</strong></h2>
+<h1 id="variable-benefits"><strong>Variable Benefits</strong><a class="headerlink" href="#variable-benefits" title="Permanent link">&para;</a></h1>
+<h2 id="overview"><strong>Overview</strong><a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>Previously, the benefit of the assurances were assumed to be <strong>fixed at 1</strong> for simplicity. In practice, it is common to have assurances where the benefits <strong>change over time</strong>.</p>
-<h2 id="geometric-contracts"><strong>Geometric Contracts</strong></h2>
+<h2 id="geometric-contracts"><strong>Geometric Contracts</strong><a class="headerlink" href="#geometric-contracts" title="Permanent link">&para;</a></h2>
 <p>If the benefits change by a <strong>common factor</strong> each period, then it is known as a <strong>Geometric</strong> contract.</p>
 <p>The benefit of the policy <strong>starts at 1</strong> in the first year and <strong>changes by <span class="arithmatex">\((1+b)\)</span></strong> each period:</p>
 <ul>
@@ -1178,7 +1206,7 @@
 </blockquote>
 <!-- Self Made -->
 <p><img alt="Geometric Benefits" class="center" src="../Assets/5.%20Variable%20Benefits.md/Geometric%20Benefits.png" /></p>
-<h3 id="geometric-assurance"><strong>Geometric Assurance</strong></h3>
+<h3 id="geometric-assurance"><strong>Geometric Assurance</strong><a class="headerlink" href="#geometric-assurance" title="Permanent link">&para;</a></h3>
 <p>Let <span class="arithmatex">\(\text{Geom WL}\)</span> be the random variable denoting the PV of a Geometric Assurance.</p>
 <div class="arithmatex">\[
     \text{Geom WL} = (1+b)^{K_x} v^{K_x+1}
@@ -1195,9 +1223,9 @@
 \end{aligned}
 \]</div>
 <p>Note that this means that the term <span class="arithmatex">\(A_x |_{i=\frac{1+i}{1+b}-1}\)</span> by <em>itself</em> is a Geometric Assurance that <strong>starts with payments of <span class="arithmatex">\((1+b)\)</span></strong>, which is why <span class="arithmatex">\(\frac{1}{1+b}\)</span> is required to scale it down by one factor such that it starts at one.</p>
-<p>The expression follows similar intuition to the second moment - it is simply a regular EPV expression evaluated at a <strong>different interest rate</strong>. Unfortunately, there is no specified actuarial notation for this niche case.</p>
 <p>In practice, most questions will provide a value of <span class="arithmatex">\(b\)</span> such that <span class="arithmatex">\((i=\frac{1+i}{1+b}-1)\)</span> simplifies to a <strong>nice percentage</strong>. However, this usually means that the value of <span class="arithmatex">\(b\)</span> provided is some complicated number, so do not be taken aback!</p>
-<h3 id="geometric-annuity"><strong>Geometric Annuity</strong></h3>
+<p>The expression follows similar intuition to the second moment - it is simply a regular EPV expression evaluated at a <strong>different interest rate</strong>. Unfortunately, there is <strong>no specified actuarial notation</strong> for this niche case. One common approach is to denote it using <span class="arithmatex">\(A_x^i\)</span>.</p>
+<h3 id="geometric-annuity"><strong>Geometric Annuity</strong><a class="headerlink" href="#geometric-annuity" title="Permanent link">&para;</a></h3>
 <p>Let <span class="arithmatex">\(\text{EPV Geom WL}_\text{Due}\)</span> be the random variable denoting the PV of a Geometric Annuity Due.</p>
 <!-- No general expression? -->
 
@@ -1212,10 +1240,14 @@
 \]</div>
 <!-- What about Geometric Term? -->
 
-<h3 id="continuous-geometric"><strong>Continuous Geometric</strong></h3>
+<h3 id="continuous-geometric"><strong>Continuous Geometric</strong><a class="headerlink" href="#continuous-geometric" title="Permanent link">&para;</a></h3>
 <p>The EPV of continuously payable geometric contracts can be calculated using the usual UDD, Claims Acceleration or Woolhouse Approximations.</p>
-<p>However, note that the "new" interest rate must be used in the approximations, similar to how the new interest rate is used for approximating the second moments.</p>
-<h2 id="arithmetic-contracts"><strong>Arithmetic Contracts</strong></h2>
+<p>However, despite having a "new" interest rate, the <strong>original interest rate</strong> is used in the continuous approximation parameters.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is <strong>different</strong> from the second moment where the new interest rate must be reflected in the approximation as well. Take note of the different treatments.</p>
+</div>
+<h2 id="arithmetic-contracts"><strong>Arithmetic Contracts</strong><a class="headerlink" href="#arithmetic-contracts" title="Permanent link">&para;</a></h2>
 <p>If the benefits change by a <strong>fixed constant</strong> each period, then it is instead known as an <strong>Arithmetic</strong> contract.</p>
 <p>For simplicity, the change each period is assumed to be 1:</p>
 <ul>
@@ -1228,7 +1260,7 @@
 \]</div>
 <!-- Self Made -->
 <p><img alt="Arithmetic Benefits" class="center" src="../Assets/5.%20Variable%20Benefits.md/Arithmetic%20Benefits.png" /></p>
-<h3 id="arithmetic-assurance"><strong>Arithmetic Assurance</strong></h3>
+<h3 id="arithmetic-assurance"><strong>Arithmetic Assurance</strong><a class="headerlink" href="#arithmetic-assurance" title="Permanent link">&para;</a></h3>
 <p>Let <span class="arithmatex">\(\text{Arith WL}\)</span> be the random variable denoting the PV of an arithmetically increasing WL Assurance:</p>
 <div class="arithmatex">\[
     \text{Arith WL} = (K_x + 1) v^{K_x+1}
@@ -1240,10 +1272,8 @@
     (IA)_x &amp;= \sum^{\infty}_{k=0} (k+1) v^{k+1} {}_{k|}q_x
 \end{aligned}
 \]</div>
-<blockquote>
-<p><span class="arithmatex">\((IA)_x\)</span> is the actuarial notation for the EPV of a contract with arithmetically increasing benefits starting at 1 and increasing by 1 each period.</p>
-</blockquote>
-<p>Intuitively, it can also be shown to be a <strong>sum of deferred WLs</strong>, each deferred by one period from the previous. This creates a <strong>step-like function</strong> which creates the increasing effect of the assurance:</p>
+<p><span class="arithmatex">\((IA)_x\)</span> is the actuarial notation for the EPV of a contract with arithmetically increasing benefits <strong>starting at 1</strong> and <strong>increasing by 1</strong> each period.</p>
+<p>It can also be shown to be a <strong>sum of deferred WLs</strong>, each deferred by one period from the previous. This creates a <strong>step-like benefit</strong> which creates the increasing effect of the assurance:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     (IA)_x
@@ -1254,12 +1284,11 @@
 <!-- Self Made -->
 <p><img alt="Arithmetic Deferred" class="center" src="../Assets/5.%20Variable%20Benefits.md/Arithmetic%20Deferred.png" /></p>
 <p>In practice, the magnitude of the change is <em>unlikely</em> to be one. Thus, the EPV must be <strong>scaled</strong> to match the actual change. This can be <strong>problematic</strong> if the starting benefit is <strong>NOT the same as the change</strong>.</p>
-<p>For instance, consider a contract with starting benefit of 100k which increases by 1k each period. Since the change is 1000, the EPV must be scaled accordingly, resulting in <span class="arithmatex">\(1000(IA)_x\)</span>.</p>
-<p>However, this is the EPV for a contract with a <strong>starting benefit of 1000</strong> which increases by 1000 each period. Thus, there must be an <strong>additional term</strong> to add the remaining 99k back inside:</p>
-<div class="arithmatex">\[
-    \text{EPV 100k increasing by 1k} = 99k \cdot A_x + 1k \cdot (IA)_x
-\]</div>
-<h3 id="arithmetic-annuities"><strong>Arithmetic Annuities</strong></h3>
+<p>Consider a product with benefit <span class="arithmatex">\(B\)</span> that increases by <span class="arithmatex">\(k\)</span> each year. Due to the definition of the IWL variable, the starting benefit and change each period are equal - we <strong>cannot simply multiply</strong> <span class="arithmatex">\(B\)</span> or <span class="arithmatex">\(k\)</span> to the IWL EPV.</p>
+<p>Thus, we must split this product into a <strong>fixed component</strong> with <span class="arithmatex">\(B-k\)</span> benefits and a <strong>variable component</strong> that starts and increases by <span class="arithmatex">\(k\)</span> each period. The sum of these two components results in a benefit of <span class="arithmatex">\(B, B+k, B+2k, \dots\)</span></p>
+<!-- Self Made -->
+<p><img alt="Arithmetic Benefits Illustration" class="center" src="../Assets/5.%20Variable%20Benefits.md/Arithmetic%20Benefits%20Illustration.png" /></p>
+<h3 id="arithmetic-annuities"><strong>Arithmetic Annuities</strong><a class="headerlink" href="#arithmetic-annuities" title="Permanent link">&para;</a></h3>
 <p>Let <span class="arithmatex">\(\text{Arith WL}_\text{Due}\)</span> be the random variable denoting the PV of an arithmetically increasing annuity.</p>
 <p>The PV can be denoted by an arithmetically increasing annuity <em>certain</em>:</p>
 <div class="arithmatex">\[
@@ -1276,7 +1305,7 @@
 \]</div>
 <!-- Self Made -->
 <p><img alt="Increasing Annuity Certain" class="center" src="../Assets/5.%20Variable%20Benefits.md/Increasing%20Annuity%20Certain.png" /></p>
-<p>Thus, the EPV of an arithmetically increasing WL annuity Due can be calculated as:</p>
+<p>Similarly, the EPV of an arithmetically increasing WL annuity Due can be calculated as:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     \text{EPV Arith WL}_\text{Due} &amp;= \sum^{\infty}_{k=0} (I\ddot{a})_{\enclose{actuarial}{k+1}} \cdot {}_{k|}q_x \\
@@ -1304,7 +1333,7 @@
 \]</div>
 <!-- Self Made -->
 <p><img alt="Increasing Due Immediate" class="center" src="../Assets/5.%20Variable%20Benefits.md/Increasing%20Due%20Immediate.png" /></p>
-<h3 id="arithmetic-termtemporary"><strong>Arithmetic Term/Temporary</strong></h3>
+<h3 id="arithmetic-termtemporary"><strong>Arithmetic Term/Temporary</strong><a class="headerlink" href="#arithmetic-termtemporary" title="Permanent link">&para;</a></h3>
 <p>For contract with <em>level benefits</em>, term/temporary contracts can be expressed as a <strong>difference of two WLs</strong> issued at different times because the benefits for the time after the specified term would <em>cancel out</em>.</p>
 <p>For contracts with variable benefits, this is slightly more complicated as the benefits after the specified term <strong>do NOT cancel out</strong>:</p>
 <ul>
@@ -1332,9 +1361,11 @@
 \]</div>
 <!-- Self Made -->
 <p><img alt="Increasing Temporary" class="center" src="../Assets/5.%20Variable%20Benefits.md/Increasing%20Temporary.png" /></p>
-<!-- Due to Immediate for Increasing Term -->
-
-<h4 id="decreasing-benefits"><strong>Decreasing Benefits</strong></h4>
+<div class="admonition note">
+<p class="admonition-title">Due to Immediate Conversion</p>
+<p>As mentioned in the Life Annuity section, it is not useful to memorize the conversion from Due to Immediate for TAs. Thus, simply express the ITA in the form of IWLs and then perform the conversion there.</p>
+</div>
+<h4 id="decreasing-benefits"><strong>Decreasing Benefits</strong><a class="headerlink" href="#decreasing-benefits" title="Permanent link">&para;</a></h4>
 <p>As mentioned previously, another key feature of term/temporary contracts is that they can have <strong>decreasing benefits</strong>.</p>
 <p>This is because the benefit of the policy can be set such that it would <strong>exactly decrease to 0</strong> by the end of the policy term. This is done by setting a <strong>starting benefit of <span class="arithmatex">\(n\)</span> and decreasing by <span class="arithmatex">\(1\)</span> each period</strong>:</p>
 <div class="arithmatex">\[
@@ -1350,46 +1381,67 @@
     &amp;= (n+1)A^1_{x:\enclose{actuarial}{n}} - (IA)^1_{x:\enclose{actuarial}{n}}
 \end{aligned}
 \]</div>
-<blockquote>
-<p><span class="arithmatex">\((DA)\)</span> is the actuarial notation for an Assurance with <em>Arithmetically decreasing</em> benefits.</p>
-</blockquote>
+<p><span class="arithmatex">\((DA)\)</span> is the actuarial notation for an Assurance with <em>Arithmetically decreasing</em> benefits <strong>starting at <span class="arithmatex">\(n\)</span></strong> and <strong>decreasing by 1</strong> each period.</p>
 <!-- Self Made -->
 <p><img alt="Decreasing Term" class="center" src="../Assets/5.%20Variable%20Benefits.md/Decreasing%20Term.png" /></p>
-<p>Thus, the EPV of a decreasing temporary annuity can be calculated as the following:</p>
-<!-- TBC -->
-
-<h3 id="continuous-arithmetic"><strong>Continuous Arithmetic</strong></h3>
+<p>Similarly, the EPV of a decreasing temporary annuity can be calculated as the following:</p>
+<div class="arithmatex">\[
+    (D_{\enclose{actuarial}{n}}\ddot{a})_{x:\enclose{actuarial}{n}}
+    = (n+1)\ddot{a}_{x:\enclose{actuarial}{n}} - (I\ddot{a})_{x:\enclose{actuarial}{n}}
+\]</div>
+<h3 id="continuous-arithmetic"><strong>Continuous Arithmetic</strong><a class="headerlink" href="#continuous-arithmetic" title="Permanent link">&para;</a></h3>
 <p>Similar to Geometric Contracts, the EPV of a continuously payable Arithmetic Contracts can be calculated using the usual approximations.</p>
-<p>However, continuous arithmetic contracts could refer to a contract that not only payable continuously, but <strong>changes continuously</strong> as well. The benefits change at a <strong>constant rate throughout the period</strong>, such that the total change is still equal to 1.</p>
-<p>This can also be approximated from the discrete case, but the intuition is best understood <strong>graphically</strong>:</p>
-<!-- Self Made -->
-<p><img alt="Continuously Variable" class="center" src="../Assets/5.%20Variable%20Benefits.md/Continuously%20Variable.png" /></p>
-<p>Thus, for both Assurances and Annuities, the EPV can be calculated as:</p>
+<p>However, take note that for TAs, the <strong>added term should also be continuous</strong>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    (\bar{I}\bar{A})_{x} &amp;= (I\bar{A})_{x} - \frac{1}{2} \bar{A}_x \\
-    (\bar{I}\bar{a}) &amp;= (I\bar{a}) - \frac{1}{2} \bar{a}_x
+    (I\bar{A})_{x:\enclose{actuarial}{n}} &amp;= (I\bar{A})_x - {}_{n}E_x[(I\bar{A})_{x+n}+ n\bar{A}_{x+n}] \\
+    (I\bar{a})_{x:\enclose{actuarial}{n}} &amp;= (I\bar{a})_x - {}_{n}E_x[(I\bar{a})_{x+n}+ n\bar{a}_{x+n}]
 \end{aligned}
 \]</div>
-<h2 id="variable-recursions"><strong>Variable Recursions</strong></h2>
+<div class="admonition note">
+<p class="admonition-title">Increasing Woolhouse Approximation</p>
+<p>For IWL Annuities, the woolhouse approximation is slightly different:</p>
+<div class="arithmatex">\[
+    (I\bar{a})_{x} = (I\ddot{a})_{x} - \frac{1}{2} \ddot{a}_x
+\]</div>
+</div>
+<p>Continuous arithmetic contracts could <em>also</em> refer to a contract that not only payable continuously, but <strong>changes continuously</strong> as well. The benefits change at a <strong>constant rate throughout the period</strong>, such that the total change is still equal to 1.</p>
+<p>For <strong>Assurances</strong>, it can be understood from a graphical approach:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    (\bar{I}\bar{A})_{x} &amp;= (I\bar{A})_{x} - \frac{1}{2} \bar{A}_x
+\end{aligned}
+\]</div>
+<!-- Self Made -->
+<p><img alt="Continuously Variable" class="center" src="../Assets/5.%20Variable%20Benefits.md/Continuously%20Variable.png" /></p>
+<p>For Annuities, it can be derived using the <strong>woolhouse approximation</strong>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    (\bar{I}\bar{a})_x
+    &amp;= (Ia)_x + \frac{1}{12} \\
+    &amp;= (I\ddot{a})_x - \ddot{a}_x + \frac{1}{12}
+\end{aligned}
+\]</div>
+<p>Note that these approximations are <strong>ONLY applicable for WL policies</strong>. For continously increasing TAs, <strong>convert them to WLs first</strong> before applying the approximations.</p>
+<h2 id="variable-recursions"><strong>Variable Recursions</strong><a class="headerlink" href="#variable-recursions" title="Permanent link">&para;</a></h2>
 <p>Since the benefit payable at the end of the first year is <strong>still 1</strong>, the recursion for variable contracts are similar to the level ones.</p>
-<h3 id="variable-assurances"><strong>Variable Assurances</strong></h3>
+<h3 id="variable-assurances"><strong>Variable Assurances</strong><a class="headerlink" href="#variable-assurances" title="Permanent link">&para;</a></h3>
 <p>Consider the two scenarios:</p>
 <ul>
 <li>If the policyholder dies in the current year with probability <span class="arithmatex">\(q_x\)</span>, then a <strong>benefit of 1</strong> is paid at the end of the year</li>
-<li>If the policyholder lives past the current year with probability <span class="arithmatex">\(p_x\)</span>, then the they will receive benefits that are <strong>larger than 1</strong> at some future time</li>
+<li>If the policyholder lives past the current year with probability <span class="arithmatex">\(p_x\)</span>, then the they will receive the EPV of a policy with benefits <span class="arithmatex">\(2, 3, \dots\)</span> or <span class="arithmatex">\((1+b)^1, (1+b)^2, \dots\)</span> at some future time</li>
 </ul>
-<p>For the second half, the term multiplied must be the EPV of an assurance that <strong>STARTS with an increased benefit</strong> of <span class="arithmatex">\((1+b)\)</span> or <span class="arithmatex">\(2\)</span>. The issue is that the random variable is currently defined as a contract with benefits <em>starting at 1</em>, which is why the recursive formula is different from the level case.</p>
-<p>For Geometric Assurances, <span class="arithmatex">\(A_{x+1}|_{i=\frac{1+i}{1+b}-1}\)</span> is <strong>already</strong> an Geometric Assurance that starts at <span class="arithmatex">\((1+b)\)</span>, thus the recursive formula is simply:</p>
+<p>The second component must be the EPV of an assurance that <strong>STARTS with an increased benefit</strong> of <span class="arithmatex">\((1+b)\)</span> or <span class="arithmatex">\(2\)</span>. The issue is that the random variable is currently defined as a contract with benefits <em>starting at 1</em>, which is why the recursive formula is <strong>different from the level case</strong>.</p>
+<p>For Geometric Assurances, <span class="arithmatex">\(A_{x+1}|_{i=\frac{1+i}{1+b}-1}\)</span> is <strong>already</strong> an Geometric Assurance that starts at <span class="arithmatex">\((1+b)\)</span>, thus no adjustment is needed for the RHS:</p>
 <div class="arithmatex">\[
     \text{EPV Geom WL}_{x} = vq_x + vp_x A_{x+1}|_{i=\frac{1+i}{1+b}-1}
 \]</div>
-<p>For Arithmetic Assurances, an EPV representing an <strong>additional benefit of 1 each period</strong> must be added that the expression starts from 2 and increases by an additional 1 each period.</p>
+<p>For Arithmetic Assurances, an EPV representing an <strong>additional benefit of 1 each period</strong> must be added to the second component so that the RHS expression starts from 2 and increases by an additional 1 each period.</p>
 <div class="arithmatex">\[
     (IA)_{x} = vq_x + vp_x[(IA)_{x+1} + A_{x+1}]
 \]</div>
-<h3 id="variable-annuities"><strong>Variable Annuities</strong></h3>
-<p>Recall that a benefit of 1 is received at the beginning of the year regardless of whether the policyholder lives or dies.</p>
+<h3 id="variable-annuities"><strong>Variable Annuities</strong><a class="headerlink" href="#variable-annuities" title="Permanent link">&para;</a></h3>
+<p>Recall that a <strong>benefit of 1 is already received at the beginning of the year</strong> regardless of whether the policyholder lives or dies.</p>
 <ul>
 <li>If the policyholder dies with probability <span class="arithmatex">\(q_x\)</span>, then they receive nothing extra</li>
 <li>If the policyholder lives past the current year with probability <span class="arithmatex">\(p_x\)</span>, then they will receive benefits that are <strong>larger than 1</strong> at some future time</li>
@@ -1397,17 +1449,41 @@
 <p>For Geometric Annuities, TBC.</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    \text{EPV Geom WL}_\text{Due}_{x} = 1 + vp_x \cdot (1+c) \left(\ddot{a}_{x+1}|_{i = \frac{1+i}{1+c}-1}\right)
+    \text{EPV Geom WL}_{\text{Due},x} = 1 + vp_x \cdot (1+c) \left(\ddot{a}_{x+1}|_{i = \frac{1+i}{1+c}-1} \right)
 \end{aligned}
 \]</div>
-<p>For Arithmetic Annuities, the same adjustment must be made:</p>
+<p>For Arithmetic Annuities, the same adjustment as before must be made:</p>
 <div class="arithmatex">\[
     (I\ddot{a})_x = 1 + vp_x[(I\ddot{a})_{x+1} + \ddot{a}_{x+1}]
 \]</div>
-<blockquote>
-<p>The same can be shown for Variable Term/Temporary Assurances/Annuities, but remember that the <strong>remaining duration of the policy must decrease</strong> as well.</p>
-</blockquote>
-<h2 id="variance-and-second-moment"><strong>Variance and Second Moment</strong></h2>
+<h3 id="in-force-recursions"><strong>In Force Recursions</strong><a class="headerlink" href="#in-force-recursions" title="Permanent link">&para;</a></h3>
+<p>Previously, we have only considered the EPV for a <strong>newly issued policy</strong> at age <span class="arithmatex">\(x\)</span>. However, now we want to consider the EPV of a policy that has <strong>already been in force</strong> for some period of time <span class="arithmatex">\(t\)</span>.</p>
+<p>For policies with <strong>level benefits</strong>, the EPV of an already in force policy is exactly the <strong>same as the EPV of a newly issued policy</strong> at the current age with the <strong>same expiration date</strong>. This means that the <strong>same recursion</strong> can be used for both newly issued policies and inforce policies.</p>
+<p>However, this is NOT the case for policies with <strong>variable benefits</strong> as the inforce policy would have a benefit of <span class="arithmatex">\(t\)</span> or <span class="arithmatex">\((1+b)^{t-1}\)</span> while a newly issued policy would have benefit of 1. This means that a <strong>seperate recursion</strong> must be defined for inforce variable policies.</p>
+<p>For simplicity, we will consider an in force <strong>arithmetically increasing WL Assurance</strong>:</p>
+<ul>
+<li>If the policyholder dies with probability <span class="arithmatex">\(q_{x+t-1}\)</span>, they will receive a benefit of <span class="arithmatex">\(t\)</span> at the end of the year</li>
+<li>If the poliycholder survives with probability <span class="arithmatex">\(p_{x+t-1}\)</span>, they will receive the EPV of a contract with benefits <span class="arithmatex">\(t+1, t+2, \dots\)</span> at some future time</li>
+</ul>
+<div class="arithmatex">\[
+    RHS = vq_{x+t-1} \cdot t + vp_{x+t-1} [(IA)_{x+t} + tA_{x+t}]
+\]</div>
+<p>Since (IA) is used to denote a policy with benefits starting at 1, an <strong>additional term must be added to the LHS</strong> to show that the in force policy has benefits of t:</p>
+<div class="arithmatex">\[
+    LHS = (IA)_{x+t-1} + (t-1) A_{x+t-1}
+\]</div>
+<p>The same exercise can be performed for Annuities as well, resulting in the following:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    (IA)_{x+t-1} + (t-1) A_{x+t-1} &amp;= vq_{x+t-1} \cdot t + vp_{x+t-1} [(IA)_{x+t} + tA_{x+t}] \\
+    (I\ddot{a})_{x+t-1} + (t-1) \ddot{a}_{x+t-1} &amp;= t + vp_{x+t-1} [(I\ddot{a})_{x+t} + t\ddot{a}_{x+t}]
+\end{aligned}
+\]</div>
+<div class="admonition warning">
+<p class="admonition-title">Term/Temporary Policies</p>
+<p>The same can be shown for Variable Term/Temporary policies, but remember that the <strong>remaining duration of the policy must decrease</strong> as well.</p>
+</div>
+<h2 id="variance-and-second-moment"><strong>Variance and Second Moment</strong><a class="headerlink" href="#variance-and-second-moment" title="Permanent link">&para;</a></h2>
 <p>Consider the second moment of both types of variable assurances:</p>
 <div class="arithmatex">\[
 \begin{aligned}

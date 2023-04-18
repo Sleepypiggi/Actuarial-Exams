@@ -288,22 +288,36 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../Overview%20of%20Insurance/" class="md-nav__link">
+        Overview of Insurance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_1">
+        <label class="md-nav__link" for="__nav_2_2">
           ASA-FAMS
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="ASA-FAMS" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_1">
+        <label class="md-nav__title" for="__nav_2_2">
           <span class="md-nav__icon md-icon"></span>
           ASA-FAMS
         </label>
@@ -381,18 +395,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_2">
+        <label class="md-nav__link" for="__nav_2_3">
           ASA-FAML
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="ASA-FAML" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_2">
+        <label class="md-nav__title" for="__nav_2_3">
           <span class="md-nav__icon md-icon"></span>
           ASA-FAML
         </label>
@@ -528,18 +542,18 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" checked>
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_3">
+        <label class="md-nav__link" for="__nav_2_4">
           ASA-ALTAM
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="ASA-ALTAM" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_3">
+        <label class="md-nav__title" for="__nav_2_4">
           <span class="md-nav__icon md-icon"></span>
           ASA-ALTAM
         </label>
@@ -698,6 +712,13 @@
           <li class="md-nav__item">
   <a href="#mortality-gain" class="md-nav__link">
     Mortality Gain
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#per-policy-gain" class="md-nav__link">
+    Per Policy Gain
   </a>
   
 </li>
@@ -1128,6 +1149,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#per-policy-gain" class="md-nav__link">
+    Per Policy Gain
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1148,8 +1176,8 @@
                   
 
 
-<h1 id="profit-testing"><strong>Profit Testing</strong></h1>
-<h2 id="overview"><strong>Overview</strong></h2>
+<h1 id="profit-testing"><strong>Profit Testing</strong><a class="headerlink" href="#profit-testing" title="Permanent link">&para;</a></h1>
+<h2 id="overview"><strong>Overview</strong><a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>In most other industries, the cost of the product is known beforehand, thus it is possible to determine its profitability beforehand.</p>
 <p>Unfortunately, due to the <strong>contingent nature</strong> of life assurances and annuities, it is impossible to determine profitability beforehand.</p>
 <p>Recall that insurers make certain assumptions about the policyholder and thus price the product accordingly. If the policyholder follows these assumptions <em>exactly</em>, then the resulting profit is known as the <strong>Expected Profit</strong>. In reality, the policyholder will deviate from the assumptions to varying extents, resulting in the <strong>Actual Profit</strong>.</p>
@@ -1157,22 +1185,33 @@
 <div class="arithmatex">\[
     \text{Gain} = \text{Actual Profit} - \text{Expected Profit}
 \]</div>
-<h2 id="expected-profit"><strong>Expected Profit</strong></h2>
-<h3 id="cashflow-projections"><strong>Cashflow Projections</strong></h3>
+<h2 id="expected-profit"><strong>Expected Profit</strong><a class="headerlink" href="#expected-profit" title="Permanent link">&para;</a></h2>
+<h3 id="cashflow-projections"><strong>Cashflow Projections</strong><a class="headerlink" href="#cashflow-projections" title="Permanent link">&para;</a></h3>
 <p>We first consider the cashflows that the insurer expects every <em>policy year</em>:</p>
 <ul>
 <li>At the start of the policy year, they <strong>collect premiums and pay expenses</strong></li>
 <li>They invest the excess amount to <strong>earn interest</strong> at the end of the policy year</li>
 <li>They expect some policyholders to die and hence <strong>payout claims and any claims expenses</strong> at the end of the policy year</li>
 </ul>
-<p>Thus, the combination of these cashflows are known as the <strong>expected net cashflows</strong> for that policy year, calculated at the <strong>end of the policy year</strong>:</p>
+<div class="admonition note">
+<p class="admonition-title">Alternative Perspective</p>
+<p>If the insurer pays more expenses than premiums, then they have to <strong>borrow money</strong>, which means that they <strong>pay interest</strong> at the end of the policy year instead.</p>
+</div>
+<p>The combination of these cashflows are known as the <strong>expected net cashflows</strong> for that policy year, calculated at the <strong>end of the policy year</strong>:</p>
 <div class="arithmatex">\[
     \text{Expected NCF} = (P - e)(1+i) - q_x \cdot (B+E)
 \]</div>
-<blockquote>
-<p>If the insurer pays more expenses than premiums, then they have to <strong>borrow money</strong>, which means that they <strong>pay interest</strong> at the end of the policy year instead. In either case, the expression remains unchanged.</p>
-<p>Similarly, for an annuity, they expect some policyholder to <strong>remain alive</strong> instead, thus the payout should be multiplied by the survival probability instead.</p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Survival Benefits</p>
+<p>For Annuities where there is instead a survival benefit, the insurer expects some policyholders to <strong>remain alive</strong> and hence pay them the <strong>survival benefits and any survival expenses</strong>, thus the payout should be <strong>multiplied by the survival probability instead</strong>:</p>
+<div class="arithmatex">\[
+    \text{Expected NCF Annuity } = (P - e)(1+i) - p_x \cdot (B^s+E^s)
+\]</div>
+<p>For Endowments in particular, the survival benefit only occurs in the final year. Thus, in the <strong>final year</strong>, both the <strong>death and survival benefits</strong> must be accounted for:</p>
+<div class="arithmatex">\[
+    \text{Expected NCF Final Year EA} = (P - e)(1+i) - q_x \cdot (B+E) - p_x \cdot (B^s+E^s)
+\]</div>
+</div>
 <p>Since the insurer holds reserves that cannot be touched, it can be thought of as an <strong>account balance</strong>:</p>
 <ul>
 <li>The reserve held at the beginning of the policy year is the <strong>opening balance</strong></li>
@@ -1188,10 +1227,11 @@
     &amp;= ({}_{t-1}V + P - e)(1+i) - q_x \cdot (B+E) - p_x \cdot {}_{t}V
 \end{aligned}
 \]</div>
-<blockquote>
-<p>Note that the <strong>earned interest earned</strong> may be different from the interest used to compute premiums or reserves.</p>
-</blockquote>
-<p>This is equivalent to saying that the profit in each policy year is the combination of the NCFs AND the <strong>change in reserves</strong> for that policy year:</p>
+<div class="admonition warning">
+<p class="admonition-title">Different Interest Rates</p>
+<p>The interest earned on the reserves <strong>may be different</strong> from the interest used to compute the premiums and/or reserves. Be sure to read the question properly.</p>
+</div>
+<p>This is equivalent to saying that the expected profit in each policy year is the combination of the NCFs AND the <strong>change in reserves</strong> for that policy year:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     \text{Expected Profit}
@@ -1199,18 +1239,16 @@
     &amp;= \text{Expected NCF} + \text{Expected change in reserve}
 \end{aligned}
 \]</div>
-<blockquote>
-<p>The expected profit is also known as the <strong>Emerging Profit</strong> from each year.</p>
-</blockquote>
-<p>Note that there are two special cases:</p>
+<p>There are two special cases for the reserves:</p>
 <ul>
 <li><strong>Beginning</strong> of policy - Starting reserve is 0</li>
 <li><strong>End</strong> of policy - Ending reserve is 0</li>
 </ul>
 <!-- Obtained from Coaching Actuaries -->
 <p><img alt="Profit Special Case" class="center" src="../Assets/Profit%20Testing.md/Profit%20Special%20Case.png" /></p>
-<h3 id="profit-vector-signature"><strong>Profit Vector &amp; Signature</strong></h3>
+<h3 id="profit-vector-signature"><strong>Profit Vector &amp; Signature</strong><a class="headerlink" href="#profit-vector-signature" title="Permanent link">&para;</a></h3>
 <p>If the expected profit is calculated <strong>every policy year</strong> and collected together, then the resulting vector is known as the <strong>Profit Vector</strong>.</p>
+<p>For a typical contract, the profits are usually negative in the first (few) years and are small in magnitude across all years. This can be used to <strong>sense check</strong> the profit vector calculations.</p>
 <div class="arithmatex">\[
 \begin{aligned}
     \text{PR}
@@ -1225,10 +1263,11 @@
 \]</div>
 <!-- Self Made -->
 <p><img alt="Profit Vector" class="center" src="../Assets/Profit%20Testing.md/Profit%20Vector.png" /></p>
-<blockquote>
-<p>Most questions will only require computing the profit vector for a short period of time given its itensity.</p>
-<p>If required to compute the profit vector for a long duration, the question will usually specify to ignore the change in reserves, which greatly simplifies the required calculations.</p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Calculation Questions</p>
+<p>Most questions will <em>only</em> require computing the profit vector for a short period of time given the intensity needed to calculate the reserves at various points in time.</p>
+<p>If required to compute the profit vector for a long duration, the question will usually specify to <strong>ignore the change</strong> in reserves or simply <strong>provide them</strong>, which greatly simplifies the required calculations.</p>
+</div>
 <p>However, the expected profit for each policy year makes the implicit assumption that the <strong>policyholder survives till the BEGINNING of that policy year</strong>. Thus, every element of the profit vector is calculated based off varying assumptions.</p>
 <p>This is not very useful and thus can be corrected by adjusting the profit vector with the probability of survival till the <em>beginning</em> each policy year. The resulting vector is the <strong>unconditional profit</strong>, known as the <strong>Profit Signature</strong>.</p>
 <div class="arithmatex">\[
@@ -1255,43 +1294,45 @@
 </blockquote>
 <!-- Self Made -->
 <p><img alt="Profit Signature" class="center" src="../Assets/Profit%20Testing.md/Profit%20Signature.png" /></p>
-<h3 id="profit-measures"><strong>Profit Measures</strong></h3>
+<h3 id="profit-measures"><strong>Profit Measures</strong><a class="headerlink" href="#profit-measures" title="Permanent link">&para;</a></h3>
 <p>Using the profit signature, insurers can gauge the profitability of the products using a variety of metrics.</p>
-<h4 id="net-present-value"><strong>Net Present Value</strong></h4>
+<p>Apart from calculation, it is important to know how to explain how a change in any of the parameters affect these metrics.</p>
+<h4 id="net-present-value"><strong>Net Present Value</strong><a class="headerlink" href="#net-present-value" title="Permanent link">&para;</a></h4>
 <p><strong>Net Present Value</strong> (NPV) follows its finance definition and is the <strong>excess of PV Inflows over Outflows</strong>. In this context, it is the <strong>sum of the present values</strong> of all elements within the profit signature:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     \text{NPV}
-    &amp;= \left(v^1 \quad v^2 \quad \dots \quad v^t \right) \cdot \begin{pmatrix} \text{PR}_1 \\ \text{PR}_2 \\ \vdots \\ \text{PR}_t \end{pmatrix} \\
-    &amp;= v^1 \cdot \text{PR}_1 + v^2 \cdot \text{PR}_2 + \dots + v^t \cdot \text{PR}_t
+    &amp;= \left(v^1 \quad v^2 \quad \dots \quad v^t \right) \cdot \begin{pmatrix} \Pi_1 \\ \Pi_2 \\ \vdots \\ \Pi_t \end{pmatrix} \\
+    &amp;= v^1 \cdot \Pi_1 + v^2 \cdot \Pi_2 + \dots + v^t \cdot \Pi_t
 \end{aligned}
 \]</div>
-<blockquote>
-<p>Note that there may be some <strong>cashflows at time 0</strong> that also must be accounted for in the NPV, usually known as <strong>Pre-Contract Expenses</strong>.</p>
-</blockquote>
+<div class="admonition warning">
+<p class="admonition-title">Net <em>Expected</em> Present Value</p>
+<p>Note that the NPV is calculated based off the profit signature, NOT the profit vector. Thus, it is more appropriately called the <strong>Net Expected Present Value</strong>, as survival probabilities are taken into account as well.</p>
+</div>
 <p>The interest rate used to discount the cashflows is known as the <strong>Discount Rate</strong>, and is usually different from the earned interest rate or the one used in pricing/reserving.</p>
-<h4 id="internal-rate-of-return"><strong>Internal Rate of Return</strong></h4>
+<h4 id="internal-rate-of-return"><strong>Internal Rate of Return</strong><a class="headerlink" href="#internal-rate-of-return" title="Permanent link">&para;</a></h4>
 <p>The <strong>Internal Rate of Return</strong> (IRR) is the <strong>Discount Rate</strong> that will result in an <strong>NPV of 0</strong>:</p>
 <div class="arithmatex">\[
     \text{NPV}_\text{IRR} = 0
 \]</div>
 <p>The IRR cannot be calculated through an equation and must be solved using numerical methods. However, it can also be calculated using the <strong>cashflow function</strong> in most financial calculators.</p>
-<h4 id="discounted-payback-period"><strong>Discounted Payback Period</strong></h4>
+<h4 id="discounted-payback-period"><strong>Discounted Payback Period</strong><a class="headerlink" href="#discounted-payback-period" title="Permanent link">&para;</a></h4>
 <p>The <strong>Discounted Payback Period</strong> (DPP) is the <strong>earliest time</strong> in the contract which the <strong>NPV becomes positive</strong>:</p>
 <div class="arithmatex">\[
     \text{DPP} = min [t: NPV(t) &gt; 0]
 \]</div>
 <p>It is best calculated by incrementally calculating the NPV at various policy years, stopping when the NPV becomes positive.</p>
-<h4 id="profit-margin"><strong>Profit Margin</strong></h4>
+<h4 id="profit-margin"><strong>Profit Margin</strong><a class="headerlink" href="#profit-margin" title="Permanent link">&para;</a></h4>
 <p>The <strong>Profit Margin</strong> (<span class="arithmatex">\(\pi\)</span>) is the <strong>ratio</strong> of the NPV to the EPV of premiums:</p>
 <div class="arithmatex">\[
     \pi = \frac{\text{NPV}}{\text{EPV Premiums}}
 \]</div>
 <p>Note that the EPV of premiums are discounted using the <strong>same interest as the NPV</strong>.</p>
-<h4 id="pricing"><strong>Pricing</strong></h4>
+<h4 id="pricing"><strong>Pricing</strong><a class="headerlink" href="#pricing" title="Permanent link">&para;</a></h4>
 <p>A more realistic way to price would be to consider the actual cashflows and thus pricing the policy such that the <strong>desired profitability is achieved</strong>. This is done by leaving the premium as a <em>variable</em> within the profit expressions and solving for it.</p>
 <p>Alternatively, the <em>current</em> premium and profitability of the policy may be provided. In this scenario, it may be easier to consider the <strong>change in premium</strong> and the corresponding change in profitability instead of calculating it directly.</p>
-<h4 id="reserving"><strong>Reserving</strong></h4>
+<h4 id="reserving"><strong>Reserving</strong><a class="headerlink" href="#reserving" title="Permanent link">&para;</a></h4>
 <p>Insurers may want to set reserves such that they <strong>avoid negative profits</strong> throughout the lifetime of the policy. This is done by setting reserves such that the <strong>profits are floored at 0</strong>.</p>
 <p>The reserves are calculated <strong>recursively</strong> starting from the <strong>last policy year</strong>:</p>
 <ul>
@@ -1299,10 +1340,8 @@
 <li>Set the <strong>profit to 0</strong> &amp; solve for the starting reserve</li>
 <li>If the starting reserve is negative, <strong>floor it at 0</strong></li>
 <li>Use the calculated amount above as the new ending reserve for the previous year &amp; repeat the process until all reserves are calculated</li>
+<li>Since this process sets negative reserves to 0, it is known as <strong>Zeroization</strong></li>
 </ul>
-<blockquote>
-<p>This process is also known as <strong>Zeroization</strong> and the resulting reserves are known as <strong>Zeroized Reserves</strong>.</p>
-</blockquote>
 <p>Alternatively, the question may provide the <strong>current profit</strong> for each year, with the profit in some years being negative. The goal is then to calculate the reserves such that the negative profits are floored to 0.</p>
 <p>The key is to understand that if the profit for all future years are positive, then the starting reserve for that year <strong>will always be floored at 0</strong>. Thus, using this, the reserves are recursively calculated:</p>
 <ul>
@@ -1310,10 +1349,15 @@
 <li><em>Stop</em> once there are <strong>no more negative profits</strong></li>
 </ul>
 <p>There is <em>no need</em> to calculate the reserve for <strong>earlier years</strong> once all negative profits have been set to 0 because following the initial logic, the reserve for these earlier years <strong>will be 0</strong> given that all future profits are non-negative!</p>
-<blockquote>
-<p>This intuition can also be applied to the first case, saving a great deal of time if the profit vector is known.</p>
-</blockquote>
-<h2 id="gains-by-source"><strong>Gains by Source</strong></h2>
+<p>After Zeroization, <strong>recalculate the profit</strong> for all years:</p>
+<ul>
+<li>For years with negative profits where zeroization occurred, the <strong>profit is 0</strong></li>
+<li>For years with positive profits but were <strong>NOT just before</strong> negative profit years, the <strong>profit is unchanged</strong></li>
+<li>For years with positive profits but <strong>were JUST before</strong> negative profit years, the <strong>profit is changed</strong></li>
+</ul>
+<p>The profits have changed because there is now a new starting reserve for the following year with negative profits due to the zeroization. This affects the amount of reserve that has to be set up at the end of the current year, resulting in a new profit.</p>
+<p>If this new profit turns out to be <strong>negative as well</strong>, then repeat the process once more.</p>
+<h2 id="gains-by-source"><strong>Gains by Source</strong><a class="headerlink" href="#gains-by-source" title="Permanent link">&para;</a></h2>
 <p>As alluded to earlier, actual profits are simply profits that are <strong>based on what actually happens</strong> rather than what was assumed. From this and the expected profit, the gain from the policy is determined.</p>
 <p>The difference in actual versus expected (AvE) assumptions typically comes in three aspects - Expenses, Interest &amp; Mortality. Thus, the gain can also be <em>decomposed</em> into these three aspects to <strong>precisely pinpoint</strong> which assumptions need tweaking.</p>
 <div class="arithmatex">\[
@@ -1324,7 +1368,7 @@
 \end{aligned}
 \]</div>
 <p>For this section, Expected and Actual variables are differentiated using "<span class="arithmatex">\('\)</span>".</p>
-<h3 id="expense-gain"><strong>Expense Gain</strong></h3>
+<h3 id="expense-gain"><strong>Expense Gain</strong><a class="headerlink" href="#expense-gain" title="Permanent link">&para;</a></h3>
 <p>Since expense is a cash <em>outflow</em>, gain is recognised when the <strong>expected outflow is larger</strong> than the actual outflow.</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1335,7 +1379,7 @@
 \end{aligned}
 \]</div>
 <p>Note that since only the gain due to expenses are desired, <strong>only the expense assumptions</strong> go through the AvE process. The rest of the assumptions follow what was expected.</p>
-<h3 id="interest-gain"><strong>Interest Gain</strong></h3>
+<h3 id="interest-gain"><strong>Interest Gain</strong><a class="headerlink" href="#interest-gain" title="Permanent link">&para;</a></h3>
 <p>On the flipside, since interest is a cash <em>inflow</em>, gain is recognised when the <strong>expected inflow is smaller</strong> than the actual outflow.</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1350,7 +1394,7 @@
 <blockquote>
 <p>TBC the reason for this</p>
 </blockquote>
-<h3 id="mortality-gain"><strong>Mortality Gain</strong></h3>
+<h3 id="mortality-gain"><strong>Mortality Gain</strong><a class="headerlink" href="#mortality-gain" title="Permanent link">&para;</a></h3>
 <p>Similarly, mortality is a cash <em>outflow</em>, gain is recognised when the <strong>expected outflow is larger</strong> than the actual outflow.</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1370,6 +1414,18 @@
 <div class="arithmatex">\[
     q'_x = \frac{\text{NOP}_\text{Beginning} - \text{NOP}_\text{Ending}}{\text{NOP}_\text{Beginning}}
 \]</div>
+<p>For annuities, the expression is slightly different (TBC)</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \text{Mortality Gain}
+    &amp;= \text{Assumed Mortality Profit} - \text{Actual Mortality Profit} \\
+    &amp;= p_x \cdot (B+E') + p_x \cdot {}_{t}V - [p'_x \cdot (B+E') + p'_x \cdot {}_{t}V] \\
+    &amp;= p_x \cdot (B + E' + {}_{t}V) - p'_x (B + E' + {}_{t}V) \\
+    &amp;= (p_x - p'_x)(B + E' + {}_{t}V)
+\end{aligned}
+\]</div>
+<h3 id="per-policy-gain"><strong>Per Policy Gain</strong><a class="headerlink" href="#per-policy-gain" title="Permanent link">&para;</a></h3>
+<p>All the above calculations are known as the <strong>Per Policy</strong> gains - if the actual number of policies are given, then each gain needs to be multiplied by the NOP to determine the total gain made by the insurer.</p>
 
 
 

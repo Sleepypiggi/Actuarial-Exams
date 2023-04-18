@@ -286,22 +286,36 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../2.%20Actuarial%20Mathematics/Overview%20of%20Insurance/" class="md-nav__link">
+        Overview of Insurance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_1">
+        <label class="md-nav__link" for="__nav_2_2">
           ASA-FAMS
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="ASA-FAMS" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_1">
+        <label class="md-nav__title" for="__nav_2_2">
           <span class="md-nav__icon md-icon"></span>
           ASA-FAMS
         </label>
@@ -379,18 +393,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_2">
+        <label class="md-nav__link" for="__nav_2_3">
           ASA-FAML
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="ASA-FAML" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_2">
+        <label class="md-nav__title" for="__nav_2_3">
           <span class="md-nav__icon md-icon"></span>
           ASA-FAML
         </label>
@@ -524,18 +538,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_3">
+        <label class="md-nav__link" for="__nav_2_4">
           ASA-ALTAM
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="ASA-ALTAM" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_3">
+        <label class="md-nav__title" for="__nav_2_4">
           <span class="md-nav__icon md-icon"></span>
           ASA-ALTAM
         </label>
@@ -1146,7 +1160,7 @@
                   
 
 
-<h1 id="multiple-linear-regression"><strong>Multiple Linear Regression</strong></h1>
+<h1 id="multiple-linear-regression"><strong>Multiple Linear Regression</strong><a class="headerlink" href="#multiple-linear-regression" title="Permanent link">&para;</a></h1>
 <p>The natural extension of the SLR model is to include <strong>more than one independent variable</strong>, which thus results in the more generalized <strong>Multiple Linear Regression</strong> (MLR) model.</p>
 <div class="arithmatex">\[
 E(Y|X_1, ... X_p) = \beta_0 + \beta_1X_1 + \beta_2X_2 + ... + \beta_{p}X_{p}
@@ -1190,7 +1204,7 @@ E(Y|X_1, ... X_p) = \beta_0 + \beta_1X_1 + \beta_2X_2 + ... + \beta_{p}X_{p}
     \boldsymbol{y} &amp;= \boldsymbol{X\beta + \varepsilon}
 \end{aligned}
 \]</div>
-<h2 id="ordinary-least-squares"><strong>Ordinary Least Squares</strong></h2>
+<h2 id="ordinary-least-squares"><strong>Ordinary Least Squares</strong><a class="headerlink" href="#ordinary-least-squares" title="Permanent link">&para;</a></h2>
 <p>Similar to the SLR model, the regression parameters can be found by minimizing the sum of squared residuals:</p>
 <div class="arithmatex">\[
 RSS = \sum y_i - \hat{y} =\sum [y_i - (\hat{\beta}_0 + \hat{\beta}_1 x_i1 + \hat{\beta}_2 x_i2 + ... + \hat{\beta}_p x_ip)]^2
@@ -1209,11 +1223,11 @@ RSS = \sum y_i - \hat{y} =\sum [y_i - (\hat{\beta}_0 + \hat{\beta}_1 x_i1 + \hat
 \]</div>
 <!-- Obtained from ISLR -->
 <p><img alt="Fitted Regression Plane" class="center" src="../Assets/3.%20Multiple%20Linear%20Regression.md/Fitted%20Regression%20Plane.png" /></p>
-<h3 id="manual-computation"><strong>Manual Computation</strong></h3>
+<h3 id="manual-computation"><strong>Manual Computation</strong><a class="headerlink" href="#manual-computation" title="Permanent link">&para;</a></h3>
 <p>The tricky part is that <span class="arithmatex">\((\boldsymbol{X'X})^{-1}\)</span> is <strong>hard to compute by manually</strong>, except for the special case where <span class="arithmatex">\(p=1\)</span> (SLR). Thus, it is likely that the parameters will be provided by the question.</p>
 <p>If required to compute them manually, then <span class="arithmatex">\((\boldsymbol{X'X})^{-1}\)</span> is <em>likely</em> to be provided. The remaining <span class="arithmatex">\(\boldsymbol{X'y}\)</span> still needs to be computed and put together to obtain the regression parameters.</p>
 <p>However, if the model has <span class="arithmatex">\(p=2\)</span> but <strong>no intercept</strong>, then <span class="arithmatex">\((\boldsymbol{X'X})^{-1}\)</span> is a <strong>2 x 2 Matrix</strong> whose inverse can be easily calculated. Similarly, if <span class="arithmatex">\((\boldsymbol{X'X})^{-1}\)</span> is a <strong>Diagonal Matrix</strong>, its inverse can be easily calculated as well.</p>
-<h2 id="goodness-of-fit"><strong>Goodness of Fit</strong></h2>
+<h2 id="goodness-of-fit"><strong>Goodness of Fit</strong><a class="headerlink" href="#goodness-of-fit" title="Permanent link">&para;</a></h2>
 <p>The ANOVA for MLR follows the same intuition as the SLR version, adjusted for the new degrees of freedom:</p>
 <p><center></p>
 <table>
@@ -1264,7 +1278,7 @@ H_1 &amp;: \text{At least one } \beta_j \text{ is non-zero}
 \end{aligned}
 \]</div>
 <p>Thus, rejecting the null hypothesis implies that <strong>at least one</strong> of the IVs used is useful, but does not provide much insight into <em>which</em> of them are useful.</p>
-<h3 id="partial-f-test"><strong>Partial F Test</strong></h3>
+<h3 id="partial-f-test"><strong>Partial F Test</strong><a class="headerlink" href="#partial-f-test" title="Permanent link">&para;</a></h3>
 <p>A partial F-test can be used to precisely <strong>determine which</strong> of the IVs are useful in explaining the DV.</p>
 <p>A regular F test compares the null model with no IVs to the desired model with all the IVs. If the sum of squares are significantly different, then it implies that the <strong>additional IVs are jointly useful</strong> in explaining <span class="arithmatex">\(Y\)</span>.</p>
 <p>The partial F test generalizes this idea. Instead of considering a null model with no IVs, a <strong>Reduced Model</strong> with a limited number IVs (<span class="arithmatex">\(q\)</span>) is considered instead. Consequently, the desired model is known as the <strong>Full Model</strong> with all <span class="arithmatex">\(p\)</span> IVs, where <span class="arithmatex">\(q &lt; p\)</span>.</p>
@@ -1292,8 +1306,8 @@ F
 &amp;= (n-2) * \frac{R_{Full}^2 - R_{Reduced}^2}{1-RSS_{Full}^2}
 \end{aligned}
 \]</div>
-<h2 id="statistical-inference"><strong>Statistical Inference</strong></h2>
-<h3 id="sampling-distributions"><strong>Sampling Distributions</strong></h3>
+<h2 id="statistical-inference"><strong>Statistical Inference</strong><a class="headerlink" href="#statistical-inference" title="Permanent link">&para;</a></h2>
+<h3 id="sampling-distributions"><strong>Sampling Distributions</strong><a class="headerlink" href="#sampling-distributions" title="Permanent link">&para;</a></h3>
 <p>Similar to SLR, the regression parameters are normally distributed as well. However, since there are multiple regression parameters, they collectively follow a <strong>multivariate normal distribution</strong>.</p>
 <div class="arithmatex">\[
 \hat{\beta} \sim N_{p+1}(\beta, \sigma^2 (\boldsymbol{X'X})^{-1})
@@ -1312,7 +1326,7 @@ Var(\hat{\beta}) =
 <blockquote>
 <p>Note that the covariances are symmetrical about the diagonal - <span class="arithmatex">\(Cov(\hat{\beta}_0, \hat{\beta}_1) = Cov(\hat{\beta}_1, \hat{\beta}_0)\)</span>.</p>
 </blockquote>
-<h3 id="hypothesis-testing"><strong>Hypothesis Testing</strong></h3>
+<h3 id="hypothesis-testing"><strong>Hypothesis Testing</strong><a class="headerlink" href="#hypothesis-testing" title="Permanent link">&para;</a></h3>
 <p>Similar to SLR, the t-test can be used to test for the significance of an individual IV, but the intepretation of the test is different from the SLR case. It tests the usefulness of an <strong>individual IV</strong> in the <em>presence of the other predictors</em>.</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1347,12 +1361,12 @@ t(\beta_j) \sim t_{n-p-1}
 <p>The <strong>Bonferroni Correction</strong> is a method of adjusting <span class="arithmatex">\(\alpha\)</span> of each hypothesis test such that the overall type I error is kept at its desired level. However, this has the consequence of increasing the probability of type II errors, which is why it is not popular.</p>
 </blockquote>
 <p>The F-test has the advantage of controlling the type I error <strong>regardless of the number of predictors</strong>, which is why it is preferred for hypothesis testing in the MLR.</p>
-<h3 id="confidence-intervals"><strong>Confidence Intervals</strong></h3>
+<h3 id="confidence-intervals"><strong>Confidence Intervals</strong><a class="headerlink" href="#confidence-intervals" title="Permanent link">&para;</a></h3>
 <p>Similar to SLR, the confidence intervals can be constructed using the distribution of the test-statistic:</p>
 <div class="arithmatex">\[
 \text{Confidence Interval} = \hat{\beta}_j \pm t_{n-p-1, \frac{\alpha}{2}} * \hat{\sigma}_{\hat{\beta_j}}
 \]</div>
-<h3 id="prediction-intervals"><strong>Prediction Intervals</strong></h3>
+<h3 id="prediction-intervals"><strong>Prediction Intervals</strong><a class="headerlink" href="#prediction-intervals" title="Permanent link">&para;</a></h3>
 <p>Unlike in SLR, it is difficult to determine the distribution of the prediction error. Thus, the final result can be found below:</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1362,8 +1376,8 @@ t(\beta_j) \sim t_{n-p-1}
 \end{aligned}
 \]</div>
 <p>Despite the result looking more complicated, the key takeaway remains the same - the further away <span class="arithmatex">\(x_*\)</span> is from <span class="arithmatex">\(\bar{x}\)</span>, the greater</p>
-<h2 id="variations-of-mlr"><strong>Variations of MLR</strong></h2>
-<h3 id="qualitative-iv"><strong>Qualitative IV</strong></h3>
+<h2 id="variations-of-mlr"><strong>Variations of MLR</strong><a class="headerlink" href="#variations-of-mlr" title="Permanent link">&para;</a></h2>
+<h3 id="qualitative-iv"><strong>Qualitative IV</strong><a class="headerlink" href="#qualitative-iv" title="Permanent link">&para;</a></h3>
 <p>The discussion so far has mostly focused on Quantitative IVs, thus this section will explore Qualitative IVs. They can only take values from a list of <em>pre-defined</em> values, known as the <strong>Levels</strong> of the variable.</p>
 <p>In a regression context, most qualitative IVs are represented in the form of a <strong>Dummy Variable</strong> which can only take two possible levels - Yes (1) or No (0).</p>
 <blockquote>
@@ -1416,7 +1430,7 @@ E(Y|X)  =
 \]</div>
 <!-- Obtained from ACTEX Manual -->
 <p><img alt="Dummy Variable" class="center" src="../Assets/3.%20Multiple%20Linear%20Regression.md/Dummy%20Variable.png" /></p>
-<h3 id="interaction-model"><strong>Interaction Model</strong></h3>
+<h3 id="interaction-model"><strong>Interaction Model</strong><a class="headerlink" href="#interaction-model" title="Permanent link">&para;</a></h3>
 <p>So far, it was assumed that each IV had an independent effect on the DV. However, IVs may <strong>interact</strong> to produce a <strong>joint effect</strong> on the DV, where the effect of one IV depends on the value of another IV.</p>
 <p>For instance, the production of a factory may depend on the number of Machines and Workers. However, the more machines there are, the <strong>greater the effect of an additional worker</strong>.</p>
 <p>Thus, this interaction effect can be captured through an <strong>Interaction Variable</strong>, which is the product of both IVs:</p>
@@ -1442,7 +1456,7 @@ E(Y|X)  =
 \]</div>
 <!-- Obtained from ACTEX Manual -->
 <p><img alt="Dummy Interaction" class="center" src="../Assets/3.%20Multiple%20Linear%20Regression.md/Dummy%20Interaction.png" /></p>
-<h3 id="piecewise-model"><strong>Piecewise Model</strong></h3>
+<h3 id="piecewise-model"><strong>Piecewise Model</strong><a class="headerlink" href="#piecewise-model" title="Permanent link">&para;</a></h3>
 <p>If the DV has an abrupt change in behaviour over different values of the IVs, it can be accounted for the through the use of a <strong>Piecewise Regression</strong>.</p>
 <p>The first method of creating a piecewise regression involves the use of an <strong>Indicator Function</strong>. It is essentially a dummy variable which depends on the value of the other IVs.</p>
 <div class="arithmatex">\[
@@ -1483,7 +1497,7 @@ E(Y|X)
 \]</div>
 <!-- Obtained from ACTEX Manual -->
 <p><img alt="Piecewise Gap Model" class="center" src="../Assets/3.%20Multiple%20Linear%20Regression.md/Piecewise%20Gap%20Model.png" /></p>
-<h3 id="polynomial-model"><strong>Polynomial Model</strong></h3>
+<h3 id="polynomial-model"><strong>Polynomial Model</strong><a class="headerlink" href="#polynomial-model" title="Permanent link">&para;</a></h3>
 <p>If the relationship between the DV and IV is complex (non-linear), then a <strong>Polynomial Regression</strong> can be used to better model the relationship between the two.</p>
 <div class="arithmatex">\[
 E(Y|X) = \beta_0 + \beta_1 x + \beta_2 x^2 + \beta_3 x^3
