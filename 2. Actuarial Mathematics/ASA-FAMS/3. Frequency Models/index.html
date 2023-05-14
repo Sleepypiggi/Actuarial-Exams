@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#frequency-distributions" class="md-skip">
+        <a href="#frequency-models" class="md-skip">
           Skip to content
         </a>
       
@@ -393,30 +393,50 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#bernoulli-binomial-distributions" class="md-nav__link">
-    Bernoulli &amp; Binomial Distributions
+  <a href="#counting-distributions" class="md-nav__link">
+    Counting Distributions
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Counting Distributions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#poisson-distribution" class="md-nav__link">
     Poisson Distribution
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#negative-binomial" class="md-nav__link">
-    Negative Binomial
+        
+          <li class="md-nav__item">
+  <a href="#bernoulli-distribution" class="md-nav__link">
+    Bernoulli Distribution
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#geometric" class="md-nav__link">
-    Geometric
+        
+          <li class="md-nav__item">
+  <a href="#binomial-distribution" class="md-nav__link">
+    Binomial Distribution
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geometric-distribution" class="md-nav__link">
+    Geometric Distribution
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#negative-binomial-distribution" class="md-nav__link">
+    Negative Binomial Distribution
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1000,30 +1020,50 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#bernoulli-binomial-distributions" class="md-nav__link">
-    Bernoulli &amp; Binomial Distributions
+  <a href="#counting-distributions" class="md-nav__link">
+    Counting Distributions
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Counting Distributions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#poisson-distribution" class="md-nav__link">
     Poisson Distribution
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#negative-binomial" class="md-nav__link">
-    Negative Binomial
+        
+          <li class="md-nav__item">
+  <a href="#bernoulli-distribution" class="md-nav__link">
+    Bernoulli Distribution
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#geometric" class="md-nav__link">
-    Geometric
+        
+          <li class="md-nav__item">
+  <a href="#binomial-distribution" class="md-nav__link">
+    Binomial Distribution
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geometric-distribution" class="md-nav__link">
+    Geometric Distribution
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#negative-binomial-distribution" class="md-nav__link">
+    Negative Binomial Distribution
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1056,11 +1096,128 @@
                   
 
 
-<h1 id="frequency-distributions">Frequency Distributions<a class="headerlink" href="#frequency-distributions" title="Permanent link">&para;</a></h1>
-<h2 id="bernoulli-binomial-distributions"><strong>Bernoulli &amp; Binomial Distributions</strong><a class="headerlink" href="#bernoulli-binomial-distributions" title="Permanent link">&para;</a></h2>
-<h2 id="poisson-distribution">Poisson Distribution<a class="headerlink" href="#poisson-distribution" title="Permanent link">&para;</a></h2>
-<h2 id="negative-binomial">Negative Binomial<a class="headerlink" href="#negative-binomial" title="Permanent link">&para;</a></h2>
-<h2 id="geometric">Geometric<a class="headerlink" href="#geometric" title="Permanent link">&para;</a></h2>
+<h1 id="frequency-models"><strong>Frequency Models</strong><a class="headerlink" href="#frequency-models" title="Permanent link">&para;</a></h1>
+<h2 id="counting-distributions"><strong>Counting Distributions</strong><a class="headerlink" href="#counting-distributions" title="Permanent link">&para;</a></h2>
+<p>Number of claims
+P_k notation</p>
+<p>PGF is provided for all discrete distributions in case</p>
+<h3 id="poisson-distribution"><strong>Poisson Distribution</strong><a class="headerlink" href="#poisson-distribution" title="Permanent link">&para;</a></h3>
+<p>The <strong>Poisson Distribution</strong> is used to count the number of random events in a <strong>specified unit of space or time</strong>.</p>
+<p>It only has <strong>one parameter</strong> <span class="arithmatex">\(\lambda\)</span>, the <strong>mean</strong> number of occurrences in the specified unit of space or time. One key property is that its <strong>mean and variance are both equal</strong> to <span class="arithmatex">\(\lambda\)</span>.</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    N &amp;\sim \text{Poisson}(\lambda) \\
+    \\
+    p_k &amp;= \frac{e^{-\lambda} \cdot \lambda^k}{k!} \\
+    \\
+    E(N) &amp;= \lambda \\
+    Var (N) &amp;= \lambda
+\end{aligned}
+\]</div>
+<p>The sum of independent poisson random variables is <strong>still poisson</strong>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    N_k &amp;\sim \text{Poisson}(\lambda_k) \\
+    N &amp;= N_1 + N_2 + ... + N_k \\
+    \therefore N &amp;\sim \text{Poisson} (\lambda_1 + \lambda_2 + ... + \lambda_k)
+\end{aligned}
+\]</div>
+<h3 id="bernoulli-distribution"><strong>Bernoulli Distribution</strong><a class="headerlink" href="#bernoulli-distribution" title="Permanent link">&para;</a></h3>
+<p>The <strong>Bernoulli Distribution</strong> is used to determine the outcome of a <strong>Bernoulli Trial</strong>. They are experiments with only <strong>two possible outcomes</strong>.</p>
+<p>For a <strong>Standard Bernoulli Distribution</strong>, the two outcomes are <strong>Successes and Failures</strong>, denoted by 1 and 0 respectively:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    X &amp;\sim \text{Bernoulli} (q) \\
+    \\
+    p_k &amp;=
+    \begin{cases}
+        \text{Success } (1),&amp; \text{Probability} = q, \\
+        \text{Failure } (0),&amp; \text{Probability} = 1-q
+    \end{cases} \\
+    \\
+    E(X) &amp;= q \\
+    Var (X) &amp;= q(1-q)
+\end{aligned}
+\]</div>
+<p>However, the <strong>Bernoulli Shortcut</strong> generalizes this for <strong>any two mutually exclusive outcomes</strong>, denoted by <span class="arithmatex">\(a\)</span> and <span class="arithmatex">\(b\)</span> respectively:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    Y &amp;= (a-b)X + b \\
+    \\
+    Y &amp;=
+    \begin{cases}
+        \text{Outcome 1 } (a),&amp; \text{Probability} = q, \\
+        \text{Outcome 2 } (b),&amp; \text{Probability} = 1-q
+    \end{cases} \\
+    \\
+    E(Y)
+    &amp;= E[(a-b)X + b] \\
+    &amp;= (a-b)q + b \\
+    \\
+    Var (Y)
+    &amp;= Var[(a-b)X + b] \\
+    &amp;= (a-b)^2 \cdot q(1-q)
+\end{aligned}
+\]</div>
+<p>Note that there is no need to memorize the mean and variance for the bernoulli shortcut - they can be easily derived from the standard distribution.</p>
+<h3 id="binomial-distribution"><strong>Binomial Distribution</strong><a class="headerlink" href="#binomial-distribution" title="Permanent link">&para;</a></h3>
+<p>The <strong>Binomial Distribution</strong> is used to count the <strong>number of successes</strong> out of a <strong>fixed number of independent Standard Bernoulli Trials</strong>.</p>
+<p>It has <strong>two parameters</strong>:</p>
+<ol>
+<li>The <strong>number</strong> of independent trials, <span class="arithmatex">\(m\)</span></li>
+<li>The <strong>probability</strong> of success for each trial, <span class="arithmatex">\(q\)</span></li>
+</ol>
+<div class="arithmatex">\[
+\begin{aligned}
+    N &amp;\sim \text{Binomial} (m, q) \\
+    \\
+    p_k &amp;= {m \choose k} q^k (1-q)^{1-k} \\
+    \\
+    E(N) &amp;= nq \\
+    Var (N) &amp;= nq(1-q)
+\end{aligned}
+\]</div>
+<p>The binomial distribution is actually the <strong>sum of <span class="arithmatex">\(m\)</span> independent standard bernoulli variables</strong> with the <em>same probability</em>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    X_k &amp;\sim \text{Bernoulli} (q) \\
+    N &amp;= X_1 + X_2 + ... + X_m \\
+    \therefore N &amp;\sim \text{Binomial} (m, q)
+\end{aligned}
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A bernoulli distribution is simply a binomial distribution with <span class="arithmatex">\(m=1\)</span>.</p>
+</div>
+<p>Similarly, the sum of independent binomial variables with the <em>same probability</em> (which is simply the sum of <em>even more</em> independent standard bernoulli variables), is <strong>still binomial</strong>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    N_k &amp;\sim \text{Binomial}(m, q) \\
+    N &amp;= N_1 + N_2 + ... + N_k \\
+    \therefore N &amp;\sim \text{Binomial} (m_1 + m_2 + ... + m_k, q)
+\end{aligned}
+\]</div>
+<h3 id="geometric-distribution"><strong>Geometric Distribution</strong><a class="headerlink" href="#geometric-distribution" title="Permanent link">&para;</a></h3>
+<p>The <strong>Geometric Distribution</strong> can be understood in one of two ways:</p>
+<ol>
+<li><strong>Number of independent bernoulli trials</strong> needed to get the first success, <span class="arithmatex">\(N \in \set{1, 2, 3, ...}\)</span></li>
+<li><strong>Number of bernoulli failures</strong> needed to get the first success, <span class="arithmatex">\(F \in \set{0, 1, 2, ...}\)</span></li>
+</ol>
+<p>If not explicitly stated, the two intepretations can be distinguished from their supports - there must be at least 1 trial but there can be 0 failures. It is useful to <strong>remember just one intepretation</strong> and understand how they are related:</p>
+<div class="arithmatex">\[
+    F = N-1
+\]</div>
+<p>Second case
+k represent number of failures , 01234...</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    p_k &amp;= (1-q)^{k} \cdot q \\
+    \\
+    E(N) &amp;= \frac{1-p}{p} \\
+    Var (N) &amp;= \frac{1-p}{p^2}
+\end{aligned}
+\]</div>
+<h3 id="negative-binomial-distribution"><strong>Negative Binomial Distribution</strong><a class="headerlink" href="#negative-binomial-distribution" title="Permanent link">&para;</a></h3>
 <h2 id="a-b-0-recursion">(a, b, 0) Recursion<a class="headerlink" href="#a-b-0-recursion" title="Permanent link">&para;</a></h2>
 <h2 id="a-b-1-modification">(a, b, 1) Modification<a class="headerlink" href="#a-b-1-modification" title="Permanent link">&para;</a></h2>
 
