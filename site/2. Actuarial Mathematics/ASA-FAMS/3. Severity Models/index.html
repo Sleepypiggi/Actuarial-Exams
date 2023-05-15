@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://example.com/2.%20Actuarial%20Mathematics/ASA-FAMS/2.%20Actuarial%20Models/">
+        <link rel="canonical" href="https://example.com/2.%20Actuarial%20Mathematics/ASA-FAMS/3.%20Severity%20Models/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
       
-        <title>Actuarial Models - Actuarial Exam Notes</title>
+        <title>Severity Models - Actuarial Exam Notes</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#actuarial-models" class="md-skip">
+        <a href="#severity-models" class="md-skip">
           Skip to content
         </a>
       
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Actuarial Models
+              Severity Models
             
           </span>
         </div>
@@ -343,6 +343,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../2.%20Frequency%20Models/" class="md-nav__link">
+        Frequency Models
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -355,12 +369,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Actuarial Models
+          Severity Models
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Actuarial Models
+        Severity Models
       </a>
       
         
@@ -379,37 +393,92 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#scaling-transformation" class="md-nav__link">
-    Scaling &amp; Transformation
+  <a href="#severity-distributions" class="md-nav__link">
+    Severity Distributions
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#parameters" class="md-nav__link">
-    Parameters
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mixture-distributions" class="md-nav__link">
-    Mixture Distributions
-  </a>
-  
-    <nav class="md-nav" aria-label="Mixture Distributions">
+    <nav class="md-nav" aria-label="Severity Distributions">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#discrete-mixtures" class="md-nav__link">
-    Discrete Mixtures
+  <a href="#normal" class="md-nav__link">
+    Normal
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#continuous-mixtures" class="md-nav__link">
-    Continuous Mixtures
+  <a href="#pareto" class="md-nav__link">
+    Pareto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gamma" class="md-nav__link">
+    Gamma
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beta" class="md-nav__link">
+    Beta
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#role-of-parameters" class="md-nav__link">
+    Role of Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#policy-features" class="md-nav__link">
+    Policy Features
+  </a>
+  
+    <nav class="md-nav" aria-label="Policy Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deductibles" class="md-nav__link">
+    Deductibles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limits" class="md-nav__link">
+    Limits
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coinsurance" class="md-nav__link">
+    Coinsurance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inflation" class="md-nav__link">
+    Inflation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scaling-transformation" class="md-nav__link">
+    Scaling &amp; Transformation
   </a>
   
 </li>
@@ -434,35 +503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../3.%20Frequency%20Models/" class="md-nav__link">
-        Frequency Models
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../4.%20Severity%20Models/" class="md-nav__link">
-        Severity Models
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../5.%20Aggregate%20Models/" class="md-nav__link">
+      <a href="../4.%20Aggregate%20Models/" class="md-nav__link">
         Aggregate Models
       </a>
     </li>
@@ -999,37 +1040,92 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#scaling-transformation" class="md-nav__link">
-    Scaling &amp; Transformation
+  <a href="#severity-distributions" class="md-nav__link">
+    Severity Distributions
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#parameters" class="md-nav__link">
-    Parameters
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mixture-distributions" class="md-nav__link">
-    Mixture Distributions
-  </a>
-  
-    <nav class="md-nav" aria-label="Mixture Distributions">
+    <nav class="md-nav" aria-label="Severity Distributions">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#discrete-mixtures" class="md-nav__link">
-    Discrete Mixtures
+  <a href="#normal" class="md-nav__link">
+    Normal
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#continuous-mixtures" class="md-nav__link">
-    Continuous Mixtures
+  <a href="#pareto" class="md-nav__link">
+    Pareto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gamma" class="md-nav__link">
+    Gamma
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beta" class="md-nav__link">
+    Beta
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#role-of-parameters" class="md-nav__link">
+    Role of Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#policy-features" class="md-nav__link">
+    Policy Features
+  </a>
+  
+    <nav class="md-nav" aria-label="Policy Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deductibles" class="md-nav__link">
+    Deductibles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limits" class="md-nav__link">
+    Limits
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coinsurance" class="md-nav__link">
+    Coinsurance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inflation" class="md-nav__link">
+    Inflation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scaling-transformation" class="md-nav__link">
+    Scaling &amp; Transformation
   </a>
   
 </li>
@@ -1054,17 +1150,48 @@
                   
 
 
-<h1 id="actuarial-models"><strong>Actuarial Models</strong><a class="headerlink" href="#actuarial-models" title="Permanent link">&para;</a></h1>
-<h2 id="scaling-transformation"><strong>Scaling &amp; Transformation</strong><a class="headerlink" href="#scaling-transformation" title="Permanent link">&para;</a></h2>
+<h1 id="severity-models"><strong>Severity Models</strong><a class="headerlink" href="#severity-models" title="Permanent link">&para;</a></h1>
+<h2 id="severity-distributions"><strong>Severity Distributions</strong><a class="headerlink" href="#severity-distributions" title="Permanent link">&para;</a></h2>
+<p>The <strong>size of the loss</strong> is usually known as <strong>Loss Severity</strong> and is typically modelled with a continuous distribution. </p>
+<p>Let <span class="arithmatex">\(X\)</span> be the random variable denoting the size of the loss.</p>
+<p>This section will cover <em>most</em> of the relevant severity distributions, but similarly note that there is <strong>no need to memorize</strong> anything as they are all provided in the formula sheet.</p>
+<h3 id="normal">Normal<a class="headerlink" href="#normal" title="Permanent link">&para;</a></h3>
+<h3 id="pareto">Pareto<a class="headerlink" href="#pareto" title="Permanent link">&para;</a></h3>
+<h3 id="gamma">Gamma<a class="headerlink" href="#gamma" title="Permanent link">&para;</a></h3>
+<h3 id="beta">Beta<a class="headerlink" href="#beta" title="Permanent link">&para;</a></h3>
+<h3 id="role-of-parameters"><strong>Role of Parameters</strong><a class="headerlink" href="#role-of-parameters" title="Permanent link">&para;</a></h3>
+<h2 id="policy-features">Policy Features<a class="headerlink" href="#policy-features" title="Permanent link">&para;</a></h2>
+<p>As mentioned previously, most insurance policies have some <strong>coverage modifications</strong> such that the claim payments are often <strong>not equal to the size of the losses</strong>.</p>
+<p>Thus, let <span class="arithmatex">\(Y\)</span> be the random variable denoting the <strong>claim amount</strong> that will be paid by the insurer.</p>
+<h3 id="deductibles"><strong>Deductibles</strong><a class="headerlink" href="#deductibles" title="Permanent link">&para;</a></h3>
+<p>The first type of coverage modification is known as a <strong>Deductible</strong>, denoted by <span class="arithmatex">\(d\)</span>.</p>
+<p>If the loss amount <strong>does not exceed</strong> the deductible, then the insurance will <strong>pay out nothing</strong>. However, if it does <strong>exceed the deductible</strong>, then the insurance will <strong>pay out the excess above the deductible</strong>.</p>
+<p>Note that if the loss is <strong>equal to the deductible</strong>, then still <strong>nothing is paid out</strong> because there is no excess above the deductible.</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    Y
+    &amp;=
+    \begin{cases}
+        0,&amp; X \le d\\
+        X - d,&amp; X \gt d
+    \end{cases}
+\end{aligned}
+\]</div>
+<p>Notice that <span class="arithmatex">\(Y\)</span> is a mixed random variable:</p>
+<ol>
+<li>For <span class="arithmatex">\(X \le d\)</span>, it is <strong>discrete variable</strong> with support <span class="arithmatex">\(\set{0}\)</span></li>
+<li>For <span class="arithmatex">\(X \gt d\)</span>, it is a <strong>continuous variable</strong> with support <span class="arithmatex">\((x-d, \infty]\)</span></li>
+</ol>
+<h3 id="limits">Limits<a class="headerlink" href="#limits" title="Permanent link">&para;</a></h3>
+<p>The second type of coverage modification is known as Limit, denoted by <span class="arithmatex">\(u\)</span>.</p>
+<h3 id="coinsurance">Coinsurance<a class="headerlink" href="#coinsurance" title="Permanent link">&para;</a></h3>
+<h3 id="inflation">Inflation<a class="headerlink" href="#inflation" title="Permanent link">&para;</a></h3>
+<h3 id="scaling-transformation"><strong>Scaling &amp; Transformation</strong><a class="headerlink" href="#scaling-transformation" title="Permanent link">&para;</a></h3>
 <p>Method of creating new distributions from existing ones?</p>
 <p>Scaling
 Multiply RV by a constant</p>
 <p>Y = cX
 Fy</p>
-<h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
-<h2 id="mixture-distributions"><strong>Mixture Distributions</strong><a class="headerlink" href="#mixture-distributions" title="Permanent link">&para;</a></h2>
-<h3 id="discrete-mixtures"><strong>Discrete Mixtures</strong><a class="headerlink" href="#discrete-mixtures" title="Permanent link">&para;</a></h3>
-<h3 id="continuous-mixtures"><strong>Continuous Mixtures</strong><a class="headerlink" href="#continuous-mixtures" title="Permanent link">&para;</a></h3>
 
 
 
@@ -1085,7 +1212,7 @@ Fy</p>
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../1.%20Review%20of%20Probability%20Theory/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Review of Probability Theory" rel="prev">
+        <a href="../2.%20Frequency%20Models/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Frequency Models" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1094,20 +1221,20 @@ Fy</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Review of Probability Theory
+              Frequency Models
             </div>
           </div>
         </a>
       
       
         
-        <a href="../3.%20Frequency%20Models/" class="md-footer__link md-footer__link--next" aria-label="Next: Frequency Models" rel="next">
+        <a href="../4.%20Aggregate%20Models/" class="md-footer__link md-footer__link--next" aria-label="Next: Aggregate Models" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Frequency Models
+              Aggregate Models
             </div>
           </div>
           <div class="md-footer__button md-icon">

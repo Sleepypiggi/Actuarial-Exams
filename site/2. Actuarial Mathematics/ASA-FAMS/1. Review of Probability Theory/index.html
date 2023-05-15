@@ -421,18 +421,13 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#conditional-distributions" class="md-nav__link">
-    Conditional Distributions
+  <a href="#shifting-scaling-transformation" class="md-nav__link">
+    Shifting, Scaling &amp; Transformation
   </a>
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#generating-functions" class="md-nav__link">
     Generating Functions
   </a>
@@ -458,6 +453,31 @@
     </nav>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#conditional-distributions" class="md-nav__link">
+    Conditional Distributions
+  </a>
+  
+    <nav class="md-nav" aria-label="Conditional Distributions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mixture-distributions" class="md-nav__link">
+    Mixture Distributions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
     </ul>
   
@@ -474,21 +494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2.%20Actuarial%20Models/" class="md-nav__link">
-        Actuarial Models
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../3.%20Frequency%20Models/" class="md-nav__link">
+      <a href="../2.%20Frequency%20Models/" class="md-nav__link">
         Frequency Models
       </a>
     </li>
@@ -502,7 +508,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.%20Severity%20Models/" class="md-nav__link">
+      <a href="../3.%20Severity%20Models/" class="md-nav__link">
         Severity Models
       </a>
     </li>
@@ -516,7 +522,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../5.%20Aggregate%20Models/" class="md-nav__link">
+      <a href="../4.%20Aggregate%20Models/" class="md-nav__link">
         Aggregate Models
       </a>
     </li>
@@ -1109,18 +1115,13 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#conditional-distributions" class="md-nav__link">
-    Conditional Distributions
+  <a href="#shifting-scaling-transformation" class="md-nav__link">
+    Shifting, Scaling &amp; Transformation
   </a>
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#generating-functions" class="md-nav__link">
     Generating Functions
   </a>
@@ -1139,6 +1140,31 @@
   <a href="#probability-generating-function" class="md-nav__link">
     Probability Generating Function
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conditional-distributions" class="md-nav__link">
+    Conditional Distributions
+  </a>
+  
+    <nav class="md-nav" aria-label="Conditional Distributions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mixture-distributions" class="md-nav__link">
+    Mixture Distributions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1190,7 +1216,7 @@
 \]</div>
 <p>This is properly explained through <strong>De-morgans Law</strong>:</p>
 <p><!-- Obtained from OnlineMathLearning -->
-<img alt="DeMorgan" src="../Assets/1.%20Review%20of%20Probability%20Theory.md/DeMorgan.png" /></p>
+<img alt="DeMorgan" class="center" src="../Assets/1.%20Review%20of%20Probability%20Theory.md/DeMorgan.png" /></p>
 <p>It can be easily remembered by applying the complement to all components of the expression, <strong>including the intersection/union symbol</strong>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1240,9 +1266,9 @@
     P(A \cap B) = P(A|B) \cdot P(B) = P(B|A) \cdot P(A)
 \]</div>
 <!-- Obtained from Probability Course -->
-<p><img alt="Conditional Probability" src="../Assets/1.%20Review%20of%20Probability%20Theory.md/Conditional%20Probability.png" /></p>
+<p><img alt="Conditional Probability" class="center" src="../Assets/1.%20Review%20of%20Probability%20Theory.md/Conditional%20Probability.png" /></p>
 <p>Most experiments involving conditional probabilities are multi-staged experiments, which are best visualized using <strong>Probability Trees</strong>:</p>
-<p><img alt="Probability Trees" src="../Assets/1.%20Review%20of%20Probability%20Theory.md/Probability%20Tree.png" /></p>
+<p><img alt="Probability Trees" class="center" src="../Assets/1.%20Review%20of%20Probability%20Theory.md/Probability%20Tree.png" /></p>
 <p>Instead of calculating conditional probabilities from scratch, some questions provide the conditional probability <span class="arithmatex">\(P(A|B)\)</span> (or the components to do so!) and ask us to <strong>find the reverse</strong> - <span class="arithmatex">\(P(B|A)\)</span>.</p>
 <div class="arithmatex">\[
     P(B|A) = \frac{P(B \cap A)}{P(A)}
@@ -1274,7 +1300,7 @@
 <p>Although the mapping is deterministic, the underlying experiment is still random which is why it is still a "random" variable.</p>
 </div>
 <!-- Obtained from Helping With Math -->
-<p><img alt="Many to one function" src="../Assets/1.%20Review%20of%20Probability%20Theory.md/Many%20to%20One%20Function.png" /></p>
+<p><img alt="Many to one function" class="center" src="../Assets/1.%20Review%20of%20Probability%20Theory.md/Many%20to%20One%20Function.png" /></p>
 <p>The <strong>range of possible values</strong> that the random variable can take is known as its <strong>Support</strong>. They are broadly categorized based on its support:</p>
 <p><center></p>
 <table>
@@ -1299,7 +1325,7 @@
 <p>Random variables are denoted using <strong>upper case letters</strong> (X, Y, Z) while their corresponding values are denoted using <strong>lower case letters</strong> (x, y, z) and their appropriate <strong>subscripts</strong>.</p>
 <p>The notation <span class="arithmatex">\(X(s) = x_1\)</span> denotes that the random variable <span class="arithmatex">\(X\)</span> maps the outcome <span class="arithmatex">\(s\)</span> to the value of <span class="arithmatex">\(x_1\)</span>. Thus, the <strong>corresponding probability</strong> is denoted by <span class="arithmatex">\(P(X = x_1)\)</span>.</p>
 <!-- Obtained from DSA201 Notes -->
-<p><img alt="Random Variable" src="../Assets/1.%20Review%20of%20Probability%20Theory.md/Random%20Variable.png" /></p>
+<p><img alt="Random Variable" class="center" src="../Assets/1.%20Review%20of%20Probability%20Theory.md/Random%20Variable.png" /></p>
 <h3 id="probability-distributions"><strong>Probability Distributions</strong><a class="headerlink" href="#probability-distributions" title="Permanent link">&para;</a></h3>
 <p>Similar to how a random variable maps the outcomes to a real number, a <strong>Probability Distribution</strong> is a function that maps the outcomes to its <strong>probability of occurrence</strong>.</p>
 <p>For <strong>Discrete Random Variables</strong>, their distribution is described using a <strong>Probability Mass Function</strong> (PMF). The PMF provides the probability that the random variable is <strong>exactly equal</strong> to some value <span class="arithmatex">\((X = x_1)\)</span>.</p>
@@ -1328,7 +1354,7 @@
 \end{aligned}
 \]</div>
 <!-- Obtained from BYJU -->
-<p><img alt="Probability Density Function" src="../Assets/1.%20Review%20of%20Probability%20Theory.md/Probability%20Density%20Function.png" /></p>
+<p><img alt="Probability Density Function" class="center" src="../Assets/1.%20Review%20of%20Probability%20Theory.md/Probability%20Density%20Function.png" /></p>
 <p>Similarly, since the area is a probability measure, the <strong>total area</strong> under the graph <strong>must be equal to 1</strong>:</p>
 <div class="arithmatex">\[
     P(-\infty \le X \le \infty) = \int^{\infty}_{-\infty} f(x) = 1
@@ -1378,12 +1404,10 @@
 \end{aligned}
 \]</div>
 <p>The <strong>first raw moment</strong> is known as the <strong>Mean</strong>, which is a measure of the <strong>Centrality</strong> of the distribution. It is commonly denoted as <span class="arithmatex">\(\mu\)</span>, without any super or subscripts.</p>
-<p>It has several important properties:</p>
+<p>It has several important properties (more at the section on transformation):</p>
 <ol>
 <li><span class="arithmatex">\(E(c) = c\)</span></li>
-<li><span class="arithmatex">\(E(cX) = c \cdot E(X)\)</span></li>
-<li><span class="arithmatex">\(E(X+c) = E(X) + c\)</span></li>
-<li><span class="arithmatex">\(E(aX + bY) = a \cdot E(X) + b \cdot E(Y)\)</span></li>
+<li><span class="arithmatex">\(E(X + Y) = E(X) + E(Y)\)</span></li>
 </ol>
 <p><strong>Central Moments</strong> are calculated with respect to the <strong>mean</strong>. The <strong>n-th central moment</strong> is calculated as the following:</p>
 <div class="arithmatex">\[
@@ -1404,15 +1428,13 @@
     &amp;= E(X^2) - [E(X)]^2
 \end{aligned}
 \]</div>
-<p>It has several interesting properties:</p>
+<p>It has several important properties (more at the section on transformation):</p>
 <ol>
 <li><span class="arithmatex">\(Var(c) = 0\)</span></li>
-<li><span class="arithmatex">\(Var(cX) = c^2 \cdot Var(x)\)</span></li>
-<li><span class="arithmatex">\(Var(X+c) = Var(X)\)</span></li>
-<li><span class="arithmatex">\(Var(aX+bY) = a^2 \cdot var(X) + b^2 \cdot Var (Y) + 2 \cdot Cov(X,Y)\)</span></li>
+<li><span class="arithmatex">\(Var(X+b) = Var(X) + Var (Y) + 2 \cdot Cov(X,Y)\)</span></li>
 </ol>
 <!-- Obtained from Coaching Actuaries -->
-<p><img alt="Variance" src="../Assets/1.%20Review%20of%20Probability%20Theory.md/Variance.png" /></p>
+<p><img alt="Variance" class="center" src="../Assets/1.%20Review%20of%20Probability%20Theory.md/Variance.png" /></p>
 <p>However, one problem with variance is that it uses squared units, which makes it hard to intepret. Thus, the <strong>squareroot of the variance</strong> is used instead, known as the <strong>Standard Deviation</strong>.</p>
 <div class="arithmatex">\[
     \sigma = \sqrt{Var(X)}
@@ -1435,7 +1457,7 @@
 \end{aligned}
 \]</div>
 <!-- Obtained from Coaching Actuaries -->
-<p><img alt="Skewness" src="../Assets/1.%20Review%20of%20Probability%20Theory.md/Skewness.png" /></p>
+<p><img alt="Skewness" class="center" src="../Assets/1.%20Review%20of%20Probability%20Theory.md/Skewness.png" /></p>
 <p>The fourth central moment is <strong>Kurtosis</strong>, which is a measure of the <strong>flatness</strong> of the distribution, typically with respect to the normal distribution. It is indicative of the <strong>likelihood of producing extreme values</strong> (outliers).</p>
 <p>The normal distribution has a kurtosis of 3. If a distribution has a kurtosis greater than 3, then it is flatter and hence more likely to produce outliers as compared to the normal distribution.</p>
 <div class="arithmatex">\[
@@ -1447,7 +1469,7 @@
 \end{aligned}
 \]</div>
 <!-- Obtained from AnalystPrep -->
-<p><img alt="Kurtosis" src="../Assets/1.%20Review%20of%20Probability%20Theory.md/Kurtosis.png" /></p>
+<p><img alt="Kurtosis" class="center" src="../Assets/1.%20Review%20of%20Probability%20Theory.md/Kurtosis.png" /></p>
 <h3 id="statistical-metrics"><strong>Statistical Metrics</strong><a class="headerlink" href="#statistical-metrics" title="Permanent link">&para;</a></h3>
 <p>Apart from the moment of the distribution, there are some other <strong>Statistical Metrics</strong> that provide useful information.</p>
 <p>The <strong>Median</strong> is the value of the random variable that seperates the upper and lower half of the probability distribution.</p>
@@ -1466,62 +1488,91 @@
 <div class="arithmatex">\[
     IQR = q_3 - q_1
 \]</div>
-<h3 id="conditional-distributions"><strong>Conditional Distributions</strong><a class="headerlink" href="#conditional-distributions" title="Permanent link">&para;</a></h3>
-<p>The concept of conditional probabilities can be extended to Random Variables as well. In particular, one random variable can be conditional on another random variable, resulting in a <strong>Conditional Distribution</strong> <span class="arithmatex">\((X|Y)\)</span>.</p>
-<p>Most problems require us to find the <strong>Unconditional Distribution</strong> given only the conditional distributions:</p>
-<ul>
-<li><span class="arithmatex">\(X\)</span> is the random variable denoting the test grades (A, B, C)</li>
-<li><span class="arithmatex">\(Y\)</span> is the random variable denoting the gender (M, F)</li>
-</ul>
-<p>The teacher would like to find the overall distribution of test scores <span class="arithmatex">\((X)\)</span>, but only has the <strong>conditional distribution</strong> of the scores of the students for each gender <span class="arithmatex">\((X|Y)\)</span> and the proportion of the Genders <span class="arithmatex">\((Y)\)</span>.</p>
-<p>The <strong>Law of Total Probability</strong> can be used to determine the <strong>unconditional probability</strong> of <span class="arithmatex">\(X\)</span>:</p>
+<h3 id="shifting-scaling-transformation"><strong>Shifting, Scaling &amp; Transformation</strong><a class="headerlink" href="#shifting-scaling-transformation" title="Permanent link">&para;</a></h3>
+<p>An existing random variable <span class="arithmatex">\(X\)</span> can be adjusted in order to make a new random variable <span class="arithmatex">\(Y\)</span>.</p>
+<p>If a constant <span class="arithmatex">\(a\)</span> has been <strong>multiplied</strong> to the random variable, then it has been <strong>Scaled</strong> by <span class="arithmatex">\(a\)</span>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    P(X = a)
-    &amp;= E_Y[P(X = a|Y)] \\
-    &amp;= \sum_{y} P(X = a | y) \cdot p(Y = y)
-\end{aligned}
-\]</div>
-<p>Note that this is equivalent to adding up the final probabilities from the relevant branches from a probability tree:</p>
-<!-- Obtained from Cleanpng -->
-<p><img alt="Law of Total Probability" src="../Assets/1.%20Review%20of%20Probability%20Theory.md/Law%20of%20Total%20Probability.png" /></p>
-<p>Naturally, this also means that the <strong>unconditional CDF</strong> can be obtained in similar fashion:</p>
-<div class="arithmatex">\[
-\begin{aligned}
-    F(a)
-    &amp;= E_Y[F(a)] \\
-    &amp;= \sum_{y} F(a) \cdot p(Y = y)
-\end{aligned}
-\]</div>
-<p>Following the same logic, the <strong>Law of Total Expectation</strong> can be used to determine the <strong>unconditional expectation</strong> of <span class="arithmatex">\(x\)</span>:</p>
-<div class="arithmatex">\[
-\begin{aligned}
-    E(X)
-    &amp;= E_Y[E_X(X|Y)] \\
-    &amp;= \sum_{y} E_X(X|Y) \cdot p(Y = y)
-\end{aligned}
-\]</div>
-<p>The <strong>Law of Total Variance</strong> can be used to determine the <strong>unconditional variance</strong> of <span class="arithmatex">\(x\)</span>. However, unlike the previous two, it is NOT simply the expectation of the conditional variance:</p>
-<div class="arithmatex">\[
-\begin{aligned}
-    Var (X) &amp;= E_Y [Var_X(X|Y)] + Var_Y[E_X(X|Y)] \\
+    Y &amp;= aX \\
     \\
-    E_Y [Var_X(X|Y)] &amp;= \sum_{y} Var_X(X|Y) \cdot p(Y = y) \\
+    F_Y(y)
+    &amp;= P(Y \le y) \\
+    &amp;= P(aX \le y) \\
+    &amp;= P \left(X \le \frac{y}{a} \right) \\
+    &amp;= F_X \left(\frac{y}{a} \right) \\
     \\
-    Var_Y[E_X(X|Y)]
-    &amp;= E_Y[E_X(X|Y)^2] - (E_Y[E_X(X|Y)])^2 \\
-    &amp;= \sum_{y} E_X(X|Y)^2 \cdot p(Y = y) - \sum_{y} E_X(X|Y) \cdot p(Y = y)
+    f_Y(y)
+    &amp;= \frac{d}{dy} F_Y(y) \\
+    &amp;= \frac{1}{a} \cdot f_X \left(\frac{y}{a} \right)
 \end{aligned}
 \]</div>
-<p>Alternatively, the Variance can be calculated using the typical formula of <span class="arithmatex">\(E(X^2) - [E(X)]^2\)</span>, where the two unconditional expectations are calculated using the law of total expectation.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The discrete case was shown in this section due to its simplicity. All the same concepts apply to the continuous variables as well - simply replace the summation &amp; PMFs with integrals and PDFs.</p>
-</div>
-<h2 id="generating-functions"><strong>Generating Functions</strong><a class="headerlink" href="#generating-functions" title="Permanent link">&para;</a></h2>
+<p>If a constant <span class="arithmatex">\(b\)</span> is <strong>added</strong> to the random variable instead, then it has been <strong>Shifted</strong> by <span class="arithmatex">\(b\)</span>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    Y &amp;= X + b \\
+    \\
+    F_Y(y)
+    &amp;= P(Y \le y) \\
+    &amp;= P(X + b \le y) \\
+    &amp;= P(X \le y - b) \\
+    &amp;= F_X (y - b) \\
+    \\
+    f_Y(y)
+    &amp;= \frac{d}{dy} F_Y(y) \\
+    &amp;= f_X (y - b)
+\end{aligned}
+\]</div>
+<p>For both scaling and transformation, the expectation and variance can be easily determined if that of the original is known as well:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    E(cX) &amp;= c \cdot E(X) \\
+    E(X+c)
+    &amp;= E(X) + E(c) \\
+    &amp;= E(X) + c
+    \\
+    Var(cX) &amp;= c^2 \cdot Var(x) \\
+    Var(X+c)
+    &amp;= Var(X) + Var(c) \\
+    &amp;= Var(X)
+\end{aligned}
+\]</div>
+<p>If the random variable has been <strong>raised by a power</strong> of <span class="arithmatex">\(\frac{1}{c}\)</span> where <span class="arithmatex">\(c \ne 1\)</span>, then it has been <strong>Power Transformed</strong>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    Y &amp;= X^{\frac{1}{c}} \\
+    \\
+    F_Y(y)
+    &amp;= P(Y \le y) \\
+    &amp;= P(X^{\frac{1}{c}} \le y) \\
+    &amp;= P(X \le y^c) \\
+    &amp;= F_X (y^c) \\
+    \\
+    f_Y(y)
+    &amp;= \frac{d}{dy} F_Y(y) \\
+    &amp;= cy^{c-1}\cdot f_X (y - b)
+\end{aligned}
+\]</div>
+<p>If the random variable has been <strong>exponentiated</strong>, then it has also been <strong>Exponential Transformed</strong>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    Y &amp;= e^X \\
+    \\
+    F_Y(y)
+    &amp;= P(Y \le y) \\
+    &amp;= P(e^X \le y) \\
+    &amp;= P(X \le \ln y) \\
+    &amp;= F_X (\ln y) \\
+    \\
+    f_Y(y)
+    &amp;= \frac{d}{dy} F_Y(y) \\
+    &amp;= \frac{1}{y} \cdot f_X (\ln y)
+\end{aligned}
+\]</div>
+<p>For both types of transformations, there is no simple method of determining the mean and variance. The various raw moments must be <strong>manually determined via integration</strong>.</p>
+<h3 id="generating-functions"><strong>Generating Functions</strong><a class="headerlink" href="#generating-functions" title="Permanent link">&para;</a></h3>
 <p>Another characteristic
 PGF and MGF uniquely identify the distribution</p>
-<h3 id="moment-generating-function"><strong>Moment Generating Function</strong><a class="headerlink" href="#moment-generating-function" title="Permanent link">&para;</a></h3>
+<h4 id="moment-generating-function"><strong>Moment Generating Function</strong><a class="headerlink" href="#moment-generating-function" title="Permanent link">&para;</a></h4>
 <p>Both discrete and continuous</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1551,7 +1602,7 @@ PGF and MGF uniquely identify the distribution</p>
     &amp;= \prod M_x(t)
 \end{aligned}
 \]</div>
-<h3 id="probability-generating-function"><strong>Probability Generating Function</strong><a class="headerlink" href="#probability-generating-function" title="Permanent link">&para;</a></h3>
+<h4 id="probability-generating-function"><strong>Probability Generating Function</strong><a class="headerlink" href="#probability-generating-function" title="Permanent link">&para;</a></h4>
 <p>Discrete only</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1574,6 +1625,98 @@ PGF and MGF uniquely identify the distribution</p>
 <p>\end{aligned}
 $$</p>
 <p>Uniquely identifies distribution</p>
+<h3 id="conditional-distributions"><strong>Conditional Distributions</strong><a class="headerlink" href="#conditional-distributions" title="Permanent link">&para;</a></h3>
+<p>The concept of conditional probabilities can be extended to Random Variables as well. In particular, one random variable can be conditional on another random variable, resulting in a <strong>Conditional Distribution</strong> <span class="arithmatex">\((X|Y)\)</span>.</p>
+<p>Most problems require us to find the <strong>Unconditional Distribution</strong> given only the conditional distributions:</p>
+<ul>
+<li><span class="arithmatex">\(X\)</span> is the random variable denoting the test grades (A, B, C)</li>
+<li><span class="arithmatex">\(Y\)</span> is the random variable denoting the gender (M, F)</li>
+</ul>
+<p>The teacher would like to find the overall distribution of test scores <span class="arithmatex">\((X)\)</span>, but only has the <strong>conditional distribution</strong> of the scores of the students for each gender <span class="arithmatex">\((X|Y)\)</span> and the proportion of the Genders <span class="arithmatex">\((Y)\)</span>.</p>
+<p>The <strong>Law of Total Probability</strong> can be used to determine the <strong>unconditional probability</strong> of <span class="arithmatex">\(X\)</span>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    P(X = a)
+    &amp;= E_Y[P(X = a|Y)] \\
+    &amp;= \sum_{y} P(X = a | y) \cdot p(Y = y)
+\end{aligned}
+\]</div>
+<p>Note that this is equivalent to adding up the final probabilities from the relevant branches from a probability tree:</p>
+<!-- Obtained from Cleanpng -->
+<p><img alt="Law of Total Probability" class="center" src="../Assets/1.%20Review%20of%20Probability%20Theory.md/Law%20of%20Total%20Probability.png" /></p>
+<p>Naturally, this also means that the <strong>unconditional CDF</strong> can be obtained in similar fashion:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    F(a)
+    &amp;= E_Y[F(a)] \\
+    &amp;= \sum_{y} F(a) \cdot p(Y = y)
+\end{aligned}
+\]</div>
+<p>Following the same logic, the <strong>Law of Total Expectation</strong> can be used to determine the <strong>unconditional expectation</strong> of <span class="arithmatex">\(x\)</span>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    E(X)
+    &amp;= E_Y[E_X(X|Y)] \\
+    &amp;= \sum_{y} E_X(X|Y) \cdot p(Y = y)
+\end{aligned}
+\]</div>
+<p>The <strong>Law of Total Variance</strong> can be used to determine the <strong>unconditional variance</strong> of <span class="arithmatex">\(x\)</span>. However, unlike the previous two, it is NOT simply the expectation of the conditional variance:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    Var (X) &amp;= E_Y [Var_X(X|Y)] + Var_Y[E_X(X|Y)] \\
+    \\
+    E_Y [Var_X(X|Y)] &amp;= \sum_{y} Var_X(X|Y) \cdot p(Y = y) \\
+    \\
+    Var_Y[E_X(X|Y)]
+    &amp;= E_Y[E_X(X|Y)^2] - (E_Y[E_X(X|Y)])^2 \\
+    &amp;= \sum_{y} E_X(X|Y)^2 \cdot p(Y = y) - \sum_{y} E_X(X|Y) \cdot p(Y = y)
+\end{aligned}
+\]</div>
+<p>Alternatively, the Unconditional Variance can be <strong>directly calculated</strong> using the typical formula of <span class="arithmatex">\(E(X^2) - [E(X)]^2\)</span>, where the <strong>two unconditional expectations</strong> are calculated using the law of total expectation.</p>
+<p>Alternatively once more, if the conditional distribution <span class="arithmatex">\(Y\)</span> only has two outcomes, then the <strong>Bernoulli Shortcut</strong> (covered in a later section) can be used to quickly compute the value of <span class="arithmatex">\(Var_Y[E_X(X|Y)]\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The discrete case was shown in this section due to its simplicity. All the same concepts apply to the continuous variables as well - simply replace the summation &amp; PMFs with integrals and PDFs.</p>
+</div>
+<h4 id="mixture-distributions"><strong>Mixture Distributions</strong><a class="headerlink" href="#mixture-distributions" title="Permanent link">&para;</a></h4>
+<p>A mixture distribution is a distribution whose values can be intepreted as being derived from an underlying set of <strong>other random variables</strong>.</p>
+<p>In an insurance context, a Homeowners Insurance claim could be from a fire, burglary or liability accident. To model it, we could use a mixture that is made up of the basic distributions used to individually model each type of accident.</p>
+<p>If the mixture contains a countable number of other distributions, then it is known as a <strong>Discrete Mixture</strong>. Otherwise, it is known as a <strong>Continuous Mixture</strong>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is a common mistake to think that a discrete mixture is only made up of discrete distributions, vice-versa.</p>
+<p>Any type of distribution can be included in a mixture; the classification is based on the number of distributions.</p>
+</div>
+<p>The random variable <span class="arithmatex">\(X\)</span> is a <strong>k-point mixture</strong> if its <strong>probability functions</strong> can be expressed as the <strong>weighted average</strong> of the probability functions of the <span class="arithmatex">\(k\)</span> distributions <span class="arithmatex">\(X_1, X_2, ... X_k\)</span>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    F_X(x) &amp;= w_1 \cdot F_{X_1}(x) + w_2 \cdot F_{X_2}(x) + ... + w_k \cdot F_{X_k}(x) \\
+    f_X(x) &amp;= w_1 \cdot f_{X_1}(x) + w_2 \cdot f_{X_2}(x) + ... + w_k \cdot f_{X_k}(x)
+\end{aligned}
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For this exam, questions will usually only use <strong>2 or 3 point mixtures</strong>.</p>
+</div>
+<p><span class="arithmatex">\(w\)</span> represents the <strong>mixing weights</strong>, such that <span class="arithmatex">\(w_1 + w_2 + ... + w_k = 1\)</span>. It can be intepreted that <span class="arithmatex">\(Y\)</span> <strong>follows the distribution</strong> of <span class="arithmatex">\(X_1\)</span> <span class="arithmatex">\(100w_1 \%\)</span> of the time, follows the distribution of <span class="arithmatex">\(X_2\)</span> <span class="arithmatex">\(100w_2 \%\)</span> of the time etc.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Another common mistake is confusing mixtures with <strong>Linear Combinations</strong> of random variables:</p>
+<div class="arithmatex">\[
+    X \ne w_1 X_1 + w_2 X_2 + ... + w_k X_k
+\]</div>
+<p>In a linear combination, <span class="arithmatex">\(X\)</span> <strong>neither follows the distribution</strong> of any of the <span class="arithmatex">\(X_k\)</span>. Furthermore, since <span class="arithmatex">\(w_k\)</span> are not weights, they can be <strong>any real number and do not need to sum to 1</strong>.</p>
+</div>
+<p>The mixing weights can also be thought of as <strong>Discrete Probabilities</strong> that come from a random variable <span class="arithmatex">\(Y\)</span> with the support <span class="arithmatex">\(\set{1, 2, ..., k}\)</span>.</p>
+<p>Thus, we can think of the overall mixture <span class="arithmatex">\(X\)</span> as an <strong>unconditional distribution</strong> while each of the underlying distributions are conditional distributions <span class="arithmatex">\(X|Y\)</span>. This allows us to make use of the all the <strong>previous results</strong> from the conditional distributions:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    P(X = a) &amp;= E_Y[P(X = a|Y)] \\
+    F(a) &amp;= E_Y[F(a)] \\
+    E(X) &amp;= E_Y[E_X(X|Y)] \\
+    Var (X) &amp;= E_Y [Var_X(X|Y)] + Var_Y[E_X(X|Y)]
+\end{aligned}
+\]</div>
 <!-- TBC
 Independence?
 First central moment is 0
@@ -1616,13 +1759,13 @@ Empirical Distribution
       
       
         
-        <a href="../2.%20Actuarial%20Models/" class="md-footer__link md-footer__link--next" aria-label="Next: Actuarial Models" rel="next">
+        <a href="../2.%20Frequency%20Models/" class="md-footer__link md-footer__link--next" aria-label="Next: Frequency Models" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Actuarial Models
+              Frequency Models
             </div>
           </div>
           <div class="md-footer__button md-icon">
