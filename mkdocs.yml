@@ -11,10 +11,9 @@ nav:
     - Overview of Insurance: 2. Actuarial Mathematics\Overview of Insurance.md
     - ASA-FAMS:
       - Review of Probability Theory: 2. Actuarial Mathematics\ASA-FAMS\1. Review of Probability Theory.md
-      - Actuarial Models: 2. Actuarial Mathematics\ASA-FAMS\2. Actuarial Models.md
-      - Frequency Models: 2. Actuarial Mathematics\ASA-FAMS\3. Frequency Models.md
-      - Severity Models: 2. Actuarial Mathematics\ASA-FAMS\4. Severity Models.md
-      - Aggregate Models: 2. Actuarial Mathematics\ASA-FAMS\5. Aggregate Models.md
+      - Frequency Models: 2. Actuarial Mathematics\ASA-FAMS\2. Frequency Models.md
+      - Severity Models: 2. Actuarial Mathematics\ASA-FAMS\3. Severity Models.md
+      - Aggregate Models: 2. Actuarial Mathematics\ASA-FAMS\4. Aggregate Models.md
       - Credibility: Placeholder.md
       - Ratemaking: Placeholder.md
       - Loss Reserving: Placeholder.md
