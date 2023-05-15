@@ -441,11 +441,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#policy-features" class="md-nav__link">
-    Policy Features
+  <a href="#policy-modifications" class="md-nav__link">
+    Policy Modifications
   </a>
   
-    <nav class="md-nav" aria-label="Policy Features">
+    <nav class="md-nav" aria-label="Policy Modifications">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -472,13 +472,6 @@
           <li class="md-nav__item">
   <a href="#inflation" class="md-nav__link">
     Inflation
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#scaling-transformation" class="md-nav__link">
-    Scaling &amp; Transformation
   </a>
   
 </li>
@@ -1088,11 +1081,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#policy-features" class="md-nav__link">
-    Policy Features
+  <a href="#policy-modifications" class="md-nav__link">
+    Policy Modifications
   </a>
   
-    <nav class="md-nav" aria-label="Policy Features">
+    <nav class="md-nav" aria-label="Policy Modifications">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1119,13 +1112,6 @@
           <li class="md-nav__item">
   <a href="#inflation" class="md-nav__link">
     Inflation
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#scaling-transformation" class="md-nav__link">
-    Scaling &amp; Transformation
   </a>
   
 </li>
@@ -1160,9 +1146,98 @@
 <h3 id="gamma">Gamma<a class="headerlink" href="#gamma" title="Permanent link">&para;</a></h3>
 <h3 id="beta">Beta<a class="headerlink" href="#beta" title="Permanent link">&para;</a></h3>
 <h3 id="role-of-parameters"><strong>Role of Parameters</strong><a class="headerlink" href="#role-of-parameters" title="Permanent link">&para;</a></h3>
-<h2 id="policy-features">Policy Features<a class="headerlink" href="#policy-features" title="Permanent link">&para;</a></h2>
-<p>As mentioned previously, most insurance policies have some <strong>coverage modifications</strong> such that the claim payments are often <strong>not equal to the size of the losses</strong>.</p>
-<p>Thus, let <span class="arithmatex">\(Y\)</span> be the random variable denoting the <strong>claim amount</strong> that will be paid by the insurer.</p>
+<h2 id="policy-modifications"><strong>Policy Modifications</strong><a class="headerlink" href="#policy-modifications" title="Permanent link">&para;</a></h2>
+<p><strong>Policy Modifications</strong> are the parts of an insurance policy that defines <strong>how much the insurer is required to pay</strong> for each loss incurred by the policyholder.</p>
+<p>Before continuing, there are <strong>two key notations</strong> (<span class="arithmatex">\(\land, {}_{+}\)</span>)that will be used throughout this subsection:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \min (a, b) &amp;= a \land b \\
+    \\
+    w_{+}
+    &amp;=
+    \begin{cases}
+        w,&amp; w \ge 0 \\
+        0,&amp; w \lt 0
+    \end{cases} \\
+    &amp;= \text{Non-negative part floored at 0}
+\end{aligned}
+\]</div>
+<p>The two are related through the following expression:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    (a-b)_{+} &amp;= a - (a \land b) \\
+    \\
+    \text{If } a \gt b \text{,} \\
+    (a-b)_{+} &amp;= a-b \\
+    a - (a \land b) &amp;= a-b \\
+    \therefore (a-b)_{+} &amp;= a - (a \land b) \\
+    \\
+    \text{If } a \lt b \text{,} \\
+    (a-b)_{+} &amp;= 0 \\
+    a - (a \land b) &amp;= a-a = 0 \\
+    \therefore (a-b)_{+} &amp;= a - (a \land b) \\
+\end{aligned}
+\]</div>
+<p>There are three key <strong>random variables</strong> regarding claims and losses:</p>
+<ol>
+<li><span class="arithmatex">\(X\)</span> is the <strong>Ground Up Loss</strong> variable, representing the <strong>total loss incurred by the policyholder</strong></li>
+<li><span class="arithmatex">\(Y^L\)</span> is the <strong>Payment per Loss</strong> variable, representing the <strong>amount paid by the insurer</strong></li>
+<li><span class="arithmatex">\(Y^P\)</span> is the <strong>Payment per Payment</strong> variable, representing the amount paid by the insurer <strong>given that there is a positive payment</strong></li>
+</ol>
+<p>To properly understand the difference between the three, consider an example of a policy with a <strong>deductible of 800</strong>, but in two different situations:</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="center"><span class="arithmatex">\(X\)</span> or Loss</th>
+<th align="center"><span class="arithmatex">\(Y^L\)</span></th>
+<th align="center"><span class="arithmatex">\(Y^P\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">2000</td>
+<td align="center">1200</td>
+<td align="center">1200</td>
+</tr>
+<tr>
+<td align="center">600</td>
+<td align="center">0</td>
+<td align="center"><strong>NOT Observed</strong></td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>There are two main takeaways:</p>
+<ul>
+<li>If <span class="arithmatex">\(Y^L &gt; 0\)</span>, then <span class="arithmatex">\(Y^P = Y^L\)</span></li>
+<li>If <span class="arithmatex">\(Y^L = 0\)</span>, then <span class="arithmatex">\(Y^P\)</span> is NOT Observed</li>
+<li><span class="arithmatex">\(\therefore Y^P = Y^L | Y^L &gt; 0\)</span></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do NOT mistakenly think that <span class="arithmatex">\(Y^P\)</span> being unobserved is equivalent to <span class="arithmatex">\(Y^P = 0\)</span>. They are completely DIFFERENT.</p>
+</div>
+<p><span class="arithmatex">\(Y^L\)</span> can be thought of as a <strong>two point mixture distribution</strong> of <span class="arithmatex">\(Y^P\)</span> and a <strong>not-so-random-variable that always takes 0</strong>. Thus, it can also be thought of as a conditional distribution dependent on whether <span class="arithmatex">\(Y^L \gt 0\)</span>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    F_{Y^L} (t)
+    &amp;= F_{Y_L | Y^L &gt; 0} (t) \cdot P(Y^L &gt; 0) + F_{Y_L | Y^L = 0} (t) \cdot P(Y^L = 0) \\
+    &amp;= F_{Y^P} (t) \cdot P(Y^L &gt; 0) + F_{0} (t) \cdot P(Y^L = 0) \\
+\end{aligned}
+\]</div>
+<p>Let <span class="arithmatex">\(\pi = P(Y^L &gt; 0)\)</span>, which becomes the weight of the mixture:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    F_{Y^L} (t) &amp;= F_{Y_P} (t) \cdot \pi + F_{0}(t) \cdot (1-\pi)  \\
+    1 - F_{Y^L} (t) &amp;= [1 - F_{Y_P} (t)] \cdot \pi + [1-F_{0}(t)] \cdot (1-\pi) \\
+    S_{Y^L} (t) &amp;= S_{Y_P} (t) \cdot \pi \\
+    \\
+    E \left(Y^L \right) &amp;= E \left(Y^P \right) \cdot \pi + E(0) \cdot (1-\pi) \\
+    E \left(Y^L \right) &amp;= E \left(Y^L \right) \cdot \pi
+\end{aligned}
+\]</div>
+<p>Thus, the values for <span class="arithmatex">\(Y^L\)</span> and <span class="arithmatex">\(Y^P\)</span> can be <strong>easily converted to one another</strong> by using the weight of the mixture (probability of a positive payment).</p>
 <h3 id="deductibles"><strong>Deductibles</strong><a class="headerlink" href="#deductibles" title="Permanent link">&para;</a></h3>
 <p>The first type of coverage modification is known as a <strong>Deductible</strong>, denoted by <span class="arithmatex">\(d\)</span>.</p>
 <p>If the loss amount <strong>does not exceed</strong> the deductible, then the insurance will <strong>pay out nothing</strong>. However, if it does <strong>exceed the deductible</strong>, then the insurance will <strong>pay out the excess above the deductible</strong>.</p>
@@ -1186,12 +1261,6 @@
 <p>The second type of coverage modification is known as Limit, denoted by <span class="arithmatex">\(u\)</span>.</p>
 <h3 id="coinsurance">Coinsurance<a class="headerlink" href="#coinsurance" title="Permanent link">&para;</a></h3>
 <h3 id="inflation">Inflation<a class="headerlink" href="#inflation" title="Permanent link">&para;</a></h3>
-<h3 id="scaling-transformation"><strong>Scaling &amp; Transformation</strong><a class="headerlink" href="#scaling-transformation" title="Permanent link">&para;</a></h3>
-<p>Method of creating new distributions from existing ones?</p>
-<p>Scaling
-Multiply RV by a constant</p>
-<p>Y = cX
-Fy</p>
 
 
 

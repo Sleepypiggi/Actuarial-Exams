@@ -1647,9 +1647,9 @@ $$</p>
 <p>Naturally, this also means that the <strong>unconditional CDF</strong> can be obtained in similar fashion:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    F(a)
-    &amp;= E_Y[F(a)] \\
-    &amp;= \sum_{y} F(a) \cdot p(Y = y)
+    F_X(a)
+    &amp;= E_Y[F_{X|Y}(a)] \\
+    &amp;= \sum_{y} F_{X|Y}(a) \cdot p(Y = y)
 \end{aligned}
 \]</div>
 <p>Following the same logic, the <strong>Law of Total Expectation</strong> can be used to determine the <strong>unconditional expectation</strong> of <span class="arithmatex">\(x\)</span>:</p>
@@ -1707,14 +1707,22 @@ $$</p>
 \]</div>
 <p>In a linear combination, <span class="arithmatex">\(X\)</span> <strong>neither follows the distribution</strong> of any of the <span class="arithmatex">\(X_k\)</span>. Furthermore, since <span class="arithmatex">\(w_k\)</span> are not weights, they can be <strong>any real number and do not need to sum to 1</strong>.</p>
 </div>
-<p>The mixing weights can also be thought of as <strong>Discrete Probabilities</strong> that come from a random variable <span class="arithmatex">\(Y\)</span> with the support <span class="arithmatex">\(\set{1, 2, ..., k}\)</span>.</p>
+<p>The mixing weights can also be thought of as <strong>Discrete Probabilities</strong> that come from a random variable <span class="arithmatex">\(Y\)</span> representing the <span class="arithmatex">\(k\)</span> underlying distributions with the support <span class="arithmatex">\(\set{1, 2, ..., k}\)</span> where <span class="arithmatex">\(P(Y = k) = w_k\)</span>.</p>
 <p>Thus, we can think of the overall mixture <span class="arithmatex">\(X\)</span> as an <strong>unconditional distribution</strong> while each of the underlying distributions are conditional distributions <span class="arithmatex">\(X|Y\)</span>. This allows us to make use of the all the <strong>previous results</strong> from the conditional distributions:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     P(X = a) &amp;= E_Y[P(X = a|Y)] \\
-    F(a) &amp;= E_Y[F(a)] \\
+    F_X(a) &amp;= E_Y[F_{X|Y}(a)] \\
     E(X) &amp;= E_Y[E_X(X|Y)] \\
     Var (X) &amp;= E_Y [Var_X(X|Y)] + Var_Y[E_X(X|Y)]
+\end{aligned}
+\]</div>
+<p>In terms of the weights, for a simple <strong>two point mixture</strong>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    P(X = a) &amp;= P(X = a |Y=1) \cdot w_1 + P(X = a|Y=2) \cdot w_2 \\
+    F_X(a) &amp;= F_{X|Y=1}(a) \cdot w_1 + F_{X|Y=2}(a) \cdot w_2 \\
+    E(X) &amp;= E_X(X|Y=1) \cdot w_1 + E_X(X|Y=2)  \cdot w_2
 \end{aligned}
 \]</div>
 <!-- TBC
