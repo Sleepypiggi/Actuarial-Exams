@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://example.com/2.%20Actuarial%20Mathematics/ASA-FAMS/3.%20Frequency%20Models/">
+        <link rel="canonical" href="https://example.com/2.%20Actuarial%20Mathematics/ASA-FAMS/2.%20Frequency%20Models/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
@@ -343,20 +343,6 @@
               
   
   
-  
-    <li class="md-nav__item">
-      <a href="../2.%20Actuarial%20Models/" class="md-nav__link">
-        Actuarial Models
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
     
   
   
@@ -393,11 +379,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#counting-distributions" class="md-nav__link">
-    Counting Distributions
+  <a href="#frequency-distributions" class="md-nav__link">
+    Frequency Distributions
   </a>
   
-    <nav class="md-nav" aria-label="Counting Distributions">
+    <nav class="md-nav" aria-label="Frequency Distributions">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -452,6 +438,19 @@
     (a, b, 0) Class
   </a>
   
+    <nav class="md-nav" aria-label="(a, b, 0) Class">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#choosing-distributions" class="md-nav__link">
+    Choosing Distributions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -476,7 +475,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.%20Severity%20Models/" class="md-nav__link">
+      <a href="../3.%20Severity%20Models/" class="md-nav__link">
         Severity Models
       </a>
     </li>
@@ -490,7 +489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../5.%20Aggregate%20Models/" class="md-nav__link">
+      <a href="../4.%20Aggregate%20Models/" class="md-nav__link">
         Aggregate Models
       </a>
     </li>
@@ -1027,11 +1026,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#counting-distributions" class="md-nav__link">
-    Counting Distributions
+  <a href="#frequency-distributions" class="md-nav__link">
+    Frequency Distributions
   </a>
   
-    <nav class="md-nav" aria-label="Counting Distributions">
+    <nav class="md-nav" aria-label="Frequency Distributions">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1086,6 +1085,19 @@
     (a, b, 0) Class
   </a>
   
+    <nav class="md-nav" aria-label="(a, b, 0) Class">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#choosing-distributions" class="md-nav__link">
+    Choosing Distributions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1111,10 +1123,10 @@
 
 
 <h1 id="frequency-models"><strong>Frequency Models</strong><a class="headerlink" href="#frequency-models" title="Permanent link">&para;</a></h1>
-<h2 id="counting-distributions"><strong>Counting Distributions</strong><a class="headerlink" href="#counting-distributions" title="Permanent link">&para;</a></h2>
-<p>Number of claims
-P_k notation</p>
-<p>PGF is provided for all discrete distributions in case</p>
+<h2 id="frequency-distributions"><strong>Frequency Distributions</strong><a class="headerlink" href="#frequency-distributions" title="Permanent link">&para;</a></h2>
+<p>The <strong>number of claims</strong> is usually known as the <strong>Loss Frequency</strong> and is typically modelled with a discrete distribution.</p>
+<p>Let <span class="arithmatex">\(N\)</span> be the random variable denoting the number of claims.</p>
+<p>This section will cover all the relevant frequency distributions, but note that there is <strong>no need to memorize</strong> anything as they are all provided in the formula sheet.</p>
 <h3 id="poisson-distribution"><strong>Poisson Distribution</strong><a class="headerlink" href="#poisson-distribution" title="Permanent link">&para;</a></h3>
 <p>The <strong>Poisson Distribution</strong> is used to count the number of random events in a <strong>specified unit of space or time</strong>.</p>
 <p>It only has <strong>one parameter</strong> <span class="arithmatex">\(\lambda\)</span>, the <strong>mean</strong> number of occurrences in the specified unit of space or time. The key property is that its <strong>mean and variance are both equal</strong> to <span class="arithmatex">\(\lambda\)</span>.</p>
@@ -1305,8 +1317,29 @@ Odds vs Probabiliyu</p>
 \]</div>
 <p><span class="arithmatex">\(a\)</span> and <span class="arithmatex">\(b\)</span> are constants that are unique to each distribution while the "0" comes from the fact that the recursion starts from <span class="arithmatex">\(n-1=0\)</span>.</p>
 <!-- Obtained from MBFinan Exam C -->
-<p><img alt="ab0 class" src="../Assets/3.%20Frequency%20Models.md/ab0%20class.png" /></p>
+<p><img alt="ab0 class" class="center" src="../Assets/2.%20Frequency%20Models.md/ab0%20class.png" /></p>
 <p>Notice that each distribution has a <strong>different signs</strong> for <span class="arithmatex">\(a\)</span>. Thus, given the recursive equation, the <strong>underlying distribution can be determined</strong> based on the sign of <span class="arithmatex">\(a\)</span>.</p>
+<h3 id="choosing-distributions"><strong>Choosing Distributions</strong><a class="headerlink" href="#choosing-distributions" title="Permanent link">&para;</a></h3>
+<p>Given a sample of data, we need to decide <strong>which distribution</strong> best represents it. The general idea is that each distribution has some <strong>unique characteristics</strong> - if the dataset matches those characteristics, then the distribution should be used.</p>
+<p>The first method involves the <strong>Mean and Variance</strong> of the distribution. Notice that for all three distributions, the mean and variance have a <strong>different relative size to one another</strong>. Thus, by comparing the <strong>Sample Mean and Unbiased Sample Variance</strong> of the dataset, it can be matched to the corresponding distribution.</p>
+<!-- Obtained from Coaching Actuaries -->
+<p><img alt="MeanVariance" class="center" src="../Assets/2.%20Frequency%20Models.md/MeanVariance.png" /></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is almost impossible (whether in practice or theory) to find a sample mean and variance that is <em>exactly equal</em> to one another.</p>
+<p>Generally speaking, if they are sufficiently close together, then they can be assumed to be equal. However, being "sufficiently close together" is arbitrary.</p>
+<p>Thus, a better way would be to <strong>compare the ratio</strong> of the two values - if the ratio is <strong>around 1.00</strong>, then it can be concluded that the <strong>two values are equal</strong>.</p>
+</div>
+<p>The second method involves the sign of <span class="arithmatex">\(a\)</span> in the recursion process. Since all three distributions have different signs for <span class="arithmatex">\(a\)</span>, their probabilities will <strong>move differently</strong> as <span class="arithmatex">\(n\)</span> increases. Thus, by observing how the probability of the sample changes, it can be matched to the corresponding distribution.</p>
+<p>However, we must first <strong>multiply the ratio of the probabilities by <span class="arithmatex">\(n\)</span></strong> in order to obtain a smooth linear line that clearly exhibits the relationships:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \frac{p_{n}}{p_{n-1}} &amp;= a + \frac{b}{n} \\
+    \frac{n \cdot p_{n}}{p_{n-1}} &amp;= an + b
+\end{aligned}
+\]</div>
+<!-- Obtained from Coaching Actuaries -->
+<p><img alt="Recursion Slope" class="center" src="../Assets/2.%20Frequency%20Models.md/Recursion%20Slope.png" /></p>
 <h2 id="a-b-1-class"><strong>(a, b, 1) Class</strong><a class="headerlink" href="#a-b-1-class" title="Permanent link">&para;</a></h2>
 <p>When using the (a, b, 0) class of distributions to model experiments, one common problem is that the <strong>probability at <span class="arithmatex">\(n=0\)</span> does not match experience</strong>.</p>
 <p>Thus, there is a need to <strong>modify</strong> the distribution such that the <strong>probability at 0 is at the desired level</strong>. This modification is known as the <strong>Zero-Modification</strong>.</p>
@@ -1368,7 +1401,7 @@ Odds vs Probabiliyu</p>
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../2.%20Actuarial%20Models/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Actuarial Models" rel="prev">
+        <a href="../1.%20Review%20of%20Probability%20Theory/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Review of Probability Theory" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1377,14 +1410,14 @@ Odds vs Probabiliyu</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Actuarial Models
+              Review of Probability Theory
             </div>
           </div>
         </a>
       
       
         
-        <a href="../4.%20Severity%20Models/" class="md-footer__link md-footer__link--next" aria-label="Next: Severity Models" rel="next">
+        <a href="../3.%20Severity%20Models/" class="md-footer__link md-footer__link--next" aria-label="Next: Severity Models" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
