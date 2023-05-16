@@ -453,6 +453,19 @@
     Deductibles
   </a>
   
+    <nav class="md-nav" aria-label="Deductibles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#franchise-deductibles" class="md-nav__link">
+    Franchise Deductibles
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1093,6 +1106,19 @@
     Deductibles
   </a>
   
+    <nav class="md-nav" aria-label="Deductibles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#franchise-deductibles" class="md-nav__link">
+    Franchise Deductibles
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1151,15 +1177,22 @@
 <p>Before continuing, there are <strong>two key notations</strong> (<span class="arithmatex">\(\land, {}_{+}\)</span>)that will be used throughout this subsection:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    \min (a, b) &amp;= a \land b \\
-    \\
-    w_{+}
+    \min (a, b)
     &amp;=
     \begin{cases}
-        w,&amp; w \ge 0 \\
-        0,&amp; w \lt 0
+        a,&amp; a \lt b \\
+        b,&amp; a \ge b
     \end{cases} \\
-    &amp;= \text{Non-negative part floored at 0}
+    &amp;= a \land b \\
+    \\
+    \max (a-b, 0)
+    &amp;=
+    \begin{cases}
+        0,&amp; a \lt b \\
+        a-b,&amp; a \ge b
+    \end{cases} \\
+    &amp;= (a-b)_{+} \\
+    &amp;= \text{Non-negative part; floored at 0}
 \end{aligned}
 \]</div>
 <p>The two are related through the following expression:</p>
@@ -1167,12 +1200,12 @@
 \begin{aligned}
     (a-b)_{+} &amp;= a - (a \land b) \\
     \\
-    \text{If } a \gt b \text{,} \\
+    \text{If } a &amp;\gt b \text{,} \\
     (a-b)_{+} &amp;= a-b \\
     a - (a \land b) &amp;= a-b \\
     \therefore (a-b)_{+} &amp;= a - (a \land b) \\
     \\
-    \text{If } a \lt b \text{,} \\
+    \text{If } a &amp;\lt b \text{,} \\
     (a-b)_{+} &amp;= 0 \\
     a - (a \land b) &amp;= a-a = 0 \\
     \therefore (a-b)_{+} &amp;= a - (a \land b) \\
@@ -1212,7 +1245,7 @@
 <ul>
 <li>If <span class="arithmatex">\(Y^L &gt; 0\)</span>, then <span class="arithmatex">\(Y^P = Y^L\)</span></li>
 <li>If <span class="arithmatex">\(Y^L = 0\)</span>, then <span class="arithmatex">\(Y^P\)</span> is NOT Observed</li>
-<li><span class="arithmatex">\(\therefore Y^P = Y^L | Y^L &gt; 0\)</span></li>
+<li><span class="arithmatex">\(\therefore Y^P = Y^L \mid Y^L &gt; 0\)</span></li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -1238,13 +1271,35 @@
 \end{aligned}
 \]</div>
 <p>Thus, the values for <span class="arithmatex">\(Y^L\)</span> and <span class="arithmatex">\(Y^P\)</span> can be <strong>easily converted to one another</strong> by using the weight of the mixture (probability of a positive payment).</p>
-<h3 id="deductibles"><strong>Deductibles</strong><a class="headerlink" href="#deductibles" title="Permanent link">&para;</a></h3>
-<p>The first type of coverage modification is known as a <strong>Deductible</strong>, denoted by <span class="arithmatex">\(d\)</span>.</p>
-<p>If the loss amount <strong>does not exceed</strong> the deductible, then the insurance will <strong>pay out nothing</strong>. However, if it does <strong>exceed the deductible</strong>, then the insurance will <strong>pay out the excess above the deductible</strong>.</p>
-<p>Note that if the loss is <strong>equal to the deductible</strong>, then still <strong>nothing is paid out</strong> because there is no excess above the deductible.</p>
+<p>Additionally, since <span class="arithmatex">\(Y^P\)</span> is essentially <span class="arithmatex">\(Y^L\)</span> being conditional on itself, we can easily obtain its conditional distribution:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    Y
+    f_{Y_P} (y)
+    &amp;= f_{Y^L \mid Y^L \gt 0} (y) \\
+    &amp;= \frac{f_{Y^L} (y)}{P(Y^L \gt 0)}
+\end{aligned}
+\]</div>
+<h3 id="deductibles"><strong>Deductibles</strong><a class="headerlink" href="#deductibles" title="Permanent link">&para;</a></h3>
+<p>The first type of coverage modification is known as a <strong>Deductible</strong> <span class="arithmatex">\(d\)</span>. It is the amount that the policyholder is responsible for paying beore the insurer pays a claim:</p>
+<ul>
+<li>If the loss amount <strong>does not exceed</strong> the deductible, then the insurer will <strong>pay out nothing</strong></li>
+<li>If it does <strong>exceed the deductible</strong>, then the insurer will <strong>pay out the excess</strong></li>
+</ul>
+<p>For each loss <span class="arithmatex">\(X\)</span>, the <strong>policyholder</strong> is responsible for paying losses up to <span class="arithmatex">\(d\)</span>. It is denoted by <span class="arithmatex">\(X \land d\)</span>, which is known as the <strong>Limited Loss Variable</strong>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    X \land d
+    &amp;=
+    \begin{cases}
+        X,&amp; X \le d\\
+        d,&amp; X \gt d
+    \end{cases}
+\end{aligned}
+\]</div>
+<p>The <strong>insurer</strong> will then cover the excess amount, represented by the <strong>Payment Per Loss</strong> variable:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    Y^L = (X-d)_{+}
     &amp;=
     \begin{cases}
         0,&amp; X \le d\\
@@ -1252,15 +1307,67 @@
     \end{cases}
 \end{aligned}
 \]</div>
-<p>Notice that <span class="arithmatex">\(Y\)</span> is a mixed random variable:</p>
-<ol>
-<li>For <span class="arithmatex">\(X \le d\)</span>, it is <strong>discrete variable</strong> with support <span class="arithmatex">\(\set{0}\)</span></li>
-<li>For <span class="arithmatex">\(X \gt d\)</span>, it is a <strong>continuous variable</strong> with support <span class="arithmatex">\((x-d, \infty]\)</span></li>
-</ol>
+<p>Using the previously established relationship, a <strong>shortcut</strong> for the expectation can be found:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    (X-d)_{+} &amp;= X - (X \land d) \\
+    Y^L &amp;= X - (X \land d) \\
+    \therefore E \left(Y^L \right) &amp;= E(X) - E(X \land d)
+\end{aligned}
+\]</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>This is especially useful because for every severity distribution, $E(X) and $<span class="arithmatex">\(E(X \land d)\)</span> are <strong>provided in the formula sheet</strong>.</p>
+</div>
+<p>The above formula <strong>only holds for the first raw moment</strong>. Thus, if higher moments are required, then it must be calculated from <strong>first principles</strong>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    E \left(Y^L \right)
+    &amp;= E \left[(X-d)_{+} \right] \\
+    &amp;= \int^{d}_{0} 0 \cdot f(x) + \int^{\infty}_{d} (x-d) \cdot f(x) \\
+    &amp;= \int^{\infty}_{d} (x-d) \cdot f(x) \\
+    \\
+    \therefore E \left[ \left(Y^L \right)^k \right] &amp;= \int^{\infty}_{d} (x-d)^k \cdot f(x)
+\end{aligned}
+\]</div>
+<p>In practice, policyholders would <strong>not report losses below the deductible</strong> as there is no point doing so. Thus, the insurers payment is better represented by the <strong>Payment Per Payment</strong> variable, also known as the <strong>Excess Loss Variable</strong>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    Y^P
+    &amp;= Y^L \mid Y^L \gt 0 \\
+    &amp;=  Y^L \mid X \gt d \\
+    &amp;=
+    \begin{cases}
+        \text{Undefined},&amp; X \le d\\
+        X - d,&amp; X \gt d
+    \end{cases} \\
+    \\
+    f_{Y_P} (y)
+    &amp;= \frac{f_{Y^L} (y)}{P(Y^L \gt 0)} \\
+    &amp;= \frac{f_{Y^L} (y)}{P(X \gt d)} \\
+    &amp;= \frac{f_{Y^L} (y)}{1 - F_{X}(d)}
+\end{aligned}
+\]</div>
+<p>Thus, <span class="arithmatex">\(Y^P\)</span> has the following conditional</p>
+<p>$$</p>
+<p>$$</p>
+<p>Intuitively, the expected payment per loss is <strong>smaller than the expected loss</strong> since there will not be any payments for losses smaller than or equal to the deductible:</p>
+<!-- Change to comparison of all 3
+Figure out the survival function
+-->
+
+<div class="arithmatex">\[
+\begin{aligned}
+    E \left(Y^L \right) &amp; \le E(X)
+\end{aligned}
+\]</div>
+<h4 id="franchise-deductibles"><strong>Franchise Deductibles</strong><a class="headerlink" href="#franchise-deductibles" title="Permanent link">&para;</a></h4>
 <h3 id="limits">Limits<a class="headerlink" href="#limits" title="Permanent link">&para;</a></h3>
 <p>The second type of coverage modification is known as Limit, denoted by <span class="arithmatex">\(u\)</span>.</p>
 <h3 id="coinsurance">Coinsurance<a class="headerlink" href="#coinsurance" title="Permanent link">&para;</a></h3>
 <h3 id="inflation">Inflation<a class="headerlink" href="#inflation" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\]</div>
 
 
 
