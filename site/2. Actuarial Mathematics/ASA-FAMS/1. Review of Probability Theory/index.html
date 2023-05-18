@@ -1250,12 +1250,12 @@
 <li><strong>Sum Rule</strong>:  <span class="arithmatex">\(P(A \cup B) = P(A) + P(B) - P(A \cap B)\)</span></li>
 </ul>
 <h3 id="conditional-probability"><strong>Conditional Probability</strong><a class="headerlink" href="#conditional-probability" title="Permanent link">&para;</a></h3>
-<p>Conditional Probabilities are denoted by <span class="arithmatex">\(P(A|B)\)</span>, which is the probability of event A occuring <strong>given that event B has already occurred</strong>.</p>
+<p>Conditional Probabilities are denoted by <span class="arithmatex">\(P(A \mid B)\)</span>, which is the probability of event A occuring <strong>given that event B has already occurred</strong>.</p>
 <p>The intuition is best understood by considering the following - Given that event B has already occured, what is the probability that event A also occurs?</p>
 <p>The event space is <span class="arithmatex">\(A \cap B\)</span>, as we are interested in the probability that both A and B occur. However, since event B has already occured, the sample space is no longer all possible outcomes but rather the event space for B!</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    P(A|B)
+    P(A \mid B)
     &amp;= \frac{n(A \cap B)}{n(B)} \\
     &amp;= \frac{\frac{n(A \cap B)}{n(\Omega)}}{\frac{n(B)}{n(\Omega)}} \\
     &amp;= \frac{P(A \cap B)}{P(B)}
@@ -1263,31 +1263,31 @@
 \]</div>
 <p>Following this expression, the <strong>probability of an intersection</strong> of two events is given by:</p>
 <div class="arithmatex">\[
-    P(A \cap B) = P(A|B) \cdot P(B) = P(B|A) \cdot P(A)
+    P(A \cap B) = P(A \mid B) \cdot P(B) = P(B \mid A) \cdot P(A)
 \]</div>
 <!-- Obtained from Probability Course -->
 <p><img alt="Conditional Probability" class="center" src="../Assets/1.%20Review%20of%20Probability%20Theory.md/Conditional%20Probability.png" /></p>
 <p>Most experiments involving conditional probabilities are multi-staged experiments, which are best visualized using <strong>Probability Trees</strong>:</p>
 <p><img alt="Probability Trees" class="center" src="../Assets/1.%20Review%20of%20Probability%20Theory.md/Probability%20Tree.png" /></p>
-<p>Instead of calculating conditional probabilities from scratch, some questions provide the conditional probability <span class="arithmatex">\(P(A|B)\)</span> (or the components to do so!) and ask us to <strong>find the reverse</strong> - <span class="arithmatex">\(P(B|A)\)</span>.</p>
+<p>Instead of calculating conditional probabilities from scratch, some questions provide the conditional probability <span class="arithmatex">\(P(A \mid B)\)</span> (or the components to do so!) and ask us to <strong>find the reverse</strong> - <span class="arithmatex">\(P(B \mid A)\)</span>.</p>
 <div class="arithmatex">\[
-    P(B|A) = \frac{P(B \cap A)}{P(A)}
+    P(B \mid A) = \frac{P(B \cap A)}{P(A)}
 \]</div>
 <p>The formula is the same as before, but the issue is that the unconditional probability of event A is usually not given. This problem is accounted for in <strong>Bayes Theorem</strong>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     A &amp;= (A \cap B) + (A \cap B^c) \\
     P(A) &amp;= P(A \cap B) + P(A \cap B^c) \\
-    P(A) &amp;= P(A|B) \cdot P(B) + P(A|B^c) \cdot P(B^c) \\
+    P(A) &amp;= P(A \mid B) \cdot P(B) + P(A \mid B^c) \cdot P(B^c) \\
     \\
-    \therefore P(B|A) &amp;= \frac{P(A|B) \cdot P(B)}{P(A|B) \cdot P(B) + P(A|B^c) \cdot P(B^c)}
+    \therefore P(B \mid A) &amp;= \frac{P(A \mid B) \cdot P(B)}{P(A \mid B) \cdot P(B) + P(A \mid B^c) \cdot P(B^c)}
 \end{aligned}
 \]</div>
 <p>Note that if the Conditional Probability of A given B is the same as the unconditional probability of A, then <strong>events A and B are independent</strong>; B has no effect on A.</p>
 <p>Thus, the <strong>probability of an intersection</strong> of two independent events is simply their product:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    P(A|B) &amp;= \frac{P(A \cap B)}{P(B)} \\
+    P(A \mid B) &amp;= \frac{P(A \cap B)}{P(B)} \\
     P(A) &amp;= \frac{P(A \cap B)}{P(B)} \\
     P(A \cap B) &amp;= P(A) \cdot P(B)
 \end{aligned}
@@ -1324,6 +1324,10 @@
 <p></center></p>
 <p>Random variables are denoted using <strong>upper case letters</strong> (X, Y, Z) while their corresponding values are denoted using <strong>lower case letters</strong> (x, y, z) and their appropriate <strong>subscripts</strong>.</p>
 <p>The notation <span class="arithmatex">\(X(s) = x_1\)</span> denotes that the random variable <span class="arithmatex">\(X\)</span> maps the outcome <span class="arithmatex">\(s\)</span> to the value of <span class="arithmatex">\(x_1\)</span>. Thus, the <strong>corresponding probability</strong> is denoted by <span class="arithmatex">\(P(X = x_1)\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the subscript is omitted, then <span class="arithmatex">\(P(X=x)\)</span> is a general expression that describes the <strong>entire distribution</strong> of <span class="arithmatex">\(X\)</span>, not just a single probability.</p>
+</div>
 <!-- Obtained from DSA201 Notes -->
 <p><img alt="Random Variable" class="center" src="../Assets/1.%20Review%20of%20Probability%20Theory.md/Random%20Variable.png" /></p>
 <h3 id="probability-distributions"><strong>Probability Distributions</strong><a class="headerlink" href="#probability-distributions" title="Permanent link">&para;</a></h3>
@@ -1444,9 +1448,9 @@
     CV(X) = \frac{\sigma}{\mu}
 \]</div>
 <p>The <strong>third central moment</strong> is <strong>Skewness</strong>, which is a measure of the <strong>symmetry</strong> of distribution about the mean. Being left/right skewed means that the distribution has a "longer tail" on that side, which implies that <strong>values on the opposite side are more likely to occur</strong>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Skewness is also sometimes referred to as being <strong>Positively or Negatively Skewed</strong>. An easy way to remember is that positive values occur to the right of the origin, hence is the same as being right skewed; vice-versa.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Skewness is also sometimes referred to as being <strong>Positively or Negatively Skewed</strong>. An easy way to remember is that positive values occur to the <em>right</em> of the origin, hence is the same as being right skewed; vice-versa.</p>
 </div>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1479,10 +1483,10 @@
 <p>The <strong>Percentile</strong> is the value of the random variable below which a <strong>certain percentage of observations fall</strong>. For instance, the 85<sup>th</sup> percentile is the value below which 85% of the observations fall.</p>
 <p>Let <span class="arithmatex">\(p\)</span> be the percentage of observations. The <strong>100p-th percentile</strong> for a discrete variable is the smallest value <span class="arithmatex">\(a\)</span> such that <span class="arithmatex">\(P(X \lt a) \le p \lt P(X \le a)\)</span>.</p>
 <p>Similar as before, for continuous variables, the percentile is found by solving <span class="arithmatex">\(F(a) = p\)</span>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>100p-th looks strange because p is a percentage. For instance, if <span class="arithmatex">\(p\)</span> is 0.85, then 100p is 85, representing the 85-th percentile.</p>
-<p>Also, the methods for Percentiles and Medians look similar because the median is simply the 50<sup>th</sup> percentile!</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>100p-th looks strange because <span class="arithmatex">\(p\)</span> is a <strong>percentage</strong>. For instance, if <span class="arithmatex">\(p\)</span> is 0.85, then 100p is 85, representing the 85-th percentile.</p>
+<p>Also, the methods for Percentiles and Medians look similar because the <strong>median is simply the 50<sup>th</sup> percentile</strong>!</p>
 </div>
 <p>The 25<sup>th</sup>, 50<sup>th</sup> &amp; 75<sup>th</sup> percentile are known as the first, second &amp; third <strong>Quartiles</strong> <span class="arithmatex">\((q)\)</span> respectively. The difference between the 3<sup>rd</sup> and 1<sup>st</sup> quartile is known as the <strong>Inter Quartile Range</strong>.</p>
 <div class="arithmatex">\[
@@ -1626,19 +1630,28 @@ PGF and MGF uniquely identify the distribution</p>
 $$</p>
 <p>Uniquely identifies distribution</p>
 <h3 id="conditional-distributions"><strong>Conditional Distributions</strong><a class="headerlink" href="#conditional-distributions" title="Permanent link">&para;</a></h3>
-<p>The concept of conditional probabilities can be extended to Random Variables as well. In particular, one random variable can be conditional on another random variable, resulting in a <strong>Conditional Distribution</strong> <span class="arithmatex">\((X|Y)\)</span>.</p>
+<p>The concept of conditional probabilities can be extended to Random Variables as well.</p>
+<p>If a random variable <span class="arithmatex">\(X\)</span> is <strong>conditioned on a range of values of itself</strong>, then it has the <strong>Conditional Distribution</strong> <span class="arithmatex">\((X \mid X&gt;j)\)</span>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    P(X = x \mid X &gt; j) &amp;= \frac{P(X = x)}{P(X &gt; j)} \\
+    f_{X \mid X&gt;j} (x) &amp;= \frac{f_X(x)}{P(X &gt; j)}
+\end{aligned}
+\]</div>
+<p>At first glance, the discrete version <em>seemingly</em> looks like the basic formula for conditional probability. However, recall that <span class="arithmatex">\(P(X=x)\)</span> describes the entire distribution of <span class="arithmatex">\(X\)</span>, not just the probability of a single point. The distinction becomes clearer when considering the continuous version.</p>
+<p>Additionally, one random variable can be conditional on ANOTHER random variable, resulting in the <strong>Conditional Distribution</strong> <span class="arithmatex">\((X \mid Y)\)</span>.</p>
 <p>Most problems require us to find the <strong>Unconditional Distribution</strong> given only the conditional distributions:</p>
 <ul>
 <li><span class="arithmatex">\(X\)</span> is the random variable denoting the test grades (A, B, C)</li>
 <li><span class="arithmatex">\(Y\)</span> is the random variable denoting the gender (M, F)</li>
 </ul>
-<p>The teacher would like to find the overall distribution of test scores <span class="arithmatex">\((X)\)</span>, but only has the <strong>conditional distribution</strong> of the scores of the students for each gender <span class="arithmatex">\((X|Y)\)</span> and the proportion of the Genders <span class="arithmatex">\((Y)\)</span>.</p>
+<p>The teacher would like to find the overall distribution of test scores <span class="arithmatex">\((X)\)</span>, but only has the <strong>conditional distribution</strong> of the scores of the students for each gender <span class="arithmatex">\((X \mid Y)\)</span> and the proportion of the Genders <span class="arithmatex">\((Y)\)</span>.</p>
 <p>The <strong>Law of Total Probability</strong> can be used to determine the <strong>unconditional probability</strong> of <span class="arithmatex">\(X\)</span>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     P(X = a)
-    &amp;= E_Y[P(X = a|Y)] \\
-    &amp;= \sum_{y} P(X = a | y) \cdot p(Y = y)
+    &amp;= E_Y[P(X = a \mid Y)] \\
+    &amp;= \sum_{y} P(X = a \mid y) \cdot p(Y = y)
 \end{aligned}
 \]</div>
 <p>Note that this is equivalent to adding up the final probabilities from the relevant branches from a probability tree:</p>
@@ -1648,35 +1661,35 @@ $$</p>
 <div class="arithmatex">\[
 \begin{aligned}
     F_X(a)
-    &amp;= E_Y[F_{X|Y}(a)] \\
-    &amp;= \sum_{y} F_{X|Y}(a) \cdot p(Y = y)
+    &amp;= E_Y[F_{X \mid Y}(a)] \\
+    &amp;= \sum_{y} F_{X \mid Y}(a) \cdot p(Y = y)
 \end{aligned}
 \]</div>
 <p>Following the same logic, the <strong>Law of Total Expectation</strong> can be used to determine the <strong>unconditional expectation</strong> of <span class="arithmatex">\(x\)</span>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     E(X)
-    &amp;= E_Y[E_X(X|Y)] \\
-    &amp;= \sum_{y} E_X(X|Y) \cdot p(Y = y)
+    &amp;= E_Y[E_X(X \mid Y)] \\
+    &amp;= \sum_{y} E_X(X \mid Y) \cdot p(Y = y)
 \end{aligned}
 \]</div>
 <p>The <strong>Law of Total Variance</strong> can be used to determine the <strong>unconditional variance</strong> of <span class="arithmatex">\(x\)</span>. However, unlike the previous two, it is NOT simply the expectation of the conditional variance:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    Var (X) &amp;= E_Y [Var_X(X|Y)] + Var_Y[E_X(X|Y)] \\
+    Var (X) &amp;= E_Y [Var_X(X \mid Y)] + Var_Y[E_X(X \mid Y)] \\
     \\
-    E_Y [Var_X(X|Y)] &amp;= \sum_{y} Var_X(X|Y) \cdot p(Y = y) \\
+    E_Y [Var_X(X \mid Y)] &amp;= \sum_{y} Var_X(X \mid Y) \cdot p(Y = y) \\
     \\
-    Var_Y[E_X(X|Y)]
-    &amp;= E_Y[E_X(X|Y)^2] - (E_Y[E_X(X|Y)])^2 \\
-    &amp;= \sum_{y} E_X(X|Y)^2 \cdot p(Y = y) - \sum_{y} E_X(X|Y) \cdot p(Y = y)
+    Var_Y[E_X(X \mid Y)]
+    &amp;= E_Y[E_X(X \mid Y)^2] - (E_Y[E_X(X \mid Y)])^2 \\
+    &amp;= \sum_{y} E_X(X \mid Y)^2 \cdot p(Y = y) - \sum_{y} E_X(X \mid Y) \cdot p(Y = y)
 \end{aligned}
 \]</div>
 <p>Alternatively, the Unconditional Variance can be <strong>directly calculated</strong> using the typical formula of <span class="arithmatex">\(E(X^2) - [E(X)]^2\)</span>, where the <strong>two unconditional expectations</strong> are calculated using the law of total expectation.</p>
-<p>Alternatively once more, if the conditional distribution <span class="arithmatex">\(Y\)</span> only has two outcomes, then the <strong>Bernoulli Shortcut</strong> (covered in a later section) can be used to quickly compute the value of <span class="arithmatex">\(Var_Y[E_X(X|Y)]\)</span>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The discrete case was shown in this section due to its simplicity. All the same concepts apply to the continuous variables as well - simply replace the summation &amp; PMFs with integrals and PDFs.</p>
+<p>Alternatively once more, if the conditional distribution <span class="arithmatex">\(Y\)</span> only has two outcomes, then the <strong>Bernoulli Shortcut</strong> (covered in a later section) can be used to quickly compute the value of <span class="arithmatex">\(Var_Y[E_X(X \mid Y)]\)</span>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The discrete case was shown in this section due to its simplicity. All the same concepts apply to the continuous variables as well - simply <strong>replace the summation &amp; PMFs with integrals and PDFs</strong>.</p>
 </div>
 <h4 id="mixture-distributions"><strong>Mixture Distributions</strong><a class="headerlink" href="#mixture-distributions" title="Permanent link">&para;</a></h4>
 <p>A mixture distribution is a distribution whose values can be intepreted as being derived from an underlying set of <strong>other random variables</strong>.</p>
@@ -1708,21 +1721,21 @@ $$</p>
 <p>In a linear combination, <span class="arithmatex">\(X\)</span> <strong>neither follows the distribution</strong> of any of the <span class="arithmatex">\(X_k\)</span>. Furthermore, since <span class="arithmatex">\(w_k\)</span> are not weights, they can be <strong>any real number and do not need to sum to 1</strong>.</p>
 </div>
 <p>The mixing weights can also be thought of as <strong>Discrete Probabilities</strong> that come from a random variable <span class="arithmatex">\(Y\)</span> representing the <span class="arithmatex">\(k\)</span> underlying distributions with the support <span class="arithmatex">\(\set{1, 2, ..., k}\)</span> where <span class="arithmatex">\(P(Y = k) = w_k\)</span>.</p>
-<p>Thus, we can think of the overall mixture <span class="arithmatex">\(X\)</span> as an <strong>unconditional distribution</strong> while each of the underlying distributions are conditional distributions <span class="arithmatex">\(X|Y\)</span>. This allows us to make use of the all the <strong>previous results</strong> from the conditional distributions:</p>
+<p>Thus, we can think of the overall mixture <span class="arithmatex">\(X\)</span> as an <strong>unconditional distribution</strong> while each of the underlying distributions are conditional distributions <span class="arithmatex">\(X \mid Y\)</span>. This allows us to make use of the all the <strong>previous results</strong> from the conditional distributions:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    P(X = a) &amp;= E_Y[P(X = a|Y)] \\
-    F_X(a) &amp;= E_Y[F_{X|Y}(a)] \\
-    E(X) &amp;= E_Y[E_X(X|Y)] \\
-    Var (X) &amp;= E_Y [Var_X(X|Y)] + Var_Y[E_X(X|Y)]
+    P(X = a) &amp;= E_Y[P(X = a \mid Y)] \\
+    F_X(a) &amp;= E_Y[F_{X \mid Y}(a)] \\
+    E(X) &amp;= E_Y[E_X(X \mid Y)] \\
+    Var (X) &amp;= E_Y [Var_X(X \mid Y)] + Var_Y[E_X(X \mid Y)]
 \end{aligned}
 \]</div>
 <p>In terms of the weights, for a simple <strong>two point mixture</strong>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    P(X = a) &amp;= P(X = a |Y=1) \cdot w_1 + P(X = a|Y=2) \cdot w_2 \\
-    F_X(a) &amp;= F_{X|Y=1}(a) \cdot w_1 + F_{X|Y=2}(a) \cdot w_2 \\
-    E(X) &amp;= E_X(X|Y=1) \cdot w_1 + E_X(X|Y=2)  \cdot w_2
+    P(X = a) &amp;= P(X = a \mid Y=1) \cdot w_1 + P(X = a \mid Y=2) \cdot w_2 \\
+    F_X(a) &amp;= F_{X \mid Y=1}(a) \cdot w_1 + F_{X \mid Y=2}(a) \cdot w_2 \\
+    E(X) &amp;= E_X(X \mid Y=1) \cdot w_1 + E_X(X \mid Y=2)  \cdot w_2
 \end{aligned}
 \]</div>
 <!-- TBC

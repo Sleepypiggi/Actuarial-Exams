@@ -1211,8 +1211,8 @@
     \therefore N &amp;\sim \text{Binomial} (m, q)
 \end{aligned}
 \]</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
 <p>A bernoulli distribution is simply a binomial distribution with <span class="arithmatex">\(m=1\)</span>.</p>
 </div>
 <p>Thus, the sum of <span class="arithmatex">\(k\)</span> independent binomial variables with the <em>same probability</em> will <strong>still binomial</strong>:</p>
@@ -1248,7 +1248,7 @@
 <p>The key property is that it is <strong>Memoryless</strong>. Intuitively, the geometric distribution is "waiting" for the first success to occur.</p>
 <p>However, it <strong>does not matter how many failures have occurred</strong>, the probability of the first success occuring in another <span class="arithmatex">\(k\)</span> failures is <strong>independent of the history of the process</strong>. The distribution "forgets" (memoryless) the current state that the process is in.</p>
 <div class="arithmatex">\[
-    P(N &gt; m + n | N \ge m) = P(N &gt; n)
+    P(N &gt; m + n \mid N \ge m) = P(N &gt; n)
 \]</div>
 <h3 id="negative-binomial-distribution"><strong>Negative Binomial Distribution</strong><a class="headerlink" href="#negative-binomial-distribution" title="Permanent link">&para;</a></h3>
 <p>The <strong>Negative Binomial Distribution</strong> is used to count the <strong>number of failures</strong> to get a <strong>fixed number of successes</strong>, with respect to a sequence of independent bernoulli trials.</p>
@@ -1267,8 +1267,8 @@
     Var (N) &amp;= \frac{r(1-p)}{p^2}
 \end{aligned}
 \]</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
 <p>The distribution is also referred to as <strong>Pascals Distribution</strong>, but is most commonly called the "negative" binomial because it uses a <strong>negative integer in the binomial coefficient</strong>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1291,8 +1291,8 @@
     \therefore N &amp;\sim \text{Negative Binomial} (r, q)
 \end{aligned}
 \]</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
 <p>A geometric distribution is simply a negative binomial distribution with <span class="arithmatex">\(r=1\)</span>.</p>
 </div>
 <p>Thus, following the same logic as before, the sum of <span class="arithmatex">\(k\)</span> independent negative binomial variables with the same probability will <strong>still be negative binomial</strong>:</p>
@@ -1345,7 +1345,7 @@ Odds vs Probabiliyu</p>
 <p>Thus, there is a need to <strong>modify</strong> the distribution such that the <strong>probability at 0 is at the desired level</strong>. This modification is known as the <strong>Zero-Modification</strong>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If the desired level is 0, then the modification is known as a <strong>Zero-Truncation</strong>, which is a special case of the zero-modification. This is because this truncates (removes) the possibility of 0 from the random variable.</p>
+<p>If the desired level is 0, then the modification is known as a <strong>Zero-Truncation</strong>, which is a special case of the zero-modification. This is because this <strong>truncates (removes) the possibility of 0</strong> from the random variable.</p>
 </div>
 <p>This is done by <strong>directly changing</strong> the probability at 0 to the desired level. However, this modification alone would cause the sum of probabilities to deviate from 1, thus the probabilities at all other levels of the support must be <strong>scaled such that they sum to 1</strong>.</p>
 <p>Let <span class="arithmatex">\(N^M\)</span> be the zero-modified distribution and <span class="arithmatex">\(p^{M}_{n}\)</span> be its PMF.</p>
