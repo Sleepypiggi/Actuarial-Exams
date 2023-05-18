@@ -440,60 +440,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#policy-modifications" class="md-nav__link">
-    Policy Modifications
-  </a>
-  
-    <nav class="md-nav" aria-label="Policy Modifications">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#deductibles" class="md-nav__link">
-    Deductibles
-  </a>
-  
-    <nav class="md-nav" aria-label="Deductibles">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#franchise-deductibles" class="md-nav__link">
-    Franchise Deductibles
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#limits" class="md-nav__link">
-    Limits
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#coinsurance" class="md-nav__link">
-    Coinsurance
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#inflation" class="md-nav__link">
-    Inflation
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -509,7 +455,21 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.%20Aggregate%20Models/" class="md-nav__link">
+      <a href="../4.%20Policy%20Modifications/" class="md-nav__link">
+        Policy Modifications
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.%20Aggregate%20Models/" class="md-nav__link">
         Aggregate Models
       </a>
     </li>
@@ -838,7 +798,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../3. Predictive Analytics/ASA-SRM/3. Review of Statistical Theory.md" class="md-nav__link">
+      <a href="../../../3.%20Predictive%20Analytics/ASA-SRM/Review%20of%20Statistical%20Theory/" class="md-nav__link">
         Review of Statistical Theory
       </a>
     </li>
@@ -1093,60 +1053,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#policy-modifications" class="md-nav__link">
-    Policy Modifications
-  </a>
-  
-    <nav class="md-nav" aria-label="Policy Modifications">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#deductibles" class="md-nav__link">
-    Deductibles
-  </a>
-  
-    <nav class="md-nav" aria-label="Deductibles">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#franchise-deductibles" class="md-nav__link">
-    Franchise Deductibles
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#limits" class="md-nav__link">
-    Limits
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#coinsurance" class="md-nav__link">
-    Coinsurance
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#inflation" class="md-nav__link">
-    Inflation
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1172,202 +1078,6 @@
 <h3 id="gamma">Gamma<a class="headerlink" href="#gamma" title="Permanent link">&para;</a></h3>
 <h3 id="beta">Beta<a class="headerlink" href="#beta" title="Permanent link">&para;</a></h3>
 <h3 id="role-of-parameters"><strong>Role of Parameters</strong><a class="headerlink" href="#role-of-parameters" title="Permanent link">&para;</a></h3>
-<h2 id="policy-modifications"><strong>Policy Modifications</strong><a class="headerlink" href="#policy-modifications" title="Permanent link">&para;</a></h2>
-<p><strong>Policy Modifications</strong> are the parts of an insurance policy that defines <strong>how much the insurer is required to pay</strong> for each loss incurred by the policyholder.</p>
-<p>Before continuing, there are <strong>two key notations</strong> (<span class="arithmatex">\(\land, {}_{+}\)</span>)that will be used throughout this subsection:</p>
-<div class="arithmatex">\[
-\begin{aligned}
-    \min (a, b)
-    &amp;=
-    \begin{cases}
-        a,&amp; a \lt b \\
-        b,&amp; a \ge b
-    \end{cases} \\
-    &amp;= a \land b \\
-    \\
-    \max (a-b, 0)
-    &amp;=
-    \begin{cases}
-        0,&amp; a \lt b \\
-        a-b,&amp; a \ge b
-    \end{cases} \\
-    &amp;= (a-b)_{+} \\
-    &amp;= \text{Non-negative part; floored at 0}
-\end{aligned}
-\]</div>
-<p>The two are related through the following expression:</p>
-<div class="arithmatex">\[
-\begin{aligned}
-    (a-b)_{+} &amp;= a - (a \land b) \\
-    \\
-    \text{If } a &amp;\gt b \text{,} \\
-    (a-b)_{+} &amp;= a-b \\
-    a - (a \land b) &amp;= a-b \\
-    \therefore (a-b)_{+} &amp;= a - (a \land b) \\
-    \\
-    \text{If } a &amp;\lt b \text{,} \\
-    (a-b)_{+} &amp;= 0 \\
-    a - (a \land b) &amp;= a-a = 0 \\
-    \therefore (a-b)_{+} &amp;= a - (a \land b) \\
-\end{aligned}
-\]</div>
-<p>There are three key <strong>random variables</strong> regarding claims and losses:</p>
-<ol>
-<li><span class="arithmatex">\(X\)</span> is the <strong>Ground Up Loss</strong> variable, representing the <strong>total loss incurred by the policyholder</strong></li>
-<li><span class="arithmatex">\(Y^L\)</span> is the <strong>Payment per Loss</strong> variable, representing the <strong>amount paid by the insurer</strong></li>
-<li><span class="arithmatex">\(Y^P\)</span> is the <strong>Payment per Payment</strong> variable, representing the amount paid by the insurer <strong>given that there is a positive payment</strong></li>
-</ol>
-<p>To properly understand the difference between the three, consider an example of a policy with a <strong>deductible of 800</strong>, but in two different situations:</p>
-<p><center></p>
-<table>
-<thead>
-<tr>
-<th align="center"><span class="arithmatex">\(X\)</span> or Loss</th>
-<th align="center"><span class="arithmatex">\(Y^L\)</span></th>
-<th align="center"><span class="arithmatex">\(Y^P\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">2000</td>
-<td align="center">1200</td>
-<td align="center">1200</td>
-</tr>
-<tr>
-<td align="center">600</td>
-<td align="center">0</td>
-<td align="center"><strong>NOT Observed</strong></td>
-</tr>
-</tbody>
-</table>
-<p></center></p>
-<p>There are two main takeaways:</p>
-<ul>
-<li>If <span class="arithmatex">\(Y^L &gt; 0\)</span>, then <span class="arithmatex">\(Y^P = Y^L\)</span></li>
-<li>If <span class="arithmatex">\(Y^L = 0\)</span>, then <span class="arithmatex">\(Y^P\)</span> is NOT Observed</li>
-<li><span class="arithmatex">\(\therefore Y^P = Y^L \mid Y^L &gt; 0\)</span></li>
-</ul>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Do NOT mistakenly think that <span class="arithmatex">\(Y^P\)</span> being unobserved is equivalent to <span class="arithmatex">\(Y^P = 0\)</span>. They are completely DIFFERENT.</p>
-</div>
-<p><span class="arithmatex">\(Y^L\)</span> can be thought of as a <strong>two point mixture distribution</strong> of <span class="arithmatex">\(Y^P\)</span> and a <strong>not-so-random-variable that always takes 0</strong>. Thus, it can also be thought of as a conditional distribution dependent on whether <span class="arithmatex">\(Y^L \gt 0\)</span>:</p>
-<div class="arithmatex">\[
-\begin{aligned}
-    F_{Y^L} (t)
-    &amp;= F_{Y_L | Y^L &gt; 0} (t) \cdot P(Y^L &gt; 0) + F_{Y_L | Y^L = 0} (t) \cdot P(Y^L = 0) \\
-    &amp;= F_{Y^P} (t) \cdot P(Y^L &gt; 0) + F_{0} (t) \cdot P(Y^L = 0) \\
-\end{aligned}
-\]</div>
-<p>Let <span class="arithmatex">\(\pi = P(Y^L &gt; 0)\)</span>, which becomes the weight of the mixture:</p>
-<div class="arithmatex">\[
-\begin{aligned}
-    F_{Y^L} (t) &amp;= F_{Y_P} (t) \cdot \pi + F_{0}(t) \cdot (1-\pi)  \\
-    1 - F_{Y^L} (t) &amp;= [1 - F_{Y_P} (t)] \cdot \pi + [1-F_{0}(t)] \cdot (1-\pi) \\
-    S_{Y^L} (t) &amp;= S_{Y_P} (t) \cdot \pi \\
-    \\
-    E \left(Y^L \right) &amp;= E \left(Y^P \right) \cdot \pi + E(0) \cdot (1-\pi) \\
-    E \left(Y^L \right) &amp;= E \left(Y^L \right) \cdot \pi
-\end{aligned}
-\]</div>
-<p>Thus, the values for <span class="arithmatex">\(Y^L\)</span> and <span class="arithmatex">\(Y^P\)</span> can be <strong>easily converted to one another</strong> by using the weight of the mixture (probability of a positive payment).</p>
-<p>Additionally, since <span class="arithmatex">\(Y^P\)</span> is essentially <span class="arithmatex">\(Y^L\)</span> being conditional on itself, we can easily obtain its conditional distribution:</p>
-<div class="arithmatex">\[
-\begin{aligned}
-    f_{Y_P} (y)
-    &amp;= f_{Y^L \mid Y^L \gt 0} (y) \\
-    &amp;= \frac{f_{Y^L} (y)}{P(Y^L \gt 0)}
-\end{aligned}
-\]</div>
-<h3 id="deductibles"><strong>Deductibles</strong><a class="headerlink" href="#deductibles" title="Permanent link">&para;</a></h3>
-<p>The first type of coverage modification is known as a <strong>Deductible</strong> <span class="arithmatex">\(d\)</span>. It is the amount that the policyholder is responsible for paying beore the insurer pays a claim:</p>
-<ul>
-<li>If the loss amount <strong>does not exceed</strong> the deductible, then the insurer will <strong>pay out nothing</strong></li>
-<li>If it does <strong>exceed the deductible</strong>, then the insurer will <strong>pay out the excess</strong></li>
-</ul>
-<p>For each loss <span class="arithmatex">\(X\)</span>, the <strong>policyholder</strong> is responsible for paying losses up to <span class="arithmatex">\(d\)</span>. It is denoted by <span class="arithmatex">\(X \land d\)</span>, which is known as the <strong>Limited Loss Variable</strong>:</p>
-<div class="arithmatex">\[
-\begin{aligned}
-    X \land d
-    &amp;=
-    \begin{cases}
-        X,&amp; X \le d\\
-        d,&amp; X \gt d
-    \end{cases}
-\end{aligned}
-\]</div>
-<p>The <strong>insurer</strong> will then cover the excess amount, represented by the <strong>Payment Per Loss</strong> variable:</p>
-<div class="arithmatex">\[
-\begin{aligned}
-    Y^L = (X-d)_{+}
-    &amp;=
-    \begin{cases}
-        0,&amp; X \le d\\
-        X - d,&amp; X \gt d
-    \end{cases}
-\end{aligned}
-\]</div>
-<p>Using the previously established relationship, a <strong>shortcut</strong> for the expectation can be found:</p>
-<div class="arithmatex">\[
-\begin{aligned}
-    (X-d)_{+} &amp;= X - (X \land d) \\
-    Y^L &amp;= X - (X \land d) \\
-    \therefore E \left(Y^L \right) &amp;= E(X) - E(X \land d)
-\end{aligned}
-\]</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>This is especially useful because for every severity distribution, $E(X) and $<span class="arithmatex">\(E(X \land d)\)</span> are <strong>provided in the formula sheet</strong>.</p>
-</div>
-<p>The above formula <strong>only holds for the first raw moment</strong>. Thus, if higher moments are required, then it must be calculated from <strong>first principles</strong>:</p>
-<div class="arithmatex">\[
-\begin{aligned}
-    E \left(Y^L \right)
-    &amp;= E \left[(X-d)_{+} \right] \\
-    &amp;= \int^{d}_{0} 0 \cdot f(x) + \int^{\infty}_{d} (x-d) \cdot f(x) \\
-    &amp;= \int^{\infty}_{d} (x-d) \cdot f(x) \\
-    \\
-    \therefore E \left[ \left(Y^L \right)^k \right] &amp;= \int^{\infty}_{d} (x-d)^k \cdot f(x)
-\end{aligned}
-\]</div>
-<p>In practice, policyholders would <strong>not report losses below the deductible</strong> as there is no point doing so. Thus, the insurers payment is better represented by the <strong>Payment Per Payment</strong> variable, also known as the <strong>Excess Loss Variable</strong>:</p>
-<div class="arithmatex">\[
-\begin{aligned}
-    Y^P
-    &amp;= Y^L \mid Y^L \gt 0 \\
-    &amp;=  Y^L \mid X \gt d \\
-    &amp;=
-    \begin{cases}
-        \text{Undefined},&amp; X \le d\\
-        X - d,&amp; X \gt d
-    \end{cases} \\
-    \\
-    f_{Y_P} (y)
-    &amp;= \frac{f_{Y^L} (y)}{P(Y^L \gt 0)} \\
-    &amp;= \frac{f_{Y^L} (y)}{P(X \gt d)} \\
-    &amp;= \frac{f_{Y^L} (y)}{1 - F_{X}(d)}
-\end{aligned}
-\]</div>
-<p>Thus, <span class="arithmatex">\(Y^P\)</span> has the following conditional</p>
-<p>$$</p>
-<p>$$</p>
-<p>Intuitively, the expected payment per loss is <strong>smaller than the expected loss</strong> since there will not be any payments for losses smaller than or equal to the deductible:</p>
-<!-- Change to comparison of all 3
-Figure out the survival function
--->
-
-<div class="arithmatex">\[
-\begin{aligned}
-    E \left(Y^L \right) &amp; \le E(X)
-\end{aligned}
-\]</div>
-<h4 id="franchise-deductibles"><strong>Franchise Deductibles</strong><a class="headerlink" href="#franchise-deductibles" title="Permanent link">&para;</a></h4>
-<h3 id="limits">Limits<a class="headerlink" href="#limits" title="Permanent link">&para;</a></h3>
-<p>The second type of coverage modification is known as Limit, denoted by <span class="arithmatex">\(u\)</span>.</p>
-<h3 id="coinsurance">Coinsurance<a class="headerlink" href="#coinsurance" title="Permanent link">&para;</a></h3>
-<h3 id="inflation">Inflation<a class="headerlink" href="#inflation" title="Permanent link">&para;</a></h3>
-<div class="arithmatex">\[
-\]</div>
 
 
 
@@ -1404,13 +1114,13 @@ Figure out the survival function
       
       
         
-        <a href="../4.%20Aggregate%20Models/" class="md-footer__link md-footer__link--next" aria-label="Next: Aggregate Models" rel="next">
+        <a href="../4.%20Policy%20Modifications/" class="md-footer__link md-footer__link--next" aria-label="Next: Policy Modifications" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Aggregate Models
+              Policy Modifications
             </div>
           </div>
           <div class="md-footer__button md-icon">
