@@ -15,9 +15,10 @@ nav:
       - Severity Models: 2. Actuarial Mathematics\ASA-FAMS\3. Severity Models.md
       - Policy Modifications: 2. Actuarial Mathematics\ASA-FAMS\4. Policy Modifications.md
       - Aggregate Models: 2. Actuarial Mathematics\ASA-FAMS\5. Aggregate Models.md
-      - Credibility: Placeholder.md
-      - Ratemaking: Placeholder.md
-      - Loss Reserving: Placeholder.md
+      - Loss Reserving: 2. Actuarial Mathematics\ASA-FAMS\6. Loss Reserving.md
+      - Ratemaking: 2. Actuarial Mathematics\ASA-FAMS\7. Ratemaking.md
+      - Credibility Theory: 2. Actuarial Mathematics\ASA-FAMS\8. Credibility Theory.md
+      - Model Estimation: 2. Actuarial Mathematics\ASA-FAMS\9. Model Estimation.md
     - ASA-FAML:
       - Survival Models: 2. Actuarial Mathematics\ASA-FAML\1. Survival Models.md
       - Life Tables: 2. Actuarial Mathematics\ASA-FAML\2. Life Tables.md
