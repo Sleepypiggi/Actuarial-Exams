@@ -1,6 +1,6 @@
 # **Review of Statistical Theory**
 
-This is meant to be a quick review of the basic statistical concepts of **VEE: Mathematical Statistics** and other undergrad statitics courses that will be relevant for this exam.
+This section assumes some basic knowledge on **Random Variables**, which can be found under another set of notes covering a [Review of Probability Theory](../../2. Actuarial Mathematics/ASA-FAMS/1. Review of Probability Theory.md).
 
 ## **Overview of Statistics**
 
@@ -272,9 +272,68 @@ Thus, the square of the t-statistic is known as the **F-statistic**, which is us
 
 ## **Maximum Likelihood Estimation**
 
-If the population distribution is known, there is an **alternative method of estimating** the parameters apart from calculating the corresponding sample statistics.
+If the **population distribution is known**, there is an **alternative method of estimating** the parameters apart from calculating the corresponding sample statistics, known as **Maximum Likelihood Estimation** (MLE).
 
-We model a set of observations as a random sample from an unknown joint probability distribution which is expressed in terms of a set of parameters.
-The goal of maximum likelihood estimation is to determine the parameters for which the observed data have the highest joint probability.
+There are an infinite number of **variations of the distribution** that could have resulted in the sample, each with **different parameters**.
 
-The goal of maximum likelihood estimation is to find the values of the model parameters that maximize the likelihood function over the parameter space
+Technically speaking, any set of parameters could have resulted in the sample. However, the goal of MLE is to find the set of **parameters that are most likely to result in the sample**; in other words, the **probability of obtaining this sample is the highest** with this set of paramters than any other set.
+
+The probability of obtaining the sample is known as its **Likelihood**:
+
+$$
+     L(\theta \mid x) = P_{\theta} (X = x)
+$$
+
+!!! Warning
+
+    Likelihood functions and PMF/PDFs are often confused with one another as they involve the same expression.
+    
+    The key is **understanding what is given and what is random**, which results in the subtle but differing notation:
+
+    * **PMF/PDF**: Given parameters, outcomes are random; $P_{X}(x)$
+    * **Likelihood**: Given outcomes, parameters are random; $P_{\theta}(x)$
+
+Assuming that the sample is iid, the likehood for the entire sample is the **product of the likelihood for each observation**, known as the **Likelihood Function**:
+
+$$
+    L(\theta) = \prod P_{\theta}(X = x_i)
+$$
+
+The goal is to find the parameters that **maximizes** the likelihood function through calculus:
+
+$$
+    \frac{d}{d\theta} L(\theta) = 0
+$$
+
+In practice, especially when dealing with multiple parameters, the likelihood function is complicated to work with. Thus, a **log transformation** is often applied to simplify it, turning the product into a summation.
+
+This is known as the **Log-Likelihood Function**. Since the logarithm transform is monotonic, both the likelihood and log-likelihood functions share the **same maximum**.
+
+$$
+\begin{aligned}
+    \ell (\theta) &= \ln L(\theta) \\
+    \therefore \frac{d}{d\theta} \ell (\theta) &= 0
+\end{aligned}
+$$
+
+### **Method of Moments**
+
+An alternative method for estimating population parameters is the **Method of Moments** (MOM).
+
+It is based on the **Law of Large Numbers**, which states that the sample mean converges to the population mean (first raw moment), given a **sufficiently large sample size**.
+
+Thus, by **equating the sample raw moments to the population raw moments**, up to the number of parameters to estimate, we can solve for an estimate of the parameters.
+
+!!! Note
+
+    If there is only one parameter to estimate, then only the first raw moments are equated. If there are two, then the second raw moment should be equated as well.
+
+$$
+\begin{aligned}
+    E(X^k)
+    &= \bar{x} \\
+    &= \frac{\sum x^k_i}{n}
+\end{aligned}
+$$
+
+The main advantage of this method is that it is **computationally simpler** than MLE. For certain known distributions, the MOM estimate and MLE estimate are the same, thus MOM can be used as a **shortcut for MLE**.

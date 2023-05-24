@@ -6,7 +6,9 @@ nav:
   - Introductory:
     - ASA-P: Placeholder.md
     - ASA-FM: Placeholder.md
-    - ASA-IFM: Placeholder.md
+    - ASA-IFM:
+      - Derivatives:
+        - Introduction: 1. Introductory/ASA-IFM\1. Derivatives\1. Introduction.md
   - Actuarial Mathematics:
     - Overview of Insurance: 2. Actuarial Mathematics\Overview of Insurance.md
     - ASA-FAMS:
@@ -17,8 +19,8 @@ nav:
       - Aggregate Models: 2. Actuarial Mathematics\ASA-FAMS\5. Aggregate Models.md
       - Loss Reserving: 2. Actuarial Mathematics\ASA-FAMS\6. Loss Reserving.md
       - Ratemaking: 2. Actuarial Mathematics\ASA-FAMS\7. Ratemaking.md
-      - Credibility Theory: 2. Actuarial Mathematics\ASA-FAMS\8. Credibility Theory.md
-      - Model Estimation: 2. Actuarial Mathematics\ASA-FAMS\9. Model Estimation.md
+      - Model Estimation: 2. Actuarial Mathematics\ASA-FAMS\8. Model Estimation.md
+      - Credibility Theory: 2. Actuarial Mathematics\ASA-FAMS\9. Credibility Theory.md
     - ASA-FAML:
       - Survival Models: 2. Actuarial Mathematics\ASA-FAML\1. Survival Models.md
       - Life Tables: 2. Actuarial Mathematics\ASA-FAML\2. Life Tables.md
