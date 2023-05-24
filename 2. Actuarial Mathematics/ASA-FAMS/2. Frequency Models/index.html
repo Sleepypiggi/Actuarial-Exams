@@ -238,10 +238,76 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" type="checkbox" id="__nav_1_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_3">
+          ASA-IFM
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="ASA-IFM" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          ASA-IFM
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3_1" type="checkbox" id="__nav_1_3_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_3_1">
+          Derivatives
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Derivatives" data-md-level="3">
+        <label class="md-nav__title" for="__nav_1_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Derivatives
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../../Placeholder.md" class="md-nav__link">
-        ASA-IFM
+      <a href="../../../1.%20Introductory/ASA-IFM/1.%20Derivatives/1.%20Introduction/" class="md-nav__link">
+        Introduction
       </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -398,7 +464,8 @@
     Bernoulli Distribution
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Bernoulli Distribution">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#binomial-distribution" class="md-nav__link">
@@ -407,17 +474,28 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#geometric-distribution" class="md-nav__link">
     Geometric Distribution
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Geometric Distribution">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#negative-binomial-distribution" class="md-nav__link">
     Negative Binomial Distribution
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -545,8 +623,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../8.%20Credibility%20Theory/" class="md-nav__link">
-        Credibility Theory
+      <a href="../8.%20Model%20Estimation/" class="md-nav__link">
+        Model Estimation
       </a>
     </li>
   
@@ -559,8 +637,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../9.%20Model%20Estimation/" class="md-nav__link">
-        Model Estimation
+      <a href="../9.%20Credibility%20Theory/" class="md-nav__link">
+        Credibility Theory
       </a>
     </li>
   
@@ -1073,7 +1151,8 @@
     Bernoulli Distribution
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Bernoulli Distribution">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#binomial-distribution" class="md-nav__link">
@@ -1082,17 +1161,28 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#geometric-distribution" class="md-nav__link">
     Geometric Distribution
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Geometric Distribution">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#negative-binomial-distribution" class="md-nav__link">
     Negative Binomial Distribution
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1157,21 +1247,21 @@
 <p>This section will cover all the relevant frequency distributions, but note that there is <strong>no need to memorize</strong> anything as they are all provided in the formula sheet.</p>
 <h3 id="poisson-distribution"><strong>Poisson Distribution</strong><a class="headerlink" href="#poisson-distribution" title="Permanent link">&para;</a></h3>
 <p>The <strong>Poisson Distribution</strong> is used to count the number of random events in a <strong>specified unit of space or time</strong>.</p>
-<p>It only has <strong>one parameter</strong> <span class="arithmatex">\(\lambda\)</span>, the <strong>mean</strong> number of occurrences in the specified unit of space or time. The key property is that its <strong>mean and variance are both equal</strong> to <span class="arithmatex">\(\lambda\)</span>.</p>
+<p>It only has <strong>one parameter</strong> <span class="arithmatex">\(\mu\)</span>, the <strong>mean</strong> number of occurrences in the specified unit of space or time. The key property is that its <strong>mean and variance are both equal</strong> to <span class="arithmatex">\(\mu\)</span>.</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    N &amp;\sim \text{Poisson}(\lambda) \\
+    N &amp;\sim \text{Poisson}(\mu) \\
     \\
-    p_n &amp;= \frac{e^{-\lambda} \cdot \lambda^k}{k!} \\
+    p_n &amp;= \frac{e^{-\mu} \cdot \mu^k}{k!} \\
     \\
-    E(N) &amp;= \lambda \\
-    Var (N) &amp;= \lambda
+    E(N) &amp;= \mu \\
+    Var (N) &amp;= \mu
 \end{aligned}
 \]</div>
 <p>The sum of <span class="arithmatex">\(k\)</span> independent poisson random variables is <strong>still poisson</strong>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    N_n &amp;\sim \text{Poisson}(\lambda_k) \\
+    N_k &amp;\sim \text{Poisson}(\lambda_k) \\
     N &amp;= N_1 + N_2 + ... + N_k \\
     \therefore N &amp;\sim \text{Poisson} (\lambda_1 + \lambda_2 + ... + \lambda_k)
 \end{aligned}
@@ -1214,7 +1304,7 @@
 \end{aligned}
 \]</div>
 <p>Note that there is no need to memorize the mean and variance for the bernoulli shortcut - they can be easily derived from the standard distribution.</p>
-<h3 id="binomial-distribution"><strong>Binomial Distribution</strong><a class="headerlink" href="#binomial-distribution" title="Permanent link">&para;</a></h3>
+<h4 id="binomial-distribution"><strong>Binomial Distribution</strong><a class="headerlink" href="#binomial-distribution" title="Permanent link">&para;</a></h4>
 <p>The <strong>Binomial Distribution</strong> is used to count the <strong>number of successes</strong> out of a <strong>fixed number of independent Standard Bernoulli Trials</strong>.</p>
 <p>It has <strong>two parameters</strong>:</p>
 <ol>
@@ -1274,11 +1364,15 @@
 \end{aligned}
 \]</div>
 <p>The key property is that it is <strong>Memoryless</strong>. Intuitively, the geometric distribution is "waiting" for the first success to occur.</p>
-<p>However, it <strong>does not matter how many failures have occurred</strong>, the probability of the first success occuring in another <span class="arithmatex">\(k\)</span> failures is <strong>independent of the history of the process</strong>. The distribution "forgets" (memoryless) the current state that the process is in.</p>
+<p>However, it <strong>does not matter how many failures have occurred</strong>, the probability of the first success occuring in another <span class="arithmatex">\(k\)</span> failures is <strong>independent of the history of the process</strong>; it remains constant over time. The distribution "forgets" (memoryless) the current state that the process is in.</p>
 <div class="arithmatex">\[
-    P(N &gt; m + n \mid N \ge m) = P(N &gt; n)
+\begin{aligned}
+    P(N &gt; m + n \mid N \ge m) &amp;= P(N &gt; n) \\
+    E(N &gt; m + n \mid N \ge m) &amp;= E(N) \\
+    Var(N &gt; m + n \mid N \ge m) &amp;= Var(N)
+\end{aligned}
 \]</div>
-<h3 id="negative-binomial-distribution"><strong>Negative Binomial Distribution</strong><a class="headerlink" href="#negative-binomial-distribution" title="Permanent link">&para;</a></h3>
+<h4 id="negative-binomial-distribution"><strong>Negative Binomial Distribution</strong><a class="headerlink" href="#negative-binomial-distribution" title="Permanent link">&para;</a></h4>
 <p>The <strong>Negative Binomial Distribution</strong> is used to count the <strong>number of failures</strong> to get a <strong>fixed number of successes</strong>, with respect to a sequence of independent bernoulli trials.</p>
 <p>It has two parameters:</p>
 <ol>
