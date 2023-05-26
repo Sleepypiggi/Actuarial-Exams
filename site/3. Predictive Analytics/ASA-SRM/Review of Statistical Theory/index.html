@@ -238,10 +238,76 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" type="checkbox" id="__nav_1_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_3">
+          ASA-IFM
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="ASA-IFM" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          ASA-IFM
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3_1" type="checkbox" id="__nav_1_3_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_3_1">
+          Derivatives
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Derivatives" data-md-level="3">
+        <label class="md-nav__title" for="__nav_1_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Derivatives
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../../Placeholder.md" class="md-nav__link">
-        ASA-IFM
+      <a href="../../../1.%20Introductory/ASA-IFM/1.%20Derivatives/1.%20Introduction/" class="md-nav__link">
+        Introduction
       </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -425,8 +491,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../2.%20Actuarial%20Mathematics/ASA-FAMS/8.%20Credibility%20Theory/" class="md-nav__link">
-        Credibility Theory
+      <a href="../../../2.%20Actuarial%20Mathematics/ASA-FAMS/8.%20Model%20Estimation/" class="md-nav__link">
+        Model Estimation
       </a>
     </li>
   
@@ -439,8 +505,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../2.%20Actuarial%20Mathematics/ASA-FAMS/9.%20Model%20Estimation/" class="md-nav__link">
-        Model Estimation
+      <a href="../../../2.%20Actuarial%20Mathematics/ASA-FAMS/9.%20Credibility%20Theory/" class="md-nav__link">
+        Credibility Theory
       </a>
     </li>
   
@@ -830,6 +896,19 @@
     Maximum Likelihood Estimation
   </a>
   
+    <nav class="md-nav" aria-label="Maximum Likelihood Estimation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-of-moments" class="md-nav__link">
+    Method of Moments
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1107,6 +1186,19 @@
     Maximum Likelihood Estimation
   </a>
   
+    <nav class="md-nav" aria-label="Maximum Likelihood Estimation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-of-moments" class="md-nav__link">
+    Method of Moments
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1125,7 +1217,7 @@
 
 
 <h1 id="review-of-statistical-theory"><strong>Review of Statistical Theory</strong><a class="headerlink" href="#review-of-statistical-theory" title="Permanent link">&para;</a></h1>
-<p>This is meant to be a quick review of the basic statistical concepts of <strong>VEE: Mathematical Statistics</strong> and other undergrad statitics courses that will be relevant for this exam.</p>
+<p>This section assumes some basic knowledge on <strong>Random Variables</strong>, which can be found under another set of notes covering a <a href="../../../2.%20Actuarial%20Mathematics/ASA-FAMS/1.%20Review%20of%20Probability%20Theory/">Review of Probability Theory</a>.</p>
 <h2 id="overview-of-statistics"><strong>Overview of Statistics</strong><a class="headerlink" href="#overview-of-statistics" title="Permanent link">&para;</a></h2>
 <p>Statistics is a discipline revolving around data.</p>
 <p>A <strong>Population</strong> refers to the <em>theoretical</em> set of <strong>all possible</strong> data of the event of interest. The goal of statistics is to determine certain attributes that <strong>summarizes or describes</strong> the population, known as <strong>Parameters</strong>.</p>
@@ -1374,10 +1466,54 @@ t_{n-1}^2
 \]</div>
 <p>Thus, the square of the t-statistic is known as the <strong>F-statistic</strong>, which is usually used to test for the <strong>equality of variance</strong>.</p>
 <h2 id="maximum-likelihood-estimation"><strong>Maximum Likelihood Estimation</strong><a class="headerlink" href="#maximum-likelihood-estimation" title="Permanent link">&para;</a></h2>
-<p>If the population distribution is known, there is an <strong>alternative method of estimating</strong> the parameters apart from calculating the corresponding sample statistics.</p>
-<p>We model a set of observations as a random sample from an unknown joint probability distribution which is expressed in terms of a set of parameters.
-The goal of maximum likelihood estimation is to determine the parameters for which the observed data have the highest joint probability.</p>
-<p>The goal of maximum likelihood estimation is to find the values of the model parameters that maximize the likelihood function over the parameter space</p>
+<p>If the <strong>population distribution is known</strong>, there is an <strong>alternative method of estimating</strong> the parameters apart from calculating the corresponding sample statistics, known as <strong>Maximum Likelihood Estimation</strong> (MLE).</p>
+<p>There are an infinite number of <strong>variations of the distribution</strong> that could have resulted in the sample, each with <strong>different parameters</strong>.</p>
+<p>Technically speaking, any set of parameters could have resulted in the sample. However, the goal of MLE is to find the set of <strong>parameters that are most likely to result in the sample</strong>; in other words, the <strong>probability of obtaining this sample is the highest</strong> with this set of paramters than any other set.</p>
+<p>The probability of obtaining the sample is known as its <strong>Likelihood</strong>:</p>
+<div class="arithmatex">\[
+     L(\theta \mid x) = P_{\theta} (X = x)
+\]</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Likelihood functions and PMF/PDFs are often confused with one another as they involve the same expression.</p>
+<p>The key is <strong>understanding what is given and what is random</strong>, which results in the subtle but differing notation:</p>
+<ul>
+<li><strong>PMF/PDF</strong>: Given parameters, outcomes are random; <span class="arithmatex">\(P_{X}(x)\)</span></li>
+<li><strong>Likelihood</strong>: Given outcomes, parameters are random; <span class="arithmatex">\(P_{\theta}(x)\)</span></li>
+</ul>
+</div>
+<p>Assuming that the sample is iid, the likehood for the entire sample is the <strong>product of the likelihood for each observation</strong>, known as the <strong>Likelihood Function</strong>:</p>
+<div class="arithmatex">\[
+    L(\theta) = \prod P_{\theta}(X = x_i)
+\]</div>
+<p>The goal is to find the parameters that <strong>maximizes</strong> the likelihood function through calculus:</p>
+<div class="arithmatex">\[
+    \frac{d}{d\theta} L(\theta) = 0
+\]</div>
+<p>In practice, especially when dealing with multiple parameters, the likelihood function is complicated to work with. Thus, a <strong>log transformation</strong> is often applied to simplify it, turning the product into a summation.</p>
+<p>This is known as the <strong>Log-Likelihood Function</strong>. Since the logarithm transform is monotonic, both the likelihood and log-likelihood functions share the <strong>same maximum</strong>.</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \ell (\theta) &amp;= \ln L(\theta) \\
+    \therefore \frac{d}{d\theta} \ell (\theta) &amp;= 0
+\end{aligned}
+\]</div>
+<h3 id="method-of-moments"><strong>Method of Moments</strong><a class="headerlink" href="#method-of-moments" title="Permanent link">&para;</a></h3>
+<p>An alternative method for estimating population parameters is the <strong>Method of Moments</strong> (MOM).</p>
+<p>It is based on the <strong>Law of Large Numbers</strong>, which states that the sample mean converges to the population mean (first raw moment), given a <strong>sufficiently large sample size</strong>.</p>
+<p>Thus, by <strong>equating the sample raw moments to the population raw moments</strong>, up to the number of parameters to estimate, we can solve for an estimate of the parameters.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If there is only one parameter to estimate, then only the first raw moments are equated. If there are two, then the second raw moment should be equated as well.</p>
+</div>
+<div class="arithmatex">\[
+\begin{aligned}
+    E(X^k)
+    &amp;= \bar{x} \\
+    &amp;= \frac{\sum x^k_i}{n}
+\end{aligned}
+\]</div>
+<p>The main advantage of this method is that it is <strong>computationally simpler</strong> than MLE. For certain known distributions, the MOM estimate and MLE estimate are the same, thus MOM can be used as a <strong>shortcut for MLE</strong>.</p>
 
 
 

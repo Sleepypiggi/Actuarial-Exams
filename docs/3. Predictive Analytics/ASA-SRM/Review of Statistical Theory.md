@@ -305,7 +305,7 @@ $$
     \frac{d}{d\theta} L(\theta) = 0
 $$
 
-In practice, especially when dealing with multiple parameters, the likelihood function is complicated to work with. Thus, a **log transformation** is often applied to simplify it, turning the product into a summation.
+In practice, especially when dealing with multiple parameters, the likelihood function is complicated to work with. Thus, a **log transformation** is often applied to simplify it, turning the **product into a summation**.
 
 This is known as the **Log-Likelihood Function**. Since the logarithm transform is monotonic, both the likelihood and log-likelihood functions share the **same maximum**.
 
@@ -315,6 +315,33 @@ $$
     \therefore \frac{d}{d\theta} \ell (\theta) &= 0
 \end{aligned}
 $$
+
+The PMF/PDF of the underlying distributions often have their **parameters embedded in some complicated expression**. Thus, it may be easier to simplify these expressions via subsitution:
+
+$$
+    p = e^{-\frac{100}{\theta}}
+$$
+
+### **Logarithm Rules**
+
+A quick review of the rules of **manipulating logarithms** can be found below:
+
+<!-- Obtained from Chilli Math -->
+![Logarithm Rules](Assets/Review%20of%20Statistical%20Theory.md/Logarithm%20Rules.png){.center}
+
+!!! Warning
+
+    Note that rule 1 and 2 are often **misunderstood**, leading people to believe that the following is true when they are NOT:
+
+    $$
+    \begin{aligned}
+        \ln (A + B) &= \ln A \cdot \ln B \\
+        \ln (A - B) &= \frac{\ln A}{\ln B} 
+    \end{aligned}
+    $$
+
+<!-- Obtained from Online Math Learning -->
+![Logarithm Derivatives](Assets/Review%20of%20Statistical%20Theory.md/Logarithm%20Derivatives.png){.center}
 
 ### **Method of Moments**
 
