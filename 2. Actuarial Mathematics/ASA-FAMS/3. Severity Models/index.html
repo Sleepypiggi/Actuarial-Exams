@@ -299,6 +299,95 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1. Introductory/ASA-IFM/1. Derivatives/Options.md" class="md-nav__link">
+        Options
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.%20Introductory/ASA-IFM/1.%20Derivatives/5.%20Binomial%20Model/" class="md-nav__link">
+        Binomial Model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.%20Introductory/ASA-IFM/1.%20Derivatives/6.%20Black%20Scholes%20Model/" class="md-nav__link">
+        Black Scholes Model
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3_2" type="checkbox" id="__nav_1_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_3_2">
+          Corporate Finance
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Corporate Finance" data-md-level="3">
+        <label class="md-nav__title" for="__nav_1_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Corporate Finance
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1. Introductory/ASA-IFM/1. Corporate Finance/3. Decision Making.md" class="md-nav__link">
+        Risk Measures
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -498,7 +587,14 @@
     Exponential Distribution
   </a>
   
-    <nav class="md-nav" aria-label="Exponential Distribution">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alternative-parameterization" class="md-nav__link">
+    Alternative Parameterization
+  </a>
+  
+    <nav class="md-nav" aria-label="Alternative Parameterization">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1204,7 +1300,14 @@
     Exponential Distribution
   </a>
   
-    <nav class="md-nav" aria-label="Exponential Distribution">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alternative-parameterization" class="md-nav__link">
+    Alternative Parameterization
+  </a>
+  
+    <nav class="md-nav" aria-label="Alternative Parameterization">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1359,7 +1462,7 @@
 <div class="arithmatex">\[
     P(Z \le z) = \Phi(z)
 \]</div>
-<p>Since the exam provides a values the CDF of Z, most calculations involving a normal distribution will have first have to be standardized and then calculated using its CDF:</p>
+<p>Since the exam provides values for the <strong>CDF of Z</strong>, most calculations involving a normal distribution will have first have to be standardized and then calculated using its CDF:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     P(X \le x)
@@ -1368,6 +1471,13 @@
     &amp;= \Phi \left(\frac{x - E(X)}{\sqrt{Var (X)}} \right)
 \end{aligned}
 \]</div>
+<p>The reverse is also common whereby the <strong>probability is provided</strong> to solve for the value of Z and hence the value of the underlying variable. The issue is that most of the time, the probability provided <strong>will not be exactly equal</strong> to the values on the table. In such a case, the <strong>midpoint between two values of Z</strong> will be taken:</p>
+<ul>
+<li>Given: <span class="arithmatex">\(P = 0.95\)</span></li>
+<li>Table Value: <span class="arithmatex">\(Z = 1.64, P = 0.9495\)</span></li>
+<li>Table Value: <span class="arithmatex">\(Z = 1.65, P = 0.9505\)</span></li>
+<li>Midpoint: <span class="arithmatex">\(Z = 1.645\)</span></li>
+</ul>
 <h4 id="lognormal-distribution"><strong>Lognormal Distribution</strong><a class="headerlink" href="#lognormal-distribution" title="Permanent link">&para;</a></h4>
 <p>A <strong>exponential transformed</strong> normal distribution is known as the <strong>Lognormal Distribution</strong> as it has a logarithm applied to it.</p>
 <p>It shares the <strong>same two parameters as a regular normal distribution</strong>, but they are <strong>NOT the mean and variance</strong> of the lognormal distribution.</p>
@@ -1418,18 +1528,16 @@
 \]</div>
 <h3 id="exponential-distribution"><strong>Exponential Distribution</strong><a class="headerlink" href="#exponential-distribution" title="Permanent link">&para;</a></h3>
 <p>The <strong>Exponential Distribution</strong> is used to model the <strong>time taken</strong> for the <strong>first event</strong> to occur in a <strong>Poisson Process</strong>.</p>
-<p>It has a single parameter <span class="arithmatex">\(\theta\)</span>, which represents the <strong>rate</strong> at which events occur, which can be LOOSELY thought of as the "probability" of the event occuring per unit time:</p>
+<p>It has a single parameter <span class="arithmatex">\(\lambda\)</span>, which represents the <strong>rate</strong> at which events occur, which can be LOOSELY thought of as the "probability" of the event occuring per unit time:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    X
-    &amp;\sim \text{Exponential} (\theta) \\
-    &amp;\sim \text{Exponential} \left(\frac{1}{\mu} \right) \\
+    X &amp;\sim \text{Exponential} (\lambda) \\
     \\
-    f(x) &amp;= 1 - \theta \cdot e^{-\theta x} \\
-    F(x) &amp;= 1 - e^{-\theta x} \\
+    f(x) &amp;= 1 - \lambda \cdot e^{-\lambda x} \\
+    F(x) &amp;= 1 - e^{-\lambda x} \\
     \\
-    E(x) &amp;= \frac{1}{\theta} \\
-    Var (x) &amp;= \frac{1}{\theta^2}
+    E(x) &amp;= \frac{1}{\lambda} \\
+    Var (x) &amp;= \frac{1}{\lambda^2}
 \end{aligned}
 \]</div>
 <p>Similar to the geometric distribution, the exponential distribution is <strong>Memoryless</strong>. Recall that the intuition is that the rate that the event occurs <strong>remains constant over time</strong>.</p>
@@ -1440,6 +1548,22 @@
     Var(X &gt; m + x \mid X \ge m) &amp;= Var(X)
 \end{aligned}
 \]</div>
+<h3 id="alternative-parameterization"><strong>Alternative Parameterization</strong><a class="headerlink" href="#alternative-parameterization" title="Permanent link">&para;</a></h3>
+<p>Given that the Exponential and Poisson Distributions are related, the exponential distribution can also be <strong>parameterized in terms the poisson parameter <span class="arithmatex">\(\mu\)</span></strong>.</p>
+<p>In fact, the <strong>rate is simply the inverse of the mean</strong>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \lambda &amp;= \frac{1}{\mu} \\
+    \therefore X &amp;\sim \text{Exponential} \left(\frac{1}{\mu} \right) \\
+    \\
+    f(x) &amp;= 1 - \lambda \cdot e^{-\frac{x}{\mu}} \\
+    F(x) &amp;= 1 - e^{-\frac{x}{\mu}} \\
+    \\
+    E(x) &amp;= \mu \\
+    Var (x) &amp;= \mu^2
+\end{aligned}
+\]</div>
+<p>This version of the exponential distribution will be more useful for the exam as it is provided on the formula sheet. Note that the formula sheet uses <span class="arithmatex">\(\theta\)</span> instead of <span class="arithmatex">\(\mu\)</span>, which is what will be used for all other exponential related distributions.</p>
 <h4 id="gamma-distribution"><strong>Gamma Distribution</strong><a class="headerlink" href="#gamma-distribution" title="Permanent link">&para;</a></h4>
 <p>The <strong>Gamma Distribution</strong> is used to model the <strong>total time</strong> till the <span class="arithmatex">\(\alpha\)</span>-th event occurs in a Poisson Process.</p>
 <!-- Obtained from Wikipedia -->
@@ -1447,11 +1571,11 @@
 <p>It has two parameters:</p>
 <ul>
 <li><span class="arithmatex">\(\alpha\)</span>: The number of events</li>
-<li><span class="arithmatex">\(\theta\)</span>: The rate at which events occur</li>
+<li><span class="arithmatex">\(\theta\)</span>: Mean</li>
 </ul>
 <div class="arithmatex">\[
 \begin{aligned}
-    X \sim \text{Gamma}(\alpha, \theta) \\
+    X &amp;\sim \text{Gamma}(\alpha, \theta) \\
     \\
     f(x) &amp;= \frac{\theta e^{-\theta x} \cdot (\theta x)^{\alpha - 1}}{\Gamma(\alpha)} \\
     \Gamma(\alpha) &amp;= (\alpha - 1)! \\
@@ -1466,7 +1590,7 @@
 <div class="arithmatex">\[
 \begin{aligned}
     X &amp;\sim \text{Gamma} (\alpha, \theta) \\
-    N &amp;\sim \text{Poisson} (\theta \cdot x) \\
+    N &amp;\sim \text{Poisson} (\frac{x}{\theta}) \\
     \\
     \therefore P(X \le x) &amp;= P(N \le \alpha - 1)
 \end{aligned}
