@@ -211,6 +211,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../1. Introductory/1. Review of Mathematics.md" class="md-nav__link">
+        Review of Mathematics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../Placeholder.md" class="md-nav__link">
         ASA-P
       </a>
@@ -242,18 +256,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" type="checkbox" id="__nav_1_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_1_3">
+        <label class="md-nav__link" for="__nav_1_4">
           ASA-IFM
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="ASA-IFM" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_3">
+        <label class="md-nav__title" for="__nav_1_4">
           <span class="md-nav__icon md-icon"></span>
           ASA-IFM
         </label>
@@ -268,18 +282,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3_1" type="checkbox" id="__nav_1_3_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4_1" type="checkbox" id="__nav_1_4_1" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_1_3_1">
+        <label class="md-nav__link" for="__nav_1_4_1">
           Derivatives
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Derivatives" data-md-level="3">
-        <label class="md-nav__title" for="__nav_1_3_1">
+        <label class="md-nav__title" for="__nav_1_4_1">
           <span class="md-nav__icon md-icon"></span>
           Derivatives
         </label>
@@ -357,18 +371,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3_2" type="checkbox" id="__nav_1_3_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4_2" type="checkbox" id="__nav_1_4_2" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_1_3_2">
+        <label class="md-nav__link" for="__nav_1_4_2">
           Corporate Finance
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Corporate Finance" data-md-level="3">
-        <label class="md-nav__title" for="__nav_1_3_2">
+        <label class="md-nav__title" for="__nav_1_4_2">
           <span class="md-nav__icon md-icon"></span>
           Corporate Finance
         </label>
@@ -577,15 +591,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#franchise-deductibles" class="md-nav__link">
-    Franchise Deductibles
+  <a href="#variance-of-payments" class="md-nav__link">
+    Variance of Payments
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#effect-on-frequency-distribution" class="md-nav__link">
-    Effect on Frequency Distribution
+  <a href="#franchise-deductibles" class="md-nav__link">
+    Franchise Deductibles
   </a>
   
 </li>
@@ -1237,15 +1251,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#franchise-deductibles" class="md-nav__link">
-    Franchise Deductibles
+  <a href="#variance-of-payments" class="md-nav__link">
+    Variance of Payments
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#effect-on-frequency-distribution" class="md-nav__link">
-    Effect on Frequency Distribution
+  <a href="#franchise-deductibles" class="md-nav__link">
+    Franchise Deductibles
   </a>
   
 </li>
@@ -1431,7 +1445,7 @@
 \end{aligned}
 \]</div>
 <p>Thus, the values for <span class="arithmatex">\(Y^L\)</span> and <span class="arithmatex">\(Y^P\)</span> can be <strong>easily converted to one another</strong> by using the weight of the mixture (probability of a positive payment).</p>
-<p>Additionally, since <span class="arithmatex">\(Y^P\)</span> is essentially <span class="arithmatex">\(Y^L\)</span> being conditional on itself, we can easily obtain its conditional distribution:</p>
+<p>Additionally, since <span class="arithmatex">\(Y^P\)</span> is essentially <span class="arithmatex">\(Y^L\)</span> being conditional on itself, we can easily obtain its <strong>conditional distribution</strong>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     f_{Y_P} (y)
@@ -1439,6 +1453,10 @@
     &amp;= \frac{f_{Y^L} (y)}{P(Y^L \gt 0)}
 \end{aligned}
 \]</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If <span class="arithmatex">\(Y^L\)</span> follows a distribution with the <strong>memoryless property</strong>, then the distribution of <span class="arithmatex">\(Y^P\)</span> is the <strong>same</strong> as <span class="arithmatex">\(Y^L\)</span>.</p>
+</div>
 <p>Note that for all losses <strong>without deductibles</strong>, a loss will always result in a claim. Thus, <span class="arithmatex">\(Y^P = Y^L\)</span>.</p>
 <h2 id="ordinary-deductibles"><strong>Ordinary Deductibles</strong><a class="headerlink" href="#ordinary-deductibles" title="Permanent link">&para;</a></h2>
 <p>The first type of policy modification is known as a <strong>Deductible</strong>, denoted by <span class="arithmatex">\(d\)</span>. It is the amount that the policyholder is responsible for paying before the insurer pays a claim:</p>
@@ -1497,23 +1515,12 @@ X \land d
 <p class="admonition-title">Tip</p>
 <p>An intuitive way to remember is that <span class="arithmatex">\(\text{Claim} = \text{Full Loss} - \text{Limited Loss}\)</span>.</p>
 </div>
-<p>However, the above formula for expectation <strong>only holds for the first raw moment</strong>. Thus, if higher moments are required, then it must be calculated from <strong>first principles</strong>:</p>
-<div class="arithmatex">\[
-\begin{aligned}
-    E \left(Y^L \right)
-    &amp;= E \left[(X-d)_{+} \right] \\
-    &amp;= \int^{d}_{0} 0 \cdot f(x) + \int^{\infty}_{d} (x-d) \cdot f(x) \\
-    &amp;= \int^{\infty}_{d} (x-d) \cdot f(x) \\
-    \\
-    \therefore E \left[ \left(Y^L \right)^k \right] &amp;= \int^{\infty}_{d} (x-d)^k \cdot f(x)
-\end{aligned}
-\]</div>
 <p>In practice, policyholders would <strong>not report losses below the deductible</strong>. Thus, the insurers payment is better represented by the <strong>Payment Per Payment</strong> variable, also known as the <strong>Excess Loss Variable</strong>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     Y^P
     &amp;= Y^L \mid Y^L \gt 0 \\
-    &amp;=  Y^L \mid X \gt d \\
+    &amp;=  X - d \mid X \gt d \\
     &amp;=
     \begin{cases}
         \text{Undefined},&amp; X \le d\\
@@ -1530,9 +1537,6 @@ X \land d
     &amp;= \int^{\infty}_{d} (x-d) \cdot \frac{f_{Y^L} (y)}{1 - F_{X}(d)} \\
     &amp;= \frac{1}{1 - F_{X}(d)} \cdot \int^{\infty}_{d} (x-d) \cdot f_{Y^L} (y) \\
     &amp;= \frac{E \left(Y^L \right)}{1 - F_{X}(d)} \\
-    \\
-    \therefore E \left[\left(Y^P \right)^k \right]
-    &amp;= \frac{E \left[\left(Y^L \right)^k \right]}{1 - F_{X}(d)}
 \end{aligned}
 \]</div>
 <p>The key metric insurers look out for is the <strong>Loss Elimintation Ratio</strong> (LER), which is a measure of <strong>how much the insurer saves</strong> by imposing the deductible; how much less they end up paying.</p>
@@ -1545,6 +1549,27 @@ X \land d
     &amp;= \frac{E \left[X-(X-d)_{+} \right]}{E(X)} \\
     &amp;= \frac{E(X \land d)}{E(X)}
 \end{aligned}
+\]</div>
+<h3 id="variance-of-payments"><strong>Variance of Payments</strong><a class="headerlink" href="#variance-of-payments" title="Permanent link">&para;</a></h3>
+<p>Unfortunately, the formula for expectation <strong>ONLY holds for the first raw moment</strong>. Thus, the second moment can only be calculated via <strong>first principles</strong>.</p>
+<p>If severity is continuous, then the <strong>survival function method</strong> (FAM-L) can be used to calculate the second moment:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    E \left(Y^L \right)
+    &amp;= E \left[(X-d)_{+} \right] \\
+    &amp;= \int^{d}_{0} 0 \cdot f(x) + \int^{\infty}_{d} (x-d) \cdot f(x) \\
+    &amp;= \int^{\infty}_{d} (x-d) \cdot f(x) \\
+    \\
+    E \left[ \left(Y^L \right) \right]^2
+    &amp;= \int^{\infty}_{d} (x-d)^2 \cdot f(x) \\
+    &amp;= [S_X(x) \cdot (x-d)^2]^{\infty}_{d} - \int^{\infty}_{d} -S(x) \cdot 2(x-d) \\
+    &amp;= \int^{\infty}_{d} S(x) \cdot 2(x-d)
+\end{aligned}
+\]</div>
+<p>If severity is discrete, then determine <strong>all possible values</strong> for <span class="arithmatex">\(Y^L\)</span> and then manually calculate the second moment as the sum product.</p>
+<p>If the variance of the payment per payment variable is required, then the <strong>same conversion</strong> applies for the second moment as well:</p>
+<div class="arithmatex">\[
+    E \left[ \left(Y^P \right) \right]^2 = \frac{E \left[ \left(Y^L \right) \right]^2}{P(X \gt d)}
 \]</div>
 <h3 id="franchise-deductibles"><strong>Franchise Deductibles</strong><a class="headerlink" href="#franchise-deductibles" title="Permanent link">&para;</a></h3>
 <p>A special kind of deductible is known as <strong>Franchise Deductible</strong>. Unlike a regular deductible that will only pay the excess, it will pay the <strong>full amount</strong>.</p>
@@ -1582,57 +1607,6 @@ X \land d
     &amp;= E \left(Y^P \right) + d
 \end{aligned}
 \]</div>
-<h3 id="effect-on-frequency-distribution"><strong>Effect on Frequency Distribution</strong><a class="headerlink" href="#effect-on-frequency-distribution" title="Permanent link">&para;</a></h3>
-<p>Imposing a deductibles will always <strong>decrease the number of payments</strong>, resulting a <strong>adjusted frequency distribution</strong> <span class="arithmatex">\((N^{*})\)</span>.</p>
-<p>Consider a <strong>Bernoulli Indicator variable</strong> that takes on the value 1 if a payment will be made and 0 if it will not:</p>
-<div class="arithmatex">\[
-\begin{aligned}
-    I
-    &amp;=
-    \begin{cases}
-        1 (\text{Success}),&amp; X \gt d \\
-        0 (\text{Failure}),&amp; X \le d
-    \end{cases} \\
-    \\
-    v &amp;= P(X \gt d) \\
-    P_I(t) &amp;= 1 + v(t-1)
-\end{aligned}
-\]</div>
-<p><span class="arithmatex">\(N^{*}\)</span> is the <strong>sum of <span class="arithmatex">\(N\)</span> idendepent indicator variables</strong>:</p>
-<div class="arithmatex">\[
-    N^{*} = I_1 + I_2 + \dots + I_N
-\]</div>
-<p>It is essentially a <strong>Compound Distribution</strong> with <span class="arithmatex">\(N\)</span> being the primary distribution and <span class="arithmatex">\(I\)</span> being the secondary distribution. Thus, the PGF of <span class="arithmatex">\(N^{*}\)</span> can be determined:</p>
-<div class="arithmatex">\[
-\begin{aligned}
-    P_{N^*}
-    &amp;= P_{N}[P_{I}(t)] \\
-    &amp;= P_{N}[1 + p(t-1)]
-\end{aligned}
-\]</div>
-<p>By expanding simplfying the expression, the distribution of <span class="arithmatex">\(N^{*}\)</span> can be determined:</p>
-<div class="arithmatex">\[
-\begin{aligned}
-    N &amp;\sim \text{Poisson}(\mu) \\
-    \\
-    P_{N}[1 + p(t-1)]
-    &amp;= e^{\mu(1 + v(z-1) -1)} \\
-    &amp;= e^{\mu (v(z-1))} \\
-    &amp;= e^{v\mu (z-1)} \\
-    \\
-    \therefore N^{*} &amp;\sim \text{Poisson}(v \cdot \mu)
-\end{aligned}
-\]</div>
-<p>Repeating the process for the other two members of the (a, b, 0) class,</p>
-<div class="arithmatex">\[
-\begin{aligned}
-   N &amp;\sim \text{Binomial} (n, p) \\
-   \therefore N^{*} &amp;\sim \text{Binomial} (n, pv) \\
-   \\
-   N &amp;\sim \text{Negative Binomial} (r, \theta) \\
-   \therefore N^{*} &amp;\sim \text{Negative Binomial} (r, v \theta)
-\end{aligned}
-\]</div>
 <h2 id="coinsurance"><strong>Coinsurance</strong><a class="headerlink" href="#coinsurance" title="Permanent link">&para;</a></h2>
 <p>Another type of policy modification is known as <strong>Coinsurance</strong>, denoted by <span class="arithmatex">\(\alpha\)</span>. As its name suggests, the key idea is that <strong>both the insurer and policyholder insure the loss</strong>.</p>
 <p>The insurer covers <span class="arithmatex">\(\alpha\)</span> proportion of the loss while the poliyholder covers the remaining <span class="arithmatex">\(1-\alpha\)</span> proportion.</p>
@@ -1640,13 +1614,11 @@ X \land d
 \begin{aligned}
     Y^L &amp;= \alpha \cdot X \\
     E \left(Y^L \right) &amp;= \alpha \cdot E(X) \\
-    \\
-    \therefore E \left[\left(Y^L \right)^k \right] &amp;= \alpha^k \cdot E(X^k)
 \end{aligned}
 \]</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>In Singapore, Co-insurance usually refers to the portion of the loss that the <em>policyholder</em> is responsible for, opposite of the above definition. Do not confuse the two!</p>
+<p>Co-insurance usually refers to the portion of the loss that the <em>policyholder</em> is responsible for. However, for this exam, we are taking the insurers perspective, thus it refers to the amount that the <em>insurer</em> is responsible for. Do not confuse the two!</p>
 </div>
 <h3 id="with-deductibles"><strong>With Deductibles</strong><a class="headerlink" href="#with-deductibles" title="Permanent link">&para;</a></h3>
 <p>Coinsurance on its own is a simple concept - the difficulty comes about when it is <strong>mixed with a Deductible</strong>, which is a fairly common type of question.</p>
@@ -1743,16 +1715,23 @@ X \land d
     \end{cases} \\
     &amp;= X \land u \\
     \\
-    E \left(Y^L \right)
-    &amp;= \int^{u}_{0} x \cdot f(x) + \int^{\infty}_{u} u \cdot f(x) \\
-    &amp;= \int^{u}_{0} x \cdot f(x) + u \cdot \int^{\infty}_{u} f(x) \\
-    &amp;= \int^{u}_{0} x \cdot f(x) + u \cdot \left[1 - F_X(u) \right] \\
+    E \left(Y^L \right) &amp;= \int^{u}_{0} x \cdot f(x) + \int^{\infty}_{u} u \cdot f(x) \\
 \end{aligned}
 \]</div>
-<p>Similar to deductibles, higher moments of payments involving policy limits must be calculated from <strong>first principles</strong>:</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Under a deductible, <span class="arithmatex">\(X \land d\)</span> represents the <strong>limited loss</strong> of the <em>policyholder</em>.</p>
+<p>Under a policy limit, <span class="arithmatex">\(x \land u\)</span> represents the <strong>limited payment</strong> of the <em>insurer</em>.</p>
+</div>
+<p>Note that the expectation can be simplified using the <strong>Survival Function Method</strong> (FAM-L):</p>
 <div class="arithmatex">\[
-    \therefore E \left[\left(Y^L \right)^k \right]
-    = \int^{u}_{0} x^k \cdot f(x) + u^k \cdot \left[1 - F_X(u) \right]
+\begin{aligned}
+    E \left(Y^L \right)
+    &amp;= \int^{u}_{0} x \cdot f(x) + \int^{\infty}_{u} u \cdot f(x) \\
+    &amp;= \left(\left[x \cdot (-S(x)) \right]^u_0 - \int^{u}_{0} (-S(x)) \cdot 1 \right) + u \cdot S(u) \\
+    &amp;= -u \cdot S(u) - 0 + \int^{u}_{0} S(x) + u \cdot S(u) \\
+    &amp;= \int^{u}_{0} S(x) dx
+\end{aligned}
 \]</div>
 <p>Similar to the LER, insurers would like to find out <strong>how much more</strong> they have to pay if they were to increase the policy limit, measured through the <strong>Increased Limit Factor</strong> (ILF).</p>
 <p>It is calculated as the <strong>ratio</strong> of the expected payment with the new limit <span class="arithmatex">\(b\)</span> to that of the current limit <span class="arithmatex">\(u\)</span>:</p>

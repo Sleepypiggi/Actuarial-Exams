@@ -211,6 +211,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../1. Introductory/1. Review of Mathematics.md" class="md-nav__link">
+        Review of Mathematics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../Placeholder.md" class="md-nav__link">
         ASA-P
       </a>
@@ -242,18 +256,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" type="checkbox" id="__nav_1_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_1_3">
+        <label class="md-nav__link" for="__nav_1_4">
           ASA-IFM
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="ASA-IFM" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_3">
+        <label class="md-nav__title" for="__nav_1_4">
           <span class="md-nav__icon md-icon"></span>
           ASA-IFM
         </label>
@@ -268,18 +282,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3_1" type="checkbox" id="__nav_1_3_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4_1" type="checkbox" id="__nav_1_4_1" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_1_3_1">
+        <label class="md-nav__link" for="__nav_1_4_1">
           Derivatives
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Derivatives" data-md-level="3">
-        <label class="md-nav__title" for="__nav_1_3_1">
+        <label class="md-nav__title" for="__nav_1_4_1">
           <span class="md-nav__icon md-icon"></span>
           Derivatives
         </label>
@@ -357,18 +371,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3_2" type="checkbox" id="__nav_1_3_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4_2" type="checkbox" id="__nav_1_4_2" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_1_3_2">
+        <label class="md-nav__link" for="__nav_1_4_2">
           Corporate Finance
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Corporate Finance" data-md-level="3">
-        <label class="md-nav__title" for="__nav_1_3_2">
+        <label class="md-nav__title" for="__nav_1_4_2">
           <span class="md-nav__icon md-icon"></span>
           Corporate Finance
         </label>
@@ -989,8 +1003,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#logarithm-rules" class="md-nav__link">
-    Logarithm Rules
+  <a href="#practical-tips" class="md-nav__link">
+    Practical Tips
   </a>
   
 </li>
@@ -1286,8 +1300,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#logarithm-rules" class="md-nav__link">
-    Logarithm Rules
+  <a href="#practical-tips" class="md-nav__link">
+    Practical Tips
   </a>
   
 </li>
@@ -1601,26 +1615,34 @@ t_{n-1}^2
     \therefore \frac{d}{d\theta} \ell (\theta) &amp;= 0
 \end{aligned}
 \]</div>
-<p>The PMF/PDF of the underlying distributions often have their <strong>parameters embedded in some complicated expression</strong>. Thus, it may be easier to simplify these expressions via subsitution:</p>
-<div class="arithmatex">\[
-    p = e^{-\frac{100}{\theta}}
-\]</div>
-<h3 id="logarithm-rules"><strong>Logarithm Rules</strong><a class="headerlink" href="#logarithm-rules" title="Permanent link">&para;</a></h3>
-<p>A quick review of the rules of <strong>manipulating logarithms</strong> can be found below:</p>
-<!-- Obtained from Chilli Math -->
-<p><img alt="Logarithm Rules" class="center" src="../Assets/Review%20of%20Statistical%20Theory.md/Logarithm%20Rules.png" /></p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Note that rule 1 and 2 are often <strong>misunderstood</strong>, leading people to believe that the following is true when they are NOT:</p>
+<h3 id="practical-tips"><strong>Practical Tips</strong><a class="headerlink" href="#practical-tips" title="Permanent link">&para;</a></h3>
+<p>Some distributions have complicated PMF/PDFs that make working with them more complicated. Most questions will usually have <strong>some method to simplify the likelihood function</strong>.</p>
+<p>The first tip is to understand that since the likelihood function will be logarithm transformed and then differentiated, <strong>factors that contains ONLY constants can be dropped</strong> since they will inevitably be removed later:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    \ln (A + B) &amp;= \ln A \cdot \ln B \\
-    \ln (A - B) &amp;= \frac{\ln A}{\ln B} 
+    L(\theta) &amp;= a * x \\
+    \ell (\theta) &amp;= \ln a + \ln x \\
+    \ell' (\theta) &amp;= \frac{1}{x} \\
+    \\
+    \therefore L(\theta) \propto x
 \end{aligned}
 \]</div>
-</div>
-<!-- Obtained from Online Math Learning -->
-<p><img alt="Logarithm Derivatives" class="center" src="../Assets/Review%20of%20Statistical%20Theory.md/Logarithm%20Derivatives.png" /></p>
+<p>The next tip is that if the parameters are <strong>embedded in the power</strong> of some constant, they should be combined together:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    L(\theta)
+    &amp;= a^{\theta} \cdot b^{\theta} \cdot c^{\theta} \\
+    &amp;= (a \cdot b \cdot c)^{\theta}
+\end{aligned}
+\]</div>
+<p>The reverse also applies...divide power, may not be in the same term, could come from another term</p>
+<p>However, if the above terms for some reason are <strong>added instead of multiplied</strong>, then a <strong>substituition</strong> method would be better:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    L(\theta) &amp;= e^{-\frac{k}{100}} - \left(e^{-\frac{k}{100}} \right)^2 \\
+    L(\theta) &amp;= p - p^2
+\end{aligned}
+\]</div>
 <h3 id="method-of-moments"><strong>Method of Moments</strong><a class="headerlink" href="#method-of-moments" title="Permanent link">&para;</a></h3>
 <p>An alternative method for estimating population parameters is the <strong>Method of Moments</strong> (MOM).</p>
 <p>It is based on the <strong>Law of Large Numbers</strong>, which states that the sample mean converges to the population mean (first raw moment), given a <strong>sufficiently large sample size</strong>.</p>
