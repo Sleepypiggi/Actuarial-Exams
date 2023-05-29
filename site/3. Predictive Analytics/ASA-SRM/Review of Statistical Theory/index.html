@@ -299,6 +299,95 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1. Introductory/ASA-IFM/1. Derivatives/Options.md" class="md-nav__link">
+        Options
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.%20Introductory/ASA-IFM/1.%20Derivatives/5.%20Binomial%20Model/" class="md-nav__link">
+        Binomial Model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.%20Introductory/ASA-IFM/1.%20Derivatives/6.%20Black%20Scholes%20Model/" class="md-nav__link">
+        Black Scholes Model
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3_2" type="checkbox" id="__nav_1_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_3_2">
+          Corporate Finance
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Corporate Finance" data-md-level="3">
+        <label class="md-nav__title" for="__nav_1_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Corporate Finance
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1. Introductory/ASA-IFM/1. Corporate Finance/3. Decision Making.md" class="md-nav__link">
+        Risk Measures
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -900,6 +989,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#logarithm-rules" class="md-nav__link">
+    Logarithm Rules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#method-of-moments" class="md-nav__link">
     Method of Moments
   </a>
@@ -1188,6 +1284,13 @@
   
     <nav class="md-nav" aria-label="Maximum Likelihood Estimation">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logarithm-rules" class="md-nav__link">
+    Logarithm Rules
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#method-of-moments" class="md-nav__link">
@@ -1490,7 +1593,7 @@ t_{n-1}^2
 <div class="arithmatex">\[
     \frac{d}{d\theta} L(\theta) = 0
 \]</div>
-<p>In practice, especially when dealing with multiple parameters, the likelihood function is complicated to work with. Thus, a <strong>log transformation</strong> is often applied to simplify it, turning the product into a summation.</p>
+<p>In practice, especially when dealing with multiple parameters, the likelihood function is complicated to work with. Thus, a <strong>log transformation</strong> is often applied to simplify it, turning the <strong>product into a summation</strong>.</p>
 <p>This is known as the <strong>Log-Likelihood Function</strong>. Since the logarithm transform is monotonic, both the likelihood and log-likelihood functions share the <strong>same maximum</strong>.</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1498,6 +1601,26 @@ t_{n-1}^2
     \therefore \frac{d}{d\theta} \ell (\theta) &amp;= 0
 \end{aligned}
 \]</div>
+<p>The PMF/PDF of the underlying distributions often have their <strong>parameters embedded in some complicated expression</strong>. Thus, it may be easier to simplify these expressions via subsitution:</p>
+<div class="arithmatex">\[
+    p = e^{-\frac{100}{\theta}}
+\]</div>
+<h3 id="logarithm-rules"><strong>Logarithm Rules</strong><a class="headerlink" href="#logarithm-rules" title="Permanent link">&para;</a></h3>
+<p>A quick review of the rules of <strong>manipulating logarithms</strong> can be found below:</p>
+<!-- Obtained from Chilli Math -->
+<p><img alt="Logarithm Rules" class="center" src="../Assets/Review%20of%20Statistical%20Theory.md/Logarithm%20Rules.png" /></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Note that rule 1 and 2 are often <strong>misunderstood</strong>, leading people to believe that the following is true when they are NOT:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \ln (A + B) &amp;= \ln A \cdot \ln B \\
+    \ln (A - B) &amp;= \frac{\ln A}{\ln B} 
+\end{aligned}
+\]</div>
+</div>
+<!-- Obtained from Online Math Learning -->
+<p><img alt="Logarithm Derivatives" class="center" src="../Assets/Review%20of%20Statistical%20Theory.md/Logarithm%20Derivatives.png" /></p>
 <h3 id="method-of-moments"><strong>Method of Moments</strong><a class="headerlink" href="#method-of-moments" title="Permanent link">&para;</a></h3>
 <p>An alternative method for estimating population parameters is the <strong>Method of Moments</strong> (MOM).</p>
 <p>It is based on the <strong>Law of Large Numbers</strong>, which states that the sample mean converges to the population mean (first raw moment), given a <strong>sufficiently large sample size</strong>.</p>

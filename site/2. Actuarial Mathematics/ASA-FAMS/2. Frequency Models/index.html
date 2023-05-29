@@ -299,6 +299,95 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1. Introductory/ASA-IFM/1. Derivatives/Options.md" class="md-nav__link">
+        Options
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.%20Introductory/ASA-IFM/1.%20Derivatives/5.%20Binomial%20Model/" class="md-nav__link">
+        Binomial Model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.%20Introductory/ASA-IFM/1.%20Derivatives/6.%20Black%20Scholes%20Model/" class="md-nav__link">
+        Black Scholes Model
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3_2" type="checkbox" id="__nav_1_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_3_2">
+          Corporate Finance
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Corporate Finance" data-md-level="3">
+        <label class="md-nav__title" for="__nav_1_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Corporate Finance
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1. Introductory/ASA-IFM/1. Corporate Finance/3. Decision Making.md" class="md-nav__link">
+        Risk Measures
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -496,6 +585,13 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alternative-parameterization" class="md-nav__link">
+    Alternative Parameterization
+  </a>
   
 </li>
         
@@ -1187,6 +1283,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#alternative-parameterization" class="md-nav__link">
+    Alternative Parameterization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#poisson-gamma-mixture" class="md-nav__link">
     Poisson Gamma Mixture
   </a>
@@ -1261,9 +1364,9 @@
 <p>The sum of <span class="arithmatex">\(k\)</span> independent poisson random variables is <strong>still poisson</strong>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    N_k &amp;\sim \text{Poisson}(\lambda_k) \\
+    N_k &amp;\sim \text{Poisson}(\mu_k) \\
     N &amp;= N_1 + N_2 + ... + N_k \\
-    \therefore N &amp;\sim \text{Poisson} (\lambda_1 + \lambda_2 + ... + \lambda_k)
+    \therefore N &amp;\sim \text{Poisson} (\mu_1 + \mu_2 + ... + \mu_k)
 \end{aligned}
 \]</div>
 <h3 id="bernoulli-distribution"><strong>Bernoulli Distribution</strong><a class="headerlink" href="#bernoulli-distribution" title="Permanent link">&para;</a></h3>
@@ -1425,10 +1528,19 @@
     \therefore N &amp;\sim \text{Negative Binomial} (r_1 + r_2 + ... + r_k, q)
 \end{aligned}
 \]</div>
-<h3 id="poisson-gamma-mixture"><strong>Poisson Gamma Mixture</strong><a class="headerlink" href="#poisson-gamma-mixture" title="Permanent link">&para;</a></h3>
-<p>TBC
-Re-parameterized, refer to wikipedia
+<h3 id="alternative-parameterization"><strong>Alternative Parameterization</strong><a class="headerlink" href="#alternative-parameterization" title="Permanent link">&para;</a></h3>
+<p>Re-parameterized, refer to wikipedia
 Odds vs Probabiliyu</p>
+<h3 id="poisson-gamma-mixture"><strong>Poisson Gamma Mixture</strong><a class="headerlink" href="#poisson-gamma-mixture" title="Permanent link">&para;</a></h3>
+<p>Consider a poisson distribution with mean <span class="arithmatex">\(\mu\)</span> where <span class="arithmatex">\(\mu\)</span> follows a gamma distribution. The unconditional distribution actually follows a <strong>Negative Binomial Distribution</strong> with the same parameters as the gamma distribution.</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    N \mid \mu &amp;\sim \text{Poisson} (\mu) \\
+    \mu &amp;\sim \text{Gamma} (\alpha, \theta) \\
+    \therefore N &amp;\sim \text{Negative Binomial}(r = \alpha, \beta = \theta)
+\end{aligned}
+\]</div>
+<p>The above result is a <strong>Continuous Mixture</strong> - it is the result of a mixture of an <strong>infinite number of poisson distributions</strong>. Continuous Mixtures are beyond the scope of this exam, which is why the proof is not shown. However, this specific result is important to know.</p>
 <h2 id="a-b-0-class"><strong>(a, b, 0) Class</strong><a class="headerlink" href="#a-b-0-class" title="Permanent link">&para;</a></h2>
 <p>ONLY the distributions discussed above fall into the <strong>(a, b, 0) class</strong> of distributions, as their <strong>PMFs follow the same recursion</strong>:</p>
 <div class="arithmatex">\[

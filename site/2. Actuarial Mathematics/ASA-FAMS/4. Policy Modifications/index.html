@@ -299,6 +299,95 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1. Introductory/ASA-IFM/1. Derivatives/Options.md" class="md-nav__link">
+        Options
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.%20Introductory/ASA-IFM/1.%20Derivatives/5.%20Binomial%20Model/" class="md-nav__link">
+        Binomial Model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.%20Introductory/ASA-IFM/1.%20Derivatives/6.%20Black%20Scholes%20Model/" class="md-nav__link">
+        Black Scholes Model
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3_2" type="checkbox" id="__nav_1_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_3_2">
+          Corporate Finance
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Corporate Finance" data-md-level="3">
+        <label class="md-nav__title" for="__nav_1_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Corporate Finance
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1. Introductory/ASA-IFM/1. Corporate Finance/3. Decision Making.md" class="md-nav__link">
+        Risk Measures
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -494,6 +583,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#effect-on-frequency-distribution" class="md-nav__link">
+    Effect on Frequency Distribution
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -510,6 +606,13 @@
           <li class="md-nav__item">
   <a href="#with-deductibles" class="md-nav__link">
     With Deductibles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bonus-incentive" class="md-nav__link">
+    Bonus Incentive
   </a>
   
 </li>
@@ -1140,6 +1243,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#effect-on-frequency-distribution" class="md-nav__link">
+    Effect on Frequency Distribution
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1156,6 +1266,13 @@
           <li class="md-nav__item">
   <a href="#with-deductibles" class="md-nav__link">
     With Deductibles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bonus-incentive" class="md-nav__link">
+    Bonus Incentive
   </a>
   
 </li>
@@ -1340,6 +1457,27 @@
     \end{cases}
 \end{aligned}
 \]</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If <span class="arithmatex">\(X\)</span> follows a <strong>known distribution</strong>, then <span class="arithmatex">\(E(X \land d)\)</span> can be easily found inside the formula sheet.</p>
+<p>However, if <span class="arithmatex">\(X\)</span> does <strong>NOT follow a known distribution</strong>, then <span class="arithmatex">\(E(X \land d)\)</span> must be found through first principles.</p>
+<p>Most of the time, such questions assume that <strong>losses are discrete</strong> (EG. 40, 80, 120 &amp; 160) with some deductible <strong>not exactly equal</strong> to any of the loss amounts (EG. 100).</p>
+<p>The tricky part is remembering that once the loss is larger the deductible, only the deductible will be paid:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+X \land d
+&amp;=
+\begin{cases}
+    40,&amp; X = 40 \\
+    80,&amp; X = 80 \\
+    100,&amp; X \ge 120
+\end{cases} \\
+\\
+\therefore E(X \land d) &amp;= 40 \cdot P(X = 40) + 80 \cdot P(X = 80) + 100 \cdot [1 - P(X = 40) - P(X = 80)]
+\end{aligned}
+\]</div>
+<p>The key is understanding that the final case is simply the deductible itself, with its probability being the <strong>complement of all other cases below the deductible</strong>.</p>
+</div>
 <p>The <strong>insurer</strong> will then cover the excess amount, represented by the <strong>Payment Per Loss</strong> variable:</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1352,14 +1490,12 @@
     &amp;= (X-d)_{+} \\
     &amp;= X - (X \land d) \\
     \\
-    \therefore
-    E \left(Y^L \right)
-    &amp;= E(X) - E(X \land d)
+    \therefore E \left(Y^L \right) &amp;= E(X) - E(X \land d)
 \end{aligned}
 \]</div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>This is especially useful because for every severity distribution, $E(X) and <span class="arithmatex">\(E(X \land d)\)</span> are <strong>provided in the formula sheet</strong>.</p>
+<p>An intuitive way to remember is that <span class="arithmatex">\(\text{Claim} = \text{Full Loss} - \text{Limited Loss}\)</span>.</p>
 </div>
 <p>However, the above formula for expectation <strong>only holds for the first raw moment</strong>. Thus, if higher moments are required, then it must be calculated from <strong>first principles</strong>:</p>
 <div class="arithmatex">\[
@@ -1446,6 +1582,57 @@
     &amp;= E \left(Y^P \right) + d
 \end{aligned}
 \]</div>
+<h3 id="effect-on-frequency-distribution"><strong>Effect on Frequency Distribution</strong><a class="headerlink" href="#effect-on-frequency-distribution" title="Permanent link">&para;</a></h3>
+<p>Imposing a deductibles will always <strong>decrease the number of payments</strong>, resulting a <strong>adjusted frequency distribution</strong> <span class="arithmatex">\((N^{*})\)</span>.</p>
+<p>Consider a <strong>Bernoulli Indicator variable</strong> that takes on the value 1 if a payment will be made and 0 if it will not:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    I
+    &amp;=
+    \begin{cases}
+        1 (\text{Success}),&amp; X \gt d \\
+        0 (\text{Failure}),&amp; X \le d
+    \end{cases} \\
+    \\
+    v &amp;= P(X \gt d) \\
+    P_I(t) &amp;= 1 + v(t-1)
+\end{aligned}
+\]</div>
+<p><span class="arithmatex">\(N^{*}\)</span> is the <strong>sum of <span class="arithmatex">\(N\)</span> idendepent indicator variables</strong>:</p>
+<div class="arithmatex">\[
+    N^{*} = I_1 + I_2 + \dots + I_N
+\]</div>
+<p>It is essentially a <strong>Compound Distribution</strong> with <span class="arithmatex">\(N\)</span> being the primary distribution and <span class="arithmatex">\(I\)</span> being the secondary distribution. Thus, the PGF of <span class="arithmatex">\(N^{*}\)</span> can be determined:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    P_{N^*}
+    &amp;= P_{N}[P_{I}(t)] \\
+    &amp;= P_{N}[1 + p(t-1)]
+\end{aligned}
+\]</div>
+<p>By expanding simplfying the expression, the distribution of <span class="arithmatex">\(N^{*}\)</span> can be determined:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    N &amp;\sim \text{Poisson}(\mu) \\
+    \\
+    P_{N}[1 + p(t-1)]
+    &amp;= e^{\mu(1 + v(z-1) -1)} \\
+    &amp;= e^{\mu (v(z-1))} \\
+    &amp;= e^{v\mu (z-1)} \\
+    \\
+    \therefore N^{*} &amp;\sim \text{Poisson}(v \cdot \mu)
+\end{aligned}
+\]</div>
+<p>Repeating the process for the other two members of the (a, b, 0) class,</p>
+<div class="arithmatex">\[
+\begin{aligned}
+   N &amp;\sim \text{Binomial} (n, p) \\
+   \therefore N^{*} &amp;\sim \text{Binomial} (n, pv) \\
+   \\
+   N &amp;\sim \text{Negative Binomial} (r, \theta) \\
+   \therefore N^{*} &amp;\sim \text{Negative Binomial} (r, v \theta)
+\end{aligned}
+\]</div>
 <h2 id="coinsurance"><strong>Coinsurance</strong><a class="headerlink" href="#coinsurance" title="Permanent link">&para;</a></h2>
 <p>Another type of policy modification is known as <strong>Coinsurance</strong>, denoted by <span class="arithmatex">\(\alpha\)</span>. As its name suggests, the key idea is that <strong>both the insurer and policyholder insure the loss</strong>.</p>
 <p>The insurer covers <span class="arithmatex">\(\alpha\)</span> proportion of the loss while the poliyholder covers the remaining <span class="arithmatex">\(1-\alpha\)</span> proportion.</p>
@@ -1520,6 +1707,26 @@
 <p class="admonition-title">Warning</p>
 <p>It is a common mistake to forget to <strong>update the deductible to the new one</strong> when using the complement of the CDF for the conversion between <span class="arithmatex">\(Y^L\)</span> and <span class="arithmatex">\(Y^P\)</span>.</p>
 </div>
+<h3 id="bonus-incentive"><strong>Bonus Incentive</strong><a class="headerlink" href="#bonus-incentive" title="Permanent link">&para;</a></h3>
+<p>A <strong>special combination</strong> of a Deductible and Coinsurance is known as a <strong>Bonus Incentive</strong>.</p>
+<p>Insurers usually provide incentives to their agents if the total losses for the year are <strong>below some threshold</strong>, where the incentive is some <strong>percentage of the losses below this amount</strong>.</p>
+<p>Thus, the situation is similar to coinsurance applied after a deductible:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    B
+    &amp;=
+    \begin{cases}
+        \alpha \cdot (d - X),&amp; X \lt d \\
+        0,&amp; X \ge d
+    \end{cases} \\
+    &amp;= \alpha \cdot (d - X)_{+} \\
+    \\
+    \therefore E(B)
+    &amp;= E(d-X)_{+} \\
+    &amp;= E(d) - E(d \land X) \\
+    &amp;= E(d) - E(X \land d)
+\end{aligned}
+\]</div>
 <h2 id="policy-limits"><strong>Policy Limits</strong><a class="headerlink" href="#policy-limits" title="Permanent link">&para;</a></h2>
 <p>The second type of policy modification is known as <strong>Policy Limit</strong>, denoted by <span class="arithmatex">\(u\)</span>. It is the <strong>maximum amount</strong> that the insurer will payout.</p>
 <ul>

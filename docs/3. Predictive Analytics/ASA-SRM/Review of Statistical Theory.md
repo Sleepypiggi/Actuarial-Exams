@@ -316,32 +316,42 @@ $$
 \end{aligned}
 $$
 
-The PMF/PDF of the underlying distributions often have their **parameters embedded in some complicated expression**. Thus, it may be easier to simplify these expressions via subsitution:
+### **Practical Tips**
+
+Some distributions have complicated PMF/PDFs that make working with them more complicated. Most questions will usually have **some method to simplify the likelihood function**.
+
+The first tip is to understand that since the likelihood function will be logarithm transformed and then differentiated, **factors that contains ONLY constants can be dropped** since they will inevitably be removed later:
 
 $$
-    p = e^{-\frac{100}{\theta}}
+\begin{aligned}
+    L(\theta) &= a * x \\
+    \ell (\theta) &= \ln a + \ln x \\
+    \ell' (\theta) &= \frac{1}{x} \\
+    \\
+    \therefore L(\theta) \propto x
+\end{aligned}
 $$
 
-### **Logarithm Rules**
+The next tip is that if the parameters are **embedded in the power** of some constant, they should be combined together:
 
-A quick review of the rules of **manipulating logarithms** can be found below:
+$$
+\begin{aligned}
+    L(\theta)
+    &= a^{\theta} \cdot b^{\theta} \cdot c^{\theta} \\
+    &= (a \cdot b \cdot c)^{\theta}
+\end{aligned}
+$$
 
-<!-- Obtained from Chilli Math -->
-![Logarithm Rules](Assets/Review%20of%20Statistical%20Theory.md/Logarithm%20Rules.png){.center}
+The reverse also applies...divide power, may not be in the same term, could come from another term
 
-!!! Warning
+However, if the above terms for some reason are **added instead of multiplied**, then a **substituition** method would be better:
 
-    Note that rule 1 and 2 are often **misunderstood**, leading people to believe that the following is true when they are NOT:
-
-    $$
-    \begin{aligned}
-        \ln (A + B) &= \ln A \cdot \ln B \\
-        \ln (A - B) &= \frac{\ln A}{\ln B} 
-    \end{aligned}
-    $$
-
-<!-- Obtained from Online Math Learning -->
-![Logarithm Derivatives](Assets/Review%20of%20Statistical%20Theory.md/Logarithm%20Derivatives.png){.center}
+$$
+\begin{aligned}
+    L(\theta) &= e^{-\frac{k}{100}} - \left(e^{-\frac{k}{100}} \right)^2 \\
+    L(\theta) &= p - p^2
+\end{aligned}
+$$
 
 ### **Method of Moments**
 
