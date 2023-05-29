@@ -211,6 +211,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../1. Introductory/1. Review of Mathematics.md" class="md-nav__link">
+        Review of Mathematics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../Placeholder.md" class="md-nav__link">
         ASA-P
       </a>
@@ -242,18 +256,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" type="checkbox" id="__nav_1_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_1_3">
+        <label class="md-nav__link" for="__nav_1_4">
           ASA-IFM
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="ASA-IFM" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_3">
+        <label class="md-nav__title" for="__nav_1_4">
           <span class="md-nav__icon md-icon"></span>
           ASA-IFM
         </label>
@@ -268,18 +282,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3_1" type="checkbox" id="__nav_1_3_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4_1" type="checkbox" id="__nav_1_4_1" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_1_3_1">
+        <label class="md-nav__link" for="__nav_1_4_1">
           Derivatives
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Derivatives" data-md-level="3">
-        <label class="md-nav__title" for="__nav_1_3_1">
+        <label class="md-nav__title" for="__nav_1_4_1">
           <span class="md-nav__icon md-icon"></span>
           Derivatives
         </label>
@@ -357,18 +371,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3_2" type="checkbox" id="__nav_1_3_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4_2" type="checkbox" id="__nav_1_4_2" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_1_3_2">
+        <label class="md-nav__link" for="__nav_1_4_2">
           Corporate Finance
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Corporate Finance" data-md-level="3">
-        <label class="md-nav__title" for="__nav_1_3_2">
+        <label class="md-nav__title" for="__nav_1_4_2">
           <span class="md-nav__icon md-icon"></span>
           Corporate Finance
         </label>
@@ -1597,7 +1611,17 @@
     &amp;= -S'_0(x)
 \end{aligned}
 \]</div>
-<p>The force of mortality can be rewritten as the following:</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>This leads to an interesting result, known as the <strong>Survival Function Method</strong>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    f_{X}(x) &amp;= -S'_{X}(x) \\
+    \therefore \int f_{X}(x) &amp;= -S_{X}(x)
+\end{aligned}
+\]</div>
+</div>
+<p>Thus, the force of mortality can be rewritten as the following:</p>
 <div class="arithmatex">\[
     \mu_{0+x} = \frac{f_0(x)}{S_0(x)}
 \]</div>
@@ -1658,16 +1682,17 @@
 <p>The <strong>Expectation</strong> of the distribution of future lifetime is the <strong>Life Expectancy</strong> of the person. It is commonly calculated for newborns as a measure of the general health of the population.</p>
 <p>In an actuarial context, it is known as the <strong>Complete Expectation of Life</strong>:</p>
 <div class="arithmatex">\[
-\begin{aligned}
-    E(T_x) &amp;= \int_{0}^{\infty} t f_x(t) \\
-    e_{x} &amp;= \int_{0}^{\infty} t S_x(t)\mu_{x+t}
-\end{aligned}
+    E(T_x) = \int_{0}^{\infty} t f_x(t) \\
 \]</div>
-<p>Through integration by parts,</p>
+<p>Through <strong>integration by parts</strong> and the <strong>survival function method</strong>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     \mathring{e}_{x}
-    &amp;= \left(\Bigl[-tS_x(t)\Bigr]_0^\infty + \int_0^\infty S_x(t)\right) \\
+    &amp;=  \Bigl[t \cdot \int f_x(t) \Bigr]_0^\infty - \int_{0}^{\infty} \int f_x(t) \cdot 1 \\
+    &amp;=  \Bigl[t \cdot (-S_X(t)) \Bigr]_0^\infty - \int_{0}^{\infty} (-S_X(x)) \\
+    &amp;= tS_X(\infty) - tS_X(0) + \int_{0}^{\infty} S_X(x) \\
+    &amp;= \infty \cdot (0) - 0 \cdot 1 + \int_{0}^{\infty} S_X(x) \\
+    &amp;= \int_{0}^{\infty} S_X(x) \\
     &amp;= \int_0^\infty {}_{t}p_x
 \end{aligned}
 \]</div>

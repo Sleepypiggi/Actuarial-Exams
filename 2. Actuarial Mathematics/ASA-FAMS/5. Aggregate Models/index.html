@@ -211,6 +211,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../1. Introductory/1. Review of Mathematics.md" class="md-nav__link">
+        Review of Mathematics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../Placeholder.md" class="md-nav__link">
         ASA-P
       </a>
@@ -242,18 +256,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" type="checkbox" id="__nav_1_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_1_3">
+        <label class="md-nav__link" for="__nav_1_4">
           ASA-IFM
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="ASA-IFM" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_3">
+        <label class="md-nav__title" for="__nav_1_4">
           <span class="md-nav__icon md-icon"></span>
           ASA-IFM
         </label>
@@ -268,18 +282,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3_1" type="checkbox" id="__nav_1_3_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4_1" type="checkbox" id="__nav_1_4_1" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_1_3_1">
+        <label class="md-nav__link" for="__nav_1_4_1">
           Derivatives
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Derivatives" data-md-level="3">
-        <label class="md-nav__title" for="__nav_1_3_1">
+        <label class="md-nav__title" for="__nav_1_4_1">
           <span class="md-nav__icon md-icon"></span>
           Derivatives
         </label>
@@ -357,18 +371,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3_2" type="checkbox" id="__nav_1_3_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4_2" type="checkbox" id="__nav_1_4_2" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_1_3_2">
+        <label class="md-nav__link" for="__nav_1_4_2">
           Corporate Finance
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Corporate Finance" data-md-level="3">
-        <label class="md-nav__title" for="__nav_1_3_2">
+        <label class="md-nav__title" for="__nav_1_4_2">
           <span class="md-nav__icon md-icon"></span>
           Corporate Finance
         </label>
@@ -631,8 +645,29 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#aggregate-payments" class="md-nav__link">
+    Aggregate Payments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#payment-frequency" class="md-nav__link">
+    Payment Frequency
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#individual-risk-model" class="md-nav__link">
+    Individual Risk Model
+  </a>
   
 </li>
       
@@ -1243,8 +1278,29 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#aggregate-payments" class="md-nav__link">
+    Aggregate Payments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#payment-frequency" class="md-nav__link">
+    Payment Frequency
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#individual-risk-model" class="md-nav__link">
+    Individual Risk Model
+  </a>
   
 </li>
       
@@ -1315,6 +1371,10 @@
     &amp;= E(X)\cdot E(N)
 \end{aligned}
 \]</div>
+<!--
+If each policy has a deductible then just E(N) E(X-d)+
+-->
+
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This result is <strong>highly intuitive</strong> as <span class="arithmatex">\(\text{Expected Risk} = \text{Expected Claims} \cdot \text{Expected Severity}\)</span>.</p>
@@ -1335,6 +1395,18 @@
     &amp;= Var(X) \cdot E(N) + [E(X)]^2 \cdot Var(N)
 \end{aligned}
 \]</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If the m**ean and variance of the frequency distribution are equal** (EG. Poisson Distribution), then the Variance can be simplified:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    Var (S)
+    &amp;= Var(X) \cdot E(N) + [E(X)]^2 \cdot Var(N) \\
+    &amp;= E(N) \cdot [Var(X) + [E(X)]^2] \\
+    &amp;= E(N) \cdot E(X^2)
+\end{aligned}
+\]</div>
+</div>
 <p>The probability of <span class="arithmatex">\(s\)</span> is <strong>difficult to derive</strong>. Thus, for simplicity, we will assume a <strong>Discrete Severity</strong> for this portion. By the <strong>Law of Total Probability</strong>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1369,7 +1441,7 @@
 <li><span class="arithmatex">\(0 + 0 + 1 + \dots + 0 = 1\)</span></li>
 <li><span class="arithmatex">\(0 + 0 + 0 + \dots + 1 = 1\)</span></li>
 </ul>
-<p>However, then how is <span class="arithmatex">\(S=0\)</span> determined, since there are <strong>no sums that result in 0</strong>? There is now only ONE way for aggregate losses to be 0 - if there are <strong>no claims at all</strong>.</p>
+<p>However, then how is <span class="arithmatex">\(S=0\)</span> determined, since there are <strong>no sums that result in 0</strong>? There is now <strong>only ONE way</strong> for aggregate losses to be 0 - if there are <strong>no claims at all</strong>.</p>
 <div class="arithmatex">\[
     P(S = 0) = P(n = 0)
 \]</div>
@@ -1431,10 +1503,6 @@
 <p class="admonition-title">Tip</p>
 <p>If the discrete distribution does not support consecutive integers <span class="arithmatex">\(\set{0, 1, 2, \dots}\)</span>, then simply take the midpoint of whatever <strong>consecutive values</strong> in its support <span class="arithmatex">\(\set{100, 200, 300}\)</span>.</p>
 </div>
-<!--
-Aggregate Payments, YP or YL but otherwise same concepts
--->
-
 <h3 id="aggregate-deductibles"><strong>Aggregate Deductibles</strong><a class="headerlink" href="#aggregate-deductibles" title="Permanent link">&para;</a></h3>
 <p>Insurers can also purchase insurance for themselves, known as <strong>Reinsurance</strong>.</p>
 <p>Insurers may want to limit their losses to a certain amount and getting the excess loss insured by a reinsurer. This is known as <strong>Stop Loss Insurance</strong>.</p>
@@ -1461,6 +1529,81 @@ Aggregate Payments, YP or YL but otherwise same concepts
 </ul>
 <p>The probability of <span class="arithmatex">\(S=2\)</span> must <strong>reflect both these combinations</strong>.</p>
 </div>
+<h3 id="aggregate-payments"><strong>Aggregate Payments</strong><a class="headerlink" href="#aggregate-payments" title="Permanent link">&para;</a></h3>
+<p>The discussion so far has solely been on Aggregate <em>Losses</em>. However, if each policy has a deductible, then there is a need to consider <strong>Aggregate Payments</strong> instead.</p>
+<p>Both types of aggregate payments (per loss and per payment) can be used to determine aggregate payments:</p>
+<p>If considering <strong>Payments per Losses</strong> <span class="arithmatex">\((Y^L)\)</span>, then as its name suggests, the appropriate frequency to use is the <strong>Loss Frequency</strong> <span class="arithmatex">\((N)\)</span>.</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    S &amp;= Y^L_{1} + Y^L_{2} + \dots + Y^L_{N} \\
+    \\
+    E(S) &amp;= E(N) \cdot E(Y^L) \\
+    Var (S) &amp;= Var(Y^L) \cdot E(N) + \left[E \left(Y^L \right) \right]^2 \cdot Var (N)
+\end{aligned}
+\]</div>
+<p>If considering <strong>Payments per Payments</strong> <span class="arithmatex">\((Y^P)\)</span>, then as its name suggests, the appropriate frequency to use is the <strong>Payment Frequency</strong> <span class="arithmatex">\((N^{*})\)</span>.</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    S &amp;= Y^P_{1} + Y^P_{2} + \dots + Y^P_{N^{*}} \\
+    \\
+    E(S) &amp;= E(N^{*}) \cdot E(Y^P) \\
+    Var (S) &amp;= Var(Y^P) \cdot E(N^{*}) + \left[E \left(Y^P \right) \right]^2 \cdot Var (N^{*})
+\end{aligned}
+\]</div>
+<p>The key is to <strong>match the frequency distribution with the severity</strong>: Loss &amp; Loss Frequency; Payments &amp; Payment Frequency.</p>
+<h3 id="payment-frequency"><strong>Payment Frequency</strong><a class="headerlink" href="#payment-frequency" title="Permanent link">&para;</a></h3>
+<p>Imposing a deductible naturally results in <strong>fewer payments than losses</strong> as not all losses result in a payment.</p>
+<p>The <strong>Payment Frequency</strong> <span class="arithmatex">\((N^{*})\)</span> is thus an adjusted version of the loss distribution that only takes into account the losses that result in a payment.</p>
+<p>Consider a <strong>Bernoulli Indicator variable</strong> that takes on the value 1 if a payment will be made and 0 if it will not:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    I
+    &amp;=
+    \begin{cases}
+        1 \ (\text{Paid}),&amp; X \gt d \\
+        0 \ (\text{Not Paid}),&amp; X \le d
+    \end{cases} \\
+    \\
+    v &amp;= P(X \gt d) \\
+    P_I(t) &amp;= 1 + v(t-1)
+\end{aligned}
+\]</div>
+<p><span class="arithmatex">\(N^{*}\)</span> is the <strong>sum of <span class="arithmatex">\(N\)</span> idendepent indicator variables</strong>:</p>
+<div class="arithmatex">\[
+    N^{*} = I_1 + I_2 + \dots + I_N
+\]</div>
+<p>It is essentially a <strong>Compound Distribution</strong> with <span class="arithmatex">\(N\)</span> being the primary distribution and <span class="arithmatex">\(I\)</span> being the secondary distribution. Thus, the PGF of <span class="arithmatex">\(N^{*}\)</span> can be determined:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    P_{N^*}
+    &amp;= P_{N}[P_{I}(t)] \\
+    &amp;= P_{N}[1 + p(t-1)]
+\end{aligned}
+\]</div>
+<p>By expanding simplfying the expression, the distribution of <span class="arithmatex">\(N^{*}\)</span> can be determined:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    N &amp;\sim \text{Poisson}(\mu) \\
+    \\
+    P_{N}[1 + p(t-1)]
+    &amp;= e^{\mu(1 + v(z-1) -1)} \\
+    &amp;= e^{\mu (v(z-1))} \\
+    &amp;= e^{v\mu (z-1)} \\
+    \\
+    \therefore N^{*} &amp;\sim \text{Poisson}(v \cdot \mu)
+\end{aligned}
+\]</div>
+<p>Repeating the process for the other two members of the (a, b, 0) class,</p>
+<div class="arithmatex">\[
+\begin{aligned}
+   N &amp;\sim \text{Binomial} (n, p) \\
+   \therefore N^{*} &amp;\sim \text{Binomial} (n, vp) \\
+   \\
+   N &amp;\sim \text{Negative Binomial} (r, \theta) \\
+   \therefore N^{*} &amp;\sim \text{Negative Binomial} (r, v \theta)
+\end{aligned}
+\]</div>
+<h2 id="individual-risk-model"><strong>Individual Risk Model</strong><a class="headerlink" href="#individual-risk-model" title="Permanent link">&para;</a></h2>
 
 
 
