@@ -618,8 +618,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#with-deductibles" class="md-nav__link">
-    With Deductibles
+  <a href="#coinsurance-deductibles" class="md-nav__link">
+    Coinsurance &amp; Deductibles
   </a>
   
 </li>
@@ -645,6 +645,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#limits-deductibles" class="md-nav__link">
+    Limits &amp; Deductibles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#maximum-covered-loss" class="md-nav__link">
     Maximum Covered Loss
   </a>
@@ -667,6 +674,19 @@
   <a href="#all-modifications" class="md-nav__link">
     All Modifications
   </a>
+  
+    <nav class="md-nav" aria-label="All Modifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hybrid-modification" class="md-nav__link">
+    Hybrid Modification
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1278,8 +1298,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#with-deductibles" class="md-nav__link">
-    With Deductibles
+  <a href="#coinsurance-deductibles" class="md-nav__link">
+    Coinsurance &amp; Deductibles
   </a>
   
 </li>
@@ -1305,6 +1325,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#limits-deductibles" class="md-nav__link">
+    Limits &amp; Deductibles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#maximum-covered-loss" class="md-nav__link">
     Maximum Covered Loss
   </a>
@@ -1327,6 +1354,19 @@
   <a href="#all-modifications" class="md-nav__link">
     All Modifications
   </a>
+  
+    <nav class="md-nav" aria-label="All Modifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hybrid-modification" class="md-nav__link">
+    Hybrid Modification
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1620,8 +1660,8 @@ X \land d
 <p class="admonition-title">Warning</p>
 <p>Co-insurance usually refers to the portion of the loss that the <em>policyholder</em> is responsible for. However, for this exam, we are taking the insurers perspective, thus it refers to the amount that the <em>insurer</em> is responsible for. Do not confuse the two!</p>
 </div>
-<h3 id="with-deductibles"><strong>With Deductibles</strong><a class="headerlink" href="#with-deductibles" title="Permanent link">&para;</a></h3>
-<p>Coinsurance on its own is a simple concept - the difficulty comes about when it is <strong>mixed with a Deductible</strong>, which is a fairly common type of question.</p>
+<h3 id="coinsurance-deductibles"><strong>Coinsurance &amp; Deductibles</strong><a class="headerlink" href="#coinsurance-deductibles" title="Permanent link">&para;</a></h3>
+<p>Coinsurance on its own is a simple concept - the difficulty comes about when it is <strong>mixed with a Deductible</strong>.</p>
 <p>If the coinsurance is applied <strong>after the deductible</strong>:</p>
 <ol>
 <li>Entire loss <span class="arithmatex">\(X\)</span> is applied against the deductible; poliycholder pays first <span class="arithmatex">\(d\)</span></li>
@@ -1636,6 +1676,16 @@ X \land d
         0,&amp; X \le d \\
         \alpha \cdot (X - d),&amp; X \gt d
     \end{cases} \\
+    &amp;=
+    \begin{cases}
+        \alpha \cdot 0,&amp; X \le d \\
+        \alpha \cdot (X - d),&amp; X \gt d
+    \end{cases} \\
+    &amp;= \alpha \cdot
+        \begin{cases}
+        0,&amp; X \le d \\
+        (X - d),&amp; X \gt d
+    \end{cases} \\
     &amp;= \alpha \cdot (X-d)_{+} \\
     &amp;= \alpha \cdot [X - (X \land d)] \\
     \\
@@ -1646,6 +1696,10 @@ X \land d
     E \left(Y^P \right) &amp;= \frac{E \left(Y^L \right)}{1 - F_{X}(d)}
 \end{aligned}
 \]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The key is remembering that any value multiplied by 0 is 0, thus the coinsurance factor can be factored out.</p>
+</div>
 <p>If the coinsurance is applied <strong>before the deductible</strong>,</p>
 <ol>
 <li>Coinsurance is applied against the <strong>full loss</strong>; insurer covers <span class="arithmatex">\(\alpha X\)</span></li>
@@ -1738,9 +1792,57 @@ X \land d
 <div class="arithmatex">\[
     \text{ILF} = \frac{E(X \land b)}{E(X \land u)}
 \]</div>
+<h3 id="limits-deductibles"><strong>Limits &amp; Deductibles</strong><a class="headerlink" href="#limits-deductibles" title="Permanent link">&para;</a></h3>
+<p>Policy Limits on their own are a simple concept - the difficulty comes about when they are <strong>mixed with deductibles</strong>.</p>
+<p>Consider the possible values of the payment variable:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    Y^L
+    &amp;=
+    \begin{cases}
+        0,&amp; X \lt d \\
+        X-d,&amp; d \lt X \lt d + u \\
+        u,&amp; X \gt d + u
+    \end{cases}
+\end{aligned}
+\]</div>
+<p>The key is understanding that only what the insurer pays is counted towards the limit - thus, the <strong>effective limit</strong> of the policy is <span class="arithmatex">\(d + u\)</span>.</p>
+<p>This is known as the <strong>Maximum Covered Loss</strong> <span class="arithmatex">\((m)\)</span> which is the <strong>smallest loss amount</strong> at or above which the insurer will pay the policy limit. In other words, if <span class="arithmatex">\(X \ge m\)</span> then <span class="arithmatex">\(Y^L = u\)</span>.</p>
+<p>We can find an expression for payment by decomposing the piecewise function:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    Y^L
+    &amp;=
+    \begin{cases}
+        0,&amp; X \lt d \\
+        X-d,&amp; d \lt X \lt d + u \\
+        m - d,&amp; X \gt d + u
+    \end{cases} \\
+    &amp;=
+    \begin{cases}
+        X - X,&amp; X \lt d \\
+        X-d,&amp; d \lt X \lt d + u \\
+        m - d,&amp; X \gt d + u
+    \end{cases} \\
+    &amp;=
+    \begin{cases}
+        X,&amp; X \lt d \\
+        X,&amp; d \lt X \lt d + u \\
+        m,&amp; X \gt d + u
+    \end{cases}
+    -
+    \begin{cases}
+        X,&amp; X \lt d \\
+        d,&amp; d \lt X \lt d + u \\
+        d,&amp; X \gt d + u
+    \end{cases} \\
+    &amp;= (X \land m) - (X \land d) \\
+    \\
+    \therefore E(Y^L) &amp;= E(X \land m) - (X \land d)
+\end{aligned}
+\]</div>
 <h3 id="maximum-covered-loss"><strong>Maximum Covered Loss</strong><a class="headerlink" href="#maximum-covered-loss" title="Permanent link">&para;</a></h3>
-<p>The <strong>Maximum Covered Loss</strong> <span class="arithmatex">\(m\)</span> is the <strong>smallest loss amount</strong> above which the insurer will pay the policy limit. In other words, if <span class="arithmatex">\(X \ge m\)</span> then <span class="arithmatex">\(Y^L = u\)</span>.</p>
-<p><span class="arithmatex">\(m\)</span> changes depending on what <em>other</em> policy modifications are in the policy:</p>
+<p>The concept of maximum covered loss can be extended to <strong>all combinations of modifications</strong> involving a limit:</p>
 <ul>
 <li><strong>Policy Limit ONLY</strong>: <span class="arithmatex">\(m=u\)</span></li>
 <li><strong>With Ordinary Deductible</strong>: <span class="arithmatex">\(m = u + d\)</span></li>
@@ -1774,7 +1876,7 @@ X \land d
     &amp;= \alpha \cdot (1+r) \cdot E(X)
 \end{aligned}
 \]</div>
-<p>However, policy limits involve a minimum function, which is more complicated to manipulate:</p>
+<p>However, policy limits involve a <strong>minimum function</strong>, which is more complicated to manipulate:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     Y^L_{\text{Policy Limit}}
@@ -1857,40 +1959,45 @@ X \land d
     \\
     E \left(Y^L \right)
     &amp;= \alpha \cdot E \left[(X \land m) - (X \land d) \right] \\
-    &amp;= \alpha \cdot \left (E \left[(X \land m) \right] - E \left[(X \land m) \right] \right) \\
+    &amp;= \alpha \cdot \left (E \left[(X \land m) \right] - E \left[(X \land d) \right] \right) \\
     \\
     E \left(Y^P \right) &amp;= \frac{E \left(Y^L \right)}{1 - F_{X}(d)}
 \end{aligned}
 \]</div>
-<p>Since deductibles and/or policy limits are involved, higher moments can only be calculated via first principles.</p>
-<p>If <strong>inflation</strong> is considered, then the above can be adjusted for the following year:</p>
+<p>If <strong>inflation</strong> is considered, then the above can be easily adjusted for the following year:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    Y^L
-    &amp;=
-    \begin{cases}
-        0,&amp; (1+r)X \le d \\
-        \alpha[(1+r)X-d],&amp; d \lt (1+r)X \lt m \\
-        u,&amp; (1+r)X \ge m
-    \end{cases} \\
-    &amp;=
-    \begin{cases}
-        0,&amp; X \le \frac{d}{1+r} \\
-        \alpha(1+r)(X-\frac{d}{1+r}),&amp; \frac{X}{1+r} \lt X \lt \frac{m}{1+r} \\
-        u,&amp; X \ge \frac{m}{1+r}
-    \end{cases} \\
-    &amp;= \alpha (1+r) \cdot \left[\left(X \land \frac{m}{1+r}\right) - \left(X \land \frac{d}{1+r} \right) \right] \\
-    \\
     E \left(Y^L \right)
     &amp;= \alpha (1+r) \cdot \left (E \left[\left(X \land \frac{m}{1+r}\right) \right] - E \left[\left(X \land \frac{d}{1+r} \right) \right] \right) \\
     \\
     E \left(Y^P \right) &amp;= \frac{E \left(Y^L \right)}{1 - F_{X} \left(\frac{d}{1+r} \right)}
 \end{aligned}
 \]</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The above result can be adjusted for when the coinsurance applied before the deductible as well; simply replace <span class="arithmatex">\((1+r)\)</span> with <span class="arithmatex">\(\alpha\)</span>.</p>
-</div>
+<h3 id="hybrid-modification"><strong>Hybrid Modification</strong><a class="headerlink" href="#hybrid-modification" title="Permanent link">&para;</a></h3>
+<p>There may be policies that contain an unusual combination of features. The only way to solve them is by <strong>first principles</strong>. Consider the <strong>overall piecewise function and then split them</strong> into more recognisable ones, using the "tricks" shown above.</p>
+<p>Consider a two deductible example from <strong>SOA Sample Question #60</strong>:</p>
+<!-- Obtained from SOA -->
+<p><img alt="Hybrid Modification" class="center" src="../Assets/4.%20Policy%20Modifications.md/Hybrid%20Modification.png" /></p>
+<div class="arithmatex">\[
+\begin{aligned}
+    Y^L
+    &amp;=
+    \begin{cases}
+        0,&amp; X \lt 1000 \\
+        0.8 \cdot (X - 1000),&amp; 1000 \lt X \lt 6000 \\
+        0.8 \cdot (6000 - 1000),&amp; 6000 \lt X \lt 14000 \\
+        0.8 \cdot (6000 - 1000) + 0.9 \cdot (X - 14000),&amp; X \gt 14000
+    \end{cases}
+\end{aligned}
+\]</div>
+<p>The tricky part about forming this function is the third level:</p>
+<ul>
+<li>Since the policyholder bears the full cost of the repairs, the insurer <strong>does not pay anything new</strong>; they pay the <strong>maximum amount of the previous level</strong>.</li>
+<li>The policyholder has <strong>paid 1000 from the deductible</strong> and <strong>1000 from the coinsurance</strong>, thus has to bear 8000 of losses themselves, resulting in an <strong>upper limit of 14000</strong>.</li>
+</ul>
+<p>Using the methods shown earlier, it can be split into the following components:</p>
+<!-- Obtained from Coaching Actuaries -->
+<p><img alt="Hybrid Modification Example" src="../Assets/4.%20Policy%20Modifications.md/Hybrid%20Modification%20Example.png" /></p>
 
 
 
