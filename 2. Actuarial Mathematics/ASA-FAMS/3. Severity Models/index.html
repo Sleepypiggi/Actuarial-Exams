@@ -319,7 +319,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1. Introductory/ASA-IFM/1. Derivatives/Options.md" class="md-nav__link">
+      <a href="../../../1.%20Introductory/ASA-IFM/1.%20Derivatives/3.%20Options/" class="md-nav__link">
         Options
       </a>
     </li>
@@ -1715,15 +1715,18 @@
 \end{aligned}
 \]</div>
 <p>The key property of the uniform distribution is that most of the <strong>common transformations</strong> can be found by simply adjusting the range:</p>
-<p>The result of some <strong>common transformations</strong> of the uniform distribution can be found below:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     X \sim \text{Uniform} (a, b) \\
     X \mid X \gt d \sim \text{Uniform} (d, b) \\
     X-d \sim \text{Uniform} (a-d, b-d) \\
-    \therefore X-d \mid X \gt d \text{Uniform} (0, b-d)
+    \therefore X-d \mid X \gt d \text{Uniform} (a, b-d)
 \end{aligned}
 \]</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This looks <em>similar</em> to the memoryless property, but it is a seperate concept.</p>
+</div>
 <!-- Obtained from Coaching Actuaries -->
 <p><img alt="Uniform Transformation" class="center" src="../Assets/3.%20Severity%20Models.md/Uniform%20Transformation.png" /></p>
 <p>Note that the <span class="arithmatex">\((0,\theta)\)</span> uniform distribution can also be thought of as a Generalized Beta Distribution with parameters <span class="arithmatex">\(a = b = 1\)</span>. In other words, there are <strong>no prior successes or failures</strong>, thus each outcome has an <strong>equal probability</strong>.</p>
@@ -1788,7 +1791,7 @@
 <p>However, note that there are multiple ways to parameterize a distribution and multiple ways to denote them, thus not all questions will follow the exam tables. Thus, it is important to practice how to identify them.</p>
 <!-- Obtained from Coaching Actuaries -->
 <p><img alt="Parameter Types" class="center" src="../Assets/3.%20Severity%20Models.md/Parameter%20Types.png" /></p>
-<p>For a scale distribution, shortcuts??</p>
+<p>For any of the above scale distributions, if scaled by a constant <span class="arithmatex">\(c\)</span>, their parameters get changed in the following manner:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     X &amp;\sim \text{Distribution} (\text{Shape Parameters}, \theta) \\

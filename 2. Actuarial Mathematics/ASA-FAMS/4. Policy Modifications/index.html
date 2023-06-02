@@ -319,7 +319,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1. Introductory/ASA-IFM/1. Derivatives/Options.md" class="md-nav__link">
+      <a href="../../../1.%20Introductory/ASA-IFM/1.%20Derivatives/3.%20Options/" class="md-nav__link">
         Options
       </a>
     </li>
@@ -1495,7 +1495,22 @@
 \]</div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>If <span class="arithmatex">\(Y^L\)</span> follows a distribution with the <strong>memoryless property</strong>, then the distribution of <span class="arithmatex">\(Y^P\)</span> is the <strong>same</strong> as <span class="arithmatex">\(Y^L\)</span>.</p>
+<p>If <span class="arithmatex">\(Y^L\)</span> follows the exponential or geometric distribution which are memoryless, then the distribution of <span class="arithmatex">\(Y^P\)</span> is the <strong>same</strong> as <span class="arithmatex">\(Y^L\)</span>.</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    Y^L &amp;\sim \text{Exponential/Geometric} \\
+    Y^P &amp;= X \mid X \gt d \\
+    Y^P &amp;\sim \text{Exponential/Geometric}
+\end{aligned}
+\]</div>
+<p>Similarly, if <span class="arithmatex">\(Y^L\)</span> follows the uniform distribution, then the distribution of <span class="arithmatex">\(Y^P\)</span> can be easily calculated:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    X &amp;\sim uni (a,b) \\
+    Y^P &amp;= X - d \mid X \gt d \\
+    \therefore Y^P \sim \text{Uniform} (a, b-d)
+\end{aligned}
+\]</div>
 </div>
 <p>Note that for all losses <strong>without deductibles</strong>, a loss will always result in a claim. Thus, <span class="arithmatex">\(Y^P = Y^L\)</span>.</p>
 <h2 id="ordinary-deductibles"><strong>Ordinary Deductibles</strong><a class="headerlink" href="#ordinary-deductibles" title="Permanent link">&para;</a></h2>
