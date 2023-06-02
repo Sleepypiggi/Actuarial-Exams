@@ -10,7 +10,7 @@ nav:
     - ASA-IFM:
       - Derivatives:
         - Introduction: 1. Introductory\ASA-IFM\1. Derivatives\1. Introduction.md
-        - Options: 1. Introductory\ASA-IFM\1. Derivatives\Options.md
+        - Options: 1. Introductory\ASA-IFM\1. Derivatives\3. Options.md
         - Binomial Model: 1. Introductory\ASA-IFM\1. Derivatives\5. Binomial Model.md
         - Black Scholes Model: 1. Introductory\ASA-IFM\1. Derivatives\6. Black Scholes Model.md
       - Corporate Finance:
