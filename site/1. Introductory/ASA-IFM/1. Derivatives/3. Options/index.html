@@ -15,7 +15,7 @@
     
     
       
-        <title>**Options** - Actuarial Exam Notes</title>
+        <title>Options - Actuarial Exam Notes</title>
       
     
     
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              **Options**
+              Options
             
           </span>
         </div>
@@ -183,12 +183,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
       
       
       
@@ -251,12 +253,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" checked>
       
       
       
@@ -277,12 +281,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4_1" type="checkbox" id="__nav_1_4_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4_1" type="checkbox" id="__nav_1_4_1" checked>
       
       
       
@@ -317,11 +323,113 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../../1. Introductory/ASA-IFM/1. Derivatives/Options.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Options
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Options
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#european-options" class="md-nav__link">
+    European Options
+  </a>
+  
+    <nav class="md-nav" aria-label="European Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#call-options" class="md-nav__link">
+    Call Options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put-options" class="md-nav__link">
+    Put Options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moneyness" class="md-nav__link">
+    Moneyness
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put-call-parity" class="md-nav__link">
+    Put Call Parity
+  </a>
+  
+    <nav class="md-nav" aria-label="Put Call Parity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-arbitrage-proof" class="md-nav__link">
+    No Arbitrage Proof
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synthetic-positions" class="md-nav__link">
+    Synthetic Positions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1143,6 +1251,26 @@
     Put Call Parity
   </a>
   
+    <nav class="md-nav" aria-label="Put Call Parity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-arbitrage-proof" class="md-nav__link">
+    No Arbitrage Proof
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synthetic-positions" class="md-nav__link">
+    Synthetic Positions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1167,11 +1295,394 @@
 
 <h1 id="options"><strong>Options</strong><a class="headerlink" href="#options" title="Permanent link">&para;</a></h1>
 <h2 id="overview"><strong>Overview</strong><a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>Options are contracts where the contract owner has the right to trade an asset at a fixed price on or before a specified future date.</p>
+<p>The <strong>buyer</strong> of contract is known as the <strong>Option Holder</strong> while the Seller is known as the <strong>Option Writer</strong>. The buyer pays the seller a <strong>Premium</strong> at time 0 for fulfilling the contract.</p>
+<p>The option holder can <strong>Exercise their Right</strong> to trade an asset while the option writer is <strong>Obligated</strong> to fulfil the trade. Naturally, option holders will only exercise their right when it is <strong>favourable</strong> to do so; resulting in a <strong>positive payoff</strong>.</p>
+<p>The right to <strong>Buy an Asset</strong> is known as a <strong>Call Option</strong> (Calls) while the right to <strong>Sell an Asset</strong> is known as a <strong>Put Option</strong> (Puts).</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is a common misconception to mix up the buyer and seller of the option with buying and selling the asset.</p>
+<p>For both Call and Put Options, there will always be a buyer and a seller.</p>
+</div>
+<p>The fixed price is known as the <strong>Strike Price</strong> <span class="arithmatex">\((K)\)</span> and the future date is known as the <strong>Expiration Date</strong> <span class="arithmatex">\((T)\)</span>.</p>
+<p>There are three types of options, based on <em>when</em> they can be exercised:</p>
+<ul>
+<li><strong>American Options</strong>: Any time on or before the expiration date</li>
+<li><strong>Bermudan Options</strong>: Only during a specified window</li>
+<li><strong>European Options</strong>: Only on the expiration date itself</li>
+</ul>
+<p>For the purposes of this exam, <strong>only European and American Options</strong> will be covered in depth. <strong>European Option Premiums</strong>  are denoted in <strong>Lower Case</strong> <span class="arithmatex">\((c_0, p_0)\)</span> while <strong>American Options</strong> are denoted using <strong>Upper Case</strong> <span class="arithmatex">\((C_0, P_0)\)</span>.</p>
 <h2 id="european-options"><strong>European Options</strong><a class="headerlink" href="#european-options" title="Permanent link">&para;</a></h2>
 <h3 id="call-options"><strong>Call Options</strong><a class="headerlink" href="#call-options" title="Permanent link">&para;</a></h3>
+<p>Consider a <strong>Long Call Option</strong>:</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">Exercise</th>
+<th align="center">Do Not Exercise</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><strong>Intuition</strong></td>
+<td align="center">Cheaper to buy via Call</td>
+<td align="center">Expensive to buy via Call</td>
+</tr>
+<tr>
+<td align="center"><strong>Scenario</strong></td>
+<td align="center">Spot is larger than Strike <span class="arithmatex">\((S_T \gt K)\)</span></td>
+<td align="center">Spot is smaller than Strike <span class="arithmatex">\((S_T \lt K)\)</span></td>
+</tr>
+<tr>
+<td align="center"><strong>Payoff</strong></td>
+<td align="center">Buy at strike and sell at spot <span class="arithmatex">\((S_T - K)\)</span></td>
+<td align="center">No trade occurs <span class="arithmatex">\((0)\)</span></td>
+</tr>
+<tr>
+<td align="center"><strong>Profit</strong></td>
+<td align="center">Positive Profit <span class="arithmatex">\((S_T - K - c_0)\)</span></td>
+<td align="center">Negative Profit <span class="arithmatex">\((-c_0)\)</span></td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>This can also be expressed in a <strong>piecewise function</strong>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \text{Payoff}_\text{Long} &amp;=
+    \begin{cases}
+        0 &amp; S_T \leq K, \\
+        S_T - K &amp; S_T &gt; K
+    \end{cases} \\
+    &amp;= \max(S_T – K, 0) \\
+    \\
+    \text{Profit}_\text{Long} &amp;= \max(S_T – K, 0) – c_0
+\end{aligned}
+\]</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The key takeaway is that Options will only be exercised if there are positive payoffs, but positive payoffs <strong>do not guarantee that there are positive profits</strong>.</p>
+</div>
+<p>Consider the possible payoffs and profits for a long call:</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">Payoff</th>
+<th align="center">Profit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><strong>Minimum Scenario</strong></td>
+<td align="center">Not exercised, no trade occurs</td>
+<td align="center">Premium already paid</td>
+</tr>
+<tr>
+<td align="center"><strong>Minimum Value</strong></td>
+<td align="center"><span class="arithmatex">\(\text{Payoff} = 0\)</span></td>
+<td align="center"><span class="arithmatex">\(\text{Profit} = -c_0\)</span></td>
+</tr>
+<tr>
+<td align="center"><strong>Maximum Scenario</strong></td>
+<td align="center">Exercised, as high as the stock price</td>
+<td align="center">Premium Already paid</td>
+</tr>
+<tr>
+<td align="center"><strong>Maximum Value</strong></td>
+<td align="center"><span class="arithmatex">\(\text{Payoff} = \infty\)</span></td>
+<td align="center"><span class="arithmatex">\(\text{Profit }= \infty - c_0 = \infty\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There is no limit for the stock price, thus the maximum stock price is best represented using infinity.</p>
+</div>
+<p>Thus, Long Call Options have <strong>Unlimited Upside</strong> <span class="arithmatex">\((\infty)\)</span> and <strong>Limited Downsides</strong> <span class="arithmatex">\((0, -c_0)\)</span>:</p>
+<!-- Obtained from Coaching Actuaries -->
+<p><img alt="Long Call Diragrams" class="center" src="../Assets/3.%20Options.md/Long%20Call%20Diagrams.png" /></p>
+<p>Using the <strong>zero-sum game property</strong>, Short Calls are simply the opposite of their long counterparts:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \text{Payoff}_\text{Short}
+    &amp;=
+    \begin{cases}
+        0 &amp; S_T \leq K, \\
+        -(S_T – K) &amp; S_T &gt; K
+    \end{cases} \\
+    &amp;= -\max(S_T – K, 0) \\
+    \\
+    \text{Profit}_\text{Short} &amp;= c_0 - \max(S_T – K, 0)
+\end{aligned}
+\]</div>
+<p>Unlike their long counterparts, they have <strong>Limited Upside</strong> <span class="arithmatex">\((0, c_0)\)</span> and <strong>Unlimited Downside</strong> <span class="arithmatex">\((-\infty)\)</span>:</p>
+<!-- Obtained from Coaching Actuaries -->
+<p><img alt="Short Call Diagrams" class="center" src="../Assets/3.%20Options.md/Short%20Call%20Diagrams.png" /></p>
 <h3 id="put-options"><strong>Put Options</strong><a class="headerlink" href="#put-options" title="Permanent link">&para;</a></h3>
+<p>A <strong>Long Put Option</strong> is the <strong>opposite</strong> of a long call as the perspective has been flipped to selling instead:</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">Exercise</th>
+<th align="center">Do Not Exercise</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><strong>Intuition</strong></td>
+<td align="center">Better to sell via Put</td>
+<td align="center">Worse to sell via Put</td>
+</tr>
+<tr>
+<td align="center"><strong>Scenario</strong></td>
+<td align="center">Spot is smaller than Strike <span class="arithmatex">\((S_T \lt K)\)</span></td>
+<td align="center">Spot is larger than Strike <span class="arithmatex">\((S_T \gt K)\)</span></td>
+</tr>
+<tr>
+<td align="center"><strong>Payoff</strong></td>
+<td align="center">Buy at spot and sell at strike <span class="arithmatex">\((K - S_T)\)</span></td>
+<td align="center">No trade occurs <span class="arithmatex">\((0)\)</span></td>
+</tr>
+<tr>
+<td align="center"><strong>Profit</strong></td>
+<td align="center">Positive Profit <span class="arithmatex">\((K - S_T - p_0)\)</span></td>
+<td align="center">Negative Profit <span class="arithmatex">\((-p_0)\)</span></td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>This can also be expressed in a <strong>piecewise function</strong>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \text{Payoff}_\text{Long}
+    &amp;=
+    \begin{cases}
+        K – S_T &amp; S_T &lt; K, \\
+        0 &amp; S_T \geq K
+    \end{cases} \\
+    &amp;= \max(K - S_T, 0) \\
+    \\
+    \text{Profit}_\text{Long} &amp;= \max(K - S_T, 0) – p_0
+\end{aligned}
+\]</div>
+<p><center></p>
+<p>Consider the possible payoffs and profits for a long put:</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">Payoff</th>
+<th align="center">Profit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><strong>Minimum Scenario</strong></td>
+<td align="center">Not exercised, no trade occurs</td>
+<td align="center">Premium already paid</td>
+</tr>
+<tr>
+<td align="center"><strong>Minimum Value</strong></td>
+<td align="center"><span class="arithmatex">\(\text{Payoff} = 0\)</span></td>
+<td align="center"><span class="arithmatex">\(\text{Profit} = -p_0\)</span></td>
+</tr>
+<tr>
+<td align="center"><strong>Maximum Scenario</strong></td>
+<td align="center">Exercised, as high as the strike price</td>
+<td align="center">Premium Already paid</td>
+</tr>
+<tr>
+<td align="center"><strong>Maximum Value</strong></td>
+<td align="center"><span class="arithmatex">\(\text{Payoff} = K\)</span></td>
+<td align="center"><span class="arithmatex">\(\text{Profit }= K - p_0\)</span></td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The lowest possible stock price is 0, which is why the maximum possible payoff is <em>just</em> the strike price <span class="arithmatex">\(K-0 = K\)</span>.</p>
+</div>
+<p>Thus, Long Call Options have <strong>higher upside</strong> <span class="arithmatex">\((K, K-p_0)\)</span> and <strong>lower Downsides</strong> <span class="arithmatex">\((0, -c_0)\)</span>:</p>
+<!-- Obtained from Coaching Actuaries -->
+<p><img alt="Long Put Diagrams" class="center" src="../Assets/3.%20Options.md/Long%20Put%20Diagrams.png" /></p>
+<p>Using the <strong>zero-sum game property</strong>, Short Puts are simply the opposite of their long counterparts:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \text{Payoff}_\text{Short}
+    &amp;=
+    \begin{cases}
+        -(K – S_T) &amp; S_T &lt; K, \\
+        0 &amp; S_T \ge K
+    \end{cases} \\
+    &amp;= -\max(K - S_T, 0) \\
+    \\
+    \text{Profit}_\text{Short} &amp;= p_0 - \max(S_T – K, 0)
+\end{aligned}
+\]</div>
+<p>Unlike their long counterparts, they have <strong>Lower Upside</strong> <span class="arithmatex">\((0, p_0)\)</span> and <strong>Higher Downside</strong> <span class="arithmatex">\((-K, p_0 - K)\)</span>:</p>
+<!-- Obtained from Coaching Actuaries -->
+<p><img alt="Short Put Diagrams" class="center" src="../Assets/3.%20Options.md/Short%20Put%20Diagrams.png" /></p>
 <h3 id="moneyness"><strong>Moneyness</strong><a class="headerlink" href="#moneyness" title="Permanent link">&para;</a></h3>
+<p><strong>Option Moneyness</strong> is a notional indicator about the payoff of a LONG option should it be <strong>exercised immediately at the current spot price</strong>.</p>
+<p>It does not matter if the option can or cannot be exercised; it is meant to provide a <strong>rough gauge</strong> about what the spot price <em>currently</em> is without having to provide its exact value.</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">In the Money (ITM)</th>
+<th align="center">At the Money (ATM)</th>
+<th align="center">Out the Money (OTM)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><strong>Calls</strong></td>
+<td align="center">Positive Payoff <span class="arithmatex">\((S_T &gt; K)\)</span></td>
+<td align="center">Zero Payoff <span class="arithmatex">\((S_T = K)\)</span></td>
+<td align="center">Negative Payoff <span class="arithmatex">\((S_T &lt; K)\)</span></td>
+</tr>
+<tr>
+<td align="center"><strong>Puts</strong></td>
+<td align="center">Positive Payoff <span class="arithmatex">\((S_T &lt; K)\)</span></td>
+<td align="center">Zero Payoff <span class="arithmatex">\((S_T = K)\)</span></td>
+<td align="center">Negative Payoff <span class="arithmatex">\((S_T = K)\)</span></td>
+</tr>
+</tbody>
+</table>
 <h3 id="put-call-parity"><strong>Put Call Parity</strong><a class="headerlink" href="#put-call-parity" title="Permanent link">&para;</a></h3>
+<p><strong>Put Call Parity</strong> (PCP) is an equation that relates Calls, Puts and an underlying Forward Contract:</p>
+<div class="arithmatex">\[
+    p_0 \ – \ c_0 = Ke^{-rt} \ – \ F_0^P
+\]</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The equation takes the perspective of the <strong>initial cashflows</strong> of the position, rather than the terminal cashflow, which is what we are more used to working with.</p>
+<ul>
+<li><strong>Positive Sign</strong>: Cashflow in (Revenue from <strong>selling</strong>)</li>
+<li><strong>Negative Sign</strong>: Cashflow Out (Cost of <strong>buying</strong>)</li>
+</ul>
+</div>
+<h4 id="no-arbitrage-proof"><strong>No Arbitrage Proof</strong><a class="headerlink" href="#no-arbitrage-proof" title="Permanent link">&para;</a></h4>
+<p>Consider the following two portfolios which have the same payoffs:</p>
+<ol>
+<li>One Long Call &amp; One Short Put</li>
+<li>One Long Forward only</li>
+</ol>
+<div class="arithmatex">\[
+\begin{aligned}
+    \text{Payoff}
+    &amp;= \text{Payoff}_\text{Long Call} + \text{Payoff}_\text{Short Put} \\
+    &amp;= \max(S_T \ - \ K, \ 0) - \max(K \ - \ S_T, \ 0) \\
+    &amp;= S_T \ – \ K
+\end{aligned}
+\]</div>
+<!-- Obtained from Coaching Actuaries -->
+<p><img alt="PCP Payoff" class="center" src="../Assets/3.%20Options.md/PCP%20Payoff.png" /></p>
+<p>By the <strong>Law of One Price</strong>, both of the portfolios must be <strong>priced the same</strong>, resulting in the PCP equation.</p>
+<p>The price of the <strong>first portfolio</strong> is simply the difference in premiums of the two options:</p>
+<ul>
+<li><strong>Pay premium</strong> for buying the Call</li>
+<li><strong>Receive premium</strong> selling the Put</li>
+</ul>
+<div class="arithmatex">\[
+    \text{Price}_\text{Options} = - c_0 + p_0
+\]</div>
+<p>The price of the second portfolio is <strong>harder to determine</strong> as the forward price is <strong>usually paid at expiration rather than at the inception</strong>. Thus, we need to come up with a <strong>replicating portfolio</strong> to determine the time 0 price of a forward.</p>
+<p>A forward contract consists of two components:</p>
+<ol>
+<li>Buying the asset at a <strong>fixed price</strong>; akin to <strong>selling a Zero Coupon Bond</strong></li>
+<li>Selling the asset at the <strong>future spot price</strong>; akin to <strong>buying a Prepaid Forward</strong></li>
+</ol>
+<div class="arithmatex">\[
+\begin{aligned}
+    \text{Price}_\text{Long Forward}
+    &amp;= Ke^{-rt} – F_0^P \\
+    &amp;= Ke^{-rt} – S_0 \cdot e^{rT}
+\end{aligned}
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As its name suggests, a prepaid forward is simply a forward contract whose <strong>price is paid for at time 0</strong> rather than at expiration.</p>
+<p>Intuitively, this time 0 price is simply the <strong>PV of the price</strong> that would have been paid at maturity:</p>
+<div class="arithmatex">\[
+    F^P_0 = \text{PV}(F_0)
+\]</div>
+<p>However, since the forward price depends on the underlying, the prepaid forward price <strong>depends on the underlying</strong> as well:</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">Prepaid Forward Price</th>
+<th align="center">Forward Price</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><strong>No Dividends</strong></td>
+<td align="center"><span class="arithmatex">\(S_0\)</span></td>
+<td align="center"><span class="arithmatex">\(S_0 \cdot e^{rT}\)</span></td>
+</tr>
+<tr>
+<td align="center"><strong>Discrete Dividends</strong></td>
+<td align="center"><span class="arithmatex">\(S_0 - \text{PV Dividends}\)</span></td>
+<td align="center"><span class="arithmatex">\(S_0 - \text{AV Dividends}\)</span></td>
+</tr>
+<tr>
+<td align="center"><strong>Continuous Dividends</strong></td>
+<td align="center"><span class="arithmatex">\(S_0 \cdot e^{-qt}\)</span></td>
+<td align="center"><span class="arithmatex">\(S_0 \cdot e^{(r-q)t}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>For simplicity, the no dividend stock was used in the expression above.</p>
+</div>
+<p>Thus, following the law of one price, the price of the two portfolios must be equal:</p>
+<div class="arithmatex">\[
+    p_0 \ – \ c_0 = Ke^{-rt} \ – \ F_0^P
+\]</div>
+<h4 id="synthetic-positions"><strong>Synthetic Positions</strong><a class="headerlink" href="#synthetic-positions" title="Permanent link">&para;</a></h4>
+<p>One practical application of the PCP equation is to easily identify and create replicating portfolios for each of its individual components.</p>
+<p>This can be done by simply re-arranging the equation to <strong>match the time 0 cashflow</strong> of the position we want to replicate:</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="center">Position</th>
+<th align="center">Replicating Portfolio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><strong>Long Call</strong></td>
+<td align="center"><span class="arithmatex">\(-c_0 = -p_0 + Ke^{-rt} - F^P_0\)</span></td>
+</tr>
+<tr>
+<td align="center"><strong>Long Put</strong></td>
+<td align="center"><span class="arithmatex">\(-p_0 = -c_0 - Ke^{-rt} + F^P_0\)</span></td>
+</tr>
+<tr>
+<td align="center"><strong>Long ZC Bond</strong></td>
+<td align="center"><span class="arithmatex">\(-Ke^{-rt} = -p_0 + c_0 - F^P_0\)</span></td>
+</tr>
+<tr>
+<td align="center"><strong>Long Stock</strong></td>
+<td align="center"><span class="arithmatex">\(-F^P_0 = - S_0 = -c_0 - Ke^{-rt} + p_0\)</span></td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For a short selling position, simply re-arrange the equations to obtain a positive expression on the LHS.</p>
+</div>
 
 
 
@@ -1187,6 +1698,42 @@
       </main>
       
         <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../1.%20Introduction/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Introduction" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Introduction
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../5.%20Binomial%20Model/" class="md-footer__link md-footer__link--next" aria-label="Next: Binomial Model" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Binomial Model
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
