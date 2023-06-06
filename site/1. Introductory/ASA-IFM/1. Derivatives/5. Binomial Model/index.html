@@ -373,6 +373,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#single-period-trees" class="md-nav__link">
     Single Period Trees
   </a>
@@ -381,15 +388,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#sp-risk-neutral-method" class="md-nav__link">
-    SP Risk Neutral Method
+  <a href="#sp-replicating-portfolio-method" class="md-nav__link">
+    SP Replicating Portfolio Method
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#sp-replicating-portfolio-method" class="md-nav__link">
-    SP Replicating Portfolio Method
+  <a href="#sp-risk-neutral-method" class="md-nav__link">
+    SP Risk Neutral Method
   </a>
   
 </li>
@@ -408,15 +415,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#mp-risk-neutral-method" class="md-nav__link">
-    MP Risk Neutral Method
+  <a href="#mp-replicating-portfolio-method" class="md-nav__link">
+    MP Replicating Portfolio Method
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#mp-replicating-portfolio-method" class="md-nav__link">
-    MP Replicating Portfolio Method
+  <a href="#mp-risk-neutral-method" class="md-nav__link">
+    MP Risk Neutral Method
   </a>
   
 </li>
@@ -1197,6 +1204,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#single-period-trees" class="md-nav__link">
     Single Period Trees
   </a>
@@ -1205,15 +1219,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#sp-risk-neutral-method" class="md-nav__link">
-    SP Risk Neutral Method
+  <a href="#sp-replicating-portfolio-method" class="md-nav__link">
+    SP Replicating Portfolio Method
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#sp-replicating-portfolio-method" class="md-nav__link">
-    SP Replicating Portfolio Method
+  <a href="#sp-risk-neutral-method" class="md-nav__link">
+    SP Risk Neutral Method
   </a>
   
 </li>
@@ -1232,15 +1246,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#mp-risk-neutral-method" class="md-nav__link">
-    MP Risk Neutral Method
+  <a href="#mp-replicating-portfolio-method" class="md-nav__link">
+    MP Replicating Portfolio Method
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#mp-replicating-portfolio-method" class="md-nav__link">
-    MP Replicating Portfolio Method
+  <a href="#mp-risk-neutral-method" class="md-nav__link">
+    MP Risk Neutral Method
   </a>
   
 </li>
@@ -1266,12 +1280,159 @@
 
 
 <h1 id="binomial-model"><strong>Binomial Model</strong><a class="headerlink" href="#binomial-model" title="Permanent link">&para;</a></h1>
+<h2 id="overview"><strong>Overview</strong><a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>The simplest option pricing model is the <strong>Binomial Model</strong>.</p>
+<p>All option pricing models attempt to <strong>predict the price of the underlying at expiration</strong> and thus work backwards to determine the price of the option.</p>
+<p>As its name suggests, the binomial model assumes that in <strong>each period</strong> <span class="arithmatex">\((h)\)</span>, the stock price can only <strong>move in two ways</strong> - Up <span class="arithmatex">\((u)\)</span> or Down <span class="arithmatex">\((d)\)</span>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    S_u &amp;= S_0 \cdot u \\
+    S_d &amp;= S_0 \cdot d
+\end{aligned}
+\]</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is a common misconception to think that up or down is used relative to the starting stock price.</p>
+<p>It is meant to be used <strong>relative to one another</strong>, thus <strong>both can be higher or lower than the starting price</strong> but still smaller than the other.</p>
+<div class="arithmatex">\[
+    S_u &gt; S_d \equiv  u &gt; d
+\]</div>
+</div>
+<p>However, it is impossible to know which of the two ways that the stock will take. Thus, the probability of going up is denoted as <span class="arithmatex">\(p\)</span> while the probability of going down is its complement <span class="arithmatex">\(1-p\)</span>.</p>
+<p>Given that there only two outcomes, it can easily illustrated via a <strong>probability tree</strong>, which is why they are also referred to as <strong>Binomial Trees</strong>:</p>
+<!-- Obtained from Coaching Actuaries -->
+<p><img alt="Basic Tree" class="center" src="../Assets/5.%20Binomial%20Model.md/Basic%20Tree.png" /></p>
 <h2 id="single-period-trees"><strong>Single Period Trees</strong><a class="headerlink" href="#single-period-trees" title="Permanent link">&para;</a></h2>
-<h3 id="sp-risk-neutral-method"><strong>SP Risk Neutral Method</strong><a class="headerlink" href="#sp-risk-neutral-method" title="Permanent link">&para;</a></h3>
+<p>The simplest Binomial Model assumes that there is only <strong>one period from inception to expiration</strong>. Though unrealistic, they allow us to easily understand the core concepts behind binomial trees.</p>
 <h3 id="sp-replicating-portfolio-method"><strong>SP Replicating Portfolio Method</strong><a class="headerlink" href="#sp-replicating-portfolio-method" title="Permanent link">&para;</a></h3>
+<p>The first way to use a binomial tree is through the <strong>Replicating Portfolio Method</strong>.</p>
+<p>As its name suggests, it attempts to create a replicating portfolio that will payoff of the option <strong>regardless of which way the stock moves</strong>. By the law of one price, the <strong>cost of the option is the cost of the portfolio</strong>.</p>
+<p>The replicating portfolio is assumed to consist of <strong>Stocks</strong> <span class="arithmatex">\((\delta)\)</span> and <strong>Bonds</strong> <span class="arithmatex">\((B)\)</span>. The payoff of the options are denoted using <span class="arithmatex">\(V\)</span>.</p>
+<!-- Obtained from Coaching Actuaries -->
+<p><img alt="SP Replicating Portfolio" class="center" src="../Assets/5.%20Binomial%20Model.md/SP%20Replicating%20Portfolio.png" /></p>
+<p>The goal is to set up a <strong>simultaneous equation</strong> for each of the two ways that the price can move and thus solve for the <span class="arithmatex">\(\Delta\)</span> and <span class="arithmatex">\(B\)</span>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \Delta S_0 u + B e^{rT} &amp;= V_u \\
+    \Delta S_0 d + B e^{rT} &amp;= V_d
+\end{aligned}
+\]</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Bonds are usually stated in terms of their face values, but in here <span class="arithmatex">\(B\)</span> is the <strong>price at time 0</strong>. Do not be confused!</p>
+</div>
+<p>Subtracting the down scenario from the up scenario,</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \Delta S_0 u + B e^{rT} - (\Delta S_0 d + B e^{rT}) &amp;= V_u - V_d \\
+    \Delta S_0 (u - d) &amp;= V_u - V_d \\
+    \Delta &amp;= \frac{V_u - V_d}{S_0 (u - d)}
+\end{aligned}
+\]</div>
+<p>Substituting it back in,</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \Delta S_0 u + B e^{rT} &amp;= V_u \\
+    \frac{V_u - V_d}{S_0 (u - d)} \cdot S_0 u + B e^{rT} &amp;= V_u \\
+    \frac{V_u - V_d}{(u - d)} \cdot u + B e^{rT} &amp;= V_u \\
+    B e^{rT} &amp;= \frac{uV_d - dV_u}{u-d} \\
+    B &amp;= e^{-rT} \cdot \frac{uV_d - dV_u}{u-d}
+\end{aligned}
+\]</div>
+<p>Thus, the price of the option is equal to the price of the portfolio:</p>
+<div class="arithmatex">\[
+    \text{Option Price} = \Delta \cdot S_0 + B
+\]</div>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="center">Calls</th>
+<th align="center">Puts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Buy Stock <span class="arithmatex">\((\Delta \gt 0)\)</span></td>
+<td align="center">Sell Stock (<span class="arithmatex">\(\Delta \gt 0\)</span>)</td>
+</tr>
+<tr>
+<td align="center">Sell Bonds/Borrow Money <span class="arithmatex">\((B \lt 0)\)</span></td>
+<td align="center">Buy Bonds/Lend money <span class="arithmatex">\((B \gt 0)\)</span></td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<h3 id="sp-risk-neutral-method"><strong>SP Risk Neutral Method</strong><a class="headerlink" href="#sp-risk-neutral-method" title="Permanent link">&para;</a></h3>
+<p>Given the probabilities assigned earlier, the price of the option should be equal to the <strong>PV of the expected payoff</strong>:</p>
+<div class="arithmatex">\[
+    \text{Option Price} = e^{-rt} \cdot [p \cdot V_u + (1-p) \cdot V_d]
+\]</div>
+<p>Similarly, the initial stock price should be the <strong>PV of the expected final stock prices</strong>, which will allow us to <strong>solve for <span class="arithmatex">\(p\)</span></strong> and hence calculate the option price:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    S_0 &amp;= e^{-rt} \cdot [p \cdot S_0 u + (1 – p) \cdot S_0 d] \\
+    e^{rt} &amp;= p \cdot u + (1-p) \cdot d \\
+    e^{rt} &amp;= pu + d - pd \\
+    e^{rt} – d &amp;= p(u – d) \\
+    p &amp;= \frac{e^{rt} - d}{u - d} \\
+\end{aligned}
+\]</div>
+<p>Generally speaking, this method is preferred to the replicating portfolio one as it is much faster - simply plug in the appropriate values into the formula.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Since <span class="arithmatex">\(p\)</span> is a probability, it <strong>MUST be between 0 and 1</strong>. Any violation of this would lead to an opportunity for arbitrage:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    0 &amp;&lt; p &lt; 1 \\
+    0 &amp;&lt; \frac{e^{rt} - d}{u - d} \\
+    0 &amp;&lt; e^{rt} – d &lt; u - d \\
+    d &amp;&lt; e^{rt} &lt; u
+\end{aligned}
+\]</div>
+<p>This further drives home the point that <span class="arithmatex">\(u\)</span> and <span class="arithmatex">\(d\)</span> do not have to be above or below 1 respectively - they just need to be larger or smaller relative to one another.</p>
+</div>
 <h2 id="multi-period-trees"><strong>Multi Period Trees</strong><a class="headerlink" href="#multi-period-trees" title="Permanent link">&para;</a></h2>
-<h3 id="mp-risk-neutral-method"><strong>MP Risk Neutral Method</strong><a class="headerlink" href="#mp-risk-neutral-method" title="Permanent link">&para;</a></h3>
+<p>A slightly more realistic binomial tree is one that has <strong>multiple periods</strong>, as the stock prices tend to change many times before expiration.</p>
+<p>For simplicity, we will only consider a <strong>two period binomial tree</strong>, but the concepts easily extend to more periods.</p>
+<p>We can think of multi-period trees as a <strong>single period tree that repeats itself</strong>. As such, all factors <span class="arithmatex">\((u, d, p)\)</span> remain <strong>constant throughout the tree</strong>.</p>
+<p>The price of the option can thus be found by <strong>recursively solving</strong> one node at a time using any of the above methods from the RHS till the starting node is found.</p>
+<!-- Obtained from Coaching Actuaries -->
+<p><img alt="MP Tree" class="center" src="../Assets/5.%20Binomial%20Model.md/MP%20Tree.png" /></p>
 <h3 id="mp-replicating-portfolio-method"><strong>MP Replicating Portfolio Method</strong><a class="headerlink" href="#mp-replicating-portfolio-method" title="Permanent link">&para;</a></h3>
+<p>Unfortunately, there is <strong>no shortcut</strong> for the replicating portfolio method - the components of the portfolio can only be calculated recursively.</p>
+<p>Note that the intuition of the method changes slightly. The portfolio formed at time 0 is a <strong>self-financing portfolio</strong> that will be sold each period to <em>exactly</em> purchase a <strong>new portfolio at that time</strong>, such that the final portfolio leading up to expiration will replicate the payoff.</p>
+<!-- MP Replicating Portfolio -->
+<p><img alt="MP Replicating Portfolio" class="center" src="../Assets/5.%20Binomial%20Model.md/MP%20Replicating%20Portfolio.png" /></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If both 0 then starting must be 0</p>
+</div>
+<h3 id="mp-risk-neutral-method"><strong>MP Risk Neutral Method</strong><a class="headerlink" href="#mp-risk-neutral-method" title="Permanent link">&para;</a></h3>
+<p>Fortunately, there is a <strong>shortcut</strong> for the risk neutral method. For a two period model, there are <strong>three ending possibilities</strong> - Up Up, Up Down &amp; Down Down.</p>
+<p>Instead of having to recursively solve for intermediate option prices, we can use the <strong>Binomial Distribution</strong> to <strong>directly solve for the overall probability</strong> of the ending node and hence immediately solve for the option price.</p>
+<p>The binomial distribution has two parameters:</p>
+<ol>
+<li><strong>Number of trials</strong>: Number of periods</li>
+<li><strong>Probability of Success</strong>: Probability of moving Up</li>
+</ol>
+<div class="arithmatex">\[
+\begin{aligned}
+    X &amp;\sim \text{Binomial}(n, p) \\
+    \\
+    dd &amp;\rightarrow K = 0 \\
+    ud &amp;\rightarrow K = 1 \\
+    uu &amp;\rightarrow K = 2 \\
+    \\
+    P(X = K) &amp;= \binom{n}{K} \cdot p^K \cdot (1 – p)^{n-k}
+\end{aligned}
+\]</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The first term <strong>counts the number of ways</strong> that the ending node can be reached. The top and bottom node can only be reached in 1 way each while the <strong>middle node can be reached in 2 ways</strong>.</p>
+<p>It is a common mistake to forget to include the 2 for the middle node.</p>
+</div>
+<p>Given this shortcut, the <strong>risk neutral method is once again preferred</strong> for solving multi-period problems, unless explicitly stated otherwise.</p>
 
 
 

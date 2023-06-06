@@ -1457,6 +1457,16 @@
     \therefore X &amp;\sim N(\mu_1 + \mu_2 + ... + \mu_k, \sigma^2_1 + \sigma^2_2 + ... + \sigma_k)
 \end{aligned}
 \]</div>
+<p>Another key property is that they are <strong>symmetrical about their mean</strong>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    P(Z \lt -a)
+    &amp;= P(Z \gt a) \\
+    &amp;= 1 - P(Z \lt a)
+\end{aligned}
+\]</div>
+<!-- Obtained from Coaching Actuaries -->
+<p><img alt="Symmetrical" class="center" src="../Assets/3.%20Severity%20Models.md/Symmetrical.png" /></p>
 <h4 id="standard-normal-distribution"><strong>Standard Normal Distribution</strong><a class="headerlink" href="#standard-normal-distribution" title="Permanent link">&para;</a></h4>
 <p>If the parameters of the normal distribution are 0 and 1 respectively, then it is known as the <strong>Standard Normal Distribution</strong>, specially denoted by <span class="arithmatex">\(Z\)</span>.</p>
 <div class="arithmatex">\[
@@ -1705,7 +1715,7 @@
 <p>It has two parameters, which respectively represent the <strong>lower and upper bound</strong> of the possible outcomes:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    X \sim \text{Uniform} (a, b) \\
+    X &amp;\sim \text{Uniform} (a, b) \\
     \\
     f(x) &amp;= \frac{1}{b-a} \\
     F(x) &amp;= \frac{x - a}{b - a} \\
@@ -1717,10 +1727,10 @@
 <p>The key property of the uniform distribution is that most of the <strong>common transformations</strong> can be found by simply adjusting the range:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    X \sim \text{Uniform} (a, b) \\
-    X \mid X \gt d \sim \text{Uniform} (d, b) \\
-    X-d \sim \text{Uniform} (a-d, b-d) \\
-    \therefore X-d \mid X \gt d \text{Uniform} (a, b-d)
+    X &amp;\sim \text{Uniform} (a, b) \\
+    X \mid X \gt d &amp;\sim \text{Uniform} (d, b) \\
+    X-d &amp;\sim \text{Uniform} (a-d, b-d) \\
+    \therefore X-d \mid X \gt d &amp;\sim \text{Uniform} (0, b-d)
 \end{aligned}
 \]</div>
 <div class="admonition warning">
