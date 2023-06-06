@@ -714,9 +714,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#basic-life-table" class="md-nav__link">
-    Basic Life Table
+  <a href="#basic-functions" class="md-nav__link">
+    Basic Functions
   </a>
+  
+    <nav class="md-nav" aria-label="Basic Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#binomial-distribution" class="md-nav__link">
+    Binomial Distribution
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-homogenous-cohort" class="md-nav__link">
+    Non-Homogenous Cohort
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -751,6 +771,26 @@
   <a href="#select-ultimate-mortality" class="md-nav__link">
     Select &amp; Ultimate Mortality
   </a>
+  
+    <nav class="md-nav" aria-label="Select &amp; Ultimate Mortality">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intepretation" class="md-nav__link">
+    Intepretation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alternative-intepretation" class="md-nav__link">
+    Alternative Intepretation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1196,9 +1236,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#basic-life-table" class="md-nav__link">
-    Basic Life Table
+  <a href="#basic-functions" class="md-nav__link">
+    Basic Functions
   </a>
+  
+    <nav class="md-nav" aria-label="Basic Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#binomial-distribution" class="md-nav__link">
+    Binomial Distribution
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-homogenous-cohort" class="md-nav__link">
+    Non-Homogenous Cohort
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1234,6 +1294,26 @@
     Select &amp; Ultimate Mortality
   </a>
   
+    <nav class="md-nav" aria-label="Select &amp; Ultimate Mortality">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intepretation" class="md-nav__link">
+    Intepretation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alternative-intepretation" class="md-nav__link">
+    Alternative Intepretation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1253,13 +1333,16 @@
 
 <h1 id="life-tables"><strong>Life Tables</strong><a class="headerlink" href="#life-tables" title="Permanent link">&para;</a></h1>
 <h2 id="overview"><strong>Overview</strong><a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>Life Tables existed long before the survival models in the previous section. The mortality functions were presented in tabular form, where the probabilities and expectations were then calculated from.</p>
-<p>Both the survival model and life table are equivalent ways of obtaining the same results.</p>
-<h2 id="basic-life-table"><strong>Basic Life Table</strong><a class="headerlink" href="#basic-life-table" title="Permanent link">&para;</a></h2>
-<p>The life table is constructed based on the mortality of a <strong>group of people</strong> known as the <strong>Cohort</strong>.</p>
-<p>The initial age of the group people is known as the <strong>Starting Age</strong>, denoted by <span class="arithmatex">\(\alpha\)</span>. The initial number of people in the cohort is known as the <strong>Radix</strong>, which is usually a large round number (EG. 1000)</p>
-<p>Conversely, the maximum age is known as the <strong>Terminal Age</strong>, denoted by <span class="arithmatex">\(\omega\)</span>. Everybody in the cohort is expected to gradually <strong>die by the terminal age</strong>.</p>
-<p>The number of people alive from the cohort at age <span class="arithmatex">\(x\)</span> is denoted as <span class="arithmatex">\(\ell_x\)</span>:</p>
+<p>A <strong>Life Table</strong> is a convenient way of summarizing the results of the survival model. As such, they are equivalent ways of obtaining the same results.</p>
+<h2 id="basic-functions"><strong>Basic Functions</strong><a class="headerlink" href="#basic-functions" title="Permanent link">&para;</a></h2>
+<p>The life table is constructed based on the mortality of a <strong>homogenous group of people</strong> known as the <strong>Cohort</strong>.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>In practice, multiple life tables are created for different groups of individuals with different risks (Male vs Female, Smoker vs Non Smoker).</p>
+</div>
+<p>The <strong>initial age</strong> of the group people is known as the <strong>Starting Age</strong>, denoted by <span class="arithmatex">\(\alpha\)</span>. The <strong>initial number</strong> of people in the cohort is known as the <strong>Radix</strong>, which is usually a large round number (EG. 1000).</p>
+<p>Conversely, the maximum age is known as the <strong>Limiting Age</strong>, denoted by <span class="arithmatex">\(\omega\)</span>. Everybody in the cohort is expected to gradually <strong>die by the terminal age</strong>.</p>
+<p>The <strong>expected number</strong> of people who are alive at age <span class="arithmatex">\(x\)</span> is denoted as <span class="arithmatex">\(\ell_x\)</span>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     \ell_0 &amp;= 1000 \\
@@ -1285,25 +1368,73 @@
     {}_{s|t}q_{x} &amp;= \frac{{}_{t}d_{x+s}}{l_{x}} \\
 \end{aligned}
 \]</div>
-<p>Thus, it can be seen that the probabilities are simply the proportion of people who died/survived over the a given period.</p>
-<!--force of mortality-->
-
+<p>Thus, it can be seen that the probabilities are calculated from first principles as the <strong>proportion of people</strong> who died/survived over the a given period.</p>
+<h3 id="binomial-distribution"><strong>Binomial Distribution</strong><a class="headerlink" href="#binomial-distribution" title="Permanent link">&para;</a></h3>
+<p>Intuitively, each person in the cohort can either be <strong>Alive or Dead</strong>. Thus, their status can be represented by a <strong>Bernoulli Variable</strong>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \text{Status}
+    &amp;=
+    \begin{cases}
+        0 \ (\text{Dead}),&amp; {}_{n}q_{x} \\
+        1 \ (\text{Alive}),&amp; {}_{n}p_{x}
+    \end{cases}
+\end{aligned}
+\]</div>
+<p>Assuming that the lifetimes of each person in the cohort is independent of one another, the total number of people alive is the <strong>sum of independent bernoulli variables</strong>, thus is <strong>binomially distributed</strong>.</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    N &amp;\sim \text{Binomial}(\ell_0, {}_{n}p_{x}) \\
+    \\
+    E(N) &amp;= \ell_0 \cdot {}_{n}p_{x} \\
+    Var(N) &amp;= \ell_0 \cdot {}_{n}p_{x} \cdot (1-{}_{n}p_{x}) \\
+    \\
+    \therefore \ell_{x} &amp;= E(N)
+\end{aligned}
+\]</div>
+<p>Given a sufficiently large population, the binomial distributed can be <strong>approximated using the normal distribution</strong>, with continuity correction applied. For more information on CC, refer to the FAM-S section of the notes.</p>
+<div class="arithmatex">\[
+    N \sim N(E(N), Var(N))
+\]</div>
+<h3 id="non-homogenous-cohort"><strong>Non-Homogenous Cohort</strong><a class="headerlink" href="#non-homogenous-cohort" title="Permanent link">&para;</a></h3>
+<p>Some questions may provide <strong>non-homogenous cohorts</strong> where there are different groups of people with different mortality rates, but ask for the overall number of people.</p>
+<p>Each group is modelled using their <strong>own binomial distribution</strong> based on their respective mortalities and are assumed to be independent of one another.</p>
+<p>Usually, the sum of independent binomial variables with the <em>same probabilities</em> will be binomially distributed. However, note that since each group has <strong>different survival probabilities</strong>, the <strong>combined distribution is NOT binomial</strong>!</p>
+<p>Thus, the normal approximation is usually used for these cases:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    N &amp;= N_1 + N_2 \\
+    \\
+    E(N) &amp;= E(N_1) + E(N_2) \\
+    Var(N) &amp;= Var(N_1) + Var (N_2) \\
+    \\
+    N &amp;\sim N(E(N), Var(N))
+\end{aligned}
+\]</div>
 <h2 id="fractional-age-assumptions"><strong>Fractional Age Assumptions</strong><a class="headerlink" href="#fractional-age-assumptions" title="Permanent link">&para;</a></h2>
 <p>One limitation of the life table is that it is computed at discrete ages while many problems require probabilities for non-discrete ages.</p>
 <p>Thus, several <strong>assumptions</strong> about the life table that allows non-discrete values to be <strong>interpolated</strong> from the discrete ones, known as <strong>Fractional Age Assumptions</strong>.</p>
 <h3 id="uniform-distribution-of-deaths"><strong>Uniform Distribution of Deaths</strong><a class="headerlink" href="#uniform-distribution-of-deaths" title="Permanent link">&para;</a></h3>
 <p>The <strong>Uniform Distribution of Deaths</strong> (UDD) is an assumption that allows for <strong>Linear Interpolation</strong> between discrete ages.</p>
-<p>It assumes that there is a <strong>uniform distribution</strong> of deaths between ages such that the probability of survival <strong>decreases linearly</strong> over the year.</p>
-<blockquote>
-<p>The UDD assumption is less appropriate for older individuals as the probability of death begins to increase exponentially, even from month to month.</p>
-</blockquote>
-<p>Let the fractional age be <span class="arithmatex">\(s\)</span>. Thus, the probability using fractional ages is simply the <strong>weighted average</strong> of the discrete points:</p>
+<p>It assumes that there is a uniform distribution between integer ages, such that people are dying at a constant rate over the year; the <strong>number of survivors decreases linearly</strong> over the year.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>UDD is a valid assumption becomes the probability of dying in one month is not significantly different from another month.</p>
+<p>However, it becomes less appropriate at older ages as the probability death increases exponentially, even from month to month.</p>
+</div>
+<!-- Self Made -->
+<p><img alt="UDD" class="center" src="../Assets/2.%20Life%20Tables.md/UDD.png" /></p>
+<p>The number of survivors can thus be calculated via <strong>linear interpolation</strong>:</p>
+<div class="arithmatex">\[
+    \ell_{x+s} = (1-s) \cdot \ell_{x} + t \cdot \ell_{x} \\
+\]</div>
+<p>Firstly, we calculate the probability of surviving a <strong>fractional amount of time from a discrete age</strong>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     {}_{s}p_{x}
-    &amp;= (1-s) {}_{0}p_{x} + s {}_{1}p_{x} \\
-    &amp;= (1-s)\frac{\ell_{x}}{\ell_{x}} + s \frac{\ell_{x+1}}{\ell_{x}} \\
-    &amp;= \frac{\ell_{x}-s\ell_{x} + s\ell_{x+1}}{\ell_{x}} \\
+    &amp;= \frac{\ell_{x+t}}{\ell_{x}} \\
+    &amp;= \frac{(1-s) \cdot \ell_{x} + s \cdot \ell_{x}}{\ell_{x}} \\
+    &amp;= \frac{\ell_{x}-s\ell_{x} + s \ell_{x+1}}{\ell_{x}} \\
     &amp;= \frac{\ell_{x} - s(\ell_{x}-\ell_{x+1})}{\ell_{x}} \\
     &amp;= \frac{\ell_{x} - s d_{x}}{\ell_{x}} \\
     &amp;= \frac{\ell_{x}}{\ell_{x}} - s\frac{d_{x}}{\ell_{x}} \\
@@ -1312,12 +1443,15 @@
     \therefore {}_{s}q_{x} &amp;= s \cdot q_x
 \end{aligned}
 \]</div>
-<blockquote>
-<p>Note that <span class="arithmatex">\({}_{0}p_{x}=1\)</span> as it is the probability of surviving in that moment; which should be guaranteed.</p>
-</blockquote>
-<!-- Self Made -->
-<p><img alt="UDD" class="center" src="../Assets/2.%20Life%20Tables.md/UDD.png" /></p>
-<p>Based on this, the PDF and Force of Mortality can also be determined:</p>
+<p>Following the same logic, we calculate the probability of surviving a fractional amount of time <strong>from a fractional age</strong>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    {}_{t}p_{x+s}
+    &amp;= \frac{\ell_{x+s+t}}{\ell_{x+s}} \\
+    &amp;= \frac{[1-(s+t)] \cdot \ell_{x} + (s+t) \cdot \ell_{x+1}}{(1-s) \cdot \ell_{x} + s \cdot \ell_{x}}
+\end{aligned}
+\]</div>
+<p>Finally, the PDF and Force of Mortality can also be determined:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     F_x(s) &amp;= s \cdot q_x \\
@@ -1331,57 +1465,113 @@
     &amp;= \frac{q_x}{1-sq_x}
 \end{aligned}
 \]</div>
+<p>The key thing to note is that the PDF is constant under UDD.</p>
 <h3 id="constant-force-of-mortality"><strong>Constant Force of Mortality</strong><a class="headerlink" href="#constant-force-of-mortality" title="Permanent link">&para;</a></h3>
 <p>The <strong>Constant Force of Mortality</strong> is an assumption that allows for <strong>Exponential Interpolation</strong> between discrete ages.</p>
-<p>It assumes that there is a <strong>constant force of mortality</strong> between ages, such that the survival probability <strong>decreases exponentially</strong> over the year.</p>
-<div class="arithmatex">\[
-\begin{aligned}
-    {}_{1}p_{x}
-    &amp;= e^{-\int^{x+1}_{x} \mu_c} \\
-    &amp;= e^{-[t\mu_c]^{x+1}_{x}} \\
-    &amp;= e^{-[(x+1)\mu_c - (x)\mu_c ]} \\
-    &amp;= e^{-[\mu_c (x+1-x)]} \\
-    &amp;= e^{-\mu_c} \\
-    \mu_c &amp;= - \ln p_{x} \\
-    \\
-    \therefore
-    {}_{s}p_{x}
-    &amp;= e^{-\int^{x+s}_{x} \mu_c} \\
-    &amp;= e^{-s\mu_c} \\
-    &amp;= e^{s\ln p_{x}} \\
-    &amp;= e^{\ln (p_{x})^{s}} \\
-    &amp;= (p_{x})^{s} \\
-    \\
-    \therefore
-    {}_{s}q_{x}
-    &amp;= 1 - {}_{s}p_{x} \\
-    &amp;= 1 - (p_{x})^{s} \\
-    &amp;= 1 - [(1-q_{x})]^{s}
-\end{aligned}
-\]</div>
+<p>It assumes that there is a <strong>constant force of mortality</strong> between integer ages, such that the <strong>number of survivors decreases exponentially</strong> over the year.</p>
 <!-- Self Made -->
 <p><img alt="Constant Force of Mortality" class="center" src="../Assets/2.%20Life%20Tables.md/Constant%20Force.png" /></p>
-<h2 id="select-ultimate-mortality"><strong>Select &amp; Ultimate Mortality</strong><a class="headerlink" href="#select-ultimate-mortality" title="Permanent link">&para;</a></h2>
-<p>Mortality rates for the general population versus individuals who buy life insurance tend to be different. Generally speaking, people who purchase insurance tend to be richer and thus have <strong>better mortality rates than the general population</strong>.</p>
-<p>Within the individuals who purchase life insurance, those who have <strong>recently purchased a policy tend to have better mortality</strong>. This is because these individuals would have gone through <strong>Medical Underwriting</strong> and thus is expected to be in better health.</p>
-<p>The extent of the better mortality <strong>decreases over time</strong> and after a few years, they should experience the <strong>same mortality</strong> as the rest of the individuals who purchased life insurance. The duration of time is dependent on the <em>rigorousness of the underwriting process</em>.</p>
-<p>Formally speaking, the individuals who purchased life insurance were <em>selected</em> by the underwriting process and thus the better mortality experienced is known as <strong>Select Mortality</strong>. Similarly, the time whereby the select mortality is better is known as the <strong>Select Period</strong>. The select mortality <em>ultimately</em> converges with the non-select group, known as the <strong>Ultimate Mortality</strong>.</p>
-<p>In actuarial notation, subscript <span class="arithmatex">\([x]\)</span> is used to distinguish select mortality from ultimate mortality, where the select period is denoted as <span class="arithmatex">\(d\)</span>:</p>
+<p>The number of survivors can thus be calculated via exponential interpolation:</p>
+<div class="arithmatex">\[
+    \ell_{x+s} = \ell_{x}^{1-s} + \ell_{x}^{s} \\
+\]</div>
+<p>Firstly, we calculate the probability of surviving a <strong>fractional amount of time from a discrete age</strong>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    \begin{cases}
-        q_{[x]+t} &lt; q_{x+t},&amp; t &lt; d \\
-        q_{[x]+t} = q_{x+t},&amp; t \ge d
-    \end{cases}
+    {}_{s}p_{x}
+    &amp;= \frac{\ell_{x+s}}{\ell_{x}} \\
+    &amp;= \frac{\ell_{x}^{1-s} + \ell_{x+1}^{s}}{\ell_{x}} \\
+    &amp;= \frac{\ell_{x+1}^t}{\ell_{x}^t} \\
+    &amp;= \left(\frac{\ell_{x+1}}{\ell_{x}} \right)^t \\
+    &amp;= ({}_{}p_{x})^t \\
+    \\
+    \therefore {}_{s}q_{x} &amp;= 1 - ({}_{}p_{x})^t
 \end{aligned}
 \]</div>
-<p>Note that the definition of <span class="arithmatex">\(x\)</span> is dependent on the questions:</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>This result should not be surprising, as it is an extension of the previous result on the exponential survival functions.</p>
+<p>Since the probabilities are <strong>memoryless</strong>, age does not matter:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    {}_{n}p_{x} 
+    &amp;= {}_{}p_{x} \cdot {}_{}p_{x+1} \cdot {}_{}p_{x+2} \cdot \dots \\
+    &amp;= {}_{}p_{x} \cdot {}_{}p_{x} \cdot {}_{}p_{x} \cdot \dots \\
+    &amp;= ({}_{}p_{x})^n
+\end{aligned}
+\]</div>
+</div>
+<p>Following the same logic, we calculate the probability of surviving a fractional amount of time <strong>from a fractional age</strong>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    {}_{t}p_{x+s}
+    &amp;= \frac{\ell_{x+s+t}}{\ell_{x+s}} \\
+    &amp;= \frac{\ell_{x}^{1-(s+t)} \cdot \ell_{x}^{s+t}}{\ell_{x}^{1-s} \cdot \ell_{x+1}^{s}} \\
+    &amp;= \frac{\ell_{x+1}^t}{\ell_{x}^t} \\
+    &amp;= \left(\frac{\ell_{x+1}}{\ell_{x}} \right)^t \\
+    &amp;= ({}_{}p_{x})^t
+\end{aligned}
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This further drives home the fact <strong>age does not matter</strong>, even at fractional ages, due to the memoryless property.</p>
+</div>
+<p>Finally, the PDF and Force of Mortality can also be determined:</p>
+<div class="arithmatex">\[
+    \text{TBC}
+\]</div>
+<h2 id="select-ultimate-mortality"><strong>Select &amp; Ultimate Mortality</strong><a class="headerlink" href="#select-ultimate-mortality" title="Permanent link">&para;</a></h2>
+<p>Mortality rates for the general population versus individuals who buy life insurance tend to be different. Generally speaking, people who purchase insurance tend to be richer and thus have <strong>better mortality rates than the general population</strong>.</p>
+<p>Within the individuals who purchase life insurance, those who have <strong>recently purchased a policy tend to have better mortality</strong>. This is because these individuals would have gone through
+<strong>Medical Underwriting</strong> and thus is expected to be in better health.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>"Better" mortality can be understood as having a higher chance to survive or lower chance to die.</p>
+</div>
+<p>The extent of the better mortality <strong>decreases over time</strong> and after a few years, they should experience the <strong>same mortality</strong> as the rest of the individuals who purchased life insurance. The duration of time is dependent on the <em>rigorousness of the underwriting process</em>.</p>
+<p>Formally speaking, the individuals who purchased life insurance were <em>selected</em> by the underwriting process and thus the better mortality experienced is known as <strong>Select Mortality</strong>. Similarly, the time whereby the select mortality is better is known as the <strong>Select Period</strong>. The select mortality <em>ultimately</em> converges with the non-select group, known as the <strong>Ultimate Mortality</strong>.</p>
+<h3 id="intepretation"><strong>Intepretation</strong><a class="headerlink" href="#intepretation" title="Permanent link">&para;</a></h3>
+<p>The subscript <span class="arithmatex">\([x]\)</span> is used to denote the <strong>age that the person was selected</strong>. The years following that are represented by <span class="arithmatex">\([x]+1, [x]+2, \dots\)</span>.</p>
+<p>Note the difference in intepretation:</p>
 <ul>
-<li><span class="arithmatex">\(x\)</span> is the <strong>select age</strong> - <span class="arithmatex">\([x], [x]+1, [x]+2, ...\)</span></li>
-<li><span class="arithmatex">\(x\)</span> is the <strong>ultimate age</strong> - <span class="arithmatex">\([x], [x-1], [x-2], ...\)</span></li>
+<li><span class="arithmatex">\({}_{n}p_{x}\)</span> is the probability that a person aged <span class="arithmatex">\(x\)</span> survives <span class="arithmatex">\(n\)</span> years to age <span class="arithmatex">\(x+n\)</span>.</li>
+<li><span class="arithmatex">\({}_{n}p_{[x]}\)</span> is the probability that a person aged <span class="arithmatex">\(x\)</span>, that was <strong>selected at age <span class="arithmatex">\(x\)</span></strong>, survives <span class="arithmatex">\(n\)</span> years to age <span class="arithmatex">\(x+n\)</span>.</li>
+<li><span class="arithmatex">\({}_{n}p_{[x]+m}\)</span> is the probability that a person aged <span class="arithmatex">\(x+m\)</span>, that was <strong>selected age <span class="arithmatex">\(x\)</span></strong>, survives <span class="arithmatex">\(n\)</span> years to age <span class="arithmatex">\(x+m+n\)</span>.</li>
 </ul>
-<!-- Obtained from CA -->
-<p><img alt="Select Ult Tables" class="center" src="../Assets/2.%20Life%20Tables.md/Select%20Ult%20Tables.png" /></p>
+<p>The <strong>key properties</strong> of select and ultimate mortality described previously can also be put into mathematical form. Let the select period be denoted by <span class="arithmatex">\(d\)</span>.</p>
+<p>Firstly, <strong>before the select period finishes</strong> <span class="arithmatex">\((t \lt d)\)</span>, select mortality is always better than ultimate mortality:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    q_{[x]+t} &amp;\lt q_{x+t} \\
+    p_{[x]+t} &amp;\gt p_{x+t}
+\end{aligned}
+\]</div>
+<p>Next, the effect of selection decreases over time; <strong>more recently selected people</strong> have better mortality:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    {}_{}q_{[x]} &amp;\lt {}_{}q_{[x]+t} \\
+    {}_{}p_{[x]} &amp;\gt {}_{}p_{[x]+t}
+\end{aligned}
+\]</div>
+<p>Lastly, <strong>once the select period finishes</strong> <span class="arithmatex">\((t \gt d)\)</span>, it is the same as ultimate mortality:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    q_{[x]+t} &amp;= q_{x+t} \\
+    p_{[x]+t} &amp;= p_{x+t}
+\end{aligned}
+\]</div>
+<p>Select &amp; Ultimate mortality is usually given in tabular form. Thus, the proper way to read the table would be <strong>left to right during the select period</strong> and then <strong>downwards after the select period</strong>:</p>
+<!-- Obtained from Coaching Actuaries -->
+<p><img alt="Select Table" class="center" src="../Assets/2.%20Life%20Tables.md/Select%20Table.png" /></p>
+<h3 id="alternative-intepretation"><strong>Alternative Intepretation</strong><a class="headerlink" href="#alternative-intepretation" title="Permanent link">&para;</a></h3>
+<p>Although the above method of denoting select and ultimate mortality is more common, an alternative intepretation is for <span class="arithmatex">\([x]\)</span> to <strong>denote the ultimate age instead</strong>. The years <em>before</em> are represented by <span class="arithmatex">\([x], [x-1] + 1, [x-2] + 2, \dots\)</span>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Given this possible alternative intepretation, always remember to check which notation the question specified.</p>
+</div>
+<p>Thus, the alternative way to read the table would be <strong>diagonally to the bottom right</strong> during the select period and then <strong>downwards after the select period</strong>:</p>
+<!-- Obtained from Coaching Actuaries -->
+<p><img alt="Ultimate Table" class="center" src="../Assets/2.%20Life%20Tables.md/Ultimate%20Table.png" /></p>
 
 
 

@@ -632,6 +632,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#motivation" class="md-nav__link">
+    Motivation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#complete-data" class="md-nav__link">
     Complete Data
   </a>
@@ -1182,6 +1189,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#motivation" class="md-nav__link">
+    Motivation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#complete-data" class="md-nav__link">
     Complete Data
   </a>
@@ -1239,6 +1253,9 @@
 
 <h1 id="model-estimation"><strong>Model Estimation</strong><a class="headerlink" href="#model-estimation" title="Permanent link">&para;</a></h1>
 <p>This section assumes some basic knowledge on <strong>Maximum Likelihood Estimation</strong> (MLE), which can be found under another set of notes covering a <a href="../../../3.%20Predictive%20Analytics/ASA-SRM/Review%20of%20Statistical%20Theory/">Review of Statistical Theory</a>.</p>
+<h2 id="motivation"><strong>Motivation</strong><a class="headerlink" href="#motivation" title="Permanent link">&para;</a></h2>
+<p>Rather than making an assumption about the distribution of frequency or losses or their parameters, we can <strong>study the raw data directly</strong> to gain a better understanding of it.</p>
+<p>However, there are several key data-related concepts that must be covered.</p>
 <h2 id="complete-data"><strong>Complete Data</strong><a class="headerlink" href="#complete-data" title="Permanent link">&para;</a></h2>
 <p>If given a full dataset where the value of each observation is known, then it is a complete dataset. Distribution parameters can be estimated normally through MLE.</p>
 <p>For complete data only, the MOM shortcut can be used for the following distributions:</p>
@@ -1346,6 +1363,10 @@ Most likely, **claims data will be provided** and will be used for the MLE of th
 \]</div>
 <h3 id="grouped"><strong>Grouped</strong><a class="headerlink" href="#grouped" title="Permanent link">&para;</a></h3>
 <p>The last type of incomplete data is known as <strong>Grouped Data</strong>. Similar to censoring, the exact values of <em>ALL</em> observations are not known. Instead, they are presented as the number of observations in a <strong>distinct interval</strong>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Ranges are concisely expressed using the <strong>bracket notation</strong> - () denotes that the bound is exlcusive while [] denotes that it is inclusive. For instance, (15, 20] denoted that the amount is <strong>strictly larger</strong> than 15 but <strong>less than or equal</strong> to 20; <span class="arithmatex">\(15 \lt 5 \le 20\)</span>.</p>
+</div>
 <!-- Obtained from Coaching Actuaries -->
 <p><img alt="Grouped Data" class="center" src="../Assets/8.%20Model%20Estimation.md/Grouped%20Data.png" /></p>
 <p>In terms of MLE, the likelihood of an observation within this range is simply the <strong>difference of the CDFs</strong> at the end and beginning of the interval:</p>
