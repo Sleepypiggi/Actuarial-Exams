@@ -114,3 +114,78 @@ $$
     A^{1}_{\omega-1:\enclose{actuarial}{n}} &= v
 \end{aligned}
 $$
+
+### **Intuitions**
+
+Similar to assurances, several intuitions can be made about the EPV of various annuities to serve as a sort of "sense check" against the SULT provided to determine if the answer is in the right direction.
+
+#### **Same Annuity**
+
+Since annuities are all contingent on the survival of the policyholder, only one case needs to be considered.
+
+The probability of survival is a *decreasing* function with age. The benefits are **less likely to be paid out** to an older policyholder, resulting in **smaller expected cashflows**.
+
+Since the cashflows are discounted the same amount, an older policyholder will have a **lower EPV** than a younger one:
+
+$$
+    \ddot{a}_{x+n} \lt \ddot{a}_{x}
+$$
+
+As shown previously, Annuity Dues are always smaller than Immediates as the **cashflows occur earlier** and are hence **discounted less**.
+
+$$
+    a_x < \ddot{a}_x
+$$
+
+Naturally, all else equal, annuities with a **lower interest rate are discounted less** and thus have a **higher EPV**.
+
+#### **Different Annuities**
+
+Since annuities are all contingent on the survival of the policyholder, the age of the policyholder for comparison does not matter.
+
+**TA has the smallest EPV** as it can only pay for a maximum of $n$ years, while WLs and GA can pay indefinitely.
+
+**WL is always smaller than GA** as its payments in the first $n$ years are not guaranteed; the payments after that are identical.
+
+$$
+    \ddot{a}_{x:\enclose{actuarial}{n}} < \ddot{a}_x < \ddot{a}_{\bar{x:\enclose{actuarial}{n}}}
+$$
+
+#### **Immediate VS Due**
+
+Consider two temporary life annuity with a term of $n$ years:
+
+* Annuity Immediate issued at age $x$
+* Annuity Due issued at age $x+1$
+* Both have the **same cashflows**:
+
+<!-- Self Made -->
+![Immediate VS Due Intuition](Assets/4.%20Life%20Annuities.md/Immediate%20VS%20Due%20Intuition.png){.center}
+
+However, both of them are valued at different times:
+
+* Annuity Immediate valued at age $x$
+* Annuity Due valued at age $x+1$
+* Thus, the **PV of the cashflows are NOT the same**:
+
+<!-- Self Made -->
+![Immediate VS Due Intuition PV](Assets/4.%20Life%20Annuities.md/Immediate%20VS%20Due%20Intuition%20PV.png){.center}
+
+Thus, although they have the same cashflows, the **annuity due has a larger EPV**:
+
+$$
+\begin{aligned}
+    a_{x:\enclose{actuarial}{n}} &= \sum^n_{j=1} v^j {}_{j}p_{x} \\
+    \\
+    \ddot{a}_{x+1:\enclose{actuarial}{n}}
+    &= \sum^{n-1}_{j=0} v^j {}_{j}p_{x+1} \\
+    &= \frac{1}{vp_{x}} \sum^{n-1}_{j=0} v^{j+1} {}_{j}p_{x+1} p_{x} \\
+    &= \frac{1}{vp_{x}} \sum^{n-1}_{j=0} v^{j+1} {}_{j+1}p_{x} \\
+    &= \frac{1}{vp_{x}} \sum^{n}_{j=1} v^{j} {}_{j}p_{x} \\
+    &= \underbrace{\frac{1}{vp_{x}}}_{>1} \cdot  a_{x:\enclose{actuarial}{n}} \\
+    \\
+    \therefore \ddot{a}_{x+1:\enclose{actuarial}{n}} &> a_{x:\enclose{actuarial}{n}}
+\end{aligned}
+$$
+
+This approach might seem long winded, as it seems that it is sufficient to simply compare the cashflows of $1 > v^n$. However, that **ignores the probabilities**, which is properly accounted for in the above approach.

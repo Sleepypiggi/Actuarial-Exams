@@ -729,9 +729,36 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#rate-changes" class="md-nav__link">
-    Rate Changes
+  <a href="#indicative-premium" class="md-nav__link">
+    Indicative Premium
   </a>
+  
+    <nav class="md-nav" aria-label="Indicative Premium">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#loss-ratio-method" class="md-nav__link">
+    Loss Ratio Method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pure-premium-method" class="md-nav__link">
+    Pure Premium Method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practical-tips" class="md-nav__link">
+    Practical Tips
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1375,9 +1402,36 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#rate-changes" class="md-nav__link">
-    Rate Changes
+  <a href="#indicative-premium" class="md-nav__link">
+    Indicative Premium
   </a>
+  
+    <nav class="md-nav" aria-label="Indicative Premium">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#loss-ratio-method" class="md-nav__link">
+    Loss Ratio Method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pure-premium-method" class="md-nav__link">
+    Pure Premium Method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practical-tips" class="md-nav__link">
+    Practical Tips
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1520,28 +1574,28 @@
 </ul>
 <p>As its name suggests, other expenses is a catch all for non-LAE expenses. They are generally split into two categories:</p>
 <ul>
-<li><strong>Variable Expenses</strong> (VE): Expenses that vary with premium (EG. Commissions)</li>
-<li><strong>Fixed Expenses</strong> (FE): Expenses that do NOT vary with premium (EG. Salaries)</li>
+<li><strong>Variable Expenses</strong> (\text{VE}): Expenses that vary with premium (EG. Commissions)</li>
+<li><strong>Fixed Expenses</strong> (\text{FE}): Expenses that do NOT vary with premium (EG. Salaries)</li>
 </ul>
 <div class="arithmatex">\[
-    \text{Expenses} = \text{VE} \cdot P + \text{FE}
+    \text{Expenses} = \text{\text{VE}} \cdot P + \text{\text{FE}}
 \]</div>
 <h2 id="profit"><strong>Profit</strong><a class="headerlink" href="#profit" title="Permanent link">&para;</a></h2>
 <p>Profits can be included in ratemaking either implicitly or explicitly.</p>
 <p>By using <strong>more conservative estimates</strong> than usual, <strong>actual experience should be better</strong> than expected, which <strong>implicitly</strong> results in profit for the insurer.</p>
 <p>Alternatively, they can <strong>explicitly include a margin for the target profit</strong> (T) in the ratemaking process, as seen in the fundamental insurance equation.</p>
 <div class="arithmatex">\[
-    \text{Profit} = T \cdot P
+    \pi = \pi_{T} \cdot P
 \]</div>
 <p>Based on this, we can find the <strong>target loss ratio</strong> such that the premiums are sufficient to cover both variable expenses and meet the profitability target, known as the <strong>Permissible Loss Ratio</strong> (PLR):</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    P &amp;= L + FE + VE \cdot P + T \cdot P \\
-    P - VE \cdot P - T \cdot P &amp;= L + FE \\
-    P \cdot (1 - VE - T) &amp;= L + FE \\
-    1 - VE - T &amp;= \frac{L + FE}{P} \\
+    P &amp;= L + \text{FE} + \text{VE} \cdot P + \pi_{T} \cdot P \\
+    P - \text{VE} \cdot P - \pi_{T} \cdot P &amp;= L + \text{FE} \\
+    P \cdot (\text{PLR}) &amp;= L + \text{FE} \\
+    \text{PLR} &amp;= \frac{L + \text{FE}}{P} \\
     \\
-    \therefore \text{PLR} &amp;= 1 - VE - T
+    \therefore \text{PLR} &amp;= \text{PLR}
 \end{aligned}
 \]</div>
 <h2 id="premiums"><strong>Premiums</strong><a class="headerlink" href="#premiums" title="Permanent link">&para;</a></h2>
@@ -1648,6 +1702,11 @@
     \therefore \text{On Level Factor} &amp;= \frac{\text{Current Rate}}{\text{Average Rate}}
 \end{aligned}
 \]</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is a common misconception to think that the On Level Factor must be greater than 1.</p>
+<p>There is no hard rule that states that premiums must increase over time.</p>
+</div>
 <!-- Obtained from Coaching Actuaries -->
 <p><img alt="On Level Factors" class="center" src="../Assets/7.%20Ratemaking.md/On%20Level%20Factors.png" /></p>
 <h4 id="paralellogram-geometry"><strong>Paralellogram Geometry</strong><a class="headerlink" href="#paralellogram-geometry" title="Permanent link">&para;</a></h4>
@@ -1689,42 +1748,53 @@
 <img alt="Half year similarity" class="center" src="../Assets/7.%20Ratemaking.md/Half%20year%20similarity.png" /></p>
 <p>Thus, it is best to apply <strong>first principles to determine the dimensions</strong> of the triangles.</p>
 </div>
-<h3 id="rate-changes"><strong>Rate Changes</strong><a class="headerlink" href="#rate-changes" title="Permanent link">&para;</a></h3>
-<p>Ratemaking is a prospective process to determine how much premiums should be charged based on our estimates of the future.</p>
-<p>The objective is to find out how much the current premiums should be adjusted to reach the adequate level, known as a <strong>Rate Change</strong>.</p>
-<p>The premiums currently being charged is known as the <strong>Current Premium</strong> <span class="arithmatex">\((P^c)\)</span> while the Premiums that should be charged are known as the <strong>Indicative Premium</strong> <span class="arithmatex">\((P^I)\)</span>.</p>
-<p>The indicative premium can be determined using the fundamental insurance equation:</p>
+<h3 id="indicative-premium"><strong>Indicative Premium</strong><a class="headerlink" href="#indicative-premium" title="Permanent link">&para;</a></h3>
+<p>The last part of the ratemaking process is to ensure that there the <strong>premiums are sufficient</strong> to cover future losses, expenses and target profits.</p>
+<p>The sufficient amount of premium is known as the <strong>Indicative Premium</strong> <span class="arithmatex">\((P^I)\)</span>, which can be solved for using the fundamental insurance equation:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    P^I &amp;= L + FE + VE \cdot P^I + T \cdot P \\
-    P^I - VE \cdot P^I - T \cdot P^I &amp;= L + FE \\
-    P^I \cdot (1 - VE - T) &amp;= L + FE \\
-    P^I &amp;= \frac{L + FE}{1 - VE - T} \\
+    P^I &amp;= L + \text{FE} + \text{VE} \cdot P^I + \pi_{T} \cdot P \\
+    P^I - \text{VE} \cdot P^I - \pi_{T} \cdot P^I &amp;= L + \text{FE} \\
+    P^I \cdot (\text{PLR}) &amp;= L + \text{FE} \\
+    P^I &amp;= \frac{L + \text{FE}}{\text{PLR}} \\
+    P^I &amp;= \frac{L + \text{FE}}{\text{PLR}} \\
 \end{aligned}
 \]</div>
-<p>The rate change can determined in one of the two following methods:</p>
-<p>The <strong>Loss Ratio Method</strong> divides both sides by the Current Premium <span class="arithmatex">\((P^c)\)</span>, turning the loss on the RHS into a <strong>Loss Ratio</strong>, which earns the method its name.</p>
+<p>The difficulty comes from filling in the various values. Depending on the type of data provided, there are two methods to do so.</p>
+<h4 id="loss-ratio-method"><strong>Loss Ratio Method</strong><a class="headerlink" href="#loss-ratio-method" title="Permanent link">&para;</a></h4>
+<p>Instead of directly calculating the indicative premium, we can calculate a <strong>factor to adjust the current premium</strong> to the indicated level, known as a <strong>Rate Change</strong>.</p>
+<div class="arithmatex">\[
+    \text{Indicative Premium} = \text{Current Premium} \cdot \text{Rate Change}
+\]</div>
+<p>This method is known as the <strong>Loss Ratio Method</strong> because it converts the <strong>loss on the RHS into a loss ratio</strong> by dividing the entire equation by the current premium:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    P^I &amp;= \frac{L + FE}{1 - VE - T} \\
-    \frac{P^I}{P^c} &amp;= \frac{\frac{L}{P^c} + \frac{FE}{P^c}}{1 - VE - T} \\
-    \frac{P^I}{P^c} - 1 &amp;= \frac{LR + \frac{FE}{P^c}}{1 - VE - T} - 1 \\
+    P^I &amp;= \frac{L + \text{FE}}{\text{PLR}} \\
+    \frac{P^I}{P^c} &amp;= \frac{\frac{L}{P^c} + \frac{\text{FE}}{P^c}}{\text{PLR}} \\
+    \frac{P^I}{P^c} - 1 &amp;= \frac{LR + \frac{\text{FE}}{P^c}}{\text{PLR}} - 1 \\
+    \frac{P^I - P^c}{P^c} &amp;= \frac{LR + \frac{\text{FE}}{P^c}}{\text{PLR}} - 1 \\
     \\
-    \therefore \text{Rate Change} &amp;= \frac{LR + \frac{FE}{P^c}}{1 - VE - T} - 1
+    \therefore \text{Rate Change} &amp;= \frac{LR + \frac{\text{FE}}{P^c}}{\text{PLR}} - 1
 \end{aligned}
 \]</div>
-<p>Similarly, the <strong>Pure Premium Method</strong> divides both sides by the <strong>Number of Exposures</strong> <span class="arithmatex">\((n^e)\)</span>, turning the loss on the RHS into a Pure Premium, which earns the method its name.</p>
+<h4 id="pure-premium-method"><strong>Pure Premium Method</strong><a class="headerlink" href="#pure-premium-method" title="Permanent link">&para;</a></h4>
+<p>Alternatively, the indicative premium can be calculated directly using the <strong>Pure Premium Method</strong>.</p>
+<p>Similar to the loss ratio method, it involves dividing the equation by the <strong>Number of Exposures</strong> <span class="arithmatex">\((n^e)\)</span>, which turns the <strong>loss on the RHS into a pure premium</strong> (net premium):</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    P^I &amp;= \frac{L + FE}{1 - VE - T} \\
-    \frac{P^I}{n^e} &amp;= \frac{\frac{L}{n^e} + \frac{FE}{n^e}}{1 - VE - T} \\
+    P^I &amp;= \frac{L + \text{FE}}{\text{PLR}1} \\
+    \frac{P^I}{n^e} &amp;= \frac{\frac{L}{n^e} + \frac{\text{FE}}{n^e}}{\text{PLR}} \\
     \\
-    \therefore \text{Rate Change} &amp;= \frac{\frac{L}{n^e} + \frac{FE}{P^c}}{1 - VE - T}
+    \therefore \text{Indicative Rate} &amp;= \frac{\frac{L}{n^e} + \frac{\text{FE}}{P^c}}{\text{PLR}}
 \end{aligned}
 \]</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>If multiple years of data is given, then take the <strong>average</strong> of the Losses/Current Premium before plugging them back into the equation.</p>
+<h4 id="practical-tips"><strong>Practical Tips</strong><a class="headerlink" href="#practical-tips" title="Permanent link">&para;</a></h4>
+<p>Although both methods are equivalent, they are NOT expected to produce the similar results.</p>
+<p>For both methods, <strong>always trend the losses and premiums</strong> before plugging them into the equations.</p>
+<p>If multiple years of data are given, then use the <strong>weighted average</strong> of the loss ratios or pure premiums. If any, the question <strong>will usually specify the weights</strong> to use.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is the weighted average of the Loss Ratios and Pure Premiums, NOT the actual losses and premiums.</p>
 </div>
 
 

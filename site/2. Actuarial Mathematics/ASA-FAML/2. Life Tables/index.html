@@ -762,6 +762,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#given-probabilities" class="md-nav__link">
+    Given Probabilities
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1284,6 +1291,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#given-probabilities" class="md-nav__link">
+    Given Probabilities
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1426,8 +1440,13 @@
 <p><img alt="UDD" class="center" src="../Assets/2.%20Life%20Tables.md/UDD.png" /></p>
 <p>The number of survivors can thus be calculated via <strong>linear interpolation</strong>:</p>
 <div class="arithmatex">\[
-    \ell_{x+s} = (1-s) \cdot \ell_{x} + t \cdot \ell_{x} \\
+    \ell_{x+s} = (1-s) \cdot \ell_{x} + s \cdot \ell_{x+1} \\
 \]</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The weights of the interpolation are slightly <strong>counter-intuitive</strong> and are thus easily mixed up.</p>
+<p>One way to think of it is that at time <span class="arithmatex">\(x+s\)</span>, <span class="arithmatex">\(s\)</span> proportion of the survivors have already made it to <span class="arithmatex">\(x+1\)</span>, thus the remaining <span class="arithmatex">\(1-s\)</span> proportion are still at time <span class="arithmatex">\(x\)</span>.</p>
+</div>
 <p>Firstly, we calculate the probability of surviving a <strong>fractional amount of time from a discrete age</strong>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1468,13 +1487,17 @@
 <p>The key thing to note is that the PDF is constant under UDD.</p>
 <h3 id="constant-force-of-mortality"><strong>Constant Force of Mortality</strong><a class="headerlink" href="#constant-force-of-mortality" title="Permanent link">&para;</a></h3>
 <p>The <strong>Constant Force of Mortality</strong> is an assumption that allows for <strong>Exponential Interpolation</strong> between discrete ages.</p>
-<p>It assumes that there is a <strong>constant force of mortality</strong> between integer ages, such that the <strong>number of survivors decreases exponentially</strong> over the year.</p>
+<p>It assumes that there is a <strong>constant force of mortality</strong> <em>between integer ages</em>, such that the <strong>number of survivors decreases exponentially</strong> over the year.</p>
 <!-- Self Made -->
 <p><img alt="Constant Force of Mortality" class="center" src="../Assets/2.%20Life%20Tables.md/Constant%20Force.png" /></p>
 <p>The number of survivors can thus be calculated via exponential interpolation:</p>
 <div class="arithmatex">\[
     \ell_{x+s} = \ell_{x}^{1-s} + \ell_{x}^{s} \\
 \]</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Similar to before, the weights are counter-intuitive. Take special care not to mix them up.</p>
+</div>
 <p>Firstly, we calculate the probability of surviving a <strong>fractional amount of time from a discrete age</strong>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1488,18 +1511,10 @@
     \therefore {}_{s}q_{x} &amp;= 1 - ({}_{}p_{x})^t
 \end{aligned}
 \]</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>This result should not be surprising, as it is an extension of the previous result on the exponential survival functions.</p>
-<p>Since the probabilities are <strong>memoryless</strong>, age does not matter:</p>
-<div class="arithmatex">\[
-\begin{aligned}
-    {}_{n}p_{x} 
-    &amp;= {}_{}p_{x} \cdot {}_{}p_{x+1} \cdot {}_{}p_{x+2} \cdot \dots \\
-    &amp;= {}_{}p_{x} \cdot {}_{}p_{x} \cdot {}_{}p_{x} \cdot \dots \\
-    &amp;= ({}_{}p_{x})^n
-\end{aligned}
-\]</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This result should not be surprising, as having a constant force means that survival within the year is <strong>exponentialy distributed</strong>.</p>
+<p>However, note that ONLY survival WITHIN the year is exponentially distributed - it is similar but NOT the same as assuming that the entire survival is exponentially distributed.</p>
 </div>
 <p>Following the same logic, we calculate the probability of surviving a fractional amount of time <strong>from a fractional age</strong>:</p>
 <div class="arithmatex">\[
@@ -1520,6 +1535,11 @@
 <div class="arithmatex">\[
     \text{TBC}
 \]</div>
+<h3 id="given-probabilities"><strong>Given Probabilities</strong><a class="headerlink" href="#given-probabilities" title="Permanent link">&para;</a></h3>
+<p>If mortality follows the SULT, then the number of survivors can easily be obtained from there, allowing us to easily perform the above calculations.</p>
+<p>However, some questions might provide their own mortality table. Some of these mortality tables will be provided in terms of number of survivors but sometimes they are provided in terms of probabilities.</p>
+<p>In such cases, we can convert the <strong>probabilities to the number of survivors</strong> by choosing an arbitrary number of survivors for the first age provided and then multiplying the probabilities accordingly.</p>
+<p>This way, we only need to remember the formulas using the number of survivors.</p>
 <h2 id="select-ultimate-mortality"><strong>Select &amp; Ultimate Mortality</strong><a class="headerlink" href="#select-ultimate-mortality" title="Permanent link">&para;</a></h2>
 <p>Mortality rates for the general population versus individuals who buy life insurance tend to be different. Generally speaking, people who purchase insurance tend to be richer and thus have <strong>better mortality rates than the general population</strong>.</p>
 <p>Within the individuals who purchase life insurance, those who have <strong>recently purchased a policy tend to have better mortality</strong>. This is because these individuals would have gone through

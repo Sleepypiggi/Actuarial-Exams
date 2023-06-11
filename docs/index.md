@@ -1,3 +1,5 @@
 # **Actuarial Exam Notes**
 
-Work in Progress!
+Hello!
+
+This set of notes was created **after** I passed the introductory exams (P, FM & IFM).

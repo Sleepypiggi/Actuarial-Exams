@@ -1362,7 +1362,7 @@
 <p>The interpolation follows the same intuition as the fractional age assumption, where the uniform assumption results in a linear graph of probabilities:</p>
 <!-- Obtained from Coaching Actuaries -->
 <p><img alt="Graphical Interpolation" class="center" src="../Assets/8.%20Model%20Estimation.md/Graphical%20Interpolation.png" /></p>
-<p>Censored and Truncated data can only be worked with using dedicated methods.</p>
+<p>Censored and Truncated data can only be worked with using dedicated methods discussed below.</p>
 <h3 id="kaplan-meier-estimation"><strong>Kaplan Meier Estimation</strong><a class="headerlink" href="#kaplan-meier-estimation" title="Permanent link">&para;</a></h3>
 <p>Consider a study of 5 individuals:</p>
 <ul>
@@ -1372,7 +1372,7 @@
 </ul>
 <!-- Obtained from Coaching Actuaries -->
 <p><img alt="Kaplan Meier Timeline" class="center" src="../Assets/8.%20Model%20Estimation.md/Kaplan%20Meier%20Timeline.png" /></p>
-<p>The information is more often concisely portrayed in a table format:</p>
+<p>Exam questions often present the information in a table format:</p>
 <ul>
 <li><span class="arithmatex">\(t\)</span> represents the <strong>time</strong> of death</li>
 <li><span class="arithmatex">\(d\)</span> represents the number of <strong>deaths</strong></li>
@@ -1380,6 +1380,10 @@
 </ul>
 <!-- Obtained from Coaching Actuaries -->
 <p><img alt="Kaplan Meier Table" class="center" src="../Assets/8.%20Model%20Estimation.md/Kaplain%20Meier%20Table.png" /></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Although the table is what is provided, a more effective way to visualize the problem is via the timeline seen above.</p>
+</div>
 <p>This is problematic as the <strong>sample size changes</strong> throughout the study. However, the <strong>Kaplan Meier</strong> method accounts for this by calculating the survival probability as the <strong>product</strong> of the <strong>survival probabilities</strong> for <strong>all previous intervals between deaths</strong>:</p>
 <div class="arithmatex">\[
     \hat{S}_x(t) = \prod \left(1-\frac{d_j}{r_j} \right)
@@ -1394,6 +1398,12 @@
     &amp;= \frac{5}{12}
 \end{aligned}
 \]</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Although this example (and many other questions) assume that there is only one death at a time, it is completely possible to have a <strong>different number of deaths</strong>.</p>
+<p>This is especially so when the probabilities are already provided by the question - <strong>always solve for the precise number of deaths</strong> to be sure.</p>
+<p>Although counter-intuitive, the number of deaths calculated this way do NOT need to be discrete!</p>
+</div>
 <p>This results in a <strong>constant probability between deaths</strong>. Thus, the focus is on the <strong>times of death</strong>; the entries and exits from the study are only used to change the sample size.</p>
 <!-- Obtained from Coaching Actuaries -->
 <p><img alt="Kaplan Meier Cumulative" class="center" src="../Assets/8.%20Model%20Estimation.md/Kaplan%20Meier%20Cumulative.png" /></p>
@@ -1525,7 +1535,7 @@
 <div class="arithmatex">\[
     \hat{S}_x(t) \pm Z_{\frac{1+p}{2}} \sqrt{Var(\hat{S}_x(t))}
 \]</div>
-<p>However, one problem with a linear confidence interval for probabilities is that upper and lower bound can exceed 0 and 1 respectively, which is unintuitive.</p>
+<p>However, one problem with a linear confidence interval for probabilities is that <strong>upper and lower bound can exceed 0 and 1 respectively</strong>, which is unintuitive.</p>
 <p>Thus, the <strong>log-transformed</strong> confidence interval can be used instead:</p>
 <div class="arithmatex">\[
 \begin{aligned}
