@@ -1127,6 +1127,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#intuitions_1" class="md-nav__link">
+    Intuitions
+  </a>
+  
+    <nav class="md-nav" aria-label="Intuitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#same-annuity" class="md-nav__link">
+    Same Annuity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#different-annuities" class="md-nav__link">
+    Different Annuities
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#immediate-vs-due" class="md-nav__link">
+    Immediate VS Due
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1235,6 +1269,60 @@
     A^{1}_{\omega-1:\enclose{actuarial}{n}} &amp;= v
 \end{aligned}
 \]</div>
+<h3 id="intuitions_1"><strong>Intuitions</strong><a class="headerlink" href="#intuitions_1" title="Permanent link">&para;</a></h3>
+<p>Similar to assurances, several intuitions can be made about the EPV of various annuities to serve as a sort of "sense check" against the SULT provided to determine if the answer is in the right direction.</p>
+<h4 id="same-annuity"><strong>Same Annuity</strong><a class="headerlink" href="#same-annuity" title="Permanent link">&para;</a></h4>
+<p>Since annuities are all contingent on the survival of the policyholder, only one case needs to be considered.</p>
+<p>The probability of survival is a <em>decreasing</em> function with age. The benefits are <strong>less likely to be paid out</strong> to an older policyholder, resulting in <strong>smaller expected cashflows</strong>.</p>
+<p>Since the cashflows are discounted the same amount, an older policyholder will have a <strong>lower EPV</strong> than a younger one:</p>
+<div class="arithmatex">\[
+    \ddot{a}_{x+n} \lt \ddot{a}_{x}
+\]</div>
+<p>As shown previously, Annuity Dues are always smaller than Immediates as the <strong>cashflows occur earlier</strong> and are hence <strong>discounted less</strong>.</p>
+<div class="arithmatex">\[
+    a_x &lt; \ddot{a}_x
+\]</div>
+<p>Naturally, all else equal, annuities with a <strong>lower interest rate are discounted less</strong> and thus have a <strong>higher EPV</strong>.</p>
+<h4 id="different-annuities"><strong>Different Annuities</strong><a class="headerlink" href="#different-annuities" title="Permanent link">&para;</a></h4>
+<p>Since annuities are all contingent on the survival of the policyholder, the age of the policyholder for comparison does not matter.</p>
+<p><strong>TA has the smallest EPV</strong> as it can only pay for a maximum of <span class="arithmatex">\(n\)</span> years, while WLs and GA can pay indefinitely.</p>
+<p><strong>WL is always smaller than GA</strong> as its payments in the first <span class="arithmatex">\(n\)</span> years are not guaranteed; the payments after that are identical.</p>
+<div class="arithmatex">\[
+    \ddot{a}_{x:\enclose{actuarial}{n}} &lt; \ddot{a}_x &lt; \ddot{a}_{\bar{x:\enclose{actuarial}{n}}}
+\]</div>
+<h4 id="immediate-vs-due"><strong>Immediate VS Due</strong><a class="headerlink" href="#immediate-vs-due" title="Permanent link">&para;</a></h4>
+<p>Consider two temporary life annuity with a term of <span class="arithmatex">\(n\)</span> years:</p>
+<ul>
+<li>Annuity Immediate issued at age <span class="arithmatex">\(x\)</span></li>
+<li>Annuity Due issued at age <span class="arithmatex">\(x+1\)</span></li>
+<li>Both have the <strong>same cashflows</strong>:</li>
+</ul>
+<!-- Self Made -->
+<p><img alt="Immediate VS Due Intuition" class="center" src="../Assets/4.%20Life%20Annuities.md/Immediate%20VS%20Due%20Intuition.png" /></p>
+<p>However, both of them are valued at different times:</p>
+<ul>
+<li>Annuity Immediate valued at age <span class="arithmatex">\(x\)</span></li>
+<li>Annuity Due valued at age <span class="arithmatex">\(x+1\)</span></li>
+<li>Thus, the <strong>PV of the cashflows are NOT the same</strong>:</li>
+</ul>
+<!-- Self Made -->
+<p><img alt="Immediate VS Due Intuition PV" class="center" src="../Assets/4.%20Life%20Annuities.md/Immediate%20VS%20Due%20Intuition%20PV.png" /></p>
+<p>Thus, although they have the same cashflows, the <strong>annuity due has a larger EPV</strong>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    a_{x:\enclose{actuarial}{n}} &amp;= \sum^n_{j=1} v^j {}_{j}p_{x} \\
+    \\
+    \ddot{a}_{x+1:\enclose{actuarial}{n}}
+    &amp;= \sum^{n-1}_{j=0} v^j {}_{j}p_{x+1} \\
+    &amp;= \frac{1}{vp_{x}} \sum^{n-1}_{j=0} v^{j+1} {}_{j}p_{x+1} p_{x} \\
+    &amp;= \frac{1}{vp_{x}} \sum^{n-1}_{j=0} v^{j+1} {}_{j+1}p_{x} \\
+    &amp;= \frac{1}{vp_{x}} \sum^{n}_{j=1} v^{j} {}_{j}p_{x} \\
+    &amp;= \underbrace{\frac{1}{vp_{x}}}_{&gt;1} \cdot  a_{x:\enclose{actuarial}{n}} \\
+    \\
+    \therefore \ddot{a}_{x+1:\enclose{actuarial}{n}} &amp;&gt; a_{x:\enclose{actuarial}{n}}
+\end{aligned}
+\]</div>
+<p>This approach might seem long winded, as it seems that it is sufficient to simply compare the cashflows of <span class="arithmatex">\(1 &gt; v^n\)</span>. However, that <strong>ignores the probabilities</strong>, which is properly accounted for in the above approach.</p>
 
 
 

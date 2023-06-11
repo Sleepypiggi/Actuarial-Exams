@@ -391,19 +391,6 @@
     Lognormal Returns
   </a>
   
-    <nav class="md-nav" aria-label="Lognormal Returns">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#fitting-historical-data" class="md-nav__link">
-    Fitting Historical Data
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -413,6 +400,27 @@
   
     <nav class="md-nav" aria-label="Black Scholes Formula">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#call-options" class="md-nav__link">
+    Call Options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put-options" class="md-nav__link">
+    Put Options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-neutrality" class="md-nav__link">
+    Risk Neutrality
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#special-cases" class="md-nav__link">
@@ -1187,19 +1195,6 @@
     Lognormal Returns
   </a>
   
-    <nav class="md-nav" aria-label="Lognormal Returns">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#fitting-historical-data" class="md-nav__link">
-    Fitting Historical Data
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -1209,6 +1204,27 @@
   
     <nav class="md-nav" aria-label="Black Scholes Formula">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#call-options" class="md-nav__link">
+    Call Options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put-options" class="md-nav__link">
+    Put Options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-neutrality" class="md-nav__link">
+    Risk Neutrality
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#special-cases" class="md-nav__link">
@@ -1238,10 +1254,198 @@
 
 
 <h1 id="black-scholes-model"><strong>Black Scholes Model</strong><a class="headerlink" href="#black-scholes-model" title="Permanent link">&para;</a></h1>
+<p>This is not the original set of notes for IFM. It was recreated to fit the watered down option syllabus for exam FAM-S.</p>
 <h2 id="lognormal-returns"><strong>Lognormal Returns</strong><a class="headerlink" href="#lognormal-returns" title="Permanent link">&para;</a></h2>
-<h3 id="fitting-historical-data"><strong>Fitting Historical Data</strong><a class="headerlink" href="#fitting-historical-data" title="Permanent link">&para;</a></h3>
+<p>Consider the growth of a dividend paying stock over time:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    S_0 \cdot e^{(r-q)t} &amp;= S_t \\
+    e^{(r-q)t} &amp;= \frac{S_t}{S_0} \\
+    (r-q)t &amp;= \ln \frac{S_t}{S_0}
+\end{aligned}
+\]</div>
+<p><span class="arithmatex">\(r\)</span> is the <strong>annual return</strong> of the stock. We typically assume that it is <strong>Normally Distributed</strong>.</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    r &amp;\sim N(\mu, \sigma^2) \\
+    rt &amp;\sim N(\mu t, \sigma^2 t)
+\end{aligned}
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is because the overall return can be decomposed into the returns of infinitely many <strong>non-overlapping smaller periods</strong>; the combination of them is normally distributed based on the central limit theorem.</p>
+</div>
+<p>Since <span class="arithmatex">\(qt\)</span> is a constant, then <span class="arithmatex">\((r-q)t\)</span> is normally distributed as well:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    (r - q)t &amp;\sim N(\mu t, \sigma^2 t) \\
+    \ln \frac{S_t}{S_0} &amp;\sim N(\mu t, \sigma^2 t) \\
+    \frac{S_t}{S_0} &amp;\sim \text{Log Normal}(\mu t, \sigma^2 t) \\
+    \therefore S_t &amp;\sim \text{Log Normal}(\mu t, \sigma^2 t)
+\end{aligned}
+\]</div>
+<p>Let <span class="arithmatex">\(\alpha\)</span> denote the <strong>expected capital gain</strong> of the stock:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    E(S_t) &amp;= S_0 \cdot e^{(\alpha - q)t} \\
+    S_0 \cdot e^{\mu t + \frac{1}{2} \sigma^2 t} &amp;= S_0 \cdot e^{(\alpha - q)t} \\
+    e^{\mu t + \frac{1}{2} \sigma^2 t} &amp;= e^{(\alpha - q)t} \\
+    \mu + \frac{1}{2} \sigma^2 &amp;= \alpha - q \\
+    \mu &amp;= \alpha - q - \frac{1}{2} \sigma^2
+\end{aligned}
+\]</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><span class="arithmatex">\(\alpha - q\)</span> is referred to as the <strong>Expected Rate of Appreciation</strong> while <span class="arithmatex">\(r-q\)</span> is referred to as the <strong>Cost of Carry</strong>.</p>
+</div>
+<p>Thus, we can obtain the distribution for the stock price:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \ln \frac{S_t}{S_0} &amp;\sim N(\mu t, \sigma^2 t) \\
+    \ln S_t - \ln S_0 &amp;\sim N(\mu t, \sigma^2 t) \\
+    \ln S_t &amp;\sim N(\ln S_0 + \mu t, \sigma^2 t) \\
+    \ln S_t &amp;\sim N \left(\ln S_0 + (\alpha - q - \frac{1}{2} \sigma^2)t, \sigma^2 t \right) \\
+    S_t &amp;\sim \text{Log Normal} \left(\ln S_0 + (\alpha - q - \frac{1}{2} \sigma^2)t, \sigma^2 t \right)
+\end{aligned}
+\]</div>
+<p>Similarly, we can obtain the key properties of the distribution:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    S_t &amp;= S_0 \cdot e^{(\alpha - q - \frac{1}{2} \sigma^2)t + \sigma \sqrt{t} \cdot Z} \\
+    \\
+    E(S_t)
+    &amp;= e^{\ln S_0 + (\alpha - q - \frac{1}{2} \sigma^2)t +\frac{1}{2} \sigma^2 t} \\
+    &amp;= S_0 \cdot e^{(\alpha - q)t} \\
+    \\
+    \text{Var} (S_t)
+    &amp;= [E(S_t)]^2 \cdot \left(e^{\frac{1}{2} \sigma^2t} - 1 \right)
+\end{aligned}
+\]</div>
 <h2 id="black-scholes-formula"><strong>Black Scholes Formula</strong><a class="headerlink" href="#black-scholes-formula" title="Permanent link">&para;</a></h2>
+<p>Using the distribution of the stock prices, a formula for the price of an option can be determined.</p>
+<h3 id="call-options"><strong>Call Options</strong><a class="headerlink" href="#call-options" title="Permanent link">&para;</a></h3>
+<p>Similar to the binomial model, the price of an option is equal to the <strong>PV of its expected payoff</strong>.</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \text{Call Payoff}
+    &amp;=
+    \begin{cases}
+        0,&amp; S_t \lt K \\
+        S_t - K,&amp; S_t \gt K
+    \end{cases} \\
+    \\
+    E(\text{Payoff})
+    &amp;= E(0 \mid S_t \lt K) \cdot P(S_t \lt K) + E(S_t - K \mid S_t \gt K) \cdot P(S_t \gt K) \\
+    &amp;= E(S_t - K \mid S_t \gt K) \cdot P(S_t \gt K) \\
+    &amp;= [E(S_t \mid S_t \gt K) - K] \cdot P(S_t \gt K)
+\end{aligned}
+\]</div>
+<p>We can determine the probability from the distribution of the stock price:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    P(S_t \gt K)
+    &amp;= 1 - P(S_t \lt K) \\
+    &amp;= 1 - P(\frac{S_t}{S_0} \lt \frac{K}{S_0}) \\
+    &amp;= 1 - P(\ln \frac{S_t}{S_0} \lt \ln \frac{K}{S_0}) \\
+    &amp;= 1 - P(Z \lt \frac{\ln \frac{K}{S_0} - E(S_t)}{\sqrt{\text{Var}(S_t)}}) \\
+    &amp;= 1 - P(Z \lt \frac{\ln \frac{K}{S_0} - (\alpha - q - \frac{1}{2} \sigma^2)t}{\sigma \sqrt{t}}) \\
+    &amp;= 1 - P(Z \lt \frac{- \ln \frac{S_0}{K} - (\alpha - q - \frac{1}{2} \sigma^2)t}{\sigma \sqrt{t}}) \\
+    &amp;= 1 - P(Z \lt - \frac{\ln \frac{S_0}{K} + (\alpha - q - \frac{1}{2} \sigma^2)t}{\sigma \sqrt{t}}) \\
+    &amp;= 1 - \Phi(-\hat{d_2}) \\
+    &amp;= \Phi(\hat{d_2})
+\end{aligned}
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Thus, <span class="arithmatex">\(\Phi(\hat{d_2})\)</span> can be intepreted as the <strong>unconditional probability</strong> that the option is exercised at maturity. </p>
+</div>
+<p>The conditional expectation must be found via integration. Skipping the proof,</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    E(S_t \mid S_t \gt K)
+    &amp;= S_0 \cdot e^{(\alpha - q)t} \cdot \frac{\Phi(\hat{d_1})}{\Phi(\hat{d_2})} \\
+    \\
+    \hat{d_1}
+    &amp;= \hat{d_2} + \sqrt{\sigma}t \\
+    &amp;= \frac{\ln \frac{S_0}{K} + (\alpha - q - \frac{1}{2} \sigma^2)t}{\sigma \sqrt{t}} + \sqrt{\sigma}t \\
+    &amp;= \frac{\ln \frac{S_0}{K} + (\alpha - q - \frac{1}{2} \sigma^2)t}{\sigma \sqrt{t}} + \frac{\sigma^2 t}{\sqrt{\sigma}t} \\
+    &amp;= \frac{\ln \frac{S_0}{K} + (\alpha - q - \frac{1}{2} \sigma^2)t + \sigma^2 t}{\sigma \sqrt{t}} \\
+    &amp;= \frac{\ln \frac{S_0}{K} + (\alpha - q + \frac{1}{2} \sigma^2)t}{\sigma \sqrt{t}}
+\end{aligned}
+\]</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is a common mistake to mix up the formulas for <span class="arithmatex">\(\hat{d_1}\)</span> and <span class="arithmatex">\(\hat{d_2}\)</span> because they are extremely similar.</p>
+<p>Remember that <span class="arithmatex">\(\hat{d_1}\)</span> adds the variance while <span class="arithmatex">\(\hat{d_2}\)</span> subtracts it.</p>
+</div>
+<p>Thus, the price of the call option is the <strong>PV of the expected payoff</strong>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    c_0
+    &amp;= e^{-\gamma t} \cdot [E(S_t \mid S_t \gt K) - K] \cdot P(S_t \gt K) \\
+    &amp;= e^{-\gamma t} \left[S_0 \cdot e^{(\alpha - q)t} \cdot \frac{\Phi(\hat{d_1})}{\Phi(\hat{d_2})} - K \right] \cdot \Phi(\hat{d_2}) \\
+    &amp;= e^{-\gamma t} \cdot \left[S_0 e^{(\alpha - q)t} \cdot \Phi(\hat{d_1}) - K \Phi(\hat{d_2}) \right]
+\end{aligned}
+\]</div>
+<h3 id="put-options"><strong>Put Options</strong><a class="headerlink" href="#put-options" title="Permanent link">&para;</a></h3>
+<p>The same exercise can be repeated for puts, resulting in the following price:</p>
+<div class="arithmatex">\[
+    p_0
+    = e^{-\gamma t} \cdot \left[K \Phi(-\hat{d_2}) - S_0 e^{(\alpha - q)t} \cdot \Phi(-\hat{d_1}) \right]
+\]</div>
+<h3 id="risk-neutrality"><strong>Risk Neutrality</strong><a class="headerlink" href="#risk-neutrality" title="Permanent link">&para;</a></h3>
+<p>Notice that BS formula, the following two terms are used:</p>
+<ul>
+<li><strong>Alpha</strong>, <span class="arithmatex">\(\alpha\)</span>: Actual growth rate of stock</li>
+<li><strong>Gamma</strong>, <span class="arithmatex">\(\gamma\)</span>: Actual growth rate of option</li>
+</ul>
+<p>In practice, it is impossible to know the value of these two quantities beforehand.</p>
+<p>However, if the investor is risk neutral, then they do not consider risk in their investment decisions. This means that these terms can be <strong>replaced by the risk free rate</strong>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \alpha &amp;= \gamma = r \\
+    \\
+    c_0
+    &amp;= e^{-rt} \cdot \left[S_0 e^{(r - q)t} \cdot \Phi(d_1) - K \Phi(d_2) \right] \\
+    &amp;= S_0 e^{- qt} \cdot \Phi(d_1) - Ke^{-rt} \Phi(d_2) \\
+    \\
+    p_0
+    &amp;= e^{-rt} \cdot \left[K \Phi(d_2) - S_0 e^{(r - q)t} \cdot \Phi(-d_1) \right] \\
+    &amp;= Ke^{-rt} \cdot \Phi(-d_2) - S_0 e^{-qt} \cdot \Phi(-d_1) \\
+    \\
+    d_2 &amp;= \frac{\ln \frac{S_0}{K} + (r - q - \frac{1}{2} \sigma^2)t}{\sigma \sqrt{t}} \\
+    d_1
+    &amp;= d_2 + \sqrt{\sigma}t \\
+    &amp;= \frac{\ln \frac{S_0}{K} + (r - q + \frac{1}{2} \sigma^2)t}{\sigma \sqrt{t}}
+\end{aligned}
+\]</div>
+<p>Note that the formula can also be linked to the binomial model's <strong>self replicating portfolio</strong>:</p>
+<ul>
+<li><strong>Coefficient of <span class="arithmatex">\(S_0\)</span></strong>: Number of shares to Long/Short</li>
+<li><strong>Other Term</strong>: Amount of money to Borrow/Lend</li>
+</ul>
 <h3 id="special-cases"><strong>Special Cases</strong><a class="headerlink" href="#special-cases" title="Permanent link">&para;</a></h3>
+<p>There are two special cases that helps to simplify the calculation of <span class="arithmatex">\(d\)</span>:</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="center">At the Money</th>
+<th align="center">Equal Rates</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><span class="arithmatex">\(S_0 = K\)</span></td>
+<td align="center"><span class="arithmatex">\(r = q\)</span></td>
+</tr>
+<tr>
+<td align="center"><span class="arithmatex">\(\ln \frac{S_0}{K} = 0\)</span></td>
+<td align="center"><span class="arithmatex">\((r-q \pm \frac{1}{2} \sigma^2) = \pm \frac{1}{2} \sigma^2\)</span></td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
 
 
 

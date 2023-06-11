@@ -1388,6 +1388,11 @@
 <div class="arithmatex">\[
     \hat{S}_x(t) = \prod \left(1-\frac{d_j}{r_j} \right)
 \]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This means that the <strong>ratio</strong> between the estimator at <strong>two consecutive times</strong> of death is the the survival probability at the later time.</p>
+<p>However, remember that the first estimate provided is the combination of all survival probabilities before it, just that they were <strong>not provided</strong>. It should NOT be used to directly reverse engineer the sample size etc.</p>
+</div>
 <p>Given the above example, the resulting Kaplan Meier estimation would be:</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1423,6 +1428,10 @@
 <div class="arithmatex">\[
     \int^t_0 \mu_{x+t} = \sum \frac{d_j}{r_j}
 \]</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Similar to the Kaplan Estimator, the <strong>difference</strong> at two consecutive times is the death probability at the later time. The same warning applies.</p>
+</div>
 <p>Given the previous example, the resulting Nelson Aelen estimation would be:</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1438,7 +1447,7 @@
 \]</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The results for the two methods are not that far off from one another. This can be used as a sense check if asked to calculate both.</p>
+<p>The results for the two methods are not that far off from one another. They can be used as to sense check each other if asked to calculate both.</p>
 </div>
 <p><center></p>
 <table>
@@ -1456,6 +1465,10 @@
 <tr>
 <td align="center">Uses Survival probabilities</td>
 <td align="center">Uses Death probabilities</td>
+</tr>
+<tr>
+<td align="center">Ratio of consecutive estimates</td>
+<td align="center">Difference of consecutive estimates</td>
 </tr>
 </tbody>
 </table>

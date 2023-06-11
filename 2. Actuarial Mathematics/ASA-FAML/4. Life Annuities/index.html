@@ -792,22 +792,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#relationships" class="md-nav__link">
+    Relationships
+  </a>
+  
+    <nav class="md-nav" aria-label="Relationships">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#assurances-and-annuities" class="md-nav__link">
     Assurances and Annuities
   </a>
   
-    <nav class="md-nav" aria-label="Assurances and Annuities">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#variance" class="md-nav__link">
     Variance
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -818,44 +820,15 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#recursions" class="md-nav__link">
     Recursions
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#intuitions" class="md-nav__link">
-    Intuitions
-  </a>
-  
-    <nav class="md-nav" aria-label="Intuitions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#same-annuity" class="md-nav__link">
-    Same Annuity
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#different-annuities" class="md-nav__link">
-    Different Annuities
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#immediate-vs-due" class="md-nav__link">
-    Immediate VS Due
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1369,22 +1342,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#relationships" class="md-nav__link">
+    Relationships
+  </a>
+  
+    <nav class="md-nav" aria-label="Relationships">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#assurances-and-annuities" class="md-nav__link">
     Assurances and Annuities
   </a>
   
-    <nav class="md-nav" aria-label="Assurances and Annuities">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#variance" class="md-nav__link">
     Variance
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1395,44 +1370,15 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#recursions" class="md-nav__link">
     Recursions
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#intuitions" class="md-nav__link">
-    Intuitions
-  </a>
-  
-    <nav class="md-nav" aria-label="Intuitions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#same-annuity" class="md-nav__link">
-    Same Annuity
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#different-annuities" class="md-nav__link">
-    Different Annuities
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#immediate-vs-due" class="md-nav__link">
-    Immediate VS Due
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1631,7 +1577,11 @@
     &amp;= \sum^{\infty}_{j=0} v^j \cdot {}_{j}p_{x}
 \end{aligned}
 \]</div>
-<p>Note that the above formula can be used to easily prove the relationships between different kinds of annuities, but is NOT a proper definition of an annuity - it hence cannot be adjusted to compute the variance.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Note that the above formula can be used to easily prove the relationships between different kinds of annuities, but is <strong>NOT a proper definition of an annuity</strong>.</p>
+<p>It hence cannot be adjusted to compute the variance or other "special" annuities.</p>
+</div>
 <p>The second moment and variance for all life annuities will be covered in a later section.</p>
 <h3 id="temporary-annuity"><strong>Temporary Annuity</strong><a class="headerlink" href="#temporary-annuity" title="Permanent link">&para;</a></h3>
 <p><strong>Temporary Life Annuities</strong> covers the insured for a <strong>specified period <span class="arithmatex">\(n\)</span></strong> and thus pays out for as long as the insured <strong>survives</strong> during that period <em>only</em>.</p>
@@ -1644,7 +1594,7 @@
             \ddot{a}_{\enclose{actuarial}{K_x+1}},&amp; k = 0, 1, 2, \dots, n-1 \\
             \ddot{a}_{\enclose{actuarial}{n}},&amp; k \ge n \\
     \end{cases} \\
-    &amp;= \ddot{a}_{\enclose{actuarial}{min(K_x + 1, n)}}
+    &amp;= \ddot{a}_{\enclose{actuarial}{\min(K_x + 1, n)}}
 \end{aligned}
 \]</div>
 <!-- Self Made -->
@@ -1715,7 +1665,7 @@
 <p>Since a DWL is effectively a WL that is issued <span class="arithmatex">\(n\)</span> years later, the EPV of a DWL is the EPV of the WL, adjusted for both interest and survival:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    {}_{n|}a_{x}
+    {}_{n|}\ddot{a}_{x}
     &amp;= \sum^{\infty}_{j=n} v^j \cdot {}_{j}p_{x} \\
     &amp;= \sum^{\infty}_{j=0} v^{j+n} \cdot {}_{j+n}p_{x} \\
     &amp;= \sum^{\infty}_{j=0} v^{j} v^{n} \cdot {}_{n}p_{x} {}_{j}p_{x+n} \\
@@ -1733,6 +1683,10 @@
 \]</div>
 <h3 id="guaranteed-annuities"><strong>Guaranteed Annuities</strong><a class="headerlink" href="#guaranteed-annuities" title="Permanent link">&para;</a></h3>
 <p><strong>Guaranteed Life Annuities</strong> are whole life annuities with the <strong>benefits in the first <span class="arithmatex">\(n\)</span> years being guaranteed</strong> - they will be paid out even if the insured dies during this period.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Questions may also refer to these as <strong>WL annuities that are certain for <span class="arithmatex">\(n\)</span> years</strong>, as the guaranteed portion of the annuity is represented by an annuity certain.</p>
+</div>
 <p>Let <strong>GA</strong> be the random variable denoting the PV of the survival benefit. Since the payments are guaranteed, they can be represented using a <strong>certain annuity</strong>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1784,13 +1738,18 @@
 \begin{aligned}
     E(\text{GA}_{\text{Due}})
     &amp;= \ddot{a}_{\enclose{actuarial}{n}} + 0 \cdot {}_{n}q_x + \sum^{\infty}_{k = n} (\ddot{a}_{\enclose{actuarial}{k+1}} - \ddot{a}_{\enclose{actuarial}{n}}) \cdot {}_{k|}q_{x}\\
-    \ddot{a}_{\overline{x:\enclose{actuarial}{n}}} &amp;= \ddot{a}_{\enclose{actuarial}{n}} + {}_{n} \ddot{a}_{x}
+    \ddot{a}_{\overline{x:\enclose{actuarial}{n}}}
+    &amp;= \ddot{a}_{\enclose{actuarial}{n}} + {}_{n|}\ddot{a}_{x} \\
+    &amp;= \ddot{a}_{\enclose{actuarial}{n}} + {}_{n}E_{x} \cdot \ddot{a}_{x+n}
 \end{aligned}
 \]</div>
-<blockquote>
-<p>Note that a Guaranteed Annuity is denoted via an <strong>additional</strong> bar above the status.</p>
-</blockquote>
-<h3 id="assurances-and-annuities"><strong>Assurances and Annuities</strong><a class="headerlink" href="#assurances-and-annuities" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is an extremely common mistake to <strong>forget to update the age of the policyholder</strong> in the second term.</p>
+<p>To minimize the chance of this mistake, it is advised to write the expression in terms of the deferred WL first and then convert it.</p>
+</div>
+<h3 id="relationships"><strong>Relationships</strong><a class="headerlink" href="#relationships" title="Permanent link">&para;</a></h3>
+<h4 id="assurances-and-annuities"><strong>Assurances and Annuities</strong><a class="headerlink" href="#assurances-and-annuities" title="Permanent link">&para;</a></h4>
 <p>Consider the random variable for the PV Whole Life Assurance and Annuity Due. Notice that both RVs are <strong>related</strong> through the certain annuity formula:</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1798,9 +1757,6 @@
     \text{WLA}_{Due} &amp;= \ddot{a}_{\enclose{actuarial}{K_x+1}} = \frac{1-v^{K_x + 1}}{d}
 \end{aligned}
 \]</div>
-<blockquote>
-<p>This is why Annuity Due, rather Annuity Immediates, are provided in the SULT.</p>
-</blockquote>
 <p>Thus, given the EPV of a life annuity, the <strong>EPV</strong> of a life assurance can be determined, vice-versa:</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1817,25 +1773,29 @@
     A_{x:\enclose{actuarial}{n}} &amp;= 1 - d \ddot{a}_{x:\enclose{actuarial}{n}} \\
 \end{aligned}
 \]</div>
-<p>It is a very common mistake to confuse the two as both are denoted by TA. However, it is the endowment assurance that shares the same random variable as the temporary annuity. It also makes sense when comparing the actuarial notation - both share the same subscript.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is a very common mistake to think that term assurances and temporary annuities are related, as both share similar roles.</p>
+<p>However, it becomes clear when considering the random variables and actuarial notation that they are not related.</p>
+</div>
 <h4 id="variance"><strong>Variance</strong><a class="headerlink" href="#variance" title="Permanent link">&para;</a></h4>
 <p>However, the second moment is slightly different as it must reflect the new interest rate used.</p>
 <p>The same logic can be applied for the <strong>Variance</strong> as well:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     \text{WLA}_{Due} &amp;= \frac{1-\text{WL}}{d} \\
-    Var(\text{WLA}_{Due}) &amp;= Var \left( \frac{1-\text{WL}}{d} \right) \\
-    Var(\text{WLA}_{Due}) &amp;= \frac{1}{d^2} var(\text{WL}) \\
-    Var(\text{WLA}_{Due}) &amp;= \frac{1}{d^2} \left({}_{}^2 A_x - (A_x)^2 \right)
+    \text{Var}(\text{WLA}_{Due}) &amp;= \text{Var} \left( \frac{1-\text{WL}}{d} \right) \\
+    \text{Var}(\text{WLA}_{Due}) &amp;= \frac{1}{d^2} \text{Var}(\text{WL}) \\
+    \text{Var}(\text{WLA}_{Due}) &amp;= \frac{1}{d^2} \left({}_{}^2 A_x - (A_x)^2 \right)
 \end{aligned}
 \]</div>
-<div class="highlight"><pre><span></span><code>Var(\text{TA}_{Due}) &amp;= \frac{1}{d^2} \left({}_{}^2 A_{x:\enclose{actuarial}{n}} - (A_{x:\enclose{actuarial}{n}})^2 \right)
+<div class="highlight"><pre><span></span><code>\text{Var}(\text{TA}_{Due}) &amp;= \frac{1}{d^2} \left({}_{}^2 A_{x:\enclose{actuarial}{n}} - (A_{x:\enclose{actuarial}{n}})^2 \right)
 </code></pre></div>
 <p>WLDue and WL Immediate same variance but DWLDue and DWL immediate different variance because it is dependent on survival
 GA = Certain + Deferred
-Var (GA) = Var (Deferred)</p>
-<p>Problem is Var(Deferred)</p>
-<h3 id="immediate-and-due"><strong>Immediate and Due</strong><a class="headerlink" href="#immediate-and-due" title="Permanent link">&para;</a></h3>
+\text{Var} (GA) = \text{Var} (Deferred)</p>
+<p>Problem is \text{Var}(Deferred)</p>
+<h4 id="immediate-and-due"><strong>Immediate and Due</strong><a class="headerlink" href="#immediate-and-due" title="Permanent link">&para;</a></h4>
 <p>Recall that for Certain Annuities, the only difference between Due and Immediate ones are the payments at the start and end times. This relationship can be extended for Life Annuities as well.</p>
 <p>For WL annuities, since the <strong>end point is infinity</strong>, the difference in the end points can be ignored. Thus, the only difference is the first payment of 1, which can be easily accounted for:</p>
 <div class="arithmatex">\[
@@ -1867,18 +1827,18 @@ Var (GA) = Var (Deferred)</p>
 <p>For variance, the random variables (which are certain annuities) are used instead:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    Var(\text{WL}_{Immediate})
-    &amp;= Var(a_{\enclose{actuarial}{k}}) \\
-    &amp;= Var(\ddot{a}_{\enclose{actuarial}{k+1}}-1) \\
-    &amp;= Var(\ddot{a}_{\enclose{actuarial}{k+1}}) \\
-    &amp;= Var(\text{WL}_{Due}) \\
+    \text{Var}(\text{WL}_{Immediate})
+    &amp;= \text{Var}(a_{\enclose{actuarial}{k}}) \\
+    &amp;= \text{Var}(\ddot{a}_{\enclose{actuarial}{k+1}}-1) \\
+    &amp;= \text{Var}(\ddot{a}_{\enclose{actuarial}{k+1}}) \\
+    &amp;= \text{Var}(\text{WL}_{Due}) \\
     \\
-    Var(\text{TA}_{Immediate})
-    &amp;= Var(a_{\enclose{actuarial}{min(k,n)}}) \\
-    &amp;= Var(\ddot{a}_{\enclose{actuarial}{min(k+1,n+1)}}-1) \\
-    &amp;= Var(\ddot{a}_{\enclose{actuarial}{min(k+1,n+1)}}) \\
-    &amp;= Var \left( \frac{1-v^{min(k+1,n+1)}}{d} \right) \\
-    &amp;= \frac{1}{d^2} Var(v^{min(k+1,n+1)}) \\
+    \text{Var}(\text{TA}_{Immediate})
+    &amp;= \text{Var}(a_{\enclose{actuarial}{\min(k,n)}}) \\
+    &amp;= \text{Var}(\ddot{a}_{\enclose{actuarial}{\min(k+1,n+1)}}-1) \\
+    &amp;= \text{Var}(\ddot{a}_{\enclose{actuarial}{\min(k+1,n+1)}}) \\
+    &amp;= \text{Var} \left( \frac{1-v^{\min(k+1,n+1)}}{d} \right) \\
+    &amp;= \frac{1}{d^2} \text{Var}(v^{\min(k+1,n+1)}) \\
     &amp;= \frac{1}{d^2} \left({}_{2}A_{x:\enclose{actuarial}{n+1}} - (A_{x:\enclose{actuarial}{n+1}})^2 \right)
 \end{aligned}
 \]</div>
@@ -1914,60 +1874,6 @@ Var (GA) = Var (Deferred)</p>
 <div class="arithmatex">\[
     \ddot{a}_{x:\enclose{actuarial}{n}} = 1 + vp_x \ddot{a}_{x+1:\enclose{actuarial}{n-1}}
 \]</div>
-<h3 id="intuitions"><strong>Intuitions</strong><a class="headerlink" href="#intuitions" title="Permanent link">&para;</a></h3>
-<p>Similar to assurances, several intuitions can be made about the EPV of various annuities to serve as a sort of "sense check" against the SULT provided to determine if the answer is in the right direction.</p>
-<h4 id="same-annuity"><strong>Same Annuity</strong><a class="headerlink" href="#same-annuity" title="Permanent link">&para;</a></h4>
-<p>Since annuities are all contingent on the survival of the policyholder, only one case needs to be considered.</p>
-<p>The probability of survival is a <em>decreasing</em> function with age. The benefits are <strong>less likely to be paid out</strong> to an older policyholder, resulting in <strong>smaller expected cashflows</strong>.</p>
-<p>Since the cashflows are discounted the same amount, an older policyholder will have a <strong>lower EPV</strong> than a younger one:</p>
-<div class="arithmatex">\[
-    \ddot{a}_{x+n} \lt \ddot{a}_{x}
-\]</div>
-<p>As shown previously, Annuity Dues are always smaller than Immediates as the <strong>cashflows occur earlier</strong> and are hence <strong>discounted less</strong>.</p>
-<div class="arithmatex">\[
-    a_x &lt; \ddot{a}_x
-\]</div>
-<p>Naturally, all else equal, annuities with a <strong>lower interest rate are discounted less</strong> and thus have a <strong>higher EPV</strong>.</p>
-<h4 id="different-annuities"><strong>Different Annuities</strong><a class="headerlink" href="#different-annuities" title="Permanent link">&para;</a></h4>
-<p>Since annuities are all contingent on the survival of the policyholder, the age of the policyholder for comparison does not matter.</p>
-<p><strong>TA has the smallest EPV</strong> as it can only pay for a maximum of <span class="arithmatex">\(n\)</span> years, while WLs and GA can pay indefinitely.</p>
-<p><strong>WL is always smaller than GA</strong> as its payments in the first <span class="arithmatex">\(n\)</span> years are not guaranteed; the payments after that are identical.</p>
-<div class="arithmatex">\[
-    \ddot{a}_{x:\enclose{actuarial}{n}} &lt; \ddot{a}_x &lt; \ddot{a}_{\bar{x:\enclose{actuarial}{n}}}
-\]</div>
-<h4 id="immediate-vs-due"><strong>Immediate VS Due</strong><a class="headerlink" href="#immediate-vs-due" title="Permanent link">&para;</a></h4>
-<p>Consider two temporary life annuity with a term of <span class="arithmatex">\(n\)</span> years:</p>
-<ul>
-<li>Annuity Immediate issued at age <span class="arithmatex">\(x\)</span></li>
-<li>Annuity Due issued at age <span class="arithmatex">\(x+1\)</span></li>
-<li>Both have the <strong>same cashflows</strong>:</li>
-</ul>
-<!-- Self Made -->
-<p><img alt="Immediate VS Due Intuition" class="center" src="../Assets/4.%20Life%20Annuities.md/Immediate%20VS%20Due%20Intuition.png" /></p>
-<p>However, both of them are valued at different times:</p>
-<ul>
-<li>Annuity Immediate valued at age <span class="arithmatex">\(x\)</span></li>
-<li>Annuity Due valued at age <span class="arithmatex">\(x+1\)</span></li>
-<li>Thus, the <strong>PV of the cashflows are NOT the same</strong>:</li>
-</ul>
-<!-- Self Made -->
-<p><img alt="Immediate VS Due Intuition PV" class="center" src="../Assets/4.%20Life%20Annuities.md/Immediate%20VS%20Due%20Intuition%20PV.png" /></p>
-<p>Thus, although they have the same cashflows, the <strong>annuity due has a larger EPV</strong>:</p>
-<div class="arithmatex">\[
-\begin{aligned}
-    a_{x:\enclose{actuarial}{n}} &amp;= \sum^n_{j=1} v^j {}_{j}p_{x} \\
-    \\
-    \ddot{a}_{x+1:\enclose{actuarial}{n}}
-    &amp;= \sum^{n-1}_{j=0} v^j {}_{j}p_{x+1} \\
-    &amp;= \frac{1}{vp_{x}} \sum^{n-1}_{j=0} v^{j+1} {}_{j}p_{x+1} p_{x} \\
-    &amp;= \frac{1}{vp_{x}} \sum^{n-1}_{j=0} v^{j+1} {}_{j+1}p_{x} \\
-    &amp;= \frac{1}{vp_{x}} \sum^{n}_{j=1} v^{j} {}_{j}p_{x} \\
-    &amp;= \underbrace{\frac{1}{vp_{x}}}_{&gt;1} \cdot  a_{x:\enclose{actuarial}{n}} \\
-    \\
-    \therefore \ddot{a}_{x+1:\enclose{actuarial}{n}} &amp;&gt; a_{x:\enclose{actuarial}{n}}
-\end{aligned}
-\]</div>
-<p>This approach might seem long winded, as it seems that it is sufficient to simply compare the cashflows of <span class="arithmatex">\(1 &gt; v^n\)</span>. However, that <strong>ignores the probabilities</strong>, which is properly accounted for in the above approach.</p>
 <h3 id="probabilities-and-percentiles"><strong>Probabilities and Percentiles</strong><a class="headerlink" href="#probabilities-and-percentiles" title="Permanent link">&para;</a></h3>
 <p>Similar to assurances, apart from just calculating the Expectation and Variance, the <strong>probabilities</strong> and hence <strong>percentiles</strong> of the contract benefits can be calculated as well.</p>
 <div class="arithmatex">\[
@@ -1981,7 +1887,10 @@ Var (GA) = Var (Deferred)</p>
     k &amp;\le \frac{\ln(1-ud)}{\ln v} - 1 \\
 \end{aligned}
 \]</div>
-<p>The <strong>common mistake</strong> of not flipping the inequality sign is relevant in annuities as well. To avoid this error, it is advised to plot a graph to remember that <span class="arithmatex">\(k\)</span> should be <strong>smaller than</strong> the calculated value:</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Similar to assurances, it is a <strong>common mistake</strong> to forget to flip the inequality sign as <span class="arithmatex">\(\ln v \lt 0\)</span>.</p>
+</div>
 <!-- Self Made -->
 <p><img alt="Annuity Probability" class="center" src="../Assets/4.%20Life%20Annuities.md/Annuity%20Probability.png" /></p>
 <p>The RHS of the expression is unlikely to be an integer. However, <span class="arithmatex">\(k\)</span> can only take integer values. Thus, the values can <strong>rounded DOWN</strong> to the nearest whole number (EG. 4):</p>
@@ -1993,6 +1902,10 @@ Var (GA) = Var (Deferred)</p>
     &amp;= {}_{4}p_x
 \end{aligned}
 \]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Similar to assurances, it is unlikely that the question will be as straightforward as the above.</p>
+</div>
 <p>The latter refers to calculating the <strong>percentile of the random variable</strong>, which is the smallest value of the RV that results in the specified probability.</p>
 <p>This process is the opposite of the previous one - it involves solving for <span class="arithmatex">\(T_x\)</span>, converting it to <span class="arithmatex">\(k\)</span> and then subsituting it back into the RV, which results in the associated percentile.</p>
 <h2 id="payable-continuously"><strong>Payable Continuously</strong><a class="headerlink" href="#payable-continuously" title="Permanent link">&para;</a></h2>
@@ -2029,7 +1942,7 @@ Var (GA) = Var (Deferred)</p>
 \end{aligned}
 \]</div>
 <div class="admonition note">
-<p class="admonition-title">Parameter Calculation</p>
+<p class="admonition-title">Note</p>
 <p>Recall that nominal and effective rates are linked using:</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -2037,7 +1950,7 @@ Var (GA) = Var (Deferred)</p>
     d^{(m)} &amp;= m[1-(1+d)^\frac{1}{m}]   
 \end{aligned}
 \]</div>
-<p>However, for <span class="arithmatex">\(i=0.05\)</span>, <span class="arithmatex">\(\alpha\)</span> and <span class="arithmatex">\(\beta\)</span> are provided inside the SULT for common values of <span class="arithmatex">\(m\)</span>, thus there is no need to waste precious time calculating them.</p>
+<p>However, for <span class="arithmatex">\(i=0.05\)</span>, <span class="arithmatex">\(\alpha\)</span> and <span class="arithmatex">\(\beta\)</span> are <strong>provided inside the SULT</strong> for common values of <span class="arithmatex">\(m\)</span>, thus there is no need to waste precious time calculating them.</p>
 </div>
 <p>An adjustment can be made for temporary annuities:</p>
 <div class="arithmatex">\[
@@ -2124,9 +2037,6 @@ Var (GA) = Var (Deferred)</p>
 <div class="arithmatex">\[
     a^{(m)}_{x:\enclose{actuarial}{n}} = \ddot{a}_{x+n} - \frac{m-1}{2m} (1-{}_{n}E_{x})
 \]</div>
-<blockquote>
-<p>For simplicity, the three term approach is not shown.</p>
-</blockquote>
 
 
 

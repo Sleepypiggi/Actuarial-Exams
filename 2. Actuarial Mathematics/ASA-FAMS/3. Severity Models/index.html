@@ -1480,12 +1480,26 @@
 \]</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>An easy way to remember is that the above transformation sets the mean to 0 <span class="arithmatex">\(E(X) - E(X) = 0\)</span> and sets the variance to 1 <span class="arithmatex">\(\frac{Var(X)}{Var(X)} = 1\)</span>.</p>
+<p>An easy way to remember is that the above transformation sets the mean to 0; <span class="arithmatex">\(E(X) - E(X) = 0\)</span> and sets the variance to 1; <span class="arithmatex">\(\frac{Var(X)}{Var(X)} = 1\)</span>.</p>
 </div>
 <p>The CDF of a standard normal distribution is denoted by <span class="arithmatex">\(\Phi\)</span>:</p>
 <div class="arithmatex">\[
     P(Z \le z) = \Phi(z)
 \]</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The standard normal distribution is <strong>symmetrical about the origin</strong>. This allows us to convert negative values to positive ones:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    P(Z \lt -z)
+    &amp;= P(Z \gt z) \\
+    &amp;= 1 - P(Z \lt z) \\
+    &amp;= 1 - \Phi(z)
+\end{aligned}
+\]</div>
+<p><!-- Obtained from Coaching Actuaries -->
+<img alt="Standard Normal Symmetry" class="center" src="../Assets/3.%20Severity%20Models.md/Standard%20Normal%20Symmetry.png" /></p>
+</div>
 <p>Since the exam provides values for the <strong>CDF of Z</strong>, most calculations involving a normal distribution will have first have to be standardized and then calculated using its CDF:</p>
 <div class="arithmatex">\[
 \begin{aligned}

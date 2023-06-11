@@ -1797,6 +1797,11 @@
     \therefore A_x &amp;= v \cdot {}_{}q_{x} + v \cdot {}_{}p_{x}A_{x+1}
 \end{aligned}
 \]</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The same recursion can be <strong>applied to the second moment</strong> as well, since it is simply the first moment evaluated at a higher interest.</p>
+<p>The only change is that the discounting factor used must be calculated using the <strong>higher interest</strong>.</p>
+</div>
 <p>The same exercise can be shown for the <strong>TA</strong> random variable. The main difference is understanding how the age &amp; duration changes:</p>
 <ul>
 <li><span class="arithmatex">\(x+1\)</span> reflects the new age of the policyholder (same as WL)</li>
@@ -1845,7 +1850,7 @@
         v \cdot A_{x+s} ,&amp; {}_{s}p_{x}
     \end{cases} \\
     \\
-    \therefore A_x &amp;= v \cdot {}_{s}q_{x} + v \cdot {}_{s}p_{x} A_{x+s}
+    \therefore A_x &amp;= v \cdot {}_{s}q_{x} + v^s \cdot {}_{s}p_{x} A_{x+s}
 \end{aligned}
 \]</div>
 <p>By re-arranging the equation, we can <strong>solve for the fractional age EPV</strong>. The fractional age probabilities can be calculated using the specified assumption.</p>
@@ -1900,7 +1905,7 @@
 <p>However, one key difference lies in the recursion. Since the <strong>benefits are not paid out at the end of the year</strong>, the the <strong>extent that the benefit has to be discounted changes</strong>.</p>
 <p>If benefits are only paid out at the end of the year:</p>
 <div class="arithmatex">\[
-    A_x = v \cdot {}_{0.5}q_{x} + v \cdot {}_{0.5}p_{x} A_{x+0.5}
+    A_x = v \cdot {}_{0.5}q_{x} + v^{0.5} \cdot {}_{0.5}p_{x} A_{x+0.5}
 \]</div>
 <p>If benefits are paid out every half a year:</p>
 <div class="arithmatex">\[
@@ -1921,7 +1926,10 @@
 <p><img alt="Continuous RV" class="center" src="../Assets/3.%20Life%20Assurances.md/Continuous%20RV.png" /></p>
 <p>The EPV of an assurance payable <span class="arithmatex">\(m\)</span> times a year can be denoted with the <strong><span class="arithmatex">\((m)\)</span> superscript</strong> with the same notations as before:</p>
 <div class="arithmatex">\[
-    A^{(m)}_{x} = \sum^{\infty}_{K_x=0} v^{K_x} {}_{K_x}p_x  \cdot \sum^{m-1}_{j=0} v^{\frac{j+1}{m}} {}_{\frac{j}{m}}p_{x+K_x} \cdot {}_{\frac{1}{m}} q_{x+K_x+\frac{j}{m}} \\
+    A^{(m)}_{x}
+    = \sum^{\infty}_{K_x=0} v^{K_x} {}_{K_x}p_x  
+    \cdot \sum^{m-1}_{j=0} v^{\frac{j+1}{m}} {}_{\frac{j}{m}}p_{x+K_x}
+    \cdot {}_{\frac{1}{m}} q_{x+K_x+\frac{j}{m}} \\
 \]</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
