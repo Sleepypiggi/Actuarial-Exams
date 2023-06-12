@@ -1352,11 +1352,11 @@
 \]</div>
 <!-- Obtained from Coaching Actuaries -->
 <p><img alt="Grouped Data" class="center" src="../Assets/8.%20Model%20Estimation.md/Grouped%20Data.png" /></p>
-<p>However, if <span class="arithmatex">\(k\)</span> is within the range, by assuming that values within the range are <strong>uniformly distributed</strong>, then the probability can be <strong>linearly interpolated</strong> from the probabilities at the boundary:</p>
-<p>Consider the range <span class="arithmatex">\((a,b]\)</span>:</p>
-<div class="arithmatex">\[
-    \hat{S}_x(t) = \frac{k-a}{b-a} \cdot \hat{S}_x(a) + \frac{b-k}{b-a} \cdot \hat{S}_x(b)
-\]</div>
+<p>However, if <span class="arithmatex">\(k\)</span> is within the range, by assuming that values within the range are <strong>uniformly distributed</strong>, then the probability can be <strong>linearly interpolated</strong> from the probabilities at the boundary.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Similar to the fractional age interpolation, recall that the <strong>larger weight should be applied to the boundary age</strong> that the estimated age is nearest to.</p>
+</div>
 <!-- Obtained from Coaching Actuaries -->
 <p><img alt="Grouped Interpolation" class="center" src="../Assets/8.%20Model%20Estimation.md/Grouped%20Interpolation.png" /></p>
 <p>The interpolation follows the same intuition as the fractional age assumption, where the uniform assumption results in a linear graph of probabilities:</p>

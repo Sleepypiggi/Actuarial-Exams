@@ -1485,7 +1485,7 @@
 \end{aligned}
 \]</div>
 <p>Since the default is to assume that PY and AY follow CY, unless stated otherwise as well, the <strong>valuation date is the end of the year</strong>.</p>
-<p>Most questions <em>already</em> provide the aggregated losses. However, if <strong>given raw data</strong>, we are expected to know how to aggregate them ourselves.</p>
+<p><strong>Most questions already provide the aggregated losses</strong>. However, if <strong>given raw data</strong>, we are expected to know how to aggregate them ourselves using the above method.</p>
 <h3 id="loss-development"><strong>Loss Development</strong><a class="headerlink" href="#loss-development" title="Permanent link">&para;</a></h3>
 <p>Using the above aggregations, the losses can be <strong>developed to their ultimate values</strong> using the <strong>chain ladder method</strong> described in the previous reserving section.</p>
 <h3 id="loss-trending"><strong>Loss Trending</strong><a class="headerlink" href="#loss-trending" title="Permanent link">&para;</a></h3>
@@ -1608,13 +1608,39 @@
 <li><strong>Earned Premium</strong> (EP): Portion of premium used to provide insurance</li>
 <li><strong>Unearned Premium</strong> (UP): Portion of premium that has yet to be used to provide insurance</li>
 </ul>
-<p>The above are all calculated at a specific point in time, which is the end of year for CY and the valuation date for PY.</p>
 <div class="arithmatex">\[
     \text{WP} = \text{EP} + \text{UP}
 \]</div>
+<p>The above are all calculated at a specific point in time known as the <strong>Valuation Date</strong>. For CY aggregation, the valuation date is always the <strong>end of the year</strong> while for PY aggregation it can be any date.</p>
+<div class="arithmatex">\[
+    \text{EP}
+    = \text{WP} \cdot \frac{|\text{Valuation Date} - \text{Policy Start Date}|}{\text{Policy Term}}
+\]</div>
 <!-- Obtained from Coaching Actuaries -->
 <p><img alt="Earned Unearned Premiums" src="../Assets/7.%20Ratemaking.md/Earned%20Unearned%20Premiums.png" /></p>
-<p>As with loss aggregation, most questions already provide the aggregated premiums. However, if given raw data, we are expected to know how to aggregate them ourselves.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>For a <em>few</em> policies, this process can be easily repeated. However, when policies are <strong>written uniformly throughout the year</strong>, there will be way <em>too many</em> to be feasibly use this method.</p>
+<p>Since policies are written uniformly, each month writes an equal number of policies. We can decompose the problem into <strong>monthly computations</strong>.</p>
+<div class="arithmatex">\[
+    \text{WP}_\text{Per Month} = \text{WP} \cdot \frac{1}{12}
+\]</div>
+<p>Depending on the policy term, the premiums for some months <strong>may already be fully earned</strong>. For instance, if the valuation date is the <strong>end of the year</strong> and policies lasts 3 months, then all policies written in <strong>January to September</strong> would have been <strong>fully earned by the end of the year</strong>.</p>
+<div class="arithmatex">\[
+    \text{EP}_{\text{Fully Earned Month}} = \text{WP}_\text{Per Month}
+\]</div>
+<p>For the remaining months, their premiums are only <strong>partially earned</strong>. Since policies are written evenly throughout the month, we can use the <strong>middle of the month</strong> as a reference point. The earned portion can then be calculated using the original method:</p>
+<div class="arithmatex">\[
+    \text{EP}_\text{Partially Earned Month}
+    = \text{WP}_\text{Per Month} \cdot \frac{|\text{Valuation Date} - \text{Middle Month}|}{\text{Policy Term}}
+\]</div>
+<p>Thus, the total EP is the combination of ALL the fully and partically earned months:</p>
+<div class="arithmatex">\[
+    \text{EP}
+    = \sum \text{EP}_{\text{Fully Earned Month}} + \sum \text{EP}_\text{Partially Earned Month}
+\]</div>
+</div>
+<p>As with loss aggregation, <strong>most questions already provide the aggregated premiums</strong>. However, if given raw data, we are expected to know how to aggregate them ourselves using the above method.</p>
 <h3 id="premium-trending"><strong>Premium Trending</strong><a class="headerlink" href="#premium-trending" title="Permanent link">&para;</a></h3>
 <p>Premiums then need to be brought to their current level, similar to how ultimate losses were trended.</p>
 <h4 id="extension-of-exposures"><strong>Extension of Exposures</strong><a class="headerlink" href="#extension-of-exposures" title="Permanent link">&para;</a></h4>

@@ -2103,7 +2103,7 @@ Probability tree perspective</p>
 <p>When the <strong>force of mortality is constant</strong> <span class="arithmatex">\(\mu_{x} = \mu\)</span>, the PDF can be shown to be exponential:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    {}_{}p_x
+    {}_{t}p_x
     &amp;= e^{- \int^{t}_{0} \mu} \\
     &amp;= e^{- \mu t}\\
     \\
@@ -2139,21 +2139,34 @@ Probability tree perspective</p>
 \end{aligned}
 \]</div>
 <h3 id="de-moivres-model"><strong>De Moivre's Model</strong><a class="headerlink" href="#de-moivres-model" title="Permanent link">&para;</a></h3>
-<p><strong>De Moivre's Law</strong> assumes that the <strong>distribution of a NEWBORN</strong> is <strong>uniformly distributed</strong> between 0 and <span class="arithmatex">\(\omega\)</span>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><span class="arithmatex">\(\omega\)</span> is known as the <strong>Limiting Age</strong>. It is the age that everyone is expected to die by.</p>
-</div>
-<div class="arithmatex">\[
-    T_{0} \sim \text{Uniform}(0, \omega)
-\]</div>
-<p>It can be adjusted to fit the distribution of a person aged <span class="arithmatex">\(x\)</span>:</p>
+<p><strong>De Moivre's Law</strong> assumes that the <strong>distribution of a NEWBORN</strong> is <strong>uniformly distributed</strong> between 0 and <span class="arithmatex">\(\omega\)</span>, where <span class="arithmatex">\(\omega\)</span> is known as the <strong>Limiting Age</strong>.</p>
+<p>It can be intepreted as starting with <span class="arithmatex">\(k\omega\)</span> people at age 0, where <strong><span class="arithmatex">\(k\)</span> people die every year</strong> till everybody dies by age <span class="arithmatex">\(w\)</span>.</p>
+<p>$$
+    \ell_{x} = k(\omega - x)
+$$s</p>
+<!-- Obtained from Coaching Actuaries -->
+<p><img alt="De Moivre" class="center" src="../Assets/1.%20Survival%20Models.md/De%20Moivre.png" /></p>
+<p>The PDF can be determined using the survival model or the uniform distribution:</p>
 <div class="arithmatex">\[
 \begin{aligned}
+    {}_{t}p_x
+    &amp;= \frac{\ell_{x+t}}{\ell_{x}} \\
+    &amp;= \frac{w-(x+t)}{w-x} \\
+    \\
+    \mu_{x+t}
+    &amp;= \frac{1}{w-(x+t)} \\
+    \\
+    \therefore f(x)
+    &amp;= \frac{w-(x+t)}{w-x} \cdot \frac{1}{w-(x+t)} \\
+    &amp;= \frac{1}{\omega-x}
+\end{aligned}
+\]</div>
+<div class="arithmatex">\[
+\begin{aligned}
+    T_{0} &amp;\sim \text{Uniform}(0, \omega) \\
     T_{x} &amp;= T_{0} - x \mid T_{0} \gt x \\
     \therefore T_{x} &amp;\sim \text{Uniform}(0, \omega-x) \\
     \\
-    f(x) &amp;= \frac{1}{\omega-x} \\
     E(T_{x}) &amp;= \frac{\omega-x}{2} \\
     Var(T_{x}) &amp;= \frac{(\omega-x)^2}{12}
 \end{aligned}

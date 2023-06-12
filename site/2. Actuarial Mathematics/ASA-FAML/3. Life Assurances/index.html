@@ -798,11 +798,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#recursions" class="md-nav__link">
-    Recursions
+  <a href="#recursion" class="md-nav__link">
+    Recursion
   </a>
   
-    <nav class="md-nav" aria-label="Recursions">
+    <nav class="md-nav" aria-label="Recursion">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -838,11 +838,12 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#continuous-case" class="md-nav__link">
-    Continuous Case
+  <a href="#m-thly-assurances" class="md-nav__link">
+    M-thly Assurances
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="M-thly Assurances">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#uniform-distribution-of-deaths" class="md-nav__link">
@@ -859,9 +860,48 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#common-pitfalls" class="md-nav__link">
-    Common Pitfalls
+  <a href="#recursion_1" class="md-nav__link">
+    Recursion
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-errors" class="md-nav__link">
+    Common Errors
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continuous-assurances" class="md-nav__link">
+    Continuous Assurances
+  </a>
+  
+    <nav class="md-nav" aria-label="Continuous Assurances">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exponential-distribution" class="md-nav__link">
+    Exponential Distribution
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uniform-distribution" class="md-nav__link">
+    Uniform Distribution
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1368,11 +1408,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#recursions" class="md-nav__link">
-    Recursions
+  <a href="#recursion" class="md-nav__link">
+    Recursion
   </a>
   
-    <nav class="md-nav" aria-label="Recursions">
+    <nav class="md-nav" aria-label="Recursion">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1408,11 +1448,12 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#continuous-case" class="md-nav__link">
-    Continuous Case
+  <a href="#m-thly-assurances" class="md-nav__link">
+    M-thly Assurances
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="M-thly Assurances">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#uniform-distribution-of-deaths" class="md-nav__link">
@@ -1429,9 +1470,48 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#common-pitfalls" class="md-nav__link">
-    Common Pitfalls
+  <a href="#recursion_1" class="md-nav__link">
+    Recursion
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-errors" class="md-nav__link">
+    Common Errors
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continuous-assurances" class="md-nav__link">
+    Continuous Assurances
+  </a>
+  
+    <nav class="md-nav" aria-label="Continuous Assurances">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exponential-distribution" class="md-nav__link">
+    Exponential Distribution
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uniform-distribution" class="md-nav__link">
+    Uniform Distribution
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1777,7 +1857,7 @@
 <p>Since WLs are just term assurances with infinite coverage, it can be extended to WLs as well if needed.</p>
 <p>This result will come in handy in later sections.</p>
 </blockquote>
-<h3 id="recursions"><strong>Recursions</strong><a class="headerlink" href="#recursions" title="Permanent link">&para;</a></h3>
+<h3 id="recursion"><strong>Recursion</strong><a class="headerlink" href="#recursion" title="Permanent link">&para;</a></h3>
 <p>The EPV of each contract can also be expressed through <strong>backwards recursion</strong>, where it is calculated as a function of itself one year later.</p>
 <p>Consider the <strong>WL</strong> random variable:</p>
 <ul>
@@ -1898,21 +1978,13 @@
 <li><span class="arithmatex">\(m=12\)</span>; Paid at the end of the month</li>
 <li><span class="arithmatex">\(m=\infty\)</span>; Paid at the time of death (Instant)</li>
 </ul>
-<p>Thus, despite the header stating "payable continously", this section will instead cover <strong>paying out <span class="arithmatex">\(m\)</span> times a year</strong>, which can be used to derive the continuous case.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Many of the concepts introduced earlier also apply to the "continuous" case.</p>
-<p>However, one key difference lies in the recursion. Since the <strong>benefits are not paid out at the end of the year</strong>, the the <strong>extent that the benefit has to be discounted changes</strong>.</p>
-<p>If benefits are only paid out at the end of the year:</p>
-<div class="arithmatex">\[
-    A_x = v \cdot {}_{0.5}q_{x} + v^{0.5} \cdot {}_{0.5}p_{x} A_{x+0.5}
-\]</div>
-<p>If benefits are paid out every half a year:</p>
-<div class="arithmatex">\[
-    A^{(2)}_{x} = v^{0.5} \cdot {}_{0.5}q_{x} + v^{0.5} \cdot {}_{0.5}p_{x} A_{x+0.5}
-\]</div>
+<p>The above logic can be applied to all other assurances, <strong>EXCEPT for PEs</strong>. This is because they pay out at a <strong>fixed time</strong>, thus there is <strong>NO such thing</strong> as a payable <span class="arithmatex">\(m\)</span> times PE or a continuously payable PE.</p>
 </div>
-<p>The RV must now reflect the <strong>probability of death at fractional ages</strong>. Intuitively, it can be thought of as the probability <em>living till a discrete age</em> and then dying within a sub-period within that year:</p>
+<p>Thus, we will first cover the general case of an assurance that pays <span class="arithmatex">\(m\)</span> times a year, also referred to as <strong>payable m-thly</strong> and then cover the special continuous case.</p>
+<h3 id="m-thly-assurances"><strong>M-thly Assurances</strong><a class="headerlink" href="#m-thly-assurances" title="Permanent link">&para;</a></h3>
+<p>The <strong>probability of death at a fractional age</strong> can be thought of as the probability <em>living till a discrete age</em> and then dying within a sub-period within that year:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     K_x + \frac{j+1}{m}, \ j = 0, 1, 2, ..., m-1
@@ -1924,12 +1996,12 @@
 \]</div>
 <!-- Self Made -->
 <p><img alt="Continuous RV" class="center" src="../Assets/3.%20Life%20Assurances.md/Continuous%20RV.png" /></p>
-<p>The EPV of an assurance payable <span class="arithmatex">\(m\)</span> times a year can be denoted with the <strong><span class="arithmatex">\((m)\)</span> superscript</strong> with the same notations as before:</p>
+<p>The EPV follows the same notations as before, but now with the <strong><span class="arithmatex">\((m)\)</span> superscript</strong>:</p>
 <div class="arithmatex">\[
     A^{(m)}_{x}
-    = \sum^{\infty}_{K_x=0} v^{K_x} {}_{K_x}p_x  
-    \cdot \sum^{m-1}_{j=0} v^{\frac{j+1}{m}} {}_{\frac{j}{m}}p_{x+K_x}
-    \cdot {}_{\frac{1}{m}} q_{x+K_x+\frac{j}{m}} \\
+    = \sum^{\infty}_{k=0} v^{k} {}_{k}p_x  
+    \cdot \sum^{m-1}_{j=0} v^{\frac{j+1}{m}} {}_{\frac{j}{m}}p_{x+k}
+    \cdot {}_{\frac{1}{m}} q_{x+k+\frac{j}{m}} \\
 \]</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -1938,46 +2010,22 @@
     \text{Per Period Benefit} = \frac{B}{m}
 \]</div>
 </div>
-<p>Unfortunately, most life tables do not naturally provide probabilities for death at fractional ages, thus the EPVs must be <strong>approximated from the discrete case</strong>, which will be covered later.</p>
-<h3 id="continuous-case"><strong>Continuous Case</strong><a class="headerlink" href="#continuous-case" title="Permanent link">&para;</a></h3>
-<p>As <span class="arithmatex">\(m \to \infty\)</span>, then the survival model becomes <span class="arithmatex">\(T_x\)</span> and hence random variable is:</p>
-<div class="arithmatex">\[
-\begin{aligned}
-    \text{PV}
-    &amp;= v^{T_x} \\
-    &amp;= e^{-\delta \cdot T_x}
-\end{aligned}
-\]</div>
-<p>The EPV of an assurance payable continously is denoted with the <strong><span class="arithmatex">\(\bar{}\)</span> accent</strong> with the same notations as before:</p>
-<div class="arithmatex">\[
-\begin{aligned}
-    \bar{A}_x
-    &amp;= \int^{\infty}_{0} v^{T_x} \cdot f_x(t) \\
-    &amp;= \int^{\infty}_{0} e^{-\delta \cdot T_x}  \cdot {}_{t}p_{x} \mu_{x+t}
-\end{aligned}
-\]</div>
-<p>Recall that the second term represents the probability of living to a certain age <span class="arithmatex">\(x+t\)</span> and then dying in an infinitely small time after that (definition of force of interest).</p>
-<p>Thus, although the EPV looks very different, it is still fundamentally a <strong>Triple Product Summation</strong> of the same components:</p>
-<ol>
-<li>Amount of Benefit, 1</li>
-<li>Discounting of the Benefit, <span class="arithmatex">\(e^{-\delta \cdot T_x}\)</span></li>
-<li>Probability of paying the Benefit, <span class="arithmatex">\({}_{t}p_{x} \mu_{x+t}\)</span></li>
-</ol>
-<p>Unlike the payable <span class="arithmatex">\(m\)</span> times case, the EPVs <em>can be calculated directly</em> if the survival distribution is provided. However, since they are special cases of the payable <span class="arithmatex">\(m\)</span> times case, it can also be calculated through approximation from the discrete case.</p>
-<p>The same logic can be applied to all other assurances, <strong>EXCEPT for PEs</strong>. This is because they pay out at a <strong>fixed time</strong>, thus there is <strong>NO such thing</strong> as a payable <span class="arithmatex">\(m\)</span> times PE or a continuously payable PE.</p>
-<h3 id="uniform-distribution-of-deaths"><strong>Uniform Distribution of Deaths</strong><a class="headerlink" href="#uniform-distribution-of-deaths" title="Permanent link">&para;</a></h3>
-<p>Recall that the UDD assumption can be used to approximate survival probabilities of <strong>fractional ages</strong> from discrete probabilities. Using this approach, the Continuous EPVs can be approximated from the Discrete ones.</p>
+<p>Recall previously that we were able to approximate fractional probabilities from the discrete ones. Following the same logic, we are able to <strong>approximate the m-thly EPVs from the discrete ones</strong>.</p>
+<h4 id="uniform-distribution-of-deaths"><strong>Uniform Distribution of Deaths</strong><a class="headerlink" href="#uniform-distribution-of-deaths" title="Permanent link">&para;</a></h4>
 <p>Assuming UDD between integer ages,</p>
 <div class="arithmatex">\[
     {}_{\frac{j}{m}}p_{x+K_x} \cdot {}_{\frac{1}{m}} q_{x+K_x+\frac{j}{m}} \approx \frac{1}{m} \cdot q_{x+K_x}
 \]</div>
-<p>Thus, the EPV of a continuous contract can be expressed as a function of the discrete case:</p>
+<blockquote>
+<p>to check</p>
+</blockquote>
+<p>Thus, the m-thly EPV can be expressed as a function of the discrete EPV:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     A^{(m)}_{x}
-    &amp;= \sum^{\infty}_{K_x=0} v^{K_x} {}_{K_x}p_x  \cdot \sum^{m-1}_{j=0} v^{\frac{j+1}{m}} {}_{\frac{j}{m}}p_{x+K_x} \cdot {}_{\frac{1}{m}} q_{x+K_x+\frac{j}{m}} \\
-    &amp; \approx \sum^{\infty}_{K_x=0} v^{K_x} {}_{K_x}p_x  \cdot \sum^{m-1}_{j=0} v^{\frac{j+1}{m}} \frac{1}{m} \cdot q_{x+K_x} \\
-    &amp; \approx \sum^{\infty}_{K_x=0} v^{K_x+1} {}_{K_x}p_x q_{x+K_x} \cdot \frac{1}{m} \sum^{m-1}_{j=0} v^{\frac{j+1}{m}-1}   \\
+    &amp;= \sum^{\infty}_{k=0} v^{k} {}_{k}p_x  \cdot \sum^{m-1}_{j=0} v^{\frac{j+1}{m}} {}_{\frac{j}{m}}p_{x+k} \cdot {}_{\frac{1}{m}} q_{x+k+\frac{j}{m}} \\
+    &amp; \approx \sum^{\infty}_{k=0} v^{k} {}_{k}p_x  \cdot \sum^{m-1}_{j=0} v^{\frac{j+1}{m}} \frac{1}{m} \cdot q_{x+k} \\
+    &amp; \approx \sum^{\infty}_{k=0} v^{k+1} {}_{k}p_x q_{x+k} \cdot \frac{1}{m} \sum^{m-1}_{j=0} v^{\frac{j+1}{m}-1}   \\
     &amp; \approx A_x \cdot \frac{v^{-1}}{m} \sum^{m-1}_{j=0} v^{\frac{j+1}{m}} \\
     &amp; \approx A_x \cdot \frac{1+i}{m} \cdot \frac{v^{\frac{1}{m}}(1-v)}{1-v^{\frac{1}{m}}} \\
     &amp; \approx A_x \cdot \frac{1+i}{m} \cdot \frac{v^{\frac{1}{m}}(1-v)}{v^{\frac{1}{m}}[(1+i)^{m}-1]} \\
@@ -1986,7 +2034,7 @@
     &amp; \approx \frac{i}{i^{(m)}} \cdot A_x
 \end{aligned}
 \]</div>
-<p>As <span class="arithmatex">\(m \to \infty\)</span>,</p>
+<p>Since the continuously payable assurance is a special case of the m-thly one, it can also be approximated from the discrete case by letting <span class="arithmatex">\(m \to \infty\)</span>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     i^{(m)} &amp;\to \delta, \\
@@ -1994,7 +2042,7 @@
     \therefore  \bar{A}_x &amp;= \frac{i}{\delta} A_x
 \end{aligned}
 \]</div>
-<h3 id="claims-acceleration-approach"><strong>Claims Acceleration Approach</strong><a class="headerlink" href="#claims-acceleration-approach" title="Permanent link">&para;</a></h3>
+<h4 id="claims-acceleration-approach"><strong>Claims Acceleration Approach</strong><a class="headerlink" href="#claims-acceleration-approach" title="Permanent link">&para;</a></h4>
 <p>Given that claims occur every <span class="arithmatex">\(\frac{1}{m}\)</span> period, then <strong>on average</strong>, the claims <strong>within a year</strong> occur at <span class="arithmatex">\(\frac{m+1}{2m}\)</span>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -2004,19 +2052,19 @@
     &amp;= \frac{m+1}{2m}
 \end{aligned}
 \]</div>
-<p>Thus, the EPV of a continuous contract can be expressed as a function of the discrete case:</p>
+<p>Thus, the m-thly EPV can be expressed as a function of the discrete EPV:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     A^{(m)}_{x}
-    &amp; \approx \sum^{\infty}_{K_x = 0} v^{K_x + \frac{m+1}{2m}} {}_{K_x|} q_{x} \\
-    &amp; \approx v^{\frac{m+1}{2m}-1} \sum^{\infty}_{K_x = 0} v^{K_x + 1} {}_{K_x|} q_{x} \\
+    &amp; \approx \sum^{\infty}_{k = 0} v^{k + \frac{m+1}{2m}} {}_{k|} q_{x} \\
+    &amp; \approx v^{\frac{m+1}{2m}-1} \sum^{\infty}_{k = 0} v^{k + 1} {}_{k|} q_{x} \\
     &amp; \approx v^{\frac{m+1-2m}{2m}} A_x \\
     &amp; \approx v^{\frac{-m+1}{2m}} A_x \\
     &amp; \approx v^{-\frac{m-1}{2m}} A_x \\
     &amp; \approx (1+i)^{\frac{m-1}{2m}} A_x
 \end{aligned}
 \]</div>
-<p>As <span class="arithmatex">\(m \to \infty\)</span>,</p>
+<p>Since the continuously payable assurance is a special case of the m-thly one, it can also be approximated from the discrete case by letting <span class="arithmatex">\(m \to \infty\)</span>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     m &amp;\to \infty, \\
@@ -2026,27 +2074,116 @@
 \end{aligned}
 \]</div>
 <p>This is known as the <strong>Claims Acceleration Approach</strong> as the claims are paid out earlier on in the year as compared to the end. Generally speaking, this approach is <em>preferred</em> as it only has one parameter compared to UDD which has two.</p>
-<h3 id="common-pitfalls"><strong>Common Pitfalls</strong><a class="headerlink" href="#common-pitfalls" title="Permanent link">&para;</a></h3>
-<p>Recall that there are no continuous PEs - thus, be very careful when approximating an EA as <strong>ONLY the TA portion needs to be approximated</strong>!</p>
-<p>This means that we <strong>cannot directly apply</strong> an approximation to the EA values provided in the SULT - they must be broken down into the TA and EA components first.</p>
+<h4 id="recursion_1"><strong>Recursion</strong><a class="headerlink" href="#recursion_1" title="Permanent link">&para;</a></h4>
+<p>Recursions follow the same logic as the discrete case. However, since the <strong>benefits are not paid out at the end of the year</strong>, the the <strong>extent that the benefit has to be discounted changes</strong>.</p>
+<p>If benefits are paid out m-thly every half a year:</p>
+<div class="arithmatex">\[
+    A^{(2)}_{x} = v^{0.5} \cdot {}_{0.5}q_{x} + v^{0.5} \cdot {}_{0.5}p_{x} A^{(2)}_{x+0.5}
+\]</div>
+<p>The key is to remember that since the benefits are paid out every half a year, the discounting occurs for half year periods.</p>
+<h4 id="common-errors"><strong>Common Errors</strong><a class="headerlink" href="#common-errors" title="Permanent link">&para;</a></h4>
+<p>Recall that there are <strong>NO continuous PEs</strong> - thus, be very careful when approximating an EA as <strong>ONLY the TA portion needs to be approximated</strong>!</p>
+<p>This means that we <strong>cannot directly apply</strong> an approximation to the EA values provided in the SULT; they must be <strong>broken down into the TA and EA components</strong> first.</p>
 <p>If calculating manually, it is always advised to calculate the TA and EA components seperately before combining into an EA to prevent falling into the trap of directly approximating the EA.</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    \bar{A}_{x:\enclose{actuarial}{n}} &amp; \ne \frac{i}{\delta} A_{x:\enclose{actuarial}{n}} \\
-    \bar{A}_{x:\enclose{actuarial}{n}} &amp; = \frac{i}{\delta} A^{1}_{x:\enclose{actuarial}{n}} + {}_{n}E_x
+    A^{(m)}_{x:\enclose{actuarial}{n}}
+    &amp; \ne \frac{i}{i^{(m)}} \cdot A_{x:\enclose{actuarial}{n}} \\
+    \\
+    A^{(m)}_{x:\enclose{actuarial}{n}}
+    &amp;= A^{1, (m)}_{x:\enclose{actuarial}{n}} + {}_{n}E_x \\
+    &amp;= \frac{i}{i^{(m)}} A^{1}_{x:\enclose{actuarial}{n}} + {}_{n}E_x
 \end{aligned}
 \]</div>
 <p>Similarly, if approximating the second moment for variance, note that the <strong>NEW interest rate must be used</strong> in the approximation term as well:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    {}^{2} \bar{A}_x &amp;= \frac{i^*}{\delta^*} \cdot {}^{2} A_x
+    {}^{2} A^{(m)}_x &amp;= \frac{i^*}{{i^*}^{(m)}} \cdot {}^{2} A_x
 \end{aligned}
 \]</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Although the above two points were illustrated with UDD, they apply to the claims acceleration approach as well.</p>
 </div>
-<p>Lastly, the two approaches should produce <strong>similar results</strong> which differ by a few decimal places. However, these <strong>differences are enlarged</strong> when dealing with large benefits as these decimal places will be brought forward, resulting in <em>seemingly</em> large differences - do not be alarmed!</p>
+<p>Lastly, the two approaches should produce <strong>similar results</strong> which differ by a few decimal places. However, these <strong>differences are enlarged</strong> when dealing with large benefits as these decimal places will be brought forward, resulting in <em>seemingly</em> large differences; do not be alarmed!</p>
+<h3 id="continuous-assurances">Continuous Assurances<a class="headerlink" href="#continuous-assurances" title="Permanent link">&para;</a></h3>
+<p>As <span class="arithmatex">\(m \to \infty\)</span>, then the <strong>survival model becomes <span class="arithmatex">\(T_x\)</span></strong> and hence the corresponding random variable is:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \text{PV}
+    &amp;= v^{T_x} \\
+    &amp;= e^{-\delta \cdot T_x}
+\end{aligned}
+\]</div>
+<p>The EPV follows the same notations as before, but now with the <strong><span class="arithmatex">\(\bar{}\)</span> accent</strong>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \bar{A}_x
+    &amp;= \int^{\infty}_{0} v^{t} \cdot f_x(t) \\
+    &amp;= \int^{\infty}_{0} e^{-\delta \cdot t}  \cdot {}_{t}p_{x} \mu_{x+t}
+\end{aligned}
+\]</div>
+<p>Although the EPV looks very different, it is still fundamentally a <strong>Triple Product Summation</strong> of the same components:</p>
+<ol>
+<li><strong>Amount of Benefit</strong>, 1</li>
+<li><strong>Discounting</strong> of the Benefit, <span class="arithmatex">\(e^{-\delta \cdot t}\)</span></li>
+<li><strong>Probability</strong> of paying the Benefit, <span class="arithmatex">\({}_{t}p_{x} \mu_{x+t}\)</span></li>
+</ol>
+<p>As shown earlier, the continuous EPVs can be approximated from the discrete case. However, if the survival distribution is provided, then they can be <strong>calculated directly</strong> as well.</p>
+<h4 id="exponential-distribution"><strong>Exponential Distribution</strong><a class="headerlink" href="#exponential-distribution" title="Permanent link">&para;</a></h4>
+<p>Recall that given a <strong>constant force of mortality</strong>, the lifetime of the policyholder follows an exponential distribution:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    {}_{t}p_{x} &amp;= e^{-\mu t} \\
+    \therefore f(x) &amp;= \mu \cdot e^{-\mu t}
+\end{aligned}
+\]</div>
+<p>Thus, the EPV can be calculated via first principles:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \bar{A}_x
+    &amp;= \int^{\infty}_{0} v^{t} \cdot f_x(t) \\
+    &amp;= \int^{\infty}_{0} e^{-\delta t}  \cdot \mu \cdot e^{-\mu t} \\
+    &amp;= \mu \int^{\infty}_{0} e^{-(\mu + \delta)t} \\
+    &amp;= \mu \left[\frac{e^{-(\mu + \delta)t}}{-(\mu + \delta)t} \right]^{\infty}_{0} \\
+    &amp;= \mu \left[0 - -\frac{1}{\mu + \delta} \right] \\
+    &amp;= \frac{\mu}{\mu + \delta} \\
+    \\
+    {}_{n}E_{x}
+    &amp;= v^{n} \cdot {}_{n}p_{x} \\
+    &amp;= e^{-\delta n} \cdot e^{-\mu n} \\
+    &amp;= e^{-(\mu + \delta)n}
+\end{aligned}
+\]</div>
+<h4 id="uniform-distribution"><strong>Uniform Distribution</strong><a class="headerlink" href="#uniform-distribution" title="Permanent link">&para;</a></h4>
+<p>Similarly, following De Moivres law, the survival distribution follows a uniform distribtion:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    {}_{t}p_x &amp;= \frac{w-(x+t)}{w-x} \\
+    \mu_{x+t} &amp;= \frac{1}{w-(x+t)} \\
+    f(x) &amp;= \frac{1}{\omega-x}
+\end{aligned}
+\]</div>
+<p>Thus, the EPV can be calculated via first principles:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \bar{A}_x
+    &amp;= \int^{\omega - x}_{0} v^{t} \cdot f_x(t) \\
+    &amp;= \int^{\omega - x}_{0} e^{-\delta t} \cdot \frac{1}{\omega - x} \\
+    &amp;= \frac{1}{\omega - x} \int^{\omega - x}_{0} e^{-\delta t} \\
+    &amp;= \frac{1}{\omega - x} \cdot [\bar{a}_\enclose{actuarial}{t}]^{\omega - x}_{0} \\
+    &amp;= \frac{\bar{a}_\enclose{actuarial}{\omega - x}}{\omega - x} \\
+    &amp;= \frac{1 - v^{\omega - x}}{\delta} \cdot \frac{1}{\omega - x} \\
+    \\
+    {}_{n}E_{x}
+    &amp;= v^{n} \cdot {}_{n}p_{x} \\
+    &amp;= e^{-\delta n} \cdot \frac{\omega - (x + n)}{\omega - x}
+\end{aligned}
+\]</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Since the uniform distribution has a limiting age, the upper limit of the integral is <span class="arithmatex">\(\omega - x\)</span>, NOT <span class="arithmatex">\(\infty\)</span>!</p>
+</div>
 
 
 
