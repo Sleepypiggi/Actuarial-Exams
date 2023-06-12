@@ -1449,8 +1449,9 @@
 \]</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>The weights of the interpolation are slightly <strong>counter-intuitive</strong> and are thus easily mixed up.</p>
-<p>One way to think of it is that at time <span class="arithmatex">\(x+s\)</span>, <span class="arithmatex">\(s\)</span> proportion of the survivors have already made it to <span class="arithmatex">\(x+1\)</span>, thus the remaining <span class="arithmatex">\(1-s\)</span> proportion are still at time <span class="arithmatex">\(x\)</span>.</p>
+<p>The weights of the interpolation are seemingly <strong>counter-intuitive</strong> and are thus easily mixed up. Most people would take <span class="arithmatex">\(s\)</span> for <span class="arithmatex">\(\ell_{x}\)</span> because they are on the same side of the interpolation.</p>
+<p>However, a more intuitive way to think about it is that if the person is <strong>closer to age <span class="arithmatex">\(x\)</span></strong>, then they should have a <strong>larger weight applied to that age</strong>!</p>
+<p>This means that the <strong>larger weight should be applied to the boundary age</strong> that the estimated age is nearest to.</p>
 </div>
 <p>Firstly, we calculate the probability of surviving a <strong>fractional amount of time from a discrete age</strong>:</p>
 <div class="arithmatex">\[
@@ -1501,7 +1502,7 @@
 \]</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Similar to before, the weights are counter-intuitive. Take special care not to mix them up.</p>
+<p>Similar to before, the <strong>larger weight should be applied to the boundary age</strong> that the estimated age is nearest to.</p>
 </div>
 <p>Firstly, we calculate the probability of surviving a <strong>fractional amount of time from a discrete age</strong>:</p>
 <div class="arithmatex">\[

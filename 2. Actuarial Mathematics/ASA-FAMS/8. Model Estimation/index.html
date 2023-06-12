@@ -658,6 +658,26 @@
     Truncated
   </a>
   
+    <nav class="md-nav" aria-label="Truncated">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#losses-vs-payments" class="md-nav__link">
+    Losses VS Payments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#special-case" class="md-nav__link">
+    Special Case
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1215,6 +1235,26 @@
     Truncated
   </a>
   
+    <nav class="md-nav" aria-label="Truncated">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#losses-vs-payments" class="md-nav__link">
+    Losses VS Payments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#special-case" class="md-nav__link">
+    Special Case
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1303,7 +1343,7 @@
 <p class="admonition-title">Warning</p>
 <p>The notation for the threshold is <span class="arithmatex">\(d\)</span> to denote deductible. HOWEVER, the notation <span class="arithmatex">\(u\)</span> here DOES NOT represent policy limits!</p>
 </div>
-<p>In terms of MLE, this means that the <strong>ENTIRE distribution is conditioned</strong> on having values above <span class="arithmatex">\(d\)</span> or below <span class="arithmatex">\(u\)</span>. Thus, the likelihood functions should be constructed using conditional PMFs/PDFs of <strong>every observation</strong>:</p>
+<p>In terms of MLE, this means that the <strong>ENTIRE distribution is conditioned</strong> on having values above <span class="arithmatex">\(d\)</span> or below <span class="arithmatex">\(u\)</span>. Thus, the likelihood functions should be constructed using conditional PMFs/PDFs of <strong>EVERY observation</strong>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     P_{\theta} (X = x \mid X \gt d) &amp;= \frac{P_{\theta}(X = x)}{P(X \gt d)}
@@ -1313,10 +1353,23 @@
     \\ \therefore L^{RT}(\theta) &amp;= \prod P_{\theta} (X = x_i \mid X \lt u)
 \end{aligned}
 \]</div>
-<!--
-Most likely, **claims data will be provided** and will be used for the MLE of the loss distribution. Thus, in order to convert claim payments into losses, remember to **add back the deductibles**.
--->
-
+<h4 id="losses-vs-payments"><strong>Losses VS Payments</strong><a class="headerlink" href="#losses-vs-payments" title="Permanent link">&para;</a></h4>
+<p>Recall that for a deductible, there is a clear <strong>distinction between Ground Up Losses and Claim Payments</strong>.</p>
+<div class="arithmatex">\[
+    \text{Payment} = \text{Ground Up Loss} - \text{Deductible}
+\]</div>
+<p>The data provided could be <strong>either payments or losses</strong>, and the distribution fitted could either be for the payments or losses.</p>
+<p>If the data and the distribution are different, then the above adjustment needs to be made for every observation.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The terminology used in these types of questions tend to be slightly ambiguous.</p>
+<p>If the question only uses "claims", then it should be intepreted as losses.</p>
+<p>In other words, <strong>unless "payments" are EXPLICITLY mentioned</strong>, it should be intepreted as losses.</p>
+</div>
+<h4 id="special-case"><strong>Special Case</strong><a class="headerlink" href="#special-case" title="Permanent link">&para;</a></h4>
+<p>Recall that the method of moments can only be used for complete data.</p>
+<p>Although loss data is truncated at the deductible, <strong>payment data is NOT truncated</strong>. Thus, if the distribution is fitted to the payments, then the method of moments can be used.</p>
+<p>However, if the loss distribution is <strong>memoryless</strong>, then the <strong>distribution of claims and payments are identical</strong>. Thus, by converting the loss data to payment data, the method of moments can be used.</p>
 <h3 id="censored"><strong>Censored</strong><a class="headerlink" href="#censored" title="Permanent link">&para;</a></h3>
 <p>The second type of incomplete data is known as <strong>Censored Data</strong>. It means that <strong>exact values of certain observations</strong> are not known.</p>
 <p><center></p>
