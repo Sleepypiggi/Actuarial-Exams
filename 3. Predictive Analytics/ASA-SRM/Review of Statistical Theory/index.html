@@ -1603,6 +1603,10 @@ t_{n-1}^2
 <div class="arithmatex">\[
     L(\theta) = \prod P_{\theta}(X = x_i)
 \]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For discrete distributions, <span class="arithmatex">\(X = 0\)</span> is a <strong>valid observation</strong> and thus should be considered as well.</p>
+</div>
 <p>The goal is to find the parameters that <strong>maximizes</strong> the likelihood function through calculus:</p>
 <div class="arithmatex">\[
     \frac{d}{d\theta} L(\theta) = 0
@@ -1658,6 +1662,11 @@ t_{n-1}^2
     &amp;= \frac{\sum x^k_i}{n}
 \end{aligned}
 \]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Needless to say, <span class="arithmatex">\(\bar{x}\)</span> represents the <strong>average of the quantity being modelled</strong>, NOT the number of observations.</p>
+<p>If there are 10 observations of 2 claims, then we must compute the number of claims as <span class="arithmatex">\(10 \cdot 2 = 20\)</span>.</p>
+</div>
 <p>The main advantage of this method is that it is <strong>computationally simpler</strong> than MLE. For certain known distributions, the MOM estimate and MLE estimate are the same, thus MOM can be used as a <strong>shortcut for MLE</strong>.</p>
 
 

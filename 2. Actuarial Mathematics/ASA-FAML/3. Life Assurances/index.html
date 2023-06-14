@@ -1556,11 +1556,15 @@
 <div class="arithmatex">\[
 \begin{aligned}
     EPV
-    &amp;= \sum B \cdot v^{K_x + 1} \cdot {}_{K_x}p_{x} {}_{}q_{x + K_x} \\
-    &amp;= \sum B \cdot v^{K_x + 1} \cdot {}_{K_x|}q_{x}
+    &amp;= \sum B \cdot v^{k + 1} \cdot {}_{k}p_{x} {}_{}q_{x + k} \\
+    &amp;= \sum B \cdot v^{k + 1} \cdot {}_{k \mid}q_{x}
 \end{aligned}
 \]</div>
-<p>For simplicity, all of the proofs in this section will use <span class="arithmatex">\(B=1\)</span>. This also has the benefit of allowing the EPVs to be <em>easily scaled</em> for any level of <span class="arithmatex">\(B\)</span>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is a common mistake to use the raw probability of dying at every age rather than the <strong>deferred probability</strong> of doing so.</p>
+</div>
+<p>For simplicity, all of the proofs in this section will use <span class="arithmatex">\(B=1\)</span>. This also has the benefit of allowing the EPVs to be <strong>easily scaled for any level of <span class="arithmatex">\(B\)</span>.</strong></p>
 <h3 id="actuarial-notation"><strong>Actuarial Notation</strong><a class="headerlink" href="#actuarial-notation" title="Permanent link">&para;</a></h3>
 <p>Similar to the survival model, given how often these values are calculated, they are abbreviated using the <strong>International Actuarial Notation</strong> as well.</p>
 <p><span class="arithmatex">\(A\)</span> represents the <strong>first moment</strong> (expectation) of the <strong>present value</strong> of a contract where a <strong>benefit of 1</strong> is payable discretely when the <em>status fails</em>.</p>
