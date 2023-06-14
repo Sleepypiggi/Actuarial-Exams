@@ -299,6 +299,10 @@ $$
     L(\theta) = \prod P_{\theta}(X = x_i)
 $$
 
+!!! Note
+
+    For discrete distributions, $X = 0$ is a **valid observation** and thus should be considered as well.
+
 The goal is to find the parameters that **maximizes** the likelihood function through calculus:
 
 $$
@@ -372,5 +376,11 @@ $$
     &= \frac{\sum x^k_i}{n}
 \end{aligned}
 $$
+
+!!! Note
+
+    Needless to say, $\bar{x}$ represents the **average of the quantity being modelled**, NOT the number of observations.
+
+    If there are 10 observations of 2 claims, then we must compute the number of claims as $10 \cdot 2 = 20$.
 
 The main advantage of this method is that it is **computationally simpler** than MLE. For certain known distributions, the MOM estimate and MLE estimate are the same, thus MOM can be used as a **shortcut for MLE**.

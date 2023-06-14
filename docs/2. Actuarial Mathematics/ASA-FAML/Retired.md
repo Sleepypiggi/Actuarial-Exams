@@ -1,3 +1,12 @@
+!!! Note
+
+    Since the force of mortality represents the instantaneous rate of death,
+    for **extremely small time intervals**, it can be used to *approximate* the probability of death in that interval:
+
+    $$
+        P(T_x \lt h) \approx h * \mu_{x}
+    $$
+
 MOVE TO CURTATE?
 
 This result can be better expressed in the form of a probability tree:
@@ -189,3 +198,16 @@ $$
 $$
 
 This approach might seem long winded, as it seems that it is sufficient to simply compare the cashflows of $1 > v^n$. However, that **ignores the probabilities**, which is properly accounted for in the above approach.
+
+The premiums determined this way will **always be larger** than the premiums determined through the equivalence principle:
+
+$$
+\begin{aligned}
+    P_{\text{Portfolio Percentile}} &\ge P_{\text{Equivalence Principle}} \\
+    \\
+    \text{As n} &\to \infty \\
+    P_{\text{Portfolio Percentile}} &\to P_{\text{Equivalence Principle}}
+\end{aligned}
+$$
+
+<!-- Why? -->
