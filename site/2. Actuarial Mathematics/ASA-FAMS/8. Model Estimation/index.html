@@ -669,8 +669,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#special-case" class="md-nav__link">
-    Special Case
+  <a href="#memoryless-distribution" class="md-nav__link">
+    Memoryless Distribution
   </a>
   
 </li>
@@ -1246,8 +1246,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#special-case" class="md-nav__link">
-    Special Case
+  <a href="#memoryless-distribution" class="md-nav__link">
+    Memoryless Distribution
   </a>
   
 </li>
@@ -1366,10 +1366,16 @@
 <p>If the question only uses "claims", then it should be intepreted as losses.</p>
 <p>In other words, <strong>unless "payments" are EXPLICITLY mentioned</strong>, it should be intepreted as losses.</p>
 </div>
-<h4 id="special-case"><strong>Special Case</strong><a class="headerlink" href="#special-case" title="Permanent link">&para;</a></h4>
-<p>Recall that the method of moments can only be used for complete data.</p>
-<p>Although loss data is truncated at the deductible, <strong>payment data is NOT truncated</strong>. Thus, if the distribution is fitted to the payments, then the method of moments can be used.</p>
-<p>However, if the loss distribution is <strong>memoryless</strong>, then the <strong>distribution of claims and payments are identical</strong>. Thus, by converting the loss data to payment data, the method of moments can be used.</p>
+<h4 id="memoryless-distribution"><strong>Memoryless Distribution</strong><a class="headerlink" href="#memoryless-distribution" title="Permanent link">&para;</a></h4>
+<p>If the distribution being fitted is memoryless, then the <strong>method of moments</strong> can be used even for truncated data.</p>
+<p>Loss data is truncated at the deductible. If converted to payment data using the above method, then the converted data is NOT truncated. Thus, the MOM can be used to <strong>easily fit a distribution to the payment data</strong>.</p>
+<p>The issue is that the <strong>distribution is fitted to the losses, not the payments</strong>. However, if the loss distribution is memoryless, then the payments will follow the same distribution and thus the MOM can be used.</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    X &amp;\sim \text{Exponential}(\theta) \\
+    X - d &amp;\sim \text{Exponential}(\theta)
+\end{aligned}
+\]</div>
 <h3 id="censored"><strong>Censored</strong><a class="headerlink" href="#censored" title="Permanent link">&para;</a></h3>
 <p>The second type of incomplete data is known as <strong>Censored Data</strong>. It means that <strong>exact values of certain observations</strong> are not known.</p>
 <p><center></p>

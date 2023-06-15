@@ -1178,6 +1178,14 @@
 
   <h1>Retired</h1>
 
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since the force of mortality represents the instantaneous rate of death,
+for <strong>extremely small time intervals</strong>, it can be used to <em>approximate</em> the probability of death in that interval:</p>
+<div class="arithmatex">\[
+    P(T_x \lt h) \approx h * \mu_{x}
+\]</div>
+</div>
 <p>MOVE TO CURTATE?</p>
 <p>This result can be better expressed in the form of a probability tree:</p>
 <!-- Self Made -->
@@ -1323,6 +1331,16 @@
 \end{aligned}
 \]</div>
 <p>This approach might seem long winded, as it seems that it is sufficient to simply compare the cashflows of <span class="arithmatex">\(1 &gt; v^n\)</span>. However, that <strong>ignores the probabilities</strong>, which is properly accounted for in the above approach.</p>
+<p>The premiums determined this way will <strong>always be larger</strong> than the premiums determined through the equivalence principle:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    P_{\text{Portfolio Percentile}} &amp;\ge P_{\text{Equivalence Principle}} \\
+    \\
+    \text{As n} &amp;\to \infty \\
+    P_{\text{Portfolio Percentile}} &amp;\to P_{\text{Equivalence Principle}}
+\end{aligned}
+\]</div>
+<!-- Why? -->
 
 
 

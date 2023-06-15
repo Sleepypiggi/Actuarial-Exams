@@ -1291,101 +1291,104 @@
 <p>The key thing to notice is that the components of net premiums are fixed while gross premiums differ from insurer to insurer. Thus, this section will <strong>only show formulas for net premiums</strong>.</p>
 <h2 id="equivalence-principle-approach"><strong>Equivalence Principle Approach</strong><a class="headerlink" href="#equivalence-principle-approach" title="Permanent link">&para;</a></h2>
 <p>To determine the breakeven point of the insurer, the expected amount of loss must first be defined.</p>
-<p>Thus, let <span class="arithmatex">\(L_x\)</span> be the random variable denoting the loss of the policy:</p>
+<p>Thus, let <span class="arithmatex">\({}_{t}L\)</span> be the random variable denoting the loss of the policy:</p>
 <ul>
-<li>If <span class="arithmatex">\(L_x\)</span> is positive, then the policy is losing money</li>
-<li>If <span class="arithmatex">\(L_x\)</span> is negative, then the policy is making money</li>
-<li>The intepretation is reversed since <span class="arithmatex">\(L\)</span> represents an <strong>outflow</strong> rather than an inflow!</li>
+<li>If <span class="arithmatex">\({}_{t}L\)</span> is positive, then the policy is losing money</li>
+<li>If <span class="arithmatex">\({}_{t}L\)</span> is negative, then the policy is making money</li>
+<li>The <strong>intepretation is reversed</strong> since <span class="arithmatex">\(L\)</span> represents an <strong>outflow</strong> rather than an inflow!</li>
 </ul>
 <div class="arithmatex">\[
 \begin{aligned}
-    L_x
-    &amp;= \text{PV Outflow} - \text{PV Inflows}
+    {}_{t}L
+    &amp;= \text{PV Outflow} - \text{PV Inflows} \\
+    &amp;= B \cdot v^{K_{x+t} + 1} - P \cdot \ddot{a}_{\enclose{actuarial}{K_{x+t} + 1}}
 \end{aligned}
 \]</div>
-<p>The goal is to solve for the premiums such that there is <strong>no expected loss</strong>. This is known as the <strong>Equivalence Principle</strong> approach as it sets the EPVs to be equal:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Remember that there is a <strong>difference between the PV and EPV</strong>!</p>
+<p>PVs contain the random variable and are denoted in general notation while EPVs should NOT contain the random variable and are denoted in actuarial notation.</p>
+</div>
+<p>The goal is to solve for the premiums such that there is <strong>no expected loss at time 0</strong>. This is known as the <strong>Equivalence Principle</strong> approach as it sets the EPVs to be equal:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    E(L_x) &amp;= 0 \\
-    \text{EPV Outflow} &amp;= \text{EPV Inflow}
-\end{aligned}
-\]</div>
-<p>The loss variable for Net and Gross can be differentiated using superscripts:</p>
-<ul>
-<li><strong>Net Premium</strong>: <span class="arithmatex">\(L^{B}_{x}\)</span>, where <span class="arithmatex">\(B\)</span> represents the **B**enefits only</li>
-<li><strong>Gross Premium</strong>: <span class="arithmatex">\(L^{B+E}_{x}\)</span>, where <span class="arithmatex">\(B+E\)</span> represents **B**enefits and **E**xpenses</li>
-</ul>
-<p>For Net Premiums only,</p>
-<div class="arithmatex">\[
-\begin{aligned}
-    E \left(L^{B}_{x} \right) &amp;= 0 \\
+    E \left({}_{0}L \right) &amp;= 0 \\
     \text{EPV Benefits} &amp;= \text{EPV Premiums} \\
     B \cdot A_x &amp;= P \cdot \ddot{a}_x \\
     P &amp;= B \cdot \frac{A_x}{\ddot{a}_x}
 \end{aligned}
 \]</div>
-<p>Note that several implicit assumptions were made:</p>
-<ul>
-<li>Premiums are payable annually</li>
-<li>Benefits are payable discretely</li>
-</ul>
-<p>If premiums or benefits were payable continously, then the formula would use the corresponding continuous assurance or annuity. However, note that even when calculating this way <span class="arithmatex">\(P\)</span> will still represent the <strong>Annual Net Premium</strong>, thus we must still <strong>divide</strong> to obtain the appropriate <strong>monthly or quarterly premium</strong>.</p>
+<p>If the time of the loss is not specified, then it can be assumed to be time 0.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Note that the above assumes that benefits and premiums are <strong>payable discretely</strong>. If they were payable more frequently, then the corresponding formula should be used.</p>
+<p>Regardless, note that <span class="arithmatex">\(P\)</span> in the above contract represents the <strong>ANNUAL PREMIUM</strong>. To obtain the premium payable per period, it should be divided by the number of periods:</p>
+<div class="arithmatex">\[
+    \text{Premium Per Period} = \frac{P}{m}
+\]</div>
+</div>
 <h2 id="portfolio-percentile-approach"><strong>Portfolio Percentile Approach</strong><a class="headerlink" href="#portfolio-percentile-approach" title="Permanent link">&para;</a></h2>
-<p>If there are a large number of policies within the insurer's portfolio, then the insurer can consider the <strong>breakeven on a portfolio of policies</strong> rather than a single policy.</p>
-<p>Let <span class="arithmatex">\(Y\)</span> be the random variable denoting the <strong>aggregate loss</strong> on a portfolio of <span class="arithmatex">\(n\)</span> iid policies:</p>
+<p>An alternative approach would be to use the <strong>distribution of the loss</strong> and set the premiums in such a way that the <strong>probability of profit</strong> is fixed at some acceptable level.</p>
+<p>Using the formula for net premiums, we can express the loss random variable in a different way:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    Y &amp; \sim iid \\
-    E(Y) &amp;= n \cdot E(L) \\
-    Var(Y) &amp;= n \cdot Var(L) \\
+    {}_{t}L
+    &amp;= B \cdot v^{K_{x+t} + 1} - P \cdot \ddot{a}_{\enclose{actuarial}{K_{x+t} + 1}} \\
+    &amp;= B \cdot v^{K_{x+t} + 1} - P \cdot \frac{1- v^{K_{x+t} + 1}}{d} \\
+    &amp;= B \cdot v^{K_{x+t} + 1} + \frac{- P + P v^{K_{x+t} + 1}}{d} \\
+    &amp;= v^{K_{x+t} + 1} \left(B + \frac{P}{d} \right) - \frac{P}{d} \\
 \end{aligned}
 \]</div>
-<p>If the insurer has a large portfolio of policies (<span class="arithmatex">\(n\)</span> is sufficiently large), then through <strong>Central Limit Theorem</strong>,</p>
+<p>Thus, the mean and variance can be determined:</p>
 <div class="arithmatex">\[
-    Y \sim N(E(Y), Var(Y))
+\begin{aligned}
+    E({}_{t}L)
+    &amp;= E \left[v^{K_{x+t} + 1} \left(B + \frac{P}{d} \right) - \frac{P}{d} \right] \\
+    &amp;= \left(B + \frac{P}{d} \right) E(v^{K_{x+t} + 1}) - E \left(\frac{P}{d} \right) \\
+    &amp;= \left(B + \frac{P}{d} \right)A_{x+t}  - \frac{P}{d} \\
+    \\
+    \text{Var}({}_{t}L)
+    &amp;= \text{Var}\left[v^{K_{x+t} + 1} \left(B + \frac{P}{d} \right) - \frac{P}{d} \right] \\
+    &amp;= \text{Var} \left[v^{K_{x+t} + 1} \left(B + \frac{P}{d} \right) \right] \\
+    &amp;= \left(B + \frac{P}{d} \right)^2 \cdot \text{Var} \left(v^{K_{x+t} + 1} \right) \\
+    &amp;= \left(B + \frac{P}{d} \right)^2 \cdot \left[{}^{2}A_{x+t} - (A_{x+t})^2 \right]
+\end{aligned}
+\]</div>
+<p>The distribution of a single policy cannot be determined. However, if there were a <strong>large number of policies</strong>, then the <em>aggregate loss</em> of those policies would be <strong>approximately normal distributed</strong> via the central limit theorem.</p>
+<p>Since policies are homogenous, they are <strong>independent and identically distributed</strong>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    S
+    &amp;= {}_{t}L_1 + {}_{t}L_2 + ... + {}_{t}L_n \\
+    &amp;= n \cdot {}_{t}L \\
+    \\
+    E(S)
+    &amp;= E(n \cdot {}_{t}L) \\
+    &amp;= n \cdot E({}_{t}L) \\
+    \\
+    \text{Var}(S)
+    &amp;= \text{Var} (n \cdot {}_{t}L) \\
+    &amp;= n^2 \cdot \text{Var} ({}_{t}L) \\
+    \\
+    \therefore S &amp;\sim N(E(S), \text{Var}(S))
+\end{aligned}
 \]</div>
 <p>The premium is then set such the <strong>probability of profit</strong> is set a pre-determined level close to 1:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    P(Y &lt; 0) &amp;= \alpha \\
-    P\left(\frac{Y - E(Y)}{\sqrt{Var (Y)}} \le \frac{0 - E(Y)}{\sqrt{Var (Y)}}\right) &amp;= \alpha \\
-    P\left(Z \le \frac{- E(Y)}{\sqrt{Var (Y)}}\right) &amp;= \alpha \\
-    P\left(Z \le \frac{- n \cdot E(L)}{n \cdot \sqrt{Var (L)}}\right) &amp;= \alpha \\
-    P\left(Z \le \frac{- E(L)}{\sqrt{Var (L)}}\right) &amp;= \alpha
+    P(S &lt; 0) &amp;= \alpha \\
+    P\left(\frac{S - E(S)}{\sqrt{Var (S)}} \le \frac{0 - E(S)}{\sqrt{Var (S)}}\right) &amp;= \alpha \\
+    P\left(Z \le \frac{- E(S)}{\sqrt{Var (S)}}\right) &amp;= \alpha \\
+    P\left(Z \le \frac{- n \cdot E({}_{t}L)}{\sqrt{n^2 \cdot Var ({}_{t}L)}}\right) &amp;= \alpha \\
+    P\left(Z \le \frac{- n \cdot E({}_{t}L)}{n \cdot \sqrt{Var ({}_{t}L)}}\right) &amp;= \alpha  \\
+    P\left(Z \le \frac{- E({}_{t}L)}{\sqrt{Var ({}_{t}L)}}\right) &amp;= \alpha
 \end{aligned}
 \]</div>
-<p>Thus, only the expectation and variance of an <strong>individual policy</strong> is required. For net premiums only,</p>
-<div class="arithmatex">\[
-\begin{aligned}
-    L_x
-    &amp;= B \cdot \text{WL} - P \cdot \text{WL}_{Due} \\
-    &amp;= B \cdot \text{WL} - P \cdot \frac{1- \text{WL}}{d} \\
-    &amp;= B \cdot \text{WL} - P \left(\frac{1}{d}-\frac{\text{WL}}{d} \right) \\
-    &amp;= B \cdot \text{WL} - P \left[\left(\frac{1}{d}\right) + P\left(\frac{\text{WL}}{d}\right) \right] \\
-    &amp;= \text{WL} \left(B + \frac{P}{d} \right) - \frac{P}{d} \\
-    \\
-    \therefore E(L_x)
-    &amp;= E \left[\text{WL} \left(B + \frac{P}{d} \right) - \frac{P}{d} \right] \\
-    &amp;= A_x \left(B + \frac{P}{d} \right) - \frac{P}{d} \\
-    \\
-    \therefore Var(L_x)
-    &amp;= Var\left[\text{WL} \left(B + \frac{P}{d} \right) - \frac{P}{d} \right] \\
-    &amp;= Var \left[\text{WL} \left(B + \frac{P}{d} \right) \right] \\
-    &amp;= \left(B + \frac{P}{d} \right)^2 \cdot Var(\text{WL}) \\
-    &amp;= \left(B + \frac{P}{d} \right)^2 \cdot \left[{}^{2}A_x - (A_x)^2 \right]
-\end{aligned}
-\]</div>
-<p>The premiums determined this way will <strong>always be larger</strong> than the premiums determined through the equivalence principle:</p>
-<div class="arithmatex">\[
-\begin{aligned}
-    P_{\text{Portfolio Percentile}} &amp;\ge P_{\text{Equivalence Principle}} \\
-    \\
-    \text{As n} &amp;\to \infty \\
-    P_{\text{Portfolio Percentile}} &amp;\to P_{\text{Equivalence Principle}}
-\end{aligned}
-\]</div>
-<!-- Why? -->
-
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the target value is NOT 0, then the <span class="arithmatex">\(n\)</span> in the numerator and denominator will NOT cancel out!</p>
+</div>
+<p>By plugging in the values determined earlier and solving for P, the appropriate premiums can be determined.</p>
 <h2 id="gross-premiums"><strong>Gross Premiums</strong><a class="headerlink" href="#gross-premiums" title="Permanent link">&para;</a></h2>
 <p>What makes gross premiums so much trickier than net premiums is that there are many <strong>different types of expenses</strong>, where every question can ask for a unique combination of them.</p>
 <p>Expenses can be differentiated in terms of when they are charged:</p>
@@ -1468,39 +1471,31 @@
 <p></center></p>
 <p>Note that gross premiums can also include other cashflows, such as a pre-determined <strong>profit margin</strong>. Since these are rare and highly dependent on the situation, they will not be covered in this section.</p>
 <h3 id="expense-calculations"><strong>Expense Calculations</strong><a class="headerlink" href="#expense-calculations" title="Permanent link">&para;</a></h3>
-<p>Consider a policy that only has <strong>acquisition and renewal expenses</strong>, denoted by A and R respectively:</p>
+<p>Consider a policy that only has <strong>acquisition and renewal expenses</strong>:</p>
 <!-- Self Made -->
 <p><img alt="Expense Cashflows" class="center" src="../Assets/6.%20Premiums.md/Expense%20Cashflows.png" /></p>
-<p>The PV of the expenses can be easily calculated by using an annuity immediate:</p>
-<div class="arithmatex">\[
-    \text{EPV Expenses} = A + R \cdot a_x
-\]</div>
-<p>While this is not challenging per se, it is slightly inconvenient as there is a need to use an annuity immediate while premiums use annuity dues - this would make it harder to simplify or more computationally intensive.</p>
-<p>This can be worked around by <strong>splitting the acquisition expense</strong>, such that one part of it forms the first payment for the renewal expenses, allowing an annuity due to be used instead:</p>
-<!-- Self Made -->
-<p><img alt="Acquisition Expense Splitting" src="../Assets/6.%20Premiums.md/Acquisition%20Expense%20Splitting.png" /></p>
+<p>The PV of the expenses can be easily calculated by using an annuity immediate, which can be converted into an annuity due for convenience:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     \text{EPV Expenses}
-    &amp;= A + R \cdot a_x \\
-    &amp;= A - R + R + R \cdot a_x \\
-    &amp;= A - R + R \cdot \ddot{a}_x \\
-    &amp;= A + R \cdot (\ddot{a}_x - 1)
+    &amp;= e_0 + e_t \cdot a_x \\
+    &amp;= e_0 + e_t \cdot (\ddaot{a}_{x} - 1)
 \end{aligned}
 \]</div>
-<p>However, note that the simplification does NOT hold true if expense inflation is taken into account - the level annuity immediate CANNOT simply be replaced with the geometric annuity.</p>
+<p>However, note that the simplification <strong>does NOT hold true if there is expense inflation</strong> -  the level annuity immediate CANNOT simply be replaced with the geometric annuity.</p>
 <p>This is because the expenses only start to inflate from the third payment onwards:</p>
 <!-- Self Made -->
 <p><img alt="Expense Inflation" class="center" src="../Assets/6.%20Premiums.md/Expense%20Inflation.png" /></p>
 <h3 id="expense-premiums"><strong>Expense Premiums</strong><a class="headerlink" href="#expense-premiums" title="Permanent link">&para;</a></h3>
-<p>The difference between gross and net premiums represent the amount of premiums needed to cover just the expenses, known as the <strong>Expense Premiums</strong>, <span class="arithmatex">\(E\)</span>:</p>
+<p>The difference between the gross and net premiums represent the premium needed to <strong>cover just the expenses</strong>. It is known as the <strong>Expense Loading</strong>, as it represents the amoount <strong>loaded onto the net premiums for expenses</strong>.</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    G &amp;= P + E \\
-    E &amp;= G - P
+    G &amp;= P + G^E \\
+    G^E &amp;= G - P
 \end{aligned}
 \]</div>
-<p>It is also known as the <strong>Expense Loading</strong> as it represents the amount that is added (<em>loaded</em>) on to the net premiums to cover expenses.</p>
+<p>ADD EPV</p>
+<p>It is also known as the <strong>Expense Loading</strong> as it represents the amount that is added (<em>loaded</em>) on to the premiums <strong>just to cover expenses</strong>.</p>
 
 
 
