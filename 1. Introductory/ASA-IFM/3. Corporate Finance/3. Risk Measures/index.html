@@ -15,7 +15,7 @@
     
     
       
-        <title>3. Risk Measures - Actuarial Exam Notes</title>
+        <title>Risk Measures - Actuarial Exam Notes</title>
       
     
     
@@ -65,6 +65,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#risk-measures" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -94,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              3. Risk Measures
+              Risk Measures
             
           </span>
         </div>
@@ -178,12 +183,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
       
       
       
@@ -246,12 +253,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" checked>
       
       
       
@@ -361,12 +370,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4_2" type="checkbox" id="__nav_1_4_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4_2" type="checkbox" id="__nav_1_4_2" checked>
       
       
       
@@ -387,11 +398,66 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../../1. Introductory/ASA-IFM/1. Corporate Finance/3. Decision Making.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Risk Measures
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Risk Measures
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#value-at-risk" class="md-nav__link">
+    Value at Risk
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tail-value-at-risk" class="md-nav__link">
+    Tail Value at Risk
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coherence" class="md-nav__link">
+    Coherence
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1088,6 +1154,37 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#value-at-risk" class="md-nav__link">
+    Value at Risk
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tail-value-at-risk" class="md-nav__link">
+    Tail Value at Risk
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coherence" class="md-nav__link">
+    Coherence
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1102,9 +1199,139 @@
                   
 
 
-  <h1>3. Risk Measures</h1>
-
-
+<h1 id="risk-measures"><strong>Risk Measures</strong><a class="headerlink" href="#risk-measures" title="Permanent link">&para;</a></h1>
+<h2 id="value-at-risk"><strong>Value at Risk</strong><a class="headerlink" href="#value-at-risk" title="Permanent link">&para;</a></h2>
+<p>The <strong>Value at Risk</strong> (VaR) of a random variable is simply the <strong>percentile</strong> of its distribution. It might seem redundant, but it is simply a <strong>business application</strong> of the mathematical concept of percentiles.</p>
+<div class="arithmatex">\[
+    \text{VaR}_{p}(X) = F^{-1}(p)
+\]</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is a common mistake when in a rush to confuse Var and VaR together as they look extremely similar. Always read the question properly!</p>
+</div>
+<p>Its intepretation changes depending on what the distribution is measuring:</p>
+<ul>
+<li><strong>Loss Distribution</strong>: Large <span class="arithmatex">\(p\)</span>, probability of obtaining a <strong>loss larger than VaR</strong> is <span class="arithmatex">\((1-p)\)</span></li>
+<li><strong>Gain Distribution</strong>: Small <span class="arithmatex">\(p\)</span>, probability of obtaining a <strong>return smaller than VaR</strong> is <span class="arithmatex">\(p\)</span></li>
+<li>Both define the thresholds for a "bad" situation</li>
+</ul>
+<p>For the remainder of this section, whenever we reference VaR, we refer to a loss distribution unless stated otherwise.</p>
+<h2 id="tail-value-at-risk"><strong>Tail Value at Risk</strong><a class="headerlink" href="#tail-value-at-risk" title="Permanent link">&para;</a></h2>
+<p>The <strong>Tail Value at Risk</strong> (TVaR) of a random variable is the <strong>expected value</strong> of the distribution, given that the distribution exceeds the VaR. This is why it is also known as the <strong>Conditional Tail Expectation</strong> (CTE).</p>
+<p>It is intepreted as the <strong>average gain/loss</strong> if the amount is smaller/larger than the VaR; if the threshold is crossed.</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \text{TVaR}(X)
+    &amp;= E[X \mid X \gt \text{VaR}_{p}(X)] \\
+    &amp;= \frac{\int^{\infty}_{\text{VaR}_{p}(X)} x \cdot f(x)}{P(X \gt \text{VaR}_{p}(X))} \\
+\end{aligned}
+\]</div>
+<p>Alternatively, it can be simplified by making use of the <strong>Excess Loss Variable</strong> from exam FAM-S:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \text{TVaR}(X)
+    &amp;= E[X \mid X \gt \text{VaR}_{p}(X)] \\
+    &amp;= E[X - \text{VaR}_{p}(X) \mid X \gt \text{VaR}_{p}(X)] + \text{VaR}_{p}(X) \\
+    &amp;= \frac{E(X) - E[X \land \text{VaR}_{p}(X)]}{P[X \gt \text{VaR}_{p}(X)]} + \text{VaR}_{p}(X)
+\end{aligned}
+\]</div>
+<p>This formula is not only convenient because there is no need for integration, but because a formula for the limited loss variable is provided in the formula sheets.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Recall that for a policy with a deductible <span class="arithmatex">\(d\)</span>, the payment of the insurer <span class="arithmatex">\(Y^P\)</span> is represented as:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    Y^P
+    &amp;= Y^L \mid Y^L \gt 0 \\
+    &amp;= X - d \mid X \gt d
+\end{aligned}
+\]</div>
+<p>The expectation can is calculated as:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    E \left(Y^P \right)
+    &amp;= \frac{E \left(Y^L \right)}{P(X \gt d)} \\
+    &amp;= \frac{E(X) - E(X \land d)}{P(X \gt d)}
+\end{aligned}
+\]</div>
+</div>
+<h2 id="coherence"><strong>Coherence</strong><a class="headerlink" href="#coherence" title="Permanent link">&para;</a></h2>
+<p>One way of determining whether a risk measure is "good" is to consider its <strong>Coherence</strong>. It has four key properties:</p>
+<p>The first is <strong>Translation Invariance</strong>. <strong>Linearly increasing</strong> the underlying risk linearly increases the risk measure by the same amount.</p>
+<div class="arithmatex">\[
+    \rho(X+c) = \rho(X) + c
+\]</div>
+<p>The second is <strong>Positive Homogenity</strong>. <strong>Scaling</strong> the underlying risk scales the risk measure by the same amount.</p>
+<div class="arithmatex">\[
+    rho(cX) = c\rho(X)
+\]</div>
+<p>The third is <strong>Subadditivity</strong>. Its mathematical definition is that the combination should be <strong>less than the sum of its parts</strong>. In other words, it should recognise <strong>diversification benefits</strong> of multiple risks.</p>
+<div class="arithmatex">\[
+    \rho(X + Y) \le \rho(X) + \rho(Y)
+\]</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Recall the saying - "The whole is greater than the sum of its parts". Subadditivity is the opposite!</p>
+</div>
+<p>The last is known as <strong>Monotonicity</strong>. Its mathematical definition is that it <strong>preserves the order of values</strong>. If one quantity is smaller than another, then its corresponding risk measure should be smaller as well.</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    X &amp;\le Y \\
+    \rho(X) &amp;\le \rho(Y)
+\end{aligned}
+\]</div>
+<p>The coherence of the most common risk measures can be found below:</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="center">Coherence</th>
+<th align="center">Mean</th>
+<th align="center">Variance</th>
+<th align="center">VaR</th>
+<th align="center">TVaR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><strong>Translation Invariance</strong></td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+</tr>
+<tr>
+<td align="center"><strong>Positive Homogenity</strong></td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+</tr>
+<tr>
+<td align="center"><strong>Subadditivity</strong></td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">Yes</td>
+</tr>
+<tr>
+<td align="center"><strong>Monotonicity</strong></td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+</tr>
+<tr>
+<td align="center"><strong>Verdict</strong></td>
+<td align="center">Coherent</td>
+<td align="center">Not Coherent</td>
+<td align="center">Not Coherent</td>
+<td align="center">Coherent</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>It is advised to only memorize the results for VaR and TVaR, as the results for mean and variance can be easily determined via first principles.</p>
 
 
 
@@ -1120,6 +1347,42 @@
       </main>
       
         <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../../1.%20Derivatives/6.%20Black%20Scholes%20Model/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Black Scholes Model" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Black Scholes Model
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../../../2.%20Actuarial%20Mathematics/Overview%20of%20Insurance/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview of Insurance" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Overview of Insurance
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
