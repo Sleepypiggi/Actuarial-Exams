@@ -636,6 +636,19 @@
     Bornhautter Ferguson Method
   </a>
   
+    <nav class="md-nav" aria-label="Bornhautter Ferguson Method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#weighted-average-method" class="md-nav__link">
+    Weighted Average Method
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1208,6 +1221,19 @@
     Bornhautter Ferguson Method
   </a>
   
+    <nav class="md-nav" aria-label="Bornhautter Ferguson Method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#weighted-average-method" class="md-nav__link">
+    Weighted Average Method
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1392,7 +1418,12 @@ Problems with CL method?
     \text{Ultimate Loss}_{\text{BF}} = \text{Loss Reserve}_{\text{BF}} + \text{Paid Loss}
 \]</div>
 </div>
-<p>Another way of expressing the above is that the BF method uses the <strong>weighted average of the two methods</strong>:</p>
+<p>As with both the other methods, the <strong>BF reserves is calculated per AY</strong>, thus the total reserve is the sum of the reserves for each AY:</p>
+<div class="arithmatex">\[
+    \text{Total Reserve}_{BF} = \sum \text{Reserve}_\text{BF, AY}
+\]</div>
+<h3 id="weighted-average-method"><strong>Weighted Average Method</strong><a class="headerlink" href="#weighted-average-method" title="Permanent link">&para;</a></h3>
+<p>The BF method can also be calculated via a <strong>weighted average of the two methods</strong>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     \text{Loss Reserve}_{BF} &amp;= w \cdot \text{Loss Reserve}_{CL} + (1-w) \cdot \text{Loss Reserve}_{ELR} \\
@@ -1401,17 +1432,20 @@ Problems with CL method?
 \]</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>The above applies for ONLY THE OVERALL RESERVE, not the Case or IBNR reserves.</p>
+<p>The above applies for the OVERALL RESERVE, not the Case or IBNR reserves.</p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>As the claims approach maturity, more the LDF factors decrease, causing the <strong>weights to the CL method</strong> to increase.</p>
-<p>This is intuitive, as <strong>more data is available</strong> for those claims, thus <strong>more weight is given to the method that uses actual claims experience</strong> (CL).</p>
-</div>
-<p>As with both the other methods, the <strong>BF reserves is calculated per AY</strong>, thus the total reserve is the sum of the reserves for each AY:</p>
+<p>As the claims approach maturity, more the LDF factors decrease, causing the <strong>weights to the CL method</strong> to increase. This is intuitive, as <strong>more data is available</strong> for those claims, thus <strong>more weight is given to the method that uses actual claims experience</strong> (CL).</p>
+<p>Naturally, this means that the BF reserve is <strong>between the reserves calculated</strong> via the two methods:</p>
 <div class="arithmatex">\[
-    \text{Total Reserve}_{BF} = \sum \text{Reserve}_\text{BF, AY}
+\begin{aligned}
+    \text{ELR Reserve} \lt \text{BF Reserve} \lt \text{CL Reserve} \\
+    \text{ELR Reserve} \gt \text{BF Reserve} \gt \text{CL Reserve}
+\end{aligned}
 \]</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Despite the above relationship, there is <strong>NO relationship</strong> between the ELR and CL reserves - either could be larger than the other.</p>
+</div>
 
 
 

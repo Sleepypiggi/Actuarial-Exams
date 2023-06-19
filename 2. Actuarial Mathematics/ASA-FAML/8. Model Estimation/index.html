@@ -834,6 +834,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#dead-alive-model" class="md-nav__link">
+    Dead Alive Model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#maximum-likelihood-estimation" class="md-nav__link">
     Maximum Likelihood Estimation
   </a>
@@ -1273,6 +1280,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#dead-alive-model" class="md-nav__link">
+    Dead Alive Model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#maximum-likelihood-estimation" class="md-nav__link">
     Maximum Likelihood Estimation
   </a>
@@ -1473,7 +1487,7 @@
 </tbody>
 </table>
 <p></center></p>
-<h3 id="maximum-likelihood-estimation"><strong>Maximum Likelihood Estimation</strong><a class="headerlink" href="#maximum-likelihood-estimation" title="Permanent link">&para;</a></h3>
+<h3 id="dead-alive-model"><strong>Dead Alive Model</strong><a class="headerlink" href="#dead-alive-model" title="Permanent link">&para;</a></h3>
 <p>Unlike the Nelson Aelen method, the MLE <strong>DIRECTLY estimates the force of mortality</strong>, which can be then used to compute survival probabilities.</p>
 <p>One key concept is the idea of <strong>Central Exposed to Risk</strong> (<span class="arithmatex">\(E^c_x\)</span>), which is a measure of <em>how long</em> the individual has been <strong>alive in the study</strong> at the time.</p>
 <p>Consider the following example to estimate the force of mortality at <strong>age 51</strong>:</p>
@@ -1499,6 +1513,21 @@
 <div class="arithmatex">\[
     \hat{S}_x(t) = e^{-\hat{\mu}_x}
 \]</div>
+<h3 id="maximum-likelihood-estimation"><strong>Maximum Likelihood Estimation</strong><a class="headerlink" href="#maximum-likelihood-estimation" title="Permanent link">&para;</a></h3>
+<p>Given a distribution for future lifetime, MLE can also be used to estimate the parameters of that distribution via first principles.</p>
+<p>Recall that for a continuous distribution, the PDF is used to form the likelihood function:</p>
+<div class="arithmatex">\[
+    f(x) = {}_{t}p_{x} \cdot \mu_{x+t}
+\]</div>
+<p>All other key concepts from FAM-S apply:</p>
+<ul>
+<li><strong>Joining the study late</strong>: Left Truncated; divide pdf by survival function</li>
+<li><strong>Leaving the study early</strong>: Right Censored; replace PDF with survival function</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Most likely, questions of this nature will use the <strong>Gompertz Model</strong>. Thus, <span class="arithmatex">\(\mu\)</span> and <span class="arithmatex">\({}_{t}p_{x}\)</span> can be easily found from the formula sheet.</p>
+</div>
 <h2 id="statistical-inference"><strong>Statistical Inference</strong><a class="headerlink" href="#statistical-inference" title="Permanent link">&para;</a></h2>
 <p>Given that all the above methods are estimates of the survival probability, the estimated values will change depending on the underlying sample.</p>
 <p>Thus, it is important to consider the variance of the estimators as well across various different samples.</p>

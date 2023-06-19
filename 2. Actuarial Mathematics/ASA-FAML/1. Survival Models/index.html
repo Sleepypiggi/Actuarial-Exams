@@ -1687,15 +1687,15 @@
 <h2 id="discrete-lifetime"><strong>Discrete Lifetime</strong><a class="headerlink" href="#discrete-lifetime" title="Permanent link">&para;</a></h2>
 <p>Similarly, the distribution of the time to death (<strong>in years</strong>) can also be represented using a <strong>Discrete Random Variable</strong> <span class="arithmatex">\(K_{x}\)</span>, where <span class="arithmatex">\(x\)</span> represents the age of the person.</p>
 <p>It is also known as the <strong>Curtate Future Lifetime</strong> as it only contains the <strong>integer components</strong> of the continuous future lifetime.</p>
+<p>Mathematically, it is represented as a continuous lifetime variable that has been <strong>floored</strong>. Thus, given the continuous distribution, the curtate one can be determined:</p>
+<div class="arithmatex">\[
+    K_x = \lfloor T_x \rfloor
+\]</div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>The definition of Curtate is "shortened"; it represents how the continuous distribution has been reduced to just its integer components.</p>
 <p>Another way to remember is that <span class="arithmatex">\(K\)</span> stands for <strong>Kurtate</strong>.</p>
 </div>
-<p>Mathematically, it is represented as a continuous lifetime variable that has been <strong>floored</strong>:</p>
-<div class="arithmatex">\[
-    K_x = \lfloor T_x \rfloor
-\]</div>
 <p>The intepretation of <span class="arithmatex">\(K_{x}\)</span> has changed slightly - A person aged <span class="arithmatex">\(x\)</span> will live for another <span class="arithmatex">\(K_x\)</span> <strong>FULL years</strong> and then die before age <span class="arithmatex">\(x + K_{x} + 1\)</span>:</p>
 <!-- Obtained from Coaching Actuaries -->
 <p><img alt="Curate Timeline" class="center" src="../Assets/1.%20Survival%20Models.md/Curtate%20Timeline.png" /></p>
@@ -1999,20 +1999,27 @@ Probability tree perspective</p>
     e_x &amp;\approx e_{x:\enclose{actuarial}{n}} + e_{x+n}
 \end{aligned}
 \]</div>
-<p>However, the above makes an implicit assumption that the person <strong>will survive</strong> the first n years. Thus, the second term needs to <strong>account for the probability of surviving</strong> those n years:</p>
+<p>However, the above makes an implicit assumption that the person <strong>will survive the first n years</strong>. Thus, the second term needs to <strong>account for the probability of surviving</strong> those n years:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     \mathring{e}_x &amp;= \mathring{e}_{x:\enclose{actuarial}{n}} + {}_{n}p_{x} \cdot \mathring{e}_{x+n} \\
     e_x &amp;= e_{x:\enclose{actuarial}{n}} + {}_{n}p_{x} \cdot e_{x+n}
 \end{aligned}
 \]</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Many questions require us to use this equation, but <strong>may not directly provide the values at <span class="arithmatex">\(x+n\)</span></strong>, requiring us to go through other steps to calculate it.</p>
+<p>This can sometimes <strong>confuse us</strong> into thinking that the decomposition is different. For instance, if <span class="arithmatex">\(x+n\)</span> is 60, but the questions provide 61, we may inadvertently think that <span class="arithmatex">\(x+n\)</span> is 61 under stress.</p>
+</div>
 <!-- Obtained from Coaching Actuaries -->
 <p><img alt="Expectation Decomposition" class="center" src="../Assets/1.%20Survival%20Models.md/Expectation%20Decomposition.png" /></p>
 <p>Similarly, a temporary expectation can be further decomposed into more temporary expectations:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    \mathring{e}_{x:\enclose{actuarial}{n}} &amp;= \mathring{e}_{x:\enclose{actuarial}{m}} + {}_{n}p_{x} \cdot \mathring{e}_{x+m+n} \\
-    e_{x:\enclose{actuarial}{n}} &amp;= e_{x:\enclose{actuarial}{m}} + {}_{n}p_{x} \cdot e_{x+m+n}
+    \mathring{e}_{x:\enclose{actuarial}{m+n}}
+    &amp;= \mathring{e}_{x:\enclose{actuarial}{m}} + {}_{m}p_{x} \cdot \mathring{e}_{x+m:\enclose{actuarial}{n}} \\
+    e_{x:\enclose{actuarial}{m+n}}
+    &amp;= e_{x:\enclose{actuarial}{m}} + {}_{m}p_{x} \cdot e_{x+m:\enclose{actuarial}{n}}
 \end{aligned}
 \]</div>
 <!-- Obtained from Coaching Actuaries -->
@@ -2026,6 +2033,25 @@ Probability tree perspective</p>
     &amp;= {}_{}p_{x} (1 + e_{x+1})
 \end{aligned}
 \]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Consider the future lifetime variable for just the coming year:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    K_{x:\enclose{actuarial}{1}}
+    &amp;=
+    \begin{cases}
+        1, {}_{}p_{x} \\
+        0, {}_{}q_{x}
+    \end{cases} \\
+    \\
+    \therefore
+    e_{x:\enclose{actuarial}{1}}
+    &amp;= 1 \cdot {}_{}p_{x} + 0 \cdot {}_{}q_{x} \\
+    &amp;= {}_{}p_{x}
+\end{aligned}
+\]</div>
+</div>
 <h3 id="discrete-continuous-link"><strong>Discrete Continuous Link</strong><a class="headerlink" href="#discrete-continuous-link" title="Permanent link">&para;</a></h3>
 <p>Note that the two expectations are similar to one another:</p>
 <ul>
