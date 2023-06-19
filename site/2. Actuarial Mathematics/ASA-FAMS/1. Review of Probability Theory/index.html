@@ -394,7 +394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1. Introductory/ASA-IFM/1. Corporate Finance/3. Decision Making.md" class="md-nav__link">
+      <a href="../../../1.%20Introductory/ASA-IFM/3.%20Corporate%20Finance/3.%20Risk%20Measures/" class="md-nav__link">
         Risk Measures
       </a>
     </li>
@@ -1689,17 +1689,39 @@
 <p><img alt="Kurtosis" class="center" src="../Assets/1.%20Review%20of%20Probability%20Theory.md/Kurtosis.png" /></p>
 <h3 id="statistical-metrics"><strong>Statistical Metrics</strong><a class="headerlink" href="#statistical-metrics" title="Permanent link">&para;</a></h3>
 <p>Apart from the moment of the distribution, there are some other <strong>Statistical Metrics</strong> that provide useful information.</p>
-<p>The <strong>Median</strong> is the value of the random variable that seperates the upper and lower half of the probability distribution.</p>
-<p>For discrete variables, the median <span class="arithmatex">\(M\)</span> is the smallest value such that <span class="arithmatex">\(P(X \le M) \ge 0.5\)</span> and <span class="arithmatex">\(P(X \ge M) \ge 0.5\)</span>.</p>
-<p>For continuous variables, the median <span class="arithmatex">\(M\)</span> is found by solving <span class="arithmatex">\(F(M) = 0.5\)</span>. The key difference is that the continuous median is the value that <strong>exactly seperates</strong> the distribution while the discrete one approximately splits it, depending on the PMF.</p>
 <p>The <strong>Mode</strong> is the value of the random variable that maximises the PMF or PDF. It is the <strong>most likely outcome</strong> of the experiment (loosely speaking for continuous variables).</p>
+<p>The <strong>Median</strong> is the value of the random variable that <strong>seperates the upper and lower half</strong> of the probability distribution.</p>
+<p>For <strong>discrete variables</strong>, the median <span class="arithmatex">\(M\)</span> is the <strong>smallest value</strong> such that the following two expressions are satisfied:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    P(X \le M) &amp;\ge 0.5 \\
+    P(X \ge M) &amp;\ge 0.5
+\end{aligned}
+\]</div>
+<p>For <strong>continuous variables</strong>, the median <span class="arithmatex">\(M\)</span> is found by <strong>solving the CDF</strong>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    F(M) &amp;= 0.5 \\
+    M &amp;= F^{-1}(0.5)
+\end{aligned}
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The key difference is that the continuous median is the value that <strong>exactly seperates</strong> the distribution while the discrete median <strong>approximately splits</strong> it, depending on the PMF.</p>
+</div>
 <p>The <strong>Percentile</strong> is the value of the random variable below which a <strong>certain percentage of observations fall</strong>. For instance, the 85<sup>th</sup> percentile is the value below which 85% of the observations fall.</p>
-<p>Let <span class="arithmatex">\(p\)</span> be the percentage of observations. The <strong>100p-th percentile</strong> for a discrete variable is the smallest value <span class="arithmatex">\(a\)</span> such that <span class="arithmatex">\(P(X \lt a) \le p \lt P(X \le a)\)</span>.</p>
-<p>Similar as before, for continuous variables, the percentile is found by solving <span class="arithmatex">\(F(a) = p\)</span>.</p>
+<p>The median is the <strong>50<sup>th</sup> percentile</strong>; in other words when <span class="arithmatex">\(p = 0.5\)</span>. Thus, the previous formulas can be generalized for any <span class="arithmatex">\(p\)</span>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    P(X \le M^{\text{Discrete}}) &amp;\ge p \\
+    P(X \ge M^{\text{Discrete}}) &amp;\ge p \\
+    \\
+    M^{\text{Continuous}} &amp;= F^{-1}(p)
+\end{aligned}
+\]</div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>100p-th looks strange because <span class="arithmatex">\(p\)</span> is a <strong>percentage</strong>. For instance, if <span class="arithmatex">\(p\)</span> is 0.85, then 100p is 85, representing the 85-th percentile.</p>
-<p>Also, the methods for Percentiles and Medians look similar because the <strong>median is simply the 50<sup>th</sup> percentile</strong>!</p>
 </div>
 <p>The 25<sup>th</sup>, 50<sup>th</sup> &amp; 75<sup>th</sup> percentile are known as the first, second &amp; third <strong>Quartiles</strong> <span class="arithmatex">\((q)\)</span> respectively. The difference between the 3<sup>rd</sup> and 1<sup>st</sup> quartile is known as the <strong>Inter Quartile Range</strong>.</p>
 <div class="arithmatex">\[

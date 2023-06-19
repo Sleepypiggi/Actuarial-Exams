@@ -394,7 +394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1. Introductory/ASA-IFM/1. Corporate Finance/3. Decision Making.md" class="md-nav__link">
+      <a href="../../../1.%20Introductory/ASA-IFM/3.%20Corporate%20Finance/3.%20Risk%20Measures/" class="md-nav__link">
         Risk Measures
       </a>
     </li>
@@ -1632,7 +1632,14 @@
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Recall that we assumed that the benefit is 1 for simplicity when deriving the formulas. This will <strong>NOT be the final EPV/Variance</strong>.</p>
-<p>In practice, we have to <strong>scale the EPV/Variance</strong> accordingly based on the actual benefit. This may lead to an extremely large value for the variance, thus do not be alarmed when performing such calculations.</p>
+<p>In practice, we have to <strong>scale the EPV/Variance</strong> accordingly based on the actual benefit:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \text{Actual EPV} &amp;= B \cdot E(\text{WL}) \\
+    \text{Actual Variance} &amp;= B^2 \cdot \text{Var}(\text{WL})
+\end{aligned}
+\]</div>
+<p>This may lead to an extremely large value for the variance, thus do not be alarmed when performing such calculations.</p>
 </div>
 <h3 id="term-assurance"><strong>Term Assurance</strong><a class="headerlink" href="#term-assurance" title="Permanent link">&para;</a></h3>
 <p><strong>Term Assurance</strong> covers the insured for a <strong>specified period <span class="arithmatex">\(n\)</span></strong> and only pays out <em>if</em> the insured dies within that period. <strong>NOTHING</strong> is paid out if the insured <em>survives beyond</em> that.</p>
@@ -1816,6 +1823,8 @@
     A^1_{x:\enclose{actuarial}{n}} &amp;= A_{x} - {}_{n}E_{x} * A_{x+n} \\
 \end{aligned}
 \]</div>
+<!-- Self Made -->
+<p><img alt="DWL Difference" class="center" src="../Assets/3.%20Life%20Assurances.md/DWL%20Difference.png" /></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>This result is <strong>extremely important</strong> as this is the main method of calculating the EPV of a TA as the values for the WL can be easily found in the SULT.</p>
@@ -1834,8 +1843,6 @@
 <li><strong>Different Mortality</strong>: Mortality can be simplified (EG. Becomes a constant)</li>
 <li>It is rare to have problems that have both different interest and mortality. In such cases, it is likely that an <em>adjusted</em> mortality table is provided.</li>
 </ul>
-<!-- Self Made -->
-<p><img alt="DWL Difference" class="center" src="../Assets/3.%20Life%20Assurances.md/DWL%20Difference.png" /></p>
 <h4 id="deferred-ta"><strong>Deferred TA</strong><a class="headerlink" href="#deferred-ta" title="Permanent link">&para;</a></h4>
 <p>Another less commonly used deferred assurance is the <strong>Deferred Term Assurance</strong>. As both a <strong>deferred and term</strong> assurance, both results apply to it:</p>
 <div class="arithmatex">\[
@@ -2119,7 +2126,7 @@
     &amp;= e^{-\delta \cdot T_x}
 \end{aligned}
 \]</div>
-<p>The EPV follows the same notations as before, but now with the <strong><span class="arithmatex">\(\bar{}\)</span> accent</strong>:</p>
+<p>The EPV follows the same notations as before, but now with the <strong>bar accent</strong>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     \bar{A}_x

@@ -394,7 +394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1. Introductory/ASA-IFM/1. Corporate Finance/3. Decision Making.md" class="md-nav__link">
+      <a href="../../../1.%20Introductory/ASA-IFM/3.%20Corporate%20Finance/3.%20Risk%20Measures/" class="md-nav__link">
         Risk Measures
       </a>
     </li>
@@ -1397,7 +1397,7 @@
 <li><strong>Gross Premium Reserves</strong> - Gross Premiums, Benefits and Expenses</li>
 </ul>
 <p>While this looks similar to premium calculation, note that the Gross <em>Reserves</em> do NOT include any other cashflows (EG. Profit Margin). This is intuitive, as reserves should only be to meet <strong>essential cashflows</strong>.</p>
-<p>Reserves are calculated at the <strong>beginning of the policy year</strong>:</p>
+<p>For the purposes of this set of notes, Reserves are calculated at the <strong>beginning of the policy year</strong>:</p>
 <ul>
 <li><strong>AFTER any year end cashflows</strong> from the previous period (Claims &amp; Claim Expenses)</li>
 <li><strong>BEFORE any beginning of year cashflows</strong> from the current period (Premiums &amp; Renewal Expenses)</li>
@@ -1407,7 +1407,11 @@
 <p><img alt="Reserve Timing" class="center" src="../Assets/7.%20Reserves.md/Reserve%20Timing.png" /></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Recall that the beginning of the policy year is <strong>also the end of the previous policy year</strong> - avoid confusion by drawing out the timelines.</p>
+<p>It is a common mistake to mix up the timing of the reserve as the <strong>beginning of one policy year is the end of the previous one</strong>.</p>
+<ul>
+<li><span class="arithmatex">\(t-1\)</span>: Beginning of year reserve</li>
+<li><span class="arithmatex">\(t\)</span>: End of year reserve</li>
+</ul>
 <p>Questions can use either phrasing, so be sure to read very carefully.</p>
 </div>
 <p>Let <span class="arithmatex">\({}_{t-1}V\)</span> represent the reserve at the beginning of policy year <span class="arithmatex">\(t\)</span>:</p>
@@ -1418,9 +1422,10 @@
     &amp;= \text{PV Benefits}_{x+(t-1)} - \text{PV Premiums}_{x+(t-1)}
 \end{aligned}
 \]</div>
-<blockquote>
-<p>Note that reserves only consider FUTURE cashflows. For single premium or deferred products, there is no need to consider the premiums after the payment period is over.</p>
-</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Note that reserves only consider <strong>FUTURE cashflows</strong>. For single premium or deferred products, there is no need to consider the premiums after the payment period is over.</p>
+</div>
 <p>Similar to premiums, we will only define formulas for the <strong>Net Premium Reserves</strong>. They can be simplified into an expression involving only the following, which allows it to be easily calculated in situations where limited information is provided:</p>
 <ol>
 <li>Annuities only</li>
@@ -1541,7 +1546,7 @@
 \]</div>
 <p>Gross premium reserves are similar as any expenses are always paid at the beginning of the year with premiums:</p>
 <div class="arithmatex">\[
-    {}_{t}V^{\text{Gross}} 
+    {}_{t}V^{\text{Gross}}
     = (E-G) + q_{x+t} \cdot v + p_{x+t} \cdot v \cdot {}_{t+1}V^{\text{Gross}}
 \]</div>
 <h4 id="interim-reserves"><strong>Interim Reserves</strong><a class="headerlink" href="#interim-reserves" title="Permanent link">&para;</a></h4>
@@ -1575,14 +1580,13 @@
 <p>This means that insurers are holding <strong>too much reserves</strong> under this valuation basis. This is problematic because reserves can only be invested in low risk assets, which typically have lower returns relative to what the capital would have usually be invested in. This incurs an <strong>opportunity cost in investment income</strong>.</p>
 <p>To account for this, US regulators allow for insurers to use a <strong>modified net premium reserve</strong> instead that <strong>implicitly</strong> accounts for expenses while retaining the simplicity of a net premium approach.</p>
 <h3 id="expense-reserves"><strong>Expense Reserves</strong><a class="headerlink" href="#expense-reserves" title="Permanent link">&para;</a></h3>
-<p>Following expense premiums, the difference between the gross and net premium reserves represent the additional amount needed to cover the expenses, known as the <strong>Expense Reserves</strong>.</p>
+<p>Similar to expense loadings, we can define a <strong>reserve for just the expenses</strong>, known as the Expense Reserves.</p>
+<p>Similarly, it can be determined from <strong>first principles or intuitively</strong> as the difference between the gross and net reserves:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     {}_{t}V^{\text{Expense}}
-    &amp;= {}_{t}V^{\text{Gross}} - {}_{t}V^{\text{Net}} \\
-    &amp;= \text{EPV(Benefits)} + \text{EPV(Expenses)} - \text{EPV(Gross Premium)} - \text{EPV(Benfits)} + \text{EPV(Net Premiums)} \\
-    &amp;= \text{EPV(Expenses)} - (\text{EPV(Gross Premium)} - \text{EPV(Net Premiums)}) \\
-    &amp;= \text{EPV(Expenses)} - \text{EPV(Expense Premium)}
+    &amp;= \text{EPV(Expenses)} - \text{EPV(Expense Premium)} \\
+    &amp;= {}_{t}V^{\text{Gross}} - {}_{t}V^{\text{Net}}
 \end{aligned}
 \]</div>
 <p>The expense reserve is <strong>0 at time 0</strong>. However, the expense reserve is typically <strong>negative</strong> for all other years.</p>
@@ -1591,8 +1595,8 @@
 <p>At time 1, all future expense premiums will be larger than the corresponding renewal expenses, resulting in a <strong>negative expense reserve</strong> from that time onwards:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    \text{Expense Premium} &amp;\gt \text{Renewal Expense} \\
-    \text{EPV(Expense Premium)} &amp;\gt \text{EPV(Renewal Expense)} \\
+    \text{Expense Loading} &amp;\gt \text{Renewal Expense} \\
+    \text{EPV(Expense Loaing)} &amp;\gt \text{EPV(Renewal Expense)} \\
     {}_{t}V^{\text{Expense}} &lt; 0
 \end{aligned}
 \]</div>
