@@ -1702,8 +1702,20 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Note that unlike all other assurances, a summation was not involved, since the values do not depend on <span class="arithmatex">\(K_x\)</span>.</p>
-<p>The probability of receiving the payout is simply the <em>single probability</em> of surviving till maturity, since it does not matter what happens after that.</p>
+<p>The probability of receiving the payout is simply the <em>single probability</em> of surviving till maturity, since it <strong>does not matter what happens after that</strong>.</p>
 </div>
+<p>Since both discount factors and survival probabilities follow the <strong>multiplication rule</strong>, PEs follow them as well:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    v^{m+n} &amp;= v^{m} \cdot v^{n} \\
+    {}_{n+m}p_{x} &amp;= {}_{m}p_{x} \cdot {}_{n}p_{x+m} \\
+    \\
+    \therefore {}_{n+m}E_{x}
+    &amp;= v^{m+n} \cdot {}_{n+m}p_{x}\\
+    &amp;= (v^{m} \cdot {}_{m}p_{x}) \cdot (v^{n} \cdot {}_{n}p_{x+m}) \\
+    &amp;= {}_{m}E_{x} \cdot {}_{n}E_{x+m}
+\end{aligned}
+\]</div>
 <h3 id="endowment-assurance"><strong>Endowment Assurance</strong><a class="headerlink" href="#endowment-assurance" title="Permanent link">&para;</a></h3>
 <p><strong>Endowment Assurances</strong> are a <em>combination</em> of term assurances and pure endowments:</p>
 <ul>
@@ -1742,6 +1754,10 @@
     &amp;= \left({}^{2} A^1_{x:\enclose{actuarial}{n}} + {}^{2}_{n}E_x \right) - \left[(A^1_{x:\enclose{actuarial}{n}})^2 + 2(A^1_{x:\enclose{actuarial}{n}} \cdot {}_{n}E_x) + ({}_{n}E_x)^2 \right]
 \end{aligned}
 \]</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The SULT table provides values for the EPVs EA and PE with terms of 10 or 20 years. Thus, these values can also be used to calculate the <strong>EPV of a TA with a term of 10 or 20 years</strong>.</p>
+</div>
 <p>Note that the in the <em>final year</em> of the contract, the assurance <strong>will pay <span class="arithmatex">\(v^n\)</span> regardless</strong> of the outcome - TA pays if they die while PE pays if they survive. Thus, a simplification can be made to the EPV:</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1827,7 +1843,8 @@
 <p><img alt="DWL Difference" class="center" src="../Assets/3.%20Life%20Assurances.md/DWL%20Difference.png" /></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>This result is <strong>extremely important</strong> as this is the main method of calculating the EPV of a TA as the values for the WL can be easily found in the SULT.</p>
+<p>This result is <strong>extremely important</strong> as this is the main method of calculating the EPV of a TA of any duration as the values for the WL can be found in the SULT.</p>
+<p>For TAs of 10 or 20 years, the EA and PE method is preferred as it requires fewer values to calculate.</p>
 <p>Note that this result <strong>also applies to the second moment</strong>, allowing us to easily compute the variance of a TA:</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1849,13 +1866,17 @@
 \begin{aligned}
     {}_{k|}A^1_{x:\enclose{actuarial}{n}}
     &amp;= {}_{k}E_{x} \cdot A^1_{x+k:\enclose{actuarial}{n}} \\
-    &amp;= {}_{k}E_{x} \cdot (A_{x+k} - {}_{n}E_{x} \cdot A_{x+k+n})
+    &amp;= {}_{k}E_{x} \cdot (A_{x+k} - {}_{n}E_{x+k} \cdot A_{x+k+n})
 \end{aligned}
 \]</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>It is an extremely common mistake to use the same PE inside and outside.</p>
-<p>Note that the inner PE is for the duration of the policy while the outer PE is for the duration of the deferment.</p>
+<p>They are <strong>completely different</strong>:</p>
+<ul>
+<li><strong>Outer PE</strong>: Surviving the deferment period from policy inception</li>
+<li><strong>Inner PE</strong>: Surviving the policy term from the starting age</li>
+</ul>
 </div>
 <p>Alternatively, it can be used as a building block to decompose a regular assurance. An <span class="arithmatex">\(n\)</span> year term assurance can be thought of as the <strong>sum of <span class="arithmatex">\(n\)</span> deferred TAs</strong>, each with a one year term:</p>
 <div class="arithmatex">\[

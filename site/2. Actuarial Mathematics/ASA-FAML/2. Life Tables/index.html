@@ -753,11 +753,31 @@
     Uniform Distribution of Deaths
   </a>
   
+    <nav class="md-nav" aria-label="Uniform Distribution of Deaths">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#impact-on-expectation" class="md-nav__link">
+    Impact on Expectation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
   <a href="#constant-force-of-mortality" class="md-nav__link">
     Constant Force of Mortality
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linear-force" class="md-nav__link">
+    Linear Force
   </a>
   
 </li>
@@ -1282,11 +1302,31 @@
     Uniform Distribution of Deaths
   </a>
   
+    <nav class="md-nav" aria-label="Uniform Distribution of Deaths">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#impact-on-expectation" class="md-nav__link">
+    Impact on Expectation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
   <a href="#constant-force-of-mortality" class="md-nav__link">
     Constant Force of Mortality
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linear-force" class="md-nav__link">
+    Linear Force
   </a>
   
 </li>
@@ -1490,7 +1530,53 @@
     &amp;= \frac{q_x}{1-sq_x}
 \end{aligned}
 \]</div>
-<p>The key thing to note is that the PDF is constant under UDD.</p>
+<h4 id="impact-on-expectation"><strong>Impact on Expectation</strong><a class="headerlink" href="#impact-on-expectation" title="Permanent link">&para;</a></h4>
+<p>We can decompose the continuous lifetime into an <strong>integer and a fractional component</strong> <span class="arithmatex">\((R_x)\)</span>:</p>
+<div class="arithmatex">\[
+    T_x = K_x + R_x
+\]</div>
+<p>Under UDD, we know that the fractional component is <strong>uniformly distributed between 0 and 1</strong>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    R_x &amp;\sim \text{Uniform}(0, 1) \\
+    E(R_x)
+    &amp;= \frac{0 + 1}{2} \\
+    &amp;= \frac{1}{2}
+\end{aligned}
+\]</div>
+<p>Thus, we can derive a formula for the continuous expectation:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    E(T_x) &amp;= E(K_x) + E(R_x) \\
+    \mathring{e}_{x} &amp;= e_{x} + \frac{1}{2}
+\end{aligned}
+\]</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>In the previous section, we showed that the above relationship was approximately true using the trapezium rule. Under UDD, this relationship is <strong>exact</strong>.</p>
+<p>Thus, if a question requires the above formula, they should explicitly state that UDD holds.</p>
+</div>
+<p>Similarly, this impacts the discrete recursion formula. The intuition is that since the person could die uniformly throughout the year, <strong>on average</strong>, they would die in the middle of the year and thus would have had <strong>half a year of future lifetime</strong>: </p>
+<div class="arithmatex">\[
+\begin{aligned}
+    K_{x:\enclose{actuarial}{1}}
+    &amp;=
+    \begin{cases}
+        1, {}_{}p_{x} \\
+        0.5, {}_{}q_{x}
+    \end{cases} \\
+    \\
+    e_{x:\enclose{actuarial}{1}}
+    &amp;= 1 \cdot {}_{}p_{x} + 0.5 \cdot {}_{}q_{x} \\
+    &amp;= {}_{}p_{x} + 0.5 \cdot {}_{}q_{x} \\
+    \\
+    \therefore
+    e_x
+    &amp;= e_{x:\enclose{actuarial}{1}} + {}_{}p_{x} \cdot e_{x+1} \\
+    &amp;= {}_{}p_{x} + 0.5 \cdot {}_{}q_{x} + {}_{}p_x \cdot e_{x+1} \\
+    &amp;= 0.5 \cdot {}_{}q_{x} + {}_{}p_{x} (1 + e_{x+1})
+\end{aligned}
+\]</div>
 <h3 id="constant-force-of-mortality"><strong>Constant Force of Mortality</strong><a class="headerlink" href="#constant-force-of-mortality" title="Permanent link">&para;</a></h3>
 <p>The <strong>Constant Force of Mortality</strong> is an assumption that allows for <strong>Exponential Interpolation</strong> between discrete ages.</p>
 <p>It assumes that there is a <strong>constant force of mortality</strong> <em>between integer ages</em>, such that the <strong>number of survivors decreases exponentially</strong> over the year.</p>
@@ -1537,9 +1623,19 @@
 <p class="admonition-title">Note</p>
 <p>This further drives home the fact <strong>age does not matter</strong>, even at fractional ages, due to the memoryless property.</p>
 </div>
-<p>Finally, the PDF and Force of Mortality can also be determined:</p>
+<h3 id="linear-force"><strong>Linear Force</strong><a class="headerlink" href="#linear-force" title="Permanent link">&para;</a></h3>
+<p>Instead of a <em>completely</em> constant force, some questions might provide a <strong>linearly increasing</strong> force between two different constant forces.</p>
+<p>Essentially, this combines the key aspects of the above two methods:</p>
 <div class="arithmatex">\[
-    \text{TBC}
+    \mu_{x+t} = \mu_1 \cdot (1-t) + \mu_2 \cdot t
+\]</div>
+<p>Thus, the survival probability during this period can be calculated via first principles:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    S_X(t)
+    &amp;= e^{\int \mu_{x+t}} \\
+    &amp;= e^{\int \mu_1 \cdot (1-t) + \mu_2 \cdot t}
+\end{aligned}
 \]</div>
 <h3 id="given-probabilities"><strong>Given Probabilities</strong><a class="headerlink" href="#given-probabilities" title="Permanent link">&para;</a></h3>
 <p>If mortality follows the SULT, then the number of survivors can easily be obtained from there, allowing us to easily perform the above calculations.</p>

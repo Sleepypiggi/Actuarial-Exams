@@ -580,6 +580,47 @@
     Moments
   </a>
   
+    <nav class="md-nav" aria-label="Moments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#first-moment" class="md-nav__link">
+    First Moment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#second-moment" class="md-nav__link">
+    Second Moment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#third-moment" class="md-nav__link">
+    Third Moment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fourth-moment" class="md-nav__link">
+    Fourth Moment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tail-weights" class="md-nav__link">
+    Tail Weights
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1309,6 +1350,47 @@
     Moments
   </a>
   
+    <nav class="md-nav" aria-label="Moments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#first-moment" class="md-nav__link">
+    First Moment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#second-moment" class="md-nav__link">
+    Second Moment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#third-moment" class="md-nav__link">
+    Third Moment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fourth-moment" class="md-nav__link">
+    Fourth Moment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tail-weights" class="md-nav__link">
+    Tail Weights
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1615,6 +1697,7 @@
 </div>
 <h3 id="moments"><strong>Moments</strong><a class="headerlink" href="#moments" title="Permanent link">&para;</a></h3>
 <p>The <strong>Moments</strong> of a distribution are quantities that describe <strong>characteristics of the distribution</strong>.</p>
+<h4 id="first-moment"><strong>First Moment</strong><a class="headerlink" href="#first-moment" title="Permanent link">&para;</a></h4>
 <p><strong>Raw Moments</strong> are calculated with respect to the <strong>origin</strong>. The <strong>n-th raw moment</strong> is calculated as the following:</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1627,6 +1710,7 @@
 <div class="arithmatex">\[
     E(c) = c
 \]</div>
+<h4 id="second-moment"><strong>Second Moment</strong><a class="headerlink" href="#second-moment" title="Permanent link">&para;</a></h4>
 <p><strong>Central Moments</strong> are calculated with respect to the <strong>mean</strong>. The <strong>n-th central moment</strong> is calculated as the following:</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1660,6 +1744,7 @@
 <div class="arithmatex">\[
     CV(X) = \frac{\sigma}{\mu}
 \]</div>
+<h4 id="third-moment"><strong>Third Moment</strong><a class="headerlink" href="#third-moment" title="Permanent link">&para;</a></h4>
 <p>The <strong>third central moment</strong> is <strong>Skewness</strong>, which is a measure of the <strong>symmetry</strong> of distribution about the mean. Being left/right skewed means that the distribution has a "longer tail" on that side, which implies that <strong>values on the opposite side are more likely to occur</strong>.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -1675,8 +1760,9 @@
 \]</div>
 <!-- Obtained from Coaching Actuaries -->
 <p><img alt="Skewness" class="center" src="../Assets/1.%20Review%20of%20Probability%20Theory.md/Skewness.png" /></p>
+<h4 id="fourth-moment"><strong>Fourth Moment</strong><a class="headerlink" href="#fourth-moment" title="Permanent link">&para;</a></h4>
 <p>The fourth central moment is <strong>Kurtosis</strong>, which is a measure of the <strong>flatness</strong> of the distribution, typically with respect to the normal distribution. It is indicative of the <strong>likelihood of producing extreme values</strong> (outliers).</p>
-<p>The normal distribution has a kurtosis of 3. If a distribution has a kurtosis greater than 3, then it is flatter and hence more likely to produce outliers as compared to the normal distribution.</p>
+<p>The normal distribution has a kurtosis of 3. If a distribution has a <strong>kurtosis greater than 3</strong>, then it is flatter and hence <strong>more likely to produce outliers</strong> as compared to the normal distribution.</p>
 <div class="arithmatex">\[
 \begin{aligned}
     \text{Kurtosis}
@@ -1687,6 +1773,58 @@
 \]</div>
 <!-- Obtained from AnalystPrep -->
 <p><img alt="Kurtosis" class="center" src="../Assets/1.%20Review%20of%20Probability%20Theory.md/Kurtosis.png" /></p>
+<h4 id="tail-weights"><strong>Tail Weights</strong><a class="headerlink" href="#tail-weights" title="Permanent link">&para;</a></h4>
+<p>Another method of determining the likelihood of outliers to occur is through the <strong>Tail Weight</strong> of the distribution. Distributions with a <strong>heavier tails are more likely to produce outliers</strong>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Although both Tail Weight and Kurtosis are measures of the likelihood of outliers, there is <strong>no link between them</strong>, despite what some authors might suggest.</p>
+</div>
+<p>A distribution is said to have a heavier tail than another if it has <strong>STRICTLY more density</strong> at the "ends" of the distributions, past a certain threshold:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For the purposes of this exam, we only consider the <strong>right tail</strong> of the distribution for large outliers.</p>
+</div>
+<!-- Obtained from Coaching Actuaries -->
+<p><img alt="Tail Weight" class="center" src="../Assets/1.%20Review%20of%20Probability%20Theory.md/Tail%20Weight.png" /></p>
+<p>There are a few methods to compare the tail weight of the distribution, but for the purposes of this exam, only the <strong>Existence of Moments</strong> method will be considered.</p>
+<p>A distribution is <strong>light tailed</strong> if has <strong>finite RAW moments</strong> for <em>all</em> positive values of <span class="arithmatex">\(k\)</span>:</p>
+<div class="arithmatex">\[
+    E(X^k) \lt \infty, \ k \gt 0
+\]</div>
+<p>Conversely, a distribution is <strong>heavy tailed</strong> if it DOES NOT have finite raw moments for all positive values of <span class="arithmatex">\(k\)</span>. From another perspective, it only has them up till a <strong>certain threshold</strong> <span class="arithmatex">\(k \lt a\)</span>:</p>
+<div class="arithmatex">\[
+    E(X^k) \lt \infty, \ k \lt a
+\]</div>
+<p>Consider the following two distributions:</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="center">Exponential</th>
+<th align="center">Pareto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Raw moments exists for <span class="arithmatex">\(k \gt 0\)</span></td>
+<td align="center">Raw moments exists for <span class="arithmatex">\(-1 \lt k \lt \alpha\)</span></td>
+</tr>
+<tr>
+<td align="center">Unlimited number of finite raw moments</td>
+<td align="center">Limited number of finite raw moments</td>
+</tr>
+<tr>
+<td align="center">Heavy tailed</td>
+<td align="center">Light tailed</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>The method is fairly intuitive. Consider the formula for raw moments:</p>
+<div class="arithmatex">\[
+    E(X^k) = \int x^k \cdot f(x)
+\]</div>
+<p>As <span class="arithmatex">\(k\)</span> increases, large values of <span class="arithmatex">\(x\)</span> will be raised by large values, resulting in extremely large values. If the densities at this portion of the distribution are <strong>sufficiently large</strong>, then the <strong>resulting value would be too large</strong> <span class="arithmatex">\(\left(E[X^k)] = \infty \right)\)</span>, resulting in a <strong>limited number of finite raw moments</strong>.</p>
 <h3 id="statistical-metrics"><strong>Statistical Metrics</strong><a class="headerlink" href="#statistical-metrics" title="Permanent link">&para;</a></h3>
 <p>Apart from the moment of the distribution, there are some other <strong>Statistical Metrics</strong> that provide useful information.</p>
 <p>The <strong>Mode</strong> is the value of the random variable that maximises the PMF or PDF. It is the <strong>most likely outcome</strong> of the experiment (loosely speaking for continuous variables).</p>

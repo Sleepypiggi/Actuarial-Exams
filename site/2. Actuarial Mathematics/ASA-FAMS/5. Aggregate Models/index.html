@@ -605,6 +605,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#moments" class="md-nav__link">
+    Moments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#convolutions" class="md-nav__link">
     Convolutions
   </a>
@@ -650,7 +657,8 @@
     Aggregate Payments
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Aggregate Payments">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#payment-frequency" class="md-nav__link">
@@ -663,11 +671,9 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#individual-risk-model" class="md-nav__link">
-    Individual Risk Model
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1238,6 +1244,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#moments" class="md-nav__link">
+    Moments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#convolutions" class="md-nav__link">
     Convolutions
   </a>
@@ -1283,7 +1296,8 @@
     Aggregate Payments
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Aggregate Payments">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#payment-frequency" class="md-nav__link">
@@ -1296,11 +1310,9 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#individual-risk-model" class="md-nav__link">
-    Individual Risk Model
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1327,23 +1339,32 @@
     S &amp;= X_1 + X_2 + ... + X_N
 \end{aligned}
 \]</div>
-<p>There are two main types of aggregate models:</p>
-<p>The first type of aggregate model is known as the <strong>Collective Risk Model</strong>, which makes assumes the following assumptions:</p>
+<p>The main type of aggregate model is known as the <strong>Collective Risk Model</strong>, which makes assumes the following assumptions:</p>
 <ol>
 <li><strong>Losses are iid</strong>: <span class="arithmatex">\(X_1, X_2, ..., X_N\)</span> are iid</li>
 <li><strong>Frequency and Severity are independent</strong>: <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(N\)</span> are independent</li>
 </ol>
-<p>The second type is known as the <strong>Individual Risk Model</strong>, which makes similar assumptions:</p>
-<ol>
-<li><strong>Losses are independent but not necessarily identical</strong>: <span class="arithmatex">\(X_1, X_2, \dots, X_N\)</span> are independent but MAY have <em>different distributions</em></li>
-<li><strong>Frequency is a constant</strong>: <span class="arithmatex">\(N = n\)</span></li>
-<li>Typically used for <strong>Group Policies</strong> where there is a fixed number of poliycholders with varying levels of coverage</li>
-</ol>
-<p>Generally speaking, it is much better to model frequency and severity <strong>seperately</strong> and then combine into an aggregate loss rather than directly modelling it as it <strong>more accurate and flexible</strong>.</p>
-<!-- Suspect may have some questions on this. To update with information from TB. -->
-
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Some questions may not <em>directly</em> provide the frequency distribution.</p>
+<p>For instance, we may want to model aggregate revenue of a business. The following two distributions are given:</p>
+<ul>
+<li>The number customers <strong>per shop</strong> is modelled by a Frequency Distribution</li>
+<li>The revenue per customer is modelled by a Severity Distribution</li>
+</ul>
+<p>By combining these two distributions, we can model aggregate revenue <strong>per shop</strong>. However, we want the aggregate revenue for the <strong>entire business</strong>.</p>
+<p>If the business has <span class="arithmatex">\(n\)</span> shops, then we need to <strong>adjust the frequency distribution</strong> accordingly by <strong>scaling it by the number of shops</strong>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \text{Customers Per Shop} &amp;\sim \text{Poisson}(\mu) \\
+    \text{Customers Per Business} &amp;\sim \text{Poisson}(n \cdot \mu)
+\end{aligned}
+\]</div>
+<p>Scaling a random variable by a constant <span class="arithmatex">\(n\)</span> is simply the <strong>sum of <span class="arithmatex">\(n\)</span> of those variables</strong>; refer to the frequency distribution section to understand how the sums are distributed. </p>
+</div>
 <h2 id="collective-risk-model"><strong>Collective Risk Model</strong><a class="headerlink" href="#collective-risk-model" title="Permanent link">&para;</a></h2>
 <p>The collective risk model is a <strong>sum of an unknown number of random variables</strong>. In probability theory, this is known as a <strong>Compound Distribution</strong> where <span class="arithmatex">\(N\)</span> is known as the <strong>Primary Distribution</strong> and <span class="arithmatex">\(X\)</span> is known as the <strong>Secondary Distribution</strong>.</p>
+<h3 id="moments"><strong>Moments</strong><a class="headerlink" href="#moments" title="Permanent link">&para;</a></h3>
 <p>Another perspective is that the aggregate model follows the <strong>conditional distribution</strong> <span class="arithmatex">\(S \mid N\)</span>. Thus, we can compute the probability, expectation and variance using previously found results.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1377,7 +1398,7 @@ If each policy has a deductible then just E(N) E(X-d)+
 
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This result is <strong>highly intuitive</strong> as <span class="arithmatex">\(\text{Expected Risk} = \text{Expected Claims} \cdot \text{Expected Severity}\)</span>.</p>
+<p>This result is <strong>highly intuitive</strong> as <span class="arithmatex">\(\text{Risk} = \text{Frequency} \cdot \text{Severity}\)</span>.</p>
 </div>
 <p>Moving on to the <strong>Law of Total Variance</strong>:</p>
 <div class="arithmatex">\[
@@ -1397,7 +1418,7 @@ If each policy has a deductible then just E(N) E(X-d)+
 \]</div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>If the m**ean and variance of the frequency distribution are equal** (EG. Poisson Distribution), then the Variance can be simplified:</p>
+<p>If the <strong>mean and variance of the frequency distribution are equal</strong> (EG. Poisson Distribution), then the Variance can be simplified:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     Var (S)
@@ -1551,7 +1572,7 @@ If each policy has a deductible then just E(N) E(X-d)+
 \end{aligned}
 \]</div>
 <p>The key is to <strong>match the frequency distribution with the severity</strong>: Loss &amp; Loss Frequency; Payments &amp; Payment Frequency.</p>
-<h3 id="payment-frequency"><strong>Payment Frequency</strong><a class="headerlink" href="#payment-frequency" title="Permanent link">&para;</a></h3>
+<h4 id="payment-frequency"><strong>Payment Frequency</strong><a class="headerlink" href="#payment-frequency" title="Permanent link">&para;</a></h4>
 <p>Imposing a deductible naturally results in <strong>fewer payments than losses</strong> as not all losses result in a payment.</p>
 <p>The <strong>Payment Frequency</strong> <span class="arithmatex">\((N^{*})\)</span> is thus an adjusted version of the loss distribution that only takes into account the losses that result in a payment.</p>
 <p>Consider a <strong>Bernoulli Indicator variable</strong> that takes on the value 1 if a payment will be made and 0 if it will not:</p>
@@ -1603,7 +1624,6 @@ If each policy has a deductible then just E(N) E(X-d)+
    \therefore N^{*} &amp;\sim \text{Negative Binomial} (r, v \theta)
 \end{aligned}
 \]</div>
-<h2 id="individual-risk-model"><strong>Individual Risk Model</strong><a class="headerlink" href="#individual-risk-model" title="Permanent link">&para;</a></h2>
 
 
 
