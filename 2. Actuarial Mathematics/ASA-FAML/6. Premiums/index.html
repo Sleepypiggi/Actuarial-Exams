@@ -457,36 +457,22 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../Overview%20of%20Insurance/" class="md-nav__link">
-        Overview of Insurance
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_2">
+        <label class="md-nav__link" for="__nav_2_1">
           ASA-FAMS
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="ASA-FAMS" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_2">
+        <label class="md-nav__title" for="__nav_2_1">
           <span class="md-nav__icon md-icon"></span>
           ASA-FAMS
         </label>
@@ -636,18 +622,18 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_3">
+        <label class="md-nav__link" for="__nav_2_2">
           ASA-FAML
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="ASA-FAML" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_3">
+        <label class="md-nav__title" for="__nav_2_2">
           <span class="md-nav__icon md-icon"></span>
           ASA-FAML
         </label>
@@ -798,6 +784,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#loss-probability" class="md-nav__link">
+    Loss Probability
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#gross-premiums" class="md-nav__link">
     Gross Premiums
   </a>
@@ -806,8 +799,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#expense-calculations" class="md-nav__link">
-    Expense Calculations
+  <a href="#level-expenses" class="md-nav__link">
+    Level Expenses
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-level-expenses" class="md-nav__link">
+    Non-Level Expenses
   </a>
   
 </li>
@@ -877,18 +877,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_4">
+        <label class="md-nav__link" for="__nav_2_3">
           ASA-ALTAM
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="ASA-ALTAM" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_4">
+        <label class="md-nav__title" for="__nav_2_3">
           <span class="md-nav__icon md-icon"></span>
           ASA-ALTAM
         </label>
@@ -1224,6 +1224,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#loss-probability" class="md-nav__link">
+    Loss Probability
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#gross-premiums" class="md-nav__link">
     Gross Premiums
   </a>
@@ -1232,8 +1239,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#expense-calculations" class="md-nav__link">
-    Expense Calculations
+  <a href="#level-expenses" class="md-nav__link">
+    Level Expenses
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-level-expenses" class="md-nav__link">
+    Non-Level Expenses
   </a>
   
 </li>
@@ -1269,7 +1283,7 @@
 <h2 id="overview"><strong>Overview</strong><a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>Unlike other products, the cost of a Life Assurance or Annuity are not known when it is issued, as it is <strong>impossible to precisely predict</strong> when an individual will die or how long they will live for.</p>
 <p>Premiums are the amount that the insurance company charges for a Life Assurance or Annuity. They aim to charge a sufficiently high premium such that they expect to at least <strong>break even</strong> on the sale of the policy on an <strong>EPV basis</strong>.</p>
-<p>Premiums are always <strong>paid in advance</strong>, but the frequency of payment depends on the type of premium:</p>
+<p>There are three main types of premiums:</p>
 <p><center></p>
 <table>
 <thead>
@@ -1295,117 +1309,152 @@
 <p></center></p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>If premiums are paid in arrears instead, the policyholder may refuse to pay premiums on the flawed grounds that since they did not die in the period, they did not utilize the coverage and hence should not pay.</p>
+<p>Premiums can be <strong>paid at any frequency</strong>, but monthly is the most common as it matches the frequency of when people receive their income.</p>
+<p>They are always <strong>paid in advance</strong>. If they were paid in arrears, policyholders may refuse to pay premiums on the <strong>flawed grounds</strong> that since they did not die, they did not utilize the coverage and hence should not pay.</p>
 </div>
 <p>There are two types of premiums that can be calculated:</p>
 <ul>
-<li><strong>Net Premiums, <span class="arithmatex">\(P\)</span></strong> - <em>Excluding</em> expenses; based on benefits only</li>
-<li><strong>Gross Premiums, <span class="arithmatex">\(G\)</span></strong> - <em>Including</em> expenses; based on BOTH benefits, expenses and other cashflows</li>
+<li><strong>Net Premiums (<span class="arithmatex">\(P\)</span>)</strong> - <em>Excluding</em> expenses; benefits only</li>
+<li><strong>Gross Premiums (<span class="arithmatex">\(G\)</span>)</strong> - <em>Including</em> expenses and other cashflows</li>
 </ul>
 <p>The key thing to notice is that the components of net premiums are fixed while gross premiums differ from insurer to insurer. Thus, this section will <strong>only show formulas for net premiums</strong>.</p>
 <h2 id="equivalence-principle-approach"><strong>Equivalence Principle Approach</strong><a class="headerlink" href="#equivalence-principle-approach" title="Permanent link">&para;</a></h2>
-<p>To determine the breakeven point of the insurer, the expected amount of loss must first be defined.</p>
-<p>Thus, let <span class="arithmatex">\({}_{t}L\)</span> be the random variable denoting the loss of the policy:</p>
-<ul>
-<li>If <span class="arithmatex">\({}_{t}L\)</span> is positive, then the policy is losing money</li>
-<li>If <span class="arithmatex">\({}_{t}L\)</span> is negative, then the policy is making money</li>
-<li>The <strong>intepretation is reversed</strong> since <span class="arithmatex">\(L\)</span> represents an <strong>outflow</strong> rather than an inflow!</li>
-</ul>
+<p>To determine the breakeven point of the insurer, the <strong>Loss Amount</strong> must first be defined. It is the net outflow of the policy:</p>
+<div class="arithmatex">\[
+    \text{Loss} = \text{Outflow} - \text{Inflow}
+\]</div>
+<p>Let <span class="arithmatex">\({}_{t-1}L_{x}\)</span> be the random variable denoting the PV of the loss at the <strong>START of policy year t</strong>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    {}_{t}L
+    {}_{t-1}L_{x}
     &amp;= \text{PV Outflow} - \text{PV Inflows} \\
-    &amp;= B \cdot v^{K_{x+t} + 1} - P \cdot \ddot{a}_{\enclose{actuarial}{K_{x+t} + 1}}
+    &amp;= B \cdot v^{K_{x+(t-1)} + 1} - P \cdot \ddot{a}_{\enclose{actuarial}{K_{x+(t-1)} + 1}}
+\end{aligned}
+\]</div>
+<!-- Self Made -->
+<p><img alt="Loss Timing" class="center" src="../Assets/6.%20Premiums.md/Loss%20Timing.png" /></p>
+<p>Since L represents an outflow rather than an inflow, its <strong>intepretation is reversed</strong>: </p>
+<ul>
+<li><span class="arithmatex">\({}_{t-1}L_{x} \gt 0\)</span>, Negative Profits (Losing money)</li>
+<li><span class="arithmatex">\({}_{t-1}L_{x} \lt 0\)</span>, Positive Profits (Making money)</li>
+</ul>
+<p>Intuitively, insurers will charge a premium such that they <strong>expect to break even at the time of the sale</strong>, time 0. In other words, the <strong>expected loss at the start of the policy year 1 is 0</strong>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    {}_{0}L_{x}
+    &amp;= B \cdot v^{K_{x} + 1} - P \cdot \ddot{a}_{\enclose{actuarial}{K_{x} + 1}} \\
+    \\
+    E \left({}_{0}L_{x} \right)
+    &amp;= B \cdot E \left(v^{K_{x} + 1} \right)
+        - P \cdot E \left(\ddot{a}_{\enclose{actuarial}{K_{x} + 1}} \right) \\
+    &amp;= B \cdot A_{x} - P \cdot \ddot{a}_{x} \\
+    \\
+    \therefore
+    E \left({}_{0}L_{x} \right) &amp;= 0 \\
+    B \cdot A_{x} - P \cdot \ddot{a}_x &amp;= 0 \\
+    P \cdot \ddot{a}_{x} &amp;= B \cdot A_{x} \\
+    P &amp;= B \cdot \frac{A_x}{\ddot{a}_x}
 \end{aligned}
 \]</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Remember that there is a <strong>difference between the PV and EPV</strong>!</p>
-<p>PVs contain the random variable and are denoted in general notation while EPVs should NOT contain the random variable and are denoted in actuarial notation.</p>
+<p>For the purposes of this exam, premiums are usually <strong>paid annually</strong>, where <span class="arithmatex">\(P\)</span> represents the <strong>annual net premium</strong>.</p>
+<p>If premiums were paid more frequently, then the corresponding EPVs should be used:</p>
+<div class="arithmatex">\[
+    \text{EPV Inflow} = P \cdot \ddot{a}^{(m)}_{x}
+\]</div>
+<p>Regardless of the frequency of payment, the <strong>annual net premium</strong> is still multiplied the EPVs.</p>
+<p>Thus, to obtain the <strong>premium payable per period</strong> (vice-versa) the annual premium must be divided by the number of periods.</p>
+<div class="arithmatex">\[
+    P^{(m)} = \frac{P}{m}
+\]</div>
+<p>Premiums can also be paid continuously. The amount paid continuously is known as the <strong>Premium Rate</strong> -- it does not follow the above convention.</p>
 </div>
-<p>The goal is to solve for the premiums such that there is <strong>no expected loss at time 0</strong>. This is known as the <strong>Equivalence Principle</strong> approach as it sets the EPVs to be equal:</p>
+<p>This is known as the <strong>Equivalence Principle</strong> approach, as it charges premiums such that the EPVs of the inflows and outflows are equal:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    E \left({}_{0}L \right) &amp;= 0 \\
-    \text{EPV Benefits} &amp;= \text{EPV Premiums} \\
-    B \cdot A_x &amp;= P \cdot \ddot{a}_x \\
-    P &amp;= B \cdot \frac{A_x}{\ddot{a}_x}
+    \text{EPV Outflow} &amp;= \text{EPV Inflow} \\
+    \text{EPV Premium} &amp;= \text{EPV Benefit}
 \end{aligned}
 \]</div>
-<p>If the time of the loss is not specified, then it can be assumed to be time 0.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Note that the above assumes that benefits and premiums are <strong>payable discretely</strong>. If they were payable more frequently, then the corresponding formula should be used.</p>
-<p>Regardless, note that <span class="arithmatex">\(P\)</span> in the above contract represents the <strong>ANNUAL PREMIUM</strong>. To obtain the premium payable per period, it should be divided by the number of periods:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the policy charges a <strong>Single Net Premium</strong> using the equivalence principle, then that is simply equivalent to the EPV of the benefits.</p>
 <div class="arithmatex">\[
-    \text{Premium Per Period} = \frac{P}{m}
+\begin{aligned}
+    \text{EPV Premium} &amp;= \text{Single Net Premium} \\
+    \therefore \text{Single Net Premium} &amp;= \text{EPV Benefit}
+\end{aligned}
 \]</div>
 </div>
 <h2 id="portfolio-percentile-approach"><strong>Portfolio Percentile Approach</strong><a class="headerlink" href="#portfolio-percentile-approach" title="Permanent link">&para;</a></h2>
-<p>An alternative approach would be to use the <strong>distribution of the loss</strong> and set the premiums in such a way that the <strong>probability of profit</strong> is fixed at some acceptable level.</p>
-<p>Using the formula for net premiums, we can express the loss random variable in a different way:</p>
+<p>The equivalence principle calculates the premium for a <strong>single policy</strong> such that it is <strong>expected to break even</strong>.</p>
+<p>Given a <strong>portfolio of N homogenous policies</strong>, the <strong>Portfolio Percentile Approach</strong> can be used to calculate the premims such that the probability that the <strong>entire portfolio at least breaks even</strong> is fixed at some minimum value.</p>
+<p>Let <span class="arithmatex">\(S\)</span> be the random variable denoting the <strong>aggregate loss</strong> of <span class="arithmatex">\(N\)</span> homogenous policies that were <strong>just issued</strong>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    {}_{t}L
-    &amp;= B \cdot v^{K_{x+t} + 1} - P \cdot \ddot{a}_{\enclose{actuarial}{K_{x+t} + 1}} \\
-    &amp;= B \cdot v^{K_{x+t} + 1} - P \cdot \frac{1- v^{K_{x+t} + 1}}{d} \\
-    &amp;= B \cdot v^{K_{x+t} + 1} + \frac{- P + P v^{K_{x+t} + 1}}{d} \\
-    &amp;= v^{K_{x+t} + 1} \left(B + \frac{P}{d} \right) - \frac{P}{d} \\
+    S &amp;= {}_{0}L_1 + {}_{0}L_2 + \dots + {}_{0}L_{N} \\
+    E(S) &amp;= N \cdot E({}_{0}L) \\
+    Var (S) &amp;= N \cdot \text{Var}({}_{0}L)
 \end{aligned}
 \]</div>
-<p>Thus, the mean and variance can be determined:</p>
+<p>The expectation and variance of a single policy can be determined as the following:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    E({}_{t}L)
-    &amp;= E \left[v^{K_{x+t} + 1} \left(B + \frac{P}{d} \right) - \frac{P}{d} \right] \\
-    &amp;= \left(B + \frac{P}{d} \right) E(v^{K_{x+t} + 1}) - E \left(\frac{P}{d} \right) \\
-    &amp;= \left(B + \frac{P}{d} \right)A_{x+t}  - \frac{P}{d} \\
+    {}_{0}L
+    &amp;= B \cdot v^{K_{x} + 1} - P \cdot \ddot{a}_{\enclose{actuarial}{K_{x} + 1}} \\
+    &amp;= B \cdot v^{K_{x} + 1} - P \cdot \frac{1- v^{K_{x} + 1}}{d} \\
+    &amp;= B \cdot v^{K_{x} + 1} + \frac{- P + P v^{K_{x} + 1}}{d} \\
+    &amp;= \left(B + \frac{P}{d} \right)v^{K_{x} + 1} - \frac{P}{d} \\
     \\
-    \text{Var}({}_{t}L)
-    &amp;= \text{Var}\left[v^{K_{x+t} + 1} \left(B + \frac{P}{d} \right) - \frac{P}{d} \right] \\
-    &amp;= \text{Var} \left[v^{K_{x+t} + 1} \left(B + \frac{P}{d} \right) \right] \\
-    &amp;= \left(B + \frac{P}{d} \right)^2 \cdot \text{Var} \left(v^{K_{x+t} + 1} \right) \\
-    &amp;= \left(B + \frac{P}{d} \right)^2 \cdot \left[{}^{2}A_{x+t} - (A_{x+t})^2 \right]
+    E({}_{0}L)
+    &amp;= E \left[\left(B + \frac{P}{d} \right)v^{K_{x} + 1} - \frac{P}{d} \right] \\
+    &amp;= \left(B + \frac{P}{d} \right) E(v^{K_{x} + 1}) - E \left(\frac{P}{d} \right) \\
+    &amp;= \left(B + \frac{P}{d} \right)A_{x}  - \frac{P}{d} \\
+    \\
+    \text{Var}({}_{0}L)
+    &amp;= \text{Var}\left[\left(B + \frac{P}{d} \right)v^{K_{x} + 1} - \frac{P}{d} \right] \\
+    &amp;= \text{Var} \left[\left(B + \frac{P}{d} \right)v^{K_{x} + 1}  \right] \\
+    &amp;= \left(B + \frac{P}{d} \right)^2 \cdot \text{Var} \left(v^{K_{x} + 1} \right) \\
+    &amp;= \left(B + \frac{P}{d} \right)^2 \cdot \left[{}^{2}A_{x} - (A_{x})^2 \right]
 \end{aligned}
 \]</div>
-<p>The distribution of a single policy cannot be determined. However, if there were a <strong>large number of policies</strong>, then the <em>aggregate loss</em> of those policies would be <strong>approximately normal distributed</strong> via the central limit theorem.</p>
-<p>Since policies are homogenous, they are <strong>independent and identically distributed</strong>:</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Notice that the EPV components of the mean and variance are only based on the policyholder's age.</p>
+<p>Thus, different policies (with different benefits and premiums) can be used to solve for these <strong>shared EPV components</strong> and hence calculate the mean and variance of each policy.</p>
+</div>
+<p>If <span class="arithmatex">\(N\)</span> is sufficiently large, then <span class="arithmatex">\(S\)</span> is <strong>approximately normally distributed</strong> via the central limit theorem:</p>
 <div class="arithmatex">\[
-\begin{aligned}
-    S
-    &amp;= {}_{t}L_1 + {}_{t}L_2 + ... + {}_{t}L_n \\
-    &amp;= n \cdot {}_{t}L \\
-    \\
-    E(S)
-    &amp;= E(n \cdot {}_{t}L) \\
-    &amp;= n \cdot E({}_{t}L) \\
-    \\
-    \text{Var}(S)
-    &amp;= \text{Var} (n \cdot {}_{t}L) \\
-    &amp;= n^2 \cdot \text{Var} ({}_{t}L) \\
-    \\
-    \therefore S &amp;\sim N(E(S), \text{Var}(S))
-\end{aligned}
+    S \sim N(E(S), \text{Var}(S))
 \]</div>
-<p>The premium is then set such the <strong>probability of profit</strong> is set a pre-determined level close to 1:</p>
+<p>The premium is then set such the <strong>probability of at least breaking even</strong> (probability of profit) is set a pre-determined level <span class="arithmatex">\(\alpha\)</span>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     P(S &lt; 0) &amp;= \alpha \\
     P\left(\frac{S - E(S)}{\sqrt{Var (S)}} \le \frac{0 - E(S)}{\sqrt{Var (S)}}\right) &amp;= \alpha \\
     P\left(Z \le \frac{- E(S)}{\sqrt{Var (S)}}\right) &amp;= \alpha \\
-    P\left(Z \le \frac{- n \cdot E({}_{t}L)}{\sqrt{n^2 \cdot Var ({}_{t}L)}}\right) &amp;= \alpha \\
-    P\left(Z \le \frac{- n \cdot E({}_{t}L)}{n \cdot \sqrt{Var ({}_{t}L)}}\right) &amp;= \alpha  \\
-    P\left(Z \le \frac{- E({}_{t}L)}{\sqrt{Var ({}_{t}L)}}\right) &amp;= \alpha
+    P\left(Z \le \frac{- n \cdot E({}_{0}L)}{\sqrt{n \cdot Var ({}_{0}L)}}\right) &amp;= \alpha \\
+    P\left(Z \le \frac{- n \cdot E({}_{0}L)}{\sqrt{n \cdot Var ({}_{0}L)}}\right) &amp;= \alpha \\
+    \\
+    \frac{- n \cdot E({}_{0}L)}{\sqrt{n \cdot Var ({}_{0}L)}} = Z_{\alpha}
 \end{aligned}
 \]</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If the target value is NOT 0, then the <span class="arithmatex">\(n\)</span> in the numerator and denominator will NOT cancel out!</p>
-</div>
 <p>By plugging in the values determined earlier and solving for P, the appropriate premiums can be determined.</p>
+<h2 id="loss-probability"><strong>Loss Probability</strong><a class="headerlink" href="#loss-probability" title="Permanent link">&para;</a></h2>
+<p>The above method can also be <strong>used in reverse</strong> - given a premium, the probability that the <strong>aggregate loss</strong> taking on some range of values can be computed.</p>
+<p>For a <strong>single policy</strong>, the probability must be solved using the survival distribution:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    P({{}_{0}L} \gt k)
+    &amp;= P \left( \left(B + \frac{P}{d} \right)v^{K_{x} + 1} - \frac{P}{d} \gt k \right) \\
+    &amp;= \dots \\
+    &amp;= P(K_x \gt \dots)
+\end{aligned}
+\]</div>
 <h2 id="gross-premiums"><strong>Gross Premiums</strong><a class="headerlink" href="#gross-premiums" title="Permanent link">&para;</a></h2>
 <p>What makes gross premiums so much trickier than net premiums is that there are many <strong>different types of expenses</strong>, where every question can ask for a unique combination of them.</p>
-<p>Expenses can be differentiated in terms of when they are charged:</p>
+<p>Expenses can be differentiated in terms of <strong>when they are charged</strong>:</p>
 <p><center></p>
 <table>
 <thead>
@@ -1432,9 +1481,9 @@
 <td align="center">Denoted by <span class="arithmatex">\(E\)</span></td>
 </tr>
 <tr>
-<td align="center">Directly use amount</td>
-<td align="center">Corresponding <strong>Annuity</strong> Functions</td>
-<td align="center">Corresponding <strong>Assurance</strong> Function</td>
+<td align="center">Raw Value</td>
+<td align="center"><strong>Annuity</strong> Functions</td>
+<td align="center"><strong>Assurance</strong> Function</td>
 </tr>
 <tr>
 <td align="center">EG. Commissions expenses</td>
@@ -1447,14 +1496,14 @@
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Renewal Expenses is also sometimes known as <strong>Maintenance Expenses</strong>.</p>
-<p>Although they are usually charged from policy year 2 onwards, they <strong>can be charged in the first year as well</strong>. Always read the question properly.</p>
+<p>Although they are usually charged from policy year 2 onwards, they <strong>can be charged in the first year as well</strong>. The above table is just a general guide.</p>
 </div>
-<p>Renewal Expenses can also <strong>inflate</strong> over time, where they increase by a factpr of <span class="arithmatex">\((1+r)\)</span> each year. In this case, they are modelled using a <strong>geometrically increasing annuity</strong> instead.</p>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
 <p>Acquisition expenses are usually higher than renewal ones as agent commissions are mostly front-loaded in the first year to give agents cash faster, incentivizing them to sell more.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Renewal Expenses can also <strong>inflate</strong> over time, where they increase by a factor of <span class="arithmatex">\((1+r)\)</span> each year. In this case, they are modelled using a <strong>geometrically increasing annuity</strong> instead.</p>
 </div>
-<p>They can also be differentiated in terms of how much they charge:</p>
+<p>They can also be differentiated in terms of <strong>how much they charge</strong>:</p>
 <p><center></p>
 <table>
 <thead>
@@ -1470,29 +1519,27 @@
 </tr>
 <tr>
 <td align="center"><strong>Fixed</strong> amount</td>
-<td align="center"><strong>Percentage</strong> of policy premium</td>
-</tr>
-<tr>
-<td align="center">Spread out among all policies</td>
-<td align="center">Borne only by that policy</td>
+<td align="center"><strong>Percentage</strong> of Premium or Benefit</td>
 </tr>
 <tr>
 <td align="center">EG. Office Rental</td>
-<td align="center">EG. Sales Commission or Underwriting Expenses</td>
+<td align="center">EG. Sales Commission</td>
 </tr>
 </tbody>
 </table>
 <p></center></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Generally speaking, per policy expenses are charged every year while commissions are charged whenever premiums are paid. This is relevant for questions that do not specify the frequency of expenses. </p>
+<p>Generally speaking, bverhead expenses are charged every year while direct expenses are only charged whenever premiums are paid.</p>
+<p>This is relevant for policies for with a <strong>limited payment period</strong>. After the premium payment period, only overhead expenses are charged to the policy.</p>
+<p>Similarly, if premiums are payable <span class="arithmatex">\(m\)</span> times a year, then <strong>expenses are payable <span class="arithmatex">\(m\)</span> times a year as well</strong>.</p>
 </div>
-<p>Note that gross premiums can also include other cashflows, such as a pre-determined <strong>profit margin</strong>. Since these are rare and highly dependent on the situation, they will not be covered in this section.</p>
-<h3 id="expense-calculations"><strong>Expense Calculations</strong><a class="headerlink" href="#expense-calculations" title="Permanent link">&para;</a></h3>
-<p>Consider the expenses of the policy:</p>
+<p>Gross premiums can also include <strong>other cashflows</strong>, such as a pre-determined <strong>profit margin</strong>. Since these are highly dependent on context, they will NOT be covered in this section.</p>
+<h3 id="level-expenses"><strong>Level Expenses</strong><a class="headerlink" href="#level-expenses" title="Permanent link">&para;</a></h3>
+<p>Acquisition and Renewal Expenses are always assumed to be paid at the <strong>beginning of the period</strong>, unless stated otherwise:</p>
 <!-- Self Made -->
 <p><img alt="Expense Cashflows" class="center" src="../Assets/6.%20Premiums.md/Expense%20Cashflows.png" /></p>
-<p>The PV of the expenses can be easily calculated by using an annuity immediate, which can be converted into an annuity due for convenience:</p>
+<p>Since the renewal expenses only occur at the <strong>beginning of year 2</strong>, they can be equivalently thought of as occuring at the <strong>end of year 1</strong> and every subsequent year after. Thus, it can be modelled using an <strong>annuity immediate</strong>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     \text{EPV Expenses}
@@ -1500,10 +1547,49 @@
     &amp;= e_0 + e_t \cdot (\ddot{a}_{x} - 1)
 \end{aligned}
 \]</div>
-<p>However, note that the simplification <strong>does NOT hold true if there is expense inflation</strong> -  the level annuity immediate CANNOT simply be replaced with the geometric annuity.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This simplification <strong>does NOT hold true if there is expense inflation</strong> -  the level annuity immediate CANNOT simply be replaced with the geometric annuity.</p>
 <p>This is because the expenses only start to inflate from the third payment onwards:</p>
+<p><!-- Self Made -->
+<img alt="Expense Inflation" class="center" src="../Assets/6.%20Premiums.md/Expense%20Inflation.png" /></p>
+</div>
+<p>If expenses are charged at the <strong>end of the year, including the year of death</strong>, then an <strong>assurance</strong> must be used on top of an annuity immediate.</p>
+<p>This is because an annuity always <strong>assumes that the individual is alive</strong> at the time that the cashflows occur. Thus, the expense of the year of death can be thought of as a <strong>termination expense equal to the renewal expenses</strong>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \text{EPV Expenses} 
+    &amp;= \text{EPV Renewal Expense} + \text{EPV Termination Expense} \\
+    &amp;= e_t \cdot a_{x} + e_t \cdot A_{x} \\
+    &amp;= e_t \cdot (a_{x} + A_{x})
+\end{aligned}
+\]</div>
+<h3 id="non-level-expenses"><strong>Non-Level Expenses</strong><a class="headerlink" href="#non-level-expenses" title="Permanent link">&para;</a></h3>
+<p>Expenses may also be <strong>non-level</strong>, typically decreasing throughout the lifetime of the policy: </p>
+<!-- Obtained from SOA FAML Sample Questions -->
+<p><img alt="Non Level Expenses" class="center" src="../Assets/6.%20Premiums.md/Non%20Level%20Expenses.png" /></p>
+<p>If mortality follows the SULT, then the various EPVs can be easily calculated. Thus, the EPV of expenses can be directly calculated:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \text{EPV Expenses}
+    &amp;= 60 + 0.8G  \\
+    &amp;+ (30 + 0.2G) (\ddot{a}_{x:\enclose{actuarial}{15}} - 1) \\
+    &amp;+ ({}_{15}E_{x})(30 + 0.1G)(\ddot{a}_{x+15:\enclose{actuarial}{15}} - 1) \\
+    &amp;+ ({}_{30}E_{x})(30)(\ddot{a}_{x+30} - 1)
+\end{aligned}
+\]</div>
+<p>However, if the various EPVs cannot be obtained, then the cashflows must the simplified by <strong>splitting them into shared components</strong>:</p>
 <!-- Self Made -->
-<p><img alt="Expense Inflation" class="center" src="../Assets/6.%20Premiums.md/Expense%20Inflation.png" /></p>
+<p><img alt="Expense Splitting" class="center" src="../Assets/6.%20Premiums.md/Expense%20Splitting.png" /></p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \text{EPV Expenses}
+    &amp;= 30 \cdot \ddot{a}_{x} \\
+    &amp;+ 0.1G \cdot \ddot{a}_{x:\enclose{actuarial}{30}} \\
+    &amp;+ 0.1G \cdot \ddot{a}_{x:\enclose{actuarial}{15}} \\
+    &amp;+ 0.6G
+\end{aligned}
+\]</div>
 <h3 id="expense-premiums"><strong>Expense Premiums</strong><a class="headerlink" href="#expense-premiums" title="Permanent link">&para;</a></h3>
 <p>The difference between the gross and net premiums represent the premium needed to <strong>cover just the expenses</strong>. It is known as the <strong>Expense Loading</strong>, as it represents the amoount <strong>loaded onto the net premiums for expenses</strong>.</p>
 <p>Since it is still a premium, the <strong>equivalance principle</strong> still applies to it:</p>
@@ -1514,7 +1600,6 @@
 <div class="arithmatex">\[
     G^E = G - P
 \]</div>
-<p>It will be used more in the next section on reserving.</p>
 
 
 
