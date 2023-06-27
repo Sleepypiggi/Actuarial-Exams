@@ -211,3 +211,14 @@ $$
 $$
 
 <!-- Why? -->
+
+Alternatively, it can be used as a building block to decompose a regular assurance. An $n$ year term assurance can be thought of as the **sum of $n$ deferred TAs**, each with a one year term:
+
+$$
+\begin{aligned}
+    A^1_{x:\enclose{actuarial}{n}} &= \sum^{n-1}_{k=0} {}_{k|}A^1_{x:\enclose{actuarial}{1}} \\
+    A_{x} &= \sum^{\infty}_{k=0} {}_{k|}A_{x}
+\end{aligned}
+$$
+
+> Since WLs are just term assurances with infinite coverage, it can be extended to WLs as well if needed. This result will come in handy in later sections.
