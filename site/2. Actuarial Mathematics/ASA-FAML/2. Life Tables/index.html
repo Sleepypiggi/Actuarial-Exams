@@ -457,36 +457,22 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../Overview%20of%20Insurance/" class="md-nav__link">
-        Overview of Insurance
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_2">
+        <label class="md-nav__link" for="__nav_2_1">
           ASA-FAMS
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="ASA-FAMS" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_2">
+        <label class="md-nav__title" for="__nav_2_1">
           <span class="md-nav__icon md-icon"></span>
           ASA-FAMS
         </label>
@@ -636,18 +622,18 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_3">
+        <label class="md-nav__link" for="__nav_2_2">
           ASA-FAML
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="ASA-FAML" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_3">
+        <label class="md-nav__title" for="__nav_2_2">
           <span class="md-nav__icon md-icon"></span>
           ASA-FAML
         </label>
@@ -944,18 +930,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_4">
+        <label class="md-nav__link" for="__nav_2_3">
           ASA-ALTAM
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="ASA-ALTAM" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_4">
+        <label class="md-nav__title" for="__nav_2_3">
           <span class="md-nav__icon md-icon"></span>
           ASA-ALTAM
         </label>
@@ -1454,10 +1440,10 @@
     \end{cases}
 \end{aligned}
 \]</div>
-<p>Assuming that the lifetimes of each person in the cohort is independent of one another, the total number of people alive is the <strong>sum of independent bernoulli variables</strong>, thus is <strong>binomially distributed</strong>.</p>
+<p>Assuming that the lifetimes of each person in the cohort is independent of one another, the total number of people alive is the <strong>sum of independent bernoulli variables</strong>, thus is <strong>binomially distributed</strong>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    N &amp;\sim \text{Binomial}(\ell_0, {}_{n}p_{x}) \\
+    \ell_{t} &amp;\sim \text{Binomial}(\ell_0, {}_{n}p_{x}) \\
     \\
     E(N) &amp;= \ell_0 \cdot {}_{n}p_{x} \\
     Var(N) &amp;= \ell_0 \cdot {}_{n}p_{x} \cdot (1-{}_{n}p_{x}) \\
@@ -1467,8 +1453,13 @@
 \]</div>
 <p>Given a sufficiently large population, the binomial distributed can be <strong>approximated using the normal distribution</strong>, with continuity correction applied. For more information on CC, refer to the FAM-S section of the notes.</p>
 <div class="arithmatex">\[
-    N \sim N(E(N), Var(N))
+    N \sim N(E(\ell_{t}), Var(\ell_{t}))
 \]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This further emphasizes that the number of survivors in the life table are the <strong>expected</strong> number of survivors; there is <strong>no guarantee</strong> that a given population will <em>exactly</em> follow the life table.</p>
+<p>Thus, questions involving <span class="arithmatex">\(\ell_{x}\)</span> can <strong>ask for probabilities and variance</strong>, which must be solved via this approach.</p>
+</div>
 <h3 id="non-homogenous-cohort"><strong>Non-Homogenous Cohort</strong><a class="headerlink" href="#non-homogenous-cohort" title="Permanent link">&para;</a></h3>
 <p>Some questions may provide <strong>non-homogenous cohorts</strong> where there are different groups of people with different mortality rates, but ask for the overall number of people.</p>
 <p>Each group is modelled using their <strong>own binomial distribution</strong> based on their respective mortalities and are assumed to be independent of one another.</p>
