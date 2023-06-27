@@ -877,13 +877,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#variance-and-second-moment" class="md-nav__link">
-    Variance and Second Moment
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1405,13 +1398,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#variance-and-second-moment" class="md-nav__link">
-    Variance and Second Moment
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1430,6 +1416,7 @@
 <h1 id="variable-benefits"><strong>Variable Benefits</strong><a class="headerlink" href="#variable-benefits" title="Permanent link">&para;</a></h1>
 <h2 id="overview"><strong>Overview</strong><a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>Previously, the benefit of the assurances were assumed to be <strong>fixed at 1</strong> for simplicity. In practice, it is common to have assurances where the benefits <strong>change over time</strong>.</p>
+<p>The content for this section has rarely been tested and thus can be skimmed through for the purposes of this exam.</p>
 <h2 id="geometric-contracts"><strong>Geometric Contracts</strong><a class="headerlink" href="#geometric-contracts" title="Permanent link">&para;</a></h2>
 <p>If the benefits change by a <strong>common factor</strong> each period, then it is known as a <strong>Geometric</strong> contract.</p>
 <p>The benefit of the policy <strong>starts at 1</strong> in the first year and <strong>changes by <span class="arithmatex">\((1+b)\)</span></strong> each period:</p>
@@ -1722,18 +1709,6 @@
 <p class="admonition-title">Term/Temporary Policies</p>
 <p>The same can be shown for Variable Term/Temporary policies, but remember that the <strong>remaining duration of the policy must decrease</strong> as well.</p>
 </div>
-<h2 id="variance-and-second-moment"><strong>Variance and Second Moment</strong><a class="headerlink" href="#variance-and-second-moment" title="Permanent link">&para;</a></h2>
-<p>Consider the second moment of both types of variable assurances:</p>
-<div class="arithmatex">\[
-\begin{aligned}
-    E\left[(\text{Arith WL})^2\right]
-    &amp;= \sum^{\infty}_{K_x=0} (k+1)^2 (v^2)^{K_x+1} {}_{k|}q_x \\
-    \\
-    E\left[(\text{Geom WL})^2\right]
-    &amp;= \sum^{\infty}_{K_x=0} (1+b)^{2K_x} (v^2)^{K_x+1} {}_{k|}q_x
-\end{aligned}
-\]</div>
-<p>Notice that the usual approximation of <span class="arithmatex">\(v=v^2\)</span> is <strong>insufficient</strong> to solve for the second moment due to the squared benefit. Thus, there are no <span class="arithmatex">\({}^{2}A\)</span> defined for variable assurances.</p>
 
 
 
