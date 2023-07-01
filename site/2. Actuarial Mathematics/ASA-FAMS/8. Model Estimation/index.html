@@ -486,6 +486,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../0.%20Short%20Term%20Insurance/" class="md-nav__link">
+        Short Term Insurance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../1.%20Review%20of%20Probability%20Theory/" class="md-nav__link">
         Review of Probability Theory
       </a>
@@ -1346,11 +1360,10 @@
 <p>In terms of MLE, this means that the <strong>ENTIRE distribution is conditioned</strong> on having values above <span class="arithmatex">\(d\)</span> or below <span class="arithmatex">\(u\)</span>. Thus, the likelihood functions should be constructed using conditional PMFs/PDFs of <strong>EVERY observation</strong>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    P_{\theta} (X = x \mid X \gt d) &amp;= \frac{P_{\theta}(X = x)}{P(X \gt d)}
-    \\ \therefore L^{LT}(\theta) &amp;= \prod P_{\theta} (X = x_i \mid X \gt d) \\
-    \\
-    P_{\theta} (X = x \mid X \lt u) &amp;= \frac{P_{\theta}(X = x)}{P(X \lt u)}
-    \\ \therefore L^{RT}(\theta) &amp;= \prod P_{\theta} (X = x_i \mid X \lt u)
+    P_{\theta} (X = x \mid X \gt d) &amp;= \frac{P_{\theta}(X = x)}{P(X \gt d)} \\
+    \therefore L^{LT}(\theta)
+    &amp;= \prod \frac{P_{\theta}(X = x)}{P(X \gt d)} \\
+    &amp;= \frac{1}{[P(X \gt d)]^n} \cdot \prod P_{\theta}(X = x) \\
 \end{aligned}
 \]</div>
 <h4 id="losses-vs-payments"><strong>Losses VS Payments</strong><a class="headerlink" href="#losses-vs-payments" title="Permanent link">&para;</a></h4>
@@ -1410,11 +1423,10 @@
 <p>Thus, for censored observations at the threshold, the updated likelihoods must be used:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    L^{LC}(\theta) &amp;= \prod P_{\theta} (X = x_{\text{Not Censored}}) \cdot \prod P(X_{\text{Censored}} \le d) \\
     L^{RC}(\theta) &amp;= \prod P_{\theta} (X = x_{\text{Not Censored}}) \cdot \prod P(X_{\text{Censored}} \ge u)
 \end{aligned}
 \]</div>
-<p>Naturally, truncation and censoring can occur at the same time. The likelihood for the censored observation in this case is thus:</p>
+<p>Naturally, truncation and censoring can occur at the same time. The <strong>likelihood for the censored observation</strong> in this case is thus:</p>
 <div class="arithmatex">\[
     P_{\theta}(X \gt d + u \mid x \gt d) = \frac{P_{\theta}(X \gt d + u)}{P_{\theta}(X \gt d)}
 \]</div>

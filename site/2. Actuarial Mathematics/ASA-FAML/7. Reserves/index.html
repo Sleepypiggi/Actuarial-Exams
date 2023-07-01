@@ -484,6 +484,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../ASA-FAMS/0.%20Short%20Term%20Insurance/" class="md-nav__link">
+        Short Term Insurance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../ASA-FAMS/1.%20Review%20of%20Probability%20Theory/" class="md-nav__link">
         Review of Probability Theory
       </a>
@@ -1727,13 +1741,6 @@
     \beta &amp;= \frac{A_{x+1}}{\ddot{a}_{x+1}}
 \end{aligned}
 \]</div>
-<div class="admonition warning">
-<p class="admonition-title">Special Case: Term &amp; Endowments</p>
-<p>For Term &amp; Endowment contracts, the <em>one less year of coverage</em> must be accounted for:</p>
-<div class="arithmatex">\[
-    \beta = \frac{A_{x+1:\enclose{actuarial}{n-1}}}{\ddot{a}_{x+1:\enclose{actuarial}{n-1}}}
-\]</div>
-</div>
 <p>The modified reserves at <strong>all later times</strong> follows the same formula as before, simply using <span class="arithmatex">\(\beta\)</span> instead:</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1754,12 +1761,29 @@
     &amp;= B \cdot A_{x+(t-1)} - P_{x+1} \cdot A_{x+(t-1)}
 \end{aligned}
 \]</div>
-<p>Since this is a net premium, the <strong>shortcuts</strong> earlier can be used to quickly calculate the reserve, especially if the policy is WL.</p>
+<p>Since this is a net premium, the <strong>shortcuts</strong> earlier can be used to quickly calculate the reserve if the policy is <strong>WL</strong>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>When select and ultimate mortality is involved, the <strong>select age does not change</strong>.</p>
 <p>In other words, under FPT, the policyholder is selected at age <span class="arithmatex">\([x]\)</span> but purchases the policy one year later <span class="arithmatex">\([x]+1\)</span>.</p>
 <p>It is a common mistake to take the select age as <span class="arithmatex">\([x+1]\)</span>, since the policy was issued one year later. However, the policy is <em>not actually</em> issued one year later; the policyholders mortality still follows that of being selected at their original age.</p>
+</div>
+<p>If the policy is an EA or TA, then the <strong>one less year of coverage</strong> must be accounted for:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \therefore {}_{t}V^{\text{FPT}}
+    &amp;= B \cdot A_{x+(t-1):\enclose{actuarial}{n-1}} - P_{x+1:\enclose{actuarial}{n-1}} \cdot A_{x+(t-1):\enclose{actuarial}{n-1}}
+\end{aligned}
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <strong>one less year of coverage</strong> also applies to <strong>limited pay</strong> WL policies:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \therefore {}_{t}V^{\text{FPT}}
+    &amp;= B \cdot A_{x+(t-1)} - P_{x+1:\enclose{actuarial}{n-1}} \cdot A_{x+(t-1)}
+\end{aligned}
+\]</div>
 </div>
 
 

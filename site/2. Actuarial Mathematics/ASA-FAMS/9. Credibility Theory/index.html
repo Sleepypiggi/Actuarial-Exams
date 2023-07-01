@@ -486,6 +486,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../0.%20Short%20Term%20Insurance/" class="md-nav__link">
+        Short Term Insurance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../1.%20Review%20of%20Probability%20Theory/" class="md-nav__link">
         Review of Probability Theory
       </a>
@@ -656,6 +670,13 @@
           <li class="md-nav__item">
   <a href="#number-of-claims" class="md-nav__link">
     Number of Claims
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shortcuts" class="md-nav__link">
+    Shortcuts
   </a>
   
 </li>
@@ -1210,6 +1231,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#shortcuts" class="md-nav__link">
+    Shortcuts
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1370,6 +1398,32 @@
 <p class="admonition-title">Tip</p>
 <p>Given that the number of claims method can be used for Aggregate, Frequency &amp; Severity data, it is much better to remember to always <strong>start with the number of claims</strong> and then convert to the number of exposures if needed.</p>
 </div>
+<h3 id="shortcuts"><strong>Shortcuts</strong><a class="headerlink" href="#shortcuts" title="Permanent link">&para;</a></h3>
+<p>Note that if frequency follows a <strong>poisson distribution</strong>, a simplification can be made:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    N &amp;\sim \text{Poisson}(N) \\
+    \\
+    E(N) &amp;= \text{Var(N)} \\
+    \frac{E(N)}{Var(N)} &amp;= 1 \\
+    \\
+    \therefore n_c
+    &amp;= \left(\frac{z_{(1+p)/2}}{k} \right)^2 \cdot \left(CV_{X}^2 + 1 \right)
+\end{aligned}
+\]</div>
+<p>Similarly, if severity follows an <strong>exponential distribution</strong>, a simplification can be made:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    X &amp;\sim \text{Exponential} \\
+    \\
+    E(X) &amp;= \theta \\
+    \text{Var}(X) &amp;= \theta^2 \\
+    \frac{\text{Var}(X)}{E(X)^2} &amp;= 1 \\
+    \\
+    \therefore n_c
+    &amp;= \left(\frac{z_{(1+p)/2}}{k} \right)^2 \cdot \left(1 + \frac{Var (N)}{E(N)} \right)
+\end{aligned}
+\]</div>
 <h2 id="partial-credibility"><strong>Partial Credibility</strong><a class="headerlink" href="#partial-credibility" title="Permanent link">&para;</a></h2>
 <p>If there are <strong>insufficient observations</strong>, then the data is said to have <strong>Partial Credibility</strong> <span class="arithmatex">\((Z \lt 1)\)</span>.</p>
 <p>The appropriate factor to use can be determined via the <strong>square root rule</strong>, where <span class="arithmatex">\(n'\)</span> denotes the actual number of exposures or claims in the data:</p>

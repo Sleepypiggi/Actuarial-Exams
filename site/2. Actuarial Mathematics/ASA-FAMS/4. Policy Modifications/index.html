@@ -486,6 +486,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../0.%20Short%20Term%20Insurance/" class="md-nav__link">
+        Short Term Insurance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../1.%20Review%20of%20Probability%20Theory/" class="md-nav__link">
         Review of Probability Theory
       </a>
@@ -1520,9 +1534,9 @@
 <p>Similarly, if <span class="arithmatex">\(Y^L\)</span> follows the uniform distribution, then the distribution of <span class="arithmatex">\(Y^P\)</span> can be easily calculated:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    X &amp;\sim uni (a,b) \\
+    X &amp;\sim \text{Uniform} (a,b) \\
     Y^P &amp;= X - d \mid X \gt d \\
-    \therefore Y^P \sim \text{Uniform} (a, b-d)
+    \therefore Y^P &amp;\sim \text{Uniform} (a, b-d)
 \end{aligned}
 \]</div>
 </div>
@@ -1544,27 +1558,6 @@
     \end{cases}
 \end{aligned}
 \]</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>If <span class="arithmatex">\(X\)</span> follows a <strong>known distribution</strong>, then <span class="arithmatex">\(E(X \land d)\)</span> can be easily found inside the formula sheet.</p>
-<p>However, if <span class="arithmatex">\(X\)</span> does <strong>NOT follow a known distribution</strong>, then <span class="arithmatex">\(E(X \land d)\)</span> must be found through first principles.</p>
-<p>Most of the time, such questions assume that <strong>losses are discrete</strong> (EG. 40, 80, 120 &amp; 160) with some deductible <strong>not exactly equal</strong> to any of the loss amounts (EG. 100).</p>
-<p>The tricky part is remembering that once the loss is larger the deductible, only the deductible will be paid:</p>
-<div class="arithmatex">\[
-\begin{aligned}
-X \land d
-&amp;=
-\begin{cases}
-    40,&amp; X = 40 \\
-    80,&amp; X = 80 \\
-    100,&amp; X \ge 120
-\end{cases} \\
-\\
-\therefore E(X \land d) &amp;= 40 \cdot P(X = 40) + 80 \cdot P(X = 80) + 100 \cdot [1 - P(X = 40) - P(X = 80)]
-\end{aligned}
-\]</div>
-<p>The key is understanding that the final case is simply the deductible itself, with its probability being the <strong>complement of all other cases below the deductible</strong>.</p>
-</div>
 <p>The <strong>insurer</strong> will then cover the excess amount, represented by the <strong>Payment Per Loss</strong> variable:</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1582,7 +1575,37 @@ X \land d
 \]</div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>An intuitive way to remember is that <span class="arithmatex">\(\text{Claim} = \text{Full Loss} - \text{Limited Loss}\)</span>.</p>
+<p>Since <span class="arithmatex">\(E(X)\)</span> is easily calculated, the main issue is calculating <span class="arithmatex">\(E(X \land d)\)</span>:</p>
+<ul>
+<li><span class="arithmatex">\(X\)</span> follows a <strong>known distribution</strong> -- <span class="arithmatex">\(E(X \land d)\)</span> formula provided</li>
+<li><span class="arithmatex">\(X\)</span> does NOT follow a <strong>known distribution</strong> -- <span class="arithmatex">\(E(X \land d)\)</span> calculated through first principles</li>
+</ul>
+<p>Most of the time, such questions assume that <strong>losses are discrete</strong> (EG. 40, 80, 120 &amp; 160) with some deductible <strong>not exactly equal</strong> to any of the loss amounts (EG. 100).</p>
+<p>The tricky part is remembering that once the loss is <strong>larger the deductible, only the deductible will be paid</strong>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+X \land 100
+&amp;=
+\begin{cases}
+    40,&amp; X = 40 \\
+    80,&amp; X = 80 \\
+    100,&amp; X \ge 120
+\end{cases} \\
+\\
+\therefore E(X \land 100)
+&amp;= 40 \cdot P(X = 40) \\
+&amp;+ 80 \cdot P(X = 80) \\
+&amp;+ 100 \cdot [1 - P(X = 40) - P(X = 80)]
+\end{aligned}
+\]</div>
+<p>The key is understanding that the final case is simply the deductible itself, with its probability being the <strong>complement of all other cases below the deductible</strong>.</p>
+<p>The same logic can be applied in an <strong>empirical context</strong>, where <span class="arithmatex">\(E(X \land d)\)</span> is the <strong>average of the total LIMITED claim sizes</strong>:</p>
+<div class="arithmatex">\[
+    E(X \land 300) = \frac{x + y + (100 - 22) \cdot 300}{100}
+\]</div>
+<p>The key is once again understanding that if the loss per claim is above <span class="arithmatex">\(d\)</span>, then it is limited to <span class="arithmatex">\(d\)</span>. Since we are interested in total claim sizes, we need to <strong>multiply it by the number of limited claims</strong> as well.</p>
+<p><!-- Obtained from Coaching Actuaries Adapt -->
+<img alt="Empirical Data" class="center" src="../Assets/4.%20Policy%20Modifications.md/Empirical%20Data.png" /></p>
 </div>
 <p>In practice, policyholders would <strong>not report losses below the deductible</strong>. Thus, the insurers payment is better represented by the <strong>Payment Per Payment</strong> variable, also known as the <strong>Excess Loss Variable</strong>:</p>
 <div class="arithmatex">\[
@@ -1621,7 +1644,7 @@ X \land d
 \]</div>
 <h3 id="variance-of-payments"><strong>Variance of Payments</strong><a class="headerlink" href="#variance-of-payments" title="Permanent link">&para;</a></h3>
 <p>Unfortunately, the formula for expectation <strong>ONLY holds for the first raw moment</strong>. Thus, the second moment can only be calculated via <strong>first principles</strong>.</p>
-<p>If severity is continuous, then the <strong>survival function method</strong> (FAM-L) can be used to calculate the second moment:</p>
+<p>If <strong>severity is continuous</strong>, then the <strong>survival function method</strong> (FAM-L) can be used to calculate the second moment:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     E \left(Y^L \right)
@@ -1635,8 +1658,8 @@ X \land d
     &amp;= \int^{\infty}_{d} S(x) \cdot 2(x-d)
 \end{aligned}
 \]</div>
-<p>If severity is discrete, then determine <strong>all possible values</strong> for <span class="arithmatex">\(Y^L\)</span> and then manually calculate the second moment as the sum product.</p>
-<p>If the variance of the payment per payment variable is required, then the <strong>same conversion</strong> applies for the second moment as well:</p>
+<p>If <strong>severity is discrete</strong>, then determine <strong>all possible values</strong> for <span class="arithmatex">\(Y^L\)</span> and then <strong>manually calculate</strong> the second moment as the sum product.</p>
+<p>If the <strong>variance of the payment per payment</strong> variable is required, then the <strong>same conversion</strong> applies for the second moment as well:</p>
 <div class="arithmatex">\[
     E \left[ \left(Y^P \right) \right]^2 = \frac{E \left[ \left(Y^L \right) \right]^2}{P(X \gt d)}
 \]</div>

@@ -486,6 +486,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../0.%20Short%20Term%20Insurance/" class="md-nav__link">
+        Short Term Insurance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../1.%20Review%20of%20Probability%20Theory/" class="md-nav__link">
         Review of Probability Theory
       </a>
@@ -611,6 +625,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#expenses" class="md-nav__link">
+    Expenses
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#profit" class="md-nav__link">
+    Profit
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#losses" class="md-nav__link">
     Losses
   </a>
@@ -648,20 +676,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#expenses" class="md-nav__link">
-    Expenses
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#profit" class="md-nav__link">
-    Profit
-  </a>
   
 </li>
       
@@ -1298,6 +1312,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#expenses" class="md-nav__link">
+    Expenses
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#profit" class="md-nav__link">
+    Profit
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#losses" class="md-nav__link">
     Losses
   </a>
@@ -1335,20 +1363,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#expenses" class="md-nav__link">
-    Expenses
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#profit" class="md-nav__link">
-    Profit
-  </a>
   
 </li>
       
@@ -1463,6 +1477,40 @@
     \text{Premium} = \text{Loss} + \text{Expense} + \text{Profit}
 \]</div>
 <p>The remaining subsections will go in-depth into <strong>each component</strong> of this equation.</p>
+<h2 id="expenses"><strong>Expenses</strong><a class="headerlink" href="#expenses" title="Permanent link">&para;</a></h2>
+<p>There are two main types of expenses - <strong>Loss Adjustment Expenses</strong> (LAE) and <strong>Other Expenses</strong>.</p>
+<p>LAE are expenses that are <strong>incurred during the claim settlement process</strong> and are typically included as <strong>part of the incurred losses</strong>.</p>
+<p>They can be further split into two categories:</p>
+<ul>
+<li><strong>Allocated LAE</strong> (ALAE): Expenses <strong>associated with</strong> a specific claim (EG. Lawyer's Fee)</li>
+<li><strong>Unallocated LAE</strong> (ULAE): Expenses that are <strong>NOT associated</strong> with a specific claim (EG. Salaries)</li>
+</ul>
+<p>As its name suggests, other expenses is a catch all for non-LAE expenses. They are generally split into two categories:</p>
+<ul>
+<li><strong>Variable Expenses</strong> (<span class="arithmatex">\(\text{VE}\)</span>): Expenses that vary with premium (EG. Commissions)</li>
+<li><strong>Fixed Expenses</strong> (<span class="arithmatex">\(\text{FE}\)</span>): Expenses that do NOT vary with premium (EG. Salaries)</li>
+</ul>
+<div class="arithmatex">\[
+    \text{Expenses} = \text{\text{VE}} \cdot P + \text{\text{FE}}
+\]</div>
+<h2 id="profit"><strong>Profit</strong><a class="headerlink" href="#profit" title="Permanent link">&para;</a></h2>
+<p>Profits can be included in ratemaking either implicitly or explicitly.</p>
+<p>By using <strong>more conservative estimates</strong> than usual, <strong>actual experience should be better</strong> than expected, which <strong>implicitly</strong> results in profit for the insurer.</p>
+<p>Alternatively, they can <strong>explicitly include a margin for the target profit</strong> (T) in the ratemaking process, as seen in the fundamental insurance equation.</p>
+<div class="arithmatex">\[
+    \pi = \pi_{T} \cdot P
+\]</div>
+<p>Based on this, we can find the <strong>target loss ratio</strong> such that the premiums are sufficient to cover both variable expenses and meet the profitability target, known as the <strong>Permissible Loss Ratio</strong> (PLR):</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    P &amp;= L + \text{FE} + \text{VE} \cdot P + \pi_{T} \cdot P \\
+    P - \text{VE} \cdot P - \pi_{T} \cdot P &amp;= L + \text{FE} \\
+    P \cdot (\text{PLR}) &amp;= L + \text{FE} \\
+    \text{PLR} &amp;= \frac{L + \text{FE}}{P} \\
+    \\
+    \therefore \text{PLR} &amp;= \text{PLR}
+\end{aligned}
+\]</div>
 <h2 id="losses"><strong>Losses</strong><a class="headerlink" href="#losses" title="Permanent link">&para;</a></h2>
 <p>Losses are the main component of determining premiums. However, before historical losses can be used, they must be <strong>Aggregated</strong>, <strong>Developed</strong> &amp; <strong>Trended</strong>.</p>
 <h3 id="loss-aggregation"><strong>Loss Aggregation</strong><a class="headerlink" href="#loss-aggregation" title="Permanent link">&para;</a></h3>
@@ -1502,37 +1550,16 @@
     \text{Trended Ultimate Loss} = \text{Ultimate Loss} \cdot (1 + \text{Trend Factor})^\text{Trend Period}
 \]</div>
 <p>However, finding trend factors is out of scope for this exam. Thus, the main focus will be on <strong>determining the trend period</strong>.</p>
-<p>Formally speaking, it is the difference between the midpoint of the <strong>Experience Period</strong> and the midpoint of the <strong>Forecast Period</strong>:</p>
+<p>Formally speaking, it is the difference between the <strong>midpoint</strong> of the <strong>Experience Period</strong> and the midpoint of the <strong>Forecast Period</strong>:</p>
 <ul>
 <li><strong>Experience Period</strong>: Period in which losses can occur for policies with <strong>old rates</strong></li>
 <li><strong>Forecast Period</strong>: Period in which losses can occur for policies with <strong>new rates</strong></li>
 </ul>
-<!-- Obtained from Coaching Actuaries -->
-<p><img alt="Trend Period" class="center" src="../Assets/7.%20Ratemaking.md/Trend%20Period.png" /></p>
-<p>The calculation for the duration of each period depends on what was used to aggregate the loss data:</p>
-<ul>
-<li><strong>AY Aggregation</strong>: Period is the AY</li>
-<li><strong>PY Aggregation</strong>: Period is the PY plus the policy term</li>
-</ul>
-<p>Assume that rates are in effect for <strong>exactly one year</strong>, from the start to the end of the PY. Assuming that policies are <strong>written uniformly throughout the year</strong>, it means that there will be policies <strong>written on the first and last day of the PY</strong>:</p>
-<ul>
-<li><strong>Written on First Day</strong>: Expires on the last day of PY</li>
-<li><strong>Written on Last Day</strong>: Expires on last day of PY plus policy term</li>
-</ul>
-<p>Both of the above policies are written using the same set of rates. Thus, the <strong>maximum possible timespan</strong> that policies written with the same set of rates can exists are:</p>
-<div class="arithmatex">\[
-    \text{PY Timespan} = \text{Rates Duration} + \text{Policy Term}
-\]</div>
-<!-- Obtained from Coaching Actuaries -->
-<p><img alt="PY Period" class="center" src="../Assets/7.%20Ratemaking.md/PY%20Period.png" /></p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The above example assumed that rates are in effect for one year, exactly at the start and end of the PY. In practice, rates can <strong>start and end at any time</strong>.</p>
-</div>
-<p>The trend period is thus the difference between the <strong>midpoint</strong> of the two periods:</p>
 <div class="arithmatex">\[
     \text{Trend Period} = \text{Forecast Period Midpoint} - \text{Experience Period Midpoint}
 \]</div>
+<!-- Obtained from Coaching Actuaries -->
+<p><img alt="Trend Period" class="center" src="../Assets/7.%20Ratemaking.md/Trend%20Period.png" /></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>For all date related computations, assume that the <strong>base unit is 1 year</strong>.</p>
@@ -1551,6 +1578,27 @@
 <li>The 3 and 4 get swapped in the denominator!</li>
 </ul>
 </div>
+<p>The difficulty comes from determining the length and hence midpoint of each period.</p>
+<p>If the periods are determined via <strong>AY</strong>, then the length of the period is simply the <strong>calendar year</strong>. Thus, its midpoint is always the <strong>middle of the year</strong>.</p>
+<div class="arithmatex">\[
+    \text{AY Period} = \text{Middle of Calendar Year}
+\]</div>
+<p>If the periods are determined via <strong>PY</strong>, then the length of the period is the <strong>CY PLUS the length of the policy</strong>.</p>
+<p>Assuming that policies are <strong>written uniformly throughout the year</strong>, it means that there will be policies <strong>written on the first and last day of the PY</strong>:</p>
+<ul>
+<li><strong>Written on First Day</strong>: Expires on the last day of PY</li>
+<li><strong>Written on Last Day</strong>: Expires on last day of PY plus policy term</li>
+</ul>
+<p>Both of the above policies are written using the same set of rates. Thus, the <strong>maximum possible timespan</strong> that policies written with the same set of rates can exists are:</p>
+<div class="arithmatex">\[
+    \text{PY Period} = \text{Rates Duration} + \text{Policy Term}
+\]</div>
+<!-- Obtained from Coaching Actuaries -->
+<p><img alt="PY Period" class="center" src="../Assets/7.%20Ratemaking.md/PY%20Period.png" /></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The above example assumed that <strong>rates are in effect for one year</strong> (CY), exactly at the start and end of the PY. In practice, rates can <strong>start and end at any time</strong>.</p>
+</div>
 <h3 id="other-trending-methods"><strong>Other Trending Methods</strong><a class="headerlink" href="#other-trending-methods" title="Permanent link">&para;</a></h3>
 <p>Rather than using <em>just one</em> trending factor, insurers might sometimes use multiple trending factors to obtain a trended ultimate and then take a <strong>weighted average</strong> of all of them instead.</p>
 <p>Similarly, they could also use <strong>regression</strong> to project the trended ultimate. Based on the regression slope <span class="arithmatex">\((m)\)</span>, the trended ultimate can be calculated:</p>
@@ -1562,40 +1610,6 @@
     \ln \frac{L^T}{L^U} &amp;= mt \\
     \frac{L^T}{L^U} &amp;= e^{mt} \\
     L^T &amp;= L^U \cdot e^{mt}
-\end{aligned}
-\]</div>
-<h2 id="expenses"><strong>Expenses</strong><a class="headerlink" href="#expenses" title="Permanent link">&para;</a></h2>
-<p>There are two main types of expenses - <strong>Loss Adjustment Expenses</strong> (LAE) and <strong>Other Expenses</strong>.</p>
-<p>LAE are expenses that are <strong>incurred during the claim settlement process</strong> and are typically included as <strong>part of the incurred losses</strong>.</p>
-<p>They can be further split into two categories:</p>
-<ul>
-<li><strong>Allocated LAE</strong> (ALAE): Expenses <strong>associated with</strong> a specific claim (EG. Lawyer's Fee)</li>
-<li><strong>Unallocated LAE</strong> (ULAE): Expenses that are <strong>NOT associated</strong> with a specific claim (EG. Salaries)</li>
-</ul>
-<p>As its name suggests, other expenses is a catch all for non-LAE expenses. They are generally split into two categories:</p>
-<ul>
-<li><strong>Variable Expenses</strong> (\text{VE}): Expenses that vary with premium (EG. Commissions)</li>
-<li><strong>Fixed Expenses</strong> (\text{FE}): Expenses that do NOT vary with premium (EG. Salaries)</li>
-</ul>
-<div class="arithmatex">\[
-    \text{Expenses} = \text{\text{VE}} \cdot P + \text{\text{FE}}
-\]</div>
-<h2 id="profit"><strong>Profit</strong><a class="headerlink" href="#profit" title="Permanent link">&para;</a></h2>
-<p>Profits can be included in ratemaking either implicitly or explicitly.</p>
-<p>By using <strong>more conservative estimates</strong> than usual, <strong>actual experience should be better</strong> than expected, which <strong>implicitly</strong> results in profit for the insurer.</p>
-<p>Alternatively, they can <strong>explicitly include a margin for the target profit</strong> (T) in the ratemaking process, as seen in the fundamental insurance equation.</p>
-<div class="arithmatex">\[
-    \pi = \pi_{T} \cdot P
-\]</div>
-<p>Based on this, we can find the <strong>target loss ratio</strong> such that the premiums are sufficient to cover both variable expenses and meet the profitability target, known as the <strong>Permissible Loss Ratio</strong> (PLR):</p>
-<div class="arithmatex">\[
-\begin{aligned}
-    P &amp;= L + \text{FE} + \text{VE} \cdot P + \pi_{T} \cdot P \\
-    P - \text{VE} \cdot P - \pi_{T} \cdot P &amp;= L + \text{FE} \\
-    P \cdot (\text{PLR}) &amp;= L + \text{FE} \\
-    \text{PLR} &amp;= \frac{L + \text{FE}}{P} \\
-    \\
-    \therefore \text{PLR} &amp;= \text{PLR}
 \end{aligned}
 \]</div>
 <h2 id="premiums"><strong>Premiums</strong><a class="headerlink" href="#premiums" title="Permanent link">&para;</a></h2>
@@ -1686,6 +1700,10 @@
 <!-- Obtained from Coaching Actuaries -->
 <p><img alt="Parallelogram Method" class="center" src="../Assets/7.%20Ratemaking.md/Parallelogram%20Method.png" /></p>
 <p>Each <strong>square represents a calendar year</strong> while <strong>diagonal lines represent policies</strong>. Each diagonal has a horizontal length equal to the policy term in years.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>In practice, we <strong>only need 3 squares</strong>, with the middle square being the CY whose premium we would like to trend upwards.</p>
+</div>
 <p>In particular, <strong>diagonals start from the first day of a new rate</strong>. Thus, the area <strong>between any two diagonals forms a Parellogram</strong>, which represent all policies written under a particular set of rates.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1777,7 +1795,7 @@
 </div>
 <h3 id="indicative-premium"><strong>Indicative Premium</strong><a class="headerlink" href="#indicative-premium" title="Permanent link">&para;</a></h3>
 <p>The last part of the ratemaking process is to ensure that there the <strong>premiums are sufficient</strong> to cover future losses, expenses and target profits.</p>
-<p>The sufficient amount of premium is known as the <strong>Indicative Premium</strong> <span class="arithmatex">\((P^I)\)</span>, which can be solved for using the fundamental insurance equation:</p>
+<p>The <strong>sufficient premium</strong> is known as the <strong>Indicative Premium</strong> <span class="arithmatex">\((P^I)\)</span>, which can be solved for using the fundamental insurance equation:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     P^I &amp;= L + \text{FE} + \text{VE} \cdot P^I + \pi_{T} \cdot P \\
@@ -1821,12 +1839,12 @@
 <p>The bar notation is used in this context as they are technically the <strong>average losses and fixed expenses per exposure</strong>.</p>
 </div>
 <h4 id="practical-tips"><strong>Practical Tips</strong><a class="headerlink" href="#practical-tips" title="Permanent link">&para;</a></h4>
-<p>Although both methods are equivalent, they are NOT expected to produce the similar results. Do not use them to sense check one another.</p>
-<p>For both methods, <strong>always trend the losses and premiums</strong> before plugging them into the equations.</p>
-<p>If multiple years of data are given, then use the <strong>weighted average</strong> of the loss ratios or pure premiums. If any, the question <strong>will usually specify the weights</strong> to use.</p>
+<p>Remember that this is the <strong>final step</strong> for ratemaking. This means that <strong>all other steps must be completed</strong> before this. Thus, if the question provides <strong>non-trended or non-aggregated</strong> data, then it must be done before continuing.</p>
+<p>If multiple years of data are provided, then the indicative premium should be calculated using the <strong>weighted average</strong> of the Loss Ratios <span class="arithmatex">\((\text{LR})\)</span> or Pure Premiums <span class="arithmatex">\((\bar{L})\)</span>. The question will usually <strong>specify the weights</strong> to use.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>It is the weighted average of the Loss Ratios and Pure Premiums, NOT the actual losses and premiums.</p>
+<p>It is a common mistake to use the weighted average of the indicative premiums or use the weighted average of the raw losses or premiums. Be careful!</p>
+<p>Although both methods are equivalent, they are NOT expected to produce the similar results. Do NOT use them to sense check one another.</p>
 </div>
 
 

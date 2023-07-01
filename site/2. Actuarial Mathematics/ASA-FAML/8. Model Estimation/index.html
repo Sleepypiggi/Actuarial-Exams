@@ -484,6 +484,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../ASA-FAMS/0.%20Short%20Term%20Insurance/" class="md-nav__link">
+        Short Term Insurance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../ASA-FAMS/1.%20Review%20of%20Probability%20Theory/" class="md-nav__link">
         Review of Probability Theory
       </a>
@@ -1366,10 +1380,13 @@
 \]</div>
 <!-- Obtained from Coaching Actuaries -->
 <p><img alt="Grouped Data" class="center" src="../Assets/8.%20Model%20Estimation.md/Grouped%20Data.png" /></p>
-<p>However, if <span class="arithmatex">\(k\)</span> is within the range, by assuming that values within the range are <strong>uniformly distributed</strong>, then the probability can be <strong>linearly interpolated</strong> from the probabilities at the boundary.</p>
+<p>However, if <span class="arithmatex">\(k\)</span> is within the range, by assuming that values within the range are <strong>uniformly distributed</strong>, then the probability can be <strong>linearly interpolated</strong> from the probabilities at the boundary:</p>
+<div class="arithmatex">\[
+    F(s) = \frac{b-s}{b-a} \cdot F(a) + \frac{s-a}{b-a} \cdot F(b)
+\]</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Similar to the fractional age interpolation, recall that the <strong>larger weight should be applied to the boundary age</strong> that the estimated age is nearest to.</p>
+<p>Similar to the fractional age interpolation, recall that the <strong>larger weight should be applied to the boundary age</strong> that the estimated age is nearest to.s</p>
 </div>
 <!-- Obtained from Coaching Actuaries -->
 <p><img alt="Grouped Interpolation" class="center" src="../Assets/8.%20Model%20Estimation.md/Grouped%20Interpolation.png" /></p>
@@ -1384,6 +1401,11 @@
 <li>5 more individuals join the study at <span class="arithmatex">\(t=1\)</span>; <strong>Left Truncated</strong> at <span class="arithmatex">\(t=1\)</span></li>
 <li>3 individual leave the study at <span class="arithmatex">\(t=0.5\)</span>; <strong>Right Censored</strong> at <span class="arithmatex">\(t=0.5\)</span></li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If there are people who die and leave the study at the same time, then the people who left are assumed to have <strong>left after the people who die</strong>.</p>
+<p>In other words, any death or survival probabilities should include them.</p>
+</div>
 <!-- Obtained from Coaching Actuaries -->
 <p><img alt="Kaplan Meier Timeline" class="center" src="../Assets/8.%20Model%20Estimation.md/Kaplan%20Meier%20Timeline.png" /></p>
 <p>Exam questions often present the information in a table format:</p>
@@ -1488,31 +1510,66 @@
 </table>
 <p></center></p>
 <h3 id="dead-alive-model"><strong>Dead Alive Model</strong><a class="headerlink" href="#dead-alive-model" title="Permanent link">&para;</a></h3>
-<p>Unlike the Nelson Aelen method, the MLE <strong>DIRECTLY estimates the force of mortality</strong>, which can be then used to compute survival probabilities.</p>
-<p>One key concept is the idea of <strong>Central Exposed to Risk</strong> (<span class="arithmatex">\(E^c_x\)</span>), which is a measure of <em>how long</em> the individual has been <strong>alive in the study</strong> at the time.</p>
-<p>Consider the following example to estimate the force of mortality at <strong>age 51</strong>:</p>
+<p>The last method is known as the <strong>Dead Alive</strong> Model, which estimates the <strong>force of mortality</strong>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is not to be confused with the nelson aelen estimator which estimates the <strong>cumulative force of mortality</strong>.</p>
+</div>
+<p>The key idea is <strong>Central Exposed to Risk</strong> <span class="arithmatex">\((E^c_x)\)</span>, which is a measure of <strong>how long</strong> an individual was <strong>alive in the study</strong> while at a <strong>specified age</strong>.</p>
+<p>Consider a study conducted for individuals <strong>aged 50</strong>:</p>
 <!-- Obtained from Coaching Actuaries -->
-<p><img alt="CER Example A" class="center" src="../Assets/8.%20Model%20Estimation.md/CER%20Example%20A.png" /></p>
-<p>Firstly, we need to determine if and when the individuals turn 51:</p>
-<!-- Obtained from Coaching Actuaries -->
-<p><img alt="CER Example B" class="center" src="../Assets/8.%20Model%20Estimation.md/CER%20Example%20B.png" /></p>
-<p>The <strong>date they turn 51</strong> is used as the <strong>starting point</strong> for the <span class="arithmatex">\(E^c_x\)</span>. The ending point is based on the <strong>year that they turn 51</strong> and is one of the following:</p>
+<p><img alt="Central Exposed Risk" class="center" src="../Assets/8.%20Model%20Estimation.md/Central%20Exposed%20Risk.png" /></p>
+<p>If the individual <strong>has not reached the target age</strong>, then we only start counting from their <strong>birthday</strong>. If they already have, then we can start counting immediately.</p>
+<p>In either case, the study ends at the either the <strong>death of the invididual</strong> or on their <strong>birthday</strong> (as they are no longer the desired age), whichever comes first.</p>
+<p>The Central Exposed Risk is the <strong>sum of these durations</strong>. In the above example,</p>
 <ul>
-<li><strong>Date of death</strong> - Died during the year</li>
-<li><strong>Date of withdrawal</strong> - Left during the year</li>
-<li><strong>Date they turn 52</strong> - Survived the entire year</li>
+<li><strong>First Person</strong>: Not yet aged 50, <strong>turned 51 in 1 year</strong> from birthday</li>
+<li><strong>Second Person</strong>: Already aged 50, <strong>died in 0.3 years</strong></li>
+<li><strong>Third Person</strong>: Already agd 50, <strong>turned 51 in 0.2 years</strong></li>
 </ul>
-<p>From this, <span class="arithmatex">\(E^c_x\)</span> is calculated <strong>in years</strong>:</p>
-<!-- Obtained from Coaching Actuaries -->
-<p><img alt="CER Example C" class="center" src="../Assets/8.%20Model%20Estimation.md/CER%20Example%20C.png" /></p>
-<p>Using the CER, the force of mortality can be determined:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    E^c_x
+    &amp;= 1 + 0.3 + 0.2 \\
+    &amp;= 1.5
+\end{aligned}
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some questions may not provide the age of the policyholder so explicitly like above.</p>
+<p>They may provide the <strong>dates</strong> that they joined and left the study as well as their birthdays, making it <strong>slightly more challenging to compute</strong>.</p>
+</div>
+<p>The next statistic is the <strong>number of individuals who died at that age</strong>, <span class="arithmatex">\(d_x\)</span>. The key thing to note is that if the individual dies before they turn that age or dies after they grew one age, then they are NOT counted in this metric.</p>
+<p>Putting both together, the <strong>force of mortality</strong> can be determined:</p>
 <div class="arithmatex">\[
     \hat{\mu}_x = \frac{d_x}{E^c_x}
 \]</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The general idea is that <span class="arithmatex">\(E^c_x\)</span> represents the <strong>total time that individuals were alive in the study</strong>. The above examples was only studying mortality at a <strong>specified age</strong>.</p>
+<p>Studies could also be for "any age", such as in this example for <strong>newborns</strong>:</p>
+<p><!-- Obtained from Coaching Actuaries -->
+<img alt="CER Any Age" class="center" src="../Assets/8.%20Model%20Estimation.md/CER%20Any%20Age.png" /></p>
+<div class="arithmatex">\[
+\begin{aligned}
+    E^c_x &amp;= 1586 + 597 = 2183 \\
+    d_x &amp;= 39 \\
+    \therefore \hat{\mu}_x &amp;= \frac{39}{2183}
+\end{aligned}
+\]</div>
+</div>
 <p>Assuming that this <strong>force is constant</strong>, the resulting survival probability is calculated as:</p>
 <div class="arithmatex">\[
     \hat{S}_x(t) = e^{-\hat{\mu}_x}
 \]</div>
+<p>Another metric that can be calculated is the <strong>Actuarial Estimate of death</strong> <span class="arithmatex">\((\tilde{q}_{x})\)</span>:</p>
+<div class="arithmatex">\[
+    \tilde{q}_{x} = \frac{d_x}{E^c_x - 0.5 \cdot d_x}
+\]</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The denominator is also known as the <strong>Initial Exposed to Risk</strong>.</p>
+</div>
 <h3 id="maximum-likelihood-estimation"><strong>Maximum Likelihood Estimation</strong><a class="headerlink" href="#maximum-likelihood-estimation" title="Permanent link">&para;</a></h3>
 <p>Given a distribution for future lifetime, MLE can also be used to estimate the parameters of that distribution via first principles.</p>
 <p>Recall that for a continuous distribution, the PDF is used to form the likelihood function:</p>
@@ -1588,7 +1645,6 @@
 \end{aligned}
 \]</div>
 <p>Unfortunately, this formula is not provided on the formula sheet and thus must be memorized.</p>
-<!-- Hazard??? -->
 
 
 
