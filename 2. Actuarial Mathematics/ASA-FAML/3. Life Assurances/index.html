@@ -484,6 +484,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../ASA-FAMS/0.%20Short%20Term%20Insurance/" class="md-nav__link">
+        Short Term Insurance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../ASA-FAMS/1.%20Review%20of%20Probability%20Theory/" class="md-nav__link">
         Review of Probability Theory
       </a>
@@ -1712,6 +1726,14 @@
     &amp;= {}_{m}E_{x} \cdot {}_{n}E_{x+m}
 \end{aligned}
 \]</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>This allows us to use the table values for a wide range of PEs, reducing the chance of miscalculation:</p>
+<div class="arithmatex">\[
+    {}_{30}E_{x} = {}_{20}E_{x} \cdot {}_{10}E_{x+20}
+\]</div>
+<p>However, special care must be taken to ensure that the age in the second term is updated.</p>
+</div>
 <h3 id="endowment-assurance"><strong>Endowment Assurance</strong><a class="headerlink" href="#endowment-assurance" title="Permanent link">&para;</a></h3>
 <p><strong>Endowment Assurances</strong> are a <em>combination</em> of term assurances and pure endowments:</p>
 <ul>
@@ -1978,7 +2000,7 @@
 \]</div>
 <p>EA recursions are omitted from this section as it is simply the combination of a TA and PE.</p>
 <h4 id="probabilities"><strong>Probabilities</strong><a class="headerlink" href="#probabilities" title="Permanent link">&para;</a></h4>
-<p>Questions could also ask for the <strong>probability that the present value (NOT THE EPV!) of the benefits takes on some value</strong> <span class="arithmatex">\(u\)</span>.</p>
+<p>Questions could also ask for the <strong>probability that the present value of the benefits takes on some value</strong> <span class="arithmatex">\(u\)</span>.</p>
 <div class="arithmatex">\[
 \begin{aligned}
     P(\text{WL} \le u)
@@ -1992,16 +2014,7 @@
 <p class="admonition-title">Warning</p>
 <p>It is a <strong>common mistake</strong> to forget to flip the inequality sign as <span class="arithmatex">\(\ln v \lt 0\)</span>.</p>
 </div>
-<p>The RHS is unlikely to be an integer. However, <span class="arithmatex">\(K_x\)</span> can only take integer values. Thus, the values are <strong>rounded up</strong> to the nearest whole number (EG. 5):</p>
-<div class="arithmatex">\[
-\begin{aligned}
-    P \left(K_x \ge \frac{\ln u}{\ln v} - 1 \right)
-    &amp;= P(K_x \ge 5) \\
-    &amp;= P(T_x \ge 5) \\
-    &amp;= {}_{5}p_x
-\end{aligned}
-\]</div>
-<p>Questions will <strong>not be as straightforward as above</strong>. Most of the time, the required value of <span class="arithmatex">\(K_x\)</span> has to be determined <strong>intuitively from the given scenario</strong>.</p>
+<p>Questions will <strong>not be as straightforward as above</strong>. Sometimes, the required value of <span class="arithmatex">\(K_x\)</span> has to be determined <strong>intuitively from the given scenario</strong>.</p>
 <p>For instance, assume that the premium is 1 and the benefit is 10. A question may ask for the probability that the total collected premiums exceeds the undiscounted benefit.</p>
 <p>Since premiums are only received when the policyholder is alive, the insurer must collect <strong>at least 10 rounds of premium</strong> to "break even". In other words, the question is asking for the <strong>probability that <span class="arithmatex">\(K_x \gt 9\)</span></strong>.</p>
 <div class="admonition warning">
@@ -2010,31 +2023,8 @@
 <p>However, since premiums are paid at the <strong>start of the year</strong>, it doesnt matter whether the policyholder survives the 10<sup>th</sup> year or not; as long as they survive 9 years to see the 10<sup>th</sup> year.</p>
 </div>
 <h4 id="percentiles"><strong>Percentiles</strong><a class="headerlink" href="#percentiles" title="Permanent link">&para;</a></h4>
-<p>Similarly, questions could ask for the <strong>percentile of the PV</strong>. Recall that the definition of a percentile is the value in which <span class="arithmatex">\(100p\)</span> of <strong>observations fall BELOW</strong>.</p>
-<p>Since the PV is a transformation of the future lifetime variable, the <strong>percentile of the PV is the percentile of the future lifetime variable</strong>.</p>
-<p>Let <span class="arithmatex">\(Z_{p}\)</span> be the percentile of the PV and <span class="arithmatex">\(K_{p}\)</span> be the percentile of the future lifetime:</p>
-<div class="arithmatex">\[
-    Z_{p} = B \cdot V^{K_{p}+1}
-\]</div>
-<p>Since the PV is a <strong>decreasing function</strong>, the range of future lifetime that corresponds to <span class="arithmatex">\(Z_{p}\)</span> is always from <strong><span class="arithmatex">\(K_{p}\)</span> to its upper limit</strong>:</p>
-<!-- Obtained from Coaching Actuaries -->
-<p><img alt="Percentile" class="center" src="../Assets/3.%20Life%20Assurances.md/Percentile.png" /></p>
-<p>This can be extremely <strong>hard to grasp</strong> because we learnt percentiles with increasing RVs, which may lead us to mistakenly believe that percentiles are always calculated using the inverse CDF.</p>
-<div class="arithmatex">\[
-\begin{aligned}
-    P(v^{K_x+1} \le Z_{p}) \le p \\
-    P(K_x \gt K_{p}) \le p \\
-    {}_{K_{p}+1}p_{x} \le p \\
-    \frac{\ell_{x + K_{p} + 1}}{\ell_{x}} \le p \\
-    \ell_{x + K_{p} + 1} \le p \cdot \ell_{x}
-\end{aligned}
-\]</div>
-<p>We can then search the SULT for the <strong>smallest integer age</strong> where the inequality is fulfilled and then solve for <span class="arithmatex">\(K_{p}\)</span> and thus <span class="arithmatex">\(Z_{p}\)</span>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If the future lifetime variable is <strong>continuous</strong>, then the <strong>percentile must be more precise</strong>; using a fractional age instead.</p>
-<p>Thus, the fractional age must be interpolated between <span class="arithmatex">\(\ell_{x + K_{p} + 1}\)</span> and <span class="arithmatex">\(\ell_{x}\)</span> using an appropriate assumption.</p>
-</div>
+<p>Similarly, questions could ask for the <strong>percentile of the PV</strong>.</p>
+<p>Since the PV is a transformation of the future lifetime variable, the <strong>percentile of the PV is the percentile of the future lifetime variable</strong>, which was covered in the survival model section.</p>
 <h2 id="payable-m-thly"><strong>Payable M-thly</strong><a class="headerlink" href="#payable-m-thly" title="Permanent link">&para;</a></h2>
 <p>A slightly more complicated life assurance contract is one that pays benefits <span class="arithmatex">\(m\)</span> times a year:</p>
 <ul>

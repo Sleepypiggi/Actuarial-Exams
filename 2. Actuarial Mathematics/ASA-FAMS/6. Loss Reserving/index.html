@@ -486,6 +486,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../0.%20Short%20Term%20Insurance/" class="md-nav__link">
+        Short Term Insurance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../1.%20Review%20of%20Probability%20Theory/" class="md-nav__link">
         Review of Probability Theory
       </a>
@@ -634,6 +648,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reserve-calculation" class="md-nav__link">
+    Reserve Calculation
+  </a>
   
 </li>
       
@@ -1236,6 +1257,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#reserve-calculation" class="md-nav__link">
+    Reserve Calculation
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1254,10 +1282,6 @@
 <h1 id="loss-reserving"><strong>Loss Reserving</strong><a class="headerlink" href="#loss-reserving" title="Permanent link">&para;</a></h1>
 <h2 id="overview"><strong>Overview</strong><a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>General Insurance claims may be filed <strong>long after</strong> the loss event occurs, thus they must set up a <strong>Loss Reserve</strong> to ensure that they have enough capital to pay out these claims well into the future.</p>
-<p>Generally speaking, this process involves <strong>estimating how the loss will develop over time</strong>, until it reaches some final amount. The loss reserve is thus <em>difference</em> between the final amount that they expect to pay out and what has already been paid out:</p>
-<div class="arithmatex">\[
-    \text{Loss Reserve} = \text{Final Loss} - \text{Paid Loss}
-\]</div>
 <h2 id="loss-terminology"><strong>Loss Terminology</strong><a class="headerlink" href="#loss-terminology" title="Permanent link">&para;</a></h2>
 <p>This subsection will properly introduce the proper terminology regarding losses</p>
 <p>There are three basic building blocks of a reported claim:</p>
@@ -1269,30 +1293,34 @@
 <div class="arithmatex">\[
     \text{Incurred Loss} = \text{Paid Loss} + \text{Case Reserve}
 \]</div>
-<p>As mentioned previously, claims can be reported any time after an accident has occured. Thus, there will always be claims for losses that have already been incurred in the past but have not been reported to the insurer, appropriately named as <strong>Incurred But Not Reported</strong> (IBNR) losses.</p>
-<p>This is the <strong>main quantity</strong> that the insurer must set up a reserve for, known as the <strong>IBNR Reserve</strong>. The loss reserve is thus the combination of the two aforementioned reserves:</p>
+<p>The problem is that there will always be losses stemming from accidents that occurred in the past that have <strong>yet to be reported</strong> to the insurer, appropriately named as <strong>Incurred But Not Reported</strong> (IBNR) losses.</p>
+<p>The main objective of loss reserving is to estimate this quantity by <strong>predicting how losses will grow</strong> over time thus ensuring that they have enough capital to cover it via an <strong>IBNR Reserve</strong>.</p>
+<p>This process of predicting how losses will grow is known as <strong>Loss Development</strong>. The <strong>final loss amount</strong> is known as the <strong>Ultimate Loss</strong>, from which <strong>no further development</strong> will occur.</p>
+<p>The <strong>difference</strong> between the final loss (<strong>ultimate</strong>) and what has been reported (<strong>incurred</strong>) is the IBNR reserve as of the current time:</p>
 <div class="arithmatex">\[
-    \text{Loss Reserve} = \text{Case Reserve} + \text{IBNR Reserve}
+    \text{IBNR Reserve} = \text{Ultimate Loss} - \text{Incurred Loss}
 \]</div>
-<p>The <strong>estimated total loss amount</strong> that the insurer will pay to <em>finally</em> the close the claim is known as the <strong>Ultimate Loss</strong>. Thus, the first equation can be rewritten more formally:</p>
+<p>Thus, the total loss reserve is thus the <strong>combination of the two reserves</strong>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    \text{Loss Reserve} &amp;= \text{Ultimate Loss} - \text{Paid Loss} \\
-    \\
-    \text{Loss Reserve} &amp;= \text{Ultimate Loss} - \text{Paid Loss} \\
-    \text{Case Reserve} + \text{IBNR Reserve} &amp;= \text{Ultimate Loss} - \text{Paid Loss} \\
-    \text{IBNR Reserve} &amp;= \text{Ultimate Loss} - \text{Paid Loss} - \text{Case Reserve} \\
-    \text{IBNR Reserve} &amp;= \text{Ultimate Loss} - (\text{Paid Loss} + \text{Case Reserve}) \\
-    \text{IBNR Reserve} &amp;= \text{Ultimate Loss} - \text{Incurred Loss}
+    \text{Loss Reserve}
+    &amp;= \text{Case Reserve} + \text{IBNR Reserve} \\
+    &amp;= \text{Ultimate Loss} - \text{Incurred Loss} + \text{Case Reserve} \\
+    &amp;=  \text{Ultimate Loss} - \text{Paid Loss}
 \end{aligned}
 \]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Intuitively, the total reserve is simply the difference between the ultimate loss and what has been paid, as the total reserve is meant to <strong>cover all unpaid losses</strong>.</p>
+</div>
 <h2 id="expected-loss-ratio-method"><strong>Expected Loss Ratio Method</strong><a class="headerlink" href="#expected-loss-ratio-method" title="Permanent link">&para;</a></h2>
 <p>The <strong>simplest method</strong> for estimating ultimate losses is known as the <strong>Expected Loss Ratio Method</strong>.</p>
-<p><strong>Loss Ratios</strong> (LR) are the <strong>ratio of losses to premiums</strong>, which is a measure of the percentage of premiums that have been used to pay losses. Ideally, the insurer would like to have a <strong>loss ratio lesser than 100%</strong>.</p>
+<p><strong>Loss Ratios</strong> (LR) are the <strong>ratio of losses to premiums</strong>, which is a measure of the <strong>percentage of premiums</strong> that have been used to pay losses.</p>
 <div class="arithmatex">\[
     \text{LR} = \frac{\text{Loss}}{\text{Premium}}
 \]</div>
-<p>The <strong>Expected Loss Ratio</strong> (ELR) is the <strong>final loss ratio</strong>; the ratio of the ultimate loss to the total premiums collected. Thus, since total premiums are known, ultimate losses can be estimated by estimating the ELR:</p>
+<p>The <strong>Expected Loss Ratio</strong> (ELR) is the <strong>final loss ratio</strong>; the ratio of the <strong>ultimate loss to the total premiums</strong> collected over the life of the policy.</p>
+<p>Since <strong>premiums are known</strong> by the insurer, this can be used to obtain an estimate for the ultimate loss:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     \text{ELR} &amp;= \frac{\text{Ultimate Loss}}{\text{Total Premium}} \\
@@ -1300,18 +1328,12 @@
     \therefore \text{Ultimate Loss} &amp;= \text{Earned Premium} \cdot \text{ELR}
 \end{aligned}
 \]</div>
-<p>The above is calculated per <strong>Block of Business</strong>. It refers to a <strong>group of similar policies</strong> under the <strong>same line of business</strong> over the <strong>same policy period</strong>.</p>
-<p>For most questions, the data provided is typically <strong>aggregated by accident year</strong>, thus <strong>different accident years represent different blocks of business</strong>.</p>
-<p>The total reserve is thus the sum of the reserve for all blocks of business (AY):</p>
-<div class="arithmatex">\[
-    \text{Total Reserve} = \sum \text{Reserve}_\text{AY}
-\]</div>
 <h2 id="chain-ladder-method"><strong>Chain Ladder Method</strong><a class="headerlink" href="#chain-ladder-method" title="Permanent link">&para;</a></h2>
 <p>Another method of estimating ultimate losses is known as the <strong>Chain Ladder</strong> (CL) Method.</p>
 <p>This methods works by finding <strong>patterns in historical loss development</strong> and assumes that future losses will <strong>continue to develop in a similar manner</strong>.</p>
 <p>In order to efficiently find patterns in historical losses, they are recorded in a convenient format known as a <strong>Development Table</strong>:</p>
 <ul>
-<li><strong>Each Cell</strong> represents the loss that occurred in that year</li>
+<li><strong>Each Cell</strong> represents the <strong>paid losses</strong> in that year</li>
 <li><strong>Each Row</strong> shows losses that occurred in the <strong>same Accident Year</strong> (AY)</li>
 <li><strong>Each Column</strong> shows losses that occurred in the <strong>same Development Year</strong> (DY)</li>
 <li><strong>Each Diagonal</strong> shows losses that occurred in the <strong>same Calendar Year</strong> (CY)</li>
@@ -1319,133 +1341,171 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The AY that the diagonal originates from is the CY for that calendar year. This can be seen by the colouring of the cells in the table below.</p>
+<p>The definition for AY and CY can be found in the ratemaking section.s</p>
 </div>
 <!-- Obtained from Coaching Actuaries -->
 <p><img alt="Incremental Development Table" class="center" src="../Assets/6.%20Loss%20Reserving.md/Incremental%20Development%20Table.png" /></p>
-<p>DYs are also known as the <strong>age of the claim</strong> as they indicate how long after the AY when the claims are paid - DY3 represents that the claim was paid 3 years after the AY.</p>
-<p>The next step is to find the <strong>Cumulative Losses</strong> per AY. This is done by changing the values of each cell to the <strong>sum of all previous cells in the same row</strong>.</p>
+<p>DYs are also known as the <strong>age of the claim</strong> as they indicate how long after the AY when the claims are paid. For instance, DY3 represents that the claim was paid 3 years after the AY.</p>
+<p>The next step is to find the <strong>Cumulative paid Losses</strong> per AY. This is done by changing the values of each cell to the <strong>sum of all previous cells in the same row</strong>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     \text{Cumulative Loss} &amp;= \text{Sum of Losses in the same AY} \\
-    \text{Cumulative Cell}_{AY, DY} &amp;= \sum_{DY} \text{Incremental Cell}_{AY, DY}
+    \text{Cumulative Cell}_{\text{AY, DY}} &amp;= \sum_{DY} \text{Cell}_{\text{AY, DY}}
 \end{aligned}
 \]</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Some questions may directly provide the cumulative loss in the table rather than incremental losses, saving you the time of having to sum everything up.</p>
+<p>Some questions may <strong>directly provide the cumulative losses</strong> in the table rather than incremental losses, saving you the time of having to sum everything up.</p>
 </div>
-<p>The number of columns indicates how long the insurer expects the losses to develop for. If the last column is DY6, then all claims must be <strong>settled and closed by DY6</strong>. Thus, the <strong>cumulative loss at DY6 is the ultimate loss</strong>.</p>
-<!-- Obtained from Coaching Actuaries -->
-<p><img alt="Cumulative Development Tables" class="center" src="../Assets/6.%20Loss%20Reserving.md/Cumulative%20Development%20Table.png" /></p>
+<p>The <strong>number of columns</strong> indicates how long the insurer expects the losses to develop for. If the last column is DY6, then the <strong>cumulative loss at DY6 is the ultimate loss</strong>. </p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Some questions will require us to construct our own table. Thus, it is important to fully <strong>understand the intuition</strong> behind each of the components.</p>
-<p>The fundamental assumption behind the method is that losses take the <strong>same duration to mature</strong> to their ultimate values.</p>
-<p>Note that this DOES NOT mean that losses all reach thier ultimate values on the same year. Losses originating from different AYs will always reach ultimate on a different year; <strong>same duration NOT same date</strong>.</p>
+<p>Some questions will require us to construct our own table. Thus, it is important to fully <strong>understand the intuition</strong> behind it.</p>
+<p>The key idea under the CL method is that losses all take the <strong>same duration</strong> to develop to their ultimate values.</p>
+<p>This means that the losses occurring in different years will take the <strong>same duration to mature at different dates</strong>. It is an extremely common mistake to think that all the losses develop to ultimate on the same date.</p>
 <p>Thus, the DYs can be thought of as the <strong>age of the losses</strong>. Losses from later AYs are <strong>"younger" and hence need more time to mature</strong>.</p>
 </div>
-<p>The goal is now to find the h**istorical patterns** in the losses and then use those patterns to fill up the blank half of the development table.</p>
+<!-- Obtained from Coaching Actuaries -->
+<p><img alt="Cumulative Development Tables" class="center" src="../Assets/6.%20Loss%20Reserving.md/Cumulative%20Development%20Table.png" /></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Instead of Development Year, some questions may use the term <strong>Calendar Year</strong> (CY). As will be mentioned in the ratemaking chapter, <strong>CY and AY are assumed to be synonmous</strong> for the purposes of losses.</p>
+<p>The difference between the CY and the AY is the development year. For instance, if the <strong>cumulative losses at CY7</strong> are given for <strong>AY5 losses</strong>, then the losses are at <strong>DY2</strong>.</p>
+<p><!-- Self Made -->
+<img alt="CY AY Relationship" class="center" src="../Assets/6.%20Loss%20Reserving.md/CY%20AY%20Relationship.png" /></p>
+</div>
+<p>The goal is now to find the <strong>historical patterns</strong> in the losses and then use those patterns to fill up the blank half of the development table.</p>
 <p>The historical patterns are known as <strong>Loss Development Factors</strong> (LDF), which is the <strong>ratio of the current DY's cumulative loss to the previous DY's cumulative loss</strong>:</p>
 <div class="arithmatex">\[
-    \text{LDF}_{AY, DY} = \frac{\text{Cumulative Cell}_{AY, DY}}{\text{Cumulative Cell}_{AY, DY-1}}
+    \text{LDF}_{\text{AY, DY}} = \frac{\text{Cumulative Cell}_{\text{AY, DY}}}{\text{Cumulative Cell}_{\text{AY, DY}-1}}
 \]</div>
 <!-- Obtained from Coaching Actuaries -->
 <p><img alt="LDF Development Table" class="center" src="../Assets/6.%20Loss%20Reserving.md/LDF%20Development%20Table.png" /></p>
 <p>The next step would be to <strong>develop each years using the development factors</strong>, until it reaches the ultimate loss:</p>
 <div class="arithmatex">\[
-    \text{Cumulative Cells}_{AY, DY+1} = \text{Cumulative Cells}_{AY, DY} \cdot \text{LDF}_{AY, DY}
+    \text{Cumulative Cells}_{\text{AY, DY}+1} = \text{Cumulative Cells}_{\text{AY, DY}} \cdot \text{LDF}_{\text{AY, DY}}
 \]</div>
-<p>However, the problem is that for all years other than the final year, there are <strong>multiple LDFs</strong> for each DY. There are a few solutions to this: Simple Average, Recent Average or Weighted Average, usually <strong>specified by the question</strong>.</p>
-<p>Assuming that the simple average is used, we will arrive at the following LDFs and thus the corresponding <strong>final development table</strong>:</p>
+<p>However, the problem is that for all years other than the final year, there are usually <strong>multiple LDFs</strong> for each DY. Questions will usually specify to either the arithmetic average, recent average of weighted average.</p>
+<p>For simplicity, we assume that the <strong>arithmetic average</strong> is used. We will arrive at the following LDFs and thus the corresponding <strong>final development table</strong>:</p>
 <!-- Obtained from Coaching Actuaries -->
 <p><img alt="Simple Average LDFs" class="center" src="../Assets/6.%20Loss%20Reserving.md/Simple%20Average%20LDF.png" /></p>
 <!-- Obtained from Coaching Actuaries -->
-<p><img alt="Final Development Table" class="center" src="../Assets/6.%20Loss%20Reserving.md/Final%20Development%20Table.png" /></p>
-<p>Using this table, the reserve for each AY can be calculated:</p>
-<ol>
-<li><strong>Ultimate Loss</strong>: Cell in the <em>last</em> column</li>
-<li><strong>Paid Loss</strong>: Cell in the <em>last originally</em> filled column (Highlighted in yellow)</li>
-</ol>
-<div class="arithmatex">\[
-\begin{aligned}
-    \text{Reserve}_{AY}
-    &amp;= \text{Ultimate Loss} - \text{Paid Loss} \\
-    &amp;= \text{Cumulative Cell}_{AY, DY Final} - \text{Cumulative Cell}_{AY, DY Original} \\
-    \\
-    \therefore \text{Total Reserve} &amp;= \sum_{\text{AY}} \text{Reserve}_{AY}
-\end{aligned}
-\]</div>
-<!-- Obtained from Coaching Actuaries -->
 <p><img alt="Reserve Development Table" class="center" src="../Assets/6.%20Loss%20Reserving.md/Reserve%20Development%20Table.png" /></p>
-<p>Technically speaking, it is a waste of time find an estimate for all the blank cells in the table, since we are only interested in the final column.</p>
-<p>Thus, instead of slowly multiplying the LDFs each year, we can instead find an <strong>Age to Ultimate</strong> LDF, which as its name suggests, when multiplied provides the ultimate loss for that AY.</p>
+<div class="arithmatex">\[
+    \text{Ultimate Loss}
+    = \text{Paid Loss} \cdot \text{LDF}_{\text{DY}} \cdot \text{LDF}_{\text{DY}+1} \cdot \text{LDF}_{\text{DY}+2} \cdot \dots
+\]</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Instead of slowly multiplying each years LDF, we can instead combine them such into an <strong>Age to Ultimate</strong> LDF which brings a loss from a <strong>specified age to its ultimate value</strong>:</p>
+<div class="arithmatex">\[
+    \text{LDF}_{\text{Age to Ult}}
+    = \prod^{\text{Ultimate DY}}_{\text{Current DY}}
+    \text{LDF}_{\text{DY}}
+\]</div>
+<p>Thus, given the <strong>age to ult for two consecutive ages</strong>, we can find the LDF at the age:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    \text{LDF}_{AY, Ultimate} &amp;= \prod^{\text{DY Final}}_{DY Original} \text{LDF}_{AY, DY} \\
-    \\
-    \text{Ultimate Loss} &amp;= \text{Paid Loss} \cdot \text{LDF}_{AY, Ultimate}
+    \frac{\text{LDF}_{2, \text{Ult}}}{\text{LDF}_{3, \text{Ult}}}
+    &amp;= \frac{f_{2} \cdot f_{3} \cdot f_{4} \cdot \dots}{f_{3} \cdot f_{4} \cdot \dots} \\
+    &amp;= f_{2}
 \end{aligned}
-\]</div>
-<!-- 
-Insert case about if it is Incurred Losses instead of paid then the reserve is IBNR
-Problems with CL method?
--->
-
-<h2 id="bornhautter-ferguson-method"><strong>Bornhautter Ferguson Method</strong><a class="headerlink" href="#bornhautter-ferguson-method" title="Permanent link">&para;</a></h2>
-<p>The <strong>Bornhautter Ferguson</strong> (BF) method balances both the above methods to produce an estimate.</p>
-<p>Using the CL method, the following result is obtained:</p>
-<div class="arithmatex">\[
-\begin{aligned}
-    \text{Ultimate Loss} &amp;= \text{Paid Loss} \cdot \text{LDF}_{\text{Ultimate}} \\
-    \frac{\text{Paid Loss}}{\text{Ultimate Loss}} &amp;= \frac{1}{\text{LDF}_{\text{Ultimate}}} \\
-    \text{Proportion of Paid Losses} &amp;= \frac{1}{\text{LDF}_{\text{Ultimate}}} \\
-    \text{Proportion of Unpaid Losses} &amp;= 1 - \frac{1}{\text{LDF}_{\text{Ultimate}}} \\
-    \\
-    \therefore \text{Loss Reserve} &amp;= \text{Ultimate Loss} \cdot \left(1 - \frac{1}{\text{LDF}_{\text{Ultimate}}} \right)
-\end{aligned}
-\]</div>
-<p>The BF method <strong>combines the ELR and CL method together</strong> by calculating the Ultimate Loss in the above expression using the ELR method, resulting in the <strong>BF Reserves</strong>:</p>
-<div class="arithmatex">\[
-    \text{Loss Reserve}_{BF}
-    = \text{Ultimate Loss}_{ELR} \cdot \left(1 - \frac{1}{\text{LDF}_{\text{CL, Ultimate}}} \right)
-\]</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>One <strong>common misunderstanding</strong> is that the BF Ultimate Loss is the ELR Ultimate Loss, because it was what is used in the equation.</p>
-<p>Notice that unlike the previous two methods, the BF method <strong>directly estimates the reserves</strong>, not the Ultimate Losses.</p>
-<p>Thus, to obtain the ultimate losses, simply add the <strong>estimated reserves to the paid losses</strong>:</p>
-<div class="arithmatex">\[
-    \text{Ultimate Loss}_{\text{BF}} = \text{Loss Reserve}_{\text{BF}} + \text{Paid Loss}
 \]</div>
 </div>
-<p>As with both the other methods, the <strong>BF reserves is calculated per AY</strong>, thus the total reserve is the sum of the reserves for each AY:</p>
-<div class="arithmatex">\[
-    \text{Total Reserve}_{BF} = \sum \text{Reserve}_\text{BF, AY}
-\]</div>
-<h3 id="weighted-average-method"><strong>Weighted Average Method</strong><a class="headerlink" href="#weighted-average-method" title="Permanent link">&para;</a></h3>
-<p>The BF method can also be calculated via a <strong>weighted average of the two methods</strong>:</p>
+<p>Although all the examples used Paid Losses, the CL method can also use <strong>Reported Losses</strong>. It will still result in the <strong>same ultimate loss</strong>.</p>
+<h2 id="bornhautter-ferguson-method"><strong>Bornhautter Ferguson Method</strong><a class="headerlink" href="#bornhautter-ferguson-method" title="Permanent link">&para;</a></h2>
+<p>The last method is known as the <strong>Bornhautter Ferguson</strong> (BF) method, which is a combination of the above two methods.</p>
+<p>Consider the loss reserve under the CL method:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    \text{Loss Reserve}_{BF} &amp;= w \cdot \text{Loss Reserve}_{CL} + (1-w) \cdot \text{Loss Reserve}_{ELR} \\
+    \text{Loss Reserve}
+    &amp;= \text{Ultimate Loss} - \text{Paid Loss} \\
+    &amp;= \text{Ultimate Loss} - \frac{\text{Ultimate Loss}}{\text{LDF}_\text{Ultimate}} \\
+    &amp;= \text{Ultimate Loss} \cdot \left(1 - \frac{1}{\text{LDF}_\text{Ultimate}} \right)
+\end{aligned}
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Instead of providing the LDFs, questions may sometimes use the following terminology:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \text{Percentage of Paid Losses} &amp;= \frac{1}{\text{LDF}_\text{Ultimate}} \\
+    \text{Percentage of Unpaid Losses} &amp;= 1 - \frac{1}{\text{LDF}_\text{Ultimate}}
+\end{aligned}
+\]</div>
+</div>
+<p>By using the <strong>Ultimate Loss from the ELR method</strong>, the two methods are combined, resulting in the <strong>BF reserves</strong>:</p>
+<div class="arithmatex">\[
+    \text{Loss Reserve}_{\text{BF}}
+    = \text{Ultimate Loss}_{\text{ELR}}
+    \cdot \left(1 - \frac{1}{\text{LDF}_{\text{CL, Ultimate}}} \right)
+\]</div>
+<p>Unlike the previous two methods, the BF method <strong>directly estimates the loss reserves</strong>, not the Ultimate Losses.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is an <strong>extremely common mistake</strong> to think that the BF Ultimate Loss is the ELR Ultimate Loss, because it was what is used in the equation.</p>
+<div class="arithmatex">\[
+    \text{Ultimate Loss}_{\text{BF}} \ne \text{Ultimate Loss}_{\text{ELR}}
+\]</div>
+<p>Since the BF method directly estimates the loss reserves, the ultimate losses must be determined from <strong>first principles</strong>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \text{Ultimate Loss}_{\text{BF}} = \text{Loss Reserve}_{\text{BF}} + \text{Paid Loss} \\
+\end{aligned}
+\]</div>
+</div>
+<h3 id="weighted-average-method"><strong>Weighted Average Method</strong><a class="headerlink" href="#weighted-average-method" title="Permanent link">&para;</a></h3>
+<p>Alternatively, the BF method method can be calculated as the <strong>weighted average of the two methods</strong>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \text{Loss Reserve}_{BF}
+    &amp;= w \cdot \text{Loss Reserve}_{CL} + (1-w) \cdot \text{Loss Reserve}_{ELR} \\
     w &amp;= \frac{1}{\text{LDF}_{\text{CL, Ultimate}}}
 \end{aligned}
 \]</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>The above applies for the OVERALL RESERVE, not the Case or IBNR reserves.</p>
+<p>The above applies <strong>DOES NOT</strong> apply to the IBNR reserve!</p>
 </div>
-<p>As the claims approach maturity, more the LDF factors decrease, causing the <strong>weights to the CL method</strong> to increase. This is intuitive, as <strong>more data is available</strong> for those claims, thus <strong>more weight is given to the method that uses actual claims experience</strong> (CL).</p>
-<p>Naturally, this means that the BF reserve is <strong>between the reserves calculated</strong> via the two methods:</p>
+<p>The intuition is that as the losses mature, their LDF factors decrease. This cases the weight given to the <strong>CL method to increase</strong>. This is intuitive, as more data is available for those claims, and thus <strong>more weight should be given to the method that uses claims experience</strong>.</p>
+<p>One key result is that the BF reserve is always calculated <strong>between the other two reserves</strong>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    \text{ELR Reserve} \lt \text{BF Reserve} \lt \text{CL Reserve} \\
-    \text{ELR Reserve} \gt \text{BF Reserve} \gt \text{CL Reserve}
+    \text{ELR Loss Reserve} \lt \text{BF Loss Reserve} \lt \text{CL Loss Reserve} \\
+    \text{ELR Loss Reserve} \gt \text{BF Loss Reserve} \gt \text{CL Loss Reserve}
 \end{aligned}
 \]</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Despite the above relationship, there is <strong>NO relationship</strong> between the ELR and CL reserves - either could be larger than the other.</p>
+<p>There is no strict relationship as to which is larger or smaller; just that the BF method is in between.</p>
+<h2 id="reserve-calculation"><strong>Reserve Calculation</strong><a class="headerlink" href="#reserve-calculation" title="Permanent link">&para;</a></h2>
+<p>Using the ultimate loss from the first two methods, the reserve for each year can be calculated. It can be used to calculate <strong>either the IBNR or Total Reserve</strong>, depending on what is subtracted from the ultimate:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \text{Loss Reserve} &amp;= \text{Ultimate Loss} - \text{Paid Loss} \\
+    \text{IBNR Reserve} &amp;= \text{Ultimate Loss} - \text{Reported Loss}
+\end{aligned}
+\]</div>
+<p>For all three methods, the total reserve held by the insurer is the <strong>sum of the reserves for each accident year</strong>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \text{Total Loss Reserve} &amp;= \sum \text{Loss Reserve}_\text{AY} \\
+    \text{Total IBNR Reserve} &amp;= \sum \text{IBNR Reserve}_\text{AY}
+\end{aligned}
+\]</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The reserve calculations for multiple years can be done at the same time using the data function of the calculator.</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Other than accident year, losses can also be aggregated or categorized based on other factors such as <strong>line of business</strong>.</p>
+<p>Regardless, the concept remains the same -- the total reserve held is the sum of reserves for all blocks of business.</p>
+</div>
+<p>Given the loss reserve in one year, the ultimate loss in another year can be <strong>"roughly" estimated</strong> by considering the growth of the business each year:</p>
+<div class="arithmatex">\[
+    \text{Ultimate Loss}_{t}
+    = \text{Ultimate Loss} \cdot (\text{Inflation})^{t} \cdot (\text{Business Growth})^{t}
+\]</div>
+<p>Naturally, this method should only be used when there are <strong>no other options available</strong>.</p>
 
 
 
