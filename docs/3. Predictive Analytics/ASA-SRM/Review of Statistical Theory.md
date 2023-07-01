@@ -367,7 +367,12 @@ Thus, by **equating the sample raw moments to the population raw moments**, up t
 
 !!! Note
 
-    If there is only one parameter to estimate, then only the first raw moments are equated. If there are two, then the second raw moment should be equated as well.
+    This process can be repeated for as many parameters there are:
+
+    * **One Parameter**: First moments equated
+    * **Two Parameters**: First & Second moment equated
+
+    Most MLE questions will only require single parameter estimation. If two parameters are given, then there is **usually some way to simplify it**.
 
 $$
 \begin{aligned}
