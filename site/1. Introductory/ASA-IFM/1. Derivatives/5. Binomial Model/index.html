@@ -213,8 +213,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../1. Introductory/1. Review of Mathematics.md" class="md-nav__link">
+      <a href="../../../1.%20Review%20of%20Mathematics/" class="md-nav__link">
         Review of Mathematics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.%20Practical%20Exam%20Tips/" class="md-nav__link">
+        Practical Exam Tips
       </a>
     </li>
   
@@ -260,18 +274,18 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5" type="checkbox" id="__nav_1_5" checked>
       
       
       
       
-        <label class="md-nav__link" for="__nav_1_4">
+        <label class="md-nav__link" for="__nav_1_5">
           ASA-IFM
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="ASA-IFM" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_4">
+        <label class="md-nav__title" for="__nav_1_5">
           <span class="md-nav__icon md-icon"></span>
           ASA-IFM
         </label>
@@ -288,18 +302,18 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4_1" type="checkbox" id="__nav_1_4_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5_1" type="checkbox" id="__nav_1_5_1" checked>
       
       
       
       
-        <label class="md-nav__link" for="__nav_1_4_1">
+        <label class="md-nav__link" for="__nav_1_5_1">
           Derivatives
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Derivatives" data-md-level="3">
-        <label class="md-nav__title" for="__nav_1_4_1">
+        <label class="md-nav__title" for="__nav_1_5_1">
           <span class="md-nav__icon md-icon"></span>
           Derivatives
         </label>
@@ -472,18 +486,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4_2" type="checkbox" id="__nav_1_4_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5_2" type="checkbox" id="__nav_1_5_2" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_1_4_2">
+        <label class="md-nav__link" for="__nav_1_5_2">
           Corporate Finance
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Corporate Finance" data-md-level="3">
-        <label class="md-nav__title" for="__nav_1_4_2">
+        <label class="md-nav__title" for="__nav_1_5_2">
           <span class="md-nav__icon md-icon"></span>
           Corporate Finance
         </label>
@@ -1370,7 +1384,7 @@
 <tbody>
 <tr>
 <td align="center">Buy Stock <span class="arithmatex">\((\Delta \gt 0)\)</span></td>
-<td align="center">Sell Stock (<span class="arithmatex">\(\Delta \gt 0\)</span>)</td>
+<td align="center">Sell Stock (<span class="arithmatex">\(\Delta \lt 0\)</span>)</td>
 </tr>
 <tr>
 <td align="center">Sell Bonds/Borrow Money <span class="arithmatex">\((B \lt 0)\)</span></td>
@@ -1379,6 +1393,15 @@
 </tbody>
 </table>
 <p></center></p>
+<p>The intuition can be understood as follows:</p>
+<ul>
+<li><strong>Buy Stock</strong>: Stock will be <strong>sold at maturity</strong>, leading to a <strong>positive terminal cashflow</strong></li>
+<li><strong>Sell Bonds</strong>: <strong>Pay back</strong> the bondholder at maurity, leading to a <strong>negative terminal cashflow</strong></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The key is remembering the signs of <span class="arithmatex">\(\delta\)</span> and <span class="arithmatex">\(B\)</span> must be opposite.</p>
+</div>
 <h3 id="sp-risk-neutral-method"><strong>SP Risk Neutral Method</strong><a class="headerlink" href="#sp-risk-neutral-method" title="Permanent link">&para;</a></h3>
 <p>Given the probabilities assigned earlier, the price of the option should be equal to the <strong>PV of the expected payoff</strong>:</p>
 <div class="arithmatex">\[
@@ -1420,6 +1443,10 @@
 <p>The price of the option can thus be found by <strong>recursively solving</strong> one node at a time using any of the above methods from the RHS till the starting node is found.</p>
 <!-- Obtained from Coaching Actuaries -->
 <p><img alt="MP Tree" class="center" src="../Assets/5.%20Binomial%20Model.md/MP%20Tree.png" /></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The length of a period is now <strong>different</strong> from the length of the entire option, thus take special care when discounting.</p>
+</div>
 <h3 id="mp-replicating-portfolio-method"><strong>MP Replicating Portfolio Method</strong><a class="headerlink" href="#mp-replicating-portfolio-method" title="Permanent link">&para;</a></h3>
 <p>Unfortunately, there is <strong>no shortcut</strong> for the replicating portfolio method - the components of the portfolio can only be calculated recursively.</p>
 <p>Note that the intuition of the method changes slightly. The portfolio formed at time 0 is a <strong>self-financing portfolio</strong> that will be sold each period to <em>exactly</em> purchase a <strong>new portfolio at that time</strong>, such that the final portfolio leading up to expiration will replicate the payoff.</p>
@@ -1427,7 +1454,8 @@
 <p><img alt="MP Replicating Portfolio" class="center" src="../Assets/5.%20Binomial%20Model.md/MP%20Replicating%20Portfolio.png" /></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>If both 0 then starting must be 0</p>
+<p>If both the future nodes have a value of 0, then the earlier node must be 0 as well.</p>
+<p>This can be used to quickly recurse through layers of trees.</p>
 </div>
 <h3 id="mp-risk-neutral-method"><strong>MP Risk Neutral Method</strong><a class="headerlink" href="#mp-risk-neutral-method" title="Permanent link">&para;</a></h3>
 <p>Fortunately, there is a <strong>shortcut</strong> for the risk neutral method. For a two period model, there are <strong>three ending possibilities</strong> - Up Up, Up Down &amp; Down Down.</p>

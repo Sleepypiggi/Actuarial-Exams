@@ -211,8 +211,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1. Introductory/1. Review of Mathematics.md" class="md-nav__link">
+      <a href="../../../1.%20Introductory/1.%20Review%20of%20Mathematics/" class="md-nav__link">
         Review of Mathematics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.%20Introductory/2.%20Practical%20Exam%20Tips/" class="md-nav__link">
+        Practical Exam Tips
       </a>
     </li>
   
@@ -256,18 +270,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5" type="checkbox" id="__nav_1_5" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_1_4">
+        <label class="md-nav__link" for="__nav_1_5">
           ASA-IFM
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="ASA-IFM" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_4">
+        <label class="md-nav__title" for="__nav_1_5">
           <span class="md-nav__icon md-icon"></span>
           ASA-IFM
         </label>
@@ -282,18 +296,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4_1" type="checkbox" id="__nav_1_4_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5_1" type="checkbox" id="__nav_1_5_1" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_1_4_1">
+        <label class="md-nav__link" for="__nav_1_5_1">
           Derivatives
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Derivatives" data-md-level="3">
-        <label class="md-nav__title" for="__nav_1_4_1">
+        <label class="md-nav__title" for="__nav_1_5_1">
           <span class="md-nav__icon md-icon"></span>
           Derivatives
         </label>
@@ -371,18 +385,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4_2" type="checkbox" id="__nav_1_4_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5_2" type="checkbox" id="__nav_1_5_2" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_1_4_2">
+        <label class="md-nav__link" for="__nav_1_5_2">
           Corporate Finance
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Corporate Finance" data-md-level="3">
-        <label class="md-nav__title" for="__nav_1_4_2">
+        <label class="md-nav__title" for="__nav_1_5_2">
           <span class="md-nav__icon md-icon"></span>
           Corporate Finance
         </label>
@@ -937,13 +951,6 @@
           <li class="md-nav__item">
   <a href="#uniform-distribution" class="md-nav__link">
     Uniform Distribution
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#continuous-recursion" class="md-nav__link">
-    Continuous Recursion
   </a>
   
 </li>
@@ -1552,13 +1559,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#continuous-recursion" class="md-nav__link">
-    Continuous Recursion
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -2079,6 +2079,13 @@
 </div>
 <!-- Self Made -->
 <p><img alt="Annuity Probability" class="center" src="../Assets/4.%20Life%20Annuities.md/Annuity%20Probability.png" /></p>
+<p>For instance, assume that the premium is 1 and the benefit is 10. A question may ask for the probability that the total collected premiums exceeds the undiscounted benefit.</p>
+<p>Since premiums are only received when the policyholder is alive, the insurer must collect <strong>at least 10 rounds of premium</strong> to "break even". In other words, the question is asking for the <strong>probability that <span class="arithmatex">\(K_x \gt 9\)</span></strong>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is a common mistake to use <span class="arithmatex">\(K_x \gt 10\)</span>, since 10 payments must be made.</p>
+<p>However, since premiums are paid at the <strong>start of the year</strong>, it doesnt matter whether the policyholder survives the 10<sup>th</sup> year or not; as long as they survive 9 years to see the 10<sup>th</sup> year.</p>
+</div>
 <p>The RHS of the expression is unlikely to be an integer. However, <span class="arithmatex">\(k\)</span> can only take integer values. Thus, the values can <strong>rounded DOWN</strong> to the nearest whole number (EG. 4):</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -2219,6 +2226,19 @@
     a^{(m)}_{x:\enclose{actuarial}{n}} = \ddot{a}_{x:n} - \frac{m-1}{2m} (1-{}_{n}E_{x})
 \]</div>
 <h3 id="fractional-recursion"><strong>Fractional Recursion</strong><a class="headerlink" href="#fractional-recursion" title="Permanent link">&para;</a></h3>
+<p>Recursions follow the same logic as the discrete case.</p>
+<p>However, since the <strong>benefits are not paid out at JUST the start of the year</strong>, the the <strong>extent that future benefits have to be discounted changes</strong>.</p>
+<p>If benefits are paid out every <strong>half a year</strong>:</p>
+<div class="arithmatex">\[
+    \ddot{a}^{(2)}_{x}
+    = 1 + v^{0.5} p_x\ddot{a}^{(2)}_{x+0.5}
+\]</div>
+<p>There are two key differences to take note of:</p>
+<ul>
+<li>The extent of discounting changes to half a year</li>
+<li>The age of the future EPV is at a fractional age</li>
+</ul>
+<p>Thus, by re-arranging the equation, we can <strong>solve for the fractional age EPV</strong>.</p>
 <h2 id="payable-continuously"><strong>Payable Continuously</strong><a class="headerlink" href="#payable-continuously" title="Permanent link">&para;</a></h2>
 <p>Similarly, annuities can also be paid continuously. All the concepts are <strong>exactly the same as the assurances</strong>, thus this section will just be stating the final results.</p>
 <h3 id="approximations"><strong>Approximations</strong><a class="headerlink" href="#approximations" title="Permanent link">&para;</a></h3>
@@ -2249,7 +2269,6 @@
 <div class="arithmatex">\[
     \bar{a}_{x} = \frac{1 - \bar{A}_{x}}{\delta}
 \]</div>
-<h3 id="continuous-recursion"><strong>Continuous Recursion</strong><a class="headerlink" href="#continuous-recursion" title="Permanent link">&para;</a></h3>
 
 
 

@@ -211,8 +211,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1. Introductory/1. Review of Mathematics.md" class="md-nav__link">
+      <a href="../../../1.%20Introductory/1.%20Review%20of%20Mathematics/" class="md-nav__link">
         Review of Mathematics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.%20Introductory/2.%20Practical%20Exam%20Tips/" class="md-nav__link">
+        Practical Exam Tips
       </a>
     </li>
   
@@ -256,18 +270,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5" type="checkbox" id="__nav_1_5" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_1_4">
+        <label class="md-nav__link" for="__nav_1_5">
           ASA-IFM
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="ASA-IFM" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_4">
+        <label class="md-nav__title" for="__nav_1_5">
           <span class="md-nav__icon md-icon"></span>
           ASA-IFM
         </label>
@@ -282,18 +296,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4_1" type="checkbox" id="__nav_1_4_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5_1" type="checkbox" id="__nav_1_5_1" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_1_4_1">
+        <label class="md-nav__link" for="__nav_1_5_1">
           Derivatives
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Derivatives" data-md-level="3">
-        <label class="md-nav__title" for="__nav_1_4_1">
+        <label class="md-nav__title" for="__nav_1_5_1">
           <span class="md-nav__icon md-icon"></span>
           Derivatives
         </label>
@@ -371,18 +385,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4_2" type="checkbox" id="__nav_1_4_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5_2" type="checkbox" id="__nav_1_5_2" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_1_4_2">
+        <label class="md-nav__link" for="__nav_1_5_2">
           Corporate Finance
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Corporate Finance" data-md-level="3">
-        <label class="md-nav__title" for="__nav_1_4_2">
+        <label class="md-nav__title" for="__nav_1_5_2">
           <span class="md-nav__icon md-icon"></span>
           Corporate Finance
         </label>
@@ -1344,6 +1358,10 @@
 <td align="center">Truncated from above</td>
 </tr>
 <tr>
+<td align="center">Lower Threshold</td>
+<td align="center">Upper Threshold</td>
+</tr>
+<tr>
 <td align="center">No values below <span class="arithmatex">\(d\)</span></td>
 <td align="center">No values above <span class="arithmatex">\(u\)</span></td>
 </tr>
@@ -1352,16 +1370,19 @@
 <p></center></p>
 <!-- Obtained from R-Bloggers -->
 <p><img alt="Truncation" class="center" src="../Assets/8.%20Model%20Estimation.md/Truncated%20Data.png" /></p>
-<p>The most common case would be <strong>Left Truncated</strong> data, which occurs when the policy has a <strong>Deductible</strong>. This is because when the loss amount does not need meet the deductible, policyholders <strong>would not bother to report</strong> it. Thus, the insurer <strong>only receives loss amounts that exceed the deductible</strong>.</p>
+<p>The most common case would be <strong>Left Truncated</strong> data, which occurs when the policy has a <strong>Deductible</strong>.</p>
+<p>This is because when the loss amount does not need meet the deductible, policyholders <strong>would not bother to report</strong> it. Thus, the insurer <strong>only receives loss amounts that exceed the deductible</strong>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>The notation for the threshold is <span class="arithmatex">\(d\)</span> to denote deductible. HOWEVER, the notation <span class="arithmatex">\(u\)</span> here DOES NOT represent policy limits!</p>
 </div>
-<p>In terms of MLE, this means that the <strong>ENTIRE distribution is conditioned</strong> on having values above <span class="arithmatex">\(d\)</span> or below <span class="arithmatex">\(u\)</span>. Thus, the likelihood functions should be constructed using conditional PMFs/PDFs of <strong>EVERY observation</strong>:</p>
+<p>In terms of MLE, this means that the <strong>ENTIRE distribution is conditioned</strong> on having values above <span class="arithmatex">\(d\)</span> or below <span class="arithmatex">\(u\)</span>. Thus, the likelihood functions should be constructed using <strong>conditional PMFs/PDFs</strong> of <strong>EVERY observation</strong>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     P_{\theta} (X = x \mid X \gt d) &amp;= \frac{P_{\theta}(X = x)}{P(X \gt d)} \\
+    \\
     \therefore L^{LT}(\theta)
+    &amp;= \prod P_{\theta} (X = x \mid X \gt d) \\
     &amp;= \prod \frac{P_{\theta}(X = x)}{P(X \gt d)} \\
     &amp;= \frac{1}{[P(X \gt d)]^n} \cdot \prod P_{\theta}(X = x) \\
 \end{aligned}
@@ -1413,7 +1434,8 @@
 <p></center></p>
 <!-- Obtained from Psychoneuroendocrinology Volume 129, July 2021, 105274 -->
 <p><img alt="Censored Data" class="center" src="../Assets/8.%20Model%20Estimation.md/Censored%20Data.png" /></p>
-<p>The most common case would be <strong>Right Censored</strong> data, which occurs when the policy has a <strong>Policy Limit</strong>. This is because when the policyholder submits a claim, they will only <strong>submit up to the amount that the limit covers</strong>, even when the actual loss exceeds that amount. Thus, insurers will <strong>only receive loss amounts at the limit</strong>.</p>
+<p>The most common case would be <strong>Right Censored</strong> data, which occurs when the policy has a <strong>Policy Limit</strong>.</p>
+<p>This is because when the policyholder submits a claim, they will only <strong>submit up to the amount that the limit covers</strong>, even when the actual loss exceeds that amount. Thus, insurers will <strong>only receive loss amounts at the limit</strong>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Similar to the warning from before, the notation for the threshold is <span class="arithmatex">\(u\)</span> to denote policy limit. HOWEVER, the notation <span class="arithmatex">\(d\)</span> here DOES NOT represent deductibles!</p>
@@ -1423,13 +1445,17 @@
 <p>Thus, for censored observations at the threshold, the updated likelihoods must be used:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    L^{RC}(\theta) &amp;= \prod P_{\theta} (X = x_{\text{Not Censored}}) \cdot \prod P(X_{\text{Censored}} \ge u)
+    P(X = x_{\text{Censored}}) &amp;= P(X \gt u) \\
+    \\
+    \therefore L^{RC}(\theta)
+    &amp;= \prod P_{\theta} (X = x_{\text{Not Censored}}) \cdot \prod P(X = x_{\text{Censored}})
 \end{aligned}
 \]</div>
-<p>Naturally, truncation and censoring can occur at the same time. The <strong>likelihood for the censored observation</strong> in this case is thus:</p>
-<div class="arithmatex">\[
-    P_{\theta}(X \gt d + u \mid x \gt d) = \frac{P_{\theta}(X \gt d + u)}{P_{\theta}(X \gt d)}
-\]</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Unlike truncation which affects every observation, censoring only affects <strong>certain observations</strong>.</p>
+<p>Similarly, <strong>each observation is affected differently</strong>, unlike truncation where they are affected the same way.</p>
+</div>
 <h3 id="grouped"><strong>Grouped</strong><a class="headerlink" href="#grouped" title="Permanent link">&para;</a></h3>
 <p>The last type of incomplete data is known as <strong>Grouped Data</strong>. Similar to censoring, the exact values of <em>ALL</em> observations are not known. Instead, they are presented as the number of observations in a <strong>distinct interval</strong>.</p>
 <div class="admonition tip">

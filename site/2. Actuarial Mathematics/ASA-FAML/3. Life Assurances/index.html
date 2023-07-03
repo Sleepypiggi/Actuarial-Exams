@@ -211,8 +211,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1. Introductory/1. Review of Mathematics.md" class="md-nav__link">
+      <a href="../../../1.%20Introductory/1.%20Review%20of%20Mathematics/" class="md-nav__link">
         Review of Mathematics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.%20Introductory/2.%20Practical%20Exam%20Tips/" class="md-nav__link">
+        Practical Exam Tips
       </a>
     </li>
   
@@ -256,18 +270,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5" type="checkbox" id="__nav_1_5" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_1_4">
+        <label class="md-nav__link" for="__nav_1_5">
           ASA-IFM
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="ASA-IFM" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_4">
+        <label class="md-nav__title" for="__nav_1_5">
           <span class="md-nav__icon md-icon"></span>
           ASA-IFM
         </label>
@@ -282,18 +296,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4_1" type="checkbox" id="__nav_1_4_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5_1" type="checkbox" id="__nav_1_5_1" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_1_4_1">
+        <label class="md-nav__link" for="__nav_1_5_1">
           Derivatives
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Derivatives" data-md-level="3">
-        <label class="md-nav__title" for="__nav_1_4_1">
+        <label class="md-nav__title" for="__nav_1_5_1">
           <span class="md-nav__icon md-icon"></span>
           Derivatives
         </label>
@@ -371,18 +385,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4_2" type="checkbox" id="__nav_1_4_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5_2" type="checkbox" id="__nav_1_5_2" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_1_4_2">
+        <label class="md-nav__link" for="__nav_1_5_2">
           Corporate Finance
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Corporate Finance" data-md-level="3">
-        <label class="md-nav__title" for="__nav_1_4_2">
+        <label class="md-nav__title" for="__nav_1_5_2">
           <span class="md-nav__icon md-icon"></span>
           Corporate Finance
         </label>
@@ -860,13 +874,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#recursion_1" class="md-nav__link">
-    Recursion
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#fractional-recursion" class="md-nav__link">
     Fractional Recursion
   </a>
@@ -903,13 +910,6 @@
           <li class="md-nav__item">
   <a href="#uniform-distribution" class="md-nav__link">
     Uniform Distribution
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#continuous-recursion" class="md-nav__link">
-    Continuous Recursion
   </a>
   
 </li>
@@ -1465,13 +1465,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#recursion_1" class="md-nav__link">
-    Recursion
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#fractional-recursion" class="md-nav__link">
     Fractional Recursion
   </a>
@@ -1508,13 +1501,6 @@
           <li class="md-nav__item">
   <a href="#uniform-distribution" class="md-nav__link">
     Uniform Distribution
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#continuous-recursion" class="md-nav__link">
-    Continuous Recursion
   </a>
   
 </li>
@@ -1860,14 +1846,33 @@
 \]</div>
 <!-- Self Made -->
 <p><img alt="DWL Discrete" src="../Assets/3.%20Life%20Assurances.md/DWL%20Discrete.png" /></p>
+<p>It can be shown to be difference of a WL and TA:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \text{DWL}
+    &amp;=
+    \begin{cases}
+        0,&amp; K_x \lt n \\
+        v^{K_x + 1} ,&amp; K_x \ge n
+    \end{cases} \\
+    &amp;=
+    \begin{cases}
+        v^{K_x + 1},&amp; K_x \lt n \\
+        v^{K_x + 1} ,&amp; K_x \ge n
+    \end{cases}
+    -
+    \begin{cases}
+        v^{K_x + 1},&amp; K_x \lt n \\
+        0,&amp; K_x \ge n
+    \end{cases} \\
+    &amp;= \text{WL} - \text{TA}
+\end{aligned}
+\]</div>
 <p>Thus, the EPV and Variance can be determined:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    E(\text{DWL})
-    &amp;= 0 \cdot {}_{n}p_{x} + \sum^{\infty}_{k = n} v^{K + 1} \cdot {}_{k|}q_{x} \\
-    {}_{n|} A_{x}
-    &amp;= \sum^{\infty}_{K_x = 0} v^{K_x + 1} \cdot {}_{K_x|}q_{x} - \sum^{n-1}_{K_x = 0} v^{K_x + 1} \cdot {}_{K_x|}q_{x} \\
-    &amp;= A_x - A^1_{x:\enclose{actuarial}{n}} \\
+    E(\text{DWL}) &amp;= E(\text{WL}) - E(\text{TA}) \\
+    {}_{n|}A_x &amp;= A_x - A^1_{x:\enclose{actuarial}{n}} \\
     \\
     Var (\text{DWL})
     &amp;= {}^{2}_{n|}A_x - ({}_{n|}A_x)^2 \\
@@ -2015,13 +2020,6 @@
 <p>It is a <strong>common mistake</strong> to forget to flip the inequality sign as <span class="arithmatex">\(\ln v \lt 0\)</span>.</p>
 </div>
 <p>Questions will <strong>not be as straightforward as above</strong>. Sometimes, the required value of <span class="arithmatex">\(K_x\)</span> has to be determined <strong>intuitively from the given scenario</strong>.</p>
-<p>For instance, assume that the premium is 1 and the benefit is 10. A question may ask for the probability that the total collected premiums exceeds the undiscounted benefit.</p>
-<p>Since premiums are only received when the policyholder is alive, the insurer must collect <strong>at least 10 rounds of premium</strong> to "break even". In other words, the question is asking for the <strong>probability that <span class="arithmatex">\(K_x \gt 9\)</span></strong>.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>It is a common mistake to use <span class="arithmatex">\(K_x \gt 10\)</span>, since 10 payments must be made.</p>
-<p>However, since premiums are paid at the <strong>start of the year</strong>, it doesnt matter whether the policyholder survives the 10<sup>th</sup> year or not; as long as they survive 9 years to see the 10<sup>th</sup> year.</p>
-</div>
 <h4 id="percentiles"><strong>Percentiles</strong><a class="headerlink" href="#percentiles" title="Permanent link">&para;</a></h4>
 <p>Similarly, questions could ask for the <strong>percentile of the PV</strong>.</p>
 <p>Since the PV is a transformation of the future lifetime variable, the <strong>percentile of the PV is the percentile of the future lifetime variable</strong>, which was covered in the survival model section.</p>
@@ -2149,29 +2147,20 @@
 <div class="arithmatex">\[
     {}^{2} A^{(m)}_x = \frac{i^*}{{i^*}^{(m)}} \cdot {}^{2} A_x
 \]</div>
-<h4 id="recursion_1"><strong>Recursion</strong><a class="headerlink" href="#recursion_1" title="Permanent link">&para;</a></h4>
-<p>Recursions follow the same logic as the discrete case. However, since the <strong>benefits are not paid out at the end of the year</strong>, the the <strong>extent that the benefit has to be discounted changes</strong>.</p>
-<p>If benefits are paid out m-thly every half a year:</p>
-<div class="arithmatex">\[
-    A^{(2)}_{x} = v^{0.5} \cdot {}_{0.5}q_{x} + v^{0.5} \cdot {}_{0.5}p_{x} A^{(2)}_{x+0.5}
-\]</div>
-<p>The key is to remember that since the benefits are paid out every half a year, the discounting occurs for half year periods.</p>
 <h4 id="fractional-recursion"><strong>Fractional Recursion</strong><a class="headerlink" href="#fractional-recursion" title="Permanent link">&para;</a></h4>
-<p>Recursion can also be used to calculate the <strong>EPV of an assurance at a fractional age</strong>.</p>
-<p>The process is similar as before, but with <strong>fractional age probabilities</strong> instead:</p>
+<p>Recursions follow the same logic as the discrete case.</p>
+<p>However, since the <strong>benefits are not paid out at JUST the end of the year</strong>, the the <strong>extent that the benefit have to be discounted changes</strong>.</p>
+<p>If benefits are paid out every <strong>half a year</strong>:</p>
 <div class="arithmatex">\[
-\begin{aligned}
-    WL
-    &amp;=
-    \begin{cases}
-        v \cdot 1 ,&amp; {}_{s}q_{x} \\
-        v \cdot A_{x+s} ,&amp; {}_{s}p_{x}
-    \end{cases} \\
-    \\
-    \therefore A_x &amp;= v \cdot {}_{s}q_{x} + v^s \cdot {}_{s}p_{x} A_{x+s}
-\end{aligned}
+    A^{(2)}_{x}
+    = v^{0.5} \cdot {}_{0.5}q_{x} + v^{0.5} \cdot {}_{0.5}p_{x} A^{(2)}_{x+0.5}
 \]</div>
-<p>By re-arranging the equation, we can <strong>solve for the fractional age EPV</strong>. The fractional age probabilities can be calculated using the specified assumption.</p>
+<p>There are two key differences to take note of:</p>
+<ul>
+<li>The extent of discounting changes to half a year</li>
+<li>The age of the future EPV is at a fractional age</li>
+</ul>
+<p>Thus, by re-arranging the equation, we can <strong>solve for the fractional age EPV</strong>.</p>
 <h2 id="payable-continuously"><strong>Payable Continuously</strong><a class="headerlink" href="#payable-continuously" title="Permanent link">&para;</a></h2>
 <p>In practice, life assurances pay out <strong>immediately</strong> upon the insured event occuring; thus is akin to paying out <strong>continuously</strong> throughout the year.</p>
 <div class="admonition tip">
@@ -2294,7 +2283,6 @@
 </div>
 <p>Note that the above formulas ONLY apply to continuous assurances. Some questions might provide an exponential or uniform distribution for discrete assurances to confuse us into using them.</p>
 <p>In this case, the distribution are only useful in computing the probabilities at every age. The EPV must still be computed via first principles.</p>
-<h3 id="continuous-recursion"><strong>Continuous Recursion</strong><a class="headerlink" href="#continuous-recursion" title="Permanent link">&para;</a></h3>
 
 
 
