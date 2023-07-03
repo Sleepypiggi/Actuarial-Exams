@@ -1729,10 +1729,11 @@
 <p>The EPV of a decreasing term assurance can also be represented by:</p>
 <div class="arithmatex">\[
     (D_{\enclose{actuarial}{n}}A)^{1}_{x:\enclose{actuarial}{n}}
-    = \sum^{n}_{k=1} A^{1}_{x:\enclose{actuarial}{n}}
+    = \sum^{n}_{k=1} A^{1}_{x:\enclose{actuarial}{k}}
 \]</div>
 <p>This is better understood visually:</p>
-<!-- Self Made -->
+<p><!-- Self Made -->
+<img alt="Decreasing Assurance" class="center" src="../Assets/6.%20Premiums.md/Decreasing%20Assurance.png" /></p>
 </div>
 <h3 id="with-interest"><strong>With Interest</strong><a class="headerlink" href="#with-interest" title="Permanent link">&para;</a></h3>
 <p>If the premiums are paid back with interest, then we need to find the <strong>accumulated value</strong> of the premiums at every point, and then <strong>discount them back to their present values</strong>.</p>
@@ -1763,6 +1764,15 @@
     &amp;= \frac{P}{d} \cdot \left({}_{n}q_{x} - A^{1}_{x:\enclose{actuarial}{n}} \right)
 \end{aligned}
 \]</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is easy to confuse the above term <span class="arithmatex">\((\sum^{n-1}_{k = 0} {}_{k \mid}q_{x})\)</span> with the discrete expectation:</p>
+<div class="arithmatex">\[
+    E(X) = \sum k \cdot {}_{k \mid}q_{x}
+\]</div>
+<p>The key difference is that the discrete expectation is multiplied by <span class="arithmatex">\(k\)</span>, which causes to reduce to the survival probability.</p>
+<p>Without it, as like above, it simply reduces to the probability of dying during the period.</p>
+</div>
 
 
 

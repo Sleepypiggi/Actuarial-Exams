@@ -2061,30 +2061,29 @@
     \ddot{a}_{x:\enclose{actuarial}{n}} = 1 + vp_x \ddot{a}_{x+1:\enclose{actuarial}{n-1}}
 \]</div>
 <h4 id="probability"><strong>Probability</strong><a class="headerlink" href="#probability" title="Permanent link">&para;</a></h4>
-<p>Similar to assurances, apart from just calculating the Expectation and Variance, the <strong>probabilities</strong> and hence <strong>percentiles</strong> of the contract benefits can be calculated as well.</p>
+<p>Questions could also ask for the <strong>probability that the present value of the benefits takes on some value</strong> <span class="arithmatex">\(u\)</span>.</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    \text{WL}_\text{Due} &amp;\le u \\
-    \frac{1-v^{k+1}}{d} &amp;\le u \\
-    1-v^{k+1} &amp;\le ud \\
-    v^{k+1} &amp;\ge 1-ud \\
-    (k+1) \ln v &amp;\ge \ln(1-ud) \\
-    k+1 &amp;\le \frac{\ln(1-ud)}{\ln v} \\
-    k &amp;\le \frac{\ln(1-ud)}{\ln v} - 1 \\
+    P(\text{WL}_\text{Due} \le u)
+    &amp;= P \left(\frac{1-v^{k+1}}{d} \le u \right) \\
+    &amp;= P \left(1-v^{k+1} \le ud \right) \\
+    &amp;= P \left(v^{k+1} \ge 1-ud \right) \\
+    &amp;= P \left((k+1) \ln v \ge \ln(1-ud) \right) \\
+    &amp;= P \left(k+1 \le \frac{\ln(1-ud)}{\ln v} \right) \\
+    &amp;= P \left(k \le \frac{\ln(1-ud)}{\ln v} - 1 \right) \\
 \end{aligned}
 \]</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Similar to assurances, it is a <strong>common mistake</strong> to forget to flip the inequality sign as <span class="arithmatex">\(\ln v \lt 0\)</span>.</p>
 </div>
-<!-- Self Made -->
-<p><img alt="Annuity Probability" class="center" src="../Assets/4.%20Life%20Annuities.md/Annuity%20Probability.png" /></p>
-<p>For instance, assume that the premium is 1 and the benefit is 10. A question may ask for the probability that the total collected premiums exceeds the undiscounted benefit.</p>
-<p>Since premiums are only received when the policyholder is alive, the insurer must collect <strong>at least 10 rounds of premium</strong> to "break even". In other words, the question is asking for the <strong>probability that <span class="arithmatex">\(K_x \gt 9\)</span></strong>.</p>
+<p>Questions will <strong>not be as straightforward as above</strong>. Sometimes, the required value of <span class="arithmatex">\(K_x\)</span> has to be determined <strong>intuitively from the given scenario</strong>.</p>
+<p>For instance, a question may ask for the probability that the sum of undiscounted benefits exceeds its EPV.</p>
+<p>Assuming the EPV is 12.5, the policyholder would have to receive <strong>13 benefit payments</strong>. The probability of receiving 13 benefits is equivalent to the <strong>probability of suriving 12 years</strong>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>It is a common mistake to use <span class="arithmatex">\(K_x \gt 10\)</span>, since 10 payments must be made.</p>
-<p>However, since premiums are paid at the <strong>start of the year</strong>, it doesnt matter whether the policyholder survives the 10<sup>th</sup> year or not; as long as they survive 9 years to see the 10<sup>th</sup> year.</p>
+<p>It is a common mistake to use <span class="arithmatex">\(K_x \gt 13\)</span>, since 13 payments must be made.</p>
+<p>However, since benefits are paid at the <strong>start of the year</strong>, it doesnt matter whether the policyholder survives the 13<sup>th</sup> year or not; as long as they <strong>survive 12 years to see the 13<sup>th</sup> year and receive the last required payment</strong>.</p>
 </div>
 <p>The RHS of the expression is unlikely to be an integer. However, <span class="arithmatex">\(k\)</span> can only take integer values. Thus, the values can <strong>rounded DOWN</strong> to the nearest whole number (EG. 4):</p>
 <div class="arithmatex">\[
@@ -2097,7 +2096,8 @@
 \]</div>
 <h4 id="percentiles"><strong>Percentiles</strong><a class="headerlink" href="#percentiles" title="Permanent link">&para;</a></h4>
 <p>Similarly, questions could ask for the <strong>percentile of the PV</strong>.</p>
-<p>Since the PV is a transformation of the future lifetime variable, the <strong>percentile of the PV is the percentile of the future lifetime variable</strong>, which was covered in the survival model section.</p>
+<p>Since the PV is a transformation of the future lifetime variable, the percentile of the PV <strong>uses the percentile of the future lifetime variable</strong>. </p>
+<p>Thus, we can find the percentile of future lifetime and then substitute that into the PV random variable to obtain its percentile. </p>
 <h2 id="payable-m-thly"><strong>Payable M-thly</strong><a class="headerlink" href="#payable-m-thly" title="Permanent link">&para;</a></h2>
 <p>Similar to assurances, annuities can also be payable <span class="arithmatex">\(m\)</span> times a year. Most of the key ideas carry over from the assurances, thus this section will will mainly focus on the <strong>unique aspects</strong> for annuities.</p>
 <p>Consider the EPV of a payable m-thly whole life annuity due:</p>
@@ -2259,7 +2259,7 @@
     &amp;= \frac{1}{\mu + \delta} \\
     \\
     \ddot{a}_{x:\enclose{actuarial}{n}}
-    &amp;= \bar{a}_{x} - {}_{n}E_{x} \bar{a}_{x+n}
+    &amp;= \bar{a}_{x} - {}_{n}E_{x} \bar{a}_{x+n} \\
     &amp;= \bar{a}_{x} \cdot (1 - {}_{n}E_{x})
 \end{aligned}
 \]</div>

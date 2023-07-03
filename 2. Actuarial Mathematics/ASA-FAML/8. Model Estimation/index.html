@@ -1537,7 +1537,7 @@
 <p>In either case, the study ends at the either the <strong>death of the invididual</strong> or on their <strong>birthday</strong> (as they are no longer the desired age), whichever comes first.</p>
 <p>The Central Exposed Risk is the <strong>sum of these durations</strong>. In the above example,</p>
 <ul>
-<li><strong>First Person</strong>: Not yet aged 50, <strong>turned 51 in 1 year</strong> from birthday</li>
+<li><strong>First Person</strong>: Not yet aged 50, <strong>turned 51 in 1 year</strong> from turning 50</li>
 <li><strong>Second Person</strong>: Already aged 50, <strong>died in 0.3 years</strong></li>
 <li><strong>Third Person</strong>: Already agd 50, <strong>turned 51 in 0.2 years</strong></li>
 </ul>
@@ -1574,7 +1574,7 @@
 </div>
 <p>Assuming that this <strong>force is constant</strong>, the resulting survival probability is calculated as:</p>
 <div class="arithmatex">\[
-    \hat{S}_x(t) = e^{-\hat{\mu}_x}
+    \hat{S}_x(t) = e^{-\hat{\mu}_x \cdot t}
 \]</div>
 <p>Another metric that can be calculated is the <strong>Actuarial Estimate of death</strong> <span class="arithmatex">\((\tilde{q}_{x})\)</span>:</p>
 <div class="arithmatex">\[
@@ -1639,7 +1639,7 @@
 <div class="arithmatex">\[
     Var(\hat{S}_x(t)) = (\hat{S}_x(t))^2 \sum \frac{d_j (r_j - d_j)}{r^3_j}
 \]</div>
-<p><strong>Maximum Likelihood Variance</strong>:</p>
+<p><strong>Alive Dead Variance</strong>:</p>
 <div class="arithmatex">\[
     Var(\hat{S}_x(t)) = (\hat{S}_x(t))^2 \cdot \frac{d_x}{\left(E^c_x \right)^2}
 \]</div>
