@@ -211,8 +211,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1. Introductory/1. Review of Mathematics.md" class="md-nav__link">
+      <a href="../../../1.%20Introductory/1.%20Review%20of%20Mathematics/" class="md-nav__link">
         Review of Mathematics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.%20Introductory/2.%20Practical%20Exam%20Tips/" class="md-nav__link">
+        Practical Exam Tips
       </a>
     </li>
   
@@ -256,18 +270,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5" type="checkbox" id="__nav_1_5" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_1_4">
+        <label class="md-nav__link" for="__nav_1_5">
           ASA-IFM
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="ASA-IFM" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_4">
+        <label class="md-nav__title" for="__nav_1_5">
           <span class="md-nav__icon md-icon"></span>
           ASA-IFM
         </label>
@@ -282,18 +296,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4_1" type="checkbox" id="__nav_1_4_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5_1" type="checkbox" id="__nav_1_5_1" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_1_4_1">
+        <label class="md-nav__link" for="__nav_1_5_1">
           Derivatives
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Derivatives" data-md-level="3">
-        <label class="md-nav__title" for="__nav_1_4_1">
+        <label class="md-nav__title" for="__nav_1_5_1">
           <span class="md-nav__icon md-icon"></span>
           Derivatives
         </label>
@@ -371,18 +385,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4_2" type="checkbox" id="__nav_1_4_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5_2" type="checkbox" id="__nav_1_5_2" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_1_4_2">
+        <label class="md-nav__link" for="__nav_1_5_2">
           Corporate Finance
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Corporate Finance" data-md-level="3">
-        <label class="md-nav__title" for="__nav_1_4_2">
+        <label class="md-nav__title" for="__nav_1_5_2">
           <span class="md-nav__icon md-icon"></span>
           Corporate Finance
         </label>
@@ -1485,6 +1499,10 @@
 <li><strong>Allocated LAE</strong> (ALAE): Expenses <strong>associated with</strong> a specific claim (EG. Lawyer's Fee)</li>
 <li><strong>Unallocated LAE</strong> (ULAE): Expenses that are <strong>NOT associated</strong> with a specific claim (EG. Salaries)</li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is a common mistake to include LAE as part of one of the expenses.</p>
+</div>
 <p>As its name suggests, other expenses is a catch all for non-LAE expenses. They are generally split into two categories:</p>
 <ul>
 <li><strong>Variable Expenses</strong> (<span class="arithmatex">\(\text{VE}\)</span>): Expenses that vary with premium (EG. Commissions)</li>
@@ -1552,8 +1570,9 @@
 <p>However, finding trend factors is out of scope for this exam. Thus, the main focus will be on <strong>determining the trend period</strong>.</p>
 <p>Formally speaking, it is the difference between the <strong>midpoint</strong> of the <strong>Experience Period</strong> and the midpoint of the <strong>Forecast Period</strong>:</p>
 <ul>
-<li><strong>Experience Period</strong>: Period in which losses can occur for policies with <strong>old rates</strong></li>
-<li><strong>Forecast Period</strong>: Period in which losses can occur for policies with <strong>new rates</strong></li>
+<li><strong>Experience Period</strong>: Duration in which losses can occur for policies with <strong>old rates</strong></li>
+<li><strong>Forecast Period</strong>: Duration in which losses can occur for policies with <strong>new rates</strong></li>
+<li>The midpoint is used as a general "summary" of each period</li>
 </ul>
 <div class="arithmatex">\[
     \text{Trend Period} = \text{Forecast Period Midpoint} - \text{Experience Period Midpoint}
@@ -1597,7 +1616,8 @@
 <p><img alt="PY Period" class="center" src="../Assets/7.%20Ratemaking.md/PY%20Period.png" /></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>The above example assumed that <strong>rates are in effect for one year</strong> (CY), exactly at the start and end of the PY. In practice, rates can <strong>start and end at any time</strong>.</p>
+<p>The above example assumed that <strong>rates are in effect for one year</strong> exactly at the start and end of the PY.</p>
+<p>In other words, it assumes that the new rates are put into place at the start of the next PY. In practice, rates can <strong>start and end at any time</strong>.</p>
 </div>
 <h3 id="other-trending-methods"><strong>Other Trending Methods</strong><a class="headerlink" href="#other-trending-methods" title="Permanent link">&para;</a></h3>
 <p>Rather than using <em>just one</em> trending factor, insurers might sometimes use multiple trending factors to obtain a trended ultimate and then take a <strong>weighted average</strong> of all of them instead.</p>
@@ -1613,7 +1633,7 @@
 \end{aligned}
 \]</div>
 <h2 id="premiums"><strong>Premiums</strong><a class="headerlink" href="#premiums" title="Permanent link">&para;</a></h2>
-<p>Similar to losses, historical premiums must be first aggregated and then <strong>brought to their current level</strong> ("trended").</p>
+<p>Similar to losses, historical premiums must be first aggregated and then brough to the current level via <strong>trending</strong>.</p>
 <h3 id="premium-aggregation"><strong>Premium Aggregation</strong><a class="headerlink" href="#premium-aggregation" title="Permanent link">&para;</a></h3>
 <p>Since premiums cannot be linked to specific accidents, they can only be aggregated by CY or PY.</p>
 <p>Premiums can also be categorized in three ways, based on their <strong>accounting</strong> definitions:</p>
@@ -1661,10 +1681,6 @@
 <h4 id="extension-of-exposures"><strong>Extension of Exposures</strong><a class="headerlink" href="#extension-of-exposures" title="Permanent link">&para;</a></h4>
 <p>The first method is known as the <strong>Extension of Exposures</strong> method, which adjusts premiums for each individual policyholder by accounting for rate changes in every single exposure.</p>
 <p>For some background, premiums are calculated as the product of a rate and an some base:</p>
-<ol>
-<li><strong>Exposure Base</strong>:</li>
-<li><strong>Rate per unit of Exposure</strong>:</li>
-</ol>
 <div class="arithmatex">\[
     \text{Premium} = \text{Exposure Base} \cdot \text{Rate per Exposure}
 \]</div>
@@ -1681,7 +1697,7 @@
 \]</div>
 <!-- Coaching Actuaries -->
 <p><img alt="Rate Relativity" class="center" src="../Assets/7.%20Ratemaking.md/Rate%20Relativity.png" /></p>
-<p>Thus, old premiums are brought to the current level by simply recalculating them at the current rates instead:</p>
+<p>Thus, old premiums are brought to the current level by simply <strong>recalculating them at the current rates</strong> instead:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     \text{Old Premium} &amp;= 300 \cdot 1.2 \cdot 0.8 = 288 \\
@@ -1690,13 +1706,20 @@
 \]</div>
 <!-- Obtained from Coaching Actuaries -->
 <p><img alt="Extension of Rates" src="../Assets/7.%20Ratemaking.md/Extension%20of%20Rates.png" /></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Rather than providing the exact rates, rates are often expressed in the form of rate changes:</p>
+<p><!-- Obtained from Coaching Actuaries -->
+<img alt="Rate Changes" class="center" src="../Assets/7.%20Ratemaking.md/Rate%20Changes.png" /></p>
+<div class="arithmatex">\[
+    \text{New Rates} = \text{Old Rates} \cdot \text{Rate Change}
+\]</div>
+<p>Thus, rather than needing to have the exact rates, we can simply <strong>multiply the old premiums by the rate changes</strong> to bring them to the current level.</p>
+</div>
 <h4 id="parallelogram-method"><strong>Parallelogram Method</strong><a class="headerlink" href="#parallelogram-method" title="Permanent link">&para;</a></h4>
 <p>Although the above method is more "correct", the problem is that it requires highly granular data for every policyholder and the individual rates.</p>
 <p>However, insurers may only have access to aggregated data for both premiums and rates, in which case the <strong>Parallelogram Method</strong> must be used.</p>
-<p>Instead of being provided with the exact rates, yearly aggregate <strong>rate changes</strong> are provided:</p>
-<!-- Obtained from Coaching Actuaries -->
-<p><img alt="Rate Changes" class="center" src="../Assets/7.%20Ratemaking.md/Rate%20Changes.png" /></p>
-<p>This information can be reorganized into a <strong>series of parallelograms</strong>:</p>
+<p>A series of rate changes can be reorganized into a <strong>series of parallelograms</strong>:</p>
 <!-- Obtained from Coaching Actuaries -->
 <p><img alt="Parallelogram Method" class="center" src="../Assets/7.%20Ratemaking.md/Parallelogram%20Method.png" /></p>
 <p>Each <strong>square represents a calendar year</strong> while <strong>diagonal lines represent policies</strong>. Each diagonal has a horizontal length equal to the policy term in years.</p>
@@ -1726,12 +1749,13 @@
 <p>Using the given rate changes in the table above,</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    \text{CY 2014 Rates} &amp;= 1 \\
-    \text{CY 2015 Rates} &amp;= 1 \cdot (1.05) \\
-    \text{CY 2016 Rates} &amp;= 1 \cdot (1.05)(1.1) \\
-    \text{CY 2017 Rates} &amp;= 1 \cdot (1.05)(1.1)(0.98) \\
+    \text{CY 2014 Rates} &amp;= P \\
+    \text{CY 2015 Rates} &amp;= P \cdot (1.05) \\
+    \text{CY 2016 Rates} &amp;= P \cdot (1.05)(1.1) \\
+    \text{CY 2017 Rates} &amp;= P \cdot (1.05)(1.1)(0.98) \\
 \end{aligned}
 \]</div>
+<p><span class="arithmatex">\(P\)</span> can also be substituted for <span class="arithmatex">\(1\)</span>, as it is usually <strong>cancelled</strong> out when calculating the on-level factor.</p>
 </div>
 <p>Recall from the extension method that the Historical and Current premiums are essentially the same exposure base multiplied by different rates. Using that logic, we can come up with an adjustment factor that transforms historical premiums to current premiums, known as the <strong>On Level Factor</strong>:</p>
 <div class="arithmatex">\[
@@ -1834,17 +1858,19 @@
     \therefore \text{Indicative Rate} &amp;= \frac{\bar{L} + \bar{FE}}{\text{PLR}}
 \end{aligned}
 \]</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
 <p>The bar notation is used in this context as they are technically the <strong>average losses and fixed expenses per exposure</strong>.</p>
-</div>
-<h4 id="practical-tips"><strong>Practical Tips</strong><a class="headerlink" href="#practical-tips" title="Permanent link">&para;</a></h4>
-<p>Remember that this is the <strong>final step</strong> for ratemaking. This means that <strong>all other steps must be completed</strong> before this. Thus, if the question provides <strong>non-trended or non-aggregated</strong> data, then it must be done before continuing.</p>
-<p>If multiple years of data are provided, then the indicative premium should be calculated using the <strong>weighted average</strong> of the Loss Ratios <span class="arithmatex">\((\text{LR})\)</span> or Pure Premiums <span class="arithmatex">\((\bar{L})\)</span>. The question will usually <strong>specify the weights</strong> to use.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>It is a common mistake to use the weighted average of the indicative premiums or use the weighted average of the raw losses or premiums. Be careful!</p>
 <p>Although both methods are equivalent, they are NOT expected to produce the similar results. Do NOT use them to sense check one another.</p>
+</div>
+<h4 id="practical-tips"><strong>Practical Tips</strong><a class="headerlink" href="#practical-tips" title="Permanent link">&para;</a></h4>
+<p>Remember that this is the <strong>final step</strong> for ratemaking. This means that <strong>all other steps must be completed</strong> before this.</p>
+<p>Thus, if the question provides <strong>non-trended or non-aggregated</strong> data, then it must be done before continuing.</p>
+<p>If <strong>multiple years</strong> of data are provided, then the indicative premium should be calculated using the <strong>weighted average</strong> of the Loss Ratios <span class="arithmatex">\((\text{LR})\)</span> or Pure Premiums <span class="arithmatex">\((\bar{L})\)</span>. The question will usually <strong>specify the weights</strong> to use.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is a common mistake to confuse this step with the aggregation step.</p>
+<p>Aggregation adds up the raw losses and premiums, while thie step takes the weighted average of LRs and Pure Premiums.</p>
 </div>
 
 

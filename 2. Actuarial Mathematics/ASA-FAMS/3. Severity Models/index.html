@@ -211,8 +211,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1. Introductory/1. Review of Mathematics.md" class="md-nav__link">
+      <a href="../../../1.%20Introductory/1.%20Review%20of%20Mathematics/" class="md-nav__link">
         Review of Mathematics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.%20Introductory/2.%20Practical%20Exam%20Tips/" class="md-nav__link">
+        Practical Exam Tips
       </a>
     </li>
   
@@ -256,18 +270,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5" type="checkbox" id="__nav_1_5" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_1_4">
+        <label class="md-nav__link" for="__nav_1_5">
           ASA-IFM
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="ASA-IFM" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_4">
+        <label class="md-nav__title" for="__nav_1_5">
           <span class="md-nav__icon md-icon"></span>
           ASA-IFM
         </label>
@@ -282,18 +296,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4_1" type="checkbox" id="__nav_1_4_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5_1" type="checkbox" id="__nav_1_5_1" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_1_4_1">
+        <label class="md-nav__link" for="__nav_1_5_1">
           Derivatives
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Derivatives" data-md-level="3">
-        <label class="md-nav__title" for="__nav_1_4_1">
+        <label class="md-nav__title" for="__nav_1_5_1">
           <span class="md-nav__icon md-icon"></span>
           Derivatives
         </label>
@@ -371,18 +385,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4_2" type="checkbox" id="__nav_1_4_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5_2" type="checkbox" id="__nav_1_5_2" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_1_4_2">
+        <label class="md-nav__link" for="__nav_1_5_2">
           Corporate Finance
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Corporate Finance" data-md-level="3">
-        <label class="md-nav__title" for="__nav_1_4_2">
+        <label class="md-nav__title" for="__nav_1_5_2">
           <span class="md-nav__icon md-icon"></span>
           Corporate Finance
         </label>
@@ -1752,7 +1766,7 @@
     Var (X) &amp;= \frac{(a-b)^2}{12}
 \end{aligned}
 \]</div>
-<p>The key property of the uniform distribution is that most of the <strong>common transformations</strong> can be found by simply adjusting the range:</p>
+<p>The key property of a uniform distribution is how the parameters change when it is <strong>shifted</strong>:</p>
 <div class="arithmatex">\[
 \begin{aligned}
     X &amp;\sim \text{Uniform} (a, b) \\
@@ -1763,7 +1777,7 @@
 \]</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This looks <em>similar</em> to the memoryless property, but it is a seperate concept.</p>
+<p>Although they look very similar, this should not be confused with the memoryless property of a distribution.</p>
 </div>
 <!-- Obtained from Coaching Actuaries -->
 <p><img alt="Uniform Transformation" class="center" src="../Assets/3.%20Severity%20Models.md/Uniform%20Transformation.png" /></p>
@@ -1787,12 +1801,32 @@
     Var(X) &amp;= E(X)^2 \cdot \frac{\alpha}{\alpha - 2}
 \end{aligned}
 \]</div>
-<p>One of its key properties is that the <strong>k-th moment (raw &amp; central) only exists</strong> if <span class="arithmatex">\(k \lt \alpha\)</span>.</p>
-<p>Another special property is that...</p>
+<p>The key property of a pareto distribution is how the parameters change when it is <strong>shifted</strong>:</p>
 <div class="arithmatex">\[
-    Y \sim \text{Pareto} (\alpha, \theta + d)
+\begin{aligned}
+    X &amp;\sim \text{Pareto} (\alpha, \theta) \\
+    X-d \mid x \gt d &amp;\sim \text{Pareto} (\alpha, \theta + d)
+\end{aligned}
 \]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is similar to the shifting property of the uniform distribution.</p>
+<p>Thus the same warning applies -- although it looks similar, this should not be confused with the memoryless property of a distribution.</p>
+</div>
 <h4 id="single-parameter-pareto"><strong>Single Parameter Pareto</strong><a class="headerlink" href="#single-parameter-pareto" title="Permanent link">&para;</a></h4>
+<p>If a pareto distribution is <em>added</em> by a constant, then the resulting distribution is known as a <strong>Single Parameter Pareto Distribution</strong>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    Y = X + \theta \\
+    \\
+    X &amp;\sim \text{Pareto}(\alpha, \theta) \\
+    Y &amp;\sim \text{SP Pareto}(\alpha, \theta)
+\end{aligned}
+\]</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><span class="arithmatex">\(\theta\)</span> is <strong>not really a parameter</strong> as it must be determined in advance, which is why it it known as a Single Parameter Pareto Distribution.</p>
+</div>
 <h3 id="parametric-distributions"><strong>Parametric Distributions</strong><a class="headerlink" href="#parametric-distributions" title="Permanent link">&para;</a></h3>
 <p>All the above distributions are those that are more commonly tested on the exam. However, many other distributions are also provided in the formula sheet but are much less likely to be tested due to their complexity.</p>
 <p><strong>Parametric Distributions</strong> are distributions that are completely determined by a set of quantities known as Parameters. By assigning all possible numerical values to the parameters, the resulting set of distributions is known as a <strong>Parametric Distribution Family</strong>.</p>
