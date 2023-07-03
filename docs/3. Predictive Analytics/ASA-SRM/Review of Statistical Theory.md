@@ -357,6 +357,12 @@ $$
 \end{aligned}
 $$
 
+!!! Note
+
+    If multiple parameters are being estimated, then the likelihood function is **partially differentiated** to each variable instead
+    
+    The MLE parameters are then the **combination of parameters** that maximizes the function. 
+
 ### **Method of Moments**
 
 An alternative method for estimating population parameters is the **Method of Moments** (MOM).
