@@ -239,7 +239,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Placeholder.md" class="md-nav__link">
+      <a href="../../../Placeholder/" class="md-nav__link">
         ASA-P
       </a>
     </li>
@@ -253,7 +253,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Placeholder.md" class="md-nav__link">
+      <a href="../../../Placeholder/" class="md-nav__link">
         ASA-FM
       </a>
     </li>
@@ -749,6 +749,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#percentiles" class="md-nav__link">
+    Percentiles
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -785,6 +792,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#survival-summary" class="md-nav__link">
+    Survival Summary
+  </a>
   
 </li>
       
@@ -839,8 +853,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#percentiles" class="md-nav__link">
-    Percentiles
+  <a href="#moment-summary" class="md-nav__link">
+    Moment Summary
   </a>
   
 </li>
@@ -1230,7 +1244,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Placeholder.md" class="md-nav__link">
+      <a href="../../../Placeholder/" class="md-nav__link">
         ASA-PA
       </a>
     </li>
@@ -1278,7 +1292,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Placeholder.md" class="md-nav__link">
+      <a href="../../../Placeholder/" class="md-nav__link">
         FSA-LPM
       </a>
     </li>
@@ -1292,7 +1306,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Placeholder.md" class="md-nav__link">
+      <a href="../../../Placeholder/" class="md-nav__link">
         FSA-LFM
       </a>
     </li>
@@ -1306,7 +1320,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Placeholder.md" class="md-nav__link">
+      <a href="../../../Placeholder/" class="md-nav__link">
         FSA-ALM
       </a>
     </li>
@@ -1375,6 +1389,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#percentiles" class="md-nav__link">
+    Percentiles
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1411,6 +1432,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#survival-summary" class="md-nav__link">
+    Survival Summary
+  </a>
   
 </li>
       
@@ -1465,8 +1493,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#percentiles" class="md-nav__link">
-    Percentiles
+  <a href="#moment-summary" class="md-nav__link">
+    Moment Summary
   </a>
   
 </li>
@@ -1740,6 +1768,37 @@
     {}_{t}p_{x} &amp;= \sum^{t}_{u = t} {}_{u|}q_{x}
 \end{aligned}
 \]</div>
+<h3 id="percentiles"><strong>Percentiles</strong><a class="headerlink" href="#percentiles" title="Permanent link">&para;</a></h3>
+<p>Recall that the definition of a percentile is the value of the random variable at which <span class="arithmatex">\(100p\)</span> of the values fall below.</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    P(T_{x} \le t) &amp;\le p \\
+    P(T_{x} \ge t) &amp;\le 1 - p \\
+    {}_{t}P_{x} &amp;\le 1 - p \\
+    \frac{\ell_{x+t}}{\ell_{x}} &amp;\le 1 - p \\
+    \ell_{x+t} &amp;\le \ell_{x} \cdot (1-p) \\ 
+\end{aligned}
+\]</div>
+<p>By comparing values in the life table, we can find the <strong>smallest age</strong> that fulfils the above inequality, <span class="arithmatex">\(y\)</span>.</p>
+<p>Since it is unlikely that <span class="arithmatex">\(\ell_{x} \cdot (1-p)\)</span> exactly matches a value, the true percentile is at a <strong>fractional age</strong>.</p>
+<div class="arithmatex">\[
+    y - 1 \lt x + t \lt y
+\]</div>
+<p>Thus, one of the <strong>typical assumptions</strong> must be used to determine the exact median of the distribution.</p>
+<div class="arithmatex">\[
+    \text{Continuous Percentile} = y - 1 + t
+\]</div>
+<p>However, if only interested in the curtate lifetime, then we can simply take the <strong>floor</strong> of <span class="arithmatex">\(x+t\)</span>, which is always <span class="arithmatex">\(y-1\)</span>.</p>
+<div class="arithmatex">\[
+    \text{Curtate Percentile} = y - 1
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We traditionall learn percentiles using <strong>increasing random variables</strong>. We usually think of percentiles as values from the <strong>beginning to the percentile</strong>.</p>
+<p>However, future lifetime is a <strong>decreasing variable</strong>. This means that all values that are smaller than the percentile come AFTER it. This means that the values are from the percentile to its upper limit:</p>
+<p><!-- Obtained from Coaching Actuaries -->
+<img alt="Percentile" class="center" src="../Assets/3.%20Life%20Assurances.md/Percentile.png" /></p>
+</div>
 <h2 id="discrete-lifetime"><strong>Discrete Lifetime</strong><a class="headerlink" href="#discrete-lifetime" title="Permanent link">&para;</a></h2>
 <p>Similarly, the distribution of the time to death (<strong>in years</strong>) can also be represented using a <strong>Discrete Random Variable</strong> <span class="arithmatex">\(K_{x}\)</span>, where <span class="arithmatex">\(x\)</span> represents the age of the person.</p>
 <p>It is also known as the <strong>Curtate Future Lifetime</strong> as it only contains the <strong>integer components</strong> of the continuous future lifetime.</p>
@@ -1914,6 +1973,9 @@
     &amp;= ({}_{}p_{x})^k
 \end{aligned}
 \]</div>
+<h2 id="survival-summary"><strong>Survival Summary</strong><a class="headerlink" href="#survival-summary" title="Permanent link">&para;</a></h2>
+<!-- Self Made -->
+<p><img alt="Survival Summary" class="center" src="../Assets/1.%20Survival%20Models.md/Survival%20Summary.png" /></p>
 <h2 id="moments"><strong>Moments</strong><a class="headerlink" href="#moments" title="Permanent link">&para;</a></h2>
 <h3 id="continuous-moments"><strong>Continuous Moments</strong><a class="headerlink" href="#continuous-moments" title="Permanent link">&para;</a></h3>
 <p>The first raw moment of the distribution is known as the <strong>Complete Expectation of Life</strong>, which can be calculated via first principles:</p>
@@ -2184,37 +2246,9 @@ Probability tree perspective</p>
 \end{aligned}
 \]</div>
 <p>The above will rarely be used in this manner - it is more than sufficient to know the relationship between the two expectations of life. However, it sets as a strong foundation to understand the <strong>Woolhouse Approximation</strong> in the life annuities section.</p>
-<h3 id="percentiles"><strong>Percentiles</strong><a class="headerlink" href="#percentiles" title="Permanent link">&para;</a></h3>
-<p>Recall that the definition of a percentile is the value of the random variable at which <span class="arithmatex">\(100p\)</span> of the values fall below.</p>
-<div class="arithmatex">\[
-\begin{aligned}
-    P(T_{x} \le t) &amp;\le p \\
-    P(T_{x} \ge t) &amp;\le 1 - p \\
-    {}_{t}P_{x} &amp;\le 1 - p \\
-    \frac{\ell_{x+t}}{\ell_{x}} &amp;\le 1 - p \\
-    \ell_{x+t} &amp;\le \ell_{x} \cdot (1-p) \\ 
-\end{aligned}
-\]</div>
-<p>By comparing values in the life table, we can find the <strong>smallest age</strong> that fulfils the above inequality, <span class="arithmatex">\(y\)</span>.</p>
-<p>Since it is unlikely that <span class="arithmatex">\(\ell_{x} \cdot (1-p)\)</span> exactly matches a value, the true percentile is at a <strong>fractional age</strong>.</p>
-<div class="arithmatex">\[
-    y - 1 \lt x + t \lt y
-\]</div>
-<p>Thus, one of the <strong>typical assumptions</strong> must be used to determine the exact median of the distribution.</p>
-<div class="arithmatex">\[
-    \text{Continuous Percentile} = y - 1 + t
-\]</div>
-<p>However, if only interested in the curtate lifetime, then we can simply take the <strong>floor</strong> of <span class="arithmatex">\(x+t\)</span>, which is always <span class="arithmatex">\(y-1\)</span>.</p>
-<div class="arithmatex">\[
-    \text{Curtate Percentile} = y - 1
-\]</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>We traditionall learn percentiles using <strong>increasing random variables</strong>. We usually think of percentiles as values from the <strong>beginning to the percentile</strong>.</p>
-<p>However, future lifetime is a <strong>decreasing variable</strong>. This means that all values that are smaller than the percentile come AFTER it. This means that the values are from the percentile to its upper limit:</p>
-<p><!-- Obtained from Coaching Actuaries -->
-<img alt="Percentile" class="center" src="../Assets/3.%20Life%20Assurances.md/Percentile.png" /></p>
-</div>
+<h3 id="moment-summary"><strong>Moment Summary</strong><a class="headerlink" href="#moment-summary" title="Permanent link">&para;</a></h3>
+<!-- Self Made -->
+<p><img alt="Moment Summary" class="center" src="../Assets/1.%20Survival%20Models.md/Moment%20Summary.png" /></p>
 <h2 id="parametric-survival-models"><strong>Parametric Survival Models</strong><a class="headerlink" href="#parametric-survival-models" title="Permanent link">&para;</a></h2>
 <p>Given the importance of <span class="arithmatex">\(\mu_x\)</span>, several mathematical functions have been made to describe the force of mortality, known as a <strong>Parametric Survival Model</strong>.</p>
 <h3 id="exponential-distribution"><strong>Exponential Distribution</strong><a class="headerlink" href="#exponential-distribution" title="Permanent link">&para;</a></h3>
