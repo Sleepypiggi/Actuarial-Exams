@@ -1462,8 +1462,6 @@
 <p>This results in a <strong>constant probability between deaths</strong>. Thus, the focus is on the <strong>times of death</strong>; the entries and exits from the study are only used to change the sample size.</p>
 <!-- Obtained from Coaching Actuaries -->
 <p><img alt="Kaplan Meier Cumulative" class="center" src="../Assets/8.%20Model%20Estimation.md/Kaplan%20Meier%20Cumulative.png" /></p>
-<!-- Tail Correction -->
-
 <h3 id="nelson-aelen-estimation"><strong>Nelson Aelen Estimation</strong><a class="headerlink" href="#nelson-aelen-estimation" title="Permanent link">&para;</a></h3>
 <p>Recall that the survival probability can be expressed as a function of the Force of Mortality:</p>
 <div class="arithmatex">\[
@@ -1476,7 +1474,10 @@
 </div>
 <p>The nelson aelen estimator is computed as the <strong>sum</strong> of the <strong>death probabilities</strong> for <strong>all previous intervals between deaths</strong>:</p>
 <div class="arithmatex">\[
-    \int^t_0 \mu_{x+t} = \sum \frac{d_j}{r_j}
+\begin{aligned}
+    H_{x}(t) &amp;= \sum \frac{d_j}{r_j} \\
+    \int^t_0 \mu_{x+t} &amp;= \sum \frac{d_j}{r_j}
+\end{aligned}
 \]</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -1637,12 +1638,17 @@
 \]</div>
 <p><strong>Nelson Aelen Variance</strong>:</p>
 <div class="arithmatex">\[
-    Var(\hat{S}_x(t)) = (\hat{S}_x(t))^2 \sum \frac{d_j (r_j - d_j)}{r^3_j}
+\begin{aligned}
+    \text{Var}(H_{x}(t)) &amp;= \sum \frac{d_j (r_j - d_j)}{r^3_j} \\
+    \text{Var}(\hat{S}_x(t)) &amp;= (\hat{S}_x(t))^2 \sum \frac{d_j (r_j - d_j)}{r^3_j}
+\end{aligned}
 \]</div>
+<p>The variance of the cumulative force is technically not provided; but it is simply the second term of the nelson aelen variance.</p>
 <p><strong>Alive Dead Variance</strong>:</p>
 <div class="arithmatex">\[
     Var(\hat{S}_x(t)) = (\hat{S}_x(t))^2 \cdot \frac{d_x}{\left(E^c_x \right)^2}
 \]</div>
+<p>Unfortunately, this formula is not provided on the formula sheet and hence must be memorized.</p>
 <h3 id="confidence-intervals"><strong>Confidence Intervals</strong><a class="headerlink" href="#confidence-intervals" title="Permanent link">&para;</a></h3>
 <p>Assuming that the estimators follow a normal distribution, a standard <strong>linear confidence interval</strong> can be calculated as the following:</p>
 <div class="arithmatex">\[
@@ -1653,12 +1659,28 @@
 <div class="arithmatex">\[
 \begin{aligned}
     \text{Confidence Interval}
-    &amp;= \left((\hat{S}_x(t))^{\frac{1}{U}}, (\hat{S}_x(t))^{U} \right) \\
+    &amp;= \left(\hat{S}_x(t)^{\frac{1}{U^{S}}}, \hat{S}_x(t)^{U^{S}} \right) \\
     \\
-    U &amp;= \exp \left(\frac{Z_{\frac{1+p}{2}} \cdot \sqrt{Var(\hat{S}_x(t))}}{\hat{S}_x(t) \cdot \ln \hat{S}_x(t)} \right)
+    U^{S}
+    &amp;= e^ \frac{Z_{\frac{1+p}{2}} \cdot \sqrt{Var[\hat{S}_x(t)]}}{\hat{S}_x(t) \cdot \ln \hat{S}_x(t)} \\
+    &amp;= \exp \left(\frac{Z_{\frac{1+p}{2}} \cdot \sqrt{Var[\hat{S}_x(t)]}}{\hat{S}_x(t) \cdot \ln \hat{S}_x(t)} \right)
 \end{aligned}
 \]</div>
-<p>Unfortunately, this formula is not provided on the formula sheet and thus must be memorized.</p>
+<p>Unfortunately, this formula is not provided on the formula sheet and thus <strong>must be memorized</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We can also define a log-confidence interval for the cumulative force of mortality:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    \text{Confidence Interval}
+    &amp;= \left( \hat{H}_x(t) \cdot \frac{1}{U^{H}}, \hat{H}_x(t) \cdot U^{H} \right) \\
+    \\
+    U^{H} &amp;= \frac{1}{U^{S}}
+\end{aligned}
+\]</div>
+<p>Since both <span class="arithmatex">\(U\)</span>s are related, it is <strong>only necessary to remember the exponent for the survival probability</strong>.</p>
+<p>The key difference is that the survival probabilities use exponents while cumulative forces <strong>use multiplication</strong>.</p>
+</div>
 
 
 
