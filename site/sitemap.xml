@@ -16,11 +16,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/1.%20Introductory/ASA-FM/Test/</loc>
-         <lastmod>2023-07-04</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://example.com/1.%20Introductory/ASA-IFM/1.%20Derivatives/1.%20Introduction/</loc>
          <lastmod>2023-07-04</lastmod>
          <changefreq>daily</changefreq>
