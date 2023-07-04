@@ -6,6 +6,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://example.com/Placeholder/</loc>
+         <lastmod>2023-07-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://example.com/1.%20Introductory/1.%20Review%20of%20Mathematics/</loc>
          <lastmod>2023-07-04</lastmod>
          <changefreq>daily</changefreq>
