@@ -815,19 +815,6 @@
     Other Assumptions
   </a>
   
-    <nav class="md-nav" aria-label="Other Assumptions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#linear-force" class="md-nav__link">
-    Linear Force
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
       </ul>
@@ -1377,19 +1364,6 @@
     Other Assumptions
   </a>
   
-    <nav class="md-nav" aria-label="Other Assumptions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#linear-force" class="md-nav__link">
-    Linear Force
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
       </ul>
@@ -1688,7 +1662,7 @@
 <p>In such cases, we can convert the <strong>probabilities to the number of survivors</strong> by choosing an <strong>arbitrary number of survivors</strong> for the first age provided and then multiplying the probabilities accordingly.</p>
 <p>This way, we only need to remember the formulas using the number of survivors.</p>
 <h3 id="other-assumptions"><strong>Other Assumptions</strong><a class="headerlink" href="#other-assumptions" title="Permanent link">&para;</a></h3>
-<h4 id="linear-force"><strong>Linear Force</strong><a class="headerlink" href="#linear-force" title="Permanent link">&para;</a></h4>
+<p>The two assumptions are above are the typical fractional age assumptions. In practice, questions could use a variety of assumptions.</p>
 <p>Instead of a <em>completely</em> constant force, some questions might provide a <strong>linearly increasing</strong> force between two different constant forces.</p>
 <p>Essentially, this combines the key aspects of the above two methods:</p>
 <div class="arithmatex">\[
@@ -1700,6 +1674,14 @@
     S_X(t)
     &amp;= e^{\int \mu_{x+t}} \\
     &amp;= e^{\int \mu_1 \cdot (1-t) + \mu_2 \cdot t}
+\end{aligned}
+\]</div>
+<p>Another assumption is that a certain <strong>proportion of deaths</strong> occur in a certain portion of the year.</p>
+<p>For instance, "Between integer ages, two-thirds of deaths occur during the last six months of the year".</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    {}_{0.5}q_{x} &amp;= \frac{1}{3} \cdot q_{x} \\
+    {}_{0.5}q_{x+0.5} &amp;= \frac{2}{3} \cdot q_{x}
 \end{aligned}
 \]</div>
 <h2 id="select-ultimate-mortality"><strong>Select &amp; Ultimate Mortality</strong><a class="headerlink" href="#select-ultimate-mortality" title="Permanent link">&para;</a></h2>
