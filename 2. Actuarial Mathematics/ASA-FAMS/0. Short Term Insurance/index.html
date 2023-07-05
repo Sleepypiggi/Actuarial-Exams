@@ -1419,6 +1419,27 @@
 <h2 id="general-insurance"><strong>General Insurance</strong><a class="headerlink" href="#general-insurance" title="Permanent link">&para;</a></h2>
 <h3 id="automobile-insurance"><strong>Automobile Insurance</strong><a class="headerlink" href="#automobile-insurance" title="Permanent link">&para;</a></h3>
 <h3 id="homeowners-insurance"><strong>Homeowners Insurance</strong><a class="headerlink" href="#homeowners-insurance" title="Permanent link">&para;</a></h3>
+<p>They typically have a <strong>Coinsurance Provision</strong> that penalizes the insured for <strong>under-insuring</strong> their house.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is a completely different concept from a regular Coinsurance modification -- do not confuse the two.</p>
+</div>
+<p>If the chosen <strong>sum insured <span class="arithmatex">\((I)\)</span> is less than some proportion of the value of the house</strong> <span class="arithmatex">\((cF)\)</span>, then the benefit paid out is <strong>scaled down by that proportion</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the sum insured is equal or more than the coinsurance provision, the benefit <strong>does not scale up</strong>. It is meant to be only a penalty.</p>
+</div>
+<div class="arithmatex">\[
+\begin{aligned}
+    Y
+    &amp;=
+    \begin{cases}
+        \min (I, \frac{I}{cF} \cdot L),&amp; I \lt cF \\
+        \min(I, L),&amp; I \lt cF
+    \end{cases}
+\end{aligned}
+\]</div>
+<p>The coinsurance provision only affects the "raw" benefits. If the penalized loss <strong>still exceeds the insured amount</strong>, then only the insured amount will be paid.</p>
 <h3 id="workers-compensation"><strong>Workers Compensation</strong><a class="headerlink" href="#workers-compensation" title="Permanent link">&para;</a></h3>
 <h3 id="fire-insurance"><strong>Fire Insurance</strong><a class="headerlink" href="#fire-insurance" title="Permanent link">&para;</a></h3>
 <h3 id="marine-insurance"><strong>Marine Insurance</strong><a class="headerlink" href="#marine-insurance" title="Permanent link">&para;</a></h3>
